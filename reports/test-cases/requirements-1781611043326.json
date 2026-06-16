@@ -1,0 +1,168 @@
+{
+  "taskId": "DOC-1781610615801",
+  "sourceOfRequirements": "manual",
+  "feature": "Teams Module - Team Management (Teams → Teams)",
+  "module": "Teams",
+  "actors": [
+    "Admin",
+    "Department User (any logged-in user with department context)",
+    "Reporting Manager (as a data entity; not a distinct UI actor unless RBAC defines one)"
+  ],
+  "preconditions": [
+    "User is logged in with a valid account and has an assigned department",
+    "At least one department record exists in the system",
+    "At least one employee record exists to serve as a Reporting Manager candidate",
+    "For edit and delete scenarios: at least one active team already exists",
+    "RBAC roles and their permissions for Teams operations are configured",
+    "Phase 1 feature flag (if applicable) is enabled"
+  ],
+  "acceptanceCriteria": [
+    "Users can only see teams that belong to their own logged-in department (department_id filter enforced on all queries)",
+    "Each team card on the dashboard displays: Team Name, Reporting Manager name, Employee Count, and Color Code",
+    "Employee count is dynamically derived by counting employees whose reporting_manager_id matches the team's reporting_manager_id; no employee IDs are stored in the teams table",
+    "Creating a team requires all mandatory fields: Team Name, Reporting Manager, Department, and Display Order; Color Code is optional",
+    "The system enforces the 1 Reporting Manager = 1 Team rule; submitting a form with an RM already assigned to another active team is rejected with a clear validation error message",
+    "Editing a team allows changes to: Team Name, Reporting Manager, Color Code, and Display Order",
+    "When the Reporting Manager is changed during an edit, the team employee count and member list automatically update to reflect the new RM's direct reports",
+    "Deleting a team performs a soft delete: sets deleted_at timestamp and deleted_by ID; the team no longer appears in active listings but the record is preserved in the database",
+    "RBAC is enforced: unauthorized users cannot perform Create, Edit, or Delete operations on teams",
+    "All Phase 1 scope items are implemented: team listing, creation, editing, soft deletion, RM selection, color selection, employee count calculation, and RBAC enforcement"
+  ],
+  "testScenarios": [
+    {
+      "name": "Happy path – View teams dashboard (department-filtered)",
+      "type": "functional",
+      "summary": "Log in as a user from Department A. Navigate to Teams → Teams. Verify only teams with department_id matching Department A are displayed; teams from Department B are not visible."
+    },
+    {
+      "name": "Happy path – Create team with all required and optional fields",
+      "type": "functional",
+      "summary": "Click 'Add Team'. Fill in Team Name, select a valid RM not yet assigned to any team, select Department, set Display Order, and pick a Color Code. Submit. Verify the new team card appears with correct Team Name, RM, Color, and an accurate employee count derived from employees.reporting_manager_id."
+    },
+    {
+      "name": "Happy path – Create team without Color Code (optional field omitted)",
+      "type": "functional",
+      "summary": "Complete the Add Team form leaving Color Code blank. Submit. Verify the team is created successfully and the dashboard card renders without error."
+    },
+    {
+      "name": "Happy path – Edit team name and color code",
+      "type": "functional",
+      "summary": "Open an existing team for editing. Change the Team Name and Color Code. Save. Verify the dashboard card reflects the updated name and color immediately."
+    },
+    {
+      "name": "Happy path – Edit display order",
+      "type": "functional",
+      "summary": "Edit an existing team and change its Display Order value. Save. Verify the team list re-orders accordingly on the dashboard."
+    },
+    {
+      "name": "Happy path – Change Reporting Manager on edit",
+      "type": "functional",
+      "summary": "Edit a team and assign a different RM who is not currently linked to any other active team. Save. Verify the employee count updates to reflect the new RM's direct reports, and the RM name on the card changes."
+    },
+    {
+      "name": "Happy path – Soft delete a team",
+      "type": "functional",
+      "summary": "Delete an existing active team. Verify it no longer appears in the active dashboard view. Verify the DB record has deleted_at and deleted_by populated and is not physically removed."
+    },
+    {
+      "name": "Happy path – Employee count accuracy",
+      "type": "functional",
+      "summary": "For a team with a known RM, independently count employees with reporting_manager_id matching that RM. Verify the team card employee count matches exactly."
+    },
+    {
+      "name": "Happy path – Display order sorting across multiple teams",
+      "type": "functional",
+      "summary": "Create or verify multiple teams with distinct display_order values. Confirm teams render on the dashboard in ascending display_order sequence."
+    },
+    {
+      "name": "RBAC – Authorized user can create, edit, and delete",
+      "type": "functional",
+      "summary": "Log in as a user with the required RBAC role. Verify Add Team, Edit Team, and Delete Team actions are available and complete successfully."
+    }
+  ],
+  "edgeCases": [
+    "Department with no teams: dashboard displays a meaningful empty state with no crash and no misleading UI",
+    "Team with 0 employees: RM has no direct reports; employee count must display as 0, not null, blank, or error",
+    "RM with a very large number of direct reports (e.g. 100+): COUNT query returns correct value and dashboard card renders without timeout or UI overflow",
+    "Color Code field left blank (optional): team creates and edits successfully; card renders gracefully without a color swatch or with a defined default",
+    "Team Name at maximum character length: verify the system accepts or rejects at the defined limit (limit not stated – flagged as unclear)",
+    "Team Name containing special or potentially dangerous characters (script tags, single/double quotes, ampersands, SQL meta-characters): input is safely sanitized and escaped with no injection or XSS",
+    "Changing RM to an employee who currently has 0 direct reports: team employee count updates to 0 after save",
+    "Soft-deleted team's former RM becomes available for reassignment to a new team immediately after soft delete",
+    "Multiple teams created in rapid succession: no race condition and no duplicate team_id collision",
+    "Display Order value of 0 or a negative integer: system behavior is not defined – flagged as unclear"
+  ],
+  "negativeScenarios": [
+    "Submit Add Team form with Team Name blank → required field validation error shown; form not submitted",
+    "Submit Add Team form with Reporting Manager not selected → required field validation error shown; form not submitted",
+    "Submit Add Team form with Department not selected → required field validation error shown; form not submitted",
+    "Submit Add Team form with Display Order blank → required field validation error shown; form not submitted",
+    "Assign an RM already linked to another active team (Add flow) → system rejects with a specific error message; no partial record created",
+    "Assign an RM already linked to another active team (Edit flow) → system rejects save with a specific error message; existing team data unchanged",
+    "User from Department A attempts to view/access teams from Department B via URL manipulation or direct API call → returns empty result set or 403 Forbidden; no data leakage",
+    "Unauthorized user (no Create RBAC) attempts to add a team → Add button hidden or request returns 403",
+    "Unauthorized user (no Edit RBAC) attempts to edit a team → Edit option hidden or request returns 403",
+    "Unauthorized user (no Delete RBAC) attempts to delete a team → Delete option hidden or request returns 403",
+    "Unauthenticated request to the Teams API → returns 401 Unauthorized"
+  ],
+  "dependencies": [
+    "Employee Module (employees table; reporting_manager_id field drives team membership derivation and employee count calculation)",
+    "Department Module (departments table; department_id used for team assignment and dashboard visibility filtering)",
+    "Authentication and RBAC Module (session validation and role-based permission checks for Create, Read, Update, Delete on teams)",
+    "Weekly Updates sub-module (shares the Teams navigation parent; cross-module dependency scope is unclear – flagged)"
+  ],
+  "unclear": [
+    {
+      "topic": "RBAC role definitions",
+      "note": "The document states RBAC enforcement is in Phase 1 scope but does not list which specific roles (Admin, HR Manager, Department Head, Employee, etc.) can perform which operations (Create, Read, Update, Delete). A permission matrix is required before access-control test cases can be written."
+    },
+    {
+      "topic": "Soft delete mechanism – status flag vs. deleted_at",
+      "note": "Section 11 says 'status = inactive' but the data model in Section 4 shows deleted_at and deleted_by fields with no status column. It is unclear whether soft delete uses a status flag, a deleted_at timestamp, or both. This determines how active-record listing queries must filter."
+    },
+    {
+      "topic": "Department field editability after team creation",
+      "note": "Department is required on the Add Team form (Section 9) but is NOT listed among editable fields in Edit Team (Section 10 lists: Team Name, Reporting Manager, Color Code, Display Order). It is unclear whether Department is intentionally immutable post-creation or was accidentally omitted from the edit list."
+    },
+    {
+      "topic": "Color Code format and validation",
+      "note": "The document does not specify the Color Code format (hex string, named CSS color, predefined enum palette, or freeform string). Validation rules, maximum length, and UI picker type are undefined."
+    },
+    {
+      "topic": "Display Order uniqueness and conflict resolution",
+      "note": "No uniqueness constraint is stated for display_order. It is unclear whether duplicate values within the same department are allowed, and if so, what tie-breaking rule applies (e.g. created_at, alphabetical by name)."
+    },
+    {
+      "topic": "Display Order minimum and maximum values",
+      "note": "No min/max constraints are defined. Behavior when display_order is 0, a negative integer, or an extremely large number is not specified."
+    },
+    {
+      "topic": "Soft-deleted team reactivation",
+      "note": "The document recommends soft delete for historical preservation but does not describe a restore/reactivation flow. It is unclear whether a soft-deleted team can be re-enabled and what happens if its former RM was reassigned to a new team in the interim."
+    },
+    {
+      "topic": "Old Reporting Manager team status after RM reassignment on edit",
+      "note": "Section 10 states that changing the RM causes team members to automatically change, but does not clarify what happens to the old RM – whether they become unassigned (no team) or must be explicitly reassigned."
+    },
+    {
+      "topic": "Team Name uniqueness constraint",
+      "note": "No uniqueness rule is stated for Team Name. It is unclear whether duplicate names are allowed within the same department, across departments, or globally."
+    },
+    {
+      "topic": "Team Name maximum character length",
+      "note": "No maximum length is specified for team_name. The boundary value for input validation testing cannot be determined without this."
+    },
+    {
+      "topic": "Default Color Code behavior when omitted",
+      "note": "Color Code is optional, but the expected UI rendering when it is not provided is undefined. It is unclear whether the system assigns a fallback color, renders the card without a swatch, or shows a placeholder."
+    },
+    {
+      "topic": "Weekly Updates sub-module dependency",
+      "note": "Weekly Updates appears as a sibling under the Teams navigation parent but is out of scope for this document. The extent of data coupling, shared state, or triggers between Teams and Weekly Updates is not documented."
+    },
+    {
+      "topic": "Phase 2 allocation visibility impact on Phase 1 data model",
+      "note": "Section 1 notes teams will be used for allocation visibility in Phase 2. It is unclear whether Phase 1 schema or API design decisions must be made now to support Phase 2 without a breaking migration."
+    }
+  ]
+}

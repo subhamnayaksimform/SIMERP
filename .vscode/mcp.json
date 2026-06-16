@@ -1,0 +1,8 @@
+{
+  "servers": {
+    "zoho-projects": {
+      "type": "http",
+      "url": "https://zohomcp-924049759.zohomcp.com/mcp/a76b27c3a9846a7232ab1c4dd0ef89a7/message"
+    }
+  }
+}

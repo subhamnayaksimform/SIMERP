@@ -1,0 +1,27 @@
+{
+  "name": "simerp-qa-ai-flow",
+  "version": "1.0.0",
+  "private": true,
+  "description": "AI-driven QA automation flow for SIM ERP using VS Code agents & skills",
+  "scripts": {
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:report": "playwright show-report",
+    "pipeline": "ts-node scripts/pipeline.ts",
+    "report:excel": "ts-node .github/skills/excel-reporter/scripts/generate-excel.ts"
+  },
+  "devDependencies": {
+    "@clack/prompts": "^1.5.1",
+    "@playwright/test": "^1.45.0",
+    "@types/node": "^20.11.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.0"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.104.2",
+    "axios": "^1.7.0",
+    "dotenv": "^16.4.5",
+    "exceljs": "^4.4.0",
+    "mammoth": "^1.12.0"
+  }
+}
