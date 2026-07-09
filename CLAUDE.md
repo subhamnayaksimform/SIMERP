@@ -22,9 +22,13 @@ npx tsc --noEmit
 # View HTML report after a test run
 npm run test:report
 
+# Interactive pipeline (fetch/analyze → cases → generate → run → bugs, each step lets you pick input files)
+npm run pipeline
+
 # Skill scripts (require .env to be configured)
 npm run fetch:tasks               # pull tasks from Zoho Projects
 npm run report:excel              # generate Excel from test-case/results JSON
+npm run report:html               # generate consolidated HTML pipeline dashboard (reports/html/)
 npm run report:bug                # file bugs in Zoho from results JSON
 
 # QA Knowledge Base (requires .env Zoho credentials)
@@ -42,37 +46,40 @@ This repo is a **VS Code Copilot agent pipeline** for AI-driven QA of the SIM ER
 ### Pipeline flow
 
 ```
-[KB Sync] → Zoho Tasks → Requirement Analyzer → Test Case Generator → Automation Generator → Playwright Runner → Bug Reporter
+[KB Sync] → Zoho Tasks → Requirement Analyzer → Test Case Generator → Automation Generator → Test Runner → Bug Reporter → Pipeline Report
                               ↑ injects known edge cases from KB          ↑ injects regression triggers from KB
 ```
 
 Or from a manual feature description (skip Zoho fetch) — the orchestrator handles both paths. KB Sync is optional but recommended: it feeds historical bug patterns into every future test run.
 
+`Automation Generator` (generate) and `Test Runner` (execute) are deliberately separate agents — one only writes code, the other only runs it — so "generate automation" and "run tests" are independently invocable steps, each with their own file/target selection prompt. Every step that consumes a prior step's output (fetched tasks, requirements JSON, cases JSON, automation target, results JSON) presents the candidate files and lets the user pick one instead of silently defaulting to the newest. `Pipeline Report` aggregates all of it into one HTML dashboard, refreshed at the end of a full pipeline run and after every `Test Runner` execution.
+
 ### Key directories
 
-- `.claude/agents/` — six `.agent.md` files defining the pipeline agents (loaded by Claude Code CLI and VS Code Copilot). These are the "workers" in the pipeline.
-- `.claude/skills/` — four skills (`zoho-tasks`, `excel-reporter`, `playwright-runner`, `zoho-bug-report`), each with a `SKILL.md` describing its contract and a `scripts/` subfolder with the TypeScript implementation.
+- `.claude/agents/` — seven `.agent.md` files defining the pipeline agents (loaded by Claude Code CLI and VS Code Copilot). These are the "workers" in the pipeline.
+- `.claude/skills/` — five skills (`zoho-tasks`, `excel-reporter`, `playwright-runner`, `pipeline-report`, `zoho-bug-report`), each with a `SKILL.md` describing its contract and a `scripts/` subfolder with the TypeScript implementation.
 - `.claude/instructions/qa-conventions.md` — auto-loaded for `tests/**/*.ts`; defines naming, selectors, assertion patterns, forbidden practices.
 - `tests/e2e/` — generated Playwright specs, grouped by module, sub-feature, and category (e.g. `tests/e2e/employee/employee-details/smoke.spec.ts`).
 - `tests/page-objects/` — generated page object classes, one per sub-feature, nested under its module folder (e.g. `tests/page-objects/employee/employee-details.page.ts`).
 - `tests/fixtures/` — `auth.ts` (Playwright `storageState` setup, `storageState*.json` gitignored — generated locally by `tests/global-setup.ts`, never commit) and `data/` (CSV/JSON test data).
-- `reports/raw/`, `reports/requirements/`, `reports/test-cases/`, `reports/results/`, `reports/excel/` — transient per-run pipeline outputs (gitignored entirely; regenerate by re-running the pipeline, don't commit).
+- `reports/raw/`, `reports/requirements/`, `reports/test-cases/`, `reports/results/`, `reports/excel/`, `reports/html/` — transient per-run pipeline outputs (gitignored entirely; regenerate by re-running the pipeline, don't commit). `reports/html/pipeline-report-*.html` is the consolidated dashboard produced by the `pipeline-report` skill at the end of every full pipeline run and after every `Test Runner` execution.
 - `reports/knowledge-base/` — the only `reports/` subfolder committed to git: persistent QA knowledge base, `edge-cases-catalog.json` (grows with every sync) and `bugs-raw-*.json` raw dumps from Zoho.
 
 ### Agent responsibilities
 
 | Agent | Does | Does NOT |
 |---|---|---|
-| `@qa-orchestrator` | Coordinates all other agents; gates steps; produces final report | Any actual work |
+| `@qa-orchestrator` | Coordinates all other agents; gates steps; presents file selection at each step; produces final report | Any actual work |
 | `@knowledge-base-curator` | Fetches all Zoho bugs, extracts/deduplicates edge case patterns, updates `reports/knowledge-base/edge-cases-catalog.json` | Generate test cases |
 | `@requirement-analyzer` | Parses Zoho task descriptions into structured requirement JSON; enriches edge cases from knowledge base | Write tests |
 | `@test-case-generator` | Produces `TC-<MODULE>-<NNN>` test cases in all categories (including KB-derived regression cases); exports to Excel | Write Playwright code |
 | `@automation-generator` | Writes page objects and specs under `tests/`; runs `tsc --noEmit` | Execute tests |
+| `@test-runner` | Executes generated automation against a user-selected target; exports results Excel + refreshes the consolidated HTML report | Write or edit test/page-object code |
 | `@bug-reporter` | Creates Zoho bugs from `results.json` failures | Run tests |
 
 ### Skill contracts
 
-Each skill's `SKILL.md` defines its input parameters, output format, and the fallback CLI command to run if the MCP server is unavailable. The skills are the preferred entry points; direct script invocation via `npm run` is the fallback.
+Each skill's `SKILL.md` defines its input parameters, output format, and the fallback CLI command to run if the MCP server is unavailable. The skills are the preferred entry points; direct script invocation via `npm run` is the fallback. `pipeline-report` (`npm run report:html`) aggregates the latest output of every stage into one dashboard — it never blocks the pipeline if a stage hasn't run yet.
 
 ### Zoho MCP server
 

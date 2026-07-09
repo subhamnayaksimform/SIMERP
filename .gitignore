@@ -18,6 +18,7 @@ reports/requirements/
 reports/test-cases/
 reports/results/
 reports/excel/
+reports/html/
 
 # OS / IDE
 .DS_Store

@@ -10,6 +10,7 @@
     "test:report": "playwright show-report reports/results/html",
     "pipeline": "ts-node scripts/pipeline.ts",
     "report:excel": "ts-node .claude/skills/excel-reporter/scripts/generate-excel.ts",
+    "report:html": "ts-node .claude/skills/pipeline-report/scripts/generate-html-report.ts",
     "kb:update": "ts-node scripts/update-knowledge-base.ts",
     "lint:tests": "ts-node scripts/lint-test-conventions.ts",
     "lint:tests:baseline": "ts-node scripts/lint-test-conventions.ts --update-baseline",
