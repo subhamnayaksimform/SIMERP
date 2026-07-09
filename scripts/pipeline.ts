@@ -261,14 +261,34 @@ async function parseAndValidate<T>(
 interface AIFile { path: string; content: string; }
 type AIBackend = { type: 'cli'; bin: string } | { type: 'sdk'; client: Anthropic };
 
+function findClaudeOnPath(): string | null {
+  const finder = process.platform === 'win32' ? 'where' : 'which';
+  const result = spawnSync(finder, ['claude'], { shell: true, encoding: 'utf8' });
+  if (result.status !== 0) return null;
+  const candidates = result.stdout.split(/\r?\n/).map(l => l.trim()).filter(Boolean);
+  if (process.platform === 'win32') {
+    // `where` lists the extensionless POSIX shim alongside .cmd/.exe/.ps1 — only the
+    // latter are directly spawnable from Windows without a POSIX shell.
+    const winExecutable = candidates.find(c => /\.(cmd|exe|bat)$/i.test(c));
+    if (winExecutable) return winExecutable;
+  }
+  return candidates[0] || null;
+}
+
 function findClaudeBin(): string | null {
+  const onPath = findClaudeOnPath();
+  if (onPath) return onPath;
+
   const extRoot = path.join(os.homedir(), '.vscode', 'extensions');
   if (!fs.existsSync(extRoot)) return null;
   const dirs = fs.readdirSync(extRoot)
     .filter(d => d.startsWith('anthropic.claude-code-')).sort().reverse();
+  const binNames = process.platform === 'win32' ? ['claude.exe', 'claude'] : ['claude'];
   for (const d of dirs) {
-    const bin = path.join(extRoot, d, 'resources', 'native-binary', 'claude');
-    if (fs.existsSync(bin)) return bin;
+    for (const name of binNames) {
+      const bin = path.join(extRoot, d, 'resources', 'native-binary', name);
+      if (fs.existsSync(bin)) return bin;
+    }
   }
   return null;
 }
@@ -307,10 +327,15 @@ async function aiChat(
       if (allowTools) baseArgs.push('--allowedTools', 'Read,Write,Edit,Bash');
       if (model) baseArgs.push('--model', model);
       baseArgs.push('--system-prompt-file', sysPromptFile, '--output-format', 'text');
+      // .cmd/.bat shims (e.g. npm-installed `claude` on Windows) can only be exec'd via a shell.
+      const needsShell = process.platform === 'win32' && /\.(cmd|bat)$/i.test(backend.bin);
+      // Strip ANTHROPIC_API_KEY (loaded from .env for the SDK fallback) — its presence makes
+      // the CLI prefer API-key auth over the user's claude.ai login and disables connectors.
+      const { ANTHROPIC_API_KEY, ...cliEnv } = process.env;
       const proc = spawn(
         backend.bin,
         baseArgs,
-        { shell: false, cwd: ROOT, stdio: ['pipe', 'pipe', 'pipe'], env: { ...process.env, TERM: 'dumb' } },
+        { shell: needsShell, cwd: ROOT, stdio: ['pipe', 'pipe', 'pipe'], env: { ...cliEnv, TERM: 'dumb' } },
       );
       proc.stdin.end(userMessage);
       let stdout = '';
@@ -1128,6 +1153,7 @@ async function option5ReportBugs(skipConfirm = false) {
 // ─── Shared pipeline sub-steps ────────────────────────────────────────────────
 
 async function runTestCaseGeneration(backend: AIBackend, reqFile: string, ts: number): Promise<string | null> {
+  fs.mkdirSync(CASES_DIR, { recursive: true });
   const spin = p.spinner();
   spin.start('Generating test cases…');
   const systemPrompt = loadAgentPrompt('test-case-generator.agent.md');

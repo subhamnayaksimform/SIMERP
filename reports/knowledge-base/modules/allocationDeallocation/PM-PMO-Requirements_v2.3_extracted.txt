@@ -1,0 +1,932 @@
+--- Page 1 ---
+SimERP — PM & PMO Requirements v2.3 
+Page 1 
+PM & PMO Role — Requirements Document 
+SimERP  |  Version 2.3  |  Status: Finalized 
+Date: 2026-06-05 
+ 
+1. Overview 
+This document defines the requirements for introducing two new roles into SimERP: Project 
+Manager (PM) and Project Management Office (PMO). These roles introduce a project-portfolio-
+based access model alongside a structured allocation ticketing system. The system is ticket-driven 
+by design: with the single exception of PMO direct allocation (§6.3), every allocation change flows 
+through a ticket to reduce manual intervention and preserve traceability. 
+PM assignment to projects is managed externally via the Zoho Analytics API. SimERP syncs project-
+to-PM mappings from Zoho — there is no manual PM assignment UI within SimERP. 
+2. Background 
+Existing roles (unchanged) 
+Role Visibility 
+Employee Own profile only 
+Reporting Manager (RM) Their team of 10–12 employees 
+Team Manager (TM) All employees in their department 
+Engineering Manager (EM) All employees across their departments 
+Admin Full system access 
+3. New Roles 
+3.1 Project Manager (PM) 
+A PM is responsible for managing one or more projects. Their visibility in SimERP is scoped to the 
+projects they manage — they do not access department or team data. 
+Key characteristics: 
+• Each project has exactly one PM, sourced from the Zoho Analytics API sync 
+• A PM can manage multiple projects simultaneously 
+• PM can coexist with an org-hierarchy role (RM, TM, or EM) on the same employee — see §3.3 
+• PM only has access to two pages: PM Projects and Requests 
+• PMs cannot directly modify allocation records and cannot edit allocations inline — every 
+change must be raised as a request (ticket) 
+• Tickets belong to the project, not the PM. If the PM on a project changes (via Zoho sync), the 
+new PM inherits all existing tickets for that project; the previous PM loses visibility 
+3.2 Project Management Office (PMO) 
+The PMO coordinates between PMs (who request developers) and the approvers — TMs and EMs 
+(who supply them). They have organisation-wide visibility and own the allocation workflow. 
+
+--- Page 2 ---
+SimERP — PM & PMO Requirements v2.3 
+Page 2 
+Key characteristics: 
+• Sees all projects and all employees across the organisation 
+• Owns the allocation ticketing workflow — triages tickets, assigns departments, shortlists 
+developers, drives approvals, and acknowledges de-allocations 
+• Exclusive direct allocation: only PMO holds the “Add Allocation” permission to create a 
+ProjectAssignment directly without a ticket (§6.3). PMs, TMs, and RMs are explicitly denied 
+this action to maintain system integrity. Each direct allocation triggers an in-app + email 
+notification to the project’s PM, the department’s TM/EM, the allocated employee’s RM, and 
+the allocated employee 
+• PMO is a standalone role — cannot be combined with RM, TM, or EM 
+• Has full access within the PM_PROJECTS and ALLOCATION_TICKETS modules. 
+• Acts as L1 support for PMs navigating the ticket types (operational note) 
+3.3 Dual Role: PM combined with any org role 
+PM can be combined with any org-hierarchy role (RM, TM, EM). The rules are consistent regardless 
+of which org role is paired: 
+Context Active role 
+PM Projects page PM scope — project-based visibility only 
+Requests page Both views via tabs when paired with an approver role (TM 
+or EM) — see §4.2 
+All other pages (employees, teams, 
+departments, etc.) 
+Org role scope — broadest org role applies (EM > TM > 
+RM > Employee). PM scope has no effect here. 
+ 
+Examples: 
+• PM + TM accessing the employees page → sees employees in their department (TM scope), 
+not project employees 
+• PM + EM accessing the employees page → sees employees across all their departments (EM 
+scope) 
+• PM + RM accessing the employees page → sees their team only (RM scope) 
+This means PM-scoped access is contained to the two PM pages only. On all other pages, the org 
+role governs data visibility as if the PM role did not exist. 
+Approver pairing: where the paired org role is an approver (TM or EM), the Requests page also 
+surfaces that role’s department approval queue (see §4.2 and §7). RM has no approval queue, so 
+PM + RM shows the single PM Requests table only. 
+4. PM Experience 
+4.1 PM Projects Page 
+Shows a table of the projects the PM is currently managing. Active and Completed/Archived projects 
+are shown separately. If the PM on a project is changed, how that old project’s data is shown to the 
+PM is deferred to the next sprint — see §12 Out of Scope. 
+Search & display: 
+• Search by project name 
+• Sort by: project name (A–Z), last updated date 
+
+--- Page 3 ---
+SimERP — PM & PMO Requirements v2.3 
+Page 3 
+• Pagination: 100 / 200 / 300 items per page 
+• Summary bar above the table showing total active projects count 
+Clicking a project opens a detail view with: 
+• List of all developers currently allocated to that project 
+• Per developer: name, job title, department, allocation type, allocation %, start/end date, hours 
+logged on this project (sourced from Zoho Analytics), leave details (upcoming, current, 
+and past leaves), notice period status (if serving notice) 
+Developer list display: 
+• Search by developer name 
+• Sort by: developer name, allocation %, start date 
+• Filter by: leave status, notice period 
+• No pagination (developer lists per project are expected to be small) 
+Per-developer actions: 
+Action Applies to Description 
+Update Allocation Fixed 
+allocations 
+Opens a panel to modify allocation terms → creates an 
+Update Allocation (UA) ticket. Decreases follow the lighter 
+acknowledgement flow (§5.2.2); increases follow the full 
+approval flow. Setting New Allocation Percentage to 0, or 
+any relative reduction ≥ 70%, surfaces the ratings, 
+feedback, and de-allocation reason fields. 
+Update Allocation Dynamic 
+allocations 
+The percentage field is disabled for dynamic allocations. 
+The Update Allocation action raises a UA ticket that 
+internally sets the allocation to 0% and the allocation end 
+date to the current date; on apply, the ProjectAssignment is 
+archived (soft-deleted). The ticket follows the lighter 
+acknowledgement flow (§5.2.2). As a full de-allocation, it 
+surfaces the ratings, feedback, and reason fields. 
+ 
+Dynamic allocation expectation note: wherever a dynamic allocation is displayed or requested, 
+the system shows a note clarifying that dynamic allocation implies a maximum availability of 1–2 
+hours per day or 10–20 hours per month. If the PM needs a resource for a significant spike in work 
+(e.g. 200 hours in a month), they must raise a new Fixed NA ticket — a dynamic allocation cannot 
+be converted via UA. 
+Note: Developer Review and Developer/Project Escalation actions are deferred to a future sprint — 
+see §12. 
+4.2 Requests Page 
+The ticketing dashboard. Shows all tickets associated with projects managed by this PM (tickets are 
+project-owned, not PM-owned). 
+Page layout: 
+• If employee has PM role only (or PM + RM) → single table view 
+• If employee has PM plus an approver role (PM + TM or PM + EM) → two tabs: 
+◦ “My Requests” — PM view (tickets for their projects) 
+◦ “Department Requests” — approver view (tickets assigned to their department(s); the 
+approval queue). A TM sees their single department; an EM sees all departments they 
+manage. 
+
+--- Page 4 ---
+SimERP — PM & PMO Requirements v2.3 
+Page 4 
+Summary bar (above the table, for each tab): 
+• Count of tickets by state: Open / In Review / Awaiting Confirmation / Approved / Closed 
+Table columns: Ticket ID, Type (NA / UA), Project, Developer (if applicable), Tech Stack, State, 
+Created Date, Last Updated 
+Search & filter: 
+• Search by ticket ID or project name 
+• Filter by: state (multi-select), type (NA / UA), project (dropdown), created date range 
+• Sort by: created date descending (default), last updated, ticket ID 
+• Pagination: 100 / 200 / 300 items per page 
+Create Request button → modal with three options: New Allocation (NA), Update Allocation (UA), 
+and Replacement. The user sees three request types in the form, but the system stores only two 
+ticket types (NA and UA) — a Replacement is saved as a UA ticket with a replacement flag (§4.2.3). 
+4.2.1 New Allocation (NA) 
+Used when a PM needs a new developer added to a project. 
+One form submission can include multiple resource requests. Each requested developer creates one 
+separate ticket with its own ticket ID and state. 
+Fields per resource request: 
+Field Required Notes 
+Project Yes Dropdown — PM’s active projects only 
+Primary Tech Stack Yes Dropdown — skills from SimERP tech stack list 
+Required Tech Stacks No Multi-select from SimERP tech stack list 
+Start Date Yes Cannot be in the past 
+End Date No Must be after start date if provided 
+Allocation Type Yes Fixed / Dynamic. Selecting Dynamic displays the 
+expectation note (§4.1) 
+Allocation Percentage If Fixed Integer 1–100. Not applicable for Dynamic. (Show 
+the percentage converted into hours as info next 
+to the percentage field. Example: If the user 
+selects 50% allocation show ‘4 hrs/day’ next to it. 
+This is to be done both in case of New allocation 
+and update allocation ticket) 
+Developer Preference No Dropdown — any active employee. PM’s 
+preferred candidate; PMO may or may not honour 
+it 
+Preferred Seniority No Junior / Mid / Senior / Lead 
+Request Type Yes Fresh Allocation / Shadow Developer / PR 
+Reviewer / Estimation 
+PR Review Frequency If PR Reviewer 
+Selected 
+Dropdown options, considering frequency of PRs 
+per week [Frequently, Occasionally, Rarely, Not 
+at all] 
+
+--- Page 5 ---
+SimERP — PM & PMO Requirements v2.3 
+Page 5 
+Field Required Notes 
+Shadow For If Shadow 
+Developer 
+Dropdown — developers currently on the 
+selected project 
+Interview Required Yes Yes / No (informational flag for PMO/TM/EM 
+during review; no separate lifecycle step) 
+Client Facing Yes Yes / No 
+ 
+Request type notes: 
+• Fresh Allocation — Standard allocation of a developer to the project 
+• Shadow Developer — A developer who will shadow an existing team member. The “Shadow 
+For” field is required. 
+• PR Reviewer — A developer allocated specifically to review pull requests. Follows the 
+standard ticket lifecycle (no bypass). On approval, the developer is added as an “other 
+allocation” PR reviewer on the project (§5.3); PR reviewers are surfaced on project allocation 
+views via a marker column (§11 — Request Type persistence). 
+• Estimation — A short-term allocation (hours to a few days) for a developer to provide effort 
+estimation for a project or feature. End Date is optional. Follows the standard ticket lifecycle. 
+On approval, creates a short-duration ProjectAssignment like any other allocation. 
+4.2.2 Update Allocation (UA) 
+Used to modify or end an existing developer’s allocation on a project. Covers partial changes 
+(update terms) and full deallocation (end engagement). Decreases follow the lighter 
+acknowledgement flow; increases follow the full approval flow (§5.2). 
+Fields: 
+Field Required Notes 
+Project Yes Dropdown — PM’s active projects only 
+Developer Yes Dropdown — developers currently allocated to 
+the selected project (Except for PM) 
+New Allocation Type No Fixed / Dynamic. Will auto populate as per 
+current assignment, Leave as it is to keep 
+current value. A dynamic allocation cannot be 
+converted to Fixed via UA — raise a new 
+Fixed NA instead (§4.1) 
+New Allocation Percentage Yes (Fixed 
+allocations) 
+Integer 0–100. 0 = full deallocation. Disabled 
+for Dynamic allocations — the Update 
+Allocation action sets 0% internally (§4.1) 
+New Start Date No Leave blank to keep current value 
+New End Date No Leave blank to keep current value 
+ 
+If New Allocation Percentage = 0, or the relative reduction is ≥ 70% (relative reduction = (current 
+% − new %) ÷ current %; e.g. 100% → 30%, or 50% → 15%), these additional fields appear and are 
+mandatory: 
+
+--- Page 6 ---
+SimERP — PM & PMO Requirements v2.3 
+Page 6 
+Field Required Notes 
+De-allocation Reason Yes Dropdown — Project Closure / Performance 
+Issues / Role Misalignment / Downsizing 
+Core Skill Rating Yes Integer 1–10 
+Communication Rating Yes Integer 1–10 
+Attitude Rating Yes Integer 1–10 
+Justice to Role Rating Yes Integer 1–10 
+Developer Feedback No Free-text 
+Open to Work With Again Yes Yes / No 
+ 
+For Rating: 
+• The developer ratings added at time of deallocation should only be visible to RM, TM, EM, 
+Admin, PMO. 
+• The PM can only see the previous rating that they have added for the developer. 
+• The bypass approval checkbox should only be visible to ‘PMO’ 
+• Note: The placement of the ratings are not visible anywhere else yet, so for now it will be 
+visible in tickets only 
+4.2.3 Replacement 
+Replacement is presented to the user as a third option in the Create Request form. Internally it is 
+stored as an Update Allocation (UA) ticket with a replacement flag, and the related replacement 
+information is saved on that ticket — the system recognises only two ticket types (NA and UA). 
+For a Replacement request, the allocation data is pre-filled from the existing assignment being 
+replaced, and the following replacement fields are additionally available: 
+Field Required Notes 
+Replacement Of Yes Reference to the developer/assignment being 
+replaced 
+Replacement Type Yes Permanent / Temporary 
+Replacement Reason Yes Select Options: [Performance Issues, Role 
+Misalignment, Long leaves, Allocation 
+optimisation] 
+ 
+Replacement scope safeguard: replacement requests pre-populate the original developer’s 
+department and tech stack as non-editable fields to ensure a like-for-like replacement. A note on the 
+form states that changing the technology stack (a “scope swap”, e.g. replacing a QA with a Node.js 
+developer) is not permitted through the replacement flow — it requires a fresh de-allocation plus a 
+new standard NA ticket. 
+5. Ticket Lifecycle 
+5.1 Ticket Types 
+
+--- Page 7 ---
+SimERP — PM & PMO Requirements v2.3 
+Page 7 
+Type Enum value Ticket ID prefix Purpose 
+New Allocation NEW_ALLOCATION NA- Request a new 
+developer for a project 
+Update Allocation UPDATE_ALLOCATION UA- Modify or end an existing 
+developer’s allocation. 
+Replacement requests 
+are stored as UA tickets 
+with a replacement flag 
+(§4.2.3) 
+ 
+Ticket numbers are zero-padded 4-digit sequential integers per type (e.g., NA-0001, UA-0042). The 
+sequence does not reset yearly. Stored internally as a ticketNumber Int column; the display string 
+(e.g. NA-0001) is computed in the service layer by prepending the type prefix. Two PostgreSQL 
+sequences (na_ticket_seq, ua_ticket_seq) provide atomic, gap-free numbering per type. Ticket detail 
+URLs use the human-readable ID as the route parameter (e.g. /allocation-tickets/NA-0042) so URLs 
+are shareable and meaningful to recipients. 
+Tickets are never hard-deleted. Cancellation, archival, and any removal are implemented as soft 
+delete (deletedAt) so the audit trail is preserved. 
+5.2 State Machines 
+Tickets follow one of two flows depending on the nature of the change. Both flows share the single 
+AWAITING_CONFIRMATION state. 
+5.2.1 Full approval flow — NA tickets and UA increases 
+Applies to all NA tickets and UA tickets that increase the allocation percentage. Confirmation is two-
+party: one PMO representative AND the TM or EM of the assigned department must approve (the 
+TM/EM approval is waived when PMO uses Bypass). 
+  PM creates 
+      │ 
+      ▼ 
+    OPEN 
+      │  PMO reviews 
+      ▼ 
+  IN_REVIEW ──── (PMO bypass — TM/EM approval waived) ──► APPROVED 
+      │                                                      ▲ 
+      │  PMO selects developer (NA) /                         │ 
+      │  PMO confirms change (UA)                              │ 
+      ▼                                                      │ 
+AWAITING_CONFIRMATION ── PMO + TM/EM approve ───────────────┘ 
+      │ 
+      └─ TM/EM rejects ──────► back to IN_REVIEW 
+ 
+5.2.2 Lighter acknowledgement flow — UA decreases and de-allocations 
+Applies to any UA that decreases the allocation percentage — partial downgrades (e.g. 100% → 
+50%) and full de-allocations (0%), including dynamic-resource de-allocations raised via the Update 
+Allocation action. De-allocations cannot be refused, so there is no review stage and no reject path. 
+  PM creates 
+      │ 
+      ▼ 
+    OPEN ── (system, immediately) ──► AWAITING_CONFIRMATION 
+                                            │ 
+
+--- Page 8 ---
+SimERP — PM & PMO Requirements v2.3 
+Page 8 
+                                            │  PMO acknowledges 
+                                            ▼ 
+                                        APPROVED 
+                       (auto-apply runs; PM and the developer’s RM notified) 
+ 
+Common rules: 
+• Closing a ticket → CLOSED. The PM can close a ticket when the allocation is no longer 
+wanted, the project is cancelled, or for any other case where the ticket should not proceed. 
+PMO can also close tickets for required control. Allowed from OPEN, IN_REVIEW, or 
+AWAITING_CONFIRMATION. 
+• APPROVED tickets cannot be closed — once a ticket reaches the Approved stage, the 
+allocation is done. 
+• To end an approved allocation, raise a new UA at 0% (for dynamic resources, the Update 
+Allocation action sets 0% internally). 
+State Meaning Who acts 
+OPEN Raised by PM, awaiting PMO PMO 
+IN_REVIEW Full flow only. NA: PMO assigned a department; 
+PMO + TM/EM shortlisting candidates. UA 
+increase: PMO review-and-confirm step only — 
+no department selection (auto-inferred) and no 
+shortlisting. 
+PMO + 
+TM/EM 
+AWAITING_CONFIRMATION Full flow: developer selected by PMO (NA) or 
+change confirmed by PMO (UA increase); 
+awaiting two-party approval — one PMO 
+representative and the TM/EM of the assigned 
+department (TM/EM approval waived on PMO 
+bypass). Lighter flow: decrease/de-allocation 
+awaiting PMO acknowledgement; cannot be 
+rejected. 
+PMO + 
+TM/EM 
+APPROVED On Save, Approved, acknowledged, or PMO-
+bypassed; allocation change auto-applied 
+System 
+CLOSED Closed by PM (ticket not proceeding) or by PMO 
+(required control) before fulfilment (soft-deleted, 
+retained for audit) 
+PM / PMO 
+5.3 On APPROVED — Automatic Allocation Change 
+Whether a ticket reaches APPROVED via the two-party approval, PMO bypass, or PMO 
+acknowledgement, the system automatically applies the change in a transaction: 
+• NA approved → creates a new ProjectAssignment with status = GREEN and typeOfWork = 
+DEVELOPMENT_WORK for any type of allocation. In case of ‘PR Reviewer’ type tickets, do 
+not treat it as a project allocation — treat it as an ‘other allocation’ and add the developer as 
+PR reviewer in that project. Other allocations count over the 100% allocation limit (they may 
+exceed it). The originating requestType is persisted on the assignment. 
+• UA (UPDATE_ALLOCATION) approved/acknowledged with % > 0 → updates the existing 
+ProjectAssignment (only the fields whose values were changed; unchanged pre-filled fields are 
+left as is) 
+
+--- Page 9 ---
+SimERP — PM & PMO Requirements v2.3 
+Page 9 
+• UA (UPDATE_ALLOCATION) approved/acknowledged with % = 0 (including dynamic Update 
+Allocation de-allocations) → sets allocationEndDate = approval/acknowledgement date, then 
+soft-deletes (archives) the ProjectAssignment 
+Before applying, the system verifies the target ProjectAssignment still exists and deletedAt IS NULL. 
+If the assignment was already deleted by another approved ticket, the transaction fails. 
+If the transaction fails, the ticket reverts to its prior state (AWAITING_CONFIRMATION) and PMO is 
+notified with a retry prompt. 
+Validation 
+To move a ticket from the AWAITING_CONFIRMATION state to APPROVED, approvals are 
+required from two parties: 
+• One PMO representative 
+• The TM/EM of the selected department 
+If PMO selects the Bypass checkbox, the TM/EM’s approval is not required — the PMO approval 
+alone is sufficient. 
+The ticket should clearly display which approvers have already provided approval and which 
+approvals are still pending. If approval is bypassed by PMO then it should show the bypassed 
+approver with separate indicator. 
+If any modifications are made regarding the assignment to the ticket after approval has been 
+provided by either party, all existing approvals should be invalidated, and the ticket should 
+automatically revert to the AWAITING_CONFIRMATION state. 
+5.4 Shortlist (NA tickets only, IN_REVIEW phase) 
+During IN_REVIEW of a NA ticket, PMO and the TM/EM collaboratively add candidate developers to 
+a working shortlist. PMO then selects one final developer, moving the ticket to 
+AWAITING_CONFIRMATION. 
+UA tickets have no shortlist — the developer is already identified via projectAssignmentId at creation 
+time. 
+The shortlist is not visible to the PM. The PM only sees the ticket state. 
+The shortlist is ephemeral — once a developer is selected and the ticket moves forward, the shortlist 
+data is no longer meaningful. 
+Adding a developer to a shortlist shows a warning (but does not block) if that developer is already 
+shortlisted on another active ticket. 
+5.5 Bypass Approval (full flow only) 
+PMO can bypass the TM/EM approval in emergency scenarios — when the Bypass checkbox is 
+selected, the TM/EM’s approval is not required and the PMO approval alone moves the ticket to 
+APPROVED (directly from IN_REVIEW). The TM/EM is notified when their approval is bypassed. No 
+reason is required from PMO, but the bypass is recorded on the ticket for audit purposes via 
+bypassedAt (timestamp) and bypassedById (FK to the PMO employee who triggered the bypass). 
+Lighter-flow tickets have no approval to bypass. 
+5.6 Approver Rejection (full flow only) 
+The TM or EM of the assigned department can reject a ticket in AWAITING_CONFIRMATION. The 
+ticket returns to IN_REVIEW for PMO to shortlist a different developer. No rejection reason is 
+required. Lighter-flow (decrease) tickets cannot be rejected — de-allocations cannot be refused. 
+
+--- Page 10 ---
+SimERP — PM & PMO Requirements v2.3 
+Page 10 
+PM not notified: The PM is intentionally not notified of a rejection. A rejection is handled entirely 
+between PMO and the approver (PMO re-shortlists and re-submits). The PM continues to see only 
+the ticket state and will be notified when the allocation is ultimately approved. 
+6. PMO Experience 
+6.1 Requests Page 
+PMO sees all tickets from all PMs across the organisation. 
+Summary bar (above the table): 
+• Count of tickets by state: Open / In Review / Awaiting Confirmation / Approved / Closed 
+Search & filter: 
+• Search by ticket ID, project name, PM name, developer name 
+• Filter by: state (multi-select), type, department, tech stack/skill, PM (dropdown), created date 
+range 
+• Sort by: created date descending (default), last updated, state, department 
+• Pagination: 100 / 200 / 300 items per page 
+Pending Actions section: a dedicated PMO view aggregating actionable alerts across the system 
+— tickets awaiting acknowledgement, upcoming de-allocation reminders, and failed auto-applies 
+awaiting retry — so PMO can monitor and resolve them centrally. 
+6.2 Ticket Detail View 
+On clicking a ticket, PMO can: 
+For NA tickets: 
+• Assign Department — Select which department should supply the developer. PMO uses the 
+primary tech stack and required tech stack fields along with their knowledge of departmental 
+availability to decide. Assignment moves ticket to IN_REVIEW. 
+• Shortlist Developers — Add candidate developers from the assigned department. The TM/EM 
+can also add to this list. A warning is shown (not a block) if an added developer is already 
+shortlisted on another active ticket. 
+• Select Final Developer — Pick one developer from the shortlist → ticket moves to 
+AWAITING_CONFIRMATION → TM/EM notified. 
+• Bypass Approval — Checkbox for emergencies. The TM/EM approval is waived; the ticket 
+moves directly from IN_REVIEW to APPROVED. The TM/EM is notified of the bypass. 
+For UA increase tickets (full flow): 
+• Review and Advance — PMO reviews the requested change and moves the ticket from OPEN 
+to IN_REVIEW. assignedDepartmentId is set automatically from the target developer’s 
+department — no manual selection. 
+• Send for Approval — PMO confirms the change is appropriate and moves the ticket from 
+IN_REVIEW to AWAITING_CONFIRMATION → TM/EM of the developer’s department 
+notified. 
+• Bypass Approval — Checkbox for emergencies. The TM/EM approval is waived; the ticket 
+moves directly from IN_REVIEW to APPROVED. The TM/EM is notified of the bypass. 
+For AWAITING_CONFIRMATION tickets (full flow): 
+• Approve — Records the PMO approval. The ticket moves to APPROVED once both the PMO 
+and TM/EM approvals are present (the TM/EM approval is waived if Bypass was used). The 
+ticket displays which approvals are recorded and which are pending. 
+
+--- Page 11 ---
+SimERP — PM & PMO Requirements v2.3 
+Page 11 
+For UA decrease / de-allocation tickets (lighter flow): 
+• Acknowledge — Moves the ticket from AWAITING_CONFIRMATION to APPROVED. The 
+allocation change auto-applies (§5.3) and the PM and the developer’s RM are notified that the 
+change is finalised. There is no reject option. 
+6.3 Direct Allocation (Add Allocation) 
+PMO holds an exclusive “Add Allocation” action to create a ProjectAssignment directly on any 
+project without raising a ticket. This is the only non-ticket allocation path in the system. 
+• Available to PMO only — PMs, TMs, and RMs are explicitly denied (enforced via a dedicated 
+CASL permission on the PMO role) 
+• The creating PMO employee is recorded (createdById) for traceability 
+• On creation, an in-app + email notification is sent to the project’s PM, the department’s TM/EM, 
+the allocated employee’s RM, and the allocated employee 
+7. Approver Experience (TM / EM) 
+Approvers — TMs and EMs — gain a Requests section (new tab or page in their navigation). A TM 
+approves for their single department; an EM approves for all departments they manage. Approver 
+queues contain full-flow tickets only — lighter-flow (decrease) tickets are acknowledged by PMO and 
+do not require TM/EM action. 
+7.1 Department Requests Tab 
+Shows all tickets assigned to the approver’s department(s). 
+Summary bar — count by state: Open / In Review / Awaiting Confirmation / Approved / Closed 
+Search & filter: 
+• Search by ticket ID, project name, PM name 
+• Filter by: state (multi-select), type, created date range (EM additionally: department) 
+• Sort by: created date descending (default), last updated 
+• Pagination: 100 / 200 / 300 items per page 
+Sub-view: Pending My Approval — filtered view of AWAITING_CONFIRMATION tickets awaiting 
+the TM/EM approval (for quick access to action items). 
+7.2 Actions on AWAITING_CONFIRMATION Tickets (full flow) 
+• Approve → records the TM/EM approval. The ticket moves to APPROVED once the PMO 
+approval is also present (the TM/EM approval is only waived by PMO bypass); the allocation 
+change is then auto-applied and the PM notified 
+• Reject → ticket returns to IN_REVIEW, PMO notified. No reason required. (PM is not notified 
+— see §5.6.) 
+7.3 Notifications for Approvers (TM / EM) 
+Event Notification 
+Ticket assigned to their department In-app + email 
+Developer selected, pending their approval In-app + email 
+Their approval bypassed by PMO In-app + email 
+
+--- Page 12 ---
+SimERP — PM & PMO Requirements v2.3 
+Page 12 
+8. Notifications and Alerts 
+Alerts: 
+• On click on ‘save’ / ‘approve’ of any ticket type, user should see a confirmation dialog asking 
+are you sure you want to save the changes 
+Notifications: 
+All notifications are delivered via in-app (bell icon) + email. Integration with the notification module 
+being built in parallel. PMO additionally sees actionable alerts aggregated in the Pending Actions 
+section (§6.1). 
+General rule: in every allocation — direct (§6.3) or ticket-based — the allocated employee and the 
+employee’s RM receive the notification along with the other recipients listed below. 
+Event (trigger) Recipient(s) Channel 
+Ticket created (NA or UA) — fired on PM 
+submit; one per generated ticket 
+PMO In-app + 
+email 
+Ticket assigned to department (→ 
+IN_REVIEW) 
+TM / EM of the assigned department In-app + 
+email 
+Developer selected, pending approval (→ 
+AWAITING_CONFIRMATION) 
+TM / EM of the assigned department In-app + 
+email 
+Ticket approved — full flow (→ 
+APPROVED) 
+Current PM of the project; and the 
+allocated developer, RM of developer, 
+PMO, TM of department (message 
+includes project name and PM name) 
+In-app + 
+email 
+Decrease ticket acknowledged — lighter 
+flow (→ APPROVED) 
+Current PM of the project; the 
+developer’s RM; and the developer 
+(confirms the change is finalised) 
+In-app + 
+email 
+Ticket rejected by approver (→ 
+IN_REVIEW) 
+PMO only (PM is not notified — see 
+§5.6) 
+In-app + 
+email 
+Approval bypassed by PMO (→ 
+APPROVED) 
+TM / EM whose approval was bypassed; 
+and current PM 
+In-app + 
+email 
+De-allocation reminder — 5 days before 
+scheduled allocation end date 
+PM (also surfaced in PMO Pending 
+Actions) 
+In-app + 
+email 
+De-allocation reminder — 1 day before 
+scheduled allocation end date 
+PM (also surfaced in PMO Pending 
+Actions) 
+In-app + 
+email 
+Direct allocation created by PMO (§6.3) Project’s PM + department’s TM/EM + 
+allocated employee’s RM + allocated 
+employee 
+In-app + 
+email 
+Ticket closed by PM PMO notified in case of any status 
+except for Open 
+In-app + 
+email 
+9. Searching, Sorting, Filtering & Pagination 
+All tables use the standard pagination limits: 100 / 200 / 300 items per page (selectable). 
+
+--- Page 13 ---
+SimERP — PM & PMO Requirements v2.3 
+Page 13 
+Page / Table Search Default Sort Available Filters 
+PM Projects (project list) Project name Project name A–
+Z 
+None 
+PM Projects (developer 
+list) 
+Developer name Developer name 
+A–Z 
+Leave status, Notice 
+period 
+PM Requests Ticket ID, project 
+name 
+Created date 
+desc 
+State, Type (NA/UA), 
+Project, Date range 
+PMO Requests Ticket ID, PM name, 
+project, developer 
+Created date 
+desc 
+State, Type (NA/UA), 
+Department, Skill, PM, 
+Date range 
+Approver Requests 
+(TM/EM) 
+Ticket ID, PM name, 
+project name 
+Created date 
+desc 
+State, Type (NA/UA), Date 
+range (EM: + Department) 
+PMO Pending Actions Project name, 
+developer name 
+Due date asc Alert type 
+(acknowledgement / 
+reminder / failed auto-
+apply) 
+10. Validation Rules 
+Field Rule 
+Allocation % (NA ticket) Integer 1–100 (Fixed only; not applicable for Dynamic) 
+Allocation % (UA ticket) Integer 0–100 (0 = full deallocation). Disabled for Dynamic 
+allocations — the Update Allocation action sets 0% internally 
+Relative reduction (current % − new %) ÷ current %. Threshold for mandatory 
+ratings/feedback/reason is ≥ 70% 
+De-allocation Reason Required when new % = 0 or relative reduction ≥ 70%. 
+Values: Project Closure / Performance Issues / Role 
+Misalignment / Downsizing 
+Ratings (de-allocation / ≥70% 
+reduction) 
+Integer 1–10; required when new % = 0 or relative reduction 
+≥ 70% 
+Ticket number Zero-padded 4-digit sequential per type (NA-0001, UA-0001). 
+No yearly reset. 
+Seniority values JUNIOR / MID / SENIOR / LEAD 
+Start date Cannot be in the past (>= today) 
+End date Must be after start date if provided 
+Developer preference Any active employee 
+Allocation % (FIXED type) Required if allocation type is Fixed; not applicable for 
+Dynamic 
+Replacement Type PERMANENT / TEMPORARY; required on Replacement 
+requests 
+
+--- Page 14 ---
+SimERP — PM & PMO Requirements v2.3 
+Page 14 
+Field Rule 
+Replacement Reason Required on Replacement requests. Values: Performance 
+Issues / Role Misalignment / Long leaves / Allocation 
+optimisation 
+Replacement department & tech 
+stack 
+Pre-populated from the original developer; non-editable on 
+replacement requests 
+11. System Design Decisions 
+These decisions were made during the design sessions (including Sprint 4 planning, 2026-06-03). 
+Flag any disagreements before development begins. 
+Decision Detail 
+Partial update semantics UA forms are pre-filled with the current assignment values; the user 
+updates only the fields requiring change. On apply, only fields whose 
+values differ from the current assignment are updated — unchanged 
+pre-filled fields are left as is. For Replacement requests, allocation 
+data is pre-filled and replacement-specific fields are additionally 
+shown (§4.2.3). 
+Partial deallocation Updates ProjectAssignment.allocationPercentage in place (Option 
+A). Full history is preserved via the ticket record itself. 
+Auto-apply failure Ticket reverts to its prior state (AWAITING_CONFIRMATION). PMO 
+is notified with a retry prompt. Failure is logged. 
+Concurrent shortlist writes PostgreSQL atomic array operations handle concurrent PMO + 
+TM/EM writes. Last-write-wins is acceptable for this low-frequency 
+collaborative flow. 
+Duplicate UA tickets If a PM attempts to create a UA for an employee+project combination 
+that already has an active ticket (state ∈ OPEN, IN_REVIEW, 
+AWAITING_CONFIRMATION), the request is blocked with a conflict 
+error. For NA tickets (no specific developer at creation), no block 
+applies. A shortlist-level warning is shown to PMO/TM/EM when 
+adding a developer already shortlisted on another active ticket — this 
+does not block the addition. 
+CASL module names Two new permission modules: PM_PROJECTS (PM Projects page) 
+and ALLOCATION_TICKETS (ticketing system). A dedicated PMO-
+only permission governs direct allocation (§6.3). 
+PM assignment No manual assignment UI in SimERP. All project-to-PM mappings 
+are synced from Zoho Analytics API nightly at 12 AM using a new 
+PROJECT_METADATA sync job. Zoho provides 
+projectManagerEmail; the sync matches it to Employee.email to set 
+Project.projectManagerId (FK). Unmatched emails leave 
+projectManagerId as null and log a warning. PM changes in Zoho 
+take effect in SimERP the following day (up to 24-hour lag is 
+acceptable). 
+Project.projectManager 
+field 
+The existing projectManager String? free-text field is replaced by 
+projectManagerId BigInt? (FK → Employee) in the same schema 
+
+--- Page 15 ---
+SimERP — PM & PMO Requirements v2.3 
+Page 15 
+Decision Detail 
+migration. The old string field is dropped; the Zoho sync repopulates 
+the FK on its next nightly run. 
+Ticket ID storage ticketNumber Int is stored on the AllocationTicket model. The display 
+string (e.g. NA-0001) is computed in the service layer by prepending 
+the type prefix. Two PostgreSQL sequences (na_ticket_seq, 
+ua_ticket_seq) provide atomic generation per type. Ticket detail 
+URLs use the human-readable ID as the route parameter (e.g. GET 
+/allocation-tickets/NA-0042) so links are shareable. CASL still 
+governs visibility — a shared URL returns 403 if the recipient lacks 
+access. 
+UA → ProjectAssignment 
+link 
+UA tickets store projectAssignmentId (FK → ProjectAssignment) at 
+creation time to pin the exact assignment being modified. NA tickets 
+leave this null. Before auto-apply, the system verifies the assignment 
+still exists (deletedAt IS NULL); if already deleted the transaction fails 
+and falls into the standard auto-apply failure path. 
+Deallocation ratings 
+storage 
+Core skill, communication, attitude, justice-to-role ratings, developer 
+feedback, and de-allocation reason stored as inline nullable columns 
+on AllocationTicket. Populated when newAllocationPercentage = 0 or 
+relative reduction ≥ 70%. 
+Ratings visibility Deallocation ratings are visible only to RM, TM, EM, Admin, and 
+PMO. A PM can only see the ratings they themselves previously 
+added for the developer. Ratings are surfaced in tickets only for now 
+(no other placement yet). 
+Bypass audit fields bypassedAt DateTime? and bypassedById BigInt? (FK → Employee) 
+stored on AllocationTicket. Both null for non-bypassed tickets. The 
+Bypass checkbox is visible to PMO only. 
+Additional skills storage additionalSkillIds BigInt[] (PostgreSQL array) on AllocationTicket. 
+Primary tech stack stored as techStackSkillId BigInt (FK → Skill). 
+Active project filter PM Projects page filters by Project.status using an 
+ACTIVE_PROJECT_STATUSES constant. Exact Zoho status string 
+values to be confirmed when the Zoho project-status API integration 
+is finalised. 
+Auto-created assignment 
+defaults 
+ProjectAssignment records created on ticket approval default to 
+status = GREEN and typeOfWork = DEVELOPMENT_WORK. The 
+originating requestType IS persisted on the assignment so PR 
+Reviewers, Shadows, and Estimation allocations remain identifiable 
+downstream. Exception: PR Reviewer tickets do not create a project 
+allocation — the developer is added as an “other allocation” PR 
+reviewer on the project, and other allocations count over (may 
+exceed) the 100% allocation limit. 
+Request Type surfacing 
+(PR Reviewers) 
+A marker column (working name “Other Locations”) on project 
+allocation views identifies PR Reviewers brought onto a project. 
+Exact placement and labelling decided during frontend design. 
+Deallocation end date On 0% UPDATE_ALLOCATION approval/acknowledgement, 
+allocationEndDate is set to the approval date before the soft-delete. 
+
+--- Page 16 ---
+SimERP — PM & PMO Requirements v2.3 
+Page 16 
+Decision Detail 
+deletedAt marks the deletion event; allocationEndDate marks the 
+business end-of-engagement. 
+UA department auto-
+inference 
+When PMO advances a UA ticket to IN_REVIEW, 
+assignedDepartmentId is set automatically from the target 
+developer’s Employee.departmentId. No manual department 
+selection is required. 
+Approval model Full-flow tickets in AWAITING_CONFIRMATION require two 
+approvals: one PMO representative and the TM or EM of the 
+assigned department (an EM may approve for any department they 
+manage). The ticket displays which approvals are recorded and 
+which are pending; a bypassed approver is shown with a separate 
+indicator. PMO Bypass waives the TM/EM approval. If the ticket’s 
+assignment details are modified after either approval, all approvals 
+are invalidated and the ticket reverts to 
+AWAITING_CONFIRMATION. TM/EM rejection returns the ticket to 
+IN_REVIEW. 
+Lighter flow routing UA tickets that decrease allocation skip IN_REVIEW: on creation 
+they move immediately (system transition) from OPEN to 
+AWAITING_CONFIRMATION. New endpoint PATCH /allocation-
+tickets/:id/acknowledge (PMO only). No reject transition exists for this 
+flow. 
+Ticket soft delete deletedAt DateTime? on AllocationTicket. All ticket 
+removal/cancellation is soft delete (archive) — never hard delete — 
+to maintain audit logs. 
+Replacement storage Replacement is a form-level request option stored as an 
+UPDATE_ALLOCATION ticket with a replacement flag. 
+replacementOfAssignmentId BigInt? (FK → ProjectAssignment, the 
+engagement being replaced) and replacementType enum 
+(PERMANENT / TEMPORARY) plus replacement reason are stored 
+on the AllocationTicket and carried onto the resulting assignment to 
+build replacement chains for future Allocation Accuracy analytics. 
+PMO direct allocation Dedicated CASL permission on the PMO role only. createdById 
+recorded on the assignment. In-app + email notification to the 
+project’s PM, the department’s TM/EM, the allocated employee’s 
+RM, and the allocated employee on creation. 
+Allocation editing PMs cannot edit allocations directly (no inline allocation editing); 
+every change must be raised as a request (ticket). Direct allocation 
+remains a PMO-only capability (§6.3). 
+Dynamic allocation note System-displayed note: “Dynamic allocation implies a maximum 
+availability of 1–2 hours per day or 10–20 hours per month.” 
+Significant spikes require a new Fixed NA ticket; dynamic allocations 
+cannot be converted via UA. 
+Relative reduction formula (currentPercentage − newPercentage) ÷ currentPercentage ≥ 0.70 
+triggers mandatory ratings, feedback, and de-allocation reason. 
+
+--- Page 17 ---
+SimERP — PM & PMO Requirements v2.3 
+Page 17 
+Decision Detail 
+State transition API design Each ticket state transition is a separate endpoint (e.g. PATCH 
+/allocation-tickets/NA-0001/assign-department, /shortlist, /select-
+developer, /bypass, /approve, /reject, /acknowledge, /close). Each 
+has its own @CheckAbility decorator and typed request DTO. 
+Ticket ownership Tickets belong to the project, not the PM. The current PM of a project 
+(per latest Zoho sync) sees all tickets for that project. 
+Dual role scope isolation PM scope applies only to PM_PROJECTS and 
+ALLOCATION_TICKETS modules. On all other modules 
+(EMPLOYEES, TEAMS, etc.), only the org role scope is active. The 
+CASL permission system enforces this naturally since PM role holds 
+no permissions for org-hierarchy modules. 
+Logged-hours source “Hours logged on this project” shown on the PM Projects developer 
+detail is sourced from Zoho Analytics, not computed within SimERP. 
+12. Out of Scope (This Sprint) 
+Item Notes 
+Developer Review Deferred — PM writing permanent qualitative records about 
+developers 
+Developer Escalation Deferred — PM flagging urgent issues with a specific 
+developer 
+Project Escalation Deferred — PM flagging broader project-level issues 
+Resignation & Leave 
+Management 
+Deferred to a later sprint — auto-generated replacement 
+tickets on resignation/LWD, temporary replacement handling 
+for long leave, and return-from-leave alerts will be covered in 
+later sprints. 
+Old project data after PM change Active and Completed/Archived projects are shown 
+separately. If the PM on a project is changed, the flow for 
+how that old project’s data is shown to the PM is pending for 
+the next sprint. 
+PIP (Performance Improvement 
+Plan) tracking 
+Not tracked in SimERP yet 
+Consolidated PM Rating on 
+employee profile 
+Future feature — aggregate deallocation ratings across 
+tickets 
+Allocation Accuracy reporting Data capture (Replacement Of chains, Permanent/Temporary 
+flags, de-allocation reasons) is in scope now. The 
+mathematical reports and severity-based accuracy counts are 
+future-facing analytics. 
+Bulk PM re-assignment Not required — projectManager String? is dropped and 
+replaced by projectManagerId BigInt? FK. The nightly Zoho 
+sync repopulates all project-to-PM mappings automatically. 
+13. Glossary 
+
+--- Page 18 ---
+SimERP — PM & PMO Requirements v2.3 
+Page 18 
+Term Definition 
+PM (Project Manager) Employee responsible for managing one or more projects. Visibility 
+scoped to their projects only. Assigned via Zoho sync. 
+PMO (Project Management 
+Office) 
+Organisation-wide role responsible for allocation coordination. 
+Sees all projects and employees. Sole holder of direct-allocation 
+access. 
+Approver The TM or EM of the assigned department who approves or rejects 
+a full-flow ticket in AWAITING_CONFIRMATION. An EM may 
+approve for any department they manage. 
+Allocation A ProjectAssignment record linking an employee to a project for a 
+defined period and percentage. 
+Fixed Allocation Standard percentage-based allocation (e.g. 100%, 50%, 25%). 
+Dynamic Allocation Need-based allocation (e.g. maintenance projects). Implies 
+maximum availability of 1–2 hours/day or 10–20 hours/month. 
+Percentage field is disabled; ended via the Update Allocation 
+action, which sets the allocation to 0% internally. 
+Other Allocation A non-project allocation that marks a developer as a PR reviewer 
+on a project. Other allocations count over (may exceed) the 100% 
+allocation limit. 
+New Allocation (NA) Request to add a new developer to a project. Ticket ID prefix NA-, 
+enum NEW_ALLOCATION. 
+Update Allocation (UA) Request to modify or end an existing developer’s allocation. Ticket 
+ID prefix UA-, enum UPDATE_ALLOCATION. 0% = full 
+deallocation. Replacement requests are stored as UA tickets with a 
+replacement flag. 
+Awaiting Confirmation Single confirmation state shared by both flows. Full flow: awaiting 
+two-party approval (one PMO representative + the TM/EM; TM/EM 
+waived on PMO bypass). Lighter flow: awaiting PMO 
+acknowledgement; cannot be rejected. 
+Replacement Request Presented as a third option in the Create Request form; stored as 
+a UA ticket with a replacement flag, linked via Replacement Of. 
+Permanent or Temporary. Department and tech stack are locked 
+like-for-like. 
+Allocation Accuracy Future analytics measuring the quality of initial allocations using 
+replacement chains (e.g. repeated performance-driven 
+replacements indicate low accuracy). 
+Pending Actions (PMO) PMO dashboard section aggregating acknowledgements due, de-
+allocation reminders, and failed auto-applies. 
+Shortlist The working list of candidate developers during IN_REVIEW of a 
+NA ticket. Ephemeral and not visible to PM. Does not apply to UA 
+tickets. 
+Developer Review PM’s permanent qualitative record about a developer on a project. 
+Deferred to future sprint. 
+
+--- Page 19 ---
+SimERP — PM & PMO Requirements v2.3 
+Page 19 
+Term Definition 
+Escalation Active incident raised by PM requiring urgent intervention. 
+Deferred to future sprint. 
+ 
+ 
+ 
+ 
+

@@ -13,7 +13,9 @@
     "kb:update": "ts-node scripts/update-knowledge-base.ts",
     "lint:tests": "ts-node scripts/lint-test-conventions.ts",
     "lint:tests:baseline": "ts-node scripts/lint-test-conventions.ts --update-baseline",
-    "extract:selectors": "ts-node scripts/extract-selector-inventory.ts"
+    "extract:selectors": "ts-node scripts/extract-selector-inventory.ts",
+    "report:coverage": "ts-node scripts/coverage-report.ts",
+    "review:cases": "ts-node scripts/test-case-review.ts"
   },
   "devDependencies": {
     "@clack/prompts": "^1.5.1",
