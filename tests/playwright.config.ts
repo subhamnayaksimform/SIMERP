@@ -20,8 +20,8 @@ export default defineConfig({
   ],
   use: {
     baseURL:      process.env.BASE_URL || 'https://simerp-dev.simform.solutions',
-    // Default authenticated session (subham.nayak via Microsoft SSO)
-    storageState: './fixtures/storageState.json',
+    // Default authenticated session (ceo@simformsolutions.com via direct credentials)
+    storageState: path.join(__dirname, 'fixtures', 'storageState.json'),
     trace:        'retain-on-failure',
     screenshot:   'only-on-failure',
     video:        'retain-on-failure',

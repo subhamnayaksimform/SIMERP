@@ -1,0 +1,312 @@
+{
+  "base": {
+    "file": "tests/page-objects/base.page.ts",
+    "selectors": [
+      {
+        "kind": "getByRole",
+        "args": "status",
+        "context": "getToast",
+        "line": 30
+      },
+      {
+        "kind": "getByRole",
+        "args": "status",
+        "context": "getSuccessToast",
+        "line": 37
+      },
+      {
+        "kind": "getByRole",
+        "args": "status",
+        "context": "getErrorToast",
+        "line": 44
+      },
+      {
+        "kind": "getByRole",
+        "args": "dialog",
+        "context": "getConfirmDialog",
+        "line": 58
+      },
+      {
+        "kind": "getByRole",
+        "args": "button, { name: /confirm|yes|ok|delete/i }",
+        "context": "confirmAction",
+        "line": 65
+      },
+      {
+        "kind": "getByRole",
+        "args": "button, { name: /cancel|no/i }",
+        "context": "cancelAction",
+        "line": 72
+      }
+    ]
+  },
+  "employee/employee-details": {
+    "file": "tests/page-objects/employee/employee-details.page.ts",
+    "selectors": [
+      {
+        "kind": "getByRole",
+        "args": "button, { name: 'Current Employee' }",
+        "context": "currentEmployeeTab",
+        "line": 36
+      },
+      {
+        "kind": "getByRole",
+        "args": "button, { name: 'Past Employee' }",
+        "context": "formerEmployeeTab",
+        "line": 37
+      },
+      {
+        "kind": "getByPlaceholder",
+        "args": "/name, email, or project|search past employee/i",
+        "context": "searchInput",
+        "line": 39
+      },
+      {
+        "kind": "getByRole",
+        "args": "button, { name: 'Open advanced filter' }",
+        "context": "filterBtn",
+        "line": 40
+      },
+      {
+        "kind": "getByRole",
+        "args": "button, { name: 'Open advanced filter' }",
+        "context": "advancedFilterBtn",
+        "line": 41
+      },
+      {
+        "kind": "getByRole",
+        "args": "button, { name: 'Filter by Department' }",
+        "context": "departmentFilterDropdown",
+        "line": 45
+      },
+      {
+        "kind": "getByRole",
+        "args": "button, { name: /filter by designation/i }",
+        "context": "designationFilterDropdown",
+        "line": 46
+      },
+      {
+        "kind": "getByRole",
+        "args": "grid",
+        "context": "employeeGrid",
+        "line": 49
+      },
+      {
+        "kind": "getByRole",
+        "args": "button, { name: 'Next page' }",
+        "context": "nextPageBtn",
+        "line": 57
+      },
+      {
+        "kind": "getByRole",
+        "args": "button, { name: 'Previous page' }",
+        "context": "previousPageBtn",
+        "line": 58
+      },
+      {
+        "kind": "getByRole",
+        "args": "dialog",
+        "context": "editDrawer",
+        "line": 60
+      },
+      {
+        "kind": "getByRole",
+        "args": "button, { name: 'Close' }",
+        "context": "drawerCloseBtn",
+        "line": 61
+      },
+      {
+        "kind": "getByRole",
+        "args": "complementary, { name: /advanced filter/i }",
+        "context": "getAdvancedFilterPanel",
+        "line": 122
+      },
+      {
+        "kind": "getByRole",
+        "args": "button, { name: 'Close advanced filter' }",
+        "context": "closeAdvancedFilterPanel",
+        "line": 126
+      },
+      {
+        "kind": "getByRole",
+        "args": "button, { name: /^save$/i }",
+        "context": "clickAdvancedFilterSave",
+        "line": 161
+      },
+      {
+        "kind": "getByRole",
+        "args": "button, { name: /^cancel$/i }",
+        "context": "clickAdvancedFilterCancel",
+        "line": 172
+      },
+      {
+        "kind": "getByTestId",
+        "args": "filter-chip",
+        "context": "getFilterChips",
+        "line": 182
+      },
+      {
+        "kind": "getByTestId",
+        "args": "result-count",
+        "context": "getResultCountBadge",
+        "line": 186
+      },
+      {
+        "kind": "getByRole",
+        "args": "alert",
+        "context": "getErrorAlert",
+        "line": 200
+      },
+      {
+        "kind": "getByRole",
+        "args": "row', { name: new RegExp(name.replace(/[.*+?^${}()|[\\]\\\\]/g, '\\\\$&",
+        "context": "getRowByName",
+        "line": 204
+      },
+      {
+        "kind": "getByRole",
+        "args": "row",
+        "context": "getDataRows",
+        "line": 208
+      },
+      {
+        "kind": "getByRole",
+        "args": "columnheader",
+        "context": "getDataRows",
+        "line": 208
+      },
+      {
+        "kind": "getByRole",
+        "args": "cell",
+        "context": "getAllRowFirstCellTexts",
+        "line": 216
+      },
+      {
+        "kind": "getByRole",
+        "args": "option, { name: new RegExp(department, 'i') }",
+        "context": "selectDepartmentFilter",
+        "line": 236
+      },
+      {
+        "kind": "getByRole",
+        "args": "button, { name: /filter by designation/i }",
+        "context": "selectDesignationFilter",
+        "line": 250
+      },
+      {
+        "kind": "getByRole",
+        "args": "option, { name: designation }",
+        "context": "selectDesignationFilter",
+        "line": 254
+      },
+      {
+        "kind": "getByRole",
+        "args": "button, { name: 'Edit' }",
+        "context": "openEditDrawerForFirstEmployee",
+        "line": 305
+      },
+      {
+        "kind": "getByRole",
+        "args": "button, { name: /^save$/i }",
+        "context": "getDrawerSaveBtn",
+        "line": 317
+      },
+      {
+        "kind": "getByRole",
+        "args": "button, { name: /^cancel$/i }",
+        "context": "getDrawerCancelBtn",
+        "line": 321
+      },
+      {
+        "kind": "getByRole",
+        "args": "textbox, { name: /designation/i }",
+        "context": "getDrawerDesignationField",
+        "line": 325
+      },
+      {
+        "kind": "getByLabel",
+        "args": "/designation/i",
+        "context": "getDrawerDesignationField",
+        "line": 325
+      },
+      {
+        "kind": "getByRole",
+        "args": "tooltip",
+        "context": "getReportingManagerHoverCard",
+        "line": 383
+      },
+      {
+        "kind": "getByRole",
+        "args": "cell",
+        "context": "hoverReportingManagerCell",
+        "line": 390
+      },
+      {
+        "kind": "getByTestId",
+        "args": "cell-availability",
+        "context": "getAvailabilityIndicatorCell",
+        "line": 401
+      },
+      {
+        "kind": "getByRole",
+        "args": "cell, { name: /\\d+(\\.\\d+)?%/ }",
+        "context": "getAvailabilityIndicatorCell",
+        "line": 401
+      },
+      {
+        "kind": "getByRole",
+        "args": "textbox, { name: /^name$|employee name/i }",
+        "context": "getDrawerNameField",
+        "line": 426
+      },
+      {
+        "kind": "getByLabel",
+        "args": "/^name$|employee name/i",
+        "context": "getDrawerNameField",
+        "line": 426
+      },
+      {
+        "kind": "getByRole",
+        "args": "combobox, { name: /reporting manager/i }",
+        "context": "getDrawerReportingManagerField",
+        "line": 447
+      },
+      {
+        "kind": "getByLabel",
+        "args": "/reporting manager/i",
+        "context": "getDrawerReportingManagerField",
+        "line": 447
+      },
+      {
+        "kind": "getByRole",
+        "args": "option",
+        "context": "openDrawerReportingManagerPicker",
+        "line": 456
+      },
+      {
+        "kind": "getByRole",
+        "args": "option",
+        "context": "openDrawerReportingManagerPicker",
+        "line": 459
+      },
+      {
+        "kind": "getByRole",
+        "args": "link, { name: /employee details|employee/i }",
+        "context": "getEmployeeNavLink",
+        "line": 489
+      },
+      {
+        "kind": "getByRole",
+        "args": "button, { name: /add employee|new employee|create employee/i }",
+        "context": "getAddEmployeeButton",
+        "line": 497
+      },
+      {
+        "kind": "getByRole",
+        "args": "button, { name: /archive|deactivate/i }",
+        "context": "getArchiveButton",
+        "line": 505
+      }
+    ]
+  }
+}

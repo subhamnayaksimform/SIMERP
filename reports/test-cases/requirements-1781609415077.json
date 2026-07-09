@@ -1,3 +1,0 @@
-{
-  "raw": "To get started, I need a bit more information. Please provide one of the following:\n\n1. **Zoho Task ID** — e.g., `1234567890` — and I'll fetch the full task (title, description, acceptance criteria, comments) from Zoho Projects automatically.\n2. **Requirement text** — Paste the feature description / acceptance criteria directly if you don't have a Zoho task, or if the task has no description.\n3. **Multiple Task IDs** — Provide a comma-separated list for batch analysis (I'll return a JSON array).\n\n> **Example:** `Analyze task 1234567890` or paste the full requirement below."
-}

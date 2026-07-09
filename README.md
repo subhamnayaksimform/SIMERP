@@ -61,7 +61,10 @@ npm run report:excel
 .github/
 ├── agents/                       # 5 .agent.md files
 ├── skills/                       # 4 skill folders with SKILL.md + scripts
-├── instructions/                 # QA conventions
+├── instructions/                 # QA conventionEXECUTIVE SUMMARY
+TechFlow Logistics operates a fleet of 450 vehicles supporting B2B and B2C last-mile delivery across 12 metropolitan areas, generating $45M in annual revenue. The current manual dispatch system is a bottleneck — average route planning takes 45 minutes per dispatcher shift, and the lack of real-time visibility leads to a 12% on-time delivery failure rate.
+
+Simform proposes a cloud-native logistics platform featuring AI-powered route optimization, real-time GPS tracking, a driver mobile app, and a business intelligence dashboard. The solution will reduce route planning time by 80% and improve on-time delivery to above 96%.s
 └── prompts/                      # Quick-action slash prompts
 tests/
 ├── e2e/                          # Generated Playwright specs

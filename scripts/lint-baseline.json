@@ -1,0 +1,8 @@
+{
+  "tests/e2e/employee/employee-details/accessibility.spec.ts": {
+    "no-wait-for-timeout": 2
+  },
+  "tests/e2e/employee/employee-details/negative.spec.ts": {
+    "no-wait-for-timeout": 3
+  }
+}

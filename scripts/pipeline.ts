@@ -17,6 +17,10 @@ import * as os from 'os';
 import * as path from 'path';
 import { spawnSync, spawn } from 'child_process';
 import * as dotenv from 'dotenv';
+import type { ZodTypeAny } from 'zod';
+import { requirementsSchema, testCasesSchema } from './lib/schemas';
+import { parsePlaywrightResults, isReportable, classifySeverity, dedupeAgainstZoho, reproducibility } from './lib/failure-triage';
+import { findDuplicateTestCases, MinimalTestCase } from './lib/test-case-schema';
 
 async function readDocumentText(filePath: string): Promise<string> {
   const ext = path.extname(filePath).toLowerCase();
@@ -45,8 +49,20 @@ const ROOT        = path.resolve(__dirname, '..');
 const REPORTS_DIR = path.join(ROOT, 'reports');
 const RESULTS_JSON = path.join(REPORTS_DIR, 'results', 'results.json');
 const CASES_DIR   = path.join(REPORTS_DIR, 'test-cases');
-const AGENTS_DIR  = path.join(ROOT, '.github', 'agents');
-const SKILLS_DIR  = path.join(ROOT, '.github', 'skills');
+const REQ_DIR     = path.join(REPORTS_DIR, 'requirements');
+const RAW_DIR     = path.join(REPORTS_DIR, 'raw');
+const EXCEL_DIR   = path.join(REPORTS_DIR, 'excel');
+const AGENTS_DIR  = path.join(ROOT, '.claude', 'agents');
+const SKILLS_DIR  = path.join(ROOT, '.claude', 'skills');
+
+// Model per pipeline stage — reasoning/correctness-critical stages stay on the
+// stronger tier; a weaker model here risks more schema/tsc retries than the
+// speed it would save (see parseAndValidate's corrective re-ask loop).
+const STAGE_MODELS = {
+  requirementAnalysis:  'claude-sonnet-5',
+  testCaseGeneration:   'claude-sonnet-5',
+  automationGeneration: 'claude-sonnet-5', // tsc-gated — keep on the stronger tier
+} as const;
 
 // ─── Generic helpers ─────────────────────────────────────────────────────────
 
@@ -63,6 +79,35 @@ function run(label: string, cmd: string, cwd = ROOT): { ok: boolean; stdout: str
   return { ok, stdout: result.stdout?.trim() ?? '', stderr: result.stderr?.trim() ?? '' };
 }
 
+/** Non-blocking counterpart to run() — same shape, but lets independent commands run concurrently. */
+function runAsync(cmd: string, cwd = ROOT): Promise<{ ok: boolean; stdout: string; stderr: string }> {
+  return new Promise(resolve => {
+    const proc = spawn(cmd, { shell: true, cwd, stdio: 'pipe' });
+    let stdout = '', stderr = '';
+    proc.stdout?.on('data', (d: Buffer) => { stdout += d.toString(); });
+    proc.stderr?.on('data', (d: Buffer) => { stderr += d.toString(); });
+    proc.on('close', (code: number | null) => resolve({ ok: code === 0, stdout: stdout.trim(), stderr: stderr.trim() }));
+  });
+}
+
+function runBackground(label: string, cmd: string, cwd = ROOT): void {
+  spawn(cmd, { shell: true, cwd, stdio: 'ignore' });
+  p.log.info(`${label} — started in background`);
+}
+
+/** Retry a flaky network call with exponential backoff (1s/2s/4s) before giving up. */
+async function withRetry<T>(fn: () => Promise<T>, attempts = 3): Promise<T> {
+  for (let i = 0; i < attempts; i++) {
+    try {
+      return await fn();
+    } catch (e: unknown) {
+      if (i === attempts - 1) throw e;
+      await new Promise(resolve => setTimeout(resolve, 1000 * 2 ** i));
+    }
+  }
+  throw new Error('unreachable');
+}
+
 function latestFile(dir: string, prefix: string, ext = '.json'): string | null {
   if (!fs.existsSync(dir)) return null;
   const files = fs.readdirSync(dir)
@@ -74,6 +119,51 @@ function latestFile(dir: string, prefix: string, ext = '.json'): string | null {
 function loadAgentPrompt(filename: string): string {
   const raw = fs.readFileSync(path.join(AGENTS_DIR, filename), 'utf8');
   return raw.replace(/^---[\s\S]*?---\s*/m, '').trim();
+}
+
+const KB_MODULES_DIR = path.join(ROOT, 'reports', 'knowledge-base', 'modules');
+
+function loadAccountContext(): string {
+  const primary = process.env.SIMERP_USERNAME?.trim();
+  const testUser = process.env.SIMERP_TEST_USERNAME?.trim();
+  if (!primary && !testUser) return '';
+  const lines = [
+    '## Test Accounts — use these exact emails in preconditions, testDataHints, and every test step that involves login',
+    '',
+  ];
+  if (primary)   lines.push(`- **Primary account** (Admin / Microsoft SSO): \`${primary}\`  →  Playwright fixture: \`primaryPage\`  →  storageState.json`);
+  if (testUser)  lines.push(`- **Test account** (TM / Employee / direct credentials): \`${testUser}\`  →  Playwright fixture: \`testUserPage\`  →  storageState-punit.json`);
+  lines.push('');
+  lines.push('Every test case that requires login MUST name the exact email and the Playwright fixture in its preconditions and automationHint. Never write "Log in as Admin" — write the full email.');
+  return lines.join('\n');
+}
+
+function loadKbContext(text: string): string {
+  if (!fs.existsSync(KB_MODULES_DIR)) return '';
+  const lower = text.toLowerCase();
+  const featureMap: Record<string, string> = {
+    'employee': 'employee.json', 'emp': 'employee.json',
+    'goal': 'goals.json', 'competenc': 'competencies.json',
+    'skill': 'skills.json', 'weekly update': 'weekly-updates.json',
+    'weekly': 'weekly-updates.json', 'auth': 'auth-rbac.json',
+    'login': 'auth-rbac.json', 'rbac': 'auth-rbac.json',
+    'list': 'list-views.json', 'filter': 'list-views.json',
+    'config': 'configuration.json', 'setting': 'configuration.json',
+    'api': 'api-validation.json', 'team': 'weekly-updates.json',
+  };
+  let featureFile = 'ui-patterns.json';
+  for (const [kw, file] of Object.entries(featureMap)) {
+    if (lower.includes(kw)) { featureFile = file; break; }
+  }
+  const parts: string[] = [];
+  const MAX_KB_CHARS = 3000;
+  const featurePath = path.join(KB_MODULES_DIR, featureFile);
+  if (fs.existsSync(featurePath))
+    parts.push(`## Knowledge Base — ${featureFile}\n${fs.readFileSync(featurePath, 'utf8').slice(0, MAX_KB_CHARS)}`);
+  const crossPath = path.join(KB_MODULES_DIR, 'cross-module.json');
+  if (fs.existsSync(crossPath))
+    parts.push(`## Knowledge Base — cross-module patterns\n${fs.readFileSync(crossPath, 'utf8').slice(0, MAX_KB_CHARS)}`);
+  return parts.join('\n\n');
 }
 
 function loadSkillPrompt(skillName: string): string {
@@ -103,6 +193,67 @@ function saveJson(dir: string, prefix: string, data: unknown): string {
   const file = path.join(dir, `${prefix}-${Date.now()}.json`);
   fs.writeFileSync(file, JSON.stringify(data, null, 2));
   return file;
+}
+
+/**
+ * Parse + zod-validate an AI JSON response, retrying (with the validation errors fed
+ * back to the model) up to twice before giving up. Malformed/incomplete output must
+ * never silently become `{raw: ...}` / `[]` — every downstream stage treats these files
+ * as ground truth, so a failure here aborts the stage instead of writing garbage.
+ */
+async function parseAndValidate<T>(
+  backend: AIBackend,
+  systemPrompt: string,
+  initialText: string,
+  schema: ZodTypeAny,
+  stageLabel: string,
+  onTick?: (elapsed: string) => void,
+  originalPrompt?: string,
+  model?: string,
+): Promise<{ ok: true; data: T } | { ok: false; rawFile: string; reason: string }> {
+  let text = initialText;
+  const MAX_ATTEMPTS = 3; // 1 initial parse + up to 2 corrective re-asks
+  // Retries must re-supply the original task plus the latest (failing) response — aiChat is a
+  // fresh, stateless call each time, so without this the model has nothing to correct against.
+  const taskContext = () => originalPrompt ? `${originalPrompt}\n\nYour previous response was:\n${text}\n\n` : '';
+  for (let attempt = 0; attempt < MAX_ATTEMPTS; attempt++) {
+    let parsed: unknown;
+    let parseError: string | null = null;
+    try {
+      parsed = extractJson(text);
+    } catch (e: unknown) {
+      parseError = (e as Error).message;
+    }
+
+    if (parseError === null) {
+      const result = schema.safeParse(parsed);
+      if (result.success) return { ok: true, data: result.data as T };
+      if (attempt === MAX_ATTEMPTS - 1) {
+        const rawFile = saveJson(RAW_DIR, `failed-${stageLabel}`, { reason: 'schema validation failed after retries', issues: result.error.format(), raw: text });
+        return { ok: false, rawFile, reason: 'schema validation failed after retries' };
+      }
+      const issues = result.error.issues.map(i => `${i.path.join('.') || '(root)'}: ${i.message}`).join('\n');
+      text = await aiChat(
+        backend, systemPrompt,
+        `${taskContext()}It failed schema validation:\n${issues}\n\nReturn the corrected, COMPLETE JSON only — no prose, no markdown fences, no explanation.`,
+        onTick, false, model,
+      );
+      continue;
+    }
+
+    if (attempt === MAX_ATTEMPTS - 1) {
+      const rawFile = saveJson(RAW_DIR, `failed-${stageLabel}`, { reason: parseError, raw: text });
+      return { ok: false, rawFile, reason: parseError };
+    }
+    text = await aiChat(
+      backend, systemPrompt,
+      `${taskContext()}It could not be parsed as JSON (${parseError}). Return ONLY valid JSON parseable by JSON.parse from the first character to the last — no prose, no markdown fences.`,
+      onTick, false, model,
+    );
+  }
+  // Unreachable — loop always returns within MAX_ATTEMPTS.
+  const rawFile = saveJson(RAW_DIR, `failed-${stageLabel}`, { reason: 'exhausted retries', raw: text });
+  return { ok: false, rawFile, reason: 'exhausted retries' };
 }
 
 // ─── AI backend ──────────────────────────────────────────────────────────────
@@ -140,16 +291,28 @@ async function aiChat(
   systemPrompt: string,
   userMessage: string,
   onTick?: (elapsed: string) => void,
+  allowTools = false,
+  model?: string,
 ): Promise<string> {
   if (backend.type === 'cli') {
-    const tmpSys = path.join(os.tmpdir(), `simerp-sys-${Date.now()}.txt`);
-    fs.writeFileSync(tmpSys, systemPrompt, 'utf8');
     return new Promise<string>((resolve, reject) => {
+      // System prompt goes to a temp file and the user message goes via stdin — both can
+      // exceed Linux's per-argv-string cap (MAX_ARG_STRLEN, 128KB) once requirements/test-case
+      // JSON payloads are embedded, which previously crashed spawn() with E2BIG.
+      const sysPromptFile = fs.mkdtempSync(path.join(os.tmpdir(), 'claude-sp-')) + '/system-prompt.txt';
+      fs.writeFileSync(sysPromptFile, systemPrompt);
+      const cleanup = () => fs.rm(path.dirname(sysPromptFile), { recursive: true, force: true }, () => {});
+
+      const baseArgs = ['--print', '--dangerously-skip-permissions'];
+      if (allowTools) baseArgs.push('--allowedTools', 'Read,Write,Edit,Bash');
+      if (model) baseArgs.push('--model', model);
+      baseArgs.push('--system-prompt-file', sysPromptFile, '--output-format', 'text');
       const proc = spawn(
         backend.bin,
-        ['--print', '--dangerously-skip-permissions', '--system-prompt-file', tmpSys, '--output-format', 'text', userMessage],
-        { shell: false, cwd: ROOT, stdio: ['ignore', 'pipe', 'pipe'], env: { ...process.env, TERM: 'dumb' } },
+        baseArgs,
+        { shell: false, cwd: ROOT, stdio: ['pipe', 'pipe', 'pipe'], env: { ...process.env, TERM: 'dumb' } },
       );
+      proc.stdin.end(userMessage);
       let stdout = '';
       let stderr = '';
       const start = Date.now();
@@ -158,28 +321,28 @@ async function aiChat(
         : null;
       const timeout = setTimeout(() => {
         proc.kill('SIGTERM');
-        reject(new Error('Claude CLI timed out after 4 minutes — try a shorter input or check your connection'));
-      }, 4 * 60 * 1000);
+        reject(new Error('Claude CLI timed out after 15 minutes — try a shorter input or check your connection'));
+      }, 15 * 60 * 1000);
       proc.stdout?.on('data', (d: Buffer) => { stdout += d.toString(); });
       proc.stderr?.on('data', (d: Buffer) => { stderr += d.toString(); });
       proc.on('close', (code: number | null) => {
         if (timer) clearInterval(timer);
         clearTimeout(timeout);
-        fs.rmSync(tmpSys, { force: true });
+        cleanup();
         if ((code ?? 1) !== 0) reject(new Error(`[exit ${code}] ${stderr.trim() || '(no stderr)'}`));
         else resolve(stdout.trim());
       });
     });
   }
   const msg = await backend.client.messages.create({
-    model: 'claude-sonnet-4-6', max_tokens: 8192,
-    system: systemPrompt,
+    model: model ?? STAGE_MODELS.requirementAnalysis, max_tokens: 8192,
+    system: [{ type: 'text', text: systemPrompt, cache_control: { type: 'ephemeral' } }],
     messages: [{ role: 'user', content: userMessage }],
   });
   return msg.content[0].type === 'text' ? msg.content[0].text : '';
 }
 
-async function aiGenerateAutomation(backend: AIBackend, systemPrompt: string, casesJson: string, onTick?: (s: string) => void): Promise<AIFile[]> {
+async function aiGenerateAutomation(backend: AIBackend, systemPrompt: string, casesJson: string, onTick?: (s: string) => void, model?: string): Promise<AIFile[]> {
   if (backend.type === 'sdk') {
     const tool: Anthropic.Tool = {
       name: 'write_files',
@@ -191,7 +354,8 @@ async function aiGenerateAutomation(backend: AIBackend, systemPrompt: string, ca
       },
     };
     const msg = await backend.client.messages.create({
-      model: 'claude-sonnet-4-6', max_tokens: 16000, system: systemPrompt,
+      model: model ?? STAGE_MODELS.automationGeneration, max_tokens: 16000,
+      system: [{ type: 'text', text: systemPrompt, cache_control: { type: 'ephemeral' } }],
       tools: [tool], tool_choice: { type: 'any' },
       messages: [{ role: 'user', content: `Generate page objects and spec files. Call write_files with ALL files:\n\n${casesJson}` }],
     });
@@ -205,7 +369,7 @@ async function aiGenerateAutomation(backend: AIBackend, systemPrompt: string, ca
     '\n\n## Output Format (REQUIRED)\n' +
     'After explanation output a ```files block with [{path,content}] JSON.\n' +
     'Escape newlines in content as \\n. Include EVERY file.';
-  const response = await aiChat(backend, augmented, `Generate page objects and spec files:\n\n${casesJson}`, onTick);
+  const response = await aiChat(backend, augmented, `Generate page objects and spec files:\n\n${casesJson}`, onTick, false, model);
   return parseFilesFromResponse(response);
 }
 
@@ -258,11 +422,11 @@ async function callZohoMcp(
   const args: Record<string, unknown> = { path_variables: pathVariables };
   if (Object.keys(queryParams).length) args['query_params'] = queryParams;
   if (Object.keys(bodyParams).length) args['request_body'] = bodyParams;
-  const res = await axios.post(
+  const res = await withRetry(() => axios.post(
     mcpUrl,
     { jsonrpc: '2.0', id: 1, method: 'tools/call', params: { name: tool, arguments: args } },
     { headers: { 'Content-Type': 'application/json' }, timeout: 30_000 },
-  );
+  ));
   const rpc = res.data;
   if (rpc.error) throw new Error(`MCP error ${rpc.error.code}: ${rpc.error.message}`);
   const content = rpc.result?.content ?? rpc.result;
@@ -275,6 +439,10 @@ function portalAndProject(): { portalId: string; projectId: string } {
   const projectId = process.env.ZOHO_PROJECT_ID;
   if (!portalId || !projectId) throw new Error('ZOHO_PORTAL_ID and ZOHO_PROJECT_ID must be set in .env');
   return { portalId, projectId };
+}
+
+function isZohoConfigured(): boolean {
+  return !!(process.env.ZOHO_PORTAL_ID?.trim() && process.env.ZOHO_PROJECT_ID?.trim() && readMcpUrl());
 }
 
 function normalizeTask(t: Record<string, unknown>): Record<string, unknown> {
@@ -339,6 +507,48 @@ async function fetchTasklists(): Promise<Array<{ value: string; label: string }>
   return raw.map(tl => ({ value: String(tl['id'] ?? ''), label: String(tl['name'] ?? tl['id']) }));
 }
 
+// ─── Targeted task fetch (avoids pulling all 200 when only a few IDs are needed) ──
+
+async function fetchTasksByIds(ids: string[]): Promise<Record<string, unknown>[]> {
+  const { portalId, projectId } = portalAndProject();
+  const results: Record<string, unknown>[] = [];
+  const missed: string[] = [];
+
+  // Direct single-task lookups are independent — fetch them concurrently.
+  const outcomes = await Promise.all(ids.map(async id => {
+    try {
+      const data = await callZohoMcp(
+        'ZohoProjects_get_task',
+        { portal_id: portalId, project_id: projectId, task_id: id },
+      ) as Record<string, unknown>;
+      const task = (data['tasks'] as Record<string, unknown>[])?.[0] ?? data;
+      if (task && (task['id'] || task['id_string'])) return { id, task: normalizeTask(task) };
+    } catch { /* falls through to missed */ }
+    return { id, task: null as Record<string, unknown> | null };
+  }));
+  for (const o of outcomes) {
+    if (o.task) results.push(o.task);
+    else missed.push(o.id);
+  }
+
+  if (missed.length) {
+    // Fall back to full fetch only for IDs the direct call couldn't resolve
+    const all = await fetchAllTasks(200);
+    for (const id of missed) {
+      const target = id.toUpperCase();
+      const found = all.find(t =>
+        String(t['id']) === target ||
+        String(t['prefix']).toUpperCase() === target ||
+        String(t['name']).toUpperCase().includes(target),
+      );
+      if (found) results.push(found);
+      else p.log.warn(`Task "${id}" not found — skipping`);
+    }
+  }
+
+  return results;
+}
+
 // ─── Shared AI analysis helper ────────────────────────────────────────────────
 
 async function runRequirementAnalysis(
@@ -350,22 +560,33 @@ async function runRequirementAnalysis(
   spin.start(`${label}…`);
   const systemPrompt = loadAgentPrompt('requirement-analyzer.agent.md');
   let reqText: string;
+  let userMessage!: string;
   try {
     const input = tasks.length === 1
       ? JSON.stringify(tasks[0], null, 2)
       : JSON.stringify(tasks, null, 2);
-    reqText = await aiChat(
-      backend, systemPrompt,
-      `Analyze ${tasks.length > 1 ? 'these tasks' : 'this task'} and return structured requirements JSON:\n\n${input}`,
-      s => spin.message(`${label}… ${s}`),
-    );
+    const kbContext = loadKbContext(input);
+    const kbBlock = kbContext
+      ? `\n\n<knowledge-base>\n${kbContext}\n</knowledge-base>\n\nUse the knowledge base above to populate roleMatrix[], businessRules[], knownBugEdgeCases[], and integrationPoints[]. DO NOT read any files — all KB context is provided above.`
+      : '';
+    const accountBlock = loadAccountContext();
+    const accountSection = accountBlock ? `\n\n<test-accounts>\n${accountBlock}\n</test-accounts>` : '';
+    userMessage = `Analyze ${tasks.length > 1 ? 'these tasks' : 'this task'} and return ONLY the structured requirements JSON (no prose, no file writes — the pipeline saves the file):\n\n${input}${kbBlock}${accountSection}`;
+    reqText = await aiChat(backend, systemPrompt, userMessage, s => spin.message(`${label}… ${s}`), false, STAGE_MODELS.requirementAnalysis);
   } catch (e: unknown) {
     spin.stop(`${label} — failed`);
     throw e;
   }
-  let requirements: unknown;
-  try { requirements = extractJson(reqText); } catch { requirements = { raw: reqText }; }
-  const reqFile = saveJson(CASES_DIR, 'requirements', requirements);
+  const validated = await parseAndValidate<unknown>(
+    backend, systemPrompt, reqText, requirementsSchema, 'requirements',
+    s => spin.message(`${label}… correcting invalid JSON… ${s}`),
+    userMessage, STAGE_MODELS.requirementAnalysis,
+  );
+  if (!validated.ok) {
+    spin.stop(`${label} — failed (invalid JSON after retries)`);
+    throw new Error(`Requirement analysis produced invalid/malformed JSON after retries (${validated.reason}) — raw response saved to ${validated.rawFile}`);
+  }
+  const reqFile = saveJson(REQ_DIR, 'requirements', validated.data);
   spin.stop(`${label} — saved`);
   p.note(reqFile, 'requirements JSON');
   return { reqFile };
@@ -398,17 +619,7 @@ async function option1FullPipeline() {
     const spin = p.spinner();
     spin.start(`Fetching ${ids.length} task(s) from Zoho…`);
     try {
-      const all = await fetchAllTasks(200);
-      for (const id of ids) {
-        const target = id.toUpperCase();
-        const found = all.find(t =>
-          String(t['id']) === target ||
-          String(t['prefix']).toUpperCase() === target ||
-          String(t['name']).toUpperCase().includes(target),
-        );
-        if (found) taskRecords.push(found);
-        else p.log.warn(`Task "${id}" not found — skipping`);
-      }
+      taskRecords = await fetchTasksByIds(ids);
     } catch (e: unknown) {
       spin.stop('Fetch failed');
       p.log.error((e as Error).message);
@@ -449,8 +660,14 @@ async function option1FullPipeline() {
 
   const runTests   = await p.confirm({ message: 'Run tests after generation? (Option 4)' });
   if (p.isCancel(runTests)) return;
-  const reportBugs = await p.confirm({ message: 'Report bugs to Zoho after test run? (Option 5)' });
-  if (p.isCancel(reportBugs)) return;
+  let reportBugs: boolean | symbol = false;
+  if (isZohoConfigured()) {
+    const ans = await p.confirm({ message: 'Report bugs to Zoho after test run? (Option 5)' });
+    if (p.isCancel(ans)) return;
+    reportBugs = ans;
+  } else {
+    p.log.info('Zoho not configured — bug reporting skipped');
+  }
 
   let backend: AIBackend;
   try { backend = resolveAIBackend(); } catch (e: unknown) { p.log.error((e as Error).message); return; }
@@ -458,6 +675,9 @@ async function option1FullPipeline() {
 
   const ts = Date.now();
   fs.mkdirSync(CASES_DIR, { recursive: true });
+  fs.mkdirSync(REQ_DIR, { recursive: true });
+  fs.mkdirSync(RAW_DIR, { recursive: true });
+  fs.mkdirSync(EXCEL_DIR, { recursive: true });
   fs.mkdirSync(path.join(REPORTS_DIR, 'results'), { recursive: true });
 
   // Step 1 — requirements
@@ -561,17 +781,7 @@ async function option2FetchAndAnalyze() {
 
       spin.start('Fetching tasks…');
       try {
-        const all = await fetchAllTasks(200);
-        items = ids.flatMap(id =>
-          all.filter(t =>
-            String(t['id']) === id ||
-            String(t['prefix']).toUpperCase() === id ||
-            String(t['name']).toUpperCase().includes(id),
-          )
-        );
-        // deduplicate
-        const seen = new Set<string>();
-        items = items.filter(t => { const k = String(t['id']); if (seen.has(k)) return false; seen.add(k); return true; });
+        items = await fetchTasksByIds(ids);
       } catch (e: unknown) { spin.stop('Failed'); p.log.error((e as Error).message); return; }
       spin.stop(`${items.length} task(s) found`);
 
@@ -593,15 +803,16 @@ async function option2FetchAndAnalyze() {
       spin.start('Fetching tasks in selected list(s)…');
       try {
         const { portalId, projectId } = portalAndProject();
-        for (const tlId of selected as string[]) {
+        const perList = await Promise.all((selected as string[]).map(async tlId => {
           const data = await callZohoMcp(
             'ZohoProjects_get_tasks_by_project',
             { portal_id: portalId, project_id: projectId },
             { tasklist_id: tlId, per_page: 100 },
           ) as Record<string, unknown>;
           const raw: Record<string, unknown>[] = Array.isArray(data['tasks']) ? data['tasks'] as Record<string, unknown>[] : [];
-          items.push(...raw.map(normalizeTask));
-        }
+          return raw.map(normalizeTask);
+        }));
+        items.push(...perList.flat());
       } catch (e: unknown) { spin.stop('Failed'); p.log.error((e as Error).message); return; }
       spin.stop(`${items.length} task(s) loaded`);
 
@@ -683,7 +894,7 @@ async function option2FetchAndAnalyze() {
   }
 
   // Save raw fetch result
-  const rawFile = saveJson(CASES_DIR, `${type}-fetched`, items);
+  const rawFile = saveJson(RAW_DIR, `${type}-fetched`, items);
   p.log.info(`Saved → ${rawFile}`);
 
   const analyzeLabel = type === 'document'
@@ -704,7 +915,7 @@ async function option2FetchAndAnalyze() {
 
 async function option3CreateTestCases() {
   // Auto-detect latest requirements file
-  const autoReq = latestFile(CASES_DIR, 'requirements');
+  const autoReq = latestFile(REQ_DIR, 'requirements');
   let reqFile: string;
 
   if (autoReq) {
@@ -801,68 +1012,69 @@ async function option5ReportBugs(skipConfirm = false) {
     return;
   }
 
-  const results = JSON.parse(fs.readFileSync(RESULTS_JSON, 'utf8'));
+  const data = JSON.parse(fs.readFileSync(RESULTS_JSON, 'utf8'));
+  const { results, browser } = parsePlaywrightResults(data);
 
-  // Collect unique failures from Playwright JSON reporter format
-  interface Failure { title: string; error: string; browser: string; screenshot?: string; }
-  const failures: Failure[] = [];
-  const seen = new Set<string>();
+  // Never surface a flaky-on-retry test as reportable — it already recovered.
+  const flakyExcluded = results.filter(r => r.isFlaky).length;
+  const reportable = results.filter(isReportable);
 
-  function collectFromSuites(suites: unknown[]): void {
-    for (const suite of suites) {
-      const s = suite as Record<string, unknown>;
-      if (Array.isArray(s['suites'])) collectFromSuites(s['suites'] as unknown[]);
-      if (Array.isArray(s['specs'])) {
-        for (const spec of s['specs'] as Record<string, unknown>[]) {
-          const tests = (spec['tests'] as Record<string, unknown>[]) ?? [];
-          for (const test of tests) {
-            const results2 = (test['results'] as Record<string, unknown>[]) ?? [];
-            for (const r of results2) {
-              if (r['status'] !== 'failed' && r['status'] !== 'timedOut') continue;
-              const title = String(spec['title'] ?? test['title'] ?? 'Unknown');
-              const error = String((r['error'] as Record<string, unknown>)?.['message'] ?? r['status']);
-              const key = `${title}|${error.slice(0, 80)}`;
-              if (seen.has(key)) continue;
-              seen.add(key);
-              const attachments = (r['attachments'] as Record<string, unknown>[]) ?? [];
-              const screenshot = attachments.find(a => String(a['name']).includes('screenshot'))?.['path'] as string | undefined;
-              failures.push({ title, error, browser: String(test['projectName'] ?? 'chromium'), screenshot });
-            }
-          }
-        }
-      }
-    }
-  }
+  // Dedupe identical failures (same title + first line of error) within this run.
+  const seenKeys = new Set<string>();
+  const unique = reportable.filter(r => {
+    const key = `${r.title}|${(r.error ?? r.status).slice(0, 80)}`;
+    if (seenKeys.has(key)) return false;
+    seenKeys.add(key);
+    return true;
+  });
 
-  collectFromSuites(results.suites ?? []);
-
-  if (!failures.length) {
-    p.log.success('No failures found in results.json — nothing to report!');
+  if (!unique.length) {
+    p.log.success(`No reportable failures — nothing to file.${flakyExcluded ? ` (${flakyExcluded} flaky test(s) excluded — passed on retry)` : ''}`);
     return;
   }
 
-  p.log.info(`Found ${failures.length} unique failure(s) to review.`);
+  p.log.info(`Found ${unique.length} reportable failure(s) to review.${flakyExcluded ? ` (${flakyExcluded} flaky excluded)` : ''}`);
   if (!skipConfirm) {
-    const proceed = await p.confirm({ message: `Review and file up to ${failures.length} bug(s) in Zoho?` });
+    const proceed = await p.confirm({ message: `Review and file up to ${unique.length} bug(s) in Zoho?` });
     if (p.isCancel(proceed) || !proceed) return;
   }
 
   const { portalId, projectId } = portalAndProject();
   const baseUrl = process.env.BASE_URL ?? '';
-  let filed = 0, skipped = 0;
 
-  for (let i = 0; i < failures.length; i++) {
-    const f = failures[i];
+  let openIssuesRaw: Record<string, unknown>[] = [];
+  try { openIssuesRaw = await fetchAllIssues(200); } catch (e: unknown) {
+    p.log.warn(`Could not fetch existing Zoho issues for duplicate check: ${(e as Error).message}`);
+  }
+  const openIssues = openIssuesRaw.map(iss => ({
+    id: String(iss['id'] ?? ''), name: String(iss['name'] ?? ''),
+    description: String(iss['description'] ?? ''), status: String(iss['status'] ?? ''),
+  }));
+
+  let filed = 0, skipped = 0, duplicates = 0;
+
+  for (let i = 0; i < unique.length; i++) {
+    const r = unique[i];
+    const errorFirstLine = (r.error ?? r.status).split('\n')[0];
     console.log('');
     p.note(
       [
-        `Test  : ${f.title}`,
-        `Browser: ${f.browser}`,
-        `Error : ${f.error.split('\n')[0].slice(0, 120)}`,
-        f.screenshot ? `Screenshot: ${f.screenshot}` : '',
+        `Test  : ${r.title}`,
+        `Module: ${r.module}`,
+        `Browser: ${browser}`,
+        `Error : ${errorFirstLine.slice(0, 120)}`,
+        `Reproducibility: ${reproducibility(r) === 'unknown' ? 'Unknown (single attempt — file with caution)' : 'Always (failed even after retry)'}`,
+        r.screenshotPath ? `Screenshot: ${r.screenshotPath}` : '',
       ].filter(Boolean).join('\n'),
-      `Bug ${i + 1} of ${failures.length}`,
+      `Bug ${i + 1} of ${unique.length}`,
     );
+
+    const dup = dedupeAgainstZoho({ title: r.title, module: r.module, testId: r.testId, errorFirstLine }, openIssues);
+    if (dup) {
+      p.log.info(`Likely duplicate of existing issue "${dup.name}" (#${dup.id}) — skipping creation. File manually if this is actually a new defect.`);
+      duplicates++;
+      continue;
+    }
 
     const action = await p.select({
       message: 'What to do with this failure?',
@@ -875,20 +1087,19 @@ async function option5ReportBugs(skipConfirm = false) {
     if (p.isCancel(action) || action === 'stop') break;
     if (action === 'skip') { skipped++; continue; }
 
-    // Determine severity
-    const isSmoke = /smoke/i.test(f.title) || /login|auth/i.test(f.title);
-    const isFunctional = /functional/i.test(f.title);
-    const severity = isSmoke ? 'Critical' : isFunctional ? 'Major' : 'Minor';
+    const severity = classifySeverity(r);
 
-    const title = `[QA-Auto] ${f.title.slice(0, 180)}`;
+    const title = `[QA-Auto] ${r.title.slice(0, 180)}`;
     const description =
       `**Environment:** ${baseUrl}  \n` +
-      `**Browser:** ${f.browser}  \n` +
-      `**Severity:** ${severity}  \n\n` +
+      `**Browser:** ${browser}  \n` +
+      `**Module:** ${r.module}  \n` +
+      `**Severity:** ${severity}  \n` +
+      `**Reproducibility:** ${reproducibility(r) === 'unknown' ? 'Unknown' : 'Always'}  \n\n` +
       `**Steps to Reproduce:**  \n` +
-      `Derived from spec: \`${f.title}\`  \n\n` +
-      `**Error:**  \n\`\`\`\n${f.error.slice(0, 2000)}\n\`\`\`  \n` +
-      (f.screenshot ? `\n**Screenshot:** ${f.screenshot}` : '');
+      `Derived from spec: \`${r.title}\`  \n\n` +
+      `**Error:**  \n\`\`\`\n${(r.error ?? r.status).slice(0, 2000)}\n\`\`\`  \n` +
+      (r.screenshotPath ? `\n**Screenshot:** ${r.screenshotPath}` : '');
 
     const spin = p.spinner();
     spin.start('Filing bug in Zoho…');
@@ -908,7 +1119,10 @@ async function option5ReportBugs(skipConfirm = false) {
   }
 
   console.log('');
-  p.note(`Filed: ${filed}  |  Skipped: ${skipped}  |  Total: ${failures.length}`, 'Bug report summary');
+  p.note(
+    `Filed: ${filed}  |  Duplicate (skipped): ${duplicates}  |  Skipped: ${skipped}  |  Flaky (not filed): ${flakyExcluded}  |  Reportable total: ${unique.length}`,
+    'Bug report summary',
+  );
 }
 
 // ─── Shared pipeline sub-steps ────────────────────────────────────────────────
@@ -919,27 +1133,79 @@ async function runTestCaseGeneration(backend: AIBackend, reqFile: string, ts: nu
   const systemPrompt = loadAgentPrompt('test-case-generator.agent.md');
   const reqJson = fs.readFileSync(reqFile, 'utf8');
   let casesText: string;
+  const accountCtx = loadAccountContext();
+  const accountNote = accountCtx ? `\n\n<test-accounts>\n${accountCtx}\n</test-accounts>` : '';
+  const userMessage = `Generate test cases for these requirements. Return ONLY the JSON array — no prose, no file writes:\n\n${reqJson}${accountNote}`;
   try {
-    casesText = await aiChat(
-      backend, systemPrompt,
-      `Generate test cases for these requirements:\n\n${reqJson}`,
-      s => spin.message(`Generating test cases… ${s}`),
-    );
+    casesText = await aiChat(backend, systemPrompt, userMessage, s => spin.message(`Generating test cases… ${s}`), false, STAGE_MODELS.testCaseGeneration);
   } catch (e: unknown) {
     spin.stop('Test case generation failed');
     p.log.error((e as Error).message);
     return null;
   }
-  let cases: unknown;
-  try { cases = extractJson(casesText); } catch { cases = []; p.log.warn('Could not parse JSON response — empty cases saved.'); }
+  const validated = await parseAndValidate<unknown[]>(
+    backend, systemPrompt, casesText, testCasesSchema, 'test-cases',
+    s => spin.message(`Generating test cases… correcting invalid JSON… ${s}`),
+    userMessage, STAGE_MODELS.testCaseGeneration,
+  );
+  if (!validated.ok) {
+    spin.stop('Test case generation failed (invalid JSON after retries)');
+    p.log.error(`Test cases did not pass schema validation after retries (${validated.reason}) — raw response saved to ${validated.rawFile}`);
+    return null;
+  }
+  // moduleCode is fully derivable from id (TC-<moduleCode>-<NNN>) and taskId is constant across
+  // every case in a single-task run — both are pipeline-computed rather than trusted from the
+  // model, so the agent prompt no longer needs to ask for them (cheaper output, no correctness
+  // dependency on the model getting a purely mechanical value right).
+  const reqParsed: unknown = JSON.parse(reqJson);
+  const reqArray = Array.isArray(reqParsed) ? reqParsed : [reqParsed];
+  const singleTaskId = reqArray.length === 1 ? (reqArray[0] as Record<string, unknown>)?.['taskId'] as string | null ?? null : null;
+
+  const cases = (validated.data as unknown as Record<string, unknown>[]).map(c => {
+    const moduleCode = String(c['id'] ?? '').match(/^TC-([A-Z]+)-/)?.[1];
+    return {
+      ...c,
+      ...(moduleCode ? { moduleCode } : {}),
+      ...(singleTaskId ? { taskId: singleTaskId } : {}),
+    };
+  }) as unknown as MinimalTestCase[];
+  spin.stop(`${cases.length} test case(s) generated`);
+
+  const existingFiles = fs.existsSync(CASES_DIR)
+    ? fs.readdirSync(CASES_DIR).filter(f => f.startsWith('cases-') && f.endsWith('.json'))
+      .map(f => path.join(CASES_DIR, f))
+      .map(f => {
+        try { return { file: f, cases: JSON.parse(fs.readFileSync(f, 'utf8')) as MinimalTestCase[] }; }
+        catch { return { file: f, cases: [] as MinimalTestCase[] }; }
+      })
+      .filter(entry => Array.isArray(entry.cases))
+    : [];
+  const duplicates = findDuplicateTestCases(cases, existingFiles);
+  if (duplicates.length) {
+    p.note(
+      duplicates.slice(0, 10).map(d =>
+        `${d.newCase.id} ~ ${d.existingCase.id} (${path.basename(d.existingFile)}, ${(d.similarity * 100).toFixed(0)}% similar)\n  "${d.newCase.title}"`,
+      ).join('\n\n') + (duplicates.length > 10 ? `\n…and ${duplicates.length - 10} more` : ''),
+      `${duplicates.length} likely duplicate(s) of previously generated cases`,
+    );
+    const proceed = await p.confirm({ message: 'Likely-duplicate test cases detected — generate automation for all of them anyway?', initialValue: false });
+    if (p.isCancel(proceed) || !proceed) {
+      const casesFile = path.join(CASES_DIR, `cases-${ts}.json`);
+      fs.writeFileSync(casesFile, JSON.stringify(cases, null, 2));
+      p.note(casesFile, 'cases JSON (saved — review/dedupe before generating automation)');
+      p.log.warn('Stopping before automation generation — re-run Option 4 once the cases file has been reviewed.');
+      return null;
+    }
+  }
 
   const casesFile = path.join(CASES_DIR, `cases-${ts}.json`);
   fs.writeFileSync(casesFile, JSON.stringify(cases, null, 2));
-  spin.stop(`${Array.isArray(cases) ? cases.length : '?'} test cases generated`);
   p.note(casesFile, 'cases JSON');
 
-  // Export to Excel via excel-reporter skill
-  run('Exporting test cases to Excel…', `npm run report:excel -- --mode=test-cases --input="${casesFile}"`);
+  // Export to Excel → reports/excel/ (non-blocking; next pipeline step doesn't need this file)
+  runBackground('Exporting test cases to Excel…', `npm run report:excel -- --mode=test-cases --input="${casesFile}"`);
+  const latestXlsx = latestFile(EXCEL_DIR, 'test-cases', '.xlsx');
+  if (latestXlsx) p.note(latestXlsx, 'Excel');
   return casesFile;
 }
 
@@ -947,10 +1213,17 @@ async function runAutomationGeneration(backend: AIBackend, casesFile: string): P
   const spin = p.spinner();
   spin.start('Generating Playwright automation…');
   const systemPrompt = loadSkillPrompt('playwright-e2e-generator');
-  const casesJson = fs.readFileSync(casesFile, 'utf8');
+  const allCases = JSON.parse(fs.readFileSync(casesFile, 'utf8')) as Record<string, unknown>[];
+  // automatable:false cases (MFA, physical hardware, human-judgment — see test-case-generator.agent.md)
+  // are manual-only by design; the automation-generator prompt has no concept of this field, so they
+  // must be filtered out here rather than relying on the model to skip them itself.
+  const automatableCases = allCases.filter(c => c['automatable'] !== false);
+  const nonAutomatable = allCases.length - automatableCases.length;
+  if (nonAutomatable) p.log.info(`${nonAutomatable} case(s) marked automatable:false — excluded from automation generation`);
+  const casesJson = JSON.stringify(automatableCases, null, 2);
   let automationFiles: AIFile[] = [];
   try {
-    automationFiles = await aiGenerateAutomation(backend, systemPrompt, casesJson, s => spin.message(`Generating Playwright automation… ${s}`));
+    automationFiles = await aiGenerateAutomation(backend, systemPrompt, casesJson, s => spin.message(`Generating Playwright automation… ${s}`), STAGE_MODELS.automationGeneration);
   } catch (e: unknown) {
     spin.stop('Automation generation failed');
     p.log.error((e as Error).message);
@@ -969,8 +1242,26 @@ async function runAutomationGeneration(backend: AIBackend, casesFile: string): P
   spin.stop(`${written} file(s) written${skipped.length ? `, ${skipped.length} skipped (already exist)` : ''}`);
   if (skipped.length) p.note(skipped.join('\n'), 'Skipped — already exist (review manually)');
 
-  const { ok, stderr } = run('TypeScript check…', 'npx tsc --noEmit');
-  if (!ok) { p.log.warn('TypeScript errors — review before running tests:\n' + stderr.split('\n').slice(0, 5).join('\n')); }
+  const checkSpin = p.spinner();
+  checkSpin.start('Running TypeScript check and lint…');
+  const [{ ok: tscOk, stderr: tscErr }, { ok: lintOk, stdout: lintOut, stderr: lintErr }] = await Promise.all([
+    runAsync('npx tsc --noEmit'),
+    runAsync('npm run lint:tests'),
+  ]);
+  checkSpin.stop(`TypeScript ${tscOk ? 'OK' : 'FAILED'} / Lint ${lintOk ? 'OK' : 'FAILED'}`);
+  if (!tscOk) p.log.error('TypeScript errors:\n' + tscErr.split('\n').slice(0, 8).join('\n'));
+  if (!lintOk) p.log.error('qa-conventions lint violations:\n' + (lintOut || lintErr).split('\n').slice(0, 15).join('\n'));
+
+  if (!tscOk || !lintOk) {
+    const proceedAnyway = await p.confirm({
+      message: 'TypeScript and/or lint issues found in generated automation — run tests anyway?',
+      initialValue: false,
+    });
+    if (p.isCancel(proceedAnyway) || !proceedAnyway) {
+      p.log.warn('Stopping — fix the issues above (or run `npm run lint:tests -- --update-baseline` if intentional) and re-run automation generation.');
+      return [];
+    }
+  }
 
   return automationFiles;
 }
@@ -1012,20 +1303,99 @@ async function runPlaywrightTests(automationFiles: AIFile[]): Promise<boolean> {
   const cmd = `npx playwright test --config=tests/playwright.config.ts --project=${browser} --workers=${workers}${mode === 'headed' ? ' --headed' : ''} ${target}`.trim();
 
   fs.mkdirSync(path.join(REPORTS_DIR, 'results'), { recursive: true });
-  const { ok } = run('Running Playwright tests…', cmd);
+  const { ok: initialOk } = run('Running Playwright tests…', cmd);
 
-  if (ok) {
-    p.log.success('All tests passed!');
+  // A failure backed by only one attempt has "Unknown" reproducibility (per
+  // bug-reporter.agent.md) — re-run it once more so it resolves to either
+  // "Always" (safe to file) or flaky-and-passing (excluded), never filed on
+  // a single data point.
+  if (!initialOk) {
+    await forceRetrySingleAttemptFailures(String(browser));
+  }
+
+  const finalOk = readReportableResults().length === 0;
+
+  if (finalOk) {
+    p.log.success(initialOk ? 'All tests passed!' : 'All tests passed! (initial failures were confirmed flaky on forced retry)');
   } else {
     p.log.warn('Some tests failed — results saved to reports/results/results.json');
   }
 
-  // Export results to Excel
+  // Export results to Excel (non-blocking; bug reporter reads results.json, not the xlsx)
   if (fs.existsSync(RESULTS_JSON)) {
-    run('Exporting results to Excel…', 'npm run report:excel -- --mode=results');
+    runBackground('Exporting results to Excel…', 'npm run report:excel -- --mode=results');
   }
 
-  return ok;
+  return finalOk;
+}
+
+/** Read results.json and return the currently-reportable (non-flaky, still-failing) results, or [] if the file is missing/unparsable. */
+function readReportableResults() {
+  if (!fs.existsSync(RESULTS_JSON)) return [];
+  try {
+    const { results } = parsePlaywrightResults(JSON.parse(fs.readFileSync(RESULTS_JSON, 'utf8')));
+    return results.filter(isReportable);
+  } catch {
+    return [];
+  }
+}
+
+/**
+ * Re-run any failure that only had a single attempt (Playwright's own retry
+ * didn't kick in — e.g. a worker crash, or a manual --retries=0 override) and
+ * merge the extra attempt back into results.json before bug filing sees it.
+ */
+async function forceRetrySingleAttemptFailures(browser: string): Promise<void> {
+  if (!fs.existsSync(RESULTS_JSON)) return;
+  let data: unknown;
+  try { data = JSON.parse(fs.readFileSync(RESULTS_JSON, 'utf8')); } catch { return; }
+  const { results } = parsePlaywrightResults(data);
+  const needsRetry = results.filter(r => (r.status === 'failed' || r.status === 'timedOut') && r.retryCount === 0);
+  if (!needsRetry.length) return;
+
+  p.log.info(`${needsRetry.length} failure(s) had only a single attempt — re-running once to confirm reproducibility before bug filing…`);
+  const grepPattern = needsRetry.map(r => r.title.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|');
+  const cmd = `npx playwright test --config=tests/playwright.config.ts --project=${browser} --grep "${grepPattern}" --reporter=json`;
+  const { stdout } = run('Confirming reproducibility (forced retry)…', cmd);
+
+  let retryData: unknown;
+  try { retryData = JSON.parse(stdout); } catch {
+    p.log.warn('Could not parse forced-retry output — these failure(s) remain "Unknown" reproducibility; review manually before filing.');
+    return;
+  }
+
+  mergeRetryAttempts(data as Record<string, unknown>, retryData as Record<string, unknown>);
+  fs.writeFileSync(RESULTS_JSON, JSON.stringify(data, null, 2));
+  p.log.success('Forced retry complete — results.json updated with confirmed reproducibility.');
+}
+
+/** Append the retry run's attempt(s) onto the matching (by spec title) test entries in the original results tree. */
+function mergeRetryAttempts(original: Record<string, unknown>, retry: Record<string, unknown>): void {
+  const retryByTitle = new Map<string, Record<string, unknown>>();
+  const indexSuite = (suite: Record<string, unknown>): void => {
+    for (const s of (suite['suites'] as Record<string, unknown>[]) ?? []) indexSuite(s);
+    for (const spec of (suite['specs'] as Record<string, unknown>[]) ?? []) {
+      for (const t of (spec['tests'] as Record<string, unknown>[]) ?? []) {
+        retryByTitle.set(String(spec['title']), t);
+      }
+    }
+  };
+  for (const s of (retry['suites'] as Record<string, unknown>[]) ?? []) indexSuite(s);
+
+  const walkSuite = (suite: Record<string, unknown>): void => {
+    for (const s of (suite['suites'] as Record<string, unknown>[]) ?? []) walkSuite(s);
+    for (const spec of (suite['specs'] as Record<string, unknown>[]) ?? []) {
+      for (const t of (spec['tests'] as Record<string, unknown>[]) ?? []) {
+        const retryTest = retryByTitle.get(String(spec['title']));
+        const extraResults = (retryTest?.['results'] as Record<string, unknown>[]) ?? [];
+        if (!extraResults.length) continue;
+        const merged = [...((t['results'] as Record<string, unknown>[]) ?? []), ...extraResults];
+        t['results'] = merged;
+        t['status'] = merged.some(r => r['status'] === 'passed') ? 'flaky' : (t['status'] ?? extraResults[extraResults.length - 1]['status']);
+      }
+    }
+  };
+  for (const s of (original['suites'] as Record<string, unknown>[]) ?? []) walkSuite(s);
 }
 
 // ─── Misc helpers ─────────────────────────────────────────────────────────────
@@ -1057,8 +1427,18 @@ async function main() {
   // Status checks
   if (!process.env.BASE_URL || process.env.BASE_URL.includes('example.com'))
     p.log.warn('BASE_URL not set in .env');
-  if (!process.env.ZOHO_PORTAL_ID || !process.env.ZOHO_PROJECT_ID)
-    p.log.warn('ZOHO_PORTAL_ID / ZOHO_PROJECT_ID not set in .env (needed for Options 1, 2, 5)');
+  if (!isZohoConfigured())
+    p.log.info('Zoho not configured — task fetch and bug reporting unavailable (Options 2/5 and the taskids path in Option 1)');
+
+  const catalogPath = path.join(REPORTS_DIR, 'knowledge-base', 'edge-cases-catalog.json');
+  if (fs.existsSync(catalogPath)) {
+    try {
+      const catalog = JSON.parse(fs.readFileSync(catalogPath, 'utf8'));
+      if (catalog.lastUpdateMethod === 'cli-fallback-shallow') {
+        p.log.warn('Knowledge base was last updated via the CLI fallback (shallow) — entries are unclassified/unenriched. Run the knowledge-base-curator agent before trusting KB-derived business rules or test cases.');
+      }
+    } catch { /* ignore unparsable catalog */ }
+  }
 
   const bin = findClaudeBin();
   const hasKey = !!process.env.ANTHROPIC_API_KEY && process.env.ANTHROPIC_API_KEY !== 'your_anthropic_api_key_here';

@@ -1,0 +1,66 @@
+{
+  "module": "EMPDET",
+  "subModule": "Employee Details",
+  "description": "Employee Details module — list, search, filter, sort, pagination, edit drawer",
+  "businessRules": [
+    "Current tab shows only active employees; Past tab shows only archived/deallocated — never mix",
+    "Search, filter, sort, and pagination state are INDEPENDENT per tab; tab switch must not carry state",
+    "Last Updated must come from API only — any frontend computation is a defect",
+    "All grid values must exactly match the corresponding API response",
+    "After Edit Drawer save, grid must reflect changes immediately without page reload",
+    "Cancel on Edit Drawer must discard all changes; grid shows original pre-edit values",
+    "Reset on Basic Filters clears all criteria and restores unfiltered list for current tab only",
+    "Employee count in grid rows, result-count badge, and API total must always match",
+    "Advanced Filters: Save applies all; Cancel reverts to last-applied state"
+  ],
+  "edgeCases": [
+    "Null Reporting Manager — cell renders gracefully, no JS crash",
+    "Null Skills — Skills cell renders without +N chip",
+    "Null Department / Null Projects — graceful fallback display",
+    "Single search result — grid shows '1 of 1', pagination controls disabled",
+    "Zero results — empty-state message shown, count badge = 0",
+    "Large dataset (500+ records) — all perf targets met, pagination accurate",
+    "API 500 error — user-friendly error displayed, no JS crash",
+    "XSS in search input — escaped rendering, no script execution",
+    "Special characters in search (hyphens, apostrophes, accents, Unicode) — correct matching",
+    "Pagination boundary — add/archive employee while on last page, no duplicates or missing records",
+    "Advanced filter: Available Since end < start — validation error shown",
+    "Advanced filter: Availability % = 101 or Experience = -1 — rejected",
+    "Tab switch with active search — search does NOT persist to other tab",
+    "Double-click Save in Edit Drawer — no duplicate update, no record corruption",
+    "Feature flag disabled mid-session — graceful handling, no crash"
+  ],
+  "regressionAreas": [
+    "Employee count mismatch (grid rows ≠ badge ≠ API total)",
+    "Edit button missing on hover for some rows after CRUD",
+    "Edited employee disappears from grid after save",
+    "Filter chips not cleared after Reset; partial filter state remains",
+    "Duplicate employee IDs appear across paginated pages",
+    "API/UI value mismatch (especially Allocation % and Log Hours)",
+    "Feature flag controls not hidden for non-admin roles",
+    "Sort order lost after applying a filter",
+    "Pagination counter wrong after search/filter combination"
+  ],
+  "historicalBugs": [
+    "Employee count mismatch between grid, badge, and API",
+    "Edit button visibility — missing for some rows",
+    "API count mismatch after filter + pagination",
+    "Allocation sync issues — stale Allocation % shown",
+    "Feature flag visibility leaking to non-admin roles",
+    "Allocation history missing after edit"
+  ],
+  "performanceTargets": {
+    "listLoad": "< 2s",
+    "search": "< 1s",
+    "filter": "< 2s",
+    "sort": "< 2s",
+    "pagination": "< 2s",
+    "openFilterPanel": "< 1s"
+  },
+  "knownFailure": {
+    "tc": "TC-EMPDET-003",
+    "title": "Open edit drawer @smoke",
+    "error": "TimeoutError: locator('table') not found within 20 000 ms",
+    "hint": "Employee list table uses a non-table container — verify selector; try role=grid or data-testid before 'table'"
+  }
+}

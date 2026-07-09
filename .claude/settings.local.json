@@ -1,7 +1,36 @@
 {
   "permissions": {
     "allow": [
-      "Bash(npx tsc *)"
+      "Bash(npx tsc *)",
+      "Bash(npm run *)",
+      "mcp__zoho-projects__ZohoProjects_get_all_issues",
+      "mcp__zoho-projects__ZohoProjects_get_tasks_by_project",
+      "mcp__zoho-projects__ZohoProjects_get_associated_bugs",
+      "Bash(mkdir -p \"/home/subham/SIMERP new project/reports/knowledge-base/modules\")",
+      "Bash(npm list *)",
+      "Read(//home/subham/**)",
+      "Bash(/home/subham/.vscode/extensions/anthropic.claude-code-2.1.187-linux-x64/resources/native-binary/claude --version)",
+      "Bash(sudo ln -sf /home/subham/.vscode/extensions/anthropic.claude-code-2.1.187-linux-x64/resources/native-binary/claude /usr/local/bin/claude)",
+      "Bash(claude --version)",
+      "Bash(rm -rf \"/home/subham/SIMERP new project/.github/agents\")",
+      "Bash(mkdir -p \"/home/subham/SIMERP new project/.claude/instructions\")",
+      "Bash(mv \"/home/subham/SIMERP new project/.github/instructions/qa-conventions.instructions.md\" \"/home/subham/SIMERP new project/.claude/instructions/qa-conventions.md\")",
+      "Bash(rmdir \"/home/subham/SIMERP new project/.github/instructions\" 2>/dev/null; grep -rn \"qa-conventions\" \"/home/subham/SIMERP new project/.claude/agents/\" \"/home/subham/SIMERP new project/.github/skills/\" 2>/dev/null)",
+      "Bash(sed -i 's|../instructions/qa-conventions.instructions.md|../instructions/qa-conventions.md|g' \\\\ *)",
+      "Bash(sed -i 's|`.github/agents/` — five `.agent.md` files that define VS Code Copilot agents \\(frontmatter: `name`, `tools`, `model`, `argument-hint`\\). These are the \"workers\" in the pipeline.|`.claude/agents/` — six `.agent.md` files defining the pipeline agents \\(loaded by Claude Code CLI and VS Code Copilot\\). These are the \"workers\" in the pipeline.|g' '/home/subham/SIMERP new project/CLAUDE.md')",
+      "Bash(sed -i 's|`.github/instructions/qa-conventions.instructions.md`|`.claude/instructions/qa-conventions.md`|g' '/home/subham/SIMERP new project/CLAUDE.md')",
+      "Bash(timeout 20 /home/subham/.vscode/extensions/anthropic.claude-code-2.1.187-linux-x64/resources/native-binary/claude --print --dangerously-skip-permissions --system-prompt \"You are a test agent. Reply with: OK\" --output-format text \"say OK\")",
+      "Bash(claude mcp *)",
+      "Bash(npx ts-node --project tsconfig.json -e ' *)",
+      "Bash(grep -v \"^$\")"
+    ],
+    "additionalDirectories": [
+      "/home/subham/SIMERP new project/reports/knowledge-base",
+      "/home/subham/SIMERP new project/.github/instructions",
+      "/home/subham/SIMERP new project/.claude/agents"
     ]
-  }
+  },
+  "disabledMcpjsonServers": [
+    "zoho-projects"
+  ]
 }

@@ -17,7 +17,7 @@ const PRIMARY_STATE = path.join(FIXTURE_DIR, 'storageState.json');
 const TEST_STATE    = path.join(FIXTURE_DIR, 'storageState-punit.json');
 
 type AuthFixtures = {
-  /** subham.nayak — Microsoft SSO session (default for most tests). */
+  /** ceo@simformsolutions.com — direct-credentials session (default for most tests). */
   primaryPage: Page;
   /** punit.patel — direct-credentials session (for tests that need a different role). */
   testUserPage: Page;

@@ -2,11 +2,11 @@
  * Playwright global-setup — runs once before the test suite.
  *
  * Creates two authenticated sessions:
- *   tests/fixtures/storageState.json       → subham.nayak  (Microsoft SSO)
- *   tests/fixtures/storageState-punit.json → punit.patel   (direct credentials)
+ *   tests/fixtures/storageState.json       → ceo@simformsolutions.com  (direct credentials)
+ *   tests/fixtures/storageState-punit.json → punit.patel               (direct credentials)
  *
- * Both files are re-used for 8 hours; after that they are regenerated
- * automatically on the next `npm test` run.
+ * Both files are re-used for 72 hours.
+ * Session validity is confirmed via a live HTTP probe — not just file age.
  */
 
 import { chromium, Browser, BrowserContext, Page } from '@playwright/test';
@@ -26,7 +26,7 @@ const FIXTURE_DIR   = path.join(__dirname, 'fixtures');
 const PRIMARY_STATE = path.join(FIXTURE_DIR, 'storageState.json');
 const TEST_STATE    = path.join(FIXTURE_DIR, 'storageState-punit.json');
 
-const CACHE_HOURS = 8;
+const CACHE_HOURS = 72; // Microsoft SSO sessions stay alive for days
 
 // ─── Helpers ─────────────────────────────────────────────────────────────────
 
@@ -34,11 +34,26 @@ function isStateValid(file: string): boolean {
   try {
     const stat  = fs.statSync(file);
     const state = JSON.parse(fs.readFileSync(file, 'utf8'));
-    // Ensure file is recent and not empty
     const ageH  = (Date.now() - stat.mtimeMs) / 3_600_000;
     const hasCookies = Array.isArray(state.cookies) && state.cookies.length > 0;
     return ageH < CACHE_HOURS && hasCookies;
   } catch { return false; }
+}
+
+/** Probe the app with saved cookies — returns true if the response is NOT a login/auth redirect. */
+async function isSessionLive(statePath: string): Promise<boolean> {
+  if (!isStateValid(statePath)) return false;
+  try {
+    const { request } = await import('@playwright/test');
+    const ctx = await request.newContext({ storageState: statePath, baseURL: BASE_URL });
+    const resp = await ctx.get('/', { maxRedirects: 5 });
+    await ctx.dispose();
+    const url  = resp.url();
+    const live = !(/login|signin|microsoftonline|live\.com/i.test(url));
+    return live;
+  } catch {
+    return false; // network error → treat as expired
+  }
 }
 
 /** Returns true if the current page is inside the authenticated app. */
@@ -244,19 +259,21 @@ async function loginWithCredentials(page: Page, email: string, password: string)
 // ─── Per-account login orchestrator ──────────────────────────────────────────
 
 async function setupAccount(
-  browser: Browser,
+  getBrowser: () => Promise<Browser>,
   statePath: string,
   email: string,
   password: string,
   method: 'sso' | 'credentials',
   label: string,
 ): Promise<void> {
-  if (isStateValid(statePath)) {
-    console.log(`  ✓ ${label}: session valid (< ${CACHE_HOURS}h old) — skipping`);
+  const live = await isSessionLive(statePath);
+  if (live) {
+    console.log(`  ✓ ${label}: session alive — skipping login`);
     return;
   }
 
   console.log(`\n━━ ${label} ━━`);
+  const browser = await getBrowser();
   const ctx: BrowserContext = await browser.newContext({ viewport: { width: 1280, height: 900 } });
   const page: Page = await ctx.newPage();
 
@@ -303,28 +320,36 @@ async function setupAccount(
 async function globalSetup(): Promise<void> {
   fs.mkdirSync(FIXTURE_DIR, { recursive: true });
 
-  const browser: Browser = await chromium.launch({
-    headless: false,
-    slowMo: 40,
-    args: ['--start-maximized'],
-  });
+  // Launched lazily — only if at least one account's cached session turns out to be dead,
+  // so a warm-cache run (the common case) never pays for a browser process at all.
+  const state: { browser: Browser | null } = { browser: null };
+  const getBrowser = async (): Promise<Browser> => {
+    if (!state.browser) {
+      state.browser = await chromium.launch({
+        headless: !!process.env.CI,
+        slowMo: process.env.CI ? 0 : 40,
+        args: ['--start-maximized'],
+      });
+    }
+    return state.browser;
+  };
 
   try {
-    // 1. Primary account — Microsoft SSO (subham.nayak)
+    // 1. Primary account — direct credentials (ceo@simformsolutions.com)
     if (PRIMARY_EMAIL && PRIMARY_PASS) {
-      await setupAccount(browser, PRIMARY_STATE, PRIMARY_EMAIL, PRIMARY_PASS, 'sso', `Microsoft SSO — ${PRIMARY_EMAIL}`);
+      await setupAccount(getBrowser, PRIMARY_STATE, PRIMARY_EMAIL, PRIMARY_PASS, 'credentials', `Direct login — ${PRIMARY_EMAIL}`);
     } else {
       console.warn('  ⚠  SIMERP_USERNAME / SIMERP_PASSWORD not set — skipping primary login');
     }
 
     // 2. Test account — direct credentials (punit.patel)
     if (TEST_EMAIL && TEST_PASS) {
-      await setupAccount(browser, TEST_STATE, TEST_EMAIL, TEST_PASS, 'credentials', `Direct login — ${TEST_EMAIL}`);
+      await setupAccount(getBrowser, TEST_STATE, TEST_EMAIL, TEST_PASS, 'credentials', `Direct login — ${TEST_EMAIL}`);
     } else {
       console.warn('  ⚠  SIMERP_TEST_USERNAME / SIMERP_TEST_PASSWORD not set — skipping test-user login');
     }
   } finally {
-    await browser.close();
+    if (state.browser) await state.browser.close();
   }
 }
 

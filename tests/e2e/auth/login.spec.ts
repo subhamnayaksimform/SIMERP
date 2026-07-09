@@ -14,7 +14,7 @@ dotenv.config({ path: path.resolve(__dirname, '..', '..', '..', '.env') });
 
 const BASE = process.env.BASE_URL || 'https://simerp-dev.simform.solutions';
 
-// ─── Primary account (subham.nayak — Microsoft SSO) ──────────────────────────
+// ─── Primary account (ceo@simformsolutions.com — direct credentials) ────────
 
 test('TC-AUTH-001 @smoke primary session reaches authenticated app', async ({ primaryPage }) => {
   await primaryPage.goto(BASE, { waitUntil: 'domcontentloaded' });
