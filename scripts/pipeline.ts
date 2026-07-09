@@ -54,6 +54,8 @@ const REQ_DIR     = path.join(REPORTS_DIR, 'requirements');
 const RAW_DIR     = path.join(REPORTS_DIR, 'raw');
 const EXCEL_DIR   = path.join(REPORTS_DIR, 'excel');
 const HTML_DIR    = path.join(REPORTS_DIR, 'html');
+const COVERAGE_DIR = path.join(REPORTS_DIR, 'coverage');
+const REVIEW_DIR  = path.join(REPORTS_DIR, 'test-cases-review');
 const AGENTS_DIR  = path.join(ROOT, '.claude', 'agents');
 const SKILLS_DIR  = path.join(ROOT, '.claude', 'skills');
 
@@ -1205,6 +1207,23 @@ async function option6ReportBugs(skipConfirm = false, resultsPathOverride?: stri
 
 // ─── Shared pipeline sub-steps ────────────────────────────────────────────────
 
+/**
+ * Runs the requirement-coverage and test-case-review report generators against a freshly
+ * written cases file, right after test case generation — so both are always in hand before
+ * a human decides whether to proceed to automation generation (Option 4).
+ */
+function runCoverageAndReview(reqFile: string, casesFile: string): void {
+  const covResult = run('Generating requirement coverage report…', `npm run report:coverage -- "${reqFile}" "${casesFile}"`);
+  const coverageHtml = covResult.ok ? latestFile(COVERAGE_DIR, 'coverage', '.html') : null;
+  if (coverageHtml) p.note(coverageHtml, 'Requirement coverage report');
+  else p.log.warn('Coverage report generation failed — see log above');
+
+  const reviewResult = run('Generating test case review page…', `npm run review:cases -- "${casesFile}"`);
+  const reviewHtml = reviewResult.ok ? latestFile(REVIEW_DIR, 'review', '.html') : null;
+  if (reviewHtml) p.note(reviewHtml, 'Test case review page');
+  else p.log.warn('Test case review page generation failed — see log above');
+}
+
 async function runTestCaseGeneration(backend: AIBackend, reqFile: string, ts: number): Promise<string | null> {
   fs.mkdirSync(CASES_DIR, { recursive: true });
   const spin = p.spinner();
@@ -1272,6 +1291,7 @@ async function runTestCaseGeneration(backend: AIBackend, reqFile: string, ts: nu
       const casesFile = path.join(CASES_DIR, `cases-${ts}.json`);
       fs.writeFileSync(casesFile, JSON.stringify(cases, null, 2));
       p.note(casesFile, 'cases JSON (saved — review/dedupe before generating automation)');
+      runCoverageAndReview(reqFile, casesFile);
       p.log.warn('Stopping before automation generation — re-run Option 4 once the cases file has been reviewed.');
       return null;
     }
@@ -1285,6 +1305,9 @@ async function runTestCaseGeneration(backend: AIBackend, reqFile: string, ts: nu
   runBackground('Exporting test cases to Excel…', `npm run report:excel -- --mode=test-cases --input="${casesFile}"`);
   const latestXlsx = latestFile(EXCEL_DIR, 'test-cases', '.xlsx');
   if (latestXlsx) p.note(latestXlsx, 'Excel');
+
+  runCoverageAndReview(reqFile, casesFile);
+
   return casesFile;
 }
 
@@ -1543,9 +1566,9 @@ async function main() {
     const action = await p.select({
       message: 'Choose an option',
       options: [
-        { value: '1', label: '1.  Run Full Pipeline',             hint: 'task IDs or doc → analysis → test cases → scripts → run → bugs → HTML report' },
+        { value: '1', label: '1.  Run Full Pipeline',             hint: 'task IDs or doc → analysis → test cases → coverage+review → scripts → run → bugs → HTML report' },
         { value: '2', label: '2.  Fetch & Analyze',               hint: 'tasks by ID / list / filter / previous fetch  OR  issues by status  →  AI analysis' },
-        { value: '3', label: '3.  Create Test Cases',             hint: 'select requirements JSON  →  cases JSON + Excel' },
+        { value: '3', label: '3.  Create Test Cases',             hint: 'select requirements JSON  →  cases JSON + Excel + coverage report + review page' },
         { value: '4', label: '4.  Generate Automation',           hint: 'select cases JSON  →  Playwright scripts (no execution)' },
         { value: '5', label: '5.  Run Playwright Tests',          hint: 'select spec file/module  →  run  →  results Excel + HTML report' },
         { value: '6', label: '6.  Report Bugs to Zoho',           hint: 'select results.json  →  confirm each bug  →  file in Zoho' },
@@ -1576,7 +1599,7 @@ async function main() {
 
 async function askWhatNext(from: number): Promise<string> {
   const opts: Array<{ value: string; label: string; hint?: string }> = [];
-  if (from === 2) opts.push({ value: '3', label: '3.  Create Test Cases',    hint: 'select requirements JSON → cases JSON + Excel' });
+  if (from === 2) opts.push({ value: '3', label: '3.  Create Test Cases',    hint: 'select requirements JSON → cases JSON + Excel + coverage report + review page' });
   if (from <= 3)  opts.push({ value: '4', label: '4.  Generate Automation',  hint: 'select cases JSON → Playwright scripts' });
   if (from <= 4)  opts.push({ value: '5', label: '5.  Run Playwright Tests', hint: 'select spec file/module → run → results Excel + HTML report' });
   if (from <= 5)  opts.push({ value: '6', label: '6.  Report Bugs to Zoho',  hint: 'select results.json → confirm each bug → file in Zoho' });
