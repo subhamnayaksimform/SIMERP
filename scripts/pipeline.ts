@@ -3,11 +3,12 @@
  *
  * Run with:  npm run pipeline
  *
- * Option 1 — Run Full Pipeline        (task IDs / requirement doc → all steps)
- * Option 2 — Fetch & Analyze          (tasks by ID/suite/filter  OR  issues by status)
+ * Option 1 — Run Full Pipeline        (task IDs / requirement doc → all steps → HTML report)
+ * Option 2 — Fetch & Analyze          (tasks by ID/suite/filter/previous fetch  OR  issues by status)
  * Option 3 — Create Test Cases        (AI → cases JSON + Excel)
- * Option 4 — Generate & Run Tests     (AI → Playwright scripts → run → results Excel)
- * Option 5 — Report Bugs to Zoho      (results.json → one-by-one confirmation)
+ * Option 4 — Generate Automation      (AI → Playwright scripts, no execution)
+ * Option 5 — Run Playwright Tests     (select target → run → results Excel + HTML report)
+ * Option 6 — Report Bugs to Zoho      (results.json → one-by-one confirmation)
  */
 
 import Anthropic from '@anthropic-ai/sdk';
@@ -52,6 +53,7 @@ const CASES_DIR   = path.join(REPORTS_DIR, 'test-cases');
 const REQ_DIR     = path.join(REPORTS_DIR, 'requirements');
 const RAW_DIR     = path.join(REPORTS_DIR, 'raw');
 const EXCEL_DIR   = path.join(REPORTS_DIR, 'excel');
+const HTML_DIR    = path.join(REPORTS_DIR, 'html');
 const AGENTS_DIR  = path.join(ROOT, '.claude', 'agents');
 const SKILLS_DIR  = path.join(ROOT, '.claude', 'skills');
 
@@ -114,6 +116,79 @@ function latestFile(dir: string, prefix: string, ext = '.json'): string | null {
     .filter(f => f.startsWith(prefix) && f.endsWith(ext))
     .sort().reverse();
   return files.length ? path.join(dir, files[0]) : null;
+}
+
+/**
+ * Present up to 8 most-recent matching files (newest first) plus a "type a path" escape
+ * hatch. Used at every pipeline stage that consumes a file, so the user can pick an older
+ * run's output instead of always being forced onto whatever is newest on disk.
+ */
+async function selectFile(dir: string, match: (filename: string) => boolean, label: string): Promise<string | null> {
+  const files = fs.existsSync(dir)
+    ? fs.readdirSync(dir).filter(match).sort().reverse().slice(0, 8)
+    : [];
+  if (!files.length) p.log.warn(`No ${label} files found in ${path.relative(ROOT, dir)}/`);
+  const options: Array<{ value: string; label: string }> = files.map((f, i) => ({
+    value: path.join(dir, f),
+    label: i === 0 ? `${f}  (latest)` : f,
+  }));
+  options.push({ value: '__custom__', label: 'Enter a different file path…' });
+  const choice = await p.select({ message: `Select ${label} file`, options });
+  if (p.isCancel(choice)) return null;
+  if (choice !== '__custom__') return choice as string;
+  const custom = await p.text({
+    message: `Path to ${label}`,
+    validate: v => (!v?.trim() ? 'Required' : !fs.existsSync(v.trim()) ? 'File not found' : undefined),
+  });
+  if (p.isCancel(custom)) return null;
+  return String(custom).trim();
+}
+
+/** Ask which Playwright spec file/directory to run — offers all e2e module folders plus a free-text override. */
+async function selectTestTarget(suggested?: string): Promise<string> {
+  const e2eDir = path.join(ROOT, 'tests', 'e2e');
+  const modules = fs.existsSync(e2eDir)
+    ? fs.readdirSync(e2eDir).filter(d => fs.statSync(path.join(e2eDir, d)).isDirectory()).sort()
+    : [];
+  const options: Array<{ value: string; label: string }> = [];
+  if (suggested) options.push({ value: suggested, label: `Just-generated: ${suggested}` });
+  options.push({ value: '', label: 'All tests (tests/e2e/**)' });
+  for (const m of modules) options.push({ value: `tests/e2e/${m}`, label: `Module: ${m}` });
+  options.push({ value: '__custom__', label: 'Enter a specific spec file or path…' });
+
+  const choice = await p.select({ message: 'Which tests to run?', options });
+  if (p.isCancel(choice)) return suggested ?? '';
+  if (choice !== '__custom__') return choice as string;
+  const custom = await p.text({
+    message: 'Spec file or directory (relative to project root)',
+    placeholder: 'tests/e2e/employee/employee-details/smoke.spec.ts',
+    validate: v => (!v?.trim() ? 'Required' : undefined),
+  });
+  if (p.isCancel(custom)) return suggested ?? '';
+  return String(custom).trim();
+}
+
+/** Ask which Playwright JSON results file to feed into bug reporting — defaults to the live results.json. */
+async function selectResultsFile(): Promise<string | null> {
+  if (fs.existsSync(RESULTS_JSON)) {
+    const choice = await p.select({
+      message: 'Select results file',
+      options: [
+        { value: RESULTS_JSON, label: `${path.relative(ROOT, RESULTS_JSON)}  (latest run)` },
+        { value: '__custom__', label: 'Enter a different results.json path…' },
+      ],
+    });
+    if (p.isCancel(choice)) return null;
+    if (choice !== '__custom__') return choice as string;
+  } else {
+    p.log.warn(`No results file found at ${path.relative(ROOT, RESULTS_JSON)}`);
+  }
+  const custom = await p.text({
+    message: 'Path to results.json',
+    validate: v => (!v?.trim() ? 'Required' : !fs.existsSync(v.trim()) ? 'File not found' : undefined),
+  });
+  if (p.isCancel(custom)) return null;
+  return String(custom).trim();
 }
 
 function loadAgentPrompt(filename: string): string {
@@ -683,11 +758,11 @@ async function option1FullPipeline() {
     try { taskRecords = [await collectManualInput()]; } catch { return; }
   }
 
-  const runTests   = await p.confirm({ message: 'Run tests after generation? (Option 4)' });
+  const runTests   = await p.confirm({ message: 'Run tests after generation? (Option 5)' });
   if (p.isCancel(runTests)) return;
   let reportBugs: boolean | symbol = false;
   if (isZohoConfigured()) {
-    const ans = await p.confirm({ message: 'Report bugs to Zoho after test run? (Option 5)' });
+    const ans = await p.confirm({ message: 'Report bugs to Zoho after test run? (Option 6)' });
     if (p.isCancel(ans)) return;
     reportBugs = ans;
   } else {
@@ -726,8 +801,12 @@ async function option1FullPipeline() {
 
   // Step 5 — report bugs
   if (!p.isCancel(reportBugs) && reportBugs && testsFailed) {
-    await option5ReportBugs(true);
+    await option6ReportBugs(true, RESULTS_JSON);
   } else { p.log.info('Step 5 — Bug report skipped'); }
+
+  // Regenerate once more at the very end so a filed bug (step 5) is reflected in the report —
+  // runPlaywrightTests already generated one after the test run, but that was before bug filing.
+  const htmlReport = generatePipelineHtmlReport();
 
   p.note(
     [
@@ -736,6 +815,7 @@ async function option1FullPipeline() {
       `Step 3 — Automation   : ${automationFiles.length} file(s)`,
       `Step 4 — Tests        : ${!p.isCancel(runTests) && runTests ? (testsFailed ? 'FAILED' : 'PASSED') : 'SKIPPED'}`,
       `Step 5 — Bug Report   : ${!p.isCancel(reportBugs) && reportBugs && testsFailed ? 'FILED' : 'SKIPPED'}`,
+      `HTML Report           : ${htmlReport ?? 'generation failed — see log above'}`,
     ].join('\n'),
     'Full pipeline complete',
   );
@@ -750,6 +830,7 @@ async function option2FetchAndAnalyze() {
       { value: 'tasks',    label: 'Zoho Tasks',         hint: 'filter by ID(s), task list, status, priority' },
       { value: 'issues',   label: 'Zoho Issues (Bugs)', hint: 'filter by status: Open / To Be Tested / Closed / Reopened' },
       { value: 'document', label: 'SRS / Requirement Document', hint: '.pdf / .docx / .txt / .md — no Zoho needed' },
+      { value: 'previous', label: 'Previously fetched raw file', hint: 'reports/raw/*.json — re-analyze without re-fetching' },
     ],
   });
   if (p.isCancel(type)) return;
@@ -757,7 +838,15 @@ async function option2FetchAndAnalyze() {
   let items: Record<string, unknown>[] = [];
   const spin = p.spinner();
 
-  if (type === 'document') {
+  if (type === 'previous') {
+    const rawFile = await selectFile(RAW_DIR, f => /-fetched-\d+\.json$/.test(f), 'previously fetched raw');
+    if (!rawFile) { p.log.warn('No raw fetch file selected.'); return; }
+    try {
+      const parsed = JSON.parse(fs.readFileSync(rawFile, 'utf8'));
+      items = Array.isArray(parsed) ? parsed : [parsed];
+    } catch (e: unknown) { p.log.error(`Could not parse ${rawFile}: ${(e as Error).message}`); return; }
+    p.log.info(`Loaded ${items.length} item(s) from ${path.basename(rawFile)}`);
+  } else if (type === 'document') {
     const filePath = await p.text({
       message: 'Path to SRS / requirement document',
       placeholder: '/path/to/srs.pdf  or  requirements.docx  or  spec.md',
@@ -918,9 +1007,11 @@ async function option2FetchAndAnalyze() {
     p.note(preview + (items.length > 8 ? `\n…and ${items.length - 8} more` : ''), `${items.length} item(s)`);
   }
 
-  // Save raw fetch result
-  const rawFile = saveJson(RAW_DIR, `${type}-fetched`, items);
-  p.log.info(`Saved → ${rawFile}`);
+  // Save raw fetch result (skip re-saving when re-analyzing an existing raw file)
+  if (type !== 'previous') {
+    const rawFile = saveJson(RAW_DIR, `${type}-fetched`, items);
+    p.log.info(`Saved → ${rawFile}`);
+  }
 
   const analyzeLabel = type === 'document'
     ? `Run AI requirement analysis on "${items[0]['name']}"?`
@@ -939,32 +1030,8 @@ async function option2FetchAndAnalyze() {
 // ─── Option 3: Create Test Cases ─────────────────────────────────────────────
 
 async function option3CreateTestCases() {
-  // Auto-detect latest requirements file
-  const autoReq = latestFile(REQ_DIR, 'requirements');
-  let reqFile: string;
-
-  if (autoReq) {
-    const use = await p.confirm({ message: `Use latest requirements file?\n  ${autoReq}` });
-    if (p.isCancel(use)) return;
-    if (use) {
-      reqFile = autoReq;
-    } else {
-      const custom = await p.text({
-        message: 'Path to requirements JSON',
-        validate: v => (!v?.trim() ? 'Required' : !fs.existsSync(v.trim()) ? 'File not found' : undefined),
-      });
-      if (p.isCancel(custom)) return;
-      reqFile = String(custom).trim();
-    }
-  } else {
-    p.log.warn('No requirements file found — run Option 2 first, or provide a path.');
-    const custom = await p.text({
-      message: 'Path to requirements JSON',
-      validate: v => (!v?.trim() ? 'Required' : !fs.existsSync(v.trim()) ? 'File not found' : undefined),
-    });
-    if (p.isCancel(custom)) return;
-    reqFile = String(custom).trim();
-  }
+  const reqFile = await selectFile(REQ_DIR, f => f.startsWith('requirements-') && f.endsWith('.json'), 'requirements JSON');
+  if (!reqFile) { p.log.warn('No requirements file selected — run Option 2 first, or provide a path.'); return; }
 
   let backend: AIBackend;
   try { backend = resolveAIBackend(); } catch (e: unknown) { p.log.error((e as Error).message); return; }
@@ -987,57 +1054,43 @@ async function option3CreateTestCases() {
   }
 }
 
-// ─── Option 4: Generate & Run Playwright Tests ───────────────────────────────
+// ─── Option 4: Generate Playwright Automation (generation only, no execution) ─
 
-async function option4GenerateAndRun() {
-  const autoCases = latestFile(CASES_DIR, 'cases');
-  let casesFile: string;
-
-  if (autoCases) {
-    const use = await p.confirm({ message: `Use latest test cases file?\n  ${autoCases}` });
-    if (p.isCancel(use)) return;
-    if (use) {
-      casesFile = autoCases;
-    } else {
-      const custom = await p.text({
-        message: 'Path to cases JSON',
-        validate: v => (!v?.trim() ? 'Required' : !fs.existsSync(v.trim()) ? 'File not found' : undefined),
-      });
-      if (p.isCancel(custom)) return;
-      casesFile = String(custom).trim();
-    }
-  } else {
-    p.log.warn('No test cases file found — run Option 3 first.');
-    const custom = await p.text({
-      message: 'Path to cases JSON',
-      validate: v => (!v?.trim() ? 'Required' : !fs.existsSync(v.trim()) ? 'File not found' : undefined),
-    });
-    if (p.isCancel(custom)) return;
-    casesFile = String(custom).trim();
-  }
+async function option4GenerateAutomation() {
+  const casesFile = await selectFile(CASES_DIR, f => f.startsWith('cases-') && f.endsWith('.json'), 'test cases JSON');
+  if (!casesFile) { p.log.warn('No test cases file selected — run Option 3 first, or provide a path.'); return; }
 
   let backend: AIBackend;
   try { backend = resolveAIBackend(); } catch (e: unknown) { p.log.error((e as Error).message); return; }
 
   const automationFiles = await runAutomationGeneration(backend, casesFile);
-  const passed = await runPlaywrightTests(automationFiles);
-
-  if (!passed) {
-    const reportNow = await p.confirm({ message: 'Tests failed — go to Option 5 to report bugs now?' });
-    if (!p.isCancel(reportNow) && reportNow) await option5ReportBugs(true);
+  if (automationFiles.length) {
+    const runNow = await p.confirm({ message: 'Automation generated — go to Option 5 to run these tests now?' });
+    if (!p.isCancel(runNow) && runNow) await option5RunTests(automationFiles);
   }
 }
 
-// ─── Option 5: Report Bugs to Zoho (one by one) ──────────────────────────────
+// ─── Option 5: Run Playwright Tests (standalone — pick target spec/dir) ──────
 
-async function option5ReportBugs(skipConfirm = false) {
-  if (!fs.existsSync(RESULTS_JSON)) {
-    p.log.warn(`No results.json found at ${RESULTS_JSON}`);
-    p.log.info('Run Option 4 first to generate test results.');
+async function option5RunTests(automationFiles: AIFile[] = []) {
+  const passed = await runPlaywrightTests(automationFiles);
+
+  if (!passed) {
+    const reportNow = await p.confirm({ message: 'Tests failed — go to Option 6 to report bugs now?' });
+    if (!p.isCancel(reportNow) && reportNow) await option6ReportBugs(true, RESULTS_JSON);
+  }
+}
+
+// ─── Option 6: Report Bugs to Zoho (one by one) ──────────────────────────────
+
+async function option6ReportBugs(skipConfirm = false, resultsPathOverride?: string) {
+  const resultsPath = resultsPathOverride ?? await selectResultsFile();
+  if (!resultsPath) {
+    p.log.info('Run Option 5 first to generate test results.');
     return;
   }
 
-  const data = JSON.parse(fs.readFileSync(RESULTS_JSON, 'utf8'));
+  const data = JSON.parse(fs.readFileSync(resultsPath, 'utf8'));
   const { results, browser } = parsePlaywrightResults(data);
 
   // Never surface a flaky-on-retry test as reportable — it already recovered.
@@ -1292,7 +1345,7 @@ async function runAutomationGeneration(backend: AIBackend, casesFile: string): P
   return automationFiles;
 }
 
-async function runPlaywrightTests(automationFiles: AIFile[]): Promise<boolean> {
+async function runPlaywrightTests(automationFiles: AIFile[] = [], presetTarget?: string): Promise<boolean> {
   const browser = await p.select({
     message: 'Browser',
     options: [
@@ -1325,7 +1378,8 @@ async function runPlaywrightTests(automationFiles: AIFile[]): Promise<boolean> {
   const specDirs = [...new Set(
     automationFiles.filter(f => f.path.includes('tests/e2e/')).map(f => path.dirname(f.path))
   )];
-  const target = specDirs.length === 1 ? specDirs[0] : '';
+  const suggested = specDirs.length === 1 ? specDirs[0] : specDirs.length > 1 ? 'tests/e2e' : undefined;
+  const target = presetTarget !== undefined ? presetTarget : await selectTestTarget(suggested);
   const cmd = `npx playwright test --config=tests/playwright.config.ts --project=${browser} --workers=${workers}${mode === 'headed' ? ' --headed' : ''} ${target}`.trim();
 
   fs.mkdirSync(path.join(REPORTS_DIR, 'results'), { recursive: true });
@@ -1351,6 +1405,10 @@ async function runPlaywrightTests(automationFiles: AIFile[]): Promise<boolean> {
   if (fs.existsSync(RESULTS_JSON)) {
     runBackground('Exporting results to Excel…', 'npm run report:excel -- --mode=results');
   }
+
+  // Consolidated HTML dashboard — refreshed every time tests are executed, standalone or as
+  // part of the full pipeline, so "scripts were run" always leaves an up-to-date report behind.
+  generatePipelineHtmlReport();
 
   return finalOk;
 }
@@ -1424,6 +1482,15 @@ function mergeRetryAttempts(original: Record<string, unknown>, retry: Record<str
   for (const s of (original['suites'] as Record<string, unknown>[]) ?? []) walkSuite(s);
 }
 
+/** Aggregate every stage's latest output into one consolidated HTML dashboard (reports/html/). */
+function generatePipelineHtmlReport(): string | null {
+  const { ok } = run('Generating consolidated HTML pipeline report…', 'npm run report:html');
+  if (!ok) { p.log.warn('Pipeline HTML report generation failed — see errors above.'); return null; }
+  const htmlFile = latestFile(HTML_DIR, 'pipeline-report', '.html');
+  if (htmlFile) p.note(htmlFile, 'Pipeline HTML report');
+  return htmlFile;
+}
+
 // ─── Misc helpers ─────────────────────────────────────────────────────────────
 
 async function collectManualInput(): Promise<Record<string, unknown>> {
@@ -1470,32 +1537,34 @@ async function main() {
   const hasKey = !!process.env.ANTHROPIC_API_KEY && process.env.ANTHROPIC_API_KEY !== 'your_anthropic_api_key_here';
   if (bin)     p.log.info('AI backend: Claude Code CLI (no API key needed)');
   else if (hasKey) p.log.info('AI backend: Anthropic SDK');
-  else         p.log.warn('AI backend: none — Options 1–4 will fail. Install Claude Code extension or set ANTHROPIC_API_KEY.');
+  else         p.log.warn('AI backend: none — Options 1–4 (analysis/generation) will fail. Install Claude Code extension or set ANTHROPIC_API_KEY.');
 
   while (true) {
     const action = await p.select({
       message: 'Choose an option',
       options: [
-        { value: '1', label: '1.  Run Full Pipeline',             hint: 'task IDs or doc → analysis → test cases → scripts → run → bugs' },
-        { value: '2', label: '2.  Fetch & Analyze',               hint: 'tasks by ID / list / filter  OR  issues by status  →  AI analysis' },
-        { value: '3', label: '3.  Create Test Cases',             hint: 'requirements JSON  →  cases JSON + Excel' },
-        { value: '4', label: '4.  Generate & Run Playwright',     hint: 'cases JSON  →  scripts  →  run  →  results Excel' },
-        { value: '5', label: '5.  Report Bugs to Zoho',           hint: 'results.json  →  confirm each bug  →  file in Zoho' },
-        { value: '6', label: '6.  Exit' },
+        { value: '1', label: '1.  Run Full Pipeline',             hint: 'task IDs or doc → analysis → test cases → scripts → run → bugs → HTML report' },
+        { value: '2', label: '2.  Fetch & Analyze',               hint: 'tasks by ID / list / filter / previous fetch  OR  issues by status  →  AI analysis' },
+        { value: '3', label: '3.  Create Test Cases',             hint: 'select requirements JSON  →  cases JSON + Excel' },
+        { value: '4', label: '4.  Generate Automation',           hint: 'select cases JSON  →  Playwright scripts (no execution)' },
+        { value: '5', label: '5.  Run Playwright Tests',          hint: 'select spec file/module  →  run  →  results Excel + HTML report' },
+        { value: '6', label: '6.  Report Bugs to Zoho',           hint: 'select results.json  →  confirm each bug  →  file in Zoho' },
+        { value: '7', label: '7.  Exit' },
       ],
     });
 
-    if (p.isCancel(action) || action === '6') { p.outro('Done.'); break; }
+    if (p.isCancel(action) || action === '7') { p.outro('Done.'); break; }
 
     let next: string = action as string;
 
     while (next !== 'menu' && next !== 'exit') {
       console.log('');
-      if      (next === '1') { await option1FullPipeline();      next = await askWhatNext(1); }
-      else if (next === '2') { await option2FetchAndAnalyze();   next = await askWhatNext(2); }
-      else if (next === '3') { await option3CreateTestCases();   next = await askWhatNext(3); }
-      else if (next === '4') { await option4GenerateAndRun();    next = await askWhatNext(4); }
-      else if (next === '5') { await option5ReportBugs();        next = await askWhatNext(5); }
+      if      (next === '1') { await option1FullPipeline();       next = await askWhatNext(1); }
+      else if (next === '2') { await option2FetchAndAnalyze();    next = await askWhatNext(2); }
+      else if (next === '3') { await option3CreateTestCases();    next = await askWhatNext(3); }
+      else if (next === '4') { await option4GenerateAutomation(); next = await askWhatNext(4); }
+      else if (next === '5') { await option5RunTests();           next = await askWhatNext(5); }
+      else if (next === '6') { await option6ReportBugs();         next = await askWhatNext(6); }
       else break;
     }
 
@@ -1507,9 +1576,10 @@ async function main() {
 
 async function askWhatNext(from: number): Promise<string> {
   const opts: Array<{ value: string; label: string; hint?: string }> = [];
-  if (from === 2) opts.push({ value: '3', label: '3.  Create Test Cases',         hint: 'requirements JSON → cases JSON + Excel' });
-  if (from <= 3)  opts.push({ value: '4', label: '4.  Generate & Run Playwright', hint: 'cases JSON → scripts → run → results Excel' });
-  if (from <= 4)  opts.push({ value: '5', label: '5.  Report Bugs to Zoho',       hint: 'results.json → confirm each bug → file in Zoho' });
+  if (from === 2) opts.push({ value: '3', label: '3.  Create Test Cases',    hint: 'select requirements JSON → cases JSON + Excel' });
+  if (from <= 3)  opts.push({ value: '4', label: '4.  Generate Automation',  hint: 'select cases JSON → Playwright scripts' });
+  if (from <= 4)  opts.push({ value: '5', label: '5.  Run Playwright Tests', hint: 'select spec file/module → run → results Excel + HTML report' });
+  if (from <= 5)  opts.push({ value: '6', label: '6.  Report Bugs to Zoho',  hint: 'select results.json → confirm each bug → file in Zoho' });
   opts.push({ value: 'menu', label: '    ↩  Back to main menu' });
   opts.push({ value: 'exit', label: '    ✕  Exit' });
 

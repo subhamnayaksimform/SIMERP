@@ -8,6 +8,8 @@ argument-hint: 'Optional: project=chromium grep=<pattern> headed=true'
 
 Executes the Playwright test suite under `tests/e2e/` and produces structured artifacts that other agents can consume.
 
+This skill is the execution primitive wrapped by the **Test Runner** agent (`.claude/agents/test-runner.agent.md`), which adds target/file selection, forced-retry-on-single-attempt, and downstream Excel/HTML report generation on top of it. Invoke `Test Runner` directly for interactive use; call this skill's script directly only for scripted/CI invocations that don't need those extras.
+
 ## When to Use
 - After the automation-generator agent has produced/updated test files
 - For smoke, regression, or targeted runs
