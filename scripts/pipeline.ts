@@ -54,6 +54,8 @@ const REQ_DIR     = path.join(REPORTS_DIR, 'requirements');
 const RAW_DIR     = path.join(REPORTS_DIR, 'raw');
 const EXCEL_DIR   = path.join(REPORTS_DIR, 'excel');
 const HTML_DIR    = path.join(REPORTS_DIR, 'html');
+const COVERAGE_DIR = path.join(REPORTS_DIR, 'coverage');
+const REVIEW_DIR  = path.join(REPORTS_DIR, 'test-cases-review');
 const AGENTS_DIR  = path.join(ROOT, '.claude', 'agents');
 const SKILLS_DIR  = path.join(ROOT, '.claude', 'skills');
 
@@ -336,14 +338,34 @@ async function parseAndValidate<T>(
 interface AIFile { path: string; content: string; }
 type AIBackend = { type: 'cli'; bin: string } | { type: 'sdk'; client: Anthropic };
 
+function findClaudeOnPath(): string | null {
+  const finder = process.platform === 'win32' ? 'where' : 'which';
+  const result = spawnSync(finder, ['claude'], { shell: true, encoding: 'utf8' });
+  if (result.status !== 0) return null;
+  const candidates = result.stdout.split(/\r?\n/).map(l => l.trim()).filter(Boolean);
+  if (process.platform === 'win32') {
+    // `where` lists the extensionless POSIX shim alongside .cmd/.exe/.ps1 — only the
+    // latter are directly spawnable from Windows without a POSIX shell.
+    const winExecutable = candidates.find(c => /\.(cmd|exe|bat)$/i.test(c));
+    if (winExecutable) return winExecutable;
+  }
+  return candidates[0] || null;
+}
+
 function findClaudeBin(): string | null {
+  const onPath = findClaudeOnPath();
+  if (onPath) return onPath;
+
   const extRoot = path.join(os.homedir(), '.vscode', 'extensions');
   if (!fs.existsSync(extRoot)) return null;
   const dirs = fs.readdirSync(extRoot)
     .filter(d => d.startsWith('anthropic.claude-code-')).sort().reverse();
+  const binNames = process.platform === 'win32' ? ['claude.exe', 'claude'] : ['claude'];
   for (const d of dirs) {
-    const bin = path.join(extRoot, d, 'resources', 'native-binary', 'claude');
-    if (fs.existsSync(bin)) return bin;
+    for (const name of binNames) {
+      const bin = path.join(extRoot, d, 'resources', 'native-binary', name);
+      if (fs.existsSync(bin)) return bin;
+    }
   }
   return null;
 }
@@ -382,10 +404,15 @@ async function aiChat(
       if (allowTools) baseArgs.push('--allowedTools', 'Read,Write,Edit,Bash');
       if (model) baseArgs.push('--model', model);
       baseArgs.push('--system-prompt-file', sysPromptFile, '--output-format', 'text');
+      // .cmd/.bat shims (e.g. npm-installed `claude` on Windows) can only be exec'd via a shell.
+      const needsShell = process.platform === 'win32' && /\.(cmd|bat)$/i.test(backend.bin);
+      // Strip ANTHROPIC_API_KEY (loaded from .env for the SDK fallback) — its presence makes
+      // the CLI prefer API-key auth over the user's claude.ai login and disables connectors.
+      const { ANTHROPIC_API_KEY, ...cliEnv } = process.env;
       const proc = spawn(
         backend.bin,
         baseArgs,
-        { shell: false, cwd: ROOT, stdio: ['pipe', 'pipe', 'pipe'], env: { ...process.env, TERM: 'dumb' } },
+        { shell: needsShell, cwd: ROOT, stdio: ['pipe', 'pipe', 'pipe'], env: { ...cliEnv, TERM: 'dumb' } },
       );
       proc.stdin.end(userMessage);
       let stdout = '';
@@ -520,15 +547,57 @@ function isZohoConfigured(): boolean {
   return !!(process.env.ZOHO_PORTAL_ID?.trim() && process.env.ZOHO_PROJECT_ID?.trim() && readMcpUrl());
 }
 
+/** "HH:MM" (Zoho's owners_and_work.total_work format) → decimal hours, e.g. "08:30" → 8.5. */
+function parseWorkHours(raw: unknown): number | undefined {
+  const m = typeof raw === 'string' ? raw.match(/^(\d+):(\d{2})$/) : null;
+  if (!m) return undefined;
+  const hours = Number(m[1]) + Number(m[2]) / 60;
+  return hours || undefined;
+}
+
+/** Zoho task/issue descriptions come back as rich-text HTML — flatten to the plain text Zoho's own UI renders. */
+function htmlToText(html: string): string {
+  if (!html) return '';
+  return html
+    // <br/> is the actual line-break signal here — every semantic line already ends in one,
+    // so also breaking on closing block tags (</div>, </p>, ...) double-inserts a blank line
+    // per line instead of only at real paragraph gaps.
+    .replace(/<br\s*\/?>/gi, '\n')
+    .replace(/<[^>]+>/g, '')
+    .replace(/&nbsp;/gi, ' ')
+    .replace(/&amp;/gi, '&')
+    .replace(/&quot;/gi, '"')
+    .replace(/&#39;/gi, '\'')
+    .replace(/&lt;/gi, '<')
+    .replace(/&gt;/gi, '>')
+    .replace(/[ \t]+\n/g, '\n')
+    .replace(/\n{3,}/g, '\n\n')
+    .trim();
+}
+
 function normalizeTask(t: Record<string, unknown>): Record<string, unknown> {
+  const ownersAndWork = t['owners_and_work'] as Record<string, unknown> | undefined;
+  const owners = Array.isArray(ownersAndWork?.['owners']) ? ownersAndWork!['owners'] as Record<string, unknown>[] : [];
+  const detailOwners = ((t['details'] as Record<string, unknown>)?.['owners'] as Record<string, unknown>[]) ?? [];
+  // A task can be assigned to more than one person (unlike an issue, which has exactly
+  // one assignee) — collect everyone rather than just owners[0].
+  const ownerSource = owners.length ? owners : detailOwners;
+  const assigneeNames = ownerSource
+    .map(o => String(o?.['email'] ?? o?.['name'] ?? '').trim())
+    .filter(Boolean);
+  const assigneeList = assigneeNames.length ? assigneeNames : (t['owner_name'] ? [String(t['owner_name'])] : []);
   return {
     id:          String(t['id'] ?? t['id_string'] ?? ''),
-    prefix:      String(t['key'] ?? ''),
+    prefix:      String(t['prefix'] ?? t['key'] ?? ''),
     name:        String(t['name'] ?? ''),
-    description: String(t['description'] ?? ''),
+    description: htmlToText(String(t['description'] ?? '')),
     status:      String((t['status'] as Record<string, unknown>)?.['name'] ?? t['status'] ?? '').toLowerCase(),
     priority:    String(t['priority'] ?? '').toLowerCase(),
-    assignee:    String(((t['details'] as Record<string, unknown>)?.['owners'] as Record<string, unknown>[])?.[0]?.['email'] ?? t['owner_name'] ?? ''),
+    // Comma-separated when multiple assignees; unchanged single-value shape when there's just one.
+    assignee:    assigneeList.join(', '),
+    assignees:   assigneeList,
+    // Estimated/target work logged against the task — surfaced so tasks can be prioritized by effort.
+    targetHours: parseWorkHours(ownersAndWork?.['total_work']),
     tags:        (Array.isArray(t['tags']) ? t['tags'] : []).map((x: unknown) =>
       typeof x === 'object' && x !== null ? String((x as Record<string, unknown>)['name'] ?? x) : String(x)),
     acceptanceCriteria: (Array.isArray(t['custom_fields']) ? t['custom_fields'] : [])
@@ -549,24 +618,51 @@ async function fetchAllTasks(limit = 200): Promise<Record<string, unknown>[]> {
   return raw.map(normalizeTask);
 }
 
-async function fetchAllIssues(limit = 200): Promise<Record<string, unknown>[]> {
+async function fetchAllIssues(perPage = 200): Promise<Record<string, unknown>[]> {
   const { portalId, projectId } = portalAndProject();
-  const data = await callZohoMcp(
-    'ZohoProjects_get_project_issues',
-    { portal_id: portalId, project_id: projectId },
-    { per_page: limit },
-  ) as Record<string, unknown>;
-  const raw: Record<string, unknown>[] = Array.isArray(data) ? data
-    : Array.isArray(data['bugs']) ? data['bugs'] as Record<string, unknown>[]
-    : Array.isArray(data['issues']) ? data['issues'] as Record<string, unknown>[] : [];
+
+  // ZohoProjects_get_project_issues is paginated — a single page: 1 request only ever
+  // returns the first `perPage` issues in whatever default order Zoho uses, so any
+  // status (e.g. Open / To Be Tested) sitting past that page silently disappears from
+  // the results. Loop pages until a short/empty page tells us we've reached the end.
+  const raw: Record<string, unknown>[] = [];
+  const MAX_PAGES = 25; // safety cap (25 * 200 = 5000 issues) so a bad/looping API can't hang the pipeline
+  for (let page = 1; page <= MAX_PAGES; page++) {
+    const data = await callZohoMcp(
+      'ZohoProjects_get_project_issues',
+      { portal_id: portalId, project_id: projectId },
+      { per_page: perPage, page },
+    ) as Record<string, unknown>;
+    const pageItems: Record<string, unknown>[] = Array.isArray(data) ? data
+      : Array.isArray(data['bugs']) ? data['bugs'] as Record<string, unknown>[]
+      : Array.isArray(data['issues']) ? data['issues'] as Record<string, unknown>[] : [];
+    if (!pageItems.length) break;
+    raw.push(...pageItems);
+    if (pageItems.length < perPage) break; // last page reached
+  }
+
   return raw.map(t => ({
     id:          String(t['id'] ?? t['id_string'] ?? ''),
-    prefix:      String(t['key'] ?? ''),
+    prefix:      String(t['prefix'] ?? t['key'] ?? ''),
     name:        String(t['title'] ?? t['name'] ?? ''),
-    description: String(t['description'] ?? ''),
+    description: htmlToText(String(t['description'] ?? '')),
     status:      String((t['status'] as Record<string, unknown>)?.['name'] ?? t['status'] ?? '').toLowerCase(),
     severity:    String(t['severity'] ?? '').toLowerCase(),
-    assignee:    String((t['assignee'] as Record<string, unknown>)?.['name'] ?? ''),
+    assignee:    String(
+      (t['assignee'] as Record<string, unknown>)?.['name']
+      ?? (t['assignee_details'] as Record<string, unknown>)?.['name']
+      ?? t['assignee_name']
+      ?? '',
+    ),
+    reporter:    String(
+      (t['reported_person'] as Record<string, unknown>)?.['name']
+      ?? (t['reporter'] as Record<string, unknown>)?.['name']
+      ?? (t['created_by'] as Record<string, unknown>)?.['name']
+      ?? t['reported_person_name']
+      ?? t['reporter_name']
+      ?? t['created_by_name']
+      ?? '',
+    ),
     url:         String(((t['link'] as Record<string, unknown>)?.['web'] as Record<string, unknown>)?.['url'] ?? ''),
   }));
 }
@@ -589,11 +685,13 @@ async function fetchTasksByIds(ids: string[]): Promise<Record<string, unknown>[]
   const results: Record<string, unknown>[] = [];
   const missed: string[] = [];
 
-  // Direct single-task lookups are independent — fetch them concurrently.
+  // Direct single-task lookups (numeric task_id only — ZohoProjects_get_task_details rejects
+  // prefix codes like "SI4-T850") are independent — fetch them concurrently.
   const outcomes = await Promise.all(ids.map(async id => {
+    if (!/^\d+$/.test(id)) return { id, task: null as Record<string, unknown> | null };
     try {
       const data = await callZohoMcp(
-        'ZohoProjects_get_task',
+        'ZohoProjects_get_task_details',
         { portal_id: portalId, project_id: projectId, task_id: id },
       ) as Record<string, unknown>;
       const task = (data['tasks'] as Record<string, unknown>[])?.[0] ?? data;
@@ -607,7 +705,9 @@ async function fetchTasksByIds(ids: string[]): Promise<Record<string, unknown>[]
   }
 
   if (missed.length) {
-    // Fall back to full fetch only for IDs the direct call couldn't resolve
+    // Fall back to matching by prefix code / name against the project's task list — this is
+    // the only path available for prefix-code IDs like "SI4-T850" (get_task_details needs a
+    // numeric id, and this connector has no tool that returns full task description text).
     const all = await fetchAllTasks(200);
     for (const id of missed) {
       const target = id.toUpperCase();
@@ -702,7 +802,7 @@ async function option1FullPipeline() {
     }
     spin.stop(`${taskRecords.length} task(s) loaded`);
     if (!taskRecords.length) { p.log.warn('No tasks found. Aborting.'); return; }
-    taskRecords.forEach(t => p.log.info(`  ✓ ${t['prefix']}  ${t['name']}`));
+    taskRecords.forEach(t => p.log.info(`  ✓ ${t['prefix']}  ${t['name']}${t['targetHours'] ? `  (${t['targetHours']}h target)` : ''}`));
 
   } else if (source === 'file') {
     const filePath = await p.text({
@@ -944,29 +1044,57 @@ async function option2FetchAndAnalyze() {
     }
 
   } else {
-    // Issues
-    const statuses = await p.multiselect({
-      message: 'Issue status (select all that apply)',
-      options: [
-        { value: 'open',          label: 'Open' },
-        { value: 'to be tested',  label: 'To Be Tested' },
-        { value: 'in progress',   label: 'In Progress' },
-        { value: 'closed',        label: 'Closed' },
-        { value: 'reopened',      label: 'Reopened' },
-      ],
-      required: false,
-    });
-    if (p.isCancel(statuses)) return;
-
+    // Issues — fetch everything first, then build the status picker from whatever
+    // statuses actually exist in this project's data. A hardcoded guessed list (Open /
+    // To Be Tested / In Progress / Closed / Reopened) breaks silently whenever a project
+    // uses different workflow labels (e.g. "Approved") — it either can't be selected at
+    // all, or matches nothing and looks like the fetch is broken.
     spin.start('Fetching issues…');
+    let all: Record<string, unknown>[] = [];
     try {
-      const all = await fetchAllIssues(200);
-      const selectedStatuses = statuses as string[];
-      items = selectedStatuses.length
-        ? all.filter(t => selectedStatuses.some(s => String(t['status']).toLowerCase().includes(s)))
-        : all;
+      all = await fetchAllIssues(200);
     } catch (e: unknown) { spin.stop('Failed'); p.log.error((e as Error).message); return; }
-    spin.stop(`${items.length} issue(s) found`);
+    spin.stop(`${all.length} issue(s) fetched`);
+
+    if (!all.length) { p.log.warn('No issues returned from Zoho.'); return; }
+
+    const counts = new Map<string, number>();
+    for (const t of all) {
+      const s = String(t.status).trim().toLowerCase() || '(blank)';
+      counts.set(s, (counts.get(s) ?? 0) + 1);
+    }
+    const byCountDesc = [...counts.entries()].sort((a, b) => b[1] - a[1]);
+    const breakdown = byCountDesc.map(([s, c]) => `${s.padEnd(16)} ${c}`).join('\n');
+    p.note(breakdown, `Status breakdown — ${all.length} issue(s) total`);
+
+    const titleCase = (s: string) => s.replace(/\b\w/g, c => c.toUpperCase());
+    const statusList = byCountDesc.map(([s]) => s);
+
+    // A checkbox multiselect (space-to-toggle) isn't registering reliably in this
+    // terminal — selections come back empty even when a box was checked. Plain text
+    // input has no toggle-key dependency, so it can't fail the same way.
+    const input = await p.text({
+      message: `Status(es) to include — comma-separated, blank = ALL\n   Available: ${statusList.map((s, i) => `${titleCase(s)} (${byCountDesc[i][1]})`).join(', ')}`,
+      placeholder: 'e.g. open  or  open,approved',
+      validate: v => {
+        if (!v?.trim()) return undefined; // blank = all, allowed
+        const picked = v.split(',').map(s => s.trim().toLowerCase()).filter(Boolean);
+        const invalid = picked.filter(s => !statusList.includes(s));
+        return invalid.length ? `Unknown status: ${invalid.join(', ')}. Valid: ${statusList.join(', ')}` : undefined;
+      },
+    });
+    if (p.isCancel(input)) return;
+
+    const selectedStatuses = String(input).trim()
+      ? String(input).split(',').map(s => s.trim().toLowerCase()).filter(Boolean)
+      : [];
+    if (!selectedStatuses.length) {
+      p.log.warn('No status entered — using ALL statuses.');
+    }
+    items = selectedStatuses.length
+      ? all.filter(t => selectedStatuses.includes(String(t.status).trim().toLowerCase()))
+      : all;
+    p.log.info(`${items.length} issue(s) match selected status(es): ${selectedStatuses.length ? selectedStatuses.join(', ') : 'ALL'}`);
   }
 
   if (!items.length) { p.log.warn('Nothing to analyze.'); return; }
@@ -975,6 +1103,18 @@ async function option2FetchAndAnalyze() {
   if (type === 'document') {
     const excerpt = String(items[0]['description']).slice(0, 400).replace(/\n+/g, ' ');
     p.note(`${excerpt}…`, `Document: ${items[0]['name']}`);
+  } else if (type === 'issues') {
+    const preview = items.slice(0, 8)
+      .map(t => {
+        const id       = String(t['prefix'] || t['id']).padEnd(10);
+        const status   = String(t['status'] || '').padEnd(14);
+        const name     = String(t['name']).slice(0, 40).padEnd(42);
+        const assignee = String(t['assignee'] || '—').padEnd(18);
+        const reporter = String(t['reporter'] || '—');
+        return `${id} ${status} ${name} A:${assignee} R:${reporter}`;
+      })
+      .join('\n');
+    p.note(preview + (items.length > 8 ? `\n…and ${items.length - 8} more` : ''), `${items.length} item(s)`);
   } else {
     const preview = items.slice(0, 8)
       .map(t => `${String(t['prefix'] || t['id']).padEnd(12)} ${String(t['name']).slice(0, 60)}`)
@@ -1180,7 +1320,25 @@ async function option6ReportBugs(skipConfirm = false, resultsPathOverride?: stri
 
 // ─── Shared pipeline sub-steps ────────────────────────────────────────────────
 
+/**
+ * Runs the requirement-coverage and test-case-review report generators against a freshly
+ * written cases file, right after test case generation — so both are always in hand before
+ * a human decides whether to proceed to automation generation (Option 4).
+ */
+function runCoverageAndReview(reqFile: string, casesFile: string): void {
+  const covResult = run('Generating requirement coverage report…', `npm run report:coverage -- "${reqFile}" "${casesFile}"`);
+  const coverageHtml = covResult.ok ? latestFile(COVERAGE_DIR, 'coverage', '.html') : null;
+  if (coverageHtml) p.note(coverageHtml, 'Requirement coverage report');
+  else p.log.warn('Coverage report generation failed — see log above');
+
+  const reviewResult = run('Generating test case review page…', `npm run review:cases -- "${casesFile}"`);
+  const reviewHtml = reviewResult.ok ? latestFile(REVIEW_DIR, 'review', '.html') : null;
+  if (reviewHtml) p.note(reviewHtml, 'Test case review page');
+  else p.log.warn('Test case review page generation failed — see log above');
+}
+
 async function runTestCaseGeneration(backend: AIBackend, reqFile: string, ts: number): Promise<string | null> {
+  fs.mkdirSync(CASES_DIR, { recursive: true });
   const spin = p.spinner();
   spin.start('Generating test cases…');
   const systemPrompt = loadAgentPrompt('test-case-generator.agent.md');
@@ -1246,6 +1404,7 @@ async function runTestCaseGeneration(backend: AIBackend, reqFile: string, ts: nu
       const casesFile = path.join(CASES_DIR, `cases-${ts}.json`);
       fs.writeFileSync(casesFile, JSON.stringify(cases, null, 2));
       p.note(casesFile, 'cases JSON (saved — review/dedupe before generating automation)');
+      runCoverageAndReview(reqFile, casesFile);
       p.log.warn('Stopping before automation generation — re-run Option 4 once the cases file has been reviewed.');
       return null;
     }
@@ -1259,6 +1418,9 @@ async function runTestCaseGeneration(backend: AIBackend, reqFile: string, ts: nu
   runBackground('Exporting test cases to Excel…', `npm run report:excel -- --mode=test-cases --input="${casesFile}"`);
   const latestXlsx = latestFile(EXCEL_DIR, 'test-cases', '.xlsx');
   if (latestXlsx) p.note(latestXlsx, 'Excel');
+
+  runCoverageAndReview(reqFile, casesFile);
+
   return casesFile;
 }
 
@@ -1487,7 +1649,33 @@ async function collectManualInput(): Promise<Record<string, unknown>> {
 
 // ─── Main loop ────────────────────────────────────────────────────────────────
 
+// @clack/core's select-prompt renderer re-wraps the *previous* frame using
+// process.stdout.columns to compute how many lines to erase before drawing the next one
+// (see render()/restoreCursor() in @clack/core/dist/index.mjs). Some terminal hosts —
+// notably VS Code's integrated terminal — fire spurious `resize` events that report a
+// different (or momentarily undefined) column count without an actual size change; when
+// that happens between two renders of the same prompt, the erase-line count is computed
+// against the wrong width and the old frame isn't fully overwritten, leaving a stale
+// duplicate copy on screen. Pinning columns to a fixed value for the process lifetime
+// removes that desync at the source, independent of what the host terminal reports.
+
+function pinTerminalWidth(): void {
+  if (!process.stdout.isTTY) return;
+  const fixedColumns = process.stdout.columns || 100;
+  // Accessor (not a frozen data property) with a no-op setter: Node's internal TTY resize
+  // handler does a plain `this.columns = width` assignment on real resize events — a
+  // non-writable data property would make that throw in strict mode and crash the process.
+  // A setter that silently swallows the write keeps every read pinned without that risk.
+  Object.defineProperty(process.stdout, 'columns', {
+    get: () => fixedColumns,
+    set: () => { /* ignore — see comment above */ },
+    configurable: true,
+  });
+}
+
+
 async function main() {
+  pinTerminalWidth();
   console.clear();
   p.intro(' SIM ERP — QA Pipeline Orchestrator ');
 
@@ -1506,23 +1694,27 @@ async function main() {
       }
     } catch { /* ignore unparsable catalog */ }
   }
-
+/*
   const bin = findClaudeBin();
   const hasKey = !!process.env.ANTHROPIC_API_KEY && process.env.ANTHROPIC_API_KEY !== 'your_anthropic_api_key_here';
   if (bin)     p.log.info('AI backend: Claude Code CLI (no API key needed)');
   else if (hasKey) p.log.info('AI backend: Anthropic SDK');
   else         p.log.warn('AI backend: none — Options 1–4 (analysis/generation) will fail. Install Claude Code extension or set ANTHROPIC_API_KEY.');
+  */
 
   while (true) {
     const action = await p.select({
       message: 'Choose an option',
       options: [
-        { value: '1', label: '1.  Run Full Pipeline',             hint: 'task IDs or doc → analysis → test cases → scripts → run → bugs → HTML report' },
-        { value: '2', label: '2.  Fetch & Analyze',               hint: 'tasks by ID / list / filter / previous fetch  OR  issues by status  →  AI analysis' },
-        { value: '3', label: '3.  Create Test Cases',             hint: 'select requirements JSON  →  cases JSON + Excel' },
-        { value: '4', label: '4.  Generate Automation',           hint: 'select cases JSON  →  Playwright scripts (no execution)' },
-        { value: '5', label: '5.  Run Playwright Tests',          hint: 'select spec file/module  →  run  →  results Excel + HTML report' },
-        { value: '6', label: '6.  Report Bugs to Zoho',           hint: 'select results.json  →  confirm each bug  →  file in Zoho' },
+        // Hints kept short enough not to wrap in an 80-col terminal — @clack/prompts miscounts
+        // its erase-line math when the highlighted option's line wraps, leaving a stale
+        // duplicate frame on screen after arrow-key navigation.
+        { value: '1', label: '1.  Run Full Pipeline',             hint: 'analysis → tests → automation → run → bugs' },
+        { value: '2', label: '2.  Fetch & Analyze',               hint: 'tasks or issues → AI analysis' },
+        { value: '3', label: '3.  Create Test Cases',             hint: 'cases + Excel + coverage + review' },
+        { value: '4', label: '4.  Generate Automation',           hint: 'Playwright specs (no execution)' },
+        { value: '5', label: '5.  Run Playwright Tests',          hint: 'run → results + HTML report' },
+        { value: '6', label: '6.  Report Bugs to Zoho',           hint: 'results.json → file bugs in Zoho' },
         { value: '7', label: '7.  Exit' },
       ],
     });
@@ -1550,10 +1742,10 @@ async function main() {
 
 async function askWhatNext(from: number): Promise<string> {
   const opts: Array<{ value: string; label: string; hint?: string }> = [];
-  if (from === 2) opts.push({ value: '3', label: '3.  Create Test Cases',    hint: 'select requirements JSON → cases JSON + Excel' });
-  if (from <= 3)  opts.push({ value: '4', label: '4.  Generate Automation',  hint: 'select cases JSON → Playwright scripts' });
-  if (from <= 4)  opts.push({ value: '5', label: '5.  Run Playwright Tests', hint: 'select spec file/module → run → results Excel + HTML report' });
-  if (from <= 5)  opts.push({ value: '6', label: '6.  Report Bugs to Zoho',  hint: 'select results.json → confirm each bug → file in Zoho' });
+  if (from === 2) opts.push({ value: '3', label: '3.  Create Test Cases',    hint: 'cases + Excel + coverage + review' });
+  if (from <= 3)  opts.push({ value: '4', label: '4.  Generate Automation',  hint: 'Playwright scripts' });
+  if (from <= 4)  opts.push({ value: '5', label: '5.  Run Playwright Tests', hint: 'run → results + HTML report' });
+  if (from <= 5)  opts.push({ value: '6', label: '6.  Report Bugs to Zoho',  hint: 'confirm each → file in Zoho' });
   opts.push({ value: 'menu', label: '    ↩  Back to main menu' });
   opts.push({ value: 'exit', label: '    ✕  Exit' });
 

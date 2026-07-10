@@ -1,0 +1,877 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Requirement Coverage Report</title>
+<style>
+  :root {
+    --bg: #ffffff; --fg: #1a1a1a; --muted: #6b7280; --card-bg: #f8fafc; --border: #e2e8f0;
+    --ring-bg: #e5e7eb; --ring-fg: #16a34a;
+    --direct: #16a34a; --fuzzy: #d97706; --uncovered: #dc2626;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #0f1115; --fg: #e5e7eb; --muted: #9ca3af; --card-bg: #1a1d24; --border: #2a2e37; --ring-bg: #2a2e37; }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; padding: 32px; background: var(--bg); color: var(--fg); font-family: -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
+  h1 { font-size: 22px; margin: 0 0 4px; }
+  .meta { color: var(--muted); font-size: 13px; margin-bottom: 24px; }
+  .meta div { margin: 2px 0; }
+  .summary { display: flex; gap: 24px; align-items: center; flex-wrap: wrap; margin-bottom: 32px; }
+  .cards { display: flex; gap: 12px; flex-wrap: wrap; }
+  .card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 10px; padding: 14px 18px; min-width: 120px; }
+  .card .n { font-size: 24px; font-weight: 700; }
+  .card .l { font-size: 12px; color: var(--muted); margin-top: 2px; }
+  .card.direct .n { color: var(--direct); }
+  .card.fuzzy .n { color: var(--fuzzy); }
+  .card.uncovered .n { color: var(--uncovered); }
+  .donut-pct { font-size: 26px; font-weight: 700; fill: var(--fg); }
+  .donut-label { font-size: 12px; fill: var(--muted); }
+  h2 { font-size: 16px; margin: 28px 0 12px; border-bottom: 1px solid var(--border); padding-bottom: 6px; }
+  .bar-row { display: grid; grid-template-columns: 160px 1fr 60px; align-items: center; gap: 10px; margin-bottom: 8px; font-size: 13px; }
+  .bar-label { color: var(--muted); }
+  .bar-track { display: flex; height: 14px; border-radius: 4px; overflow: hidden; background: var(--ring-bg); }
+  .bar-seg { height: 100%; }
+  .bar-direct { background: var(--direct); }
+  .bar-fuzzy { background: var(--fuzzy); }
+  .bar-uncovered { background: var(--uncovered); }
+  .bar-count { text-align: right; color: var(--muted); }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; margin-top: 8px; }
+  th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  th { color: var(--muted); font-weight: 600; font-size: 12px; text-transform: uppercase; letter-spacing: 0.03em; }
+  .col-type { white-space: nowrap; color: var(--muted); }
+  .col-tc { white-space: nowrap; font-family: monospace; font-size: 12px; }
+  .row-uncovered { background: color-mix(in srgb, var(--uncovered) 8%, transparent); }
+  .badge { display: inline-block; padding: 2px 8px; border-radius: 999px; font-size: 11px; font-weight: 600; }
+  .badge-direct { background: color-mix(in srgb, var(--direct) 18%, transparent); color: var(--direct); }
+  .badge-fuzzy { background: color-mix(in srgb, var(--fuzzy) 18%, transparent); color: var(--fuzzy); }
+  .badge-uncovered { background: color-mix(in srgb, var(--uncovered) 18%, transparent); color: var(--uncovered); }
+  .note { font-size: 12px; color: var(--muted); margin-top: 6px; }
+  .table-wrap { overflow-x: auto; }
+  ul.gap-list { font-size: 13px; columns: 2; margin: 8px 0; }
+  ul.gap-list li { margin-bottom: 4px; }
+</style>
+</head>
+<body>
+  <h1>Requirement Coverage Report</h1>
+  <div class="meta">
+    <div><strong>Requirement source:</strong> C:\Users\labhesh\Desktop\SimERP_QA\reports\knowledge-base\modules\allocationDeallocation\PM-PMO-Requirements_v2.3_extracted.txt (matched via requirements-1783576983782.json)</div>
+    <div><strong>Test cases:</strong> C:\Users\labhesh\Desktop\SimERP_QA\reports\test-cases\cases-1783577542796.json</div>
+    <div><strong>Generated:</strong> 2026-07-09T06:43:10.565Z</div>
+  </div>
+
+  <div class="summary">
+    
+  <svg width="180" height="180" viewBox="0 0 180 180" role="img" aria-label="90% requirement coverage">
+    <circle cx="90" cy="90" r="70" fill="none" stroke="var(--ring-bg)" stroke-width="20" />
+    <circle cx="90" cy="90" r="70" fill="none" stroke="var(--ring-fg)" stroke-width="20"
+      stroke-dasharray="397.7 439.8" stroke-linecap="round"
+      transform="rotate(-90 90 90)" />
+    <text x="90" y="84" text-anchor="middle" class="donut-pct">90%</text>
+    <text x="90" y="106" text-anchor="middle" class="donut-label">covered</text>
+  </svg>
+    <div class="cards">
+      <div class="card"><div class="n">94</div><div class="l">Requirement units</div></div>
+      <div class="card direct"><div class="n">52</div><div class="l">Direct match</div></div>
+      <div class="card fuzzy"><div class="n">33</div><div class="l">Heuristic match</div></div>
+      <div class="card uncovered"><div class="n">9</div><div class="l">Uncovered</div></div>
+    </div>
+  </div>
+
+  <h2>Coverage by requirement type</h2>
+  
+    <div class="bar-row">
+      <div class="bar-label">AC</div>
+      <div class="bar-track">
+        <div class="bar-seg bar-direct" style="width:54.166666666666664%" title="13 direct match"></div>
+        <div class="bar-seg bar-fuzzy" style="width:41.66666666666667%" title="10 fuzzy match"></div>
+        <div class="bar-seg bar-uncovered" style="width:4.166666666666666%" title="1 uncovered"></div>
+      </div>
+      <div class="bar-count">23/24</div>
+    </div>
+
+    <div class="bar-row">
+      <div class="bar-label">validationRule</div>
+      <div class="bar-track">
+        <div class="bar-seg bar-direct" style="width:38.88888888888889%" title="7 direct match"></div>
+        <div class="bar-seg bar-fuzzy" style="width:33.33333333333333%" title="6 fuzzy match"></div>
+        <div class="bar-seg bar-uncovered" style="width:27.77777777777778%" title="5 uncovered"></div>
+      </div>
+      <div class="bar-count">13/18</div>
+    </div>
+
+    <div class="bar-row">
+      <div class="bar-label">businessRule</div>
+      <div class="bar-track">
+        <div class="bar-seg bar-direct" style="width:87.5%" title="7 direct match"></div>
+        <div class="bar-seg bar-fuzzy" style="width:12.5%" title="1 fuzzy match"></div>
+        <div class="bar-seg bar-uncovered" style="width:0%" title="0 uncovered"></div>
+      </div>
+      <div class="bar-count">8/8</div>
+    </div>
+
+    <div class="bar-row">
+      <div class="bar-label">criticalPaths</div>
+      <div class="bar-track">
+        <div class="bar-seg bar-direct" style="width:100%" title="3 direct match"></div>
+        <div class="bar-seg bar-fuzzy" style="width:0%" title="0 fuzzy match"></div>
+        <div class="bar-seg bar-uncovered" style="width:0%" title="0 uncovered"></div>
+      </div>
+      <div class="bar-count">3/3</div>
+    </div>
+
+    <div class="bar-row">
+      <div class="bar-label">edgeCase</div>
+      <div class="bar-track">
+        <div class="bar-seg bar-direct" style="width:66.66666666666666%" title="6 direct match"></div>
+        <div class="bar-seg bar-fuzzy" style="width:22.22222222222222%" title="2 fuzzy match"></div>
+        <div class="bar-seg bar-uncovered" style="width:11.11111111111111%" title="1 uncovered"></div>
+      </div>
+      <div class="bar-count">8/9</div>
+    </div>
+
+    <div class="bar-row">
+      <div class="bar-label">negativeScenario</div>
+      <div class="bar-track">
+        <div class="bar-seg bar-direct" style="width:87.5%" title="7 direct match"></div>
+        <div class="bar-seg bar-fuzzy" style="width:12.5%" title="1 fuzzy match"></div>
+        <div class="bar-seg bar-uncovered" style="width:0%" title="0 uncovered"></div>
+      </div>
+      <div class="bar-count">8/8</div>
+    </div>
+
+    <div class="bar-row">
+      <div class="bar-label">securityScenario</div>
+      <div class="bar-track">
+        <div class="bar-seg bar-direct" style="width:33.33333333333333%" title="2 direct match"></div>
+        <div class="bar-seg bar-fuzzy" style="width:66.66666666666666%" title="4 fuzzy match"></div>
+        <div class="bar-seg bar-uncovered" style="width:0%" title="0 uncovered"></div>
+      </div>
+      <div class="bar-count">6/6</div>
+    </div>
+
+    <div class="bar-row">
+      <div class="bar-label">testScenario</div>
+      <div class="bar-track">
+        <div class="bar-seg bar-direct" style="width:53.84615384615385%" title="7 direct match"></div>
+        <div class="bar-seg bar-fuzzy" style="width:46.15384615384615%" title="6 fuzzy match"></div>
+        <div class="bar-seg bar-uncovered" style="width:0%" title="0 uncovered"></div>
+      </div>
+      <div class="bar-count">13/13</div>
+    </div>
+
+    <div class="bar-row">
+      <div class="bar-label">nfr:performance</div>
+      <div class="bar-track">
+        <div class="bar-seg bar-direct" style="width:0%" title="0 direct match"></div>
+        <div class="bar-seg bar-fuzzy" style="width:100%" title="1 fuzzy match"></div>
+        <div class="bar-seg bar-uncovered" style="width:0%" title="0 uncovered"></div>
+      </div>
+      <div class="bar-count">1/1</div>
+    </div>
+
+    <div class="bar-row">
+      <div class="bar-label">nfr:security</div>
+      <div class="bar-track">
+        <div class="bar-seg bar-direct" style="width:0%" title="0 direct match"></div>
+        <div class="bar-seg bar-fuzzy" style="width:50%" title="1 fuzzy match"></div>
+        <div class="bar-seg bar-uncovered" style="width:50%" title="1 uncovered"></div>
+      </div>
+      <div class="bar-count">1/2</div>
+    </div>
+
+    <div class="bar-row">
+      <div class="bar-label">nfr:accessibility</div>
+      <div class="bar-track">
+        <div class="bar-seg bar-direct" style="width:0%" title="0 direct match"></div>
+        <div class="bar-seg bar-fuzzy" style="width:100%" title="1 fuzzy match"></div>
+        <div class="bar-seg bar-uncovered" style="width:0%" title="0 uncovered"></div>
+      </div>
+      <div class="bar-count">1/1</div>
+    </div>
+
+    <div class="bar-row">
+      <div class="bar-label">nfr:browserScope</div>
+      <div class="bar-track">
+        <div class="bar-seg bar-direct" style="width:0%" title="0 direct match"></div>
+        <div class="bar-seg bar-fuzzy" style="width:0%" title="0 fuzzy match"></div>
+        <div class="bar-seg bar-uncovered" style="width:100%" title="1 uncovered"></div>
+      </div>
+      <div class="bar-count">0/1</div>
+    </div>
+  <div class="note">■ direct = requirementRef points straight at this unit · ■ heuristic = matched by keyword overlap only, verify manually · ■ uncovered = no test case references or overlaps with this unit</div>
+
+  <h2>Requirement-by-requirement detail</h2>
+  <div class="table-wrap">
+  <table>
+    <thead><tr><th>Type</th><th>Requirement</th><th>Status</th><th>Test case(s)</th></tr></thead>
+    <tbody>
+      
+      <tr class="row-uncovered">
+        <td class="col-type">AC</td>
+        <td class="col-text">PM cannot directly modify or inline-edit allocations; every change is raised as a ticket (NA/UA/Replacement)</td>
+        <td class="col-status"><span class="badge badge-uncovered">uncovered</span></td>
+        <td class="col-tc">—</td>
+      </tr>
+
+      <tr class="">
+        <td class="col-type">AC</td>
+        <td class="col-text">PM sees only PM Projects and Requests pages; no access to department/team/employee list pages beyond org-role scope</td>
+        <td class="col-status"><span class="badge badge-direct">covered</span></td>
+        <td class="col-tc">TC-GEN-004</td>
+      </tr>
+
+      <tr class="">
+        <td class="col-type">AC</td>
+        <td class="col-text">Each project has exactly one PM sourced from Zoho Analytics sync; PM assignment UI does not exist in SimERP</td>
+        <td class="col-status"><span class="badge badge-direct">covered</span></td>
+        <td class="col-tc">TC-GEN-005</td>
+      </tr>
+
+      <tr class="">
+        <td class="col-type">AC</td>
+        <td class="col-text">PMO exclusively holds Add Allocation (direct allocation) permission; PM/TM/RM are denied this action</td>
+        <td class="col-status"><span class="badge badge-direct">covered</span></td>
+        <td class="col-tc">TC-GEN-054</td>
+      </tr>
+
+      <tr class="">
+        <td class="col-type">AC</td>
+        <td class="col-text">PMO is a standalone role and cannot be combined with RM/TM/EM</td>
+        <td class="col-status"><span class="badge badge-direct">covered</span></td>
+        <td class="col-tc">TC-GEN-006</td>
+      </tr>
+
+      <tr class="">
+        <td class="col-type">AC</td>
+        <td class="col-text">PM combined with an org role: PM scope applies only on PM Projects and Requests pages; org role scope (EM &gt; TM &gt; RM &gt; Employee) governs all other pages</td>
+        <td class="col-status"><span class="badge badge-fuzzy">covered (heuristic)</span></td>
+        <td class="col-tc">TC-GEN-018</td>
+      </tr>
+
+      <tr class="">
+        <td class="col-type">AC</td>
+        <td class="col-text">Requests page shows single table for PM-only or PM+RM; two tabs (My Requests / Department Requests) for PM+TM or PM+EM</td>
+        <td class="col-status"><span class="badge badge-direct">covered</span></td>
+        <td class="col-tc">TC-GEN-007, TC-GEN-008</td>
+      </tr>
+
+      <tr class="">
+        <td class="col-type">AC</td>
+        <td class="col-text">NA ticket creation supports multiple resource requests per submission, each becoming its own ticket with its own ID/state</td>
+        <td class="col-status"><span class="badge badge-direct">covered</span></td>
+        <td class="col-tc">TC-GEN-009</td>
+      </tr>
+
+      <tr class="">
+        <td class="col-type">AC</td>
+        <td class="col-text">UA ticket with New Allocation Percentage = 0, or relative reduction ≥ 70%, surfaces mandatory ratings/feedback/reason fields</td>
+        <td class="col-status"><span class="badge badge-fuzzy">covered (heuristic)</span></td>
+        <td class="col-tc">TC-GEN-040</td>
+      </tr>
+
+      <tr class="">
+        <td class="col-type">AC</td>
+        <td class="col-text">Dynamic allocation Update Allocation action internally sets 0% and current date as end date, follows lighter acknowledgement flow, archives (soft-deletes) the ProjectAssignment on apply</td>
+        <td class="col-status"><span class="badge badge-fuzzy">covered (heuristic)</span></td>
+        <td class="col-tc">TC-GEN-002</td>
+      </tr>
+
+      <tr class="">
+        <td class="col-type">AC</td>
+        <td class="col-text">Full approval flow (NA tickets, UA increases) requires PMO approval AND TM/EM approval (unless PMO bypass) to reach APPROVED</td>
+        <td class="col-status"><span class="badge badge-direct">covered</span></td>
+        <td class="col-tc">TC-GEN-010</td>
+      </tr>
+
+      <tr class="">
+        <td class="col-type">AC</td>
+        <td class="col-text">Lighter acknowledgement flow (UA decreases/de-allocations) skips IN_REVIEW, moves OPEN→AWAITING_CONFIRMATION automatically, has no reject path, and only requires PMO acknowledgement to reach APPROVED</td>
+        <td class="col-status"><span class="badge badge-fuzzy">covered (heuristic)</span></td>
+        <td class="col-tc">TC-GEN-010</td>
+      </tr>
+
+      <tr class="">
+        <td class="col-type">AC</td>
+        <td class="col-text">On ticket APPROVED: NA creates new ProjectAssignment (status=GREEN, typeOfWork=DEVELOPMENT_WORK) except PR Reviewer which creates an 'other allocation'; UA &gt;0% updates only changed fields; UA =0% sets allocationEndDate and soft-deletes the ProjectAssignment</td>
+        <td class="col-status"><span class="badge badge-direct">covered</span></td>
+        <td class="col-tc">TC-GEN-011</td>
+      </tr>
+
+      <tr class="">
+        <td class="col-type">AC</td>
+        <td class="col-text">Duplicate UA ticket for the same employee+project with an active ticket (OPEN/IN_REVIEW/AWAITING_CONFIRMATION) is blocked with a conflict error; NA has no such block</td>
+        <td class="col-status"><span class="badge badge-fuzzy">covered (heuristic)</span></td>
+        <td class="col-tc">TC-GEN-026</td>
+      </tr>
+
+      <tr class="">
+        <td class="col-type">AC</td>
+        <td class="col-text">Ticket numbers are zero-padded 4-digit sequential integers per type, non-yearly-resetting, generated via dedicated PostgreSQL sequences</td>
+        <td class="col-status"><span class="badge badge-direct">covered</span></td>
+        <td class="col-tc">TC-GEN-043</td>
+      </tr>
+
+      <tr class="">
+        <td class="col-type">AC</td>
+        <td class="col-text">Tickets are never hard-deleted; all removal is soft delete (deletedAt)</td>
+        <td class="col-status"><span class="badge badge-direct">covered</span></td>
+        <td class="col-tc">TC-GEN-013</td>
+      </tr>
+
+      <tr class="">
+        <td class="col-type">AC</td>
+        <td class="col-text">TM/EM rejection of a full-flow ticket returns it to IN_REVIEW; PM is not notified of rejection</td>
+        <td class="col-status"><span class="badge badge-direct">covered</span></td>
+        <td class="col-tc">TC-GEN-032</td>
+      </tr>
+
+      <tr class="">
+        <td class="col-type">AC</td>
+        <td class="col-text">Modifying ticket assignment details after any approval invalidates all approvals and reverts ticket to AWAITING_CONFIRMATION</td>
+        <td class="col-status"><span class="badge badge-fuzzy">covered (heuristic)</span></td>
+        <td class="col-tc">TC-GEN-014</td>
+      </tr>
+
+      <tr class="">
+        <td class="col-type">AC</td>
+        <td class="col-text">Deallocation ratings/feedback/reason are visible only to RM, TM, EM, Admin, PMO; PM sees only ratings they themselves previously added</td>
+        <td class="col-status"><span class="badge badge-fuzzy">covered (heuristic)</span></td>
+        <td class="col-tc">TC-GEN-059</td>
+      </tr>
+
+      <tr class="">
+        <td class="col-type">AC</td>
+        <td class="col-text">Bypass checkbox is visible to PMO only; bypass waives TM/EM approval and records bypassedAt/bypassedById</td>
+        <td class="col-status"><span class="badge badge-fuzzy">covered (heuristic)</span></td>
+        <td class="col-tc">TC-GEN-060</td>
+      </tr>
+
+      <tr class="">
+        <td class="col-type">AC</td>
+        <td class="col-text">PMO direct allocation (§6.3) triggers in-app + email notification to project's PM, department's TM/EM, allocated employee's RM, and the allocated employee</td>
+        <td class="col-status"><span class="badge badge-fuzzy">covered (heuristic)</span></td>
+        <td class="col-tc">TC-GEN-003</td>
+      </tr>
+
+      <tr class="">
+        <td class="col-type">AC</td>
+        <td class="col-text">Replacement request is presented as a third Create Request option but stored internally as a UA ticket with a replacement flag; department and tech stack are pre-populated and non-editable</td>
+        <td class="col-status"><span class="badge badge-fuzzy">covered (heuristic)</span></td>
+        <td class="col-tc">TC-GEN-019</td>
+      </tr>
+
+      <tr class="">
+        <td class="col-type">AC</td>
+        <td class="col-text">Auto-apply failure reverts ticket to prior state (AWAITING_CONFIRMATION) and notifies PMO with a retry prompt</td>
+        <td class="col-status"><span class="badge badge-direct">covered</span></td>
+        <td class="col-tc">TC-GEN-015</td>
+      </tr>
+
+      <tr class="">
+        <td class="col-type">AC</td>
+        <td class="col-text">PM Projects page shows Active and Completed/Archived projects separately, with search by name, sort by name/last-updated, pagination 100/200/300, and a summary bar of total active project count</td>
+        <td class="col-status"><span class="badge badge-direct">covered</span></td>
+        <td class="col-tc">TC-GEN-016</td>
+      </tr>
+
+      <tr class="row-uncovered">
+        <td class="col-type">validationRule</td>
+        <td class="col-text">Start Date (NA): Cannot be in the past</td>
+        <td class="col-status"><span class="badge badge-uncovered">uncovered</span></td>
+        <td class="col-tc">—</td>
+      </tr>
+
+      <tr class="row-uncovered">
+        <td class="col-type">validationRule</td>
+        <td class="col-text">Replacement Type: Permanent/Temporary, required on Replacement requests</td>
+        <td class="col-status"><span class="badge badge-uncovered">uncovered</span></td>
+        <td class="col-tc">—</td>
+      </tr>
+
+      <tr class="row-uncovered">
+        <td class="col-type">validationRule</td>
+        <td class="col-text">Replacement Reason: Required on Replacement requests; one of Performance Issues/Role Misalignment/Long leaves/Allocation optimisation</td>
+        <td class="col-status"><span class="badge badge-uncovered">uncovered</span></td>
+        <td class="col-tc">—</td>
+      </tr>
+
+      <tr class="row-uncovered">
+        <td class="col-type">validationRule</td>
+        <td class="col-text">Seniority: One of JUNIOR/MID/SENIOR/LEAD</td>
+        <td class="col-status"><span class="badge badge-uncovered">uncovered</span></td>
+        <td class="col-tc">—</td>
+      </tr>
+
+      <tr class="row-uncovered">
+        <td class="col-type">validationRule</td>
+        <td class="col-text">PR Review Frequency: Required if Request Type = PR Reviewer; one of Frequently/Occasionally/Rarely/Not at all</td>
+        <td class="col-status"><span class="badge badge-uncovered">uncovered</span></td>
+        <td class="col-tc">—</td>
+      </tr>
+
+      <tr class="">
+        <td class="col-type">validationRule</td>
+        <td class="col-text">Allocation Percentage (NA, Fixed): Integer 1–100; not applicable for Dynamic</td>
+        <td class="col-status"><span class="badge badge-direct">covered</span></td>
+        <td class="col-tc">TC-GEN-041</td>
+      </tr>
+
+      <tr class="">
+        <td class="col-type">validationRule</td>
+        <td class="col-text">New Allocation Percentage (UA, Fixed): Integer 0–100; 0 = full deallocation; disabled for Dynamic</td>
+        <td class="col-status"><span class="badge badge-fuzzy">covered (heuristic)</span></td>
+        <td class="col-tc">TC-GEN-041</td>
+      </tr>
+
+      <tr class="">
+        <td class="col-type">validationRule</td>
+        <td class="col-text">End Date (NA): Must be after start date if provided</td>
+        <td class="col-status"><span class="badge badge-direct">covered</span></td>
+        <td class="col-tc">TC-GEN-029</td>
+      </tr>
+
+      <tr class="">
+        <td class="col-type">validationRule</td>
+        <td class="col-text">De-allocation Reason: Required when new % = 0 or relative reduction ≥ 70%; one of Project Closure/Performance Issues/Role Misalignment/Downsizing</td>
+        <td class="col-status"><span class="badge badge-fuzzy">covered (heuristic)</span></td>
+        <td class="col-tc">TC-GEN-039</td>
+      </tr>
+
+      <tr class="">
+        <td class="col-type">validationRule</td>
+        <td class="col-text">Core Skill / Communication / Attitude / Justice to Role Rating: Integer 1–10; required when new % = 0 or relative reduction ≥ 70%</td>
+        <td class="col-status"><span class="badge badge-direct">covered</span></td>
+        <td class="col-tc">TC-GEN-052</td>
+      </tr>
+
+      <tr class="">
+        <td class="col-type">validationRule</td>
+        <td class="col-text">Open to Work With Again: Required Yes/No when new % = 0 or relative reduction ≥ 70%</td>
+        <td class="col-status"><span class="badge badge-fuzzy">covered (heuristic)</span></td>
+        <td class="col-tc">TC-GEN-039</td>
+      </tr>
+
+      <tr class="">
+        <td class="col-type">validationRule</td>
+        <td class="col-text">Relative Reduction: (current % − new %) ÷ current % ≥ 0.70 triggers mandatory ratings/feedback/reason</td>
+        <td class="col-status"><span class="badge badge-fuzzy">covered (heuristic)</span></td>
+        <td class="col-tc">TC-GEN-039</td>
+      </tr>
+
+      <tr class="">
+        <td class="col-type">validationRule</td>
+        <td class="col-text">Replacement department &amp; tech stack: Pre-populated from original developer; non-editable</td>
+        <td class="col-status"><span class="badge badge-fuzzy">covered (heuristic)</span></td>
+        <td class="col-tc">TC-GEN-019</td>
+      </tr>
+
+      <tr class="">
+        <td class="col-type">validationRule</td>
+        <td class="col-text">Ticket number: Zero-padded 4-digit sequential integer per type (NA-0001, UA-0001), no yearly reset, generated via atomic PostgreSQL sequence</td>
+        <td class="col-status"><span class="badge badge-fuzzy">covered (heuristic)</span></td>
+        <td class="col-tc">TC-GEN-043</td>
+      </tr>
+
+      <tr class="">
+        <td class="col-type">validationRule</td>
+        <td class="col-text">Duplicate UA ticket: Blocked with conflict error if an active ticket (OPEN/IN_REVIEW/AWAITING_CONFIRMATION) already exists for the same employee+project combination</td>
+        <td class="col-status"><span class="badge badge-direct">covered</span></td>
+        <td class="col-tc">TC-GEN-035</td>
+      </tr>
+
+      <tr class="">
+        <td class="col-type">validationRule</td>
+        <td class="col-text">Shadow For: Required if Request Type = Shadow Developer; dropdown of developers currently on selected project</td>
+        <td class="col-status"><span class="badge badge-direct">covered</span></td>
+        <td class="col-tc">TC-GEN-022</td>
+      </tr>
+
+      <tr class="">
+        <td class="col-type">validationRule</td>
+        <td class="col-text">New Allocation Type (UA): Dynamic cannot be converted to Fixed via UA; must raise new Fixed NA instead</td>
+        <td class="col-status"><span class="badge badge-direct">covered</span></td>
+        <td class="col-tc">TC-GEN-021</td>
+      </tr>
+
+      <tr class="">
+        <td class="col-type">validationRule</td>
+        <td class="col-text">Target ProjectAssignment (pre-apply): Must still exist with deletedAt IS NULL at approval time, else transaction fails and reverts</td>
+        <td class="col-status"><span class="badge badge-direct">covered</span></td>
+        <td class="col-tc">TC-GEN-045</td>
+      </tr>
+
+      <tr class="">
+        <td class="col-type">businessRule</td>
+        <td class="col-text">Ticket-driven system: every allocation change flows through a ticket except PMO direct allocation (§6.3)</td>
+        <td class="col-status"><span class="badge badge-direct">covered</span></td>
+        <td class="col-tc">TC-GEN-066</td>
+      </tr>
+
+      <tr class="">
+        <td class="col-type">businessRule</td>
+        <td class="col-text">APPROVED tickets cannot be closed; ending an approved allocation requires a new UA at 0%</td>
+        <td class="col-status"><span class="badge badge-direct">covered</span></td>
+        <td class="col-tc">TC-GEN-033, TC-GEN-034</td>
+      </tr>
+
+      <tr class="">
+        <td class="col-type">businessRule</td>
+        <td class="col-text">PM scope is confined to PM Projects and Requests pages only; org-hierarchy role governs all other pages regardless of PM pairing</td>
+        <td class="col-status"><span class="badge badge-direct">covered</span></td>
+        <td class="col-tc">TC-GEN-018, TC-GEN-067</td>
+      </tr>
+
+      <tr class="">
+        <td class="col-type">businessRule</td>
+        <td class="col-text">PR Reviewer tickets create an 'other allocation' rather than a normal ProjectAssignment, and other allocations may exceed the 100% allocation limit</td>
+        <td class="col-status"><span class="badge badge-direct">covered</span></td>
+        <td class="col-tc">TC-GEN-012</td>
+      </tr>
+
+      <tr class="">
+        <td class="col-type">businessRule</td>
+        <td class="col-text">Tickets belong to the project, not the PM; on PM change via Zoho sync, the new PM inherits existing tickets and the previous PM loses visibility</td>
+        <td class="col-status"><span class="badge badge-direct">covered</span></td>
+        <td class="col-tc">TC-GEN-020, TC-GEN-068</td>
+      </tr>
+
+      <tr class="">
+        <td class="col-type">businessRule</td>
+        <td class="col-text">Any modification to ticket assignment details after partial/full approval invalidates all recorded approvals and reverts state to AWAITING_CONFIRMATION</td>
+        <td class="col-status"><span class="badge badge-direct">covered</span></td>
+        <td class="col-tc">TC-GEN-014</td>
+      </tr>
+
+      <tr class="">
+        <td class="col-type">businessRule</td>
+        <td class="col-text">Duplicate/double-submit on Create Request must not create duplicate tickets for the same employee+project when one is already active</td>
+        <td class="col-status"><span class="badge badge-direct">covered</span></td>
+        <td class="col-tc">TC-GEN-038</td>
+      </tr>
+
+      <tr class="">
+        <td class="col-type">businessRule</td>
+        <td class="col-text">Data written via ticket approval (ProjectAssignment create/update/archive) must be retrievable via the corresponding API with identical values</td>
+        <td class="col-status"><span class="badge badge-fuzzy">covered (heuristic)</span></td>
+        <td class="col-tc">TC-GEN-027</td>
+      </tr>
+
+      <tr class="">
+        <td class="col-type">criticalPaths</td>
+        <td class="col-text">PM creates NA ticket → PMO assigns department → PMO+TM/EM shortlist and select developer → PMO+TM/EM approve → ProjectAssignment created → PM/employee/RM notified</td>
+        <td class="col-status"><span class="badge badge-direct">covered</span></td>
+        <td class="col-tc">TC-GEN-001</td>
+      </tr>
+
+      <tr class="">
+        <td class="col-type">criticalPaths</td>
+        <td class="col-text">PM raises UA de-allocation (0% or ≥70% reduction) → ticket auto-moves to AWAITING_CONFIRMATION → PMO acknowledges → ProjectAssignment soft-deleted → PM/RM notified</td>
+        <td class="col-status"><span class="badge badge-direct">covered</span></td>
+        <td class="col-tc">TC-GEN-002</td>
+      </tr>
+
+      <tr class="">
+        <td class="col-type">criticalPaths</td>
+        <td class="col-text">PMO performs direct allocation (Add Allocation) → ProjectAssignment created without a ticket → PM/TM-EM/RM/employee all notified</td>
+        <td class="col-status"><span class="badge badge-direct">covered</span></td>
+        <td class="col-tc">TC-GEN-003</td>
+      </tr>
+
+      <tr class="row-uncovered">
+        <td class="col-type">edgeCase</td>
+        <td class="col-text">Relative reduction exactly at 70% threshold (boundary) vs 69% (just under)</td>
+        <td class="col-status"><span class="badge badge-uncovered">uncovered</span></td>
+        <td class="col-tc">—</td>
+      </tr>
+
+      <tr class="">
+        <td class="col-type">edgeCase</td>
+        <td class="col-text">NA ticket with multiple resource requests in one submission — each must get an independent ticket ID/state</td>
+        <td class="col-status"><span class="badge badge-direct">covered</span></td>
+        <td class="col-tc">TC-GEN-009</td>
+      </tr>
+
+      <tr class="">
+        <td class="col-type">edgeCase</td>
+        <td class="col-text">PM Projects pagination boundary at 100/200/300 item page-size transitions</td>
+        <td class="col-status"><span class="badge badge-direct">covered</span></td>
+        <td class="col-tc">TC-GEN-044</td>
+      </tr>
+
+      <tr class="">
+        <td class="col-type">edgeCase</td>
+        <td class="col-text">Auto-apply failure when target ProjectAssignment was deleted by another approved ticket concurrently</td>
+        <td class="col-status"><span class="badge badge-fuzzy">covered (heuristic)</span></td>
+        <td class="col-tc">TC-GEN-045</td>
+      </tr>
+
+      <tr class="">
+        <td class="col-type">edgeCase</td>
+        <td class="col-text">Concurrent PMO + TM/EM writes to the same shortlist (last-write-wins acceptable per design)</td>
+        <td class="col-status"><span class="badge badge-direct">covered</span></td>
+        <td class="col-tc">TC-GEN-046</td>
+      </tr>
+
+      <tr class="">
+        <td class="col-type">edgeCase</td>
+        <td class="col-text">PM changes via Zoho sync mid-ticket-lifecycle — new PM must inherit visibility, old PM must lose it</td>
+        <td class="col-status"><span class="badge badge-direct">covered</span></td>
+        <td class="col-tc">TC-GEN-020</td>
+      </tr>
+
+      <tr class="">
+        <td class="col-type">edgeCase</td>
+        <td class="col-text">Unmatched Zoho projectManagerEmail leaves projectManagerId null and logs a warning</td>
+        <td class="col-status"><span class="badge badge-direct">covered</span></td>
+        <td class="col-tc">TC-GEN-047</td>
+      </tr>
+
+      <tr class="">
+        <td class="col-type">edgeCase</td>
+        <td class="col-text">Shadow Developer request where 'Shadow For' developer is removed from the project before ticket approval</td>
+        <td class="col-status"><span class="badge badge-direct">covered</span></td>
+        <td class="col-tc">TC-GEN-048</td>
+      </tr>
+
+      <tr class="">
+        <td class="col-type">edgeCase</td>
+        <td class="col-text">Dynamic allocation cannot be converted to Fixed via UA — attempted conversion must be rejected/redirected to a new Fixed NA flow</td>
+        <td class="col-status"><span class="badge badge-fuzzy">covered (heuristic)</span></td>
+        <td class="col-tc">TC-GEN-021</td>
+      </tr>
+
+      <tr class="">
+        <td class="col-type">negativeScenario</td>
+        <td class="col-text">{&quot;scenario&quot;:&quot;PM attempts to submit NA with Start Date in the past&quot;,&quot;expectedBehaviour&quot;:&quot;Form validation blocks submission with an inline error&quot;}</td>
+        <td class="col-status"><span class="badge badge-direct">covered</span></td>
+        <td class="col-tc">TC-GEN-028</td>
+      </tr>
+
+      <tr class="">
+        <td class="col-type">negativeScenario</td>
+        <td class="col-text">{&quot;scenario&quot;:&quot;PM attempts to submit NA/UA with End Date before Start Date&quot;,&quot;expectedBehaviour&quot;:&quot;Cross-field validation blocks submission&quot;}</td>
+        <td class="col-status"><span class="badge badge-direct">covered</span></td>
+        <td class="col-tc">TC-GEN-029</td>
+      </tr>
+
+      <tr class="">
+        <td class="col-type">negativeScenario</td>
+        <td class="col-text">{&quot;scenario&quot;:&quot;PM attempts inline allocation edit without a ticket&quot;,&quot;expectedBehaviour&quot;:&quot;No inline edit control is available; action is not permitted&quot;}</td>
+        <td class="col-status"><span class="badge badge-direct">covered</span></td>
+        <td class="col-tc">TC-GEN-030</td>
+      </tr>
+
+      <tr class="">
+        <td class="col-type">negativeScenario</td>
+        <td class="col-text">{&quot;scenario&quot;:&quot;TM/EM attempts to reject a lighter-flow (decrease) ticket&quot;,&quot;expectedBehaviour&quot;:&quot;Reject action is unavailable for lighter-flow tickets&quot;}</td>
+        <td class="col-status"><span class="badge badge-direct">covered</span></td>
+        <td class="col-tc">TC-GEN-031</td>
+      </tr>
+
+      <tr class="">
+        <td class="col-type">negativeScenario</td>
+        <td class="col-text">{&quot;scenario&quot;:&quot;Attempt to close a ticket already in APPROVED state&quot;,&quot;expectedBehaviour&quot;:&quot;Close action is blocked/unavailable once APPROVED&quot;}</td>
+        <td class="col-status"><span class="badge badge-direct">covered</span></td>
+        <td class="col-tc">TC-GEN-033</td>
+      </tr>
+
+      <tr class="">
+        <td class="col-type">negativeScenario</td>
+        <td class="col-text">{&quot;scenario&quot;:&quot;Second UA submitted for an employee+project with an already-active UA ticket&quot;,&quot;expectedBehaviour&quot;:&quot;Conflict error returned; no duplicate created&quot;}</td>
+        <td class="col-status"><span class="badge badge-fuzzy">covered (heuristic)</span></td>
+        <td class="col-tc">TC-GEN-035</td>
+      </tr>
+
+      <tr class="">
+        <td class="col-type">negativeScenario</td>
+        <td class="col-text">{&quot;scenario&quot;:&quot;Non-PMO role attempts to access the Bypass checkbox via direct API call&quot;,&quot;expectedBehaviour&quot;:&quot;403 / permission denied&quot;}</td>
+        <td class="col-status"><span class="badge badge-direct">covered</span></td>
+        <td class="col-tc">TC-GEN-036</td>
+      </tr>
+
+      <tr class="">
+        <td class="col-type">negativeScenario</td>
+        <td class="col-text">{&quot;scenario&quot;:&quot;Attempt Replacement request with a technology-stack scope swap&quot;,&quot;expectedBehaviour&quot;:&quot;Form/backend rejects; guidance to raise de-allocation + new NA instead&quot;}</td>
+        <td class="col-status"><span class="badge badge-direct">covered</span></td>
+        <td class="col-tc">TC-GEN-037</td>
+      </tr>
+
+      <tr class="">
+        <td class="col-type">securityScenario</td>
+        <td class="col-text">{&quot;scenario&quot;:&quot;PM attempts direct API call to /allocation-tickets/:id/approve or /acknowledge (PMO-only actions)&quot;,&quot;expectedBehaviour&quot;:&quot;403 Forbidden via CASL enforcement&quot;}</td>
+        <td class="col-status"><span class="badge badge-direct">covered</span></td>
+        <td class="col-tc">TC-GEN-053</td>
+      </tr>
+
+      <tr class="">
+        <td class="col-type">securityScenario</td>
+        <td class="col-text">{&quot;scenario&quot;:&quot;PM/TM/RM attempts the PMO-only Add Allocation permission via API bypassing the UI&quot;,&quot;expectedBehaviour&quot;:&quot;403 Forbidden — dedicated CASL permission denies non-PMO roles&quot;}</td>
+        <td class="col-status"><span class="badge badge-fuzzy">covered (heuristic)</span></td>
+        <td class="col-tc">TC-GEN-053</td>
+      </tr>
+
+      <tr class="">
+        <td class="col-type">securityScenario</td>
+        <td class="col-text">{&quot;scenario&quot;:&quot;PM shares a ticket detail URL (e.g. /allocation-tickets/NA-0042) with a user outside the project's visibility&quot;,&quot;expectedBehaviour&quot;:&quot;Recipient without CASL access receives 403&quot;}</td>
+        <td class="col-status"><span class="badge badge-direct">covered</span></td>
+        <td class="col-tc">TC-GEN-055</td>
+      </tr>
+
+      <tr class="">
+        <td class="col-type">securityScenario</td>
+        <td class="col-text">{&quot;scenario&quot;:&quot;Free-text Developer Feedback field is submitted with an XSS payload (&lt;script&gt;alert(1)&lt;/script&gt;)&quot;,&quot;expectedBehaviour&quot;:&quot;Input is sanitized/escaped; no script execution when rendered in ticket detail view&quot;}</td>
+        <td class="col-status"><span class="badge badge-fuzzy">covered (heuristic)</span></td>
+        <td class="col-tc">TC-GEN-056</td>
+      </tr>
+
+      <tr class="">
+        <td class="col-type">securityScenario</td>
+        <td class="col-text">{&quot;scenario&quot;:&quot;PM attempts to view ratings added by other roles for a developer (IDOR-style over-reach)&quot;,&quot;expectedBehaviour&quot;:&quot;PM sees only self-authored ratings; other raters' entries are not returned&quot;}</td>
+        <td class="col-status"><span class="badge badge-fuzzy">covered (heuristic)</span></td>
+        <td class="col-tc">TC-GEN-057</td>
+      </tr>
+
+      <tr class="">
+        <td class="col-type">securityScenario</td>
+        <td class="col-text">{&quot;scenario&quot;:&quot;Employee A's RM attempts to view ticket/allocation data for Employee B outside their team via direct object reference&quot;,&quot;expectedBehaviour&quot;:&quot;403 or empty result — data scoped to RM's own team&quot;}</td>
+        <td class="col-status"><span class="badge badge-fuzzy">covered (heuristic)</span></td>
+        <td class="col-tc">TC-GEN-058</td>
+      </tr>
+
+      <tr class="">
+        <td class="col-type">testScenario</td>
+        <td class="col-text">PM creates NA ticket for a new developer — PM logged in as test.user@example.com (testUserPage) submits a New Allocation request for an active project, creating an OPEN NA-prefixed ticket. — Ticket created with state OPEN — Ticket ID follows NA-#### format — Ticket appears in PM's Requests table</td>
+        <td class="col-status"><span class="badge badge-fuzzy">covered (heuristic)</span></td>
+        <td class="col-tc">TC-GEN-009</td>
+      </tr>
+
+      <tr class="">
+        <td class="col-type">testScenario</td>
+        <td class="col-text">PMO full approval flow reaches APPROVED and creates ProjectAssignment — PMO (ceo@simformsolutions.com, primaryPage) assigns department, shortlists, selects developer, then PMO+TM/EM approve, moving ticket to APPROVED and auto-creating a ProjectAssignment. — Ticket transitions OPEN→IN_REVIEW→AWAITING_CONFIRMATION→APPROVED — ProjectAssignment created with status GREEN, typeOfWork DEVELOPMENT_WORK — Notifications sent to PM, developer, RM</td>
+        <td class="col-status"><span class="badge badge-direct">covered</span></td>
+        <td class="col-tc">TC-GEN-001</td>
+      </tr>
+
+      <tr class="">
+        <td class="col-type">testScenario</td>
+        <td class="col-text">UA decrease follows lighter acknowledgement flow with no reject option — PM raises a UA decreasing allocation from 100% to 50%; ticket auto-moves OPEN→AWAITING_CONFIRMATION; PMO acknowledges to APPROVED. — No IN_REVIEW state occurs — No reject action is available anywhere in the UI for this ticket — ProjectAssignment updated only on changed fields</td>
+        <td class="col-status"><span class="badge badge-fuzzy">covered (heuristic)</span></td>
+        <td class="col-tc">TC-GEN-031</td>
+      </tr>
+
+      <tr class="">
+        <td class="col-type">testScenario</td>
+        <td class="col-text">UA at 0% or ≥70% reduction surfaces mandatory rating/feedback/reason fields — PM sets New Allocation Percentage to 0 and separately to a value giving exactly 70% relative reduction; verify mandatory fields appear and block submission until filled. — Fields appear at exactly 70% reduction and at 0% — Fields do not appear at 69% reduction — Submission blocked without required ratings</td>
+        <td class="col-status"><span class="badge badge-fuzzy">covered (heuristic)</span></td>
+        <td class="col-tc">TC-GEN-039</td>
+      </tr>
+
+      <tr class="">
+        <td class="col-type">testScenario</td>
+        <td class="col-text">Dynamic allocation Update Allocation archives ProjectAssignment — PM raises Update Allocation on a Dynamic ProjectAssignment; verify percentage field disabled, ticket follows lighter flow, and on APPROVED the assignment is soft-deleted with end date = current date. — Percentage input is disabled for Dynamic type — Ticket state skips IN_REVIEW — ProjectAssignment.deletedAt set and allocationEndDate = approval date</td>
+        <td class="col-status"><span class="badge badge-fuzzy">covered (heuristic)</span></td>
+        <td class="col-tc">TC-GEN-002</td>
+      </tr>
+
+      <tr class="">
+        <td class="col-type">testScenario</td>
+        <td class="col-text">Duplicate active UA ticket for same employee+project is blocked — PM attempts to create a second UA ticket for a developer/project pair that already has an active (OPEN/IN_REVIEW/AWAITING_CONFIRMATION) ticket. — Request is rejected with a conflict error — No second ticket is created</td>
+        <td class="col-status"><span class="badge badge-fuzzy">covered (heuristic)</span></td>
+        <td class="col-tc">TC-GEN-035</td>
+      </tr>
+
+      <tr class="">
+        <td class="col-type">testScenario</td>
+        <td class="col-text">PMO bypass waives TM/EM approval — PMO (ceo@simformsolutions.com) checks Bypass on a full-flow ticket in IN_REVIEW, moving it directly to APPROVED without TM/EM approval. — Ticket moves IN_REVIEW→APPROVED directly — bypassedAt and bypassedById recorded — Bypassed TM/EM is notified — Bypass checkbox not visible to non-PMO roles</td>
+        <td class="col-status"><span class="badge badge-direct">covered</span></td>
+        <td class="col-tc">TC-GEN-017, TC-GEN-060</td>
+      </tr>
+
+      <tr class="">
+        <td class="col-type">testScenario</td>
+        <td class="col-text">TM/EM rejects AWAITING_CONFIRMATION ticket; PM not notified — TM/EM (test.user@example.com acting as approver) rejects a full-flow ticket, returning it to IN_REVIEW; verify PM receives no rejection notification. — Ticket state = IN_REVIEW after rejection — PMO is notified — PM's notification feed shows no rejection event</td>
+        <td class="col-status"><span class="badge badge-fuzzy">covered (heuristic)</span></td>
+        <td class="col-tc">TC-GEN-032</td>
+      </tr>
+
+      <tr class="">
+        <td class="col-type">testScenario</td>
+        <td class="col-text">PM dual-role scope isolation across pages — Employee with PM+TM role views PM Projects (PM scope), Requests (both tabs), and Employees page (TM scope) to confirm scope isolation per page. — PM Projects shows only PM's managed projects — Requests page shows My Requests + Department Requests tabs — Employees page shows department-wide employees (TM scope), not project-only employees</td>
+        <td class="col-status"><span class="badge badge-direct">covered</span></td>
+        <td class="col-tc">TC-GEN-018</td>
+      </tr>
+
+      <tr class="">
+        <td class="col-type">testScenario</td>
+        <td class="col-text">PMO direct allocation bypasses ticketing and notifies all parties — PMO (ceo@simformsolutions.com) uses Add Allocation to directly create a ProjectAssignment without a ticket. — ProjectAssignment created with createdById = PMO employee — No ticket record is created — PM, department TM/EM, employee's RM, and employee all receive in-app+email notification</td>
+        <td class="col-status"><span class="badge badge-direct">covered</span></td>
+        <td class="col-tc">TC-GEN-003</td>
+      </tr>
+
+      <tr class="">
+        <td class="col-type">testScenario</td>
+        <td class="col-text">PM/TM/RM denied Add Allocation permission — Attempt Add Allocation action as PM, TM, and RM roles; verify denial at both UI and API level. — Add Allocation control not rendered/enabled for PM/TM/RM — Direct API call returns 403 for PM/TM/RM</td>
+        <td class="col-status"><span class="badge badge-direct">covered</span></td>
+        <td class="col-tc">TC-GEN-054</td>
+      </tr>
+
+      <tr class="">
+        <td class="col-type">testScenario</td>
+        <td class="col-text">Replacement request stored as UA with replacement flag, scope-locked fields — PM creates a Replacement request; verify department/tech stack are pre-filled and non-editable, and the persisted ticket type is UPDATE_ALLOCATION with a replacement flag. — Ticket type stored as UPDATE_ALLOCATION — replacementOfAssignmentId set — Department/tech-stack fields are read-only in the form</td>
+        <td class="col-status"><span class="badge badge-direct">covered</span></td>
+        <td class="col-tc">TC-GEN-019</td>
+      </tr>
+
+      <tr class="">
+        <td class="col-type">testScenario</td>
+        <td class="col-text">Ratings visibility restricted by role — After a de-allocation ticket records ratings, verify visibility: RM/TM/EM/Admin/PMO see full ratings; PM sees only ratings they themselves previously added. — RM/TM/EM/Admin/PMO can view ratings on the ticket — PM viewing a ticket sees only self-authored historical ratings, not others'</td>
+        <td class="col-status"><span class="badge badge-direct">covered</span></td>
+        <td class="col-tc">TC-GEN-057</td>
+      </tr>
+
+      <tr class="">
+        <td class="col-type">nfr:performance</td>
+        <td class="col-text">PM Projects and Requests tables must remain responsive at 300 items/page (max pagination size)</td>
+        <td class="col-status"><span class="badge badge-fuzzy">covered (heuristic)</span></td>
+        <td class="col-tc">TC-GEN-070</td>
+      </tr>
+
+      <tr class="row-uncovered">
+        <td class="col-type">nfr:security</td>
+        <td class="col-text">Ticket URLs must return 403 for unauthorized recipients despite being guessable/sequential-looking</td>
+        <td class="col-status"><span class="badge badge-uncovered">uncovered</span></td>
+        <td class="col-tc">—</td>
+      </tr>
+
+      <tr class="">
+        <td class="col-type">nfr:security</td>
+        <td class="col-text">CASL-based enforcement for PM_PROJECTS, ALLOCATION_TICKETS, and PMO-only direct allocation permission</td>
+        <td class="col-status"><span class="badge badge-fuzzy">covered (heuristic)</span></td>
+        <td class="col-tc">TC-GEN-053</td>
+      </tr>
+
+      <tr class="">
+        <td class="col-type">nfr:accessibility</td>
+        <td class="col-text">Multi-select filters, dropdowns, and modals (Create Request) must be keyboard-navigable and screen-reader labeled</td>
+        <td class="col-status"><span class="badge badge-fuzzy">covered (heuristic)</span></td>
+        <td class="col-tc">TC-GEN-069</td>
+      </tr>
+
+      <tr class="row-uncovered">
+        <td class="col-type">nfr:browserScope</td>
+        <td class="col-text">Not specified in source — default to project-wide browser matrix (chromium/firefox/webkit) per CLAUDE.md</td>
+        <td class="col-status"><span class="badge badge-uncovered">uncovered</span></td>
+        <td class="col-tc">—</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+
+  
+  <h2>Document section skim (extraction sanity check)</h2>
+  <div class="note">Sections detected in the raw requirement document with no requirement unit whose text overlaps them — a possible requirement-analysis extraction gap, not a test-coverage gap. Approximate; verify manually.</div>
+  <ul class="gap-list"><li>§3.1 Project Manager (PM)</li><li>§4.2.2 Update Allocation (UA)</li><li>§5.1 Ticket Types</li><li>§5.2 State Machines</li><li>§6.2 Ticket Detail View</li><li>§7.3 Notifications for Approvers (TM / EM)</li></ul>
+  
+</body>
+</html>
