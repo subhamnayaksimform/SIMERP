@@ -547,15 +547,47 @@ function isZohoConfigured(): boolean {
   return !!(process.env.ZOHO_PORTAL_ID?.trim() && process.env.ZOHO_PROJECT_ID?.trim() && readMcpUrl());
 }
 
+/** "HH:MM" (Zoho's owners_and_work.total_work format) → decimal hours, e.g. "08:30" → 8.5. */
+function parseWorkHours(raw: unknown): number | undefined {
+  const m = typeof raw === 'string' ? raw.match(/^(\d+):(\d{2})$/) : null;
+  if (!m) return undefined;
+  const hours = Number(m[1]) + Number(m[2]) / 60;
+  return hours || undefined;
+}
+
+/** Zoho task/issue descriptions come back as rich-text HTML — flatten to the plain text Zoho's own UI renders. */
+function htmlToText(html: string): string {
+  if (!html) return '';
+  return html
+    // <br/> is the actual line-break signal here — every semantic line already ends in one,
+    // so also breaking on closing block tags (</div>, </p>, ...) double-inserts a blank line
+    // per line instead of only at real paragraph gaps.
+    .replace(/<br\s*\/?>/gi, '\n')
+    .replace(/<[^>]+>/g, '')
+    .replace(/&nbsp;/gi, ' ')
+    .replace(/&amp;/gi, '&')
+    .replace(/&quot;/gi, '"')
+    .replace(/&#39;/gi, '\'')
+    .replace(/&lt;/gi, '<')
+    .replace(/&gt;/gi, '>')
+    .replace(/[ \t]+\n/g, '\n')
+    .replace(/\n{3,}/g, '\n\n')
+    .trim();
+}
+
 function normalizeTask(t: Record<string, unknown>): Record<string, unknown> {
+  const ownersAndWork = t['owners_and_work'] as Record<string, unknown> | undefined;
+  const owners = Array.isArray(ownersAndWork?.['owners']) ? ownersAndWork!['owners'] as Record<string, unknown>[] : [];
   return {
     id:          String(t['id'] ?? t['id_string'] ?? ''),
-    prefix:      String(t['key'] ?? ''),
+    prefix:      String(t['prefix'] ?? t['key'] ?? ''),
     name:        String(t['name'] ?? ''),
-    description: String(t['description'] ?? ''),
+    description: htmlToText(String(t['description'] ?? '')),
     status:      String((t['status'] as Record<string, unknown>)?.['name'] ?? t['status'] ?? '').toLowerCase(),
     priority:    String(t['priority'] ?? '').toLowerCase(),
-    assignee:    String(((t['details'] as Record<string, unknown>)?.['owners'] as Record<string, unknown>[])?.[0]?.['email'] ?? t['owner_name'] ?? ''),
+    assignee:    String(owners[0]?.['email'] ?? ((t['details'] as Record<string, unknown>)?.['owners'] as Record<string, unknown>[])?.[0]?.['email'] ?? t['owner_name'] ?? ''),
+    // Estimated/target work logged against the task — surfaced so tasks can be prioritized by effort.
+    targetHours: parseWorkHours(ownersAndWork?.['total_work']),
     tags:        (Array.isArray(t['tags']) ? t['tags'] : []).map((x: unknown) =>
       typeof x === 'object' && x !== null ? String((x as Record<string, unknown>)['name'] ?? x) : String(x)),
     acceptanceCriteria: (Array.isArray(t['custom_fields']) ? t['custom_fields'] : [])
@@ -581,16 +613,16 @@ async function fetchAllIssues(limit = 200): Promise<Record<string, unknown>[]> {
   const data = await callZohoMcp(
     'ZohoProjects_get_project_issues',
     { portal_id: portalId, project_id: projectId },
-    { per_page: limit },
+    { per_page: limit, page: 1 },
   ) as Record<string, unknown>;
   const raw: Record<string, unknown>[] = Array.isArray(data) ? data
     : Array.isArray(data['bugs']) ? data['bugs'] as Record<string, unknown>[]
     : Array.isArray(data['issues']) ? data['issues'] as Record<string, unknown>[] : [];
   return raw.map(t => ({
     id:          String(t['id'] ?? t['id_string'] ?? ''),
-    prefix:      String(t['key'] ?? ''),
+    prefix:      String(t['prefix'] ?? t['key'] ?? ''),
     name:        String(t['title'] ?? t['name'] ?? ''),
-    description: String(t['description'] ?? ''),
+    description: htmlToText(String(t['description'] ?? '')),
     status:      String((t['status'] as Record<string, unknown>)?.['name'] ?? t['status'] ?? '').toLowerCase(),
     severity:    String(t['severity'] ?? '').toLowerCase(),
     assignee:    String((t['assignee'] as Record<string, unknown>)?.['name'] ?? ''),
@@ -616,11 +648,13 @@ async function fetchTasksByIds(ids: string[]): Promise<Record<string, unknown>[]
   const results: Record<string, unknown>[] = [];
   const missed: string[] = [];
 
-  // Direct single-task lookups are independent — fetch them concurrently.
+  // Direct single-task lookups (numeric task_id only — ZohoProjects_get_task_details rejects
+  // prefix codes like "SI4-T850") are independent — fetch them concurrently.
   const outcomes = await Promise.all(ids.map(async id => {
+    if (!/^\d+$/.test(id)) return { id, task: null as Record<string, unknown> | null };
     try {
       const data = await callZohoMcp(
-        'ZohoProjects_get_task',
+        'ZohoProjects_get_task_details',
         { portal_id: portalId, project_id: projectId, task_id: id },
       ) as Record<string, unknown>;
       const task = (data['tasks'] as Record<string, unknown>[])?.[0] ?? data;
@@ -634,7 +668,9 @@ async function fetchTasksByIds(ids: string[]): Promise<Record<string, unknown>[]
   }
 
   if (missed.length) {
-    // Fall back to full fetch only for IDs the direct call couldn't resolve
+    // Fall back to matching by prefix code / name against the project's task list — this is
+    // the only path available for prefix-code IDs like "SI4-T850" (get_task_details needs a
+    // numeric id, and this connector has no tool that returns full task description text).
     const all = await fetchAllTasks(200);
     for (const id of missed) {
       const target = id.toUpperCase();
@@ -729,7 +765,7 @@ async function option1FullPipeline() {
     }
     spin.stop(`${taskRecords.length} task(s) loaded`);
     if (!taskRecords.length) { p.log.warn('No tasks found. Aborting.'); return; }
-    taskRecords.forEach(t => p.log.info(`  ✓ ${t['prefix']}  ${t['name']}`));
+    taskRecords.forEach(t => p.log.info(`  ✓ ${t['prefix']}  ${t['name']}${t['targetHours'] ? `  (${t['targetHours']}h target)` : ''}`));
 
   } else if (source === 'file') {
     const filePath = await p.text({
@@ -1536,7 +1572,33 @@ async function collectManualInput(): Promise<Record<string, unknown>> {
 
 // ─── Main loop ────────────────────────────────────────────────────────────────
 
+// @clack/core's select-prompt renderer re-wraps the *previous* frame using
+// process.stdout.columns to compute how many lines to erase before drawing the next one
+// (see render()/restoreCursor() in @clack/core/dist/index.mjs). Some terminal hosts —
+// notably VS Code's integrated terminal — fire spurious `resize` events that report a
+// different (or momentarily undefined) column count without an actual size change; when
+// that happens between two renders of the same prompt, the erase-line count is computed
+// against the wrong width and the old frame isn't fully overwritten, leaving a stale
+// duplicate copy on screen. Pinning columns to a fixed value for the process lifetime
+// removes that desync at the source, independent of what the host terminal reports.
+
+function pinTerminalWidth(): void {
+  if (!process.stdout.isTTY) return;
+  const fixedColumns = process.stdout.columns || 100;
+  // Accessor (not a frozen data property) with a no-op setter: Node's internal TTY resize
+  // handler does a plain `this.columns = width` assignment on real resize events — a
+  // non-writable data property would make that throw in strict mode and crash the process.
+  // A setter that silently swallows the write keeps every read pinned without that risk.
+  Object.defineProperty(process.stdout, 'columns', {
+    get: () => fixedColumns,
+    set: () => { /* ignore — see comment above */ },
+    configurable: true,
+  });
+}
+
+
 async function main() {
+  pinTerminalWidth();
   console.clear();
   p.intro(' SIM ERP — QA Pipeline Orchestrator ');
 
@@ -1555,23 +1617,27 @@ async function main() {
       }
     } catch { /* ignore unparsable catalog */ }
   }
-
+/*
   const bin = findClaudeBin();
   const hasKey = !!process.env.ANTHROPIC_API_KEY && process.env.ANTHROPIC_API_KEY !== 'your_anthropic_api_key_here';
   if (bin)     p.log.info('AI backend: Claude Code CLI (no API key needed)');
   else if (hasKey) p.log.info('AI backend: Anthropic SDK');
   else         p.log.warn('AI backend: none — Options 1–4 (analysis/generation) will fail. Install Claude Code extension or set ANTHROPIC_API_KEY.');
+  */
 
   while (true) {
     const action = await p.select({
       message: 'Choose an option',
       options: [
-        { value: '1', label: '1.  Run Full Pipeline',             hint: 'task IDs or doc → analysis → test cases → coverage+review → scripts → run → bugs → HTML report' },
-        { value: '2', label: '2.  Fetch & Analyze',               hint: 'tasks by ID / list / filter / previous fetch  OR  issues by status  →  AI analysis' },
-        { value: '3', label: '3.  Create Test Cases',             hint: 'select requirements JSON  →  cases JSON + Excel + coverage report + review page' },
-        { value: '4', label: '4.  Generate Automation',           hint: 'select cases JSON  →  Playwright scripts (no execution)' },
-        { value: '5', label: '5.  Run Playwright Tests',          hint: 'select spec file/module  →  run  →  results Excel + HTML report' },
-        { value: '6', label: '6.  Report Bugs to Zoho',           hint: 'select results.json  →  confirm each bug  →  file in Zoho' },
+        // Hints kept short enough not to wrap in an 80-col terminal — @clack/prompts miscounts
+        // its erase-line math when the highlighted option's line wraps, leaving a stale
+        // duplicate frame on screen after arrow-key navigation.
+        { value: '1', label: '1.  Run Full Pipeline',             hint: 'analysis → tests → automation → run → bugs' },
+        { value: '2', label: '2.  Fetch & Analyze',               hint: 'tasks or issues → AI analysis' },
+        { value: '3', label: '3.  Create Test Cases',             hint: 'cases + Excel + coverage + review' },
+        { value: '4', label: '4.  Generate Automation',           hint: 'Playwright specs (no execution)' },
+        { value: '5', label: '5.  Run Playwright Tests',          hint: 'run → results + HTML report' },
+        { value: '6', label: '6.  Report Bugs to Zoho',           hint: 'results.json → file bugs in Zoho' },
         { value: '7', label: '7.  Exit' },
       ],
     });
@@ -1599,10 +1665,10 @@ async function main() {
 
 async function askWhatNext(from: number): Promise<string> {
   const opts: Array<{ value: string; label: string; hint?: string }> = [];
-  if (from === 2) opts.push({ value: '3', label: '3.  Create Test Cases',    hint: 'select requirements JSON → cases JSON + Excel + coverage report + review page' });
-  if (from <= 3)  opts.push({ value: '4', label: '4.  Generate Automation',  hint: 'select cases JSON → Playwright scripts' });
-  if (from <= 4)  opts.push({ value: '5', label: '5.  Run Playwright Tests', hint: 'select spec file/module → run → results Excel + HTML report' });
-  if (from <= 5)  opts.push({ value: '6', label: '6.  Report Bugs to Zoho',  hint: 'select results.json → confirm each bug → file in Zoho' });
+  if (from === 2) opts.push({ value: '3', label: '3.  Create Test Cases',    hint: 'cases + Excel + coverage + review' });
+  if (from <= 3)  opts.push({ value: '4', label: '4.  Generate Automation',  hint: 'Playwright scripts' });
+  if (from <= 4)  opts.push({ value: '5', label: '5.  Run Playwright Tests', hint: 'run → results + HTML report' });
+  if (from <= 5)  opts.push({ value: '6', label: '6.  Report Bugs to Zoho',  hint: 'confirm each → file in Zoho' });
   opts.push({ value: 'menu', label: '    ↩  Back to main menu' });
   opts.push({ value: 'exit', label: '    ✕  Exit' });
 

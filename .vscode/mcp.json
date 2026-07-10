@@ -1,8 +1,13 @@
 {
-  "servers": {
-    "zoho-projects": {
-      "type": "http",
-      "url": "https://zohomcp-924049759.zohomcp.com/mcp/a76b27c3a9846a7232ab1c4dd0ef89a7/message"
-    }
-  }
+	"servers": {
+		"zoho-projects": {
+			"type": "http",
+			"url": "https://zohomcp-924049759.zohomcp.com/mcp/a76b27c3a9846a7232ab1c4dd0ef89a7/message"
+		},
+		"Projects-Issues-Phases": {
+			"type": "http",
+			"url": "https://projects-issues-phases-923250730.zohomcp.com/mcp/6052a693514ca6fd6145daefd6482f69/message"
+		}
+	},
+	"inputs": []
 }
