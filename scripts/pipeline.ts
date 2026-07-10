@@ -578,6 +578,14 @@ function htmlToText(html: string): string {
 function normalizeTask(t: Record<string, unknown>): Record<string, unknown> {
   const ownersAndWork = t['owners_and_work'] as Record<string, unknown> | undefined;
   const owners = Array.isArray(ownersAndWork?.['owners']) ? ownersAndWork!['owners'] as Record<string, unknown>[] : [];
+  const detailOwners = ((t['details'] as Record<string, unknown>)?.['owners'] as Record<string, unknown>[]) ?? [];
+  // A task can be assigned to more than one person (unlike an issue, which has exactly
+  // one assignee) — collect everyone rather than just owners[0].
+  const ownerSource = owners.length ? owners : detailOwners;
+  const assigneeNames = ownerSource
+    .map(o => String(o?.['email'] ?? o?.['name'] ?? '').trim())
+    .filter(Boolean);
+  const assigneeList = assigneeNames.length ? assigneeNames : (t['owner_name'] ? [String(t['owner_name'])] : []);
   return {
     id:          String(t['id'] ?? t['id_string'] ?? ''),
     prefix:      String(t['prefix'] ?? t['key'] ?? ''),
@@ -585,7 +593,9 @@ function normalizeTask(t: Record<string, unknown>): Record<string, unknown> {
     description: htmlToText(String(t['description'] ?? '')),
     status:      String((t['status'] as Record<string, unknown>)?.['name'] ?? t['status'] ?? '').toLowerCase(),
     priority:    String(t['priority'] ?? '').toLowerCase(),
-    assignee:    String(owners[0]?.['email'] ?? ((t['details'] as Record<string, unknown>)?.['owners'] as Record<string, unknown>[])?.[0]?.['email'] ?? t['owner_name'] ?? ''),
+    // Comma-separated when multiple assignees; unchanged single-value shape when there's just one.
+    assignee:    assigneeList.join(', '),
+    assignees:   assigneeList,
     // Estimated/target work logged against the task — surfaced so tasks can be prioritized by effort.
     targetHours: parseWorkHours(ownersAndWork?.['total_work']),
     tags:        (Array.isArray(t['tags']) ? t['tags'] : []).map((x: unknown) =>
@@ -608,16 +618,29 @@ async function fetchAllTasks(limit = 200): Promise<Record<string, unknown>[]> {
   return raw.map(normalizeTask);
 }
 
-async function fetchAllIssues(limit = 200): Promise<Record<string, unknown>[]> {
+async function fetchAllIssues(perPage = 200): Promise<Record<string, unknown>[]> {
   const { portalId, projectId } = portalAndProject();
-  const data = await callZohoMcp(
-    'ZohoProjects_get_project_issues',
-    { portal_id: portalId, project_id: projectId },
-    { per_page: limit, page: 1 },
-  ) as Record<string, unknown>;
-  const raw: Record<string, unknown>[] = Array.isArray(data) ? data
-    : Array.isArray(data['bugs']) ? data['bugs'] as Record<string, unknown>[]
-    : Array.isArray(data['issues']) ? data['issues'] as Record<string, unknown>[] : [];
+
+  // ZohoProjects_get_project_issues is paginated — a single page: 1 request only ever
+  // returns the first `perPage` issues in whatever default order Zoho uses, so any
+  // status (e.g. Open / To Be Tested) sitting past that page silently disappears from
+  // the results. Loop pages until a short/empty page tells us we've reached the end.
+  const raw: Record<string, unknown>[] = [];
+  const MAX_PAGES = 25; // safety cap (25 * 200 = 5000 issues) so a bad/looping API can't hang the pipeline
+  for (let page = 1; page <= MAX_PAGES; page++) {
+    const data = await callZohoMcp(
+      'ZohoProjects_get_project_issues',
+      { portal_id: portalId, project_id: projectId },
+      { per_page: perPage, page },
+    ) as Record<string, unknown>;
+    const pageItems: Record<string, unknown>[] = Array.isArray(data) ? data
+      : Array.isArray(data['bugs']) ? data['bugs'] as Record<string, unknown>[]
+      : Array.isArray(data['issues']) ? data['issues'] as Record<string, unknown>[] : [];
+    if (!pageItems.length) break;
+    raw.push(...pageItems);
+    if (pageItems.length < perPage) break; // last page reached
+  }
+
   return raw.map(t => ({
     id:          String(t['id'] ?? t['id_string'] ?? ''),
     prefix:      String(t['prefix'] ?? t['key'] ?? ''),
@@ -625,7 +648,21 @@ async function fetchAllIssues(limit = 200): Promise<Record<string, unknown>[]> {
     description: htmlToText(String(t['description'] ?? '')),
     status:      String((t['status'] as Record<string, unknown>)?.['name'] ?? t['status'] ?? '').toLowerCase(),
     severity:    String(t['severity'] ?? '').toLowerCase(),
-    assignee:    String((t['assignee'] as Record<string, unknown>)?.['name'] ?? ''),
+    assignee:    String(
+      (t['assignee'] as Record<string, unknown>)?.['name']
+      ?? (t['assignee_details'] as Record<string, unknown>)?.['name']
+      ?? t['assignee_name']
+      ?? '',
+    ),
+    reporter:    String(
+      (t['reported_person'] as Record<string, unknown>)?.['name']
+      ?? (t['reporter'] as Record<string, unknown>)?.['name']
+      ?? (t['created_by'] as Record<string, unknown>)?.['name']
+      ?? t['reported_person_name']
+      ?? t['reporter_name']
+      ?? t['created_by_name']
+      ?? '',
+    ),
     url:         String(((t['link'] as Record<string, unknown>)?.['web'] as Record<string, unknown>)?.['url'] ?? ''),
   }));
 }
@@ -1007,29 +1044,57 @@ async function option2FetchAndAnalyze() {
     }
 
   } else {
-    // Issues
-    const statuses = await p.multiselect({
-      message: 'Issue status (select all that apply)',
-      options: [
-        { value: 'open',          label: 'Open' },
-        { value: 'to be tested',  label: 'To Be Tested' },
-        { value: 'in progress',   label: 'In Progress' },
-        { value: 'closed',        label: 'Closed' },
-        { value: 'reopened',      label: 'Reopened' },
-      ],
-      required: false,
-    });
-    if (p.isCancel(statuses)) return;
-
+    // Issues — fetch everything first, then build the status picker from whatever
+    // statuses actually exist in this project's data. A hardcoded guessed list (Open /
+    // To Be Tested / In Progress / Closed / Reopened) breaks silently whenever a project
+    // uses different workflow labels (e.g. "Approved") — it either can't be selected at
+    // all, or matches nothing and looks like the fetch is broken.
     spin.start('Fetching issues…');
+    let all: Record<string, unknown>[] = [];
     try {
-      const all = await fetchAllIssues(200);
-      const selectedStatuses = statuses as string[];
-      items = selectedStatuses.length
-        ? all.filter(t => selectedStatuses.some(s => String(t['status']).toLowerCase().includes(s)))
-        : all;
+      all = await fetchAllIssues(200);
     } catch (e: unknown) { spin.stop('Failed'); p.log.error((e as Error).message); return; }
-    spin.stop(`${items.length} issue(s) found`);
+    spin.stop(`${all.length} issue(s) fetched`);
+
+    if (!all.length) { p.log.warn('No issues returned from Zoho.'); return; }
+
+    const counts = new Map<string, number>();
+    for (const t of all) {
+      const s = String(t.status).trim().toLowerCase() || '(blank)';
+      counts.set(s, (counts.get(s) ?? 0) + 1);
+    }
+    const byCountDesc = [...counts.entries()].sort((a, b) => b[1] - a[1]);
+    const breakdown = byCountDesc.map(([s, c]) => `${s.padEnd(16)} ${c}`).join('\n');
+    p.note(breakdown, `Status breakdown — ${all.length} issue(s) total`);
+
+    const titleCase = (s: string) => s.replace(/\b\w/g, c => c.toUpperCase());
+    const statusList = byCountDesc.map(([s]) => s);
+
+    // A checkbox multiselect (space-to-toggle) isn't registering reliably in this
+    // terminal — selections come back empty even when a box was checked. Plain text
+    // input has no toggle-key dependency, so it can't fail the same way.
+    const input = await p.text({
+      message: `Status(es) to include — comma-separated, blank = ALL\n   Available: ${statusList.map((s, i) => `${titleCase(s)} (${byCountDesc[i][1]})`).join(', ')}`,
+      placeholder: 'e.g. open  or  open,approved',
+      validate: v => {
+        if (!v?.trim()) return undefined; // blank = all, allowed
+        const picked = v.split(',').map(s => s.trim().toLowerCase()).filter(Boolean);
+        const invalid = picked.filter(s => !statusList.includes(s));
+        return invalid.length ? `Unknown status: ${invalid.join(', ')}. Valid: ${statusList.join(', ')}` : undefined;
+      },
+    });
+    if (p.isCancel(input)) return;
+
+    const selectedStatuses = String(input).trim()
+      ? String(input).split(',').map(s => s.trim().toLowerCase()).filter(Boolean)
+      : [];
+    if (!selectedStatuses.length) {
+      p.log.warn('No status entered — using ALL statuses.');
+    }
+    items = selectedStatuses.length
+      ? all.filter(t => selectedStatuses.includes(String(t.status).trim().toLowerCase()))
+      : all;
+    p.log.info(`${items.length} issue(s) match selected status(es): ${selectedStatuses.length ? selectedStatuses.join(', ') : 'ALL'}`);
   }
 
   if (!items.length) { p.log.warn('Nothing to analyze.'); return; }
@@ -1038,6 +1103,18 @@ async function option2FetchAndAnalyze() {
   if (type === 'document') {
     const excerpt = String(items[0]['description']).slice(0, 400).replace(/\n+/g, ' ');
     p.note(`${excerpt}…`, `Document: ${items[0]['name']}`);
+  } else if (type === 'issues') {
+    const preview = items.slice(0, 8)
+      .map(t => {
+        const id       = String(t['prefix'] || t['id']).padEnd(10);
+        const status   = String(t['status'] || '').padEnd(14);
+        const name     = String(t['name']).slice(0, 40).padEnd(42);
+        const assignee = String(t['assignee'] || '—').padEnd(18);
+        const reporter = String(t['reporter'] || '—');
+        return `${id} ${status} ${name} A:${assignee} R:${reporter}`;
+      })
+      .join('\n');
+    p.note(preview + (items.length > 8 ? `\n…and ${items.length - 8} more` : ''), `${items.length} item(s)`);
   } else {
     const preview = items.slice(0, 8)
       .map(t => `${String(t['prefix'] || t['id']).padEnd(12)} ${String(t['name']).slice(0, 60)}`)
