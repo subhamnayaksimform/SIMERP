@@ -1,0 +1,130 @@
+{
+  "results": [
+    {
+      "id": "deallocate-open",
+      "ok": true,
+      "al": "Open actions for Pranav Kumar",
+      "items": [
+        "Update Allocation|null|null",
+        "Request Replacement|null|null",
+        "Deallocate Employee|null|null"
+      ],
+      "text": "Deallocate Employee\n\nDeallocation required details\n\nProject:\nLiveOps | Game Backend Platform\n\nEmployee:\nPranav Kumar\n\nDepartment:\nL1 SUPPORT\n\nCurrent Allocation:\nFixed · 25% (2 hrs/day)\n\nDeallocation Reason\n*\nSelect a reason\nDeallocation Date\n*\nPick a date\nCore Skill (1–10)\n*\nComm. Rating (1–10)\n*\nBehaviour Rating (1–10)\n*\nOverall Rating (1–10)\n*\nEmployee Feedback\n*\nOpen to work with this employee again?\n*\nYes\nNo\nCancel\nSubmit Deallocation\nClose",
+      "alerts": [],
+      "inputs": [
+        {
+          "tag": "BUTTON",
+          "id": "_r_6o_-form-item",
+          "type": "button",
+          "labelled": true
+        },
+        {
+          "tag": "INPUT",
+          "id": "_r_6s_-form-item",
+          "type": "text",
+          "labelled": true
+        },
+        {
+          "tag": "INPUT",
+          "id": "_r_6u_-form-item",
+          "type": "text",
+          "labelled": true
+        },
+        {
+          "tag": "INPUT",
+          "id": "_r_70_-form-item",
+          "type": "text",
+          "labelled": true
+        },
+        {
+          "tag": "INPUT",
+          "id": "_r_72_-form-item",
+          "type": "text",
+          "labelled": true
+        },
+        {
+          "tag": "TEXTAREA",
+          "id": "_r_74_-form-item",
+          "type": "textarea",
+          "labelled": true
+        }
+      ],
+      "focus": "BUTTON:Select a reason",
+      "shot": "reports/screenshots/2026-10-28/hardik/sonar-fe/c05-deallocate-dialog.png",
+      "errs": []
+    },
+    {
+      "id": "deallocate-validation",
+      "ok": true,
+      "btns": [
+        "Pick a date",
+        "",
+        "",
+        "",
+        "",
+        "Cancel",
+        "Submit Deallocation",
+        "Close"
+      ],
+      "sname": "Submit Deallocation",
+      "enabled": false,
+      "errs": [],
+      "confirm": 0,
+      "shot": "reports/screenshots/2026-10-28/hardik/sonar-fe/c05b-deallocate-validation.png"
+    },
+    {
+      "id": "deallocate-cancel",
+      "ok": true,
+      "open": 0,
+      "focus": "BODY:",
+      "errs": []
+    },
+    {
+      "id": "update-allocation-open-cancel",
+      "ok": true,
+      "text": "Update allocation\n\nUpdate Allocation ticket details\n\nProject:\nLiveOps | Game Backend Platform\n\nEmployee:\nPranav Kumar\n\nDepartment:\nL1 SUPPORT\n\nCurrent Allocation:\nFixed · 25% (2 hrs/day)\n\nStart Date\n*\n25/02/2026\nEnd Date\n24/05/2027\nAllocation Timeline\n1 period\nRequest timeline\n25%\n25 Feb 2026 – 24 May 2027\nCurrent\n\nNo allocation changes are on the timeline yet. Request a period to schedule a different allocation.\n\nCancel\nSubmit Update\nClose",
+      "closed": true,
+      "shot": "reports/screenshots/2026-10-28/hardik/sonar-fe/c08-update-allocation-dialog.png",
+      "errs": []
+    },
+    {
+      "id": "past-allocations-tab",
+      "ok": true,
+      "rows": [
+        "Siddhi Nagar | Sr. SE | \tSALES\t | 100% (8 hrs/day) | \t19/03/2025\t19/07/2026\t72.37h\tNot specified",
+        "Charmi Doshi | Sr. SE | \tMEAN STACK\t | Not Allocated | \tNot specified\tNot specified\t14.81h\tNot specified",
+        "Charmi Jobanputra | Sr. SE | \tFRONT END\t | 25% (2 hrs/day) | \t25/11/2024\t06/09/2025\t0.00h\tNot specified",
+        "Esha Rathod | SE | \tCMS\t | 35% (3 hrs/day) | \t04/06/2025\t19/10/2025\t0.00h\tNot specified"
+      ],
+      "bad": [],
+      "shot": "reports/screenshots/2026-10-28/hardik/sonar-fe/c09-past-allocations.png",
+      "errs": []
+    },
+    {
+      "id": "new-allocation-form",
+      "ok": true,
+      "url": "https://simerp-dev.simform.solutions/my-projects/new-allocation",
+      "h": [
+        "New Allocation Request",
+        "New Allocation Request"
+      ],
+      "combos": [
+        "_r_2a_-form-item",
+        "Select request type",
+        "_r_2h_-form-item",
+        "_r_2j_-form-item",
+        "Select Seniority",
+        "Preferred Employee",
+        "Night Shift Preference",
+        "Location Preference"
+      ],
+      "radios": [
+        "FIXED:Fixed",
+        "DYNAMIC:Dynamic"
+      ],
+      "shot": "reports/screenshots/2026-10-28/hardik/sonar-fe/c10-new-allocation.png",
+      "errs": []
+    }
+  ],
+  "errs": []
+}

@@ -1,0 +1,25 @@
+{
+  "results": [
+    {
+      "id": "warn",
+      "ok": true,
+      "dlgs": [
+        "Mark Won with no seat filled? | No seat on this ticket is Won or Project Allocated, so nothing was won. It will still count as Won on the board and in reports. | Cancel | Mark Won anyway"
+      ],
+      "statusStillOpen": "OPEN",
+      "errs": []
+    },
+    {
+      "id": "restore",
+      "ok": true,
+      "s": 200,
+      "st": "OPEN",
+      "pos": [
+        null,
+        "2026-11-02T13:26:40.568Z"
+      ],
+      "errs": []
+    }
+  ],
+  "errs": []
+}

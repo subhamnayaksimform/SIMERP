@@ -1,0 +1,254 @@
+[
+ {
+  "area": "setup",
+  "name": "interview ticket created",
+  "pass": true,
+  "detail": "[201,\"OPP_002\",\"Opportunity created successfully\"]"
+ },
+ {
+  "area": "2.visibility",
+  "name": "TM shortlists plain Employee (Riddhi Verma)",
+  "pass": true,
+  "detail": "[201,\"OPP_074\",\"Candidates nominated successfully\"]"
+ },
+ {
+  "area": "2.visibility",
+  "name": "PMO shortlists Yamini + Urvashi on A",
+  "pass": true,
+  "detail": "[201,\"OPP_074\"]"
+ },
+ {
+  "area": "2.visibility",
+  "name": "PMO shortlists Punit + Sneha on B",
+  "pass": true,
+  "detail": "[201,\"OPP_074\"]"
+ },
+ {
+  "area": "2.visibility",
+  "name": "pending: opportunity NOT on Riddhi's My Opportunities",
+  "pass": true,
+  "detail": "{\"status\":200,\"ids\":[]}"
+ },
+ {
+  "area": "2.visibility",
+  "name": "pending: Riddhi opening detail URL gets 403 (Unauthorized)",
+  "pass": true,
+  "detail": "[403,\"OPP_193\",\"You do not have access to this opportunity\"]"
+ },
+ {
+  "area": "2.visibility",
+  "name": "pending: Riddhi has no notification about it",
+  "pass": true,
+  "detail": "[]"
+ },
+ {
+  "area": "2.visibility",
+  "name": "PMO requests TM approval for Yamini",
+  "pass": true,
+  "detail": "[200,\"SUCCESS\"]"
+ },
+ {
+  "area": "2.visibility",
+  "name": "approval requested (not yet cleared): Yamini gets no notification",
+  "pass": true,
+  "detail": "[]"
+ },
+ {
+  "area": "2.visibility",
+  "name": "approval pending: Yamini detail 403",
+  "pass": true,
+  "detail": "[403,\"OPP_193\"]"
+ },
+ {
+  "area": "2.visibility",
+  "name": "TM approves Yamini",
+  "pass": true,
+  "detail": "[200,\"SUCCESS\",\"Nomination approved successfully\"]"
+ },
+ {
+  "area": "2.visibility",
+  "name": "PMO bypasses approval for Riddhi",
+  "pass": true,
+  "detail": "[200,\"SUCCESS\",\"TM Approval bypassed successfully\"]"
+ },
+ {
+  "area": "2.visibility",
+  "name": "PMO bypasses approval for Sneha (B)",
+  "pass": true,
+  "detail": "[200,\"SUCCESS\"]"
+ },
+ {
+  "area": "2.visibility",
+  "name": "cleared (bypass): opportunity now on riddhi.verma board",
+  "pass": true,
+  "detail": "{\"status\":200,\"ids\":[\"3136119f-37c5-4079-a7d6-5c95c3abd3ac\"]}"
+ },
+ {
+  "area": "2.visibility",
+  "name": "cleared (bypass): riddhi.verma opens detail (200)",
+  "pass": true,
+  "detail": "[200,\"SUCCESS\"]"
+ },
+ {
+  "area": "2.visibility",
+  "name": "cleared: riddhi.verma sees only own card",
+  "pass": true,
+  "detail": "{\"own\":1,\"others\":[]}"
+ },
+ {
+  "area": "2.visibility",
+  "name": "cleared: riddhi.verma sees no preferred employees / notes / prospect notes",
+  "pass": true,
+  "detail": "[[null,0],null]"
+ },
+ {
+  "area": "2.visibility",
+  "name": "cleared: riddhi.verma sees only positions they are on",
+  "pass": true,
+  "detail": "[\"T1692 A\"]"
+ },
+ {
+  "area": "2.visibility",
+  "name": "cleared: riddhi.verma now gets a notification",
+  "pass": true,
+  "detail": "[[\"notification.opportunity.candidate_approved\",\"You've been approved for T1692 A\"]]"
+ },
+ {
+  "area": "2.visibility",
+  "name": "cleared (TM approve): opportunity now on yamini.langalia board",
+  "pass": true,
+  "detail": "{\"status\":200,\"ids\":[\"3136119f-37c5-4079-a7d6-5c95c3abd3ac\"]}"
+ },
+ {
+  "area": "2.visibility",
+  "name": "cleared (TM approve): yamini.langalia opens detail (200)",
+  "pass": true,
+  "detail": "[200,\"SUCCESS\"]"
+ },
+ {
+  "area": "2.visibility",
+  "name": "cleared: yamini.langalia sees only own card",
+  "pass": true,
+  "detail": "{\"own\":1,\"others\":[]}"
+ },
+ {
+  "area": "2.visibility",
+  "name": "cleared: yamini.langalia sees no preferred employees / notes / prospect notes",
+  "pass": true,
+  "detail": "[[null,0],null]"
+ },
+ {
+  "area": "2.visibility",
+  "name": "cleared: yamini.langalia sees only positions they are on",
+  "pass": true,
+  "detail": "[\"T1692 A\"]"
+ },
+ {
+  "area": "2.visibility",
+  "name": "cleared: yamini.langalia now gets a notification",
+  "pass": true,
+  "detail": "[[\"notification.opportunity.candidate_approved\",\"You've been approved for T1692 A\"]]"
+ },
+ {
+  "area": "2.visibility",
+  "name": "still pending: urvashi.kotak — not on board, 403, no notification",
+  "pass": true,
+  "detail": "{\"board\":false,\"status\":403,\"notes\":[]}"
+ },
+ {
+  "area": "2.visibility",
+  "name": "still pending: punit.patil — not on board, 403, no notification",
+  "pass": true,
+  "detail": "{\"board\":false,\"status\":403,\"notes\":[]}"
+ },
+ {
+  "area": "2.visibility",
+  "name": "never shortlisted Employee opens real opportunity URL -> 404 (not 403)",
+  "pass": true,
+  "detail": "[404,\"OPP_001\",\"Opportunity not found\"]"
+ },
+ {
+  "area": "2.visibility",
+  "name": "Employee opens invalid opportunity id -> 404",
+  "pass": true,
+  "detail": "[404,\"OPP_001\"]"
+ },
+ {
+  "area": "2.visibility",
+  "name": "Employee opens malformed id -> 400/404, never 403",
+  "pass": true,
+  "detail": "[400,\"SYS_004\"]"
+ },
+ {
+  "area": "2.visibility",
+  "name": "PMO rejects Arnav before approval",
+  "pass": true,
+  "detail": "[200,\"SUCCESS\",\"Nomination rejected successfully\"]"
+ },
+ {
+  "area": "2.visibility",
+  "name": "rejected before approval: Arnav gets no notification, nothing on board or Rejected column",
+  "pass": true,
+  "detail": "{\"notes\":[],\"rejected\":{\"status\":200,\"ids\":[]},\"board\":false}"
+ },
+ {
+  "area": "2.visibility",
+  "name": "rejected before approval: Arnav detail status (record; 403 or 404 both hide it)",
+  "pass": true,
+  "detail": "[403,\"OPP_193\"]"
+ },
+ {
+  "area": "2.reinit",
+  "name": "PMO re-initiates Position A",
+  "pass": true,
+  "detail": "[200,\"SUCCESS\",\"Position re-initiated successfully\"]"
+ },
+ {
+  "area": "2.reinit",
+  "name": "re-initiate: riddhi.verma IS notified",
+  "pass": true,
+  "detail": "[[\"notification.opportunity.position_reinitiated\",\"Position 'T1692 A' re-initiated\",\"Sourcing for 'T1692 A' on OPP-0383 has started over; candidates not yet allocated were released.\"]]"
+ },
+ {
+  "area": "2.reinit",
+  "name": "re-initiate: yamini.langalia IS notified",
+  "pass": true,
+  "detail": "[[\"notification.opportunity.position_reinitiated\",\"Position 'T1692 A' re-initiated\",\"Sourcing for 'T1692 A' on OPP-0383 has started over; candidates not yet allocated were released.\"]]"
+ },
+ {
+  "area": "2.reinit",
+  "name": "re-initiate: urvashi.kotak is NOT notified",
+  "pass": true,
+  "detail": "[]"
+ },
+ {
+  "area": "2.delete",
+  "name": "PMO deletes Position B with candidates",
+  "pass": false,
+  "detail": "[400,\"OPP_025\",\"A Position with a Candidate In Process or Selected cannot be deleted\"]"
+ },
+ {
+  "area": "2.delete",
+  "name": "delete position: sneha.yadav IS notified",
+  "pass": false,
+  "detail": "[]"
+ },
+ {
+  "area": "2.delete",
+  "name": "delete position: punit.patil is NOT notified",
+  "pass": true,
+  "detail": "[]"
+ },
+ {
+  "area": "regression",
+  "name": "TM still sees full detail with prospect notes + notes",
+  "pass": true,
+  "detail": "[200,\"secret prospect note\"]"
+ },
+ {
+  "area": "regression",
+  "name": "PMO still sees full detail",
+  "pass": true,
+  "detail": "[200,2]"
+ }
+]

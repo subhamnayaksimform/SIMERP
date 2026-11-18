@@ -1,0 +1,85 @@
+{
+  "results": [
+    {
+      "id": "seed-nomination",
+      "ok": true,
+      "s": 201,
+      "c": "OPP_074",
+      "errs": []
+    },
+    {
+      "id": "role-matrix",
+      "ok": true,
+      "ceo": {
+        "board": 400,
+        "release": 400,
+        "close": 400,
+        "create": 400
+      },
+      "tarun.sharma": {
+        "board": 400,
+        "release": 403,
+        "close": 403,
+        "create": 400
+      },
+      "kunal.jadeja": {
+        "board": 400,
+        "release": 403,
+        "close": 403,
+        "create": 403
+      },
+      "sudhansu.patel": {
+        "board": 400,
+        "release": 403,
+        "close": 403,
+        "create": 403
+      },
+      "kashyap.patel": {
+        "board": 400,
+        "release": 403,
+        "close": 403,
+        "create": 403
+      },
+      "bhumi.chauhan": {
+        "board": 400,
+        "release": 400,
+        "close": 400,
+        "create": 400
+      },
+      "hardik.trivedi": {
+        "board": 400,
+        "release": 403,
+        "close": 403,
+        "create": 403
+      },
+      "errs": []
+    },
+    {
+      "id": "rounds",
+      "ok": true,
+      "empty": [
+        400,
+        "OPP_054"
+      ],
+      "r1": [
+        400
+      ],
+      "r2": [
+        400
+      ],
+      "n": 0,
+      "past": [
+        400,
+        "OPP_054"
+      ],
+      "errs": []
+    },
+    {
+      "id": "cleanup-release",
+      "ok": true,
+      "s": 200,
+      "errs": []
+    }
+  ],
+  "errs": []
+}

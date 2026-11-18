@@ -1,0 +1,1832 @@
+{
+  "agg": {
+    "post|PMO-raised|NEW_ALLOCATION": {
+      "n": 30,
+      "notified": 0
+    },
+    "post|PM/CSM-raised|NEW_ALLOCATION": {
+      "n": 20,
+      "notified": 20
+    },
+    "post|PM/CSM-raised|DEALLOCATE_ALLOCATION": {
+      "n": 22,
+      "notified": 22
+    },
+    "post|PMO-raised|DEALLOCATE_ALLOCATION": {
+      "n": 6,
+      "notified": 0
+    },
+    "pre|PMO-raised|NEW_ALLOCATION": {
+      "n": 31,
+      "notified": 0
+    },
+    "pre|PMO-raised|DEALLOCATE_ALLOCATION": {
+      "n": 19,
+      "notified": 0
+    },
+    "pre|PM/CSM-raised|DEALLOCATE_ALLOCATION": {
+      "n": 36,
+      "notified": 36
+    },
+    "pre|PM/CSM-raised|NEW_ALLOCATION": {
+      "n": 25,
+      "notified": 25
+    },
+    "pre|PM/CSM-raised|UPDATE_ALLOCATION": {
+      "n": 4,
+      "notified": 4
+    },
+    "pre|PMO-raised|UPDATE_ALLOCATION": {
+      "n": 4,
+      "notified": 0
+    },
+    "pre|PM/CSM-raised|REPLACE_ALLOCATION": {
+      "n": 1,
+      "notified": 1
+    }
+  },
+  "rows": [
+    {
+      "t": "NA-0473",
+      "type": "NEW_ALLOCATION",
+      "at": "2026-10-27T14:53",
+      "req": "Bhumi Chauhan",
+      "reqRoles": "PMO",
+      "notified": 0,
+      "types": ""
+    },
+    {
+      "t": "NA-0472",
+      "type": "NEW_ALLOCATION",
+      "at": "2026-10-27T14:41",
+      "req": "Bhumi Chauhan",
+      "reqRoles": "PMO",
+      "notified": 0,
+      "types": ""
+    },
+    {
+      "t": "NA-0471",
+      "type": "NEW_ALLOCATION",
+      "at": "2026-10-27T14:19",
+      "req": "Bhumi Chauhan",
+      "reqRoles": "PMO",
+      "notified": 0,
+      "types": ""
+    },
+    {
+      "t": "NA-0470",
+      "type": "NEW_ALLOCATION",
+      "at": "2026-10-27T14:10",
+      "req": "Bhumi Chauhan",
+      "reqRoles": "PMO",
+      "notified": 0,
+      "types": ""
+    },
+    {
+      "t": "NA-0468",
+      "type": "NEW_ALLOCATION",
+      "at": "2026-10-27T14:07",
+      "req": "Bhumi Chauhan",
+      "reqRoles": "PMO",
+      "notified": 0,
+      "types": ""
+    },
+    {
+      "t": "NA-0467",
+      "type": "NEW_ALLOCATION",
+      "at": "2026-10-27T14:07",
+      "req": "Bhumi Chauhan",
+      "reqRoles": "PMO",
+      "notified": 0,
+      "types": ""
+    },
+    {
+      "t": "NA-0466",
+      "type": "NEW_ALLOCATION",
+      "at": "2026-10-27T14:06",
+      "req": "Bhumi Chauhan",
+      "reqRoles": "PMO",
+      "notified": 0,
+      "types": ""
+    },
+    {
+      "t": "NA-0465",
+      "type": "NEW_ALLOCATION",
+      "at": "2026-10-27T13:06",
+      "req": "Priya Chopra",
+      "reqRoles": "CSM",
+      "notified": 2,
+      "types": "notification.allocation_ticket.approved,notification.allocation_ticket.created"
+    },
+    {
+      "t": "NA-0464",
+      "type": "NEW_ALLOCATION",
+      "at": "2026-10-27T13:06",
+      "req": "Priya Chopra",
+      "reqRoles": "CSM",
+      "notified": 2,
+      "types": "notification.allocation_ticket.approved,notification.allocation_ticket.created"
+    },
+    {
+      "t": "DA-0179",
+      "type": "DEALLOCATE_ALLOCATION",
+      "at": "2026-10-27T13:06",
+      "req": "Priya Chopra",
+      "reqRoles": "CSM",
+      "notified": 1,
+      "types": "notification.allocation_ticket.created"
+    },
+    {
+      "t": "DA-0178",
+      "type": "DEALLOCATE_ALLOCATION",
+      "at": "2026-10-27T13:06",
+      "req": "Priya Chopra",
+      "reqRoles": "CSM",
+      "notified": 1,
+      "types": "notification.allocation_ticket.created"
+    },
+    {
+      "t": "NA-0463",
+      "type": "NEW_ALLOCATION",
+      "at": "2026-10-27T12:35",
+      "req": "Bhumi Chauhan",
+      "reqRoles": "PMO",
+      "notified": 0,
+      "types": ""
+    },
+    {
+      "t": "NA-0462",
+      "type": "NEW_ALLOCATION",
+      "at": "2026-10-27T12:02",
+      "req": "Bhumi Chauhan",
+      "reqRoles": "PMO",
+      "notified": 0,
+      "types": ""
+    },
+    {
+      "t": "DA-0177",
+      "type": "DEALLOCATE_ALLOCATION",
+      "at": "2026-10-27T08:55",
+      "req": "Bhumi Chauhan",
+      "reqRoles": "PMO",
+      "notified": 0,
+      "types": ""
+    },
+    {
+      "t": "NA-0461",
+      "type": "NEW_ALLOCATION",
+      "at": "2026-10-27T08:55",
+      "req": "Priya Chopra",
+      "reqRoles": "CSM",
+      "notified": 2,
+      "types": "notification.allocation_ticket.approved,notification.allocation_ticket.created"
+    },
+    {
+      "t": "NA-0460",
+      "type": "NEW_ALLOCATION",
+      "at": "2026-10-27T08:55",
+      "req": "Priya Chopra",
+      "reqRoles": "CSM",
+      "notified": 3,
+      "types": "notification.allocation_ticket.closed,notification.allocation_ticket.auto_apply_failed,notification.allocation_ticket.created"
+    },
+    {
+      "t": "NA-0459",
+      "type": "NEW_ALLOCATION",
+      "at": "2026-10-27T08:28",
+      "req": "Bhumi Chauhan",
+      "reqRoles": "PMO",
+      "notified": 0,
+      "types": ""
+    },
+    {
+      "t": "NA-0458",
+      "type": "NEW_ALLOCATION",
+      "at": "2026-10-27T07:46",
+      "req": "Bhumi Chauhan",
+      "reqRoles": "PMO",
+      "notified": 0,
+      "types": ""
+    },
+    {
+      "t": "NA-0457",
+      "type": "NEW_ALLOCATION",
+      "at": "2026-10-27T07:43",
+      "req": "Bhumi Chauhan",
+      "reqRoles": "PMO",
+      "notified": 0,
+      "types": ""
+    },
+    {
+      "t": "NA-0456",
+      "type": "NEW_ALLOCATION",
+      "at": "2026-10-27T06:50",
+      "req": "Bhumi Chauhan",
+      "reqRoles": "PMO",
+      "notified": 0,
+      "types": ""
+    },
+    {
+      "t": "NA-0454",
+      "type": "NEW_ALLOCATION",
+      "at": "2026-10-27T06:48",
+      "req": "Bhumi Chauhan",
+      "reqRoles": "PMO",
+      "notified": 0,
+      "types": ""
+    },
+    {
+      "t": "NA-0453",
+      "type": "NEW_ALLOCATION",
+      "at": "2026-10-27T06:48",
+      "req": "Bhumi Chauhan",
+      "reqRoles": "PMO",
+      "notified": 0,
+      "types": ""
+    },
+    {
+      "t": "NA-0451",
+      "type": "NEW_ALLOCATION",
+      "at": "2026-10-27T06:42",
+      "req": "Bhumi Chauhan",
+      "reqRoles": "PMO",
+      "notified": 0,
+      "types": ""
+    },
+    {
+      "t": "NA-0450",
+      "type": "NEW_ALLOCATION",
+      "at": "2026-10-27T06:09",
+      "req": "Bhumi Chauhan",
+      "reqRoles": "PMO",
+      "notified": 0,
+      "types": ""
+    },
+    {
+      "t": "DA-0176",
+      "type": "DEALLOCATE_ALLOCATION",
+      "at": "2026-10-27T05:39",
+      "req": "Bhumi Chauhan",
+      "reqRoles": "PMO",
+      "notified": 0,
+      "types": ""
+    },
+    {
+      "t": "DA-0175",
+      "type": "DEALLOCATE_ALLOCATION",
+      "at": "2026-10-27T05:38",
+      "req": "Priya Chopra",
+      "reqRoles": "CSM",
+      "notified": 2,
+      "types": "notification.allocation_ticket.period_cancelled,notification.allocation_ticket.created"
+    },
+    {
+      "t": "NA-0449",
+      "type": "NEW_ALLOCATION",
+      "at": "2026-10-27T05:38",
+      "req": "Bhumi Chauhan",
+      "reqRoles": "PMO",
+      "notified": 0,
+      "types": ""
+    },
+    {
+      "t": "DA-0174",
+      "type": "DEALLOCATE_ALLOCATION",
+      "at": "2026-10-26T11:21",
+      "req": "Bhumi Chauhan",
+      "reqRoles": "PMO",
+      "notified": 0,
+      "types": ""
+    },
+    {
+      "t": "NA-0448",
+      "type": "NEW_ALLOCATION",
+      "at": "2026-10-26T11:19",
+      "req": "Priya Chopra",
+      "reqRoles": "CSM",
+      "notified": 2,
+      "types": "notification.allocation_ticket.closed,notification.allocation_ticket.created"
+    },
+    {
+      "t": "NA-0447",
+      "type": "NEW_ALLOCATION",
+      "at": "2026-10-26T11:19",
+      "req": "Priya Chopra",
+      "reqRoles": "CSM",
+      "notified": 2,
+      "types": "notification.allocation_ticket.closed,notification.allocation_ticket.created"
+    },
+    {
+      "t": "DA-0173",
+      "type": "DEALLOCATE_ALLOCATION",
+      "at": "2026-10-26T11:19",
+      "req": "Priya Chopra",
+      "reqRoles": "CSM",
+      "notified": 2,
+      "types": "notification.allocation_ticket.closed,notification.allocation_ticket.created"
+    },
+    {
+      "t": "DA-0172",
+      "type": "DEALLOCATE_ALLOCATION",
+      "at": "2026-10-26T11:19",
+      "req": "Priya Chopra",
+      "reqRoles": "CSM",
+      "notified": 2,
+      "types": "notification.allocation_ticket.closed,notification.allocation_ticket.created"
+    },
+    {
+      "t": "NA-0446",
+      "type": "NEW_ALLOCATION",
+      "at": "2026-10-26T11:19",
+      "req": "Priya Chopra",
+      "reqRoles": "CSM",
+      "notified": 2,
+      "types": "notification.allocation_ticket.approved,notification.allocation_ticket.created"
+    },
+    {
+      "t": "DA-0171",
+      "type": "DEALLOCATE_ALLOCATION",
+      "at": "2026-10-23T13:07",
+      "req": "Bhumi Chauhan",
+      "reqRoles": "PMO",
+      "notified": 0,
+      "types": ""
+    },
+    {
+      "t": "DA-0170",
+      "type": "DEALLOCATE_ALLOCATION",
+      "at": "2026-10-23T13:07",
+      "req": "Bhumi Chauhan",
+      "reqRoles": "PMO",
+      "notified": 0,
+      "types": ""
+    },
+    {
+      "t": "NA-0445",
+      "type": "NEW_ALLOCATION",
+      "at": "2026-10-23T13:06",
+      "req": "Priya Chopra",
+      "reqRoles": "CSM",
+      "notified": 2,
+      "types": "notification.allocation_ticket.approved,notification.allocation_ticket.created"
+    },
+    {
+      "t": "NA-0444",
+      "type": "NEW_ALLOCATION",
+      "at": "2026-10-23T13:06",
+      "req": "Priya Chopra",
+      "reqRoles": "CSM",
+      "notified": 2,
+      "types": "notification.allocation_ticket.closed,notification.allocation_ticket.created"
+    },
+    {
+      "t": "DA-0169",
+      "type": "DEALLOCATE_ALLOCATION",
+      "at": "2026-10-23T13:06",
+      "req": "Priya Chopra",
+      "reqRoles": "CSM",
+      "notified": 2,
+      "types": "notification.allocation_ticket.closed,notification.allocation_ticket.created"
+    },
+    {
+      "t": "NA-0443",
+      "type": "NEW_ALLOCATION",
+      "at": "2026-10-23T13:06",
+      "req": "Priya Chopra",
+      "reqRoles": "CSM",
+      "notified": 1,
+      "types": "notification.allocation_ticket.created"
+    },
+    {
+      "t": "NA-0442",
+      "type": "NEW_ALLOCATION",
+      "at": "2026-10-23T13:06",
+      "req": "Priya Chopra",
+      "reqRoles": "CSM",
+      "notified": 3,
+      "types": "notification.allocation_ticket.closed,notification.allocation_ticket.auto_apply_failed,notification.allocation_ticket.created"
+    },
+    {
+      "t": "DA-0168",
+      "type": "DEALLOCATE_ALLOCATION",
+      "at": "2026-10-23T12:53",
+      "req": "Bhumi Chauhan",
+      "reqRoles": "PMO",
+      "notified": 0,
+      "types": ""
+    },
+    {
+      "t": "DA-0167",
+      "type": "DEALLOCATE_ALLOCATION",
+      "at": "2026-10-23T12:53",
+      "req": "Priya Chopra",
+      "reqRoles": "CSM",
+      "notified": 1,
+      "types": "notification.allocation_ticket.created"
+    },
+    {
+      "t": "DA-0166",
+      "type": "DEALLOCATE_ALLOCATION",
+      "at": "2026-10-23T12:52",
+      "req": "Priya Chopra",
+      "reqRoles": "CSM",
+      "notified": 1,
+      "types": "notification.allocation_ticket.created"
+    },
+    {
+      "t": "NA-0441",
+      "type": "NEW_ALLOCATION",
+      "at": "2026-10-23T12:52",
+      "req": "Priya Chopra",
+      "reqRoles": "CSM",
+      "notified": 1,
+      "types": "notification.allocation_ticket.created"
+    },
+    {
+      "t": "NA-0440",
+      "type": "NEW_ALLOCATION",
+      "at": "2026-10-23T12:52",
+      "req": "Priya Chopra",
+      "reqRoles": "CSM",
+      "notified": 2,
+      "types": "notification.allocation_ticket.auto_apply_failed,notification.allocation_ticket.created"
+    },
+    {
+      "t": "DA-0165",
+      "type": "DEALLOCATE_ALLOCATION",
+      "at": "2026-10-23T12:51",
+      "req": "Priya Chopra",
+      "reqRoles": "CSM",
+      "notified": 2,
+      "types": "notification.allocation_ticket.closed,notification.allocation_ticket.created"
+    },
+    {
+      "t": "DA-0164",
+      "type": "DEALLOCATE_ALLOCATION",
+      "at": "2026-10-23T12:50",
+      "req": "Priya Chopra",
+      "reqRoles": "CSM",
+      "notified": 2,
+      "types": "notification.allocation_ticket.closed,notification.allocation_ticket.created"
+    },
+    {
+      "t": "NA-0439",
+      "type": "NEW_ALLOCATION",
+      "at": "2026-10-23T12:48",
+      "req": "Priya Chopra",
+      "reqRoles": "CSM",
+      "notified": 2,
+      "types": "notification.allocation_ticket.closed,notification.allocation_ticket.created"
+    },
+    {
+      "t": "DA-0163",
+      "type": "DEALLOCATE_ALLOCATION",
+      "at": "2026-10-23T12:48",
+      "req": "Priya Chopra",
+      "reqRoles": "CSM",
+      "notified": 2,
+      "types": "notification.allocation_ticket.period_cancelled,notification.allocation_ticket.created"
+    },
+    {
+      "t": "DA-0162",
+      "type": "DEALLOCATE_ALLOCATION",
+      "at": "2026-10-23T12:48",
+      "req": "Priya Chopra",
+      "reqRoles": "CSM",
+      "notified": 2,
+      "types": "notification.allocation_ticket.closed,notification.allocation_ticket.created"
+    },
+    {
+      "t": "NA-0438",
+      "type": "NEW_ALLOCATION",
+      "at": "2026-10-23T12:46",
+      "req": "Priya Chopra",
+      "reqRoles": "CSM",
+      "notified": 2,
+      "types": "notification.allocation_ticket.closed,notification.allocation_ticket.created"
+    },
+    {
+      "t": "DA-0161",
+      "type": "DEALLOCATE_ALLOCATION",
+      "at": "2026-10-23T12:46",
+      "req": "Priya Chopra",
+      "reqRoles": "CSM",
+      "notified": 2,
+      "types": "notification.allocation_ticket.closed,notification.allocation_ticket.created"
+    },
+    {
+      "t": "DA-0160",
+      "type": "DEALLOCATE_ALLOCATION",
+      "at": "2026-10-23T12:46",
+      "req": "Priya Chopra",
+      "reqRoles": "CSM",
+      "notified": 2,
+      "types": "notification.allocation_ticket.closed,notification.allocation_ticket.created"
+    },
+    {
+      "t": "DA-0159",
+      "type": "DEALLOCATE_ALLOCATION",
+      "at": "2026-10-23T12:44",
+      "req": "Priya Chopra",
+      "reqRoles": "CSM",
+      "notified": 2,
+      "types": "notification.allocation_ticket.closed,notification.allocation_ticket.created"
+    },
+    {
+      "t": "DA-0158",
+      "type": "DEALLOCATE_ALLOCATION",
+      "at": "2026-10-23T12:44",
+      "req": "Priya Chopra",
+      "reqRoles": "CSM",
+      "notified": 2,
+      "types": "notification.allocation_ticket.closed,notification.allocation_ticket.created"
+    },
+    {
+      "t": "NA-0437",
+      "type": "NEW_ALLOCATION",
+      "at": "2026-10-23T12:43",
+      "req": "Priya Chopra",
+      "reqRoles": "CSM",
+      "notified": 2,
+      "types": "notification.allocation_ticket.closed,notification.allocation_ticket.created"
+    },
+    {
+      "t": "NA-0436",
+      "type": "NEW_ALLOCATION",
+      "at": "2026-10-23T12:43",
+      "req": "Priya Chopra",
+      "reqRoles": "CSM",
+      "notified": 2,
+      "types": "notification.allocation_ticket.closed,notification.allocation_ticket.created"
+    },
+    {
+      "t": "DA-0157",
+      "type": "DEALLOCATE_ALLOCATION",
+      "at": "2026-10-23T12:43",
+      "req": "Priya Chopra",
+      "reqRoles": "CSM",
+      "notified": 2,
+      "types": "notification.allocation_ticket.closed,notification.allocation_ticket.created"
+    },
+    {
+      "t": "DA-0156",
+      "type": "DEALLOCATE_ALLOCATION",
+      "at": "2026-10-23T12:43",
+      "req": "Priya Chopra",
+      "reqRoles": "CSM",
+      "notified": 2,
+      "types": "notification.allocation_ticket.closed,notification.allocation_ticket.created"
+    },
+    {
+      "t": "NA-0434",
+      "type": "NEW_ALLOCATION",
+      "at": "2026-10-23T12:35",
+      "req": "Bhumi Chauhan",
+      "reqRoles": "PMO",
+      "notified": 0,
+      "types": ""
+    },
+    {
+      "t": "NA-0433",
+      "type": "NEW_ALLOCATION",
+      "at": "2026-10-23T12:34",
+      "req": "Priya Chopra",
+      "reqRoles": "CSM",
+      "notified": 3,
+      "types": "notification.allocation_ticket.approved,notification.allocation_ticket.rejected,notification.allocation_ticket.created"
+    },
+    {
+      "t": "DA-0155",
+      "type": "DEALLOCATE_ALLOCATION",
+      "at": "2026-10-23T12:34",
+      "req": "Priya Chopra",
+      "reqRoles": "CSM",
+      "notified": 1,
+      "types": "notification.allocation_ticket.created"
+    },
+    {
+      "t": "DA-0154",
+      "type": "DEALLOCATE_ALLOCATION",
+      "at": "2026-10-23T12:34",
+      "req": "Priya Chopra",
+      "reqRoles": "CSM",
+      "notified": 1,
+      "types": "notification.allocation_ticket.created"
+    },
+    {
+      "t": "NA-0432",
+      "type": "NEW_ALLOCATION",
+      "at": "2026-10-23T12:32",
+      "req": "Bhumi Chauhan",
+      "reqRoles": "PMO",
+      "notified": 0,
+      "types": ""
+    },
+    {
+      "t": "NA-0431",
+      "type": "NEW_ALLOCATION",
+      "at": "2026-10-23T12:32",
+      "req": "Bhumi Chauhan",
+      "reqRoles": "PMO",
+      "notified": 0,
+      "types": ""
+    },
+    {
+      "t": "NA-0430",
+      "type": "NEW_ALLOCATION",
+      "at": "2026-10-23T12:32",
+      "req": "Bhumi Chauhan",
+      "reqRoles": "PMO",
+      "notified": 0,
+      "types": ""
+    },
+    {
+      "t": "NA-0429",
+      "type": "NEW_ALLOCATION",
+      "at": "2026-10-23T12:32",
+      "req": "Bhumi Chauhan",
+      "reqRoles": "PMO",
+      "notified": 0,
+      "types": ""
+    },
+    {
+      "t": "NA-0428",
+      "type": "NEW_ALLOCATION",
+      "at": "2026-10-23T12:32",
+      "req": "Bhumi Chauhan",
+      "reqRoles": "PMO",
+      "notified": 0,
+      "types": ""
+    },
+    {
+      "t": "NA-0427",
+      "type": "NEW_ALLOCATION",
+      "at": "2026-10-23T12:32",
+      "req": "Bhumi Chauhan",
+      "reqRoles": "PMO",
+      "notified": 0,
+      "types": ""
+    },
+    {
+      "t": "NA-0426",
+      "type": "NEW_ALLOCATION",
+      "at": "2026-10-23T12:32",
+      "req": "Bhumi Chauhan",
+      "reqRoles": "PMO",
+      "notified": 0,
+      "types": ""
+    },
+    {
+      "t": "NA-0425",
+      "type": "NEW_ALLOCATION",
+      "at": "2026-10-23T12:32",
+      "req": "Bhumi Chauhan",
+      "reqRoles": "PMO",
+      "notified": 0,
+      "types": ""
+    },
+    {
+      "t": "NA-0424",
+      "type": "NEW_ALLOCATION",
+      "at": "2026-10-23T12:32",
+      "req": "Bhumi Chauhan",
+      "reqRoles": "PMO",
+      "notified": 0,
+      "types": ""
+    },
+    {
+      "t": "NA-0423",
+      "type": "NEW_ALLOCATION",
+      "at": "2026-10-23T09:47",
+      "req": "Priya Chopra",
+      "reqRoles": "CSM",
+      "notified": 1,
+      "types": "notification.allocation_ticket.created"
+    },
+    {
+      "t": "NA-0422",
+      "type": "NEW_ALLOCATION",
+      "at": "2026-10-23T09:47",
+      "req": "Priya Chopra",
+      "reqRoles": "CSM",
+      "notified": 2,
+      "types": "notification.allocation_ticket.approved,notification.allocation_ticket.created"
+    },
+    {
+      "t": "DA-0153",
+      "type": "DEALLOCATE_ALLOCATION",
+      "at": "2026-10-23T09:47",
+      "req": "Priya Chopra",
+      "reqRoles": "CSM",
+      "notified": 1,
+      "types": "notification.allocation_ticket.created"
+    },
+    {
+      "t": "DA-0152",
+      "type": "DEALLOCATE_ALLOCATION",
+      "at": "2026-10-23T09:47",
+      "req": "Priya Chopra",
+      "reqRoles": "CSM",
+      "notified": 1,
+      "types": "notification.allocation_ticket.created"
+    },
+    {
+      "t": "NA-0421",
+      "type": "NEW_ALLOCATION",
+      "at": "2026-10-23T09:44",
+      "req": "Bhumi Chauhan",
+      "reqRoles": "PMO",
+      "notified": 0,
+      "types": ""
+    },
+    {
+      "t": "NA-0420",
+      "type": "NEW_ALLOCATION",
+      "at": "2026-10-23T09:44",
+      "req": "Bhumi Chauhan",
+      "reqRoles": "PMO",
+      "notified": 0,
+      "types": ""
+    },
+    {
+      "t": "NA-0418",
+      "type": "NEW_ALLOCATION",
+      "at": "2026-10-21T13:24",
+      "req": "Bhumi Chauhan",
+      "reqRoles": "PMO",
+      "notified": 0,
+      "types": ""
+    },
+    {
+      "t": "NA-0417",
+      "type": "NEW_ALLOCATION",
+      "at": "2026-10-21T13:24",
+      "req": "Bhumi Chauhan",
+      "reqRoles": "PMO",
+      "notified": 0,
+      "types": ""
+    },
+    {
+      "t": "NA-0416",
+      "type": "NEW_ALLOCATION",
+      "at": "2026-10-21T13:21",
+      "req": "Bhumi Chauhan",
+      "reqRoles": "PMO",
+      "notified": 0,
+      "types": ""
+    },
+    {
+      "t": "DA-0151",
+      "type": "DEALLOCATE_ALLOCATION",
+      "at": "2026-10-21T12:08",
+      "req": "Bhumi Chauhan",
+      "reqRoles": "PMO",
+      "notified": 0,
+      "types": ""
+    },
+    {
+      "t": "DA-0150",
+      "type": "DEALLOCATE_ALLOCATION",
+      "at": "2026-10-21T12:08",
+      "req": "Bhumi Chauhan",
+      "reqRoles": "PMO",
+      "notified": 0,
+      "types": ""
+    },
+    {
+      "t": "DA-0149",
+      "type": "DEALLOCATE_ALLOCATION",
+      "at": "2026-10-21T12:08",
+      "req": "Bhumi Chauhan",
+      "reqRoles": "PMO",
+      "notified": 0,
+      "types": ""
+    },
+    {
+      "t": "DA-0148",
+      "type": "DEALLOCATE_ALLOCATION",
+      "at": "2026-10-21T12:08",
+      "req": "Priya Chopra",
+      "reqRoles": "CSM",
+      "notified": 1,
+      "types": "notification.allocation_ticket.created"
+    },
+    {
+      "t": "DA-0147",
+      "type": "DEALLOCATE_ALLOCATION",
+      "at": "2026-10-21T12:08",
+      "req": "Priya Chopra",
+      "reqRoles": "CSM",
+      "notified": 1,
+      "types": "notification.allocation_ticket.created"
+    },
+    {
+      "t": "NA-0415",
+      "type": "NEW_ALLOCATION",
+      "at": "2026-10-21T12:06",
+      "req": "Priya Chopra",
+      "reqRoles": "CSM",
+      "notified": 1,
+      "types": "notification.allocation_ticket.created"
+    },
+    {
+      "t": "NA-0414",
+      "type": "NEW_ALLOCATION",
+      "at": "2026-10-21T12:06",
+      "req": "Priya Chopra",
+      "reqRoles": "CSM",
+      "notified": 1,
+      "types": "notification.allocation_ticket.created"
+    },
+    {
+      "t": "DA-0146",
+      "type": "DEALLOCATE_ALLOCATION",
+      "at": "2026-10-21T12:06",
+      "req": "Priya Chopra",
+      "reqRoles": "CSM",
+      "notified": 1,
+      "types": "notification.allocation_ticket.created"
+    },
+    {
+      "t": "DA-0145",
+      "type": "DEALLOCATE_ALLOCATION",
+      "at": "2026-10-21T12:06",
+      "req": "Priya Chopra",
+      "reqRoles": "CSM",
+      "notified": 1,
+      "types": "notification.allocation_ticket.created"
+    },
+    {
+      "t": "DA-0144",
+      "type": "DEALLOCATE_ALLOCATION",
+      "at": "2026-10-21T12:05",
+      "req": "Priya Chopra",
+      "reqRoles": "CSM",
+      "notified": 1,
+      "types": "notification.allocation_ticket.created"
+    },
+    {
+      "t": "DA-0143",
+      "type": "DEALLOCATE_ALLOCATION",
+      "at": "2026-10-21T12:04",
+      "req": "Priya Chopra",
+      "reqRoles": "CSM",
+      "notified": 1,
+      "types": "notification.allocation_ticket.created"
+    },
+    {
+      "t": "NA-0413",
+      "type": "NEW_ALLOCATION",
+      "at": "2026-10-21T12:04",
+      "req": "Priya Chopra",
+      "reqRoles": "CSM",
+      "notified": 1,
+      "types": "notification.allocation_ticket.created"
+    },
+    {
+      "t": "NA-0412",
+      "type": "NEW_ALLOCATION",
+      "at": "2026-10-21T12:04",
+      "req": "Priya Chopra",
+      "reqRoles": "CSM",
+      "notified": 2,
+      "types": "notification.allocation_ticket.auto_apply_failed,notification.allocation_ticket.created"
+    },
+    {
+      "t": "NA-0411",
+      "type": "NEW_ALLOCATION",
+      "at": "2026-10-21T12:01",
+      "req": "Priya Chopra",
+      "reqRoles": "CSM",
+      "notified": 2,
+      "types": "notification.allocation_ticket.closed,notification.allocation_ticket.created"
+    },
+    {
+      "t": "DA-0142",
+      "type": "DEALLOCATE_ALLOCATION",
+      "at": "2026-10-21T12:01",
+      "req": "Priya Chopra",
+      "reqRoles": "CSM",
+      "notified": 2,
+      "types": "notification.allocation_ticket.period_cancelled,notification.allocation_ticket.created"
+    },
+    {
+      "t": "DA-0141",
+      "type": "DEALLOCATE_ALLOCATION",
+      "at": "2026-10-21T12:01",
+      "req": "Priya Chopra",
+      "reqRoles": "CSM",
+      "notified": 2,
+      "types": "notification.allocation_ticket.closed,notification.allocation_ticket.created"
+    },
+    {
+      "t": "DA-0140",
+      "type": "DEALLOCATE_ALLOCATION",
+      "at": "2026-10-21T11:58",
+      "req": "Priya Chopra",
+      "reqRoles": "CSM",
+      "notified": 2,
+      "types": "notification.allocation_ticket.closed,notification.allocation_ticket.created"
+    },
+    {
+      "t": "DA-0139",
+      "type": "DEALLOCATE_ALLOCATION",
+      "at": "2026-10-21T11:58",
+      "req": "Priya Chopra",
+      "reqRoles": "CSM",
+      "notified": 2,
+      "types": "notification.allocation_ticket.closed,notification.allocation_ticket.created"
+    },
+    {
+      "t": "DA-0138",
+      "type": "DEALLOCATE_ALLOCATION",
+      "at": "2026-10-21T11:53",
+      "req": "Priya Chopra",
+      "reqRoles": "CSM",
+      "notified": 1,
+      "types": "notification.allocation_ticket.created"
+    },
+    {
+      "t": "NA-0410",
+      "type": "NEW_ALLOCATION",
+      "at": "2026-10-21T11:48",
+      "req": "Priya Chopra",
+      "reqRoles": "CSM",
+      "notified": 2,
+      "types": "notification.allocation_ticket.closed,notification.allocation_ticket.created"
+    },
+    {
+      "t": "DA-0137",
+      "type": "DEALLOCATE_ALLOCATION",
+      "at": "2026-10-21T11:48",
+      "req": "Priya Chopra",
+      "reqRoles": "CSM",
+      "notified": 2,
+      "types": "notification.allocation_ticket.closed,notification.allocation_ticket.created"
+    },
+    {
+      "t": "DA-0136",
+      "type": "DEALLOCATE_ALLOCATION",
+      "at": "2026-10-21T11:48",
+      "req": "Priya Chopra",
+      "reqRoles": "CSM",
+      "notified": 2,
+      "types": "notification.allocation_ticket.closed,notification.allocation_ticket.created"
+    },
+    {
+      "t": "NA-0409",
+      "type": "NEW_ALLOCATION",
+      "at": "2026-10-21T11:46",
+      "req": "Priya Chopra",
+      "reqRoles": "CSM",
+      "notified": 2,
+      "types": "notification.allocation_ticket.closed,notification.allocation_ticket.created"
+    },
+    {
+      "t": "NA-0408",
+      "type": "NEW_ALLOCATION",
+      "at": "2026-10-21T11:46",
+      "req": "Priya Chopra",
+      "reqRoles": "CSM",
+      "notified": 2,
+      "types": "notification.allocation_ticket.closed,notification.allocation_ticket.created"
+    },
+    {
+      "t": "DA-0135",
+      "type": "DEALLOCATE_ALLOCATION",
+      "at": "2026-10-21T11:46",
+      "req": "Priya Chopra",
+      "reqRoles": "CSM",
+      "notified": 2,
+      "types": "notification.allocation_ticket.closed,notification.allocation_ticket.created"
+    },
+    {
+      "t": "DA-0134",
+      "type": "DEALLOCATE_ALLOCATION",
+      "at": "2026-10-21T11:46",
+      "req": "Priya Chopra",
+      "reqRoles": "CSM",
+      "notified": 2,
+      "types": "notification.allocation_ticket.closed,notification.allocation_ticket.created"
+    },
+    {
+      "t": "NA-0406",
+      "type": "NEW_ALLOCATION",
+      "at": "2026-10-21T11:30",
+      "req": "Bhumi Chauhan",
+      "reqRoles": "PMO",
+      "notified": 0,
+      "types": ""
+    },
+    {
+      "t": "NA-0405",
+      "type": "NEW_ALLOCATION",
+      "at": "2026-10-21T11:27",
+      "req": "Priya Chopra",
+      "reqRoles": "CSM",
+      "notified": 3,
+      "types": "notification.allocation_ticket.approved,notification.allocation_ticket.rejected,notification.allocation_ticket.created"
+    },
+    {
+      "t": "DA-0133",
+      "type": "DEALLOCATE_ALLOCATION",
+      "at": "2026-10-21T11:27",
+      "req": "Priya Chopra",
+      "reqRoles": "CSM",
+      "notified": 1,
+      "types": "notification.allocation_ticket.created"
+    },
+    {
+      "t": "DA-0132",
+      "type": "DEALLOCATE_ALLOCATION",
+      "at": "2026-10-21T11:27",
+      "req": "Priya Chopra",
+      "reqRoles": "CSM",
+      "notified": 1,
+      "types": "notification.allocation_ticket.created"
+    },
+    {
+      "t": "NA-0404",
+      "type": "NEW_ALLOCATION",
+      "at": "2026-10-21T11:27",
+      "req": "Bhumi Chauhan",
+      "reqRoles": "PMO",
+      "notified": 0,
+      "types": ""
+    },
+    {
+      "t": "NA-0403",
+      "type": "NEW_ALLOCATION",
+      "at": "2026-10-21T11:27",
+      "req": "Bhumi Chauhan",
+      "reqRoles": "PMO",
+      "notified": 0,
+      "types": ""
+    },
+    {
+      "t": "NA-0402",
+      "type": "NEW_ALLOCATION",
+      "at": "2026-10-21T11:26",
+      "req": "Bhumi Chauhan",
+      "reqRoles": "PMO",
+      "notified": 0,
+      "types": ""
+    },
+    {
+      "t": "NA-0399",
+      "type": "NEW_ALLOCATION",
+      "at": "2026-10-21T11:26",
+      "req": "Bhumi Chauhan",
+      "reqRoles": "PMO",
+      "notified": 0,
+      "types": ""
+    },
+    {
+      "t": "NA-0398",
+      "type": "NEW_ALLOCATION",
+      "at": "2026-10-21T11:26",
+      "req": "Bhumi Chauhan",
+      "reqRoles": "PMO",
+      "notified": 0,
+      "types": ""
+    },
+    {
+      "t": "NA-0397",
+      "type": "NEW_ALLOCATION",
+      "at": "2026-10-21T11:22",
+      "req": "Bhumi Chauhan",
+      "reqRoles": "PMO",
+      "notified": 0,
+      "types": ""
+    },
+    {
+      "t": "NA-0396",
+      "type": "NEW_ALLOCATION",
+      "at": "2026-10-21T11:22",
+      "req": "Bhumi Chauhan",
+      "reqRoles": "PMO",
+      "notified": 0,
+      "types": ""
+    },
+    {
+      "t": "NA-0395",
+      "type": "NEW_ALLOCATION",
+      "at": "2026-10-21T11:22",
+      "req": "Bhumi Chauhan",
+      "reqRoles": "PMO",
+      "notified": 0,
+      "types": ""
+    },
+    {
+      "t": "DA-0131",
+      "type": "DEALLOCATE_ALLOCATION",
+      "at": "2026-10-21T07:04",
+      "req": "Bhumi Chauhan",
+      "reqRoles": "PMO",
+      "notified": 0,
+      "types": ""
+    },
+    {
+      "t": "DA-0130",
+      "type": "DEALLOCATE_ALLOCATION",
+      "at": "2026-10-21T07:04",
+      "req": "Bhumi Chauhan",
+      "reqRoles": "PMO",
+      "notified": 0,
+      "types": ""
+    },
+    {
+      "t": "NA-0394",
+      "type": "NEW_ALLOCATION",
+      "at": "2026-10-21T07:02",
+      "req": "Priya Chopra",
+      "reqRoles": "CSM",
+      "notified": 1,
+      "types": "notification.allocation_ticket.created"
+    },
+    {
+      "t": "NA-0393",
+      "type": "NEW_ALLOCATION",
+      "at": "2026-10-21T07:02",
+      "req": "Priya Chopra",
+      "reqRoles": "CSM",
+      "notified": 1,
+      "types": "notification.allocation_ticket.created"
+    },
+    {
+      "t": "DA-0129",
+      "type": "DEALLOCATE_ALLOCATION",
+      "at": "2026-10-21T07:02",
+      "req": "Priya Chopra",
+      "reqRoles": "CSM",
+      "notified": 1,
+      "types": "notification.allocation_ticket.created"
+    },
+    {
+      "t": "DA-0128",
+      "type": "DEALLOCATE_ALLOCATION",
+      "at": "2026-10-21T07:02",
+      "req": "Priya Chopra",
+      "reqRoles": "CSM",
+      "notified": 1,
+      "types": "notification.allocation_ticket.created"
+    },
+    {
+      "t": "DA-0127",
+      "type": "DEALLOCATE_ALLOCATION",
+      "at": "2026-10-21T06:56",
+      "req": "Bhumi Chauhan",
+      "reqRoles": "PMO",
+      "notified": 0,
+      "types": ""
+    },
+    {
+      "t": "DA-0126",
+      "type": "DEALLOCATE_ALLOCATION",
+      "at": "2026-10-21T06:56",
+      "req": "Bhumi Chauhan",
+      "reqRoles": "PMO",
+      "notified": 0,
+      "types": ""
+    },
+    {
+      "t": "DA-0125",
+      "type": "DEALLOCATE_ALLOCATION",
+      "at": "2026-10-21T06:55",
+      "req": "Priya Chopra",
+      "reqRoles": "CSM",
+      "notified": 2,
+      "types": "notification.allocation_ticket.period_cancelled,notification.allocation_ticket.created"
+    },
+    {
+      "t": "NA-0391",
+      "type": "NEW_ALLOCATION",
+      "at": "2026-10-21T06:54",
+      "req": "Priya Chopra",
+      "reqRoles": "CSM",
+      "notified": 1,
+      "types": "notification.allocation_ticket.created"
+    },
+    {
+      "t": "NA-0390",
+      "type": "NEW_ALLOCATION",
+      "at": "2026-10-21T06:54",
+      "req": "Priya Chopra",
+      "reqRoles": "CSM",
+      "notified": 2,
+      "types": "notification.allocation_ticket.auto_apply_failed,notification.allocation_ticket.created"
+    },
+    {
+      "t": "NA-0389",
+      "type": "NEW_ALLOCATION",
+      "at": "2026-10-21T06:54",
+      "req": "Bhumi Chauhan",
+      "reqRoles": "PMO",
+      "notified": 0,
+      "types": ""
+    },
+    {
+      "t": "DA-0124",
+      "type": "DEALLOCATE_ALLOCATION",
+      "at": "2026-10-21T06:28",
+      "req": "Bhumi Chauhan",
+      "reqRoles": "PMO",
+      "notified": 0,
+      "types": ""
+    },
+    {
+      "t": "NA-0388",
+      "type": "NEW_ALLOCATION",
+      "at": "2026-10-21T06:27",
+      "req": "Priya Chopra",
+      "reqRoles": "CSM",
+      "notified": 2,
+      "types": "notification.allocation_ticket.closed,notification.allocation_ticket.created"
+    },
+    {
+      "t": "DA-0123",
+      "type": "DEALLOCATE_ALLOCATION",
+      "at": "2026-10-21T06:27",
+      "req": "Priya Chopra",
+      "reqRoles": "CSM",
+      "notified": 2,
+      "types": "notification.allocation_ticket.closed,notification.allocation_ticket.created"
+    },
+    {
+      "t": "DA-0122",
+      "type": "DEALLOCATE_ALLOCATION",
+      "at": "2026-10-21T06:27",
+      "req": "Priya Chopra",
+      "reqRoles": "CSM",
+      "notified": 2,
+      "types": "notification.allocation_ticket.closed,notification.allocation_ticket.created"
+    },
+    {
+      "t": "NA-0387",
+      "type": "NEW_ALLOCATION",
+      "at": "2026-10-21T06:25",
+      "req": "Priya Chopra",
+      "reqRoles": "CSM",
+      "notified": 2,
+      "types": "notification.allocation_ticket.closed,notification.allocation_ticket.created"
+    },
+    {
+      "t": "NA-0386",
+      "type": "NEW_ALLOCATION",
+      "at": "2026-10-21T06:25",
+      "req": "Priya Chopra",
+      "reqRoles": "CSM",
+      "notified": 2,
+      "types": "notification.allocation_ticket.closed,notification.allocation_ticket.created"
+    },
+    {
+      "t": "DA-0121",
+      "type": "DEALLOCATE_ALLOCATION",
+      "at": "2026-10-21T06:25",
+      "req": "Priya Chopra",
+      "reqRoles": "CSM",
+      "notified": 2,
+      "types": "notification.allocation_ticket.closed,notification.allocation_ticket.created"
+    },
+    {
+      "t": "DA-0120",
+      "type": "DEALLOCATE_ALLOCATION",
+      "at": "2026-10-21T06:25",
+      "req": "Priya Chopra",
+      "reqRoles": "CSM",
+      "notified": 2,
+      "types": "notification.allocation_ticket.closed,notification.allocation_ticket.created"
+    },
+    {
+      "t": "NA-0385",
+      "type": "NEW_ALLOCATION",
+      "at": "2026-10-21T06:25",
+      "req": "Bhumi Chauhan",
+      "reqRoles": "PMO",
+      "notified": 0,
+      "types": ""
+    },
+    {
+      "t": "NA-0384",
+      "type": "NEW_ALLOCATION",
+      "at": "2026-10-20T13:19",
+      "req": "Palak Saxena",
+      "reqRoles": "PMO",
+      "notified": 0,
+      "types": ""
+    },
+    {
+      "t": "NA-0383",
+      "type": "NEW_ALLOCATION",
+      "at": "2026-10-20T13:18",
+      "req": "Palak Saxena",
+      "reqRoles": "PMO",
+      "notified": 0,
+      "types": ""
+    },
+    {
+      "t": "DA-0119",
+      "type": "DEALLOCATE_ALLOCATION",
+      "at": "2026-10-20T13:03",
+      "req": "Bhumi Chauhan",
+      "reqRoles": "PMO",
+      "notified": 0,
+      "types": ""
+    },
+    {
+      "t": "NA-0382",
+      "type": "NEW_ALLOCATION",
+      "at": "2026-10-20T13:02",
+      "req": "Bhumi Chauhan",
+      "reqRoles": "PMO",
+      "notified": 0,
+      "types": ""
+    },
+    {
+      "t": "DA-0118",
+      "type": "DEALLOCATE_ALLOCATION",
+      "at": "2026-10-20T13:01",
+      "req": "Bhumi Chauhan",
+      "reqRoles": "PMO",
+      "notified": 0,
+      "types": ""
+    },
+    {
+      "t": "NA-0381",
+      "type": "NEW_ALLOCATION",
+      "at": "2026-10-20T12:59",
+      "req": "Bhumi Chauhan",
+      "reqRoles": "PMO",
+      "notified": 0,
+      "types": ""
+    },
+    {
+      "t": "DA-0117",
+      "type": "DEALLOCATE_ALLOCATION",
+      "at": "2026-10-20T12:56",
+      "req": "Ravi Vyas",
+      "reqRoles": "RM/CSM/DM",
+      "notified": 1,
+      "types": "notification.allocation_ticket.created"
+    },
+    {
+      "t": "UA-0135",
+      "type": "UPDATE_ALLOCATION",
+      "at": "2026-10-20T12:47",
+      "req": "Ravi Vyas",
+      "reqRoles": "RM/CSM/DM",
+      "notified": 2,
+      "types": "notification.allocation_ticket.approved,notification.allocation_ticket.created"
+    },
+    {
+      "t": "NA-0380",
+      "type": "NEW_ALLOCATION",
+      "at": "2026-10-20T12:46",
+      "req": "Bhumi Chauhan",
+      "reqRoles": "PMO",
+      "notified": 0,
+      "types": ""
+    },
+    {
+      "t": "DA-0116",
+      "type": "DEALLOCATE_ALLOCATION",
+      "at": "2026-10-20T12:22",
+      "req": "Bhumi Chauhan",
+      "reqRoles": "PMO",
+      "notified": 0,
+      "types": ""
+    },
+    {
+      "t": "NA-0378",
+      "type": "NEW_ALLOCATION",
+      "at": "2026-10-20T12:21",
+      "req": "Priya Chopra",
+      "reqRoles": "CSM",
+      "notified": 2,
+      "types": "notification.allocation_ticket.closed,notification.allocation_ticket.created"
+    },
+    {
+      "t": "DA-0115",
+      "type": "DEALLOCATE_ALLOCATION",
+      "at": "2026-10-20T12:21",
+      "req": "Priya Chopra",
+      "reqRoles": "CSM",
+      "notified": 2,
+      "types": "notification.allocation_ticket.closed,notification.allocation_ticket.created"
+    },
+    {
+      "t": "DA-0114",
+      "type": "DEALLOCATE_ALLOCATION",
+      "at": "2026-10-20T12:21",
+      "req": "Priya Chopra",
+      "reqRoles": "CSM",
+      "notified": 2,
+      "types": "notification.allocation_ticket.closed,notification.allocation_ticket.created"
+    },
+    {
+      "t": "NA-0377",
+      "type": "NEW_ALLOCATION",
+      "at": "2026-10-20T12:18",
+      "req": "Priya Chopra",
+      "reqRoles": "CSM",
+      "notified": 2,
+      "types": "notification.allocation_ticket.closed,notification.allocation_ticket.created"
+    },
+    {
+      "t": "NA-0376",
+      "type": "NEW_ALLOCATION",
+      "at": "2026-10-20T12:18",
+      "req": "Priya Chopra",
+      "reqRoles": "CSM",
+      "notified": 2,
+      "types": "notification.allocation_ticket.closed,notification.allocation_ticket.created"
+    },
+    {
+      "t": "DA-0113",
+      "type": "DEALLOCATE_ALLOCATION",
+      "at": "2026-10-20T12:18",
+      "req": "Priya Chopra",
+      "reqRoles": "CSM",
+      "notified": 2,
+      "types": "notification.allocation_ticket.closed,notification.allocation_ticket.created"
+    },
+    {
+      "t": "DA-0112",
+      "type": "DEALLOCATE_ALLOCATION",
+      "at": "2026-10-20T12:18",
+      "req": "Priya Chopra",
+      "reqRoles": "CSM",
+      "notified": 2,
+      "types": "notification.allocation_ticket.closed,notification.allocation_ticket.created"
+    },
+    {
+      "t": "NA-0375",
+      "type": "NEW_ALLOCATION",
+      "at": "2026-10-20T12:17",
+      "req": "Bhumi Chauhan",
+      "reqRoles": "PMO",
+      "notified": 0,
+      "types": ""
+    },
+    {
+      "t": "DA-0111",
+      "type": "DEALLOCATE_ALLOCATION",
+      "at": "2026-10-20T11:28",
+      "req": "Palak Saxena",
+      "reqRoles": "PMO",
+      "notified": 0,
+      "types": ""
+    },
+    {
+      "t": "NA-0374",
+      "type": "NEW_ALLOCATION",
+      "at": "2026-10-20T11:27",
+      "req": "Palak Saxena",
+      "reqRoles": "PMO",
+      "notified": 0,
+      "types": ""
+    },
+    {
+      "t": "DA-0110",
+      "type": "DEALLOCATE_ALLOCATION",
+      "at": "2026-10-20T08:55",
+      "req": "Jignesh Raval",
+      "reqRoles": "RM/PM/DM",
+      "notified": 1,
+      "types": "notification.allocation_ticket.created"
+    },
+    {
+      "t": "NA-0373",
+      "type": "NEW_ALLOCATION",
+      "at": "2026-10-20T08:52",
+      "req": "Jignesh Raval",
+      "reqRoles": "RM/PM/DM",
+      "notified": 1,
+      "types": "notification.allocation_ticket.created"
+    },
+    {
+      "t": "DA-0109",
+      "type": "DEALLOCATE_ALLOCATION",
+      "at": "2026-10-20T08:51",
+      "req": "Bhumi Chauhan",
+      "reqRoles": "PMO",
+      "notified": 0,
+      "types": ""
+    },
+    {
+      "t": "UA-0134",
+      "type": "UPDATE_ALLOCATION",
+      "at": "2026-10-20T08:49",
+      "req": "Bhumi Chauhan",
+      "reqRoles": "PMO",
+      "notified": 0,
+      "types": ""
+    },
+    {
+      "t": "NA-0372",
+      "type": "NEW_ALLOCATION",
+      "at": "2026-10-20T08:48",
+      "req": "Bhumi Chauhan",
+      "reqRoles": "PMO",
+      "notified": 0,
+      "types": ""
+    },
+    {
+      "t": "DA-0108",
+      "type": "DEALLOCATE_ALLOCATION",
+      "at": "2026-10-19T11:35",
+      "req": "Palak Saxena",
+      "reqRoles": "PMO",
+      "notified": 0,
+      "types": ""
+    },
+    {
+      "t": "NA-0371",
+      "type": "NEW_ALLOCATION",
+      "at": "2026-10-19T11:34",
+      "req": "Palak Saxena",
+      "reqRoles": "PMO",
+      "notified": 0,
+      "types": ""
+    },
+    {
+      "t": "DA-0107",
+      "type": "DEALLOCATE_ALLOCATION",
+      "at": "2026-10-19T11:30",
+      "req": "Jignesh Raval",
+      "reqRoles": "RM/PM/DM",
+      "notified": 1,
+      "types": "notification.allocation_ticket.created"
+    },
+    {
+      "t": "NA-0370",
+      "type": "NEW_ALLOCATION",
+      "at": "2026-10-19T11:26",
+      "req": "Jignesh Raval",
+      "reqRoles": "RM/PM/DM",
+      "notified": 1,
+      "types": "notification.allocation_ticket.created"
+    },
+    {
+      "t": "DA-0106",
+      "type": "DEALLOCATE_ALLOCATION",
+      "at": "2026-10-19T11:23",
+      "req": "Priya Chopra",
+      "reqRoles": "CSM",
+      "notified": 1,
+      "types": "notification.allocation_ticket.created"
+    },
+    {
+      "t": "UA-0133",
+      "type": "UPDATE_ALLOCATION",
+      "at": "2026-10-19T11:20",
+      "req": "Priya Chopra",
+      "reqRoles": "CSM",
+      "notified": 1,
+      "types": "notification.allocation_ticket.created"
+    },
+    {
+      "t": "UA-0132",
+      "type": "UPDATE_ALLOCATION",
+      "at": "2026-10-19T11:17",
+      "req": "Priya Chopra",
+      "reqRoles": "CSM",
+      "notified": 1,
+      "types": "notification.allocation_ticket.created"
+    },
+    {
+      "t": "UA-0131",
+      "type": "UPDATE_ALLOCATION",
+      "at": "2026-10-19T11:15",
+      "req": "Bhumi Chauhan",
+      "reqRoles": "PMO",
+      "notified": 0,
+      "types": ""
+    },
+    {
+      "t": "NA-0369",
+      "type": "NEW_ALLOCATION",
+      "at": "2026-10-19T11:13",
+      "req": "Bhumi Chauhan",
+      "reqRoles": "PMO",
+      "notified": 0,
+      "types": ""
+    },
+    {
+      "t": "NA-0368",
+      "type": "NEW_ALLOCATION",
+      "at": "2026-10-19T11:00",
+      "req": "Bhumi Chauhan",
+      "reqRoles": "PMO",
+      "notified": 0,
+      "types": ""
+    },
+    {
+      "t": "DA-0105",
+      "type": "DEALLOCATE_ALLOCATION",
+      "at": "2026-10-19T11:00",
+      "req": "Bhumi Chauhan",
+      "reqRoles": "PMO",
+      "notified": 0,
+      "types": ""
+    },
+    {
+      "t": "DA-0104",
+      "type": "DEALLOCATE_ALLOCATION",
+      "at": "2026-10-19T11:00",
+      "req": "Bhumi Chauhan",
+      "reqRoles": "PMO",
+      "notified": 0,
+      "types": ""
+    },
+    {
+      "t": "NA-0367",
+      "type": "NEW_ALLOCATION",
+      "at": "2026-10-19T10:59",
+      "req": "Bhumi Chauhan",
+      "reqRoles": "PMO",
+      "notified": 0,
+      "types": ""
+    },
+    {
+      "t": "DA-0103",
+      "type": "DEALLOCATE_ALLOCATION",
+      "at": "2026-10-19T10:58",
+      "req": "Bhumi Chauhan",
+      "reqRoles": "PMO",
+      "notified": 0,
+      "types": ""
+    },
+    {
+      "t": "NA-0366",
+      "type": "NEW_ALLOCATION",
+      "at": "2026-10-19T10:51",
+      "req": "Tarun Sharma",
+      "reqRoles": "CSM",
+      "notified": 2,
+      "types": "notification.allocation_ticket.closed,notification.allocation_ticket.created"
+    },
+    {
+      "t": "NA-0365",
+      "type": "NEW_ALLOCATION",
+      "at": "2026-10-19T10:51",
+      "req": "Tarun Sharma",
+      "reqRoles": "CSM",
+      "notified": 2,
+      "types": "notification.allocation_ticket.closed,notification.allocation_ticket.created"
+    },
+    {
+      "t": "DA-0102",
+      "type": "DEALLOCATE_ALLOCATION",
+      "at": "2026-10-19T10:51",
+      "req": "Tarun Sharma",
+      "reqRoles": "CSM",
+      "notified": 2,
+      "types": "notification.allocation_ticket.closed,notification.allocation_ticket.created"
+    },
+    {
+      "t": "DA-0101",
+      "type": "DEALLOCATE_ALLOCATION",
+      "at": "2026-10-19T10:51",
+      "req": "Tarun Sharma",
+      "reqRoles": "CSM",
+      "notified": 2,
+      "types": "notification.allocation_ticket.closed,notification.allocation_ticket.created"
+    },
+    {
+      "t": "NA-0364",
+      "type": "NEW_ALLOCATION",
+      "at": "2026-10-19T10:48",
+      "req": "Bhumi Chauhan",
+      "reqRoles": "PMO",
+      "notified": 0,
+      "types": ""
+    },
+    {
+      "t": "UA-0130",
+      "type": "UPDATE_ALLOCATION",
+      "at": "2026-10-16T09:35",
+      "req": "Chief Executive Officer",
+      "reqRoles": "ADMIN",
+      "notified": 0,
+      "types": ""
+    },
+    {
+      "t": "NA-0363",
+      "type": "NEW_ALLOCATION",
+      "at": "2026-10-15T12:33",
+      "req": "Vihaan Chatterjee",
+      "reqRoles": "PMO",
+      "notified": 0,
+      "types": ""
+    },
+    {
+      "t": "NA-0362",
+      "type": "NEW_ALLOCATION",
+      "at": "2026-10-15T10:29",
+      "req": "Tarun Sharma",
+      "reqRoles": "CSM",
+      "notified": 2,
+      "types": "notification.allocation_ticket.approved,notification.allocation_ticket.created"
+    },
+    {
+      "t": "DA-0100",
+      "type": "DEALLOCATE_ALLOCATION",
+      "at": "2026-10-15T10:29",
+      "req": "Tarun Sharma",
+      "reqRoles": "CSM",
+      "notified": 1,
+      "types": "notification.allocation_ticket.created"
+    },
+    {
+      "t": "DA-0099",
+      "type": "DEALLOCATE_ALLOCATION",
+      "at": "2026-10-15T10:29",
+      "req": "Tarun Sharma",
+      "reqRoles": "CSM",
+      "notified": 1,
+      "types": "notification.allocation_ticket.created"
+    },
+    {
+      "t": "DA-0098",
+      "type": "DEALLOCATE_ALLOCATION",
+      "at": "2026-10-15T10:25",
+      "req": "Bhumi Chauhan",
+      "reqRoles": "PMO",
+      "notified": 0,
+      "types": ""
+    },
+    {
+      "t": "NA-0361",
+      "type": "NEW_ALLOCATION",
+      "at": "2026-10-15T10:23",
+      "req": "Bhumi Chauhan",
+      "reqRoles": "PMO",
+      "notified": 0,
+      "types": ""
+    },
+    {
+      "t": "NA-0360",
+      "type": "NEW_ALLOCATION",
+      "at": "2026-10-15T10:21",
+      "req": "Bhumi Chauhan",
+      "reqRoles": "PMO",
+      "notified": 0,
+      "types": ""
+    },
+    {
+      "t": "DA-0097",
+      "type": "DEALLOCATE_ALLOCATION",
+      "at": "2026-10-15T10:18",
+      "req": "Bhumi Chauhan",
+      "reqRoles": "PMO",
+      "notified": 0,
+      "types": ""
+    },
+    {
+      "t": "NA-0359",
+      "type": "NEW_ALLOCATION",
+      "at": "2026-10-15T10:16",
+      "req": "Bhumi Chauhan",
+      "reqRoles": "PMO",
+      "notified": 0,
+      "types": ""
+    },
+    {
+      "t": "UA-0129",
+      "type": "UPDATE_ALLOCATION",
+      "at": "2026-10-15T08:45",
+      "req": "Chief Executive Officer",
+      "reqRoles": "ADMIN",
+      "notified": 0,
+      "types": ""
+    },
+    {
+      "t": "UA-0128",
+      "type": "UPDATE_ALLOCATION",
+      "at": "2026-10-15T08:42",
+      "req": "Yatharth Patil",
+      "reqRoles": "PM/DM",
+      "notified": 4,
+      "types": "notification.allocation_ticket.allocation_revised,notification.allocation_ticket.auto_apply_failed,notification.allocation_ticket.created"
+    },
+    {
+      "t": "RA-0015",
+      "type": "REPLACE_ALLOCATION",
+      "at": "2026-10-13T11:16",
+      "req": "Darshan Rathod",
+      "reqRoles": "PM",
+      "notified": 2,
+      "types": "notification.allocation_ticket.allocation_revised,notification.allocation_ticket.created"
+    },
+    {
+      "t": "NA-0358",
+      "type": "NEW_ALLOCATION",
+      "at": "2026-10-12T09:40",
+      "req": "Yatharth Thakor",
+      "reqRoles": "CSM",
+      "notified": 2,
+      "types": "notification.allocation_ticket.allocation_revised,notification.allocation_ticket.created"
+    }
+  ]
+}

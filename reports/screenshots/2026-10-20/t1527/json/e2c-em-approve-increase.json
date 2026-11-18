@@ -1,0 +1,22 @@
+{
+  "actor": "foram.malhotra",
+  "T0": "2026-10-20T12:54:21.297Z",
+  "T1": "2026-10-20T12:54:22.433Z",
+  "method": "PATCH",
+  "path": "/allocation-tickets/14bab8ce-94de-4116-a6ec-926ce8c2c618/approve",
+  "req": {
+    "remarks": "QA SI4-T1527 retest: EM approval"
+  },
+  "res": {
+    "status": 200,
+    "body": {
+      "code": "SUCCESS",
+      "message": "Ticket approved",
+      "data": {
+        "publicId": "14bab8ce-94de-4116-a6ec-926ce8c2c618",
+        "ticketNumber": "UA-0135",
+        "status": "APPROVED"
+      }
+    }
+  }
+}

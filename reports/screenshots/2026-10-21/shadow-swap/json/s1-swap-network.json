@@ -1,0 +1,9 @@
+[
+  {
+    "url": "https://simerp-dev-api.simform.solutions/api/v1/allocation-tickets/shadow-swap",
+    "method": "POST",
+    "req": "{\"projectId\":\"3d138a89-4d06-4839-8091-436fba0a2dd6\",\"flowType\":\"SHADOW_TO_MAIN\",\"mainDeallocation\":{\"projectAssignmentPublicId\":\"32c30658-ed74-4565-b5b0-632e8d54a850\",\"allocationEndDate\":\"2026-10-31\",\"deallocationReason\":\"ROLE_MISALIGNMENT\",\"coreSkillRating\":7,\"communicationRating\":7,\"behavioralRating\":7,\"overallRating\":7,\"developerFeedback\":\"QA retest SI4-I576..I579 2026-10-21 - shadow swap (main).\",\"isOpenToWorkWithAgain\":true},\"shadowDeallocation\":{\"projectAssignmentPublicId\":\"e42fa570-8330-4b36-83cf-e36225135a6d\",\"allocationEndDate\":\"2026-10-31\",\"deallocationReason\":\"ROLE_MISALIGNMENT\"},\"promotion\":{\"deptStackPublicId\":\"8c45d16e-90a3-4947-a13c-437baf2bf77d\",\"requestedAllocationStartDate\":\"2026-11-01\",\"requestType\":\"FRESH_ALLOCATION\",\"shadowForPublicId\":null,\"allocationRequestCreationType\":null,\"requestedAllocationType\":\"FIXED\",\"requestedAllocationPercentage\":20,\"developerPreferencePublicIds\":[\"f94d6cb2-e5b5-4c14-99d2-3fbd28a1cde9\"],\"isInterviewRequired\":false,\"isClientFacing\":false}}",
+    "status": 201,
+    "body": "{\"code\":\"ALLOCATION_TICKET_173\",\"message\":\"Shadow swap tickets created successfully\",\"data\":{\"groupPublicId\":\"6b6b46e4-ebc1-451b-b31a-3734ca2c9328\",\"groupNumber\":6,\"tickets\":[{\"publicId\":\"85eaeed8-051b-468a-a120-63400f287945\",\"ticketNumber\":\"DA-0122\",\"ticketType\":\"DEALLOCATE_ALLOCATION\",\"step\":1},{\"publicId\":\"2daf906b-eb46-4b8a-92b5-8fe30d63eb10\",\"ticketNumber\":\"DA-0123\",\"ticketType\":\"DEALLOCATE_ALLOCATION\",\"step\":1},{\"publicId\":\"c2997a98-6332-4ab7-83f7-12cab2e0b77b\",\"ticketNumber\":\"NA-0388\",\"ticketType\":\"NEW_ALLOCATION\",\"step\":2}]}}"
+  }
+]

@@ -1,0 +1,99 @@
+{
+  "results": [
+    {
+      "0": "Mehul Pandya",
+      "1": "Karan Modi",
+      "2": "Gunjan Rawat",
+      "3": "Varsha Limbachiya",
+      "4": "Sachin Mistry",
+      "5": "Kabir Reddy",
+      "6": "Kashyap Rao",
+      "7": "Yatharth Malhotra",
+      "id": "pick",
+      "ok": true,
+      "errs": []
+    },
+    {
+      "id": "shortlist-3",
+      "ok": true,
+      "s": 201,
+      "m": "{\"code\":\"OPP_074\",\"message\":\"Candidates nominated successfully\",\"data\":{\"openings\":[{\"publicId\":\"87122e5f-034f-49b8-b967-b7ea053f27cc\",\"ordinal\":1,\"seatId\":\"OPP-0345 #1\",\"stage\":\"SHORTLISTED\",\"directStage\":null,\"stageEnteredAt\":\"2026-11-04T05:52:04.225Z\",\"crea",
+      "stats": {
+        "shortlistedCount": 3,
+        "rejectedCount": 0,
+        "filledCount": 0,
+        "requiredCount": 4
+      },
+      "errs": []
+    },
+    {
+      "id": "dup-shortlist",
+      "ok": true,
+      "s": 409,
+      "code": "OPP_028",
+      "errs": []
+    },
+    {
+      "id": "overfill-shortlist",
+      "ok": true,
+      "s": 201,
+      "code": "OPP_074",
+      "m": "{\"code\":\"OPP_074\",\"message\":\"Candidates nominated successfully\",\"data\":{\"openings\":[{\"publicId\":\"5ea38995-7dba-468f-aa1a-a66c7f5c4a3a\",\"ordinal\":5,\"seatId\":\"OPP-0345 #5\",\"stage\":\"SHORTLISTED\",\"directStage\":null,\"stageEnteredAt\":\"2026-11-04T05:52:05.809Z\",\"crea",
+      "stats": {
+        "shortlistedCount": 6,
+        "rejectedCount": 0,
+        "filledCount": 0,
+        "requiredCount": 4
+      },
+      "errs": []
+    },
+    {
+      "0": [
+        "OPP-0345 #5",
+        "SHORTLISTED",
+        "Varsha Limbachiya",
+        "f8ff9932-fbea-43ac-b606-4527aa74f0a6"
+      ],
+      "1": [
+        "OPP-0345 #6",
+        "SHORTLISTED",
+        "Sachin Mistry",
+        "ae4293c7-e02e-429c-936a-6622662a1cf7"
+      ],
+      "2": [
+        "OPP-0345 #7",
+        "SHORTLISTED",
+        "Kabir Reddy",
+        "815c44a5-c0ed-4880-b27a-9f0e4e0beee3"
+      ],
+      "3": [
+        "OPP-0345 #1",
+        "SHORTLISTED",
+        "Mehul Pandya",
+        "1647f25a-0eeb-4ef1-899e-14d715f089f9"
+      ],
+      "4": [
+        "OPP-0345 #2",
+        "SHORTLISTED",
+        "Karan Modi",
+        "d7fa7fd9-6653-4d52-b796-2d23fef89e5a"
+      ],
+      "5": [
+        "OPP-0345 #3",
+        "SHORTLISTED",
+        "Gunjan Rawat",
+        "d3e014b6-ff69-4486-b365-fad6707b5088"
+      ],
+      "6": [
+        "OPP-0345 #4",
+        "PENDING_TO_SHORTLIST",
+        null,
+        null
+      ],
+      "id": "seats",
+      "ok": true,
+      "errs": []
+    }
+  ],
+  "errs": []
+}

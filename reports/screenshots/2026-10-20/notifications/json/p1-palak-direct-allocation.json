@@ -1,0 +1,66 @@
+{
+  "actor": "Palak.Saxena",
+  "T0": "2026-10-20T11:27:33.721Z",
+  "T1": "2026-10-20T11:27:34.850Z",
+  "method": "POST",
+  "path": "/allocation-tickets/direct-allocation",
+  "req": {
+    "employeePublicId": "127b8e94-81ab-4175-928a-cb79933d7058",
+    "projectPublicId": "c20430eb-7e7e-44e6-b769-3c7756e6a9e2",
+    "allocationType": "FIXED",
+    "allocationPercentage": 10,
+    "allocationStartDate": "2026-10-22",
+    "allocationEndDate": "2026-11-30",
+    "status": "GREEN",
+    "typeOfWork": "DEVELOPMENT_WORK",
+    "note": "QA retest SI4-I581 2026-10-20 (actor in reporting line). Will be cancelled same day."
+  },
+  "res": {
+    "status": 201,
+    "body": {
+      "code": "ALLOCATION_TICKET_070",
+      "message": "Direct allocation created successfully",
+      "data": {
+        "publicId": "c97ed882-4fe2-4a03-a6b1-f9851a34b12b",
+        "allocationPercentage": 10,
+        "allocationType": "FIXED",
+        "typeOfWork": "DEVELOPMENT_WORK",
+        "allocationStartDate": "2026-10-22",
+        "allocationEndDate": "2026-11-30",
+        "status": "GREEN",
+        "note": "QA retest SI4-I581 2026-10-20 (actor in reporting line). Will be cancelled same day.",
+        "allocationOrigin": "PMO",
+        "employee": {
+          "publicId": "127b8e94-81ab-4175-928a-cb79933d7058",
+          "name": "Falgun Solanki",
+          "email": "falgun.solanki@simformsolutions.com",
+          "photoUrl": "https://i.pravatar.cc/150?u=falgun.solanki@simformsolutions.com"
+        },
+        "shadowDeveloper": null,
+        "project": {
+          "publicId": "c20430eb-7e7e-44e6-b769-3c7756e6a9e2",
+          "name": "XCrypt | Blockchain Wallet",
+          "alias": "",
+          "projectManager": {
+            "publicId": "49670820-7826-4e95-b651-152db9d1ec02",
+            "name": "Keyur Hegde",
+            "photoUrl": "https://i.pravatar.cc/150?u=keyur.hegde@simformsolutions.com"
+          },
+          "customerSuccessManager": {
+            "publicId": "4174b8c1-9d89-4b61-bfd7-075924620091",
+            "name": "Tarun Sharma",
+            "photoUrl": "https://i.pravatar.cc/150?u=tarun.sharma@simformsolutions.com"
+          }
+        },
+        "createdBy": {
+          "publicId": "6fcd4dbb-609f-46c0-b91b-969ae39de067",
+          "name": "Palak Saxena",
+          "email": "Palak.Saxena@simformsolutions.com",
+          "photoUrl": "https://i.pravatar.cc/150?u=palak.saxena@simformsolutions.com"
+        },
+        "ticketPublicId": "a61322c4-7af0-4131-9bef-d9cc580efefb",
+        "ticketNumber": "NA-0374"
+      }
+    }
+  }
+}

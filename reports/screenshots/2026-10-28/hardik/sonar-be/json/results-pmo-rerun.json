@@ -1,0 +1,50 @@
+[
+  {
+    "key": "esc:lookup:wildcards",
+    "pass": true,
+    "actual": "base=50; {\"%\":0,\"_\":0,\"\\\\\":0,\"%%\":0,\"a%b\":0,\"%_%\":0}",
+    "data": {
+      "base": 50,
+      "row": {
+        "%": 0,
+        "_": 0,
+        "\\": 0,
+        "%%": 0,
+        "a%b": 0,
+        "%_%": 0
+      }
+    },
+    "ms": 3008
+  },
+  {
+    "key": "esc:lookup:quotes",
+    "pass": true,
+    "actual": "{\"'\":0,\"\\\"\":0,\"O'Brien\":0,\"a\\\"b\":0,\"--\":0,\";\":0}",
+    "ms": 1987
+  },
+  {
+    "key": "wl:overviewVsList",
+    "pass": true,
+    "actual": "overview.asOfDate=2026-10-13 max(list.asOfDate)=2026-10-13 employeeRows=3649 trendDays=7 sorted=true diffs=none",
+    "ms": 13943
+  },
+  {
+    "key": "emp:detailRatings",
+    "pass": true,
+    "actual": "Rachna Gupta:200:undefined; Vihaan Patil:200:undefined; Kriti Desai:200:undefined; Riddhi Verma:200:undefined; Vandana Mishra:200:undefined",
+    "data": [
+      "absent",
+      "absent",
+      "absent",
+      "absent",
+      "absent"
+    ],
+    "ms": 2203
+  },
+  {
+    "key": "emp:zohoSyncFresh",
+    "pass": "blocked",
+    "actual": "employees.lastSyncedAt=null projects.lastSyncedAt=null",
+    "ms": 1897
+  }
+]

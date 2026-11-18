@@ -1,0 +1,164 @@
+[
+ {
+  "area": "3.teams",
+  "name": "NEW OPPORTUNITY — Interview, 2 JAVA positions",
+  "pass": true,
+  "detail": "[201,\"OPP_002\",\"Opportunity created successfully\"]"
+ },
+ {
+  "area": "3.teams",
+  "name": "NEW OPPORTUNITY — positions in JAVA + QA",
+  "pass": true,
+  "detail": "[201,\"OPP_002\",\"Opportunity created successfully\"]"
+ },
+ {
+  "area": "3.teams",
+  "name": "POSITION ADDED — \"Teams C\" on OPP-0379",
+  "pass": true,
+  "detail": "[201,\"OPP_021\",\"Position created successfully\"]"
+ },
+ {
+  "area": "3.teams",
+  "name": "CANDIDATE SHORTLISTED — Payal Patel (JAVA)",
+  "pass": true,
+  "detail": "[201,\"OPP_074\",\"Candidates nominated successfully\"]"
+ },
+ {
+  "area": "3.teams",
+  "name": "CANDIDATE SHORTLISTED — Yash Sinha (QA employee) on JAVA position",
+  "pass": true,
+  "detail": "[201,\"OPP_074\",\"Candidates nominated successfully\"]"
+ },
+ {
+  "area": "3.teams",
+  "name": "APPROVAL REQUESTED — Payal Patel",
+  "pass": true,
+  "detail": "[200,\"SUCCESS\",\"Candidate sent for TM approval successfully\"]"
+ },
+ {
+  "area": "3.teams",
+  "name": "APPROVAL REQUEST WITHDRAWN — Payal Patel",
+  "pass": true,
+  "detail": "[200,\"SUCCESS\",\"Approval request withdrawn successfully\"]"
+ },
+ {
+  "area": "3.teams",
+  "name": "CANDIDATE APPROVED by TM — Payal Patel",
+  "pass": true,
+  "detail": "[200,\"SUCCESS\",\"Nomination approved successfully\"]"
+ },
+ {
+  "area": "3.teams",
+  "name": "CANDIDATE REJECTED — Tanmay Gandhi (reason \"SECRET-REASON-123\")",
+  "pass": true,
+  "detail": "[200,\"SUCCESS\",\"Nomination rejected successfully\"]"
+ },
+ {
+  "area": "3.teams",
+  "name": "CANDIDATE WITHDRAWN — Siddharth Gupta",
+  "pass": true,
+  "detail": "[200,\"SUCCESS\",\"Nomination removed successfully\"]"
+ },
+ {
+  "area": "3.teams",
+  "name": "PREPARATION COMPLETED — Payal Patel",
+  "pass": true,
+  "detail": "[200,\"SUCCESS\",\"Preparation Checklist updated successfully\"]"
+ },
+ {
+  "area": "3.teams",
+  "name": "INTERVIEW SCHEDULED — Payal Patel, Fri 20 Nov 2026 3:30 pm IST",
+  "pass": true,
+  "detail": "[201,\"OPP_051\",\"Interview Round added successfully\"]"
+ },
+ {
+  "area": "3.teams",
+  "name": "INTERVIEW SCHEDULED — Payal Patel, Mon 23 Nov 2026 11:00 am IST",
+  "pass": true,
+  "detail": "[201,\"OPP_051\",\"Interview Round added successfully\"]"
+ },
+ {
+  "area": "3.teams",
+  "name": "INTERVIEW CANCELLED — Payal Patel (the 23 Nov round)",
+  "pass": true,
+  "detail": "[200,\"SUCCESS\",\"Interview Round removed successfully\"]"
+ },
+ {
+  "area": "3.teams",
+  "name": "INTERVIEW SCHEDULED — Payal Patel, back-dated to yesterday 2:30 pm IST",
+  "pass": true,
+  "detail": "[201,\"OPP_051\",\"Interview Round added successfully\"]"
+ },
+ {
+  "area": "3.teams",
+  "name": "ROUND RESULT — Cleared (feedback \"SECRET-FEEDBACK-456\")",
+  "pass": true,
+  "detail": "[200,\"SUCCESS\",\"Interview Round updated successfully\"]"
+ },
+ {
+  "area": "3.teams",
+  "name": "CANDIDATE SELECTED — Payal Patel",
+  "pass": true,
+  "detail": "[200,\"SUCCESS\",\"Candidate selected successfully\"]"
+ },
+ {
+  "area": "3.teams",
+  "name": "POSITION DELETED — \"Teams C\"",
+  "pass": true,
+  "detail": "[200,\"SUCCESS\",\"Position deleted successfully\"]"
+ },
+ {
+  "area": "3.teams",
+  "name": "OPPORTUNITY STATUS CHANGED — OPP-0380 → On Hold",
+  "pass": true,
+  "detail": "[200,\"SUCCESS\",\"Opportunity status changed successfully\"]"
+ },
+ {
+  "area": "3.teams",
+  "name": "OPPORTUNITY STATUS CHANGED — OPP-0380 → Open",
+  "pass": true,
+  "detail": "[200,\"SUCCESS\",\"Opportunity status changed successfully\"]"
+ },
+ {
+  "area": "3.teams",
+  "name": "NEW OPPORTUNITY — Direct for Chintan Ghosh",
+  "pass": true,
+  "detail": "[201,\"OPP_002\",\"Opportunity created successfully\"]"
+ },
+ {
+  "area": "3.teams",
+  "name": "DIRECT STAGE CHANGED — OPP-0381 → In Review",
+  "pass": true,
+  "detail": "[200,\"SUCCESS\",\"Direct ticket stage updated successfully\"]"
+ },
+ {
+  "area": "3.teams",
+  "name": "DIRECT STAGE CHANGED — OPP-0381 → Awaiting",
+  "pass": true,
+  "detail": "[200,\"SUCCESS\",\"Direct ticket stage updated successfully\"]"
+ },
+ {
+  "area": "3.teams",
+  "name": "DIRECT CANCELLED — OPP-0381 (reason \"SECRET-CANCEL-789\")",
+  "pass": true,
+  "detail": "[200,\"SUCCESS\",\"Direct ticket marked as cancelled\"]"
+ },
+ {
+  "area": "3.teams",
+  "name": "BROKEN WEBHOOK TEST — shortlist Aditya Verma while webhook is broken",
+  "pass": true,
+  "detail": "[201,\"OPP_074\",\"Candidates nominated successfully\"]"
+ },
+ {
+  "area": "3.teams",
+  "name": "webhook URL restored after failure test",
+  "pass": true,
+  "detail": "200"
+ },
+ {
+  "area": "3.teams",
+  "name": "AFTER RESTORE — shortlist Sneha Joshi",
+  "pass": true,
+  "detail": "[201,\"OPP_074\",\"Candidates nominated successfully\"]"
+ }
+]

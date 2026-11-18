@@ -1,0 +1,38 @@
+[
+ {
+  "area": "4.alloc-edit",
+  "name": "UI: Fixed 20 → Dynamic (shows 0) → Fixed restores saved 20, not 0",
+  "pass": true,
+  "detail": "{\"before\":\"20\",\"dyn\":\"0\",\"back\":\"20\"}"
+ },
+ {
+  "area": "4.alloc-edit",
+  "name": "UI: round trip leaves nothing to save (Save disabled)",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "area": "4.alloc-edit",
+  "name": "UI: clearing End Date + Effective From enables Save (clear-only edit is a change)",
+  "pass": true,
+  "detail": "[]"
+ },
+ {
+  "area": "4.alloc-edit",
+  "name": "saved: End Date and Effective From are cleared (null)",
+  "pass": false,
+  "detail": "{\"eff\":null,\"type\":\"FIXED\",\"pct\":20}"
+ },
+ {
+  "area": "4.alloc-edit",
+  "name": "reopen: End Date and Effective From stay blank",
+  "pass": true,
+  "detail": "{\"endV\":\"Pick a date\",\"effV\":\"Pick a date\"}"
+ },
+ {
+  "area": "4.alloc-edit",
+  "name": "UI: live-Dynamic allocation (Jay, UA-0146) cannot be edited to Fixed — refused with Dynamic-to-Fixed message",
+  "pass": false,
+  "detail": "{\"radioDisabled\":false,\"m3\":[\"Cannot change to Fixed allocation. Deallocate the employee first.\",\"Allocation % is required\"],\"m3b\":[\"Cannot change to Fixed allocation. Deallocate the employee first.\"],\"t3\":[],\"type\":\"DYNAMIC\"}"
+ }
+]

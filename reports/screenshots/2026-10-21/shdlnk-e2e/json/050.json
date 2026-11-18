@@ -1,0 +1,45 @@
+{
+  "r": {
+    "status": 200,
+    "body": {
+      "code": "ALLOCATION_TICKET_141",
+      "message": "Scheduled allocation change cancelled successfully",
+      "data": {
+        "scheduledChange": {
+          "publicId": "1fe8bee1-232f-4db6-b23f-f4376c5df463",
+          "changeType": "ASSIGNMENT_DEALLOCATE",
+          "status": "SUPERSEDED",
+          "effectiveDate": "2026-11-08",
+          "overrideEndDate": null,
+          "allocationType": null,
+          "allocationPercentage": null,
+          "effectiveStartDate": null,
+          "effectiveEndDate": "2026-11-07",
+          "previousAllocationPercentage": 10
+        },
+        "ticket": null,
+        "allocationTimeline": [
+          {
+            "ticketPublicId": "f1ff18a4-ae4f-49b7-8ee7-abc8979000c3",
+            "ticketNumber": "NA-0402",
+            "scheduledChangePublicId": null,
+            "effectiveFrom": "2026-10-21",
+            "effectiveTo": "2026-11-14",
+            "allocationType": "FIXED",
+            "allocationPercentage": 10,
+            "isCurrent": true,
+            "isPending": false,
+            "segmentType": "STANDING"
+          }
+        ]
+      }
+    }
+  },
+  "c": {
+    "status": 400,
+    "body": {
+      "code": "SYS_004",
+      "message": "This allocation has already started, so it cannot be cancelled — end it with a de-allocation request instead, which records the last working day and the developer feedback"
+    }
+  }
+}

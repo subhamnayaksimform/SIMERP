@@ -1,0 +1,98 @@
+{
+  "results": [
+    {
+      "0": {
+        "w": 1280,
+        "info": [
+          {
+            "name": "Sagar KhanparaTM10y 3mFRONT EN",
+            "idx": 14,
+            "cell": "-",
+            "w": 180
+          },
+          {
+            "name": "Punit PatelLE13y 1mFRONT ENDP1",
+            "idx": 14,
+            "cell": "-",
+            "w": 180
+          },
+          {
+            "name": "Kashyap ChauhanLE5y 5mFRONT EN",
+            "idx": 14,
+            "cell": "-",
+            "w": 180
+          }
+        ]
+      },
+      "1": {
+        "w": 1600,
+        "info": [
+          {
+            "name": "Sagar KhanparaTM10y 3mFRONT EN",
+            "idx": 14,
+            "cell": "-",
+            "w": 180
+          },
+          {
+            "name": "Punit PatelLE13y 1mFRONT ENDP1",
+            "idx": 14,
+            "cell": "-",
+            "w": 180
+          },
+          {
+            "name": "Kashyap ChauhanLE5y 5mFRONT EN",
+            "idx": 14,
+            "cell": "-",
+            "w": 180
+          }
+        ]
+      },
+      "2": {
+        "w": 1900,
+        "info": [
+          {
+            "name": "Sagar KhanparaTM10y 3mFRONT EN",
+            "idx": 14,
+            "cell": "-",
+            "w": 180
+          },
+          {
+            "name": "Punit PatelLE13y 1mFRONT ENDP1",
+            "idx": 14,
+            "cell": "-",
+            "w": 180
+          },
+          {
+            "name": "Kashyap ChauhanLE5y 5mFRONT EN",
+            "idx": 14,
+            "cell": "-",
+            "w": 180
+          }
+        ]
+      },
+      "id": "I625-pills",
+      "ok": true,
+      "errs": []
+    },
+    {
+      "id": "I626-released-visible",
+      "ok": true,
+      "url": "https://simerp-dev.simform.solutions/opportunities",
+      "links": [],
+      "errs": []
+    },
+    {
+      "id": "I630-api",
+      "ok": true,
+      "stats": {
+        "shortlistedCount": 1,
+        "rejectedCount": 0,
+        "filledCount": 1,
+        "requiredCount": 1
+      },
+      "status": "OPEN",
+      "errs": []
+    }
+  ],
+  "errs": []
+}

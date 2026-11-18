@@ -1,0 +1,63 @@
+{
+  "account": "hardik.trivedi@simformsolutions.com",
+  "ranAt": "2026-10-28T06:23:32.554Z",
+  "goals": {
+    "/goals?page=1&limit=100": {
+      "status": 200,
+      "count": 100,
+      "snippet": "{\"code\":\"SUCCESS\",\"message\":\"Goals retrieved successfully\",\"data\":{\"items\":[{\"publicId\":\"abede734-b9d7-4829-8563-93effefb5aa6\",\"name\":\"API Gateway Implementation\",\"description\":\"De"
+    },
+    "/goals/by-employee?page=1&limit=100": {
+      "status": 400,
+      "count": null,
+      "snippet": "{\"code\":\"SYS_004\",\"message\":\"Validation failed (uuid is expected)\"}"
+    }
+  },
+  "employees": {
+    "/employees?page=1&limit=100": {
+      "status": 200,
+      "count": 92,
+      "firstKeys": [
+        "publicId",
+        "email",
+        "name",
+        "kekaId",
+        "shiftPreferences",
+        "careerStartDate",
+        "dateOfJoining",
+        "isContractor",
+        "isTrainee",
+        "cohort",
+        "employeeOrigin",
+        "visaStatus",
+        "photoUrl",
+        "createdAt",
+        "updatedAt",
+        "team",
+        "department",
+        "noticePeriod",
+        "resignation",
+        "pip",
+        "notes",
+        "leaves",
+        "projects",
+        "pastProjects",
+        "nonBillableData",
+        "availabilityPercentage",
+        "allocationAvailabilityPercentage",
+        "bookedAllocationPercentage",
+        "remainingAllocationPercentage",
+        "shadowDevelopers",
+        "interviewOpportunities",
+        "nonBillableHours",
+        "totalLoggedHours",
+        "departmentStack",
+        "designation",
+        "prReviewerProjects",
+        "skills",
+        "visaMatches",
+        "ratings"
+      ]
+    }
+  }
+}

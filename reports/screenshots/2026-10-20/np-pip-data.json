@@ -1,0 +1,672 @@
+{
+ "pips": [
+  {
+   "name": "Smriti Arora",
+   "pip": {
+    "startDate": "2026-09-03T00:00:00.000Z",
+    "endDate": "2026-10-02T00:00:00.000Z",
+    "pipStatus": "IN_PIP"
+   }
+  },
+  {
+   "name": "Riya Doshi",
+   "pip": {
+    "startDate": "2026-09-12T00:00:00.000Z",
+    "endDate": "2026-09-27T00:00:00.000Z",
+    "pipStatus": "IN_PIP"
+   }
+  },
+  {
+   "name": "Nisha Joshi",
+   "pip": {
+    "startDate": "2026-08-03T00:00:00.000Z",
+    "endDate": "2026-09-12T00:00:00.000Z",
+    "pipStatus": "COMPLETED"
+   }
+  },
+  {
+   "name": "Tushar Solanki",
+   "pip": {
+    "startDate": "2026-09-17T00:00:00.000Z",
+    "endDate": "2026-09-17T00:00:00.000Z",
+    "pipStatus": "IN_PIP"
+   }
+  },
+  {
+   "name": "Charmi Parekh",
+   "pip": {
+    "startDate": "2026-10-03T00:00:00.000Z",
+    "endDate": "2026-11-02T00:00:00.000Z",
+    "pipStatus": "IN_PIP"
+   }
+  },
+  {
+   "name": "Neha Solanki",
+   "pip": {
+    "startDate": "2026-09-22T00:00:00.000Z",
+    "endDate": "2026-09-12T00:00:00.000Z",
+    "pipStatus": "IN_PIP"
+   }
+  },
+  {
+   "name": "Komal Roy",
+   "pip": {
+    "startDate": "2026-09-17T00:00:00.000Z",
+    "endDate": "2026-09-16T00:00:00.000Z",
+    "pipStatus": "IN_PIP"
+   }
+  },
+  {
+   "name": "Yatharth Sen",
+   "pip": {
+    "startDate": "2026-09-03T00:00:00.000Z",
+    "endDate": "2026-10-02T00:00:00.000Z",
+    "pipStatus": "IN_PIP"
+   }
+  },
+  {
+   "name": "Urvashi Roy",
+   "pip": {
+    "startDate": "2026-09-12T00:00:00.000Z",
+    "endDate": "2026-09-22T00:00:00.000Z",
+    "pipStatus": "IN_PIP"
+   }
+  },
+  {
+   "name": "Ravi Mukherjee",
+   "pip": {
+    "startDate": "2026-09-12T00:00:00.000Z",
+    "endDate": "2026-09-22T00:00:00.000Z",
+    "pipStatus": "IN_PIP"
+   }
+  },
+  {
+   "name": "Aarushi Barot",
+   "pip": {
+    "startDate": "2026-09-03T00:00:00.000Z",
+    "endDate": "2026-09-18T00:00:00.000Z",
+    "pipStatus": "IN_PIP"
+   }
+  },
+  {
+   "name": "Shaurya Agarwal",
+   "pip": {
+    "startDate": "2026-07-03T00:00:00.000Z",
+    "endDate": "2027-01-02T00:00:00.000Z",
+    "pipStatus": "IN_PIP"
+   }
+  },
+  {
+   "name": "Nilesh Vyas",
+   "pip": {
+    "startDate": "2026-09-03T00:00:00.000Z",
+    "endDate": "2026-10-02T00:00:00.000Z",
+    "pipStatus": "IN_PIP"
+   }
+  },
+  {
+   "name": "Vishal Barot",
+   "pip": {
+    "startDate": "2026-10-03T00:00:00.000Z",
+    "endDate": "2026-11-02T00:00:00.000Z",
+    "pipStatus": "IN_PIP"
+   }
+  },
+  {
+   "name": "Manan Rawat",
+   "pip": {
+    "startDate": "2026-01-03T00:00:00.000Z",
+    "endDate": "2026-01-17T00:00:00.000Z",
+    "pipStatus": "RETAINED"
+   }
+  },
+  {
+   "name": "Fenil Kamath",
+   "pip": {
+    "startDate": "2026-09-17T00:00:00.000Z",
+    "endDate": "2026-09-16T00:00:00.000Z",
+    "pipStatus": "IN_PIP"
+   }
+  },
+  {
+   "name": "Aditya Jain",
+   "pip": {
+    "startDate": "2026-09-03T00:00:00.000Z",
+    "endDate": "2026-10-03T00:00:00.000Z",
+    "pipStatus": "IN_PIP"
+   }
+  },
+  {
+   "name": "Kashyap Khandelwal",
+   "pip": {
+    "startDate": "2026-08-03T00:00:00.000Z",
+    "endDate": "2026-09-16T00:00:00.000Z",
+    "pipStatus": "COMPLETED"
+   }
+  },
+  {
+   "name": "Krishna Soni",
+   "pip": {
+    "startDate": "2026-09-03T00:00:00.000Z",
+    "endDate": "2026-09-18T00:00:00.000Z",
+    "pipStatus": "IN_PIP"
+   }
+  },
+  {
+   "name": "Kabir Bajaj",
+   "pip": {
+    "startDate": "2026-01-03T00:00:00.000Z",
+    "endDate": "2026-01-17T00:00:00.000Z",
+    "pipStatus": "RETAINED"
+   }
+  },
+  {
+   "name": "Charmi Sen",
+   "pip": {
+    "startDate": "2026-08-03T00:00:00.000Z",
+    "endDate": "2026-09-03T00:00:00.000Z",
+    "pipStatus": "COMPLETED"
+   }
+  },
+  {
+   "name": "Gunjan Parmar",
+   "pip": {
+    "startDate": "2026-09-22T00:00:00.000Z",
+    "endDate": "2026-10-22T00:00:00.000Z",
+    "pipStatus": "IN_PIP"
+   }
+  },
+  {
+   "name": "Riddhi Dodia",
+   "pip": {
+    "startDate": "2026-09-03T00:00:00.000Z",
+    "endDate": "2026-10-02T00:00:00.000Z",
+    "pipStatus": "IN_PIP"
+   }
+  },
+  {
+   "name": "Jignesh Bhatt",
+   "pip": {
+    "startDate": "2026-09-03T00:00:00.000Z",
+    "endDate": "2026-10-03T00:00:00.000Z",
+    "pipStatus": "IN_PIP"
+   }
+  },
+  {
+   "name": "Krishna Desai",
+   "pip": {
+    "startDate": "2026-09-12T00:00:00.000Z",
+    "endDate": "2026-09-27T00:00:00.000Z",
+    "pipStatus": "IN_PIP"
+   }
+  },
+  {
+   "name": "Deepak Soni",
+   "pip": {
+    "startDate": "2026-08-03T00:00:00.000Z",
+    "endDate": "2026-09-17T00:00:00.000Z",
+    "pipStatus": "IN_PIP"
+   }
+  },
+  {
+   "name": "Urvi Malhotra",
+   "pip": {
+    "startDate": "2026-08-03T00:00:00.000Z",
+    "endDate": "2026-09-12T00:00:00.000Z",
+    "pipStatus": "COMPLETED"
+   }
+  },
+  {
+   "name": "Piyush Thakor",
+   "pip": {
+    "startDate": "2026-08-03T00:00:00.000Z",
+    "endDate": "2026-09-17T00:00:00.000Z",
+    "pipStatus": "IN_PIP"
+   }
+  },
+  {
+   "name": "Komal Raval",
+   "pip": {
+    "startDate": "2026-08-03T00:00:00.000Z",
+    "endDate": "2026-09-03T00:00:00.000Z",
+    "pipStatus": "COMPLETED"
+   }
+  },
+  {
+   "name": "Yash Arora",
+   "pip": {
+    "startDate": "2026-07-03T00:00:00.000Z",
+    "endDate": "2027-01-02T00:00:00.000Z",
+    "pipStatus": "IN_PIP"
+   }
+  },
+  {
+   "name": "Reyansh Sen",
+   "pip": {
+    "startDate": "2026-08-03T00:00:00.000Z",
+    "endDate": "2026-09-16T00:00:00.000Z",
+    "pipStatus": "COMPLETED"
+   }
+  },
+  {
+   "name": "Dev Sen",
+   "pip": {
+    "startDate": "2026-09-22T00:00:00.000Z",
+    "endDate": "2026-09-12T00:00:00.000Z",
+    "pipStatus": "IN_PIP"
+   }
+  },
+  {
+   "name": "Ekta Makwana",
+   "pip": {
+    "startDate": "2026-09-17T00:00:00.000Z",
+    "endDate": "2026-09-17T00:00:00.000Z",
+    "pipStatus": "IN_PIP"
+   }
+  },
+  {
+   "name": "Sunil Thakkar",
+   "pip": {
+    "startDate": "2026-09-22T00:00:00.000Z",
+    "endDate": "2026-10-22T00:00:00.000Z",
+    "pipStatus": "IN_PIP"
+   }
+  }
+ ],
+ "res": [
+  {
+   "name": "Punit Patel",
+   "res": {
+    "status": "NOTICE_PERIOD",
+    "resignationDate": "2026-09-11T00:00:00.000Z",
+    "lastWorkingDate": "2026-09-26T00:00:00.000Z",
+    "isLastWorkingDateTentative": false
+   },
+   "np": null
+  },
+  {
+   "name": "Kashyap Chauhan",
+   "res": {
+    "status": "NOTICE_PERIOD",
+    "resignationDate": "2026-08-03T00:00:00.000Z",
+    "lastWorkingDate": "2026-09-17T00:00:00.000Z",
+    "isLastWorkingDateTentative": false
+   },
+   "np": null
+  },
+  {
+   "name": "Nayan Kotak",
+   "res": {
+    "status": "NOTICE_PERIOD",
+    "resignationDate": "2026-09-03T00:00:00.000Z",
+    "lastWorkingDate": "2026-09-18T00:00:00.000Z",
+    "isLastWorkingDateTentative": false
+   },
+   "np": null
+  },
+  {
+   "name": "Nandini Bose",
+   "res": {
+    "status": "NOTICE_PERIOD",
+    "resignationDate": "2026-07-03T00:00:00.000Z",
+    "lastWorkingDate": "2027-01-02T00:00:00.000Z",
+    "isLastWorkingDateTentative": false
+   },
+   "np": {
+    "startDate": "2026-07-03T00:00:00.000Z",
+    "endDate": "2027-01-02T00:00:00.000Z",
+    "days": 184
+   }
+  },
+  {
+   "name": "Vishal Desai",
+   "res": {
+    "status": "NOTICE_PERIOD",
+    "resignationDate": "2026-09-12T00:00:00.000Z",
+    "lastWorkingDate": "2026-09-22T00:00:00.000Z",
+    "isLastWorkingDateTentative": false
+   },
+   "np": null
+  },
+  {
+   "name": "Zalak Jain",
+   "res": {
+    "status": "NOTICE_PERIOD",
+    "resignationDate": "2026-08-03T00:00:00.000Z",
+    "lastWorkingDate": "2026-09-03T00:00:00.000Z",
+    "isLastWorkingDateTentative": false
+   },
+   "np": null
+  },
+  {
+   "name": "Lalit Contractor",
+   "res": {
+    "status": "NOTICE_PERIOD",
+    "resignationDate": "2026-01-03T00:00:00.000Z",
+    "lastWorkingDate": "2026-01-17T00:00:00.000Z",
+    "isLastWorkingDateTentative": false
+   },
+   "np": null
+  },
+  {
+   "name": "Ritika Rathod",
+   "res": {
+    "status": "RESIGNED",
+    "resignationDate": "2026-09-17T00:00:00.000Z",
+    "lastWorkingDate": "2026-11-17T00:00:00.000Z",
+    "isLastWorkingDateTentative": true
+   },
+   "np": null
+  },
+  {
+   "name": "Swati Mistry",
+   "res": {
+    "status": "NOTICE_PERIOD",
+    "resignationDate": "2026-01-03T00:00:00.000Z",
+    "lastWorkingDate": "2026-01-17T00:00:00.000Z",
+    "isLastWorkingDateTentative": false
+   },
+   "np": null
+  },
+  {
+   "name": "Isha Dave",
+   "res": {
+    "status": "NOTICE_PERIOD",
+    "resignationDate": "2026-09-17T00:00:00.000Z",
+    "lastWorkingDate": "2026-09-16T00:00:00.000Z",
+    "isLastWorkingDateTentative": false
+   },
+   "np": null
+  },
+  {
+   "name": "Bhavin Barot",
+   "res": {
+    "status": "NOTICE_PERIOD",
+    "resignationDate": "2026-09-22T00:00:00.000Z",
+    "lastWorkingDate": "2026-09-12T00:00:00.000Z",
+    "isLastWorkingDateTentative": false
+   },
+   "np": null
+  },
+  {
+   "name": "Sagar Khanpara",
+   "res": {
+    "status": "NOTICE_PERIOD",
+    "resignationDate": "2026-09-03T00:00:00.000Z",
+    "lastWorkingDate": "2026-10-02T00:00:00.000Z",
+    "isLastWorkingDateTentative": false
+   },
+   "np": null
+  },
+  {
+   "name": "Esha Rathod",
+   "res": {
+    "status": "NOTICE_PERIOD",
+    "resignationDate": "2026-09-03T00:00:00.000Z",
+    "lastWorkingDate": "2026-10-02T00:00:00.000Z",
+    "isLastWorkingDateTentative": false
+   },
+   "np": null
+  },
+  {
+   "name": "Rohan Singh",
+   "res": {
+    "status": "NOTICE_PERIOD",
+    "resignationDate": "2026-09-22T00:00:00.000Z",
+    "lastWorkingDate": "2026-10-22T00:00:00.000Z",
+    "isLastWorkingDateTentative": false
+   },
+   "np": {
+    "startDate": "2026-09-22T00:00:00.000Z",
+    "endDate": "2026-10-22T00:00:00.000Z",
+    "days": 31
+   }
+  },
+  {
+   "name": "Swati Iyer",
+   "res": {
+    "status": "NOTICE_PERIOD",
+    "resignationDate": "2026-10-03T00:00:00.000Z",
+    "lastWorkingDate": "2026-11-02T00:00:00.000Z",
+    "isLastWorkingDateTentative": false
+   },
+   "np": {
+    "startDate": "2026-10-03T00:00:00.000Z",
+    "endDate": "2026-11-02T00:00:00.000Z",
+    "days": 31
+   }
+  },
+  {
+   "name": "Aarav Chaudhari",
+   "res": {
+    "status": "NOTICE_PERIOD",
+    "resignationDate": "2026-08-03T00:00:00.000Z",
+    "lastWorkingDate": "2026-09-17T00:00:00.000Z",
+    "isLastWorkingDateTentative": false
+   },
+   "np": null
+  },
+  {
+   "name": "Jagruti Garg",
+   "res": {
+    "status": "NOTICE_PERIOD",
+    "resignationDate": "2026-09-12T00:00:00.000Z",
+    "lastWorkingDate": "2026-09-27T00:00:00.000Z",
+    "isLastWorkingDateTentative": false
+   },
+   "np": null
+  },
+  {
+   "name": "Kabir Limbachiya",
+   "res": {
+    "status": "NOTICE_PERIOD",
+    "resignationDate": "2026-07-03T00:00:00.000Z",
+    "lastWorkingDate": "2027-01-02T00:00:00.000Z",
+    "isLastWorkingDateTentative": false
+   },
+   "np": {
+    "startDate": "2026-07-03T00:00:00.000Z",
+    "endDate": "2027-01-02T00:00:00.000Z",
+    "days": 184
+   }
+  },
+  {
+   "name": "Kabir Gandhi",
+   "res": {
+    "status": "NOTICE_PERIOD",
+    "resignationDate": "2026-09-03T00:00:00.000Z",
+    "lastWorkingDate": "2026-10-03T00:00:00.000Z",
+    "isLastWorkingDateTentative": false
+   },
+   "np": null
+  },
+  {
+   "name": "Ravi Chatterjee",
+   "res": {
+    "status": "NOTICE_PERIOD",
+    "resignationDate": "2026-09-22T00:00:00.000Z",
+    "lastWorkingDate": "2026-10-22T00:00:00.000Z",
+    "isLastWorkingDateTentative": false
+   },
+   "np": {
+    "startDate": "2026-09-22T00:00:00.000Z",
+    "endDate": "2026-10-22T00:00:00.000Z",
+    "days": 31
+   }
+  },
+  {
+   "name": "Fenil Mistry",
+   "res": {
+    "status": "NOTICE_PERIOD",
+    "resignationDate": "2026-09-03T00:00:00.000Z",
+    "lastWorkingDate": "2026-09-18T00:00:00.000Z",
+    "isLastWorkingDateTentative": false
+   },
+   "np": null
+  },
+  {
+   "name": "Sneha Bose",
+   "res": {
+    "status": "NOTICE_PERIOD",
+    "resignationDate": "2026-08-03T00:00:00.000Z",
+    "lastWorkingDate": "2026-09-16T00:00:00.000Z",
+    "isLastWorkingDateTentative": false
+   },
+   "np": null
+  },
+  {
+   "name": "Aayush Roy",
+   "res": {
+    "status": "NOTICE_PERIOD",
+    "resignationDate": "2026-08-03T00:00:00.000Z",
+    "lastWorkingDate": "2026-09-16T00:00:00.000Z",
+    "isLastWorkingDateTentative": false
+   },
+   "np": null
+  },
+  {
+   "name": "Deepak Vyas",
+   "res": {
+    "status": "RESIGNED",
+    "resignationDate": "2026-09-17T00:00:00.000Z",
+    "lastWorkingDate": "2026-11-17T00:00:00.000Z",
+    "isLastWorkingDateTentative": true
+   },
+   "np": null
+  },
+  {
+   "name": "Divya Sinha",
+   "res": {
+    "status": "NOTICE_PERIOD",
+    "resignationDate": "2026-08-03T00:00:00.000Z",
+    "lastWorkingDate": "2026-09-12T00:00:00.000Z",
+    "isLastWorkingDateTentative": false
+   },
+   "np": null
+  },
+  {
+   "name": "Nimisha Reddy",
+   "res": {
+    "status": "NOTICE_PERIOD",
+    "resignationDate": "2026-09-17T00:00:00.000Z",
+    "lastWorkingDate": "2026-09-17T00:00:00.000Z",
+    "isLastWorkingDateTentative": false
+   },
+   "np": null
+  },
+  {
+   "name": "Neel Soni",
+   "res": {
+    "status": "NOTICE_PERIOD",
+    "resignationDate": "2026-08-03T00:00:00.000Z",
+    "lastWorkingDate": "2026-09-03T00:00:00.000Z",
+    "isLastWorkingDateTentative": false
+   },
+   "np": null
+  },
+  {
+   "name": "Ojas Solanki",
+   "res": {
+    "status": "NOTICE_PERIOD",
+    "resignationDate": "2026-09-03T00:00:00.000Z",
+    "lastWorkingDate": "2026-10-02T00:00:00.000Z",
+    "isLastWorkingDateTentative": false
+   },
+   "np": null
+  },
+  {
+   "name": "Omkar Chatterjee",
+   "res": {
+    "status": "NOTICE_PERIOD",
+    "resignationDate": "2026-10-03T00:00:00.000Z",
+    "lastWorkingDate": "2026-11-02T00:00:00.000Z",
+    "isLastWorkingDateTentative": false
+   },
+   "np": {
+    "startDate": "2026-10-03T00:00:00.000Z",
+    "endDate": "2026-11-02T00:00:00.000Z",
+    "days": 31
+   }
+  },
+  {
+   "name": "Bhavin Roy",
+   "res": {
+    "status": "NOTICE_PERIOD",
+    "resignationDate": "2026-08-03T00:00:00.000Z",
+    "lastWorkingDate": "2026-09-12T00:00:00.000Z",
+    "isLastWorkingDateTentative": false
+   },
+   "np": null
+  },
+  {
+   "name": "Ojas Jain",
+   "res": {
+    "status": "NOTICE_PERIOD",
+    "resignationDate": "2026-09-12T00:00:00.000Z",
+    "lastWorkingDate": "2026-09-22T00:00:00.000Z",
+    "isLastWorkingDateTentative": false
+   },
+   "np": null
+  },
+  {
+   "name": "Sachin Shetty",
+   "res": {
+    "status": "NOTICE_PERIOD",
+    "resignationDate": "2026-09-17T00:00:00.000Z",
+    "lastWorkingDate": "2026-09-17T00:00:00.000Z",
+    "isLastWorkingDateTentative": false
+   },
+   "np": null
+  },
+  {
+   "name": "Lalit Mehta",
+   "res": {
+    "status": "NOTICE_PERIOD",
+    "resignationDate": "2026-09-03T00:00:00.000Z",
+    "lastWorkingDate": "2026-10-02T00:00:00.000Z",
+    "isLastWorkingDateTentative": false
+   },
+   "np": null
+  },
+  {
+   "name": "Gaurav Chopra",
+   "res": {
+    "status": "NOTICE_PERIOD",
+    "resignationDate": "2026-09-22T00:00:00.000Z",
+    "lastWorkingDate": "2026-09-12T00:00:00.000Z",
+    "isLastWorkingDateTentative": false
+   },
+   "np": null
+  },
+  {
+   "name": "Deepak Rao",
+   "res": {
+    "status": "NOTICE_PERIOD",
+    "resignationDate": "2026-09-12T00:00:00.000Z",
+    "lastWorkingDate": "2026-09-27T00:00:00.000Z",
+    "isLastWorkingDateTentative": false
+   },
+   "np": null
+  },
+  {
+   "name": "Drashti Contractor",
+   "res": {
+    "status": "NOTICE_PERIOD",
+    "resignationDate": "2026-09-03T00:00:00.000Z",
+    "lastWorkingDate": "2026-10-03T00:00:00.000Z",
+    "isLastWorkingDateTentative": false
+   },
+   "np": null
+  },
+  {
+   "name": "Yamini Chaudhari",
+   "res": {
+    "status": "NOTICE_PERIOD",
+    "resignationDate": "2026-09-17T00:00:00.000Z",
+    "lastWorkingDate": "2026-09-16T00:00:00.000Z",
+    "isLastWorkingDateTentative": false
+   },
+   "np": null
+  }
+ ]
+}

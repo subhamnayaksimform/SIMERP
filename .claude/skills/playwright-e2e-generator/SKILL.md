@@ -5,6 +5,21 @@ tools: [read, edit, search, execute]
 argument-hint: 'Command: /generate-playwright-test | /generate-and-run-playwright-tests | /run-playwright-tests | /auto-heal-playwright-failures | /automate-security-checks'
 ---
 
+> **Scope note (read before invoking):** `/generate-and-run-playwright-tests`, `/run-playwright-tests`,
+> and `/auto-heal-playwright-failures` require a Playwright MCP server. **No such server is configured
+> in this repo** (`.mcp.json`/`.vscode/mcp.json` only register `zoho-projects`) — invoking these three
+> commands will fail. They also collapse the generate/execute separation that the pipeline enforces
+> elsewhere: `automation-generator.agent.md` never runs tests, and `test-runner.agent.md` never edits
+> code. Treat these three commands as **manual/experimental only — do not invoke them as part of the
+> standard pipeline.** For real pipeline runs, use the `Automation Generator` agent to generate and the
+> `Test Runner` agent (with `npm test` / `npx playwright test`) to execute; use
+> `npm run ledger:locator-failures` to feed locator failures back into generation instead of MCP-driven
+> auto-heal.
+>
+> `/generate-playwright-test` and `/automate-security-checks` are generation-only and don't need MCP,
+> but they duplicate `automation-generator.agent.md`'s job — prefer that agent for pipeline runs and
+> reserve these for standalone/manual use outside the pipeline.
+
 ## Project-Specific Overrides (SIM ERP QA)
 
 This skill is pre-configured for this project — do NOT regenerate these:
@@ -265,6 +280,9 @@ scenario.
 
 ### /generate-and-run-playwright-tests
 
+> ⚠️ Requires a Playwright MCP server (not configured in this repo). Manual/experimental only — see
+> the scope note above.
+
 End-to-end flow: generate or update Playwright tests **and then execute them via Playwright MCP**,
 performing auto-fixes on failures until tests pass or a real product bug is detected.
 
@@ -272,11 +290,18 @@ performing auto-fixes on failures until tests pass or a real product bug is dete
 
 ### /run-playwright-tests
 
+> ⚠️ Requires a Playwright MCP server (not configured in this repo). Manual/experimental only — use
+> the `Test Runner` agent for real pipeline runs.
+
 Execute existing Playwright tests via the Playwright MCP integration and report results.
 
 ---
 
 ### /auto-heal-playwright-failures
+
+> ⚠️ Requires a Playwright MCP server (not configured in this repo). Manual/experimental only — use
+> `npm run ledger:locator-failures` + the `Automation Generator` agent's ledger-aware locator checks
+> for real pipeline runs.
 
 Diagnose failed or flaky Playwright tests and **auto-fix** the automation code (locators, waits,
 flows, env config) using execution artifacts, then re-run via Playwright MCP.
@@ -460,6 +485,59 @@ code generation and explanation, without invoking MCP.
 - **CRUD tests must be complete** — every Create/Update/Delete/Archive test must include the full CRUD Validation checklist from the SIM ERP Enterprise Automation Intelligence section.
 - **SIM ERP module tests include regression** — after generating or running tests for watched modules, always run `@regression` tagged tests and report their status.
 - Provide enough logging and comments so humans can understand what the automation is doing.
+
+## Additional Patterns
+
+### Dialog Handling
+
+```ts
+test('should handle confirmation dialog', async ({ page }) => {
+  page.on('dialog', async (dialog) => {
+    expect(dialog.message()).toBe('Are you sure you want to delete?');
+    await dialog.accept();
+  });
+
+  await page.getByRole('button', { name: 'Delete' }).click();
+  await expect(page.getByRole('alert')).toContainText('deleted');
+});
+```
+
+### Dropdown / Select Handling
+
+```ts
+// Native select
+await page.getByLabel('Department').selectOption('Engineering');
+
+// Custom combobox
+await page.getByRole('combobox', { name: 'Department' }).click();
+await page.getByRole('option', { name: 'Engineering' }).click();
+```
+
+### Soft Assertions
+
+Use `expect.soft(...)` when a test checks several independent things and one failing shouldn't hide
+the others (e.g. verifying multiple fields on a details page in one pass):
+
+```ts
+await expect.soft(page.getByTestId('employee-name')).toHaveText('Jane Doe');
+await expect.soft(page.getByTestId('employee-role')).toHaveText('Engineer');
+await expect.soft(page.getByTestId('employee-status')).toHaveText('Active');
+```
+
+Playwright still fails the test if any soft assertion failed, but reports all of them instead of
+stopping at the first. Don't use it as a substitute for a real `expect()` on the primary outcome —
+reserve it for secondary/incidental checks in the same test.
+
+## Debugging Tips (local development only — none of this belongs in committed specs)
+
+- Headed mode: `npx playwright test --headed`
+- UI mode: `npx playwright test --ui`
+- Debug a single test: `npx playwright test --debug <path>`
+- Generate a starting point from a live page: `npx playwright codegen $BASE_URL`
+- Inspect a failure trace: `npx playwright show-trace <path-to-trace.zip>`
+- `page.pause()` to step through interactively
+- `test.only` is fine transiently while debugging locally — qa-conventions.md's ban is on
+  **committed** code; never leave it in a spec you check in.
 
 ## Edge Cases
 

@@ -1,0 +1,67 @@
+{
+  "req": {
+    "employeePublicId": "f94d6cb2-e5b5-4c14-99d2-3fbd28a1cde9",
+    "projectPublicId": "3d138a89-4d06-4839-8091-436fba0a2dd6",
+    "allocationType": "FIXED",
+    "allocationPercentage": 10,
+    "allocationStartDate": "2026-10-19",
+    "allocationEndDate": "2026-12-31",
+    "status": "GREEN",
+    "typeOfWork": "DEVELOPMENT_WORK",
+    "shadowDeveloperPublicId": "12e25516-2373-4925-9ecc-1732ca6f61b6",
+    "note": "QA test SI4-T1464 >20h check 2026-10-19 (shadow of Bhavesh Bansal)"
+  },
+  "res": {
+    "status": 201,
+    "body": {
+      "code": "ALLOCATION_TICKET_070",
+      "message": "Direct allocation created successfully",
+      "data": {
+        "publicId": "89c7a281-488e-414f-a610-0c6bbbacaa10",
+        "allocationPercentage": 10,
+        "allocationType": "FIXED",
+        "typeOfWork": "DEVELOPMENT_WORK",
+        "allocationStartDate": "2026-10-19",
+        "allocationEndDate": "2026-12-31",
+        "status": "GREEN",
+        "note": "QA test SI4-T1464 >20h check 2026-10-19 (shadow of Bhavesh Bansal)",
+        "allocationOrigin": "PMO",
+        "employee": {
+          "publicId": "f94d6cb2-e5b5-4c14-99d2-3fbd28a1cde9",
+          "name": "Kunal Menon",
+          "email": "kunal.menon@simformsolutions.com",
+          "photoUrl": "https://i.pravatar.cc/150?u=kunal.menon@simformsolutions.com"
+        },
+        "shadowDeveloper": {
+          "publicId": "12e25516-2373-4925-9ecc-1732ca6f61b6",
+          "name": "Bhavesh Bansal",
+          "email": "bhavesh.bansal@simformsolutions.com",
+          "photoUrl": "https://i.pravatar.cc/150?u=bhavesh.bansal@simformsolutions.com"
+        },
+        "project": {
+          "publicId": "3d138a89-4d06-4839-8091-436fba0a2dd6",
+          "name": "HyperScale | Scalability Engine",
+          "alias": "",
+          "projectManager": {
+            "publicId": "5f1a4477-84fe-46aa-8360-ca4e0a16983c",
+            "name": "Hardik Trivedi",
+            "photoUrl": "https://i.pravatar.cc/150?u=hardik.trivedi@simformsolutions.com"
+          },
+          "customerSuccessManager": {
+            "publicId": "09d434e9-5346-4790-8ae7-f5105e5b4968",
+            "name": "Priya Chopra",
+            "photoUrl": "https://i.pravatar.cc/150?u=priya.chopra@simformsolutions.com"
+          }
+        },
+        "createdBy": {
+          "publicId": "e93f5377-1f74-42cb-9a40-255908e50310",
+          "name": "Bhumi Chauhan",
+          "email": "bhumi.chauhan@simformsolutions.com",
+          "photoUrl": "https://i.pravatar.cc/150?u=bhumi.chauhan@simformsolutions.com"
+        },
+        "ticketPublicId": "7cddbbf6-3c34-4a82-aab9-aee024ad0ec1",
+        "ticketNumber": "NA-0367"
+      }
+    }
+  }
+}

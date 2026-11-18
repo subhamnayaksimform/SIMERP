@@ -1,0 +1,43 @@
+name: CI/CD Positive-Flow Suite
+
+# Runs only the segregated ci-cd-pipeline/ positive-flow suite — a fast happy-path gate, distinct
+# from the full tests/e2e regression suite. Triggered independently so it never mixes with QA lint.
+on:
+  pull_request:
+    paths:
+      - 'ci-cd-pipeline/**'
+      - 'tests/page-objects/**'
+      - 'tests/fixtures/**'
+      - 'tests/global-setup.ts'
+  workflow_dispatch: {}
+
+jobs:
+  positive-flows:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - run: npx tsc --noEmit
+      - name: Run CI/CD positive-flow suite
+        run: npm run test:ci
+        env:
+          BASE_URL: ${{ secrets.BASE_URL }}
+          SIMERP_USERNAME: ${{ secrets.SIMERP_USERNAME }}
+          SIMERP_PASSWORD: ${{ secrets.SIMERP_PASSWORD }}
+          SIMERP_TEST_USERNAME: ${{ secrets.SIMERP_TEST_USERNAME }}
+          SIMERP_TEST_PASSWORD: ${{ secrets.SIMERP_TEST_PASSWORD }}
+          SIMERP_PM_USERNAME: ${{ secrets.SIMERP_PM_USERNAME }}
+          SIMERP_PM_PASSWORD: ${{ secrets.SIMERP_PM_PASSWORD }}
+      - name: Upload positive-flow report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ci-pipeline-report
+          path: |
+            reports/results/ci-pipeline-html
+            reports/results/ci-pipeline-results.json
+          retention-days: 14

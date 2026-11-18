@@ -1,0 +1,8 @@
+{
+  "detailStatus": {
+    "200": 40
+  },
+  "keys": {
+    "_bd": "\"scoreBreakdown\":[{\"label\":\"Effective Availability\",\"score\":10.23,\"weight\":0.5,\"contribution\":5.12},{\"label\":\"Rating\",\"score\":0,\"weight\":0,\"contribution\":0},{\"label\":\"Seniority\",\"score\":0,\"weight\":0.5,\"contribution\":0}"
+  }
+}

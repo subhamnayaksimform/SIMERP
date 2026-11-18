@@ -1,0 +1,14 @@
+{
+ "A": "f8d23b73-cb56-449b-9de6-888ecbfdd18a",
+ "Araw": {
+  "outcome": "TICKET_CREATED",
+  "publicId": "f8d23b73-cb56-449b-9de6-888ecbfdd18a",
+  "ticketNumber": "UA-0145",
+  "ticketType": "UPDATE_ALLOCATION",
+  "status": "AWAITING_CONFIRMATION"
+ },
+ "B": "e291c500-5a82-43e9-925f-fa84d6435896",
+ "BT": "UA-0146",
+ "C": "b4a4b8a2-6f52-4405-9b41-ce863cdd351d",
+ "CT": "UA-0147"
+}

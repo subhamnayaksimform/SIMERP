@@ -1,0 +1,19 @@
+{
+  "ui-01-employees-search-percent": "no search request seen",
+  "ui-01-employees-search-percent:shot": "reports/screenshots/2026-10-28/hardik/sonar-be/ui-01-employees-search-percent.png",
+  "ui-01-employees-search-percent:url": "https://simerp-dev.simform.solutions/employee?sortBy=availabilityPercentage&sortOrder=desc",
+  "ui-05-tickets-search-percent": {
+    "url": "/allocation-tickets?page=1&limit=100&search=%25&allocationMode=DIRECT",
+    "status": 200,
+    "total": 726
+  },
+  "ui-05-tickets-search-percent:shot": "reports/screenshots/2026-10-28/hardik/sonar-be/ui-05-tickets-search-percent.png",
+  "ui-05-tickets-search-percent:url": "https://simerp-dev.simform.solutions/my-tickets?search=%25",
+  "ui-06-projects-search-percent": {
+    "url": "/projects?page=1&limit=100&search=%25&sortBy=hours&sortOrder=desc&timeFrame=15d&filters=%7B%22isBillable%22:true%7D",
+    "status": 200,
+    "total": 399
+  },
+  "ui-06-projects-search-percent:shot": "reports/screenshots/2026-10-28/hardik/sonar-be/ui-06-projects-search-percent.png",
+  "ui-06-projects-search-percent:url": "https://simerp-dev.simform.solutions/projects?sortBy=hours&sortOrder=desc&search=%25"
+}

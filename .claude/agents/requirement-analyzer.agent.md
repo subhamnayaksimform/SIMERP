@@ -35,6 +35,8 @@ SIM ERP's nav is two levels — top-level module → sub-feature. Always resolve
 | Admin | Assign User Roles | ADMUSR |
 | Admin | Contractors | ADMCTR |
 | Help & Support | *(none)* | HELP |
+| PM & PMO | PM Projects | PMPROJ |
+| PM & PMO | Allocation Requests | ALCTKT |
 | *(cross-cutting, not in nav)* | Authentication / Login | AUTH |
 | Anything else | Unknown / Cross-cutting | GEN |
 
@@ -144,6 +146,16 @@ Use the exact email addresses (from `<test-accounts>`) in `testDataHints`, `prec
    - Every literal error message in `validationRules[]`: quoted from source, or invented? If invented, remove the literal text and note it in `unclear[]` instead.
    Downgrade anything that fails this check rather than leaving it stated as fact.
 
+3.85. **DOM ground-truth cross-check (optional, read-only — skip entirely if no snapshot exists).** You have no `execute` tool — never run `npm run capture:dom-snapshot` yourself, and never flag a missing snapshot as a gap. Check whether `reports/knowledge-base/dom-snapshots/<moduleCode>.json` already exists (same moduleCode → filename mapping as the Module Codes table above, e.g. `EMPGOL.json`). If it doesn't, skip this step entirely.
+
+   If it exists, read its `states[].interactiveElements[]` (the `text`/`accessibleName` fields) across every captured state. For each `uiElements[]` entry you're about to emit with `source: "verbatim"`, and for each `acceptanceCriteria[]`/`testScenarios[]` claim naming a specific field, control, or dropdown option set, check whether a matching real element appears anywhere in the snapshot:
+   - **Found** → no action; the claim is grounded.
+   - **Not found in any captured state** → do not delete or "correct" the source document's claim — the snapshot may not have opened the relevant panel, or the doc may describe an intended future addition. Add an `unclear[]` entry instead: `severity: "non-blocking"`, `topic`: e.g. `"Requirement describes UI not found in live snapshot"`, `note` quoting the specific claim plus the snapshot file/state(s) checked, `questionToAsk` asking a human to confirm whether the field is missing, gated behind an untested role/flag, or the requirement is aspirational.
+   - **A dropdown/option-set claim is narrower than reality** (e.g. the source lists 3 status values, the snapshot's combobox shows a 4th) → same `unclear[]` treatment, non-blocking, quoting both the source's list and the extra value(s) actually seen.
+   - **Every captured state has `isNotFoundPage: true`** → add a `blocking` `unclear[]` entry instead — the whole feature may not be deployed yet, which outranks a single missing-field flag.
+
+   This does not replace step 3.8 — that step checks your own output's internal consistency (is a claim backed by a source quote); this step checks the source document's claims against a separately captured live-app reality.
+
 3.9. **Compute `coverageMap`.** After all extraction and KB enrichment, count the following to give the TCG an expected test case distribution floor:
 
    | Category | Formula |
@@ -153,8 +165,6 @@ Use the exact email addresses (from `<test-accounts>`) in `testDataHints`, `prec
    | `negative` | `count(negativeScenarios[])` |
    | `boundary` | `count(edgeCases[]) + count(validationRules[]) + count(knownBugEdgeCases[])` |
    | `security` | `count(roleMatrix[] where cannot[] is non-empty) + count(securityScenarios[]) + count(businessRules[] where testPattern = "role-scope-assertion")` |
-   | `a11y` | `1` if `uiElements[]` is non-empty, else `0` |
-   | `performance` | `count(nfrRequirements.performance[])` |
    | `regression` | `count(affectedModules[]) + count(knownBugEdgeCases[])` |
    | `integration` | `count(integrationScenarios[]) + count(affectedModules[] where integrationNote is non-null)` |
    | `total_minimum` | sum of all above |
@@ -163,6 +173,11 @@ Use the exact email addresses (from `<test-accounts>`) in `testDataHints`, `prec
 
 4. Every ambiguity → an entry in `unclear[]`, each with `severity`, `defaultAssumption`, and `questionToAsk` populated.
 5. Save the output JSON to `reports/test-cases/req-<YYYY-MM-DD>-<moduleCode>[-<taskId>].json` (today's date from context). Examples: `req-2026-06-23-EMP-12345.json` (Zoho task), `req-2026-06-23-EMP.json` (pasted text, no task ID). Document source (`sourceOfRequirements: "document"`) → `req-<YYYY-MM-DD>-<moduleCode>-doc.json`.
+5.5. **Persist module-wise to the Knowledge Base.** This run's output must not live only in the transient `reports/test-cases/req-*.json` — feed genuinely new knowledge back into the same per-module KB file read in step 3.5 (same `moduleCode` → file mapping), so the KB keeps growing from requirement analysis, not just from bugs:
+   - Append every `edgeCases[]` entry (plain strings — by definition these had no matching KB entry) not already present (case-insensitive match) into that file's `edgeCases[]`.
+   - Append every `businessRules[]` entry with `"source": "regression-derived"` (i.e. genuinely new, not echoed from the KB) into that file's `businessRules[]`, same dedup rule. Never append `"source": "knowledge-base"` entries — they already live there.
+   - If the file doesn't exist yet, create it with `{ module: moduleCode, subModule: module, description: feature, edgeCases: [], businessRules: [] }` plus the new entries — do not invent `regressionAreas`/`historicalBugs`/`performanceTargets`/`knownFailure`, those are bug-derived and belong to `Knowledge Base Curator`.
+   - Never remove or rewrite an existing entry — additive only, same rule the curator follows.
 6. Return ONLY the structured JSON (also echoed to the chat so downstream agents can use it inline).
 
 ## Test Scenario Priority & Tags
@@ -226,7 +241,7 @@ Produce a single JSON object (array for multi-task input) with these top-level f
 | `integrationScenarios` | `{ id, title, modulesInvolved, flow, criticalAssertions }[]` | From KB cross-module.json |
 | `criticalPaths` | string[] | 1–3 must-not-fail flows → smoke test targets |
 | `roleMatrix` | `{ role, can, cannot, dataScope }[]` | From KB context.roles |
-| `coverageMap` | `{ smoke, functional, negative, boundary, security, a11y, performance, regression, integration, total_minimum }` | Computed floor counts for TCG |
+| `coverageMap` | `{ smoke, functional, negative, boundary, security, regression, integration, total_minimum }` | Computed floor counts for TCG — `a11y`/`performance` intentionally excluded, out of scope |
 | `unclear` | `{ topic, note, severity, defaultAssumption, questionToAsk }[]` | Every ambiguity; `severity`: `blocking \| non-blocking` |
 
 Return ONLY this JSON object (one per task). If multiple tasks are passed in, return a JSON array.

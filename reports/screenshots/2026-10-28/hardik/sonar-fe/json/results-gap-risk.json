@@ -1,0 +1,54 @@
+{
+  "results": [
+    {
+      "id": "guardrail-flag-button",
+      "ok": true,
+      "info": [
+        {
+          "al": null,
+          "txt": "Sagar Khanpara",
+          "w": 107,
+          "h": 20,
+          "y": 182
+        },
+        {
+          "al": "Seniority guardrail. Senior with spare capacity, while a more junior colleague in this department is booked almost solid.",
+          "txt": "",
+          "w": 14,
+          "h": 14,
+          "y": 185
+        },
+        {
+          "al": "Frontend",
+          "txt": "",
+          "w": 14,
+          "h": 14,
+          "y": 209
+        }
+      ],
+      "focused": "BUTTON:Frontend",
+      "tip": [
+        "Tech stack: Frontend"
+      ],
+      "shot": "reports/screenshots/2026-10-28/hardik/sonar-fe/g08-guardrail-flag-focus.png",
+      "errs": []
+    },
+    {
+      "id": "kpi-status-role",
+      "ok": true,
+      "url": "https://simerp-dev.simform.solutions/requests-tracking/project-allocation",
+      "statusRoles": 0,
+      "outputs": 0,
+      "shot": "reports/screenshots/2026-10-28/hardik/sonar-fe/g09-tickets-kpi.png",
+      "errs": []
+    },
+    {
+      "id": "ticket-edit-history-object",
+      "ok": true,
+      "status": 400,
+      "note": "see ua-edit-history (28/10): objectLeak=false",
+      "errs": []
+    }
+  ],
+  "errs": []
+}

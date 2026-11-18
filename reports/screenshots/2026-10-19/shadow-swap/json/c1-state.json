@@ -1,0 +1,951 @@
+{
+  "DA1": {
+    "publicId": "3e78994b-357d-4bbd-8485-c0192ad940dd",
+    "ticketNumber": "DA-0101",
+    "ticketType": "DEALLOCATE_ALLOCATION",
+    "intent": null,
+    "status": "AWAITING_CONFIRMATION",
+    "priority": "LOW",
+    "allocationRequestCreationType": null,
+    "allocationEndDate": "2026-10-31T00:00:00.000Z",
+    "effectiveStartDate": null,
+    "effectiveEndDate": null,
+    "project": {
+      "publicId": "c20430eb-7e7e-44e6-b769-3c7756e6a9e2",
+      "name": "XCrypt | Blockchain Wallet",
+      "csmId": "3831",
+      "accountGrade": 4.4
+    },
+    "department": {
+      "publicId": "9f56b05b-5a72-43ac-8818-aa1faf4046ca",
+      "name": "MEAN STACK",
+      "iconUrl": "https://d3e6uquevgpr8q.cloudfront.net/department-icons/mean-stack.svg"
+    },
+    "departmentTechStack": [
+      {
+        "name": "NodeJS",
+        "logoUrl": "https://cdn.simpleicons.org/nodedotjs"
+      },
+      {
+        "name": "Angular",
+        "logoUrl": "https://cdn.simpleicons.org/angular"
+      },
+      {
+        "name": "MEAN",
+        "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/9/94/MERN-logo.png"
+      }
+    ],
+    "additionalTechStacks": [],
+    "allocationStartDate": "2026-05-09T00:00:00.000Z",
+    "requestedAllocationType": "FIXED",
+    "requestedAllocationPercentage": null,
+    "allocationSnapshot": {
+      "reason": "UPDATED",
+      "allocationType": "FIXED",
+      "allocationPercentage": null,
+      "allocationStartDate": "2026-05-09T00:00:00.000Z",
+      "allocationEndDate": "2026-10-31T00:00:00.000Z",
+      "typeOfWork": "DEVELOPMENT_WORK",
+      "previousAllocationPercentage": 55,
+      "previousAllocationStartDate": "2026-05-09T00:00:00.000Z",
+      "previousAllocationEndDate": "2027-05-31T00:00:00.000Z",
+      "createdAt": "2026-10-19T10:51:50.083Z"
+    },
+    "allocationSnapshots": [
+      {
+        "reason": "UPDATED",
+        "allocationType": "FIXED",
+        "allocationPercentage": null,
+        "allocationStartDate": "2026-05-09T00:00:00.000Z",
+        "allocationEndDate": "2026-10-31T00:00:00.000Z",
+        "typeOfWork": "DEVELOPMENT_WORK",
+        "previousAllocationPercentage": 55,
+        "previousAllocationStartDate": "2026-05-09T00:00:00.000Z",
+        "previousAllocationEndDate": "2027-05-31T00:00:00.000Z",
+        "createdAt": "2026-10-19T10:51:50.083Z"
+      }
+    ],
+    "targetScheduledChangePublicId": null,
+    "supersededTicketPublicId": null,
+    "supersededTicketNumber": null,
+    "replacedAssignment": {
+      "publicId": "b10689fa-2edb-4f79-99d1-3c7c7371b540",
+      "employee": {
+        "publicId": "5492755c-16a4-407e-8571-0db979628d17",
+        "name": "Ananya Hegde",
+        "photoUrl": "https://i.pravatar.cc/150?u=ananya.hegde@simformsolutions.com"
+      },
+      "project": {
+        "publicId": "c20430eb-7e7e-44e6-b769-3c7756e6a9e2",
+        "name": "XCrypt | Blockchain Wallet"
+      },
+      "allocationPercentage": 55,
+      "allocationType": "FIXED",
+      "allocationStartDate": "2026-05-09T00:00:00.000Z",
+      "allocationEndDate": "2027-05-31T00:00:00.000Z",
+      "status": "AMBER",
+      "typeOfWork": "DEVELOPMENT_WORK",
+      "allocationOrigin": "FLOW"
+    },
+    "preferredEmployees": [],
+    "shortlistedEmployees": [],
+    "requester": {
+      "publicId": "4174b8c1-9d89-4b61-bfd7-075924620091",
+      "name": "Tarun Sharma",
+      "photoUrl": "https://i.pravatar.cc/150?u=tarun.sharma@simformsolutions.com"
+    },
+    "createdAt": "2026-10-19T10:51:50.051Z",
+    "updatedAt": "2026-10-19T10:51:50.051Z",
+    "statusSteps": [
+      {
+        "key": "SUBMITTED",
+        "title": "CSM submits request",
+        "description": "CSM submits a deallocation request",
+        "state": "COMPLETED",
+        "completedAt": "2026-10-19T10:51:50.051Z",
+        "performedBy": {
+          "publicId": "4174b8c1-9d89-4b61-bfd7-075924620091",
+          "name": "Tarun Sharma",
+          "photoUrl": "https://i.pravatar.cc/150?u=tarun.sharma@simformsolutions.com"
+        }
+      },
+      {
+        "key": "PMO_REVIEWED",
+        "title": "PMO Review",
+        "description": "Pending PMO action",
+        "state": "COMPLETED",
+        "completedAt": "2026-10-19T10:51:50.051Z",
+        "performedBy": {
+          "publicId": "4174b8c1-9d89-4b61-bfd7-075924620091",
+          "name": "Tarun Sharma",
+          "photoUrl": "https://i.pravatar.cc/150?u=tarun.sharma@simformsolutions.com"
+        }
+      },
+      {
+        "key": "ACKNOWLEDGED",
+        "title": "PMO Acknowledges",
+        "description": "PMO approved",
+        "state": "CURRENT"
+      },
+      {
+        "key": "NOTIFIED",
+        "title": "RM/TM/EM Notified",
+        "description": "Awaiting confirmation",
+        "state": "PENDING"
+      },
+      {
+        "key": "FINALIZED",
+        "title": "Employee Deallocated",
+        "description": "Employee received notification",
+        "state": "PENDING"
+      }
+    ],
+    "approvals": {},
+    "feedbacks": [
+      {
+        "developer": {
+          "publicId": "5492755c-16a4-407e-8571-0db979628d17",
+          "name": "Ananya Hegde",
+          "photoUrl": "https://i.pravatar.cc/150?u=ananya.hegde@simformsolutions.com"
+        },
+        "coreSkillRating": 7,
+        "communicationRating": 7,
+        "behavioralRating": 7,
+        "overallRating": 7,
+        "developerFeedback": "QA test SI4-T1464 retest 2026-10-19 - shadow swap + new shadow.",
+        "isOpenToWorkWithAgain": true,
+        "deallocationReason": "ROLE_MISALIGNMENT"
+      }
+    ],
+    "targetAssignmentTimeline": [
+      {
+        "ticketPublicId": null,
+        "ticketNumber": null,
+        "scheduledChangePublicId": null,
+        "effectiveFrom": "2026-05-09",
+        "effectiveTo": "2027-05-31",
+        "allocationType": "FIXED",
+        "allocationPercentage": 55,
+        "isCurrent": true,
+        "isPending": false,
+        "segmentType": "STANDING"
+      }
+    ],
+    "group": {
+      "publicId": "e272a12c-6456-426d-9ee6-ad622da401b5",
+      "groupNumber": 2,
+      "flowType": "SHADOW_TO_MAIN_NEW_SHADOW",
+      "step": 1,
+      "totalSteps": 2,
+      "isBlocked": false,
+      "blockedBy": [],
+      "hasHiddenTickets": false,
+      "tickets": [
+        {
+          "publicId": "3e78994b-357d-4bbd-8485-c0192ad940dd",
+          "ticketNumber": "DA-0101",
+          "ticketType": "DEALLOCATE_ALLOCATION",
+          "step": 1,
+          "status": "AWAITING_CONFIRMATION",
+          "employee": {
+            "publicId": "5492755c-16a4-407e-8571-0db979628d17",
+            "name": "Ananya Hegde",
+            "photoUrl": "https://i.pravatar.cc/150?u=ananya.hegde@simformsolutions.com"
+          }
+        },
+        {
+          "publicId": "3c5e2ab9-a5cf-4401-afc1-1e19b5540b6e",
+          "ticketNumber": "DA-0102",
+          "ticketType": "DEALLOCATE_ALLOCATION",
+          "step": 1,
+          "status": "AWAITING_CONFIRMATION",
+          "employee": {
+            "publicId": "da3c4542-13bb-452b-b619-42095c913d94",
+            "name": "Prakash Pillai",
+            "photoUrl": "https://i.pravatar.cc/150?u=prakash.pillai@simformsolutions.com"
+          }
+        },
+        {
+          "publicId": "9c022c4a-9928-4e31-b196-fb89a80c7123",
+          "ticketNumber": "NA-0365",
+          "ticketType": "NEW_ALLOCATION",
+          "step": 2,
+          "status": "CLOSED",
+          "employee": {
+            "publicId": "da3c4542-13bb-452b-b619-42095c913d94",
+            "name": "Prakash Pillai",
+            "photoUrl": "https://i.pravatar.cc/150?u=prakash.pillai@simformsolutions.com"
+          }
+        },
+        {
+          "publicId": "2df1af60-e529-48de-9e1b-50d259696603",
+          "ticketNumber": "NA-0366",
+          "ticketType": "NEW_ALLOCATION",
+          "step": 2,
+          "status": "OPEN",
+          "employee": null
+        }
+      ]
+    }
+  },
+  "DA2": {
+    "publicId": "3c5e2ab9-a5cf-4401-afc1-1e19b5540b6e",
+    "ticketNumber": "DA-0102",
+    "ticketType": "DEALLOCATE_ALLOCATION",
+    "intent": null,
+    "status": "AWAITING_CONFIRMATION",
+    "priority": "LOW",
+    "allocationRequestCreationType": null,
+    "allocationEndDate": "2026-10-31T00:00:00.000Z",
+    "effectiveStartDate": null,
+    "effectiveEndDate": null,
+    "project": {
+      "publicId": "c20430eb-7e7e-44e6-b769-3c7756e6a9e2",
+      "name": "XCrypt | Blockchain Wallet",
+      "csmId": "3831",
+      "accountGrade": 4.4
+    },
+    "department": {
+      "publicId": "c868f1aa-6bc1-430c-b26a-11222919627f",
+      "name": "QA",
+      "iconUrl": "https://d3e6uquevgpr8q.cloudfront.net/department-icons/qa.svg"
+    },
+    "departmentTechStack": [
+      {
+        "name": "Manual",
+        "logoUrl": "https://cdn.simpleicons.org/testinglibrary"
+      },
+      {
+        "name": "Automation",
+        "logoUrl": "https://cdn.simpleicons.org/selenium"
+      },
+      {
+        "name": "Mix",
+        "logoUrl": "https://cdn.simpleicons.org/testinglibrary"
+      },
+      {
+        "name": "Performance",
+        "logoUrl": "https://cdn.simpleicons.org/apachejmeter"
+      },
+      {
+        "name": "Security",
+        "logoUrl": "https://cdn.simpleicons.org/owasp"
+      }
+    ],
+    "additionalTechStacks": [],
+    "allocationStartDate": "2026-10-19T00:00:00.000Z",
+    "requestedAllocationType": "FIXED",
+    "requestedAllocationPercentage": null,
+    "allocationSnapshot": {
+      "reason": "UPDATED",
+      "allocationType": "FIXED",
+      "allocationPercentage": null,
+      "allocationStartDate": "2026-10-19T00:00:00.000Z",
+      "allocationEndDate": "2026-10-31T00:00:00.000Z",
+      "typeOfWork": "DEVELOPMENT_WORK",
+      "previousAllocationPercentage": 10,
+      "previousAllocationStartDate": "2026-10-19T00:00:00.000Z",
+      "previousAllocationEndDate": "2026-12-31T00:00:00.000Z",
+      "createdAt": "2026-10-19T10:51:50.126Z"
+    },
+    "allocationSnapshots": [
+      {
+        "reason": "UPDATED",
+        "allocationType": "FIXED",
+        "allocationPercentage": null,
+        "allocationStartDate": "2026-10-19T00:00:00.000Z",
+        "allocationEndDate": "2026-10-31T00:00:00.000Z",
+        "typeOfWork": "DEVELOPMENT_WORK",
+        "previousAllocationPercentage": 10,
+        "previousAllocationStartDate": "2026-10-19T00:00:00.000Z",
+        "previousAllocationEndDate": "2026-12-31T00:00:00.000Z",
+        "createdAt": "2026-10-19T10:51:50.126Z"
+      }
+    ],
+    "targetScheduledChangePublicId": null,
+    "supersededTicketPublicId": null,
+    "supersededTicketNumber": null,
+    "replacedAssignment": {
+      "publicId": "4186a764-485d-4b1c-89c0-4d3e4604ef06",
+      "employee": {
+        "publicId": "da3c4542-13bb-452b-b619-42095c913d94",
+        "name": "Prakash Pillai",
+        "photoUrl": "https://i.pravatar.cc/150?u=prakash.pillai@simformsolutions.com"
+      },
+      "project": {
+        "publicId": "c20430eb-7e7e-44e6-b769-3c7756e6a9e2",
+        "name": "XCrypt | Blockchain Wallet"
+      },
+      "allocationPercentage": 10,
+      "allocationType": "FIXED",
+      "allocationStartDate": "2026-10-19T00:00:00.000Z",
+      "allocationEndDate": "2026-12-31T00:00:00.000Z",
+      "status": "GREEN",
+      "typeOfWork": "DEVELOPMENT_WORK",
+      "allocationOrigin": "PMO",
+      "shadowDeveloper": {
+        "publicId": "5492755c-16a4-407e-8571-0db979628d17",
+        "name": "Ananya Hegde",
+        "photoUrl": "https://i.pravatar.cc/150?u=ananya.hegde@simformsolutions.com"
+      }
+    },
+    "preferredEmployees": [],
+    "shortlistedEmployees": [],
+    "requester": {
+      "publicId": "4174b8c1-9d89-4b61-bfd7-075924620091",
+      "name": "Tarun Sharma",
+      "photoUrl": "https://i.pravatar.cc/150?u=tarun.sharma@simformsolutions.com"
+    },
+    "createdAt": "2026-10-19T10:51:50.116Z",
+    "updatedAt": "2026-10-19T10:51:50.116Z",
+    "statusSteps": [
+      {
+        "key": "SUBMITTED",
+        "title": "CSM submits request",
+        "description": "CSM submits a deallocation request",
+        "state": "COMPLETED",
+        "completedAt": "2026-10-19T10:51:50.116Z",
+        "performedBy": {
+          "publicId": "4174b8c1-9d89-4b61-bfd7-075924620091",
+          "name": "Tarun Sharma",
+          "photoUrl": "https://i.pravatar.cc/150?u=tarun.sharma@simformsolutions.com"
+        }
+      },
+      {
+        "key": "PMO_REVIEWED",
+        "title": "PMO Review",
+        "description": "Pending PMO action",
+        "state": "COMPLETED",
+        "completedAt": "2026-10-19T10:51:50.116Z",
+        "performedBy": {
+          "publicId": "4174b8c1-9d89-4b61-bfd7-075924620091",
+          "name": "Tarun Sharma",
+          "photoUrl": "https://i.pravatar.cc/150?u=tarun.sharma@simformsolutions.com"
+        }
+      },
+      {
+        "key": "ACKNOWLEDGED",
+        "title": "PMO Acknowledges",
+        "description": "PMO approved",
+        "state": "CURRENT"
+      },
+      {
+        "key": "NOTIFIED",
+        "title": "RM/TM/EM Notified",
+        "description": "Awaiting confirmation",
+        "state": "PENDING"
+      },
+      {
+        "key": "FINALIZED",
+        "title": "Employee Deallocated",
+        "description": "Employee received notification",
+        "state": "PENDING"
+      }
+    ],
+    "approvals": {},
+    "feedbacks": [
+      {
+        "developer": {
+          "publicId": "da3c4542-13bb-452b-b619-42095c913d94",
+          "name": "Prakash Pillai",
+          "photoUrl": "https://i.pravatar.cc/150?u=prakash.pillai@simformsolutions.com"
+        },
+        "deallocationReason": "ROLE_MISALIGNMENT"
+      }
+    ],
+    "targetAssignmentTimeline": [
+      {
+        "ticketPublicId": null,
+        "ticketNumber": null,
+        "scheduledChangePublicId": null,
+        "effectiveFrom": "2026-10-19",
+        "effectiveTo": "2026-12-31",
+        "allocationType": "FIXED",
+        "allocationPercentage": 10,
+        "isCurrent": true,
+        "isPending": false,
+        "segmentType": "STANDING"
+      }
+    ],
+    "group": {
+      "publicId": "e272a12c-6456-426d-9ee6-ad622da401b5",
+      "groupNumber": 2,
+      "flowType": "SHADOW_TO_MAIN_NEW_SHADOW",
+      "step": 1,
+      "totalSteps": 2,
+      "isBlocked": false,
+      "blockedBy": [],
+      "hasHiddenTickets": false,
+      "tickets": [
+        {
+          "publicId": "3e78994b-357d-4bbd-8485-c0192ad940dd",
+          "ticketNumber": "DA-0101",
+          "ticketType": "DEALLOCATE_ALLOCATION",
+          "step": 1,
+          "status": "AWAITING_CONFIRMATION",
+          "employee": {
+            "publicId": "5492755c-16a4-407e-8571-0db979628d17",
+            "name": "Ananya Hegde",
+            "photoUrl": "https://i.pravatar.cc/150?u=ananya.hegde@simformsolutions.com"
+          }
+        },
+        {
+          "publicId": "3c5e2ab9-a5cf-4401-afc1-1e19b5540b6e",
+          "ticketNumber": "DA-0102",
+          "ticketType": "DEALLOCATE_ALLOCATION",
+          "step": 1,
+          "status": "AWAITING_CONFIRMATION",
+          "employee": {
+            "publicId": "da3c4542-13bb-452b-b619-42095c913d94",
+            "name": "Prakash Pillai",
+            "photoUrl": "https://i.pravatar.cc/150?u=prakash.pillai@simformsolutions.com"
+          }
+        },
+        {
+          "publicId": "9c022c4a-9928-4e31-b196-fb89a80c7123",
+          "ticketNumber": "NA-0365",
+          "ticketType": "NEW_ALLOCATION",
+          "step": 2,
+          "status": "CLOSED",
+          "employee": {
+            "publicId": "da3c4542-13bb-452b-b619-42095c913d94",
+            "name": "Prakash Pillai",
+            "photoUrl": "https://i.pravatar.cc/150?u=prakash.pillai@simformsolutions.com"
+          }
+        },
+        {
+          "publicId": "2df1af60-e529-48de-9e1b-50d259696603",
+          "ticketNumber": "NA-0366",
+          "ticketType": "NEW_ALLOCATION",
+          "step": 2,
+          "status": "OPEN",
+          "employee": null
+        }
+      ]
+    }
+  },
+  "NAP": {
+    "publicId": "9c022c4a-9928-4e31-b196-fb89a80c7123",
+    "ticketNumber": "NA-0365",
+    "ticketType": "NEW_ALLOCATION",
+    "intent": null,
+    "status": "CLOSED",
+    "priority": "MEDIUM",
+    "requestType": "FRESH_ALLOCATION",
+    "allocationRequestCreationType": "UPDATE_SHADOW_TO_MAIN",
+    "deptStack": {
+      "publicId": "2f46cbf6-894b-4d87-8580-4e525da41760",
+      "stack": "Manual",
+      "iconUrl": "https://cdn.simpleicons.org/testinglibrary",
+      "department": {
+        "publicId": "c868f1aa-6bc1-430c-b26a-11222919627f",
+        "name": "QA"
+      }
+    },
+    "isInterviewRequired": false,
+    "isClientFacing": false,
+    "allocationEndDate": "2026-12-31T00:00:00.000Z",
+    "effectiveStartDate": null,
+    "effectiveEndDate": null,
+    "project": {
+      "publicId": "c20430eb-7e7e-44e6-b769-3c7756e6a9e2",
+      "name": "XCrypt | Blockchain Wallet",
+      "csmId": "3831",
+      "accountGrade": 4.4
+    },
+    "department": {
+      "publicId": "c868f1aa-6bc1-430c-b26a-11222919627f",
+      "name": "QA",
+      "iconUrl": "https://d3e6uquevgpr8q.cloudfront.net/department-icons/qa.svg"
+    },
+    "departmentTechStack": [
+      {
+        "name": "Manual",
+        "logoUrl": "https://cdn.simpleicons.org/testinglibrary"
+      },
+      {
+        "name": "Automation",
+        "logoUrl": "https://cdn.simpleicons.org/selenium"
+      },
+      {
+        "name": "Mix",
+        "logoUrl": "https://cdn.simpleicons.org/testinglibrary"
+      },
+      {
+        "name": "Performance",
+        "logoUrl": "https://cdn.simpleicons.org/apachejmeter"
+      },
+      {
+        "name": "Security",
+        "logoUrl": "https://cdn.simpleicons.org/owasp"
+      }
+    ],
+    "assignee": {
+      "employee": {
+        "publicId": "da3c4542-13bb-452b-b619-42095c913d94",
+        "name": "Prakash Pillai",
+        "photoUrl": "https://i.pravatar.cc/150?u=prakash.pillai@simformsolutions.com"
+      },
+      "designation": {
+        "publicId": "bab942bb-83d4-4e03-a984-8d32f3ffde57",
+        "title": "QA Engineer",
+        "alias": "QAE"
+      },
+      "deptStack": {
+        "name": "Manual",
+        "logoUrl": "https://cdn.simpleicons.org/testinglibrary"
+      },
+      "availabilityPercentage": 90,
+      "allocationAvailabilityPercentage": 100,
+      "bookedAllocationPercentage": 10,
+      "remainingAllocationPercentage": 90,
+      "selectedBy": {
+        "publicId": "e93f5377-1f74-42cb-9a40-255908e50310",
+        "name": "Bhumi Chauhan",
+        "photoUrl": "https://i.pravatar.cc/150?u=bhumi.chauhan@simformsolutions.com"
+      }
+    },
+    "additionalTechStacks": [],
+    "allocationStartDate": "2026-11-01T00:00:00.000Z",
+    "requestedAllocationType": "FIXED",
+    "requestedAllocationPercentage": 10,
+    "allocationSnapshot": {
+      "reason": "CREATED",
+      "allocationType": "FIXED",
+      "allocationPercentage": 10,
+      "allocationStartDate": "2026-11-01T00:00:00.000Z",
+      "allocationEndDate": "2026-12-31T00:00:00.000Z",
+      "requestType": "FRESH_ALLOCATION",
+      "typeOfWork": "DEVELOPMENT_WORK",
+      "previousAllocationPercentage": null,
+      "createdAt": "2026-10-19T10:51:50.156Z"
+    },
+    "allocationSnapshots": [
+      {
+        "reason": "CREATED",
+        "allocationType": "FIXED",
+        "allocationPercentage": 10,
+        "allocationStartDate": "2026-11-01T00:00:00.000Z",
+        "allocationEndDate": "2026-12-31T00:00:00.000Z",
+        "requestType": "FRESH_ALLOCATION",
+        "typeOfWork": "DEVELOPMENT_WORK",
+        "previousAllocationPercentage": null,
+        "createdAt": "2026-10-19T10:51:50.156Z"
+      }
+    ],
+    "targetScheduledChangePublicId": null,
+    "supersededTicketPublicId": null,
+    "supersededTicketNumber": null,
+    "preferredEmployees": [
+      {
+        "employee": {
+          "publicId": "da3c4542-13bb-452b-b619-42095c913d94",
+          "name": "Prakash Pillai",
+          "photoUrl": "https://i.pravatar.cc/150?u=prakash.pillai@simformsolutions.com"
+        },
+        "designation": {
+          "publicId": "bab942bb-83d4-4e03-a984-8d32f3ffde57",
+          "title": "QA Engineer",
+          "alias": "QAE"
+        },
+        "deptStack": {
+          "name": "Manual",
+          "logoUrl": "https://cdn.simpleicons.org/testinglibrary"
+        },
+        "availabilityPercentage": 90,
+        "allocationAvailabilityPercentage": 100,
+        "bookedAllocationPercentage": 10,
+        "remainingAllocationPercentage": 90,
+        "addedBy": {
+          "publicId": "4174b8c1-9d89-4b61-bfd7-075924620091",
+          "name": "Tarun Sharma",
+          "photoUrl": "https://i.pravatar.cc/150?u=tarun.sharma@simformsolutions.com"
+        },
+        "sequence": 0
+      }
+    ],
+    "shortlistedEmployees": [
+      {
+        "employee": {
+          "publicId": "da3c4542-13bb-452b-b619-42095c913d94",
+          "name": "Prakash Pillai",
+          "photoUrl": "https://i.pravatar.cc/150?u=prakash.pillai@simformsolutions.com"
+        },
+        "designation": {
+          "publicId": "bab942bb-83d4-4e03-a984-8d32f3ffde57",
+          "title": "QA Engineer",
+          "alias": "QAE"
+        },
+        "deptStack": {
+          "name": "Manual",
+          "logoUrl": "https://cdn.simpleicons.org/testinglibrary"
+        },
+        "availabilityPercentage": 90,
+        "allocationAvailabilityPercentage": 100,
+        "bookedAllocationPercentage": 10,
+        "remainingAllocationPercentage": 90,
+        "addedBy": {
+          "publicId": "e93f5377-1f74-42cb-9a40-255908e50310",
+          "name": "Bhumi Chauhan",
+          "photoUrl": "https://i.pravatar.cc/150?u=bhumi.chauhan@simformsolutions.com"
+        },
+        "sequence": 0
+      }
+    ],
+    "requester": {
+      "publicId": "4174b8c1-9d89-4b61-bfd7-075924620091",
+      "name": "Tarun Sharma",
+      "photoUrl": "https://i.pravatar.cc/150?u=tarun.sharma@simformsolutions.com"
+    },
+    "createdAt": "2026-10-19T10:51:50.146Z",
+    "updatedAt": "2026-10-19T10:54:19.701Z",
+    "statusSteps": [
+      {
+        "key": "SUBMITTED",
+        "title": "CSM submits request",
+        "description": "CSM submits a new allocation request",
+        "state": "COMPLETED",
+        "completedAt": "2026-10-19T10:51:50.146Z",
+        "performedBy": {
+          "publicId": "4174b8c1-9d89-4b61-bfd7-075924620091",
+          "name": "Tarun Sharma",
+          "photoUrl": "https://i.pravatar.cc/150?u=tarun.sharma@simformsolutions.com"
+        }
+      },
+      {
+        "key": "DEPARTMENT_ASSIGNED",
+        "title": "PMO assigns department",
+        "description": "Department assigned",
+        "state": "COMPLETED",
+        "completedAt": "2026-10-19T10:54:19.369Z",
+        "performedBy": {
+          "publicId": "e93f5377-1f74-42cb-9a40-255908e50310",
+          "name": "Bhumi Chauhan",
+          "photoUrl": "https://i.pravatar.cc/150?u=bhumi.chauhan@simformsolutions.com"
+        }
+      },
+      {
+        "key": "EMPLOYEE_SELECTED",
+        "title": "Employee Shortlisting",
+        "description": "Developer selected",
+        "state": "COMPLETED",
+        "completedAt": "2026-10-19T10:54:19.707Z",
+        "performedBy": {
+          "publicId": "e93f5377-1f74-42cb-9a40-255908e50310",
+          "name": "Bhumi Chauhan",
+          "photoUrl": "https://i.pravatar.cc/150?u=bhumi.chauhan@simformsolutions.com"
+        }
+      },
+      {
+        "key": "CLOSED",
+        "title": "Ticket Closed",
+        "description": "Closed before completion",
+        "state": "COMPLETED",
+        "completedAt": "2026-10-19T10:55:09.522Z",
+        "performedBy": {
+          "publicId": "e93f5377-1f74-42cb-9a40-255908e50310",
+          "name": "Bhumi Chauhan",
+          "photoUrl": "https://i.pravatar.cc/150?u=bhumi.chauhan@simformsolutions.com"
+        }
+      }
+    ],
+    "approvals": {
+      "pmoApprovedBy": {
+        "publicId": "e93f5377-1f74-42cb-9a40-255908e50310",
+        "name": "Bhumi Chauhan",
+        "photoUrl": "https://i.pravatar.cc/150?u=bhumi.chauhan@simformsolutions.com"
+      },
+      "pmoApprovedAt": "2026-10-19T10:54:19.699Z"
+    },
+    "feedbacks": [],
+    "remarks": [
+      {
+        "publicId": "743679c0-c06e-4f65-969a-ffce6bb7c06c",
+        "action": "CLOSE",
+        "remarks": "QA test SI4-T1464 close cascade (c1-close-promotion)",
+        "addedBy": {
+          "publicId": "e93f5377-1f74-42cb-9a40-255908e50310",
+          "name": "Bhumi Chauhan",
+          "photoUrl": "https://i.pravatar.cc/150?u=bhumi.chauhan@simformsolutions.com"
+        },
+        "createdAt": "2026-10-19T10:55:09.551Z"
+      }
+    ],
+    "group": {
+      "publicId": "e272a12c-6456-426d-9ee6-ad622da401b5",
+      "groupNumber": 2,
+      "flowType": "SHADOW_TO_MAIN_NEW_SHADOW",
+      "step": 2,
+      "totalSteps": 2,
+      "isBlocked": false,
+      "blockedBy": [],
+      "hasHiddenTickets": false,
+      "tickets": [
+        {
+          "publicId": "3e78994b-357d-4bbd-8485-c0192ad940dd",
+          "ticketNumber": "DA-0101",
+          "ticketType": "DEALLOCATE_ALLOCATION",
+          "step": 1,
+          "status": "AWAITING_CONFIRMATION",
+          "employee": {
+            "publicId": "5492755c-16a4-407e-8571-0db979628d17",
+            "name": "Ananya Hegde",
+            "photoUrl": "https://i.pravatar.cc/150?u=ananya.hegde@simformsolutions.com"
+          }
+        },
+        {
+          "publicId": "3c5e2ab9-a5cf-4401-afc1-1e19b5540b6e",
+          "ticketNumber": "DA-0102",
+          "ticketType": "DEALLOCATE_ALLOCATION",
+          "step": 1,
+          "status": "AWAITING_CONFIRMATION",
+          "employee": {
+            "publicId": "da3c4542-13bb-452b-b619-42095c913d94",
+            "name": "Prakash Pillai",
+            "photoUrl": "https://i.pravatar.cc/150?u=prakash.pillai@simformsolutions.com"
+          }
+        },
+        {
+          "publicId": "9c022c4a-9928-4e31-b196-fb89a80c7123",
+          "ticketNumber": "NA-0365",
+          "ticketType": "NEW_ALLOCATION",
+          "step": 2,
+          "status": "CLOSED",
+          "employee": {
+            "publicId": "da3c4542-13bb-452b-b619-42095c913d94",
+            "name": "Prakash Pillai",
+            "photoUrl": "https://i.pravatar.cc/150?u=prakash.pillai@simformsolutions.com"
+          }
+        },
+        {
+          "publicId": "2df1af60-e529-48de-9e1b-50d259696603",
+          "ticketNumber": "NA-0366",
+          "ticketType": "NEW_ALLOCATION",
+          "step": 2,
+          "status": "OPEN",
+          "employee": null
+        }
+      ]
+    }
+  },
+  "NAS": {
+    "publicId": "2df1af60-e529-48de-9e1b-50d259696603",
+    "ticketNumber": "NA-0366",
+    "ticketType": "NEW_ALLOCATION",
+    "intent": null,
+    "status": "OPEN",
+    "priority": "MEDIUM",
+    "requestType": "SHADOW_DEVELOPER",
+    "allocationRequestCreationType": null,
+    "shadowFor": {
+      "publicId": "da3c4542-13bb-452b-b619-42095c913d94",
+      "name": "Prakash Pillai",
+      "photoUrl": "https://i.pravatar.cc/150?u=prakash.pillai@simformsolutions.com"
+    },
+    "deptStack": {
+      "publicId": "2f46cbf6-894b-4d87-8580-4e525da41760",
+      "stack": "Manual",
+      "iconUrl": "https://cdn.simpleicons.org/testinglibrary",
+      "department": {
+        "publicId": "c868f1aa-6bc1-430c-b26a-11222919627f",
+        "name": "QA"
+      }
+    },
+    "isInterviewRequired": false,
+    "isClientFacing": false,
+    "allocationEndDate": "2026-12-31T00:00:00.000Z",
+    "effectiveStartDate": null,
+    "effectiveEndDate": null,
+    "project": {
+      "publicId": "c20430eb-7e7e-44e6-b769-3c7756e6a9e2",
+      "name": "XCrypt | Blockchain Wallet",
+      "csmId": "3831",
+      "accountGrade": 4.4
+    },
+    "additionalTechStacks": [],
+    "allocationStartDate": "2026-11-01T00:00:00.000Z",
+    "requestedAllocationType": "FIXED",
+    "requestedAllocationPercentage": 10,
+    "allocationSnapshot": {
+      "reason": "CREATED",
+      "allocationType": "FIXED",
+      "allocationPercentage": 10,
+      "allocationStartDate": "2026-11-01T00:00:00.000Z",
+      "allocationEndDate": "2026-12-31T00:00:00.000Z",
+      "requestType": "SHADOW_DEVELOPER",
+      "typeOfWork": "DEVELOPMENT_WORK",
+      "previousAllocationPercentage": null,
+      "createdAt": "2026-10-19T10:51:50.173Z"
+    },
+    "allocationSnapshots": [
+      {
+        "reason": "CREATED",
+        "allocationType": "FIXED",
+        "allocationPercentage": 10,
+        "allocationStartDate": "2026-11-01T00:00:00.000Z",
+        "allocationEndDate": "2026-12-31T00:00:00.000Z",
+        "requestType": "SHADOW_DEVELOPER",
+        "typeOfWork": "DEVELOPMENT_WORK",
+        "previousAllocationPercentage": null,
+        "createdAt": "2026-10-19T10:51:50.173Z"
+      }
+    ],
+    "targetScheduledChangePublicId": null,
+    "supersededTicketPublicId": null,
+    "supersededTicketNumber": null,
+    "preferredEmployees": [],
+    "shortlistedEmployees": [],
+    "requester": {
+      "publicId": "4174b8c1-9d89-4b61-bfd7-075924620091",
+      "name": "Tarun Sharma",
+      "photoUrl": "https://i.pravatar.cc/150?u=tarun.sharma@simformsolutions.com"
+    },
+    "createdAt": "2026-10-19T10:51:50.167Z",
+    "updatedAt": "2026-10-19T10:51:50.167Z",
+    "statusSteps": [
+      {
+        "key": "SUBMITTED",
+        "title": "CSM submits request",
+        "description": "CSM submits a new allocation request",
+        "state": "COMPLETED",
+        "completedAt": "2026-10-19T10:51:50.167Z",
+        "performedBy": {
+          "publicId": "4174b8c1-9d89-4b61-bfd7-075924620091",
+          "name": "Tarun Sharma",
+          "photoUrl": "https://i.pravatar.cc/150?u=tarun.sharma@simformsolutions.com"
+        }
+      },
+      {
+        "key": "DEPARTMENT_ASSIGNED",
+        "title": "PMO assigns department",
+        "description": "Pending PMO action",
+        "state": "CURRENT"
+      },
+      {
+        "key": "EMPLOYEE_SELECTED",
+        "title": "Employee Shortlisting",
+        "description": "Not yet started",
+        "state": "PENDING"
+      },
+      {
+        "key": "APPROVAL",
+        "title": "TM / EM approval",
+        "description": "Final approval step",
+        "state": "PENDING"
+      },
+      {
+        "key": "APPLIED",
+        "title": "Approved & applied",
+        "description": "PM notified",
+        "state": "PENDING"
+      }
+    ],
+    "approvals": {},
+    "feedbacks": [],
+    "group": {
+      "publicId": "e272a12c-6456-426d-9ee6-ad622da401b5",
+      "groupNumber": 2,
+      "flowType": "SHADOW_TO_MAIN_NEW_SHADOW",
+      "step": 2,
+      "totalSteps": 2,
+      "isBlocked": true,
+      "blockedBy": [
+        {
+          "publicId": "3e78994b-357d-4bbd-8485-c0192ad940dd",
+          "ticketNumber": "DA-0101"
+        },
+        {
+          "publicId": "3c5e2ab9-a5cf-4401-afc1-1e19b5540b6e",
+          "ticketNumber": "DA-0102"
+        }
+      ],
+      "hasHiddenTickets": false,
+      "tickets": [
+        {
+          "publicId": "3e78994b-357d-4bbd-8485-c0192ad940dd",
+          "ticketNumber": "DA-0101",
+          "ticketType": "DEALLOCATE_ALLOCATION",
+          "step": 1,
+          "status": "AWAITING_CONFIRMATION",
+          "employee": {
+            "publicId": "5492755c-16a4-407e-8571-0db979628d17",
+            "name": "Ananya Hegde",
+            "photoUrl": "https://i.pravatar.cc/150?u=ananya.hegde@simformsolutions.com"
+          }
+        },
+        {
+          "publicId": "3c5e2ab9-a5cf-4401-afc1-1e19b5540b6e",
+          "ticketNumber": "DA-0102",
+          "ticketType": "DEALLOCATE_ALLOCATION",
+          "step": 1,
+          "status": "AWAITING_CONFIRMATION",
+          "employee": {
+            "publicId": "da3c4542-13bb-452b-b619-42095c913d94",
+            "name": "Prakash Pillai",
+            "photoUrl": "https://i.pravatar.cc/150?u=prakash.pillai@simformsolutions.com"
+          }
+        },
+        {
+          "publicId": "9c022c4a-9928-4e31-b196-fb89a80c7123",
+          "ticketNumber": "NA-0365",
+          "ticketType": "NEW_ALLOCATION",
+          "step": 2,
+          "status": "CLOSED",
+          "employee": {
+            "publicId": "da3c4542-13bb-452b-b619-42095c913d94",
+            "name": "Prakash Pillai",
+            "photoUrl": "https://i.pravatar.cc/150?u=prakash.pillai@simformsolutions.com"
+          }
+        },
+        {
+          "publicId": "2df1af60-e529-48de-9e1b-50d259696603",
+          "ticketNumber": "NA-0366",
+          "ticketType": "NEW_ALLOCATION",
+          "step": 2,
+          "status": "OPEN",
+          "employee": null
+        }
+      ]
+    }
+  }
+}

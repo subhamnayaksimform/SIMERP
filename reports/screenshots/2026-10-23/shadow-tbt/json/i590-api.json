@@ -1,0 +1,901 @@
+{
+  "t-DAM": {
+    "publicId": "ee1bd97b-4f1e-46fe-9b79-3ce1151bda62",
+    "ticketNumber": "DA-0152",
+    "ticketType": "DEALLOCATE_ALLOCATION",
+    "intent": null,
+    "status": "AWAITING_CONFIRMATION",
+    "priority": "LOW",
+    "allocationRequestCreationType": null,
+    "allocationEndDate": "2026-10-31T00:00:00.000Z",
+    "effectiveStartDate": null,
+    "effectiveEndDate": null,
+    "project": {
+      "publicId": "3d138a89-4d06-4839-8091-436fba0a2dd6",
+      "name": "HyperScale | Scalability Engine",
+      "csmId": "3850",
+      "accountGrade": 6.8
+    },
+    "department": {
+      "publicId": "c868f1aa-6bc1-430c-b26a-11222919627f",
+      "name": "QA",
+      "iconUrl": "https://d3e6uquevgpr8q.cloudfront.net/department-icons/qa.svg"
+    },
+    "departmentTechStack": [
+      {
+        "name": "Manual",
+        "logoUrl": "https://cdn.simpleicons.org/testinglibrary"
+      },
+      {
+        "name": "Automation",
+        "logoUrl": "https://cdn.simpleicons.org/selenium"
+      },
+      {
+        "name": "Mix",
+        "logoUrl": "https://cdn.simpleicons.org/testinglibrary"
+      },
+      {
+        "name": "Performance",
+        "logoUrl": "https://cdn.simpleicons.org/apachejmeter"
+      },
+      {
+        "name": "Security",
+        "logoUrl": "https://cdn.simpleicons.org/owasp"
+      }
+    ],
+    "additionalTechStacks": [],
+    "allocationStartDate": "2026-10-23T00:00:00.000Z",
+    "requestedAllocationType": "FIXED",
+    "requestedAllocationPercentage": null,
+    "allocationSnapshot": {
+      "reason": "UPDATED",
+      "allocationType": "FIXED",
+      "allocationPercentage": null,
+      "allocationStartDate": "2026-10-23T00:00:00.000Z",
+      "allocationEndDate": "2026-10-31T00:00:00.000Z",
+      "typeOfWork": "DEVELOPMENT_WORK",
+      "previousAllocationPercentage": 20,
+      "previousAllocationStartDate": "2026-10-23T00:00:00.000Z",
+      "createdAt": "2026-10-23T09:47:04.604Z"
+    },
+    "allocationSnapshots": [
+      {
+        "reason": "UPDATED",
+        "allocationType": "FIXED",
+        "allocationPercentage": null,
+        "allocationStartDate": "2026-10-23T00:00:00.000Z",
+        "allocationEndDate": "2026-10-31T00:00:00.000Z",
+        "typeOfWork": "DEVELOPMENT_WORK",
+        "previousAllocationPercentage": 20,
+        "previousAllocationStartDate": "2026-10-23T00:00:00.000Z",
+        "createdAt": "2026-10-23T09:47:04.604Z"
+      }
+    ],
+    "targetScheduledChangePublicId": null,
+    "supersededTicketPublicId": null,
+    "supersededTicketNumber": null,
+    "replacedAssignment": {
+      "publicId": "de02d73e-3385-44f2-be8e-f7fa212aa116",
+      "employee": {
+        "publicId": "414bf1e0-fcc1-4551-873b-15e0ca83a95d",
+        "name": "Tanmay Parekh",
+        "photoUrl": "https://i.pravatar.cc/150?u=tanmay.parekh@simformsolutions.com"
+      },
+      "project": {
+        "publicId": "3d138a89-4d06-4839-8091-436fba0a2dd6",
+        "name": "HyperScale | Scalability Engine"
+      },
+      "allocationPercentage": 20,
+      "allocationType": "FIXED",
+      "allocationStartDate": "2026-10-23T00:00:00.000Z",
+      "status": "GREEN",
+      "typeOfWork": "DEVELOPMENT_WORK",
+      "allocationOrigin": "PMO"
+    },
+    "preferredEmployees": [],
+    "shortlistedEmployees": [],
+    "requester": {
+      "publicId": "09d434e9-5346-4790-8ae7-f5105e5b4968",
+      "name": "Priya Chopra",
+      "photoUrl": "https://i.pravatar.cc/150?u=priya.chopra@simformsolutions.com"
+    },
+    "createdAt": "2026-10-23T09:47:04.592Z",
+    "updatedAt": "2026-10-23T09:47:04.592Z",
+    "statusSteps": [
+      {
+        "key": "SUBMITTED",
+        "title": "CSM submits request",
+        "description": "CSM submits a deallocation request",
+        "state": "COMPLETED",
+        "completedAt": "2026-10-23T09:47:04.592Z",
+        "performedBy": {
+          "publicId": "09d434e9-5346-4790-8ae7-f5105e5b4968",
+          "name": "Priya Chopra",
+          "photoUrl": "https://i.pravatar.cc/150?u=priya.chopra@simformsolutions.com"
+        }
+      },
+      {
+        "key": "PMO_REVIEWED",
+        "title": "PMO Review",
+        "description": "Pending PMO action",
+        "state": "COMPLETED",
+        "completedAt": "2026-10-23T09:47:04.592Z",
+        "performedBy": {
+          "publicId": "09d434e9-5346-4790-8ae7-f5105e5b4968",
+          "name": "Priya Chopra",
+          "photoUrl": "https://i.pravatar.cc/150?u=priya.chopra@simformsolutions.com"
+        }
+      },
+      {
+        "key": "ACKNOWLEDGED",
+        "title": "PMO Acknowledges",
+        "description": "PMO approved",
+        "state": "CURRENT"
+      },
+      {
+        "key": "NOTIFIED",
+        "title": "RM/TM/EM Notified",
+        "description": "Awaiting confirmation",
+        "state": "PENDING"
+      },
+      {
+        "key": "FINALIZED",
+        "title": "Employee Deallocated",
+        "description": "Employee received notification",
+        "state": "PENDING"
+      }
+    ],
+    "approvals": {},
+    "feedbacks": [
+      {
+        "developer": {
+          "publicId": "414bf1e0-fcc1-4551-873b-15e0ca83a95d",
+          "name": "Tanmay Parekh",
+          "photoUrl": "https://i.pravatar.cc/150?u=tanmay.parekh@simformsolutions.com"
+        },
+        "coreSkillRating": 7,
+        "communicationRating": 7,
+        "behavioralRating": 7,
+        "overallRating": 7,
+        "developerFeedback": "QA E2E SHADOW TBT 2026-10-23 (i591-submit)",
+        "isOpenToWorkWithAgain": true,
+        "deallocationReason": "ROLE_MISALIGNMENT"
+      }
+    ],
+    "targetAssignmentTimeline": [
+      {
+        "ticketPublicId": "29343026-9231-4590-8b20-41862d367f52",
+        "ticketNumber": "NA-0420",
+        "scheduledChangePublicId": null,
+        "effectiveFrom": "2026-10-23",
+        "effectiveTo": null,
+        "allocationType": "FIXED",
+        "allocationPercentage": 20,
+        "isCurrent": true,
+        "isPending": false,
+        "segmentType": "STANDING"
+      }
+    ],
+    "group": {
+      "publicId": "c1d147d9-8b95-484c-a50f-7ec6dc7b4938",
+      "groupNumber": 14,
+      "flowType": "SHADOW_TO_MAIN_NEW_SHADOW",
+      "step": 1,
+      "totalSteps": 2,
+      "isBlocked": false,
+      "blockedBy": [],
+      "hasHiddenTickets": false,
+      "tickets": [
+        {
+          "publicId": "ee1bd97b-4f1e-46fe-9b79-3ce1151bda62",
+          "ticketNumber": "DA-0152",
+          "ticketType": "DEALLOCATE_ALLOCATION",
+          "step": 1,
+          "status": "AWAITING_CONFIRMATION",
+          "employee": {
+            "publicId": "414bf1e0-fcc1-4551-873b-15e0ca83a95d",
+            "name": "Tanmay Parekh",
+            "photoUrl": "https://i.pravatar.cc/150?u=tanmay.parekh@simformsolutions.com"
+          }
+        },
+        {
+          "publicId": "d4fefb70-b33d-479c-bad7-727c54db4149",
+          "ticketNumber": "DA-0153",
+          "ticketType": "DEALLOCATE_ALLOCATION",
+          "step": 1,
+          "status": "AWAITING_CONFIRMATION",
+          "employee": {
+            "publicId": "15979d5b-8dd1-442b-9f4e-5de69c717827",
+            "name": "Urvashi Kotak",
+            "photoUrl": "https://i.pravatar.cc/150?u=urvashi.kotak@simformsolutions.com"
+          }
+        },
+        {
+          "publicId": "77f55860-3c96-41a2-b78d-bb7f3409a527",
+          "ticketNumber": "NA-0422",
+          "ticketType": "NEW_ALLOCATION",
+          "step": 2,
+          "status": "OPEN",
+          "employee": null
+        },
+        {
+          "publicId": "44b28e2e-38eb-4efc-8270-67b47700d79a",
+          "ticketNumber": "NA-0423",
+          "ticketType": "NEW_ALLOCATION",
+          "step": 2,
+          "status": "OPEN",
+          "employee": null
+        }
+      ]
+    }
+  },
+  "t-DAS": {
+    "publicId": "d4fefb70-b33d-479c-bad7-727c54db4149",
+    "ticketNumber": "DA-0153",
+    "ticketType": "DEALLOCATE_ALLOCATION",
+    "intent": null,
+    "status": "AWAITING_CONFIRMATION",
+    "priority": "LOW",
+    "allocationRequestCreationType": null,
+    "allocationEndDate": "2026-10-31T00:00:00.000Z",
+    "effectiveStartDate": null,
+    "effectiveEndDate": null,
+    "project": {
+      "publicId": "3d138a89-4d06-4839-8091-436fba0a2dd6",
+      "name": "HyperScale | Scalability Engine",
+      "csmId": "3850",
+      "accountGrade": 6.8
+    },
+    "department": {
+      "publicId": "c868f1aa-6bc1-430c-b26a-11222919627f",
+      "name": "QA",
+      "iconUrl": "https://d3e6uquevgpr8q.cloudfront.net/department-icons/qa.svg"
+    },
+    "departmentTechStack": [
+      {
+        "name": "Manual",
+        "logoUrl": "https://cdn.simpleicons.org/testinglibrary"
+      },
+      {
+        "name": "Automation",
+        "logoUrl": "https://cdn.simpleicons.org/selenium"
+      },
+      {
+        "name": "Mix",
+        "logoUrl": "https://cdn.simpleicons.org/testinglibrary"
+      },
+      {
+        "name": "Performance",
+        "logoUrl": "https://cdn.simpleicons.org/apachejmeter"
+      },
+      {
+        "name": "Security",
+        "logoUrl": "https://cdn.simpleicons.org/owasp"
+      }
+    ],
+    "additionalTechStacks": [],
+    "allocationStartDate": "2026-10-23T00:00:00.000Z",
+    "requestedAllocationType": "FIXED",
+    "requestedAllocationPercentage": null,
+    "allocationSnapshot": {
+      "reason": "UPDATED",
+      "allocationType": "FIXED",
+      "allocationPercentage": null,
+      "allocationStartDate": "2026-10-23T00:00:00.000Z",
+      "allocationEndDate": "2026-10-31T00:00:00.000Z",
+      "typeOfWork": "DEVELOPMENT_WORK",
+      "previousAllocationPercentage": 10,
+      "previousAllocationStartDate": "2026-10-23T00:00:00.000Z",
+      "previousAllocationEndDate": "2026-12-31T00:00:00.000Z",
+      "createdAt": "2026-10-23T09:47:04.626Z"
+    },
+    "allocationSnapshots": [
+      {
+        "reason": "UPDATED",
+        "allocationType": "FIXED",
+        "allocationPercentage": null,
+        "allocationStartDate": "2026-10-23T00:00:00.000Z",
+        "allocationEndDate": "2026-10-31T00:00:00.000Z",
+        "typeOfWork": "DEVELOPMENT_WORK",
+        "previousAllocationPercentage": 10,
+        "previousAllocationStartDate": "2026-10-23T00:00:00.000Z",
+        "previousAllocationEndDate": "2026-12-31T00:00:00.000Z",
+        "createdAt": "2026-10-23T09:47:04.626Z"
+      }
+    ],
+    "targetScheduledChangePublicId": null,
+    "supersededTicketPublicId": null,
+    "supersededTicketNumber": null,
+    "replacedAssignment": {
+      "publicId": "928c674d-edd6-48e6-b90c-243136f4cbe3",
+      "employee": {
+        "publicId": "15979d5b-8dd1-442b-9f4e-5de69c717827",
+        "name": "Urvashi Kotak",
+        "photoUrl": "https://i.pravatar.cc/150?u=urvashi.kotak@simformsolutions.com"
+      },
+      "project": {
+        "publicId": "3d138a89-4d06-4839-8091-436fba0a2dd6",
+        "name": "HyperScale | Scalability Engine"
+      },
+      "allocationPercentage": 10,
+      "allocationType": "FIXED",
+      "allocationStartDate": "2026-10-23T00:00:00.000Z",
+      "allocationEndDate": "2026-12-31T00:00:00.000Z",
+      "status": "GREEN",
+      "typeOfWork": "DEVELOPMENT_WORK",
+      "allocationOrigin": "PMO",
+      "shadowDeveloper": {
+        "publicId": "414bf1e0-fcc1-4551-873b-15e0ca83a95d",
+        "name": "Tanmay Parekh",
+        "photoUrl": "https://i.pravatar.cc/150?u=tanmay.parekh@simformsolutions.com"
+      }
+    },
+    "preferredEmployees": [],
+    "shortlistedEmployees": [],
+    "requester": {
+      "publicId": "09d434e9-5346-4790-8ae7-f5105e5b4968",
+      "name": "Priya Chopra",
+      "photoUrl": "https://i.pravatar.cc/150?u=priya.chopra@simformsolutions.com"
+    },
+    "createdAt": "2026-10-23T09:47:04.615Z",
+    "updatedAt": "2026-10-23T09:47:04.615Z",
+    "statusSteps": [
+      {
+        "key": "SUBMITTED",
+        "title": "CSM submits request",
+        "description": "CSM submits a deallocation request",
+        "state": "COMPLETED",
+        "completedAt": "2026-10-23T09:47:04.615Z",
+        "performedBy": {
+          "publicId": "09d434e9-5346-4790-8ae7-f5105e5b4968",
+          "name": "Priya Chopra",
+          "photoUrl": "https://i.pravatar.cc/150?u=priya.chopra@simformsolutions.com"
+        }
+      },
+      {
+        "key": "PMO_REVIEWED",
+        "title": "PMO Review",
+        "description": "Pending PMO action",
+        "state": "COMPLETED",
+        "completedAt": "2026-10-23T09:47:04.615Z",
+        "performedBy": {
+          "publicId": "09d434e9-5346-4790-8ae7-f5105e5b4968",
+          "name": "Priya Chopra",
+          "photoUrl": "https://i.pravatar.cc/150?u=priya.chopra@simformsolutions.com"
+        }
+      },
+      {
+        "key": "ACKNOWLEDGED",
+        "title": "PMO Acknowledges",
+        "description": "PMO approved",
+        "state": "CURRENT"
+      },
+      {
+        "key": "NOTIFIED",
+        "title": "RM/TM/EM Notified",
+        "description": "Awaiting confirmation",
+        "state": "PENDING"
+      },
+      {
+        "key": "FINALIZED",
+        "title": "Employee Deallocated",
+        "description": "Employee received notification",
+        "state": "PENDING"
+      }
+    ],
+    "approvals": {},
+    "feedbacks": [
+      {
+        "developer": {
+          "publicId": "15979d5b-8dd1-442b-9f4e-5de69c717827",
+          "name": "Urvashi Kotak",
+          "photoUrl": "https://i.pravatar.cc/150?u=urvashi.kotak@simformsolutions.com"
+        },
+        "deallocationReason": "ROLE_MISALIGNMENT"
+      }
+    ],
+    "targetAssignmentTimeline": [
+      {
+        "ticketPublicId": "55812f61-e3ce-42cb-9658-54b260059626",
+        "ticketNumber": "NA-0421",
+        "scheduledChangePublicId": null,
+        "effectiveFrom": "2026-10-23",
+        "effectiveTo": "2026-12-31",
+        "allocationType": "FIXED",
+        "allocationPercentage": 10,
+        "isCurrent": true,
+        "isPending": false,
+        "segmentType": "STANDING"
+      }
+    ],
+    "group": {
+      "publicId": "c1d147d9-8b95-484c-a50f-7ec6dc7b4938",
+      "groupNumber": 14,
+      "flowType": "SHADOW_TO_MAIN_NEW_SHADOW",
+      "step": 1,
+      "totalSteps": 2,
+      "isBlocked": false,
+      "blockedBy": [],
+      "hasHiddenTickets": false,
+      "tickets": [
+        {
+          "publicId": "ee1bd97b-4f1e-46fe-9b79-3ce1151bda62",
+          "ticketNumber": "DA-0152",
+          "ticketType": "DEALLOCATE_ALLOCATION",
+          "step": 1,
+          "status": "AWAITING_CONFIRMATION",
+          "employee": {
+            "publicId": "414bf1e0-fcc1-4551-873b-15e0ca83a95d",
+            "name": "Tanmay Parekh",
+            "photoUrl": "https://i.pravatar.cc/150?u=tanmay.parekh@simformsolutions.com"
+          }
+        },
+        {
+          "publicId": "d4fefb70-b33d-479c-bad7-727c54db4149",
+          "ticketNumber": "DA-0153",
+          "ticketType": "DEALLOCATE_ALLOCATION",
+          "step": 1,
+          "status": "AWAITING_CONFIRMATION",
+          "employee": {
+            "publicId": "15979d5b-8dd1-442b-9f4e-5de69c717827",
+            "name": "Urvashi Kotak",
+            "photoUrl": "https://i.pravatar.cc/150?u=urvashi.kotak@simformsolutions.com"
+          }
+        },
+        {
+          "publicId": "77f55860-3c96-41a2-b78d-bb7f3409a527",
+          "ticketNumber": "NA-0422",
+          "ticketType": "NEW_ALLOCATION",
+          "step": 2,
+          "status": "OPEN",
+          "employee": null
+        },
+        {
+          "publicId": "44b28e2e-38eb-4efc-8270-67b47700d79a",
+          "ticketNumber": "NA-0423",
+          "ticketType": "NEW_ALLOCATION",
+          "step": 2,
+          "status": "OPEN",
+          "employee": null
+        }
+      ]
+    }
+  },
+  "t-N1": {
+    "publicId": "77f55860-3c96-41a2-b78d-bb7f3409a527",
+    "ticketNumber": "NA-0422",
+    "ticketType": "NEW_ALLOCATION",
+    "intent": null,
+    "status": "OPEN",
+    "priority": "MEDIUM",
+    "requestType": "FRESH_ALLOCATION",
+    "allocationRequestCreationType": "UPDATE_SHADOW_TO_MAIN",
+    "deptStack": {
+      "publicId": "f9801c37-0b72-42fd-9ed6-274fccfcb5ef",
+      "stack": "Automation",
+      "iconUrl": "https://cdn.simpleicons.org/selenium",
+      "department": {
+        "publicId": "c868f1aa-6bc1-430c-b26a-11222919627f",
+        "name": "QA"
+      }
+    },
+    "isInterviewRequired": false,
+    "isClientFacing": false,
+    "effectiveStartDate": null,
+    "effectiveEndDate": null,
+    "project": {
+      "publicId": "3d138a89-4d06-4839-8091-436fba0a2dd6",
+      "name": "HyperScale | Scalability Engine",
+      "csmId": "3850",
+      "accountGrade": 6.8
+    },
+    "additionalTechStacks": [],
+    "allocationStartDate": "2026-11-01T00:00:00.000Z",
+    "requestedAllocationType": "FIXED",
+    "requestedAllocationPercentage": 20,
+    "allocationSnapshot": {
+      "reason": "CREATED",
+      "allocationType": "FIXED",
+      "allocationPercentage": 20,
+      "allocationStartDate": "2026-11-01T00:00:00.000Z",
+      "requestType": "FRESH_ALLOCATION",
+      "typeOfWork": "DEVELOPMENT_WORK",
+      "previousAllocationPercentage": null,
+      "createdAt": "2026-10-23T09:47:04.685Z"
+    },
+    "allocationSnapshots": [
+      {
+        "reason": "CREATED",
+        "allocationType": "FIXED",
+        "allocationPercentage": 20,
+        "allocationStartDate": "2026-11-01T00:00:00.000Z",
+        "requestType": "FRESH_ALLOCATION",
+        "typeOfWork": "DEVELOPMENT_WORK",
+        "previousAllocationPercentage": null,
+        "createdAt": "2026-10-23T09:47:04.685Z"
+      }
+    ],
+    "targetScheduledChangePublicId": null,
+    "supersededTicketPublicId": null,
+    "supersededTicketNumber": null,
+    "preferredEmployees": [
+      {
+        "employee": {
+          "publicId": "15979d5b-8dd1-442b-9f4e-5de69c717827",
+          "name": "Urvashi Kotak",
+          "photoUrl": "https://i.pravatar.cc/150?u=urvashi.kotak@simformsolutions.com"
+        },
+        "designation": {
+          "publicId": "bab942bb-83d4-4e03-a984-8d32f3ffde57",
+          "title": "QA Engineer",
+          "alias": "QAE"
+        },
+        "deptStack": {
+          "name": "Automation",
+          "logoUrl": "https://cdn.simpleicons.org/selenium"
+        },
+        "availabilityPercentage": 90,
+        "allocationAvailabilityPercentage": 100,
+        "bookedAllocationPercentage": 10,
+        "remainingAllocationPercentage": 90,
+        "addedBy": {
+          "publicId": "09d434e9-5346-4790-8ae7-f5105e5b4968",
+          "name": "Priya Chopra",
+          "photoUrl": "https://i.pravatar.cc/150?u=priya.chopra@simformsolutions.com"
+        },
+        "sequence": 0
+      }
+    ],
+    "shortlistedEmployees": [],
+    "requester": {
+      "publicId": "09d434e9-5346-4790-8ae7-f5105e5b4968",
+      "name": "Priya Chopra",
+      "photoUrl": "https://i.pravatar.cc/150?u=priya.chopra@simformsolutions.com"
+    },
+    "createdAt": "2026-10-23T09:47:04.676Z",
+    "updatedAt": "2026-10-23T09:47:04.676Z",
+    "statusSteps": [
+      {
+        "key": "SUBMITTED",
+        "title": "CSM submits request",
+        "description": "CSM submits a new allocation request",
+        "state": "COMPLETED",
+        "completedAt": "2026-10-23T09:47:04.676Z",
+        "performedBy": {
+          "publicId": "09d434e9-5346-4790-8ae7-f5105e5b4968",
+          "name": "Priya Chopra",
+          "photoUrl": "https://i.pravatar.cc/150?u=priya.chopra@simformsolutions.com"
+        }
+      },
+      {
+        "key": "DEPARTMENT_ASSIGNED",
+        "title": "PMO assigns department",
+        "description": "Pending PMO action",
+        "state": "CURRENT"
+      },
+      {
+        "key": "EMPLOYEE_SELECTED",
+        "title": "Employee Shortlisting",
+        "description": "Not yet started",
+        "state": "PENDING"
+      },
+      {
+        "key": "APPROVAL",
+        "title": "TM / EM approval",
+        "description": "Final approval step",
+        "state": "PENDING"
+      },
+      {
+        "key": "APPLIED",
+        "title": "Approved & applied",
+        "description": "PM notified",
+        "state": "PENDING"
+      }
+    ],
+    "approvals": {},
+    "feedbacks": [],
+    "group": {
+      "publicId": "c1d147d9-8b95-484c-a50f-7ec6dc7b4938",
+      "groupNumber": 14,
+      "flowType": "SHADOW_TO_MAIN_NEW_SHADOW",
+      "step": 2,
+      "totalSteps": 2,
+      "isBlocked": true,
+      "blockedBy": [
+        {
+          "publicId": "ee1bd97b-4f1e-46fe-9b79-3ce1151bda62",
+          "ticketNumber": "DA-0152"
+        },
+        {
+          "publicId": "d4fefb70-b33d-479c-bad7-727c54db4149",
+          "ticketNumber": "DA-0153"
+        }
+      ],
+      "hasHiddenTickets": false,
+      "tickets": [
+        {
+          "publicId": "ee1bd97b-4f1e-46fe-9b79-3ce1151bda62",
+          "ticketNumber": "DA-0152",
+          "ticketType": "DEALLOCATE_ALLOCATION",
+          "step": 1,
+          "status": "AWAITING_CONFIRMATION",
+          "employee": {
+            "publicId": "414bf1e0-fcc1-4551-873b-15e0ca83a95d",
+            "name": "Tanmay Parekh",
+            "photoUrl": "https://i.pravatar.cc/150?u=tanmay.parekh@simformsolutions.com"
+          }
+        },
+        {
+          "publicId": "d4fefb70-b33d-479c-bad7-727c54db4149",
+          "ticketNumber": "DA-0153",
+          "ticketType": "DEALLOCATE_ALLOCATION",
+          "step": 1,
+          "status": "AWAITING_CONFIRMATION",
+          "employee": {
+            "publicId": "15979d5b-8dd1-442b-9f4e-5de69c717827",
+            "name": "Urvashi Kotak",
+            "photoUrl": "https://i.pravatar.cc/150?u=urvashi.kotak@simformsolutions.com"
+          }
+        },
+        {
+          "publicId": "77f55860-3c96-41a2-b78d-bb7f3409a527",
+          "ticketNumber": "NA-0422",
+          "ticketType": "NEW_ALLOCATION",
+          "step": 2,
+          "status": "OPEN",
+          "employee": null
+        },
+        {
+          "publicId": "44b28e2e-38eb-4efc-8270-67b47700d79a",
+          "ticketNumber": "NA-0423",
+          "ticketType": "NEW_ALLOCATION",
+          "step": 2,
+          "status": "OPEN",
+          "employee": null
+        }
+      ]
+    }
+  },
+  "t-N2": {
+    "publicId": "44b28e2e-38eb-4efc-8270-67b47700d79a",
+    "ticketNumber": "NA-0423",
+    "ticketType": "NEW_ALLOCATION",
+    "intent": null,
+    "status": "OPEN",
+    "priority": "MEDIUM",
+    "requestType": "SHADOW_DEVELOPER",
+    "allocationRequestCreationType": null,
+    "shadowFor": {
+      "publicId": "15979d5b-8dd1-442b-9f4e-5de69c717827",
+      "name": "Urvashi Kotak",
+      "photoUrl": "https://i.pravatar.cc/150?u=urvashi.kotak@simformsolutions.com"
+    },
+    "deptStack": {
+      "publicId": "f9801c37-0b72-42fd-9ed6-274fccfcb5ef",
+      "stack": "Automation",
+      "iconUrl": "https://cdn.simpleicons.org/selenium",
+      "department": {
+        "publicId": "c868f1aa-6bc1-430c-b26a-11222919627f",
+        "name": "QA"
+      }
+    },
+    "isInterviewRequired": false,
+    "isClientFacing": false,
+    "effectiveStartDate": null,
+    "effectiveEndDate": null,
+    "project": {
+      "publicId": "3d138a89-4d06-4839-8091-436fba0a2dd6",
+      "name": "HyperScale | Scalability Engine",
+      "csmId": "3850",
+      "accountGrade": 6.8
+    },
+    "additionalTechStacks": [],
+    "allocationStartDate": "2026-11-01T00:00:00.000Z",
+    "requestedAllocationType": "FIXED",
+    "requestedAllocationPercentage": 20,
+    "allocationSnapshot": {
+      "reason": "CREATED",
+      "allocationType": "FIXED",
+      "allocationPercentage": 20,
+      "allocationStartDate": "2026-11-01T00:00:00.000Z",
+      "requestType": "SHADOW_DEVELOPER",
+      "typeOfWork": "DEVELOPMENT_WORK",
+      "previousAllocationPercentage": null,
+      "createdAt": "2026-10-23T09:47:04.700Z"
+    },
+    "allocationSnapshots": [
+      {
+        "reason": "CREATED",
+        "allocationType": "FIXED",
+        "allocationPercentage": 20,
+        "allocationStartDate": "2026-11-01T00:00:00.000Z",
+        "requestType": "SHADOW_DEVELOPER",
+        "typeOfWork": "DEVELOPMENT_WORK",
+        "previousAllocationPercentage": null,
+        "createdAt": "2026-10-23T09:47:04.700Z"
+      }
+    ],
+    "targetScheduledChangePublicId": null,
+    "supersededTicketPublicId": null,
+    "supersededTicketNumber": null,
+    "preferredEmployees": [],
+    "shortlistedEmployees": [],
+    "requester": {
+      "publicId": "09d434e9-5346-4790-8ae7-f5105e5b4968",
+      "name": "Priya Chopra",
+      "photoUrl": "https://i.pravatar.cc/150?u=priya.chopra@simformsolutions.com"
+    },
+    "createdAt": "2026-10-23T09:47:04.696Z",
+    "updatedAt": "2026-10-23T09:47:04.696Z",
+    "statusSteps": [
+      {
+        "key": "SUBMITTED",
+        "title": "CSM submits request",
+        "description": "CSM submits a new allocation request",
+        "state": "COMPLETED",
+        "completedAt": "2026-10-23T09:47:04.696Z",
+        "performedBy": {
+          "publicId": "09d434e9-5346-4790-8ae7-f5105e5b4968",
+          "name": "Priya Chopra",
+          "photoUrl": "https://i.pravatar.cc/150?u=priya.chopra@simformsolutions.com"
+        }
+      },
+      {
+        "key": "DEPARTMENT_ASSIGNED",
+        "title": "PMO assigns department",
+        "description": "Pending PMO action",
+        "state": "CURRENT"
+      },
+      {
+        "key": "EMPLOYEE_SELECTED",
+        "title": "Employee Shortlisting",
+        "description": "Not yet started",
+        "state": "PENDING"
+      },
+      {
+        "key": "APPROVAL",
+        "title": "TM / EM approval",
+        "description": "Final approval step",
+        "state": "PENDING"
+      },
+      {
+        "key": "APPLIED",
+        "title": "Approved & applied",
+        "description": "PM notified",
+        "state": "PENDING"
+      }
+    ],
+    "approvals": {},
+    "feedbacks": [],
+    "group": {
+      "publicId": "c1d147d9-8b95-484c-a50f-7ec6dc7b4938",
+      "groupNumber": 14,
+      "flowType": "SHADOW_TO_MAIN_NEW_SHADOW",
+      "step": 2,
+      "totalSteps": 2,
+      "isBlocked": true,
+      "blockedBy": [
+        {
+          "publicId": "ee1bd97b-4f1e-46fe-9b79-3ce1151bda62",
+          "ticketNumber": "DA-0152"
+        },
+        {
+          "publicId": "d4fefb70-b33d-479c-bad7-727c54db4149",
+          "ticketNumber": "DA-0153"
+        },
+        {
+          "publicId": "77f55860-3c96-41a2-b78d-bb7f3409a527",
+          "ticketNumber": "NA-0422"
+        }
+      ],
+      "hasHiddenTickets": false,
+      "tickets": [
+        {
+          "publicId": "ee1bd97b-4f1e-46fe-9b79-3ce1151bda62",
+          "ticketNumber": "DA-0152",
+          "ticketType": "DEALLOCATE_ALLOCATION",
+          "step": 1,
+          "status": "AWAITING_CONFIRMATION",
+          "employee": {
+            "publicId": "414bf1e0-fcc1-4551-873b-15e0ca83a95d",
+            "name": "Tanmay Parekh",
+            "photoUrl": "https://i.pravatar.cc/150?u=tanmay.parekh@simformsolutions.com"
+          }
+        },
+        {
+          "publicId": "d4fefb70-b33d-479c-bad7-727c54db4149",
+          "ticketNumber": "DA-0153",
+          "ticketType": "DEALLOCATE_ALLOCATION",
+          "step": 1,
+          "status": "AWAITING_CONFIRMATION",
+          "employee": {
+            "publicId": "15979d5b-8dd1-442b-9f4e-5de69c717827",
+            "name": "Urvashi Kotak",
+            "photoUrl": "https://i.pravatar.cc/150?u=urvashi.kotak@simformsolutions.com"
+          }
+        },
+        {
+          "publicId": "77f55860-3c96-41a2-b78d-bb7f3409a527",
+          "ticketNumber": "NA-0422",
+          "ticketType": "NEW_ALLOCATION",
+          "step": 2,
+          "status": "OPEN",
+          "employee": null
+        },
+        {
+          "publicId": "44b28e2e-38eb-4efc-8270-67b47700d79a",
+          "ticketNumber": "NA-0423",
+          "ticketType": "NEW_ALLOCATION",
+          "step": 2,
+          "status": "OPEN",
+          "employee": null
+        }
+      ]
+    }
+  },
+  "assignDept": {
+    "status": 200,
+    "body": {
+      "code": "SUCCESS",
+      "message": "Allocation ticket updated successfully",
+      "data": {
+        "publicId": "77f55860-3c96-41a2-b78d-bb7f3409a527",
+        "ticketNumber": "NA-0422",
+        "status": "IN_REVIEW",
+        "warnings": []
+      }
+    }
+  },
+  "shortlist": {
+    "status": 400,
+    "body": {
+      "code": "VAL_001",
+      "message": "Validation failed",
+      "errors": [
+        {
+          "field": "addEmployees.0",
+          "message": "each value in nested property addEmployees must be either object or array"
+        }
+      ]
+    }
+  },
+  "sendForApproval": {
+    "status": 409,
+    "body": {
+      "code": "ALLOCATION_TICKET_172",
+      "message": "Complete the step 1 tickets (#DA-0152, #DA-0153) before actioning this ticket.",
+      "data": {
+        "blockingTickets": [
+          {
+            "publicId": "ee1bd97b-4f1e-46fe-9b79-3ce1151bda62",
+            "ticketNumber": "DA-0152",
+            "ticketType": "DEALLOCATE_ALLOCATION",
+            "step": 1,
+            "status": "AWAITING_CONFIRMATION"
+          },
+          {
+            "publicId": "d4fefb70-b33d-479c-bad7-727c54db4149",
+            "ticketNumber": "DA-0153",
+            "ticketType": "DEALLOCATE_ALLOCATION",
+            "step": 1,
+            "status": "AWAITING_CONFIRMATION"
+          }
+        ]
+      }
+    }
+  },
+  "advance": {
+    "status": 400,
+    "body": {
+      "code": "SYS_004",
+      "message": "A developer must be selected before this ticket can advance to confirmation"
+    }
+  },
+  "approve": {
+    "status": 409,
+    "body": {
+      "code": "SYS_004",
+      "message": "This action is not allowed in the ticket's current status"
+    }
+  }
+}

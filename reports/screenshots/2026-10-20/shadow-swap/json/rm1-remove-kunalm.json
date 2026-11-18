@@ -1,0 +1,53 @@
+{
+  "req": {
+    "projectAssignmentPublicId": "f954cf8a-1cd9-485d-9d17-3479bb1cfb4a",
+    "allocationEndDate": "2026-10-20",
+    "deallocationReason": "OTHERS",
+    "deallocationReasonNote": "QA test cleanup (SI4-I576..I579 retest 2026-10-20)"
+  },
+  "res": {
+    "status": 201,
+    "body": {
+      "code": "ALLOCATION_TICKET_072",
+      "message": "Allocation removed successfully",
+      "data": {
+        "publicId": "eb64a58d-7909-47bf-8341-0104168ef1d3",
+        "ticketNumber": "DA-0116",
+        "ticketType": "DEALLOCATE_ALLOCATION",
+        "status": "APPROVED",
+        "assignment": {
+          "publicId": "f954cf8a-1cd9-485d-9d17-3479bb1cfb4a",
+          "allocationEndDate": "2026-10-20",
+          "employee": {
+            "publicId": "f94d6cb2-e5b5-4c14-99d2-3fbd28a1cde9",
+            "name": "Kunal Menon",
+            "email": "kunal.menon@simformsolutions.com",
+            "photoUrl": "https://i.pravatar.cc/150?u=kunal.menon@simformsolutions.com"
+          },
+          "project": {
+            "publicId": "3d138a89-4d06-4839-8091-436fba0a2dd6",
+            "name": "HyperScale | Scalability Engine",
+            "alias": ""
+          }
+        },
+        "effectiveState": {
+          "isEffectiveImmediately": false,
+          "effectiveFrom": "2026-10-21",
+          "scheduledChange": {
+            "publicId": "f4688c2b-1136-4377-95d6-00cdf6727d03",
+            "changeType": "ASSIGNMENT_DEALLOCATE",
+            "status": "PENDING",
+            "effectiveDate": "2026-10-21",
+            "overrideEndDate": null,
+            "allocationType": null,
+            "allocationPercentage": null,
+            "effectiveStartDate": null,
+            "effectiveEndDate": "2026-10-20",
+            "previousAllocationPercentage": 10
+          }
+        },
+        "feedbackPublicId": "68f535ff-115b-4809-9247-2dcc62d44ce5"
+      }
+    }
+  }
+}

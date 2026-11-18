@@ -1,0 +1,91 @@
+{
+  "cancel-prakash": {
+    "status": 201,
+    "body": {
+      "code": "ALLOCATION_TICKET_169",
+      "message": "Upcoming allocation cancelled successfully",
+      "data": {
+        "ticket": {
+          "publicId": "11468228-ab1d-420e-b975-96118a5114ee",
+          "ticketNumber": "DA-0130",
+          "ticketType": "DEALLOCATE_ALLOCATION",
+          "status": "APPROVED"
+        },
+        "isAllocationCancelled": true
+      }
+    }
+  },
+  "cancel-kunal-main": {
+    "status": 201,
+    "body": {
+      "code": "ALLOCATION_TICKET_169",
+      "message": "Upcoming allocation cancelled successfully",
+      "data": {
+        "ticket": {
+          "publicId": "4c6f1fec-f5dd-4677-aaaa-f079e4a387a2",
+          "ticketNumber": "DA-0131",
+          "ticketType": "DEALLOCATE_ALLOCATION",
+          "status": "APPROVED"
+        },
+        "isAllocationCancelled": true
+      }
+    }
+  },
+  "withdraw-bhavesh-da": {
+    "status": 409,
+    "body": {
+      "code": "ALLOCATION_TICKET_182",
+      "message": "This allocation period cannot be removed because a later step of its linked ticket group (#NA-0393, #NA-0394) is already approved and depends on it",
+      "data": {
+        "blockingTickets": [
+          {
+            "publicId": "9cc7e59a-da81-4488-b817-57888c65ac8b",
+            "ticketNumber": "NA-0393",
+            "ticketType": "NEW_ALLOCATION",
+            "step": 2,
+            "status": "APPROVED"
+          },
+          {
+            "publicId": "0fdff240-42d4-4541-98de-e3809561ce4c",
+            "ticketNumber": "NA-0394",
+            "ticketType": "NEW_ALLOCATION",
+            "step": 2,
+            "status": "APPROVED"
+          }
+        ]
+      }
+    }
+  },
+  "withdraw-kunal-da": {
+    "status": 409,
+    "body": {
+      "code": "ALLOCATION_TICKET_182",
+      "message": "This allocation period cannot be removed because a later step of its linked ticket group (#NA-0393, #NA-0394) is already approved and depends on it",
+      "data": {
+        "blockingTickets": [
+          {
+            "publicId": "9cc7e59a-da81-4488-b817-57888c65ac8b",
+            "ticketNumber": "NA-0393",
+            "ticketType": "NEW_ALLOCATION",
+            "step": 2,
+            "status": "APPROVED"
+          },
+          {
+            "publicId": "0fdff240-42d4-4541-98de-e3809561ce4c",
+            "ticketNumber": "NA-0394",
+            "ticketType": "NEW_ALLOCATION",
+            "step": 2,
+            "status": "APPROVED"
+          }
+        ]
+      }
+    }
+  },
+  "cancel-kunal-shadow": {
+    "status": 409,
+    "body": {
+      "code": "SYS_004",
+      "message": "This allocation already has a de-allocation scheduled — cancel it before ending or replacing the assignment again"
+    }
+  }
+}

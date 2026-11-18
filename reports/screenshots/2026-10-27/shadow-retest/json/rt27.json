@@ -1,0 +1,123 @@
+{
+  "A-create": {
+    "status": 201,
+    "body": {
+      "code": "ALLOCATION_TICKET_006",
+      "message": "New allocation ticket(s) created successfully",
+      "data": [
+        {
+          "publicId": "9701a636-cd76-4f9a-9724-edcc30feaeb3",
+          "ticketNumber": "NA-0460",
+          "status": "OPEN"
+        }
+      ]
+    }
+  },
+  "A": {
+    "id": "9701a636-cd76-4f9a-9724-edcc30feaeb3",
+    "n": "NA-0460"
+  },
+  "A-prep-send": {
+    "status": 200,
+    "body": {
+      "code": "SUCCESS",
+      "message": "Allocation ticket updated successfully",
+      "data": {
+        "publicId": "9701a636-cd76-4f9a-9724-edcc30feaeb3",
+        "ticketNumber": "NA-0460",
+        "status": "AWAITING_CONFIRMATION",
+        "warnings": [],
+        "employeeAvailability": [
+          {
+            "employeePublicId": "a47311de-ba03-4389-a356-e45b6651082d",
+            "availabilityPercentage": 100,
+            "isAvailable": true,
+            "allocationCapPercentage": 100,
+            "consumedPercentage": 0,
+            "remainingPercentage": 100,
+            "overlappingAllocations": [],
+            "reasons": []
+          }
+        ]
+      }
+    }
+  },
+  "A-tm-approve": {
+    "status": 409,
+    "body": {
+      "code": "ALLOCATION_TICKET_192",
+      "message": "The selected Shadow For developer is not a main developer on this project from the start date — promote or allocate them first"
+    }
+  },
+  "A-pmo-bypass": {
+    "status": 409,
+    "body": {
+      "code": "ALLOCATION_TICKET_192",
+      "message": "The selected Shadow For developer is not a main developer on this project from the start date — promote or allocate them first"
+    }
+  },
+  "B-create": {
+    "status": 400,
+    "body": {
+      "code": "SYS_004",
+      "message": "The selected Shadow For developer is not currently assigned to this project"
+    }
+  },
+  "P-create": {
+    "status": 201,
+    "body": {
+      "code": "ALLOCATION_TICKET_006",
+      "message": "New allocation ticket(s) created successfully",
+      "data": [
+        {
+          "publicId": "000917fd-a692-4874-8595-fb5b1d5ea8e1",
+          "ticketNumber": "NA-0461",
+          "status": "OPEN"
+        }
+      ]
+    }
+  },
+  "P": {
+    "id": "000917fd-a692-4874-8595-fb5b1d5ea8e1",
+    "n": "NA-0461"
+  },
+  "P-prep-send": {
+    "status": 200,
+    "body": {
+      "code": "SUCCESS",
+      "message": "Allocation ticket updated successfully",
+      "data": {
+        "publicId": "000917fd-a692-4874-8595-fb5b1d5ea8e1",
+        "ticketNumber": "NA-0461",
+        "status": "AWAITING_CONFIRMATION",
+        "warnings": [
+          "Urvashi Saxena is already shortlisted on active ticket NA-0460"
+        ],
+        "employeeAvailability": [
+          {
+            "employeePublicId": "a47311de-ba03-4389-a356-e45b6651082d",
+            "availabilityPercentage": 100,
+            "isAvailable": true,
+            "allocationCapPercentage": 100,
+            "consumedPercentage": 0,
+            "remainingPercentage": 100,
+            "overlappingAllocations": [],
+            "reasons": []
+          }
+        ]
+      }
+    }
+  },
+  "P-tm-approve": {
+    "status": 200,
+    "body": {
+      "code": "SUCCESS",
+      "message": "Ticket approved",
+      "data": {
+        "publicId": "000917fd-a692-4874-8595-fb5b1d5ea8e1",
+        "ticketNumber": "NA-0461",
+        "status": "APPROVED"
+      }
+    }
+  }
+}

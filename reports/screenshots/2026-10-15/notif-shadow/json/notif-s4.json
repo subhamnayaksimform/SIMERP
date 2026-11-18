@@ -1,0 +1,134 @@
+{
+  "T0": "2026-10-15T10:18:55.000Z",
+  "res": {
+    "urvashi.kamath": {
+      "email": "urvashi.kamath@simformsolutions.com",
+      "count": 1,
+      "items": [
+        {
+          "id": "70b5103c-28ae-42bb-be26-23989176101f",
+          "eventType": "notification.allocation_ticket.developer_deallocated",
+          "title": "Allocation Ended: XCrypt | Blockchain Wallet",
+          "body": "Your allocation to XCrypt | Blockchain Wallet has ended, effective 2026-10-15.",
+          "createdAt": "2026-10-15T10:18:56.930Z",
+          "isRead": false,
+          "ctx": {
+            "ticketPublicId": "1a8695f1-cc9d-421e-8332-fca76079532d"
+          }
+        }
+      ]
+    },
+    "sagar.khanpara": {
+      "email": "sagar.khanpara@simformsolutions.com",
+      "count": 1,
+      "items": [
+        {
+          "id": "b66c2543-3437-4e28-aee8-c101826de8a0",
+          "eventType": "notification.allocation_ticket.developer_rm_deallocated",
+          "title": "Team Member Deallocated: Urvashi Kamath",
+          "body": "Urvashi Kamath has been deallocated from XCrypt | Blockchain Wallet, effective 2026-10-15.",
+          "createdAt": "2026-10-15T10:18:56.981Z",
+          "isRead": false,
+          "ctx": {
+            "ticketPublicId": "1a8695f1-cc9d-421e-8332-fca76079532d"
+          }
+        }
+      ]
+    },
+    "rajesh.kumar": {
+      "email": "rajesh.kumar@simformsolutions.com",
+      "count": 1,
+      "items": [
+        {
+          "id": "16e820cf-a1e6-4c93-9f48-6f7b2a8d26ee",
+          "eventType": "notification.allocation_ticket.developer_rm_deallocated",
+          "title": "Team Member Deallocated: Urvashi Kamath",
+          "body": "Urvashi Kamath has been deallocated from XCrypt | Blockchain Wallet, effective 2026-10-15.",
+          "createdAt": "2026-10-15T10:18:56.981Z",
+          "isRead": false,
+          "ctx": {
+            "ticketPublicId": "1a8695f1-cc9d-421e-8332-fca76079532d"
+          }
+        }
+      ]
+    },
+    "david.lais": {
+      "email": "david.lais@simformsolutions.com",
+      "count": 1,
+      "items": [
+        {
+          "id": "ae8e5e60-a178-4a60-89ce-ed6f581f21b6",
+          "eventType": "notification.allocation_ticket.developer_rm_deallocated",
+          "title": "Team Member Deallocated: Urvashi Kamath",
+          "body": "Urvashi Kamath has been deallocated from XCrypt | Blockchain Wallet, effective 2026-10-15.",
+          "createdAt": "2026-10-15T10:18:56.981Z",
+          "isRead": false,
+          "ctx": {
+            "ticketPublicId": "1a8695f1-cc9d-421e-8332-fca76079532d"
+          }
+        }
+      ]
+    },
+    "cto": {
+      "email": "cto@simformsolutions.com",
+      "count": 1,
+      "items": [
+        {
+          "id": "e361144e-c428-443d-ae3f-481dc7a881c3",
+          "eventType": "notification.allocation_ticket.developer_rm_deallocated",
+          "title": "Team Member Deallocated: Urvashi Kamath",
+          "body": "Urvashi Kamath has been deallocated from XCrypt | Blockchain Wallet, effective 2026-10-15.",
+          "createdAt": "2026-10-15T10:18:56.981Z",
+          "isRead": false,
+          "ctx": {
+            "ticketPublicId": "1a8695f1-cc9d-421e-8332-fca76079532d"
+          }
+        }
+      ]
+    },
+    "abhishek.hingorani": {
+      "email": "abhishek.hingorani@simformsolutions.com",
+      "count": 1,
+      "items": [
+        {
+          "id": "38ae04b2-7dec-4fc5-9e6e-1746dbdcd741",
+          "eventType": "notification.allocation_ticket.developer_rm_deallocated",
+          "title": "Team Member Deallocated: Urvashi Kamath",
+          "body": "Urvashi Kamath has been deallocated from XCrypt | Blockchain Wallet, effective 2026-10-15.",
+          "createdAt": "2026-10-15T10:18:56.981Z",
+          "isRead": false,
+          "ctx": {
+            "ticketPublicId": "1a8695f1-cc9d-421e-8332-fca76079532d"
+          }
+        }
+      ]
+    },
+    "keyur.hegde": {
+      "email": "keyur.hegde@simformsolutions.com",
+      "count": 1,
+      "items": [
+        {
+          "id": "ac396f86-bae0-4620-b2dd-1445bd741270",
+          "eventType": "notification.allocation_ticket.pm_deallocated",
+          "title": "Assignment Ended: XCrypt | Blockchain Wallet",
+          "body": "Urvashi Kamath has been successfully deallocated from XCrypt | Blockchain Wallet.",
+          "createdAt": "2026-10-15T10:18:56.937Z",
+          "isRead": false,
+          "ctx": {
+            "ticketPublicId": "1a8695f1-cc9d-421e-8332-fca76079532d"
+          }
+        }
+      ]
+    },
+    "tarun.sharma": {
+      "email": "tarun.sharma@simformsolutions.com",
+      "count": 0,
+      "items": []
+    },
+    "priya.sharma": {
+      "email": "priya.sharma@simformsolutions.com",
+      "count": 0,
+      "items": []
+    }
+  }
+}

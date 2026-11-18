@@ -1,0 +1,56 @@
+[
+ {
+  "area": "1.ui",
+  "name": "dropdown lists preselected employees with their badges",
+  "pass": false,
+  "detail": "[\"Tanvi Parekh\",\"Uday Dave\",\"Aarav Dutta | aarav.dutta@simformsolutions.com | QA\",\"Aayush Kapoor | aayush.kapoor@simformsolutions.com | QA\",\"Aditya Mehta | aditya.mehta@simformsolutions.com | ANDROID\",\"Aditya Patel | aditya.patel@simformsolutions.com | QA\"]"
+ },
+ {
+  "area": "1.ui",
+  "name": "contractor with a department (Uday Dave) shows department badge, not \"Contractor\"",
+  "pass": false,
+  "detail": "[\"Uday Dave\"]"
+ },
+ {
+  "area": "1.ui",
+  "name": "dropdown offers employees from both departments",
+  "pass": true,
+  "detail": "40"
+ },
+ {
+  "area": "1.ui",
+  "name": "no \"Contractor\" badge rows (dev has no dept-less contractors)",
+  "pass": true,
+  "detail": "[\"Deepak Contractor | deepak.contractor@simformsolutions.com | QA\"]"
+ },
+ {
+  "area": "1.ui",
+  "name": "after removing ANDROID: department field shows only QA",
+  "pass": true,
+  "detail": "QA"
+ },
+ {
+  "area": "1.ui",
+  "name": "after removing ANDROID (dropdown never opened): Feni Kotak dropped from Preferred Employee field",
+  "pass": true,
+  "detail": "Tanvi Parekh\nUday Dave"
+ },
+ {
+  "area": "1.ui",
+  "name": "saved: departments now QA only",
+  "pass": true,
+  "detail": "[\"QA\"]"
+ },
+ {
+  "area": "1.ui",
+  "name": "saved: ANDROID employee removed from Preferred Employees; QA employee + contractor stay",
+  "pass": true,
+  "detail": "[\"Tanvi Parekh\",\"Uday Dave\"]"
+ },
+ {
+  "area": "1.ui",
+  "name": "reopen edit: remaining picks still selected",
+  "pass": true,
+  "detail": "Tanvi Parekh\nUday Dave"
+ }
+]

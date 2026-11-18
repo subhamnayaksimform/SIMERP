@@ -1,0 +1,716 @@
+{
+  "label": "P1-after",
+  "takenAt": "2026-10-19T11:34:18.453Z",
+  "users": {
+    "falgun.solanki": {
+      "status": 200,
+      "total": 1,
+      "latestAt": "2026-10-19T11:34:14.329Z",
+      "today": [
+        {
+          "id": "61b42d25-6d18-46ff-9b10-8d7d16b51bcf",
+          "eventType": "notification.allocation.direct_employee_assigned",
+          "title": "You've Been allocated to XCrypt | Blockchain Wallet",
+          "body": "You've been allocated to XCrypt | Blockchain Wallet starting 2026-10-21.",
+          "createdAt": "2026-10-19T11:34:14.329Z",
+          "isRead": false,
+          "ctx": {
+            "assignmentPublicId": "a84ca3ed-1b69-46a1-8831-13607ef97ef1"
+          }
+        }
+      ]
+    },
+    "bhumi.chauhan": {
+      "status": 200,
+      "total": 100,
+      "latestAt": "2026-10-19T11:34:14.363Z",
+      "today": [
+        {
+          "id": "72a0df92-d555-4093-9e3b-e84fb894a569",
+          "eventType": "notification.allocation.direct_employee_rm_assigned",
+          "title": "Team Member Assigned: Falgun Solanki",
+          "body": "Falgun Solanki has been assigned to XCrypt | Blockchain Wallet starting 2026-10-21.",
+          "createdAt": "2026-10-19T11:34:14.363Z",
+          "isRead": false,
+          "ctx": {
+            "assignmentPublicId": "a84ca3ed-1b69-46a1-8831-13607ef97ef1"
+          }
+        },
+        {
+          "id": "0bd850f0-e3a4-49ca-bc8d-a9631f4ee030",
+          "eventType": "notification.allocation_ticket.allocation_cancelled",
+          "title": "Allocation Cancelled: ConfigHub | Configuration Management",
+          "body": "The upcoming allocation for Iti Chatterjee to ConfigHub | Configuration Management, due to start 2026-10-21, has been cancelled.",
+          "createdAt": "2026-10-19T11:31:25.167Z",
+          "isRead": false,
+          "ctx": {
+            "ticketPublicId": "c57310e3-4873-4c8d-a8ca-7196eb43c838"
+          }
+        },
+        {
+          "id": "ffbcf57d-dc30-493a-ae83-4d7530d7be09",
+          "eventType": "notification.allocation_ticket.created",
+          "title": "New Ticket: DA-0107",
+          "body": "Jignesh Raval created a new DEALLOCATE ALLOCATION ticket DA-0107 for project ConfigHub | Configuration Management.",
+          "createdAt": "2026-10-19T11:30:00.611Z",
+          "isRead": false,
+          "ctx": {
+            "ticketPublicId": "c57310e3-4873-4c8d-a8ca-7196eb43c838"
+          }
+        },
+        {
+          "id": "ea280145-e230-46e4-bb9d-f80b3a7477ad",
+          "eventType": "notification.allocation_ticket.created",
+          "title": "New Ticket: NA-0370",
+          "body": "Jignesh Raval created a new NEW ALLOCATION ticket NA-0370 for project ConfigHub | Configuration Management.",
+          "createdAt": "2026-10-19T11:26:59.504Z",
+          "isRead": false,
+          "ctx": {
+            "ticketPublicId": "0bf76174-342a-4cd6-9942-bf36975b518e"
+          }
+        },
+        {
+          "id": "797d8fbc-39eb-4724-80cd-33a18a50d915",
+          "eventType": "notification.allocation_ticket.created",
+          "title": "New Ticket: DA-0106",
+          "body": "Priya Chopra created a new DEALLOCATE ALLOCATION ticket DA-0106 for project HyperScale | Scalability Engine.",
+          "createdAt": "2026-10-19T11:23:10.411Z",
+          "isRead": false,
+          "ctx": {
+            "ticketPublicId": "552716f0-d274-443a-97fe-4cfa86f97637"
+          }
+        },
+        {
+          "id": "1ec09963-52c9-474a-a233-29587bb0dbbc",
+          "eventType": "notification.allocation_ticket.created",
+          "title": "New Ticket: UA-0133",
+          "body": "Priya Chopra created a new UPDATE ALLOCATION ticket UA-0133 for project HyperScale | Scalability Engine.",
+          "createdAt": "2026-10-19T11:20:23.514Z",
+          "isRead": false,
+          "ctx": {
+            "ticketPublicId": "f057a3cb-fd04-43b1-b372-8fa3fd2bedc4"
+          }
+        },
+        {
+          "id": "77887ae6-0e3b-4899-a111-fd59eff3a8a8",
+          "eventType": "notification.allocation_ticket.created",
+          "title": "New Ticket: UA-0132",
+          "body": "Priya Chopra created a new UPDATE ALLOCATION ticket UA-0132 for project HyperScale | Scalability Engine.",
+          "createdAt": "2026-10-19T11:17:30.510Z",
+          "isRead": false,
+          "ctx": {
+            "ticketPublicId": "fe5dca51-8d29-43e5-927c-a0fb2fa660c0"
+          }
+        },
+        {
+          "id": "6f6d52b9-5ca0-49ac-82f4-dedcfad6355f",
+          "eventType": "notification.allocation_ticket.closed",
+          "title": "Ticket Closed: DA-0102",
+          "body": "DA-0102 for project XCrypt | Blockchain Wallet has been closed.",
+          "createdAt": "2026-10-19T10:57:56.069Z",
+          "isRead": false,
+          "ctx": {
+            "ticketPublicId": "3c5e2ab9-a5cf-4401-afc1-1e19b5540b6e"
+          }
+        },
+        {
+          "id": "7f87d352-8737-42b5-9bf8-410b8cf9d360",
+          "eventType": "notification.allocation_ticket.closed",
+          "title": "Ticket Closed: NA-0366",
+          "body": "NA-0366 for project XCrypt | Blockchain Wallet has been closed.",
+          "createdAt": "2026-10-19T10:56:54.904Z",
+          "isRead": false,
+          "ctx": {
+            "ticketPublicId": "2df1af60-e529-48de-9e1b-50d259696603"
+          }
+        },
+        {
+          "id": "674de4c1-5faa-45d2-8514-c9ee0acf3f0f",
+          "eventType": "notification.allocation_ticket.closed",
+          "title": "Ticket Closed: DA-0101",
+          "body": "DA-0101 for project XCrypt | Blockchain Wallet has been closed.",
+          "createdAt": "2026-10-19T10:56:54.863Z",
+          "isRead": false,
+          "ctx": {
+            "ticketPublicId": "3e78994b-357d-4bbd-8485-c0192ad940dd"
+          }
+        },
+        {
+          "id": "0dce2982-d053-4fba-b243-22eeb16e7e5d",
+          "eventType": "notification.allocation_ticket.closed",
+          "title": "Ticket Closed: NA-0365",
+          "body": "NA-0365 for project XCrypt | Blockchain Wallet has been closed.",
+          "createdAt": "2026-10-19T10:55:09.871Z",
+          "isRead": false,
+          "ctx": {
+            "ticketPublicId": "9c022c4a-9928-4e31-b196-fb89a80c7123"
+          }
+        },
+        {
+          "id": "23a8cb08-f115-47c6-ac3d-bf8de66d2151",
+          "eventType": "notification.allocation_ticket.created",
+          "title": "New Ticket: DA-0102",
+          "body": "Tarun Sharma created a new DEALLOCATE ALLOCATION ticket DA-0102 for project XCrypt | Blockchain Wallet.",
+          "createdAt": "2026-10-19T10:51:50.574Z",
+          "isRead": false,
+          "ctx": {
+            "ticketPublicId": "3c5e2ab9-a5cf-4401-afc1-1e19b5540b6e"
+          }
+        },
+        {
+          "id": "fd2cb37d-daad-4e18-b9b7-05d162d9a047",
+          "eventType": "notification.allocation_ticket.created",
+          "title": "New Ticket: NA-0366",
+          "body": "Tarun Sharma created a new NEW ALLOCATION ticket NA-0366 for project XCrypt | Blockchain Wallet.",
+          "createdAt": "2026-10-19T10:51:50.440Z",
+          "isRead": false,
+          "ctx": {
+            "ticketPublicId": "2df1af60-e529-48de-9e1b-50d259696603"
+          }
+        },
+        {
+          "id": "d8a5606a-1c50-4960-a22f-41f3dec72b7e",
+          "eventType": "notification.allocation_ticket.created",
+          "title": "New Ticket: NA-0365",
+          "body": "Tarun Sharma created a new NEW ALLOCATION ticket NA-0365 for project XCrypt | Blockchain Wallet.",
+          "createdAt": "2026-10-19T10:51:50.427Z",
+          "isRead": false,
+          "ctx": {
+            "ticketPublicId": "9c022c4a-9928-4e31-b196-fb89a80c7123"
+          }
+        },
+        {
+          "id": "4bf92509-1de4-40be-9fdd-71abd82e76ab",
+          "eventType": "notification.allocation_ticket.created",
+          "title": "New Ticket: DA-0101",
+          "body": "Tarun Sharma created a new DEALLOCATE ALLOCATION ticket DA-0101 for project XCrypt | Blockchain Wallet.",
+          "createdAt": "2026-10-19T10:51:50.415Z",
+          "isRead": false,
+          "ctx": {
+            "ticketPublicId": "3e78994b-357d-4bbd-8485-c0192ad940dd"
+          }
+        }
+      ]
+    },
+    "Palak.Saxena": {
+      "status": 200,
+      "total": 100,
+      "latestAt": "2026-10-19T11:34:14.363Z",
+      "today": [
+        {
+          "id": "eec0fa3b-9da7-4734-b583-401200f70726",
+          "eventType": "notification.allocation.direct_employee_rm_assigned",
+          "title": "Team Member Assigned: Falgun Solanki",
+          "body": "Falgun Solanki has been assigned to XCrypt | Blockchain Wallet starting 2026-10-21.",
+          "createdAt": "2026-10-19T11:34:14.363Z",
+          "isRead": false,
+          "ctx": {
+            "assignmentPublicId": "a84ca3ed-1b69-46a1-8831-13607ef97ef1"
+          }
+        },
+        {
+          "id": "bcfaac3a-ce26-46a7-a0e9-757dc57a79b3",
+          "eventType": "notification.allocation_ticket.allocation_cancelled",
+          "title": "Allocation Cancelled: ConfigHub | Configuration Management",
+          "body": "The upcoming allocation for Iti Chatterjee to ConfigHub | Configuration Management, due to start 2026-10-21, has been cancelled.",
+          "createdAt": "2026-10-19T11:31:25.167Z",
+          "isRead": false,
+          "ctx": {
+            "ticketPublicId": "c57310e3-4873-4c8d-a8ca-7196eb43c838"
+          }
+        },
+        {
+          "id": "32246039-394f-4a45-9cd9-3e7584b5cfa3",
+          "eventType": "notification.allocation_ticket.created",
+          "title": "New Ticket: DA-0107",
+          "body": "Jignesh Raval created a new DEALLOCATE ALLOCATION ticket DA-0107 for project ConfigHub | Configuration Management.",
+          "createdAt": "2026-10-19T11:30:00.611Z",
+          "isRead": false,
+          "ctx": {
+            "ticketPublicId": "c57310e3-4873-4c8d-a8ca-7196eb43c838"
+          }
+        },
+        {
+          "id": "b43e733a-07e2-4e46-a5f3-fb59cde2d536",
+          "eventType": "notification.allocation_ticket.created",
+          "title": "New Ticket: NA-0370",
+          "body": "Jignesh Raval created a new NEW ALLOCATION ticket NA-0370 for project ConfigHub | Configuration Management.",
+          "createdAt": "2026-10-19T11:26:59.504Z",
+          "isRead": false,
+          "ctx": {
+            "ticketPublicId": "0bf76174-342a-4cd6-9942-bf36975b518e"
+          }
+        },
+        {
+          "id": "7060b137-397d-41c1-a301-cb01e191bcb2",
+          "eventType": "notification.allocation_ticket.created",
+          "title": "New Ticket: DA-0106",
+          "body": "Priya Chopra created a new DEALLOCATE ALLOCATION ticket DA-0106 for project HyperScale | Scalability Engine.",
+          "createdAt": "2026-10-19T11:23:10.411Z",
+          "isRead": false,
+          "ctx": {
+            "ticketPublicId": "552716f0-d274-443a-97fe-4cfa86f97637"
+          }
+        },
+        {
+          "id": "ba4ac2e2-da81-43cb-ac52-9a7311f188f8",
+          "eventType": "notification.allocation_ticket.created",
+          "title": "New Ticket: UA-0133",
+          "body": "Priya Chopra created a new UPDATE ALLOCATION ticket UA-0133 for project HyperScale | Scalability Engine.",
+          "createdAt": "2026-10-19T11:20:23.514Z",
+          "isRead": false,
+          "ctx": {
+            "ticketPublicId": "f057a3cb-fd04-43b1-b372-8fa3fd2bedc4"
+          }
+        },
+        {
+          "id": "ff0e2727-5a23-4e42-94b2-adfff9552ce6",
+          "eventType": "notification.allocation_ticket.created",
+          "title": "New Ticket: UA-0132",
+          "body": "Priya Chopra created a new UPDATE ALLOCATION ticket UA-0132 for project HyperScale | Scalability Engine.",
+          "createdAt": "2026-10-19T11:17:30.510Z",
+          "isRead": false,
+          "ctx": {
+            "ticketPublicId": "fe5dca51-8d29-43e5-927c-a0fb2fa660c0"
+          }
+        },
+        {
+          "id": "9cb4cd67-d875-473f-a8f2-727fb8f867d1",
+          "eventType": "notification.allocation_ticket.closed",
+          "title": "Ticket Closed: DA-0102",
+          "body": "DA-0102 for project XCrypt | Blockchain Wallet has been closed.",
+          "createdAt": "2026-10-19T10:57:56.069Z",
+          "isRead": false,
+          "ctx": {
+            "ticketPublicId": "3c5e2ab9-a5cf-4401-afc1-1e19b5540b6e"
+          }
+        },
+        {
+          "id": "c122d52a-fbaa-4bc4-95d7-734d75db1582",
+          "eventType": "notification.allocation_ticket.closed",
+          "title": "Ticket Closed: NA-0366",
+          "body": "NA-0366 for project XCrypt | Blockchain Wallet has been closed.",
+          "createdAt": "2026-10-19T10:56:54.904Z",
+          "isRead": false,
+          "ctx": {
+            "ticketPublicId": "2df1af60-e529-48de-9e1b-50d259696603"
+          }
+        },
+        {
+          "id": "ee9146b5-ecfb-430b-ac47-6f5975821e57",
+          "eventType": "notification.allocation_ticket.closed",
+          "title": "Ticket Closed: DA-0101",
+          "body": "DA-0101 for project XCrypt | Blockchain Wallet has been closed.",
+          "createdAt": "2026-10-19T10:56:54.863Z",
+          "isRead": false,
+          "ctx": {
+            "ticketPublicId": "3e78994b-357d-4bbd-8485-c0192ad940dd"
+          }
+        },
+        {
+          "id": "b6e8d8d5-e28d-49b8-9ebf-2ef49853c627",
+          "eventType": "notification.allocation_ticket.closed",
+          "title": "Ticket Closed: NA-0365",
+          "body": "NA-0365 for project XCrypt | Blockchain Wallet has been closed.",
+          "createdAt": "2026-10-19T10:55:09.871Z",
+          "isRead": false,
+          "ctx": {
+            "ticketPublicId": "9c022c4a-9928-4e31-b196-fb89a80c7123"
+          }
+        },
+        {
+          "id": "cbd52330-25d4-4489-af7e-f4d829fe6a18",
+          "eventType": "notification.allocation_ticket.created",
+          "title": "New Ticket: DA-0102",
+          "body": "Tarun Sharma created a new DEALLOCATE ALLOCATION ticket DA-0102 for project XCrypt | Blockchain Wallet.",
+          "createdAt": "2026-10-19T10:51:50.574Z",
+          "isRead": false,
+          "ctx": {
+            "ticketPublicId": "3c5e2ab9-a5cf-4401-afc1-1e19b5540b6e"
+          }
+        },
+        {
+          "id": "4c6bb3c3-49dc-48b8-a205-68cc80a112f4",
+          "eventType": "notification.allocation_ticket.created",
+          "title": "New Ticket: NA-0366",
+          "body": "Tarun Sharma created a new NEW ALLOCATION ticket NA-0366 for project XCrypt | Blockchain Wallet.",
+          "createdAt": "2026-10-19T10:51:50.440Z",
+          "isRead": false,
+          "ctx": {
+            "ticketPublicId": "2df1af60-e529-48de-9e1b-50d259696603"
+          }
+        },
+        {
+          "id": "4f649b93-6a62-482b-9201-59d3b2a5c4cf",
+          "eventType": "notification.allocation_ticket.created",
+          "title": "New Ticket: NA-0365",
+          "body": "Tarun Sharma created a new NEW ALLOCATION ticket NA-0365 for project XCrypt | Blockchain Wallet.",
+          "createdAt": "2026-10-19T10:51:50.427Z",
+          "isRead": false,
+          "ctx": {
+            "ticketPublicId": "9c022c4a-9928-4e31-b196-fb89a80c7123"
+          }
+        },
+        {
+          "id": "07c61fa7-4cc3-4e0d-8e57-7181adfb251e",
+          "eventType": "notification.allocation_ticket.created",
+          "title": "New Ticket: DA-0101",
+          "body": "Tarun Sharma created a new DEALLOCATE ALLOCATION ticket DA-0101 for project XCrypt | Blockchain Wallet.",
+          "createdAt": "2026-10-19T10:51:50.415Z",
+          "isRead": false,
+          "ctx": {
+            "ticketPublicId": "3e78994b-357d-4bbd-8485-c0192ad940dd"
+          }
+        }
+      ]
+    },
+    "neha.gupta": {
+      "status": 200,
+      "total": 10,
+      "latestAt": "2026-10-19T11:34:14.363Z",
+      "today": [
+        {
+          "id": "c5d81bf4-b12f-491d-ae4d-5344f196fc25",
+          "eventType": "notification.allocation.direct_employee_rm_assigned",
+          "title": "Team Member Assigned: Falgun Solanki",
+          "body": "Falgun Solanki has been assigned to XCrypt | Blockchain Wallet starting 2026-10-21.",
+          "createdAt": "2026-10-19T11:34:14.363Z",
+          "isRead": false,
+          "ctx": {
+            "assignmentPublicId": "a84ca3ed-1b69-46a1-8831-13607ef97ef1"
+          }
+        }
+      ]
+    },
+    "jinal.patel": {
+      "status": 200,
+      "total": 10,
+      "latestAt": "2026-10-19T11:34:14.364Z",
+      "today": [
+        {
+          "id": "8ec8f361-74d6-4176-abf0-e25db9309e2c",
+          "eventType": "notification.allocation.direct_employee_rm_assigned",
+          "title": "Team Member Assigned: Falgun Solanki",
+          "body": "Falgun Solanki has been assigned to XCrypt | Blockchain Wallet starting 2026-10-21.",
+          "createdAt": "2026-10-19T11:34:14.364Z",
+          "isRead": false,
+          "ctx": {
+            "assignmentPublicId": "a84ca3ed-1b69-46a1-8831-13607ef97ef1"
+          }
+        },
+        {
+          "id": "a342ea7c-6d01-453a-8fd1-c0dbfeba2eb0",
+          "eventType": "notification.allocation_ticket.allocation_cancelled",
+          "title": "Allocation Cancelled: ConfigHub | Configuration Management",
+          "body": "The upcoming allocation for Iti Chatterjee to ConfigHub | Configuration Management, due to start 2026-10-21, has been cancelled.",
+          "createdAt": "2026-10-19T11:31:25.167Z",
+          "isRead": false,
+          "ctx": {
+            "ticketPublicId": "c57310e3-4873-4c8d-a8ca-7196eb43c838"
+          }
+        },
+        {
+          "id": "ac02c04e-b5b9-4dd3-98ec-aa092fd2fede",
+          "eventType": "notification.allocation_ticket.developer_rm_assigned",
+          "title": "Team Member Assigned: Iti Chatterjee",
+          "body": "Iti Chatterjee has been assigned to ConfigHub | Configuration Management starting 2026-10-21.",
+          "createdAt": "2026-10-19T11:28:19.006Z",
+          "isRead": false,
+          "ctx": {
+            "ticketPublicId": "0bf76174-342a-4cd6-9942-bf36975b518e"
+          }
+        },
+        {
+          "id": "7716384c-88d1-414c-8921-6214d1e4f7ee",
+          "eventType": "notification.allocation_ticket.developer_rm_deallocated",
+          "title": "Team Member Deallocated: Gaurav Dutta",
+          "body": "Gaurav Dutta has been deallocated from HyperScale | Scalability Engine, effective 2026-10-19.",
+          "createdAt": "2026-10-19T11:24:32.220Z",
+          "isRead": false,
+          "ctx": {
+            "ticketPublicId": "552716f0-d274-443a-97fe-4cfa86f97637"
+          }
+        },
+        {
+          "id": "630e0011-ab93-44ba-8ba4-289f08143302",
+          "eventType": "notification.allocation_ticket.developer_rm_updated",
+          "title": "Assignment Updated: Gaurav Dutta",
+          "body": "Gaurav Dutta's allocation for HyperScale | Scalability Engine has been updated.",
+          "createdAt": "2026-10-19T11:21:50.862Z",
+          "isRead": false,
+          "ctx": {
+            "ticketPublicId": "f057a3cb-fd04-43b1-b372-8fa3fd2bedc4"
+          }
+        },
+        {
+          "id": "1261c8f9-1f2f-43af-bc93-3255aecf8d50",
+          "eventType": "notification.allocation_ticket.developer_rm_updated",
+          "title": "Assignment Updated: Gaurav Dutta",
+          "body": "Gaurav Dutta's allocation for HyperScale | Scalability Engine has been updated.",
+          "createdAt": "2026-10-19T11:19:00.262Z",
+          "isRead": false,
+          "ctx": {
+            "ticketPublicId": "fe5dca51-8d29-43e5-927c-a0fb2fa660c0"
+          }
+        },
+        {
+          "id": "11e7c391-f4bd-4da5-a2c5-2e6025db096b",
+          "eventType": "notification.allocation_ticket.developer_rm_updated",
+          "title": "Assignment Updated: Gaurav Dutta",
+          "body": "Gaurav Dutta's allocation for HyperScale | Scalability Engine has been updated.",
+          "createdAt": "2026-10-19T11:15:45.267Z",
+          "isRead": false,
+          "ctx": {
+            "ticketPublicId": "35608d6d-6d0d-43a4-b03e-67ae867c2343"
+          }
+        },
+        {
+          "id": "a70e0a7e-5ff4-4852-843c-5051f0c54a45",
+          "eventType": "notification.allocation.direct_employee_rm_assigned",
+          "title": "Team Member Assigned: Gaurav Dutta",
+          "body": "Gaurav Dutta has been assigned to HyperScale | Scalability Engine starting 2026-10-19.",
+          "createdAt": "2026-10-19T11:13:44.096Z",
+          "isRead": false,
+          "ctx": {
+            "assignmentPublicId": "c3b65d73-e16b-4e34-9cfd-9e15b6033826"
+          }
+        }
+      ]
+    },
+    "cto": {
+      "status": 200,
+      "total": 58,
+      "latestAt": "2026-10-19T11:34:14.364Z",
+      "today": [
+        {
+          "id": "66c288e1-f789-4ee7-baf4-c1fc63dd41ee",
+          "eventType": "notification.allocation.direct_employee_rm_assigned",
+          "title": "Direct Allocation: XCrypt | Blockchain Wallet",
+          "body": "Palak Saxena directly allocated Falgun Solanki to XCrypt | Blockchain Wallet, bypassing the ticket workflow.",
+          "createdAt": "2026-10-19T11:34:14.364Z",
+          "isRead": false,
+          "ctx": {
+            "assignmentPublicId": "a84ca3ed-1b69-46a1-8831-13607ef97ef1"
+          }
+        },
+        {
+          "id": "38507bc0-8c61-4deb-baba-4cc20939596e",
+          "eventType": "notification.allocation_ticket.allocation_cancelled",
+          "title": "Allocation Cancelled: ConfigHub | Configuration Management",
+          "body": "The upcoming allocation for Iti Chatterjee to ConfigHub | Configuration Management, due to start 2026-10-21, has been cancelled.",
+          "createdAt": "2026-10-19T11:31:25.167Z",
+          "isRead": false,
+          "ctx": {
+            "ticketPublicId": "c57310e3-4873-4c8d-a8ca-7196eb43c838"
+          }
+        },
+        {
+          "id": "7ffdbbf5-d7fa-4f2f-980a-17b2d79c2bf1",
+          "eventType": "notification.allocation_ticket.developer_rm_assigned",
+          "title": "Approval Bypassed: NA-0370",
+          "body": "PMO bypassed your department's approval for NA-0370.",
+          "createdAt": "2026-10-19T11:28:19.006Z",
+          "isRead": false,
+          "ctx": {
+            "ticketPublicId": "0bf76174-342a-4cd6-9942-bf36975b518e"
+          }
+        },
+        {
+          "id": "c1898713-f907-4b46-9198-92e22eee21c3",
+          "eventType": "notification.allocation_ticket.developer_rm_deallocated",
+          "title": "Team Member Deallocated: Gaurav Dutta",
+          "body": "Gaurav Dutta has been deallocated from HyperScale | Scalability Engine, effective 2026-10-19.",
+          "createdAt": "2026-10-19T11:24:32.220Z",
+          "isRead": false,
+          "ctx": {
+            "ticketPublicId": "552716f0-d274-443a-97fe-4cfa86f97637"
+          }
+        },
+        {
+          "id": "0a72b489-27f6-4e41-aa82-d4bf2030ea68",
+          "eventType": "notification.allocation_ticket.developer_rm_updated",
+          "title": "Assignment Updated: Gaurav Dutta",
+          "body": "Gaurav Dutta's allocation for HyperScale | Scalability Engine has been updated.",
+          "createdAt": "2026-10-19T11:21:50.862Z",
+          "isRead": false,
+          "ctx": {
+            "ticketPublicId": "f057a3cb-fd04-43b1-b372-8fa3fd2bedc4"
+          }
+        },
+        {
+          "id": "6ef7e5a8-a804-465c-8622-e227b9cc9c8f",
+          "eventType": "notification.allocation_ticket.developer_rm_updated",
+          "title": "Approval Bypassed: UA-0132",
+          "body": "PMO bypassed your department's approval for UA-0132.",
+          "createdAt": "2026-10-19T11:19:00.262Z",
+          "isRead": false,
+          "ctx": {
+            "ticketPublicId": "fe5dca51-8d29-43e5-927c-a0fb2fa660c0"
+          }
+        },
+        {
+          "id": "014dcc0e-4bbc-4efa-a905-6ed3bf2b379c",
+          "eventType": "notification.allocation_ticket.developer_rm_updated",
+          "title": "Assignment Updated: Gaurav Dutta",
+          "body": "Gaurav Dutta's allocation for HyperScale | Scalability Engine has been updated.",
+          "createdAt": "2026-10-19T11:15:45.267Z",
+          "isRead": false,
+          "ctx": {
+            "ticketPublicId": "35608d6d-6d0d-43a4-b03e-67ae867c2343"
+          }
+        },
+        {
+          "id": "ea98748a-a384-40f6-94f5-73b9875bcb3e",
+          "eventType": "notification.allocation.direct_employee_rm_assigned",
+          "title": "Direct Allocation: HyperScale | Scalability Engine",
+          "body": "Bhumi Chauhan directly allocated Gaurav Dutta to HyperScale | Scalability Engine, bypassing the ticket workflow.",
+          "createdAt": "2026-10-19T11:13:44.096Z",
+          "isRead": false,
+          "ctx": {
+            "assignmentPublicId": "c3b65d73-e16b-4e34-9cfd-9e15b6033826"
+          }
+        },
+        {
+          "id": "f914941d-f151-4951-97ee-0e58e5e427b2",
+          "eventType": "notification.allocation.direct_employee_rm_assigned",
+          "title": "Direct Allocation: ViewForge | BI Dashboard",
+          "body": "Bhumi Chauhan directly allocated Nimisha Bose to ViewForge | BI Dashboard, bypassing the ticket workflow.",
+          "createdAt": "2026-10-19T11:00:46.676Z",
+          "isRead": false,
+          "ctx": {
+            "assignmentPublicId": "6554552b-c10c-4e65-bab4-7df76f153147"
+          }
+        },
+        {
+          "id": "f11e8bd2-f3a0-40a6-92c5-011089176785",
+          "eventType": "notification.allocation_ticket.developer_rm_deallocated",
+          "title": "Team Member Deallocated: Ankita Das",
+          "body": "Ankita Das has been deallocated from ViewForge | BI Dashboard, effective 2026-10-18.",
+          "createdAt": "2026-10-19T11:00:46.284Z",
+          "isRead": false,
+          "ctx": {
+            "ticketPublicId": "47855181-ea54-41e7-a462-5d70a9527d9d"
+          }
+        },
+        {
+          "id": "4167a821-7ace-47b4-a850-6e7453a92855",
+          "eventType": "notification.allocation_ticket.developer_rm_deallocated",
+          "title": "Team Member Deallocated: Kunal Menon",
+          "body": "Kunal Menon has been deallocated from HyperScale | Scalability Engine, effective 2026-10-19.",
+          "createdAt": "2026-10-19T11:00:24.113Z",
+          "isRead": false,
+          "ctx": {
+            "ticketPublicId": "a4fffb39-876d-4a87-a28a-6b0e43d9750d"
+          }
+        },
+        {
+          "id": "61e86a68-341d-48b8-b318-91f47be28790",
+          "eventType": "notification.allocation.direct_employee_rm_assigned",
+          "title": "Direct Allocation: HyperScale | Scalability Engine",
+          "body": "Bhumi Chauhan directly allocated Kunal Menon to HyperScale | Scalability Engine, bypassing the ticket workflow.",
+          "createdAt": "2026-10-19T10:59:08.838Z",
+          "isRead": false,
+          "ctx": {
+            "assignmentPublicId": "89c7a281-488e-414f-a610-0c6bbbacaa10"
+          }
+        },
+        {
+          "id": "c440492e-5f0c-4c22-bebb-ceabdff7d4d0",
+          "eventType": "notification.allocation_ticket.developer_rm_deallocated",
+          "title": "Team Member Deallocated: Prakash Pillai",
+          "body": "Prakash Pillai has been deallocated from XCrypt | Blockchain Wallet, effective 2026-10-19.",
+          "createdAt": "2026-10-19T10:58:39.115Z",
+          "isRead": false,
+          "ctx": {
+            "ticketPublicId": "4b1711be-f239-449c-9e87-19c669cd5e69"
+          }
+        },
+        {
+          "id": "362dd1c2-98f7-4732-8d37-048e6cdf1b94",
+          "eventType": "notification.allocation_ticket.developer_selected",
+          "title": "Developer Selected: NA-0365",
+          "body": "Prakash Pillai has been selected for NA-0365 (project  XCrypt | Blockchain Wallet) and is awaiting your confirmation.",
+          "createdAt": "2026-10-19T10:54:19.729Z",
+          "isRead": false,
+          "ctx": {
+            "ticketPublicId": "9c022c4a-9928-4e31-b196-fb89a80c7123"
+          }
+        },
+        {
+          "id": "10d2dfc8-637c-4925-ad6a-117d8f4fb621",
+          "eventType": "notification.allocation_ticket.assigned_to_department",
+          "title": "New Ticket for Review: NA-0365",
+          "body": "NA-0365 (NEW ALLOCATION) for project XCrypt | Blockchain Wallet has been assigned to QA department and is awaiting your review.",
+          "createdAt": "2026-10-19T10:54:19.411Z",
+          "isRead": false,
+          "ctx": {
+            "ticketPublicId": "9c022c4a-9928-4e31-b196-fb89a80c7123"
+          }
+        },
+        {
+          "id": "10d6998e-26b5-42af-bd54-096cd4c334a6",
+          "eventType": "notification.allocation.direct_employee_rm_assigned",
+          "title": "Direct Allocation: XCrypt | Blockchain Wallet",
+          "body": "Bhumi Chauhan directly allocated Prakash Pillai to XCrypt | Blockchain Wallet, bypassing the ticket workflow.",
+          "createdAt": "2026-10-19T10:48:27.648Z",
+          "isRead": false,
+          "ctx": {
+            "assignmentPublicId": "4186a764-485d-4b1c-89c0-4d3e4604ef06"
+          }
+        }
+      ]
+    },
+    "ceo": {
+      "status": 200,
+      "total": 5,
+      "latestAt": "2026-09-29T10:16:24.152Z",
+      "today": []
+    },
+    "keyur.hegde": {
+      "status": 200,
+      "total": 6,
+      "latestAt": "2026-10-19T11:34:14.340Z",
+      "today": [
+        {
+          "id": "50f1fe98-20ea-40ce-9008-88493c3711dd",
+          "eventType": "notification.allocation.direct_pm_notified",
+          "title": "Allocation Confirmed: XCrypt | Blockchain Wallet",
+          "body": "Falgun Solanki has been allocated to XCrypt | Blockchain Wallet, effective 2026-10-21.",
+          "createdAt": "2026-10-19T11:34:14.340Z",
+          "isRead": false,
+          "ctx": {
+            "assignmentPublicId": "a84ca3ed-1b69-46a1-8831-13607ef97ef1"
+          }
+        },
+        {
+          "id": "420cbbb0-8a8d-41f8-9dba-de06b790d607",
+          "eventType": "notification.allocation_ticket.pm_deallocated",
+          "title": "Assignment Ended: XCrypt | Blockchain Wallet",
+          "body": "Prakash Pillai has been successfully deallocated from XCrypt | Blockchain Wallet.",
+          "createdAt": "2026-10-19T10:58:39.104Z",
+          "isRead": false,
+          "ctx": {
+            "ticketPublicId": "4b1711be-f239-449c-9e87-19c669cd5e69"
+          }
+        },
+        {
+          "id": "2565a51b-87df-4c40-85fd-bc2eec93b796",
+          "eventType": "notification.allocation.direct_pm_notified",
+          "title": "Allocation Confirmed: XCrypt | Blockchain Wallet",
+          "body": "Prakash Pillai has been allocated to XCrypt | Blockchain Wallet, effective 2026-10-19.",
+          "createdAt": "2026-10-19T10:48:27.626Z",
+          "isRead": false,
+          "ctx": {
+            "assignmentPublicId": "4186a764-485d-4b1c-89c0-4d3e4604ef06"
+          }
+        }
+      ]
+    },
+    "tarun.sharma": {
+      "status": 200,
+      "total": 4,
+      "latestAt": "2026-10-15T10:36:21.874Z",
+      "today": []
+    }
+  }
+}

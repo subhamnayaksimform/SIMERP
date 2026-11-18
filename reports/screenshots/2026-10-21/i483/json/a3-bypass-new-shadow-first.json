@@ -1,0 +1,39 @@
+{
+  "prep": {
+    "status": 200,
+    "body": {
+      "code": "SUCCESS",
+      "message": "Allocation ticket updated successfully",
+      "data": {
+        "publicId": "0fdff240-42d4-4541-98de-e3809561ce4c",
+        "ticketNumber": "NA-0394",
+        "status": "AWAITING_CONFIRMATION",
+        "warnings": [],
+        "employeeAvailability": [
+          {
+            "employeePublicId": "da3c4542-13bb-452b-b619-42095c913d94",
+            "availabilityPercentage": 100,
+            "isAvailable": true,
+            "allocationCapPercentage": 100,
+            "consumedPercentage": 0,
+            "remainingPercentage": 100,
+            "overlappingAllocations": [],
+            "reasons": []
+          }
+        ]
+      }
+    }
+  },
+  "reqs": [
+    {
+      "url": "https://simerp-dev-api.simform.solutions/api/v1/allocation-tickets/0fdff240-42d4-4541-98de-e3809561ce4c/bypass-approval",
+      "method": "PATCH",
+      "req": "{\"departmentPublicId\":\"c868f1aa-6bc1-430c-b26a-11222919627f\",\"activeEmployeePublicId\":\"da3c4542-13bb-452b-b619-42095c913d94\",\"reason\":\"QA retest SI4-I483 (a3-bypass-new-shadow-first)\"}",
+      "status": 200,
+      "body": "{\"code\":\"SUCCESS\",\"message\":\"TM/EM approval bypassed; ticket approved and applied\",\"data\":{\"publicId\":\"0fdff240-42d4-4541-98de-e3809561ce4c\",\"ticketNumber\":\"NA-0394\",\"status\":\"APPROVED\",\"warnings\":[]}}"
+    }
+  ],
+  "final": {
+    "status": "APPROVED"
+  }
+}

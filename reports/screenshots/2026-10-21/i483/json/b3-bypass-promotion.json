@@ -1,0 +1,62 @@
+{
+  "prep": {
+    "status": 200,
+    "body": {
+      "code": "SUCCESS",
+      "message": "Allocation ticket updated successfully",
+      "data": {
+        "publicId": "9c12bcd1-0a40-489d-ba79-fec426880220",
+        "ticketNumber": "NA-0390",
+        "status": "AWAITING_CONFIRMATION",
+        "warnings": [],
+        "employeeAvailability": [
+          {
+            "employeePublicId": "f94d6cb2-e5b5-4c14-99d2-3fbd28a1cde9",
+            "availabilityPercentage": 10.42,
+            "isAvailable": true,
+            "allocationCapPercentage": 120,
+            "consumedPercentage": 10,
+            "remainingPercentage": 110,
+            "overlappingAllocations": [
+              {
+                "projectAssignmentPublicId": "ef00c89f-2f4b-41bc-9f2f-6ba72e409c54",
+                "projectPublicId": "3d138a89-4d06-4839-8091-436fba0a2dd6",
+                "allocationType": "FIXED",
+                "allocationPercentage": 10,
+                "allocationStartDate": "2026-10-22T00:00:00.000Z",
+                "allocationEndDate": "2026-12-31T00:00:00.000Z",
+                "shadowDeveloperId": null,
+                "conflictingFrom": "2026-11-01T00:00:00.000Z",
+                "conflictingTo": "2026-12-31T00:00:00.000Z"
+              },
+              {
+                "projectAssignmentPublicId": "26935674-438a-432c-8769-23c52d4f4e84",
+                "projectPublicId": "cbe21270-0d57-405b-9424-aabb386793f5",
+                "allocationType": "DYNAMIC",
+                "allocationPercentage": 0,
+                "allocationStartDate": "2026-06-09T00:00:00.000Z",
+                "allocationEndDate": "2027-09-15T00:00:00.000Z",
+                "shadowDeveloperId": null,
+                "conflictingFrom": "2026-11-01T00:00:00.000Z",
+                "conflictingTo": "2027-09-15T00:00:00.000Z"
+              }
+            ],
+            "reasons": []
+          }
+        ]
+      }
+    }
+  },
+  "reqs": [
+    {
+      "url": "https://simerp-dev-api.simform.solutions/api/v1/allocation-tickets/9c12bcd1-0a40-489d-ba79-fec426880220/bypass-approval",
+      "method": "PATCH",
+      "req": "{\"departmentPublicId\":\"02258af1-79b0-4e88-bebb-aee86933bd9c\",\"activeEmployeePublicId\":\"f94d6cb2-e5b5-4c14-99d2-3fbd28a1cde9\",\"reason\":\"QA retest SI4-I483 (b3-bypass-promotion)\"}",
+      "status": 409,
+      "body": "{\"code\":\"SYS_004\",\"message\":\"This employee already has an active (non-archived) allocation on this project\"}"
+    }
+  ],
+  "final": {
+    "status": "AWAITING_CONFIRMATION"
+  }
+}

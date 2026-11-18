@@ -36,3 +36,26 @@ No arguments: the script always scans for the newest file in each `reports/**` s
 
 ## Report Validation
 After every generation, the script verifies the output file exists and is non-empty. If generation fails (e.g. malformed upstream JSON), it logs the specific stage that failed and still writes a report for every stage that succeeded — a single stale/corrupt input must never blank the whole dashboard.
+
+## Second report type: rich per-test QA report
+
+A different, additional self-contained report produced by this same skill — one row per test from a single Playwright run, rather than a multi-stage pipeline summary. Not a replacement for the dashboard above; both are generated on the same trigger.
+
+### When to Use
+Same triggers as the consolidated dashboard: after every Playwright run (`run-tests.sh` calls both `report:html` and `report:qa`, in that order, always — pass or fail), or on demand.
+
+### Invocation
+```bash
+npm run report:qa                              # defaults: --results=reports/results/results.json
+npm run report:qa -- --results=<path>          # point at a different results.json
+npm run report:qa -- --out=<path>              # override the output path
+```
+
+### Output
+- `reports/html/qa-report-<YYYY-MM-DD_HH-MM>.html` — single self-contained file (inline CSS/JS, base64-embedded screenshots, no external requests).
+
+### Contract
+- **Source data**: `reports/results/results.json` (Playwright's JSON reporter, parsed via `scripts/lib/failure-triage.ts`'s `parsePlaywrightResults()`) joined against every `reports/test-cases/cases-*.json` on disk (keyed by test-case id; newer file's mtime wins on a collision). A Playwright result with no matching test-case id still renders — just with empty steps/preconditions/expected/tags rather than being dropped.
+- **Per test**: id, title, category, status (`passed`/`flaky`/`failed`/`skipped`), priority, duration, retry count, preconditions, steps, expected result, tags, error message (ANSI codes stripped), and a `data:image/png;base64,...` screenshot on failure when the attachment still exists on disk.
+- **Header**: title/description are computed from the common `tests/e2e/<module>/<sub-feature>/` path segments actually present in the run's results (single sub-feature → sub-feature name; single module, multiple sub-features → "`<Module>` Module"; otherwise a generic fallback) — never hardcoded.
+- Never fails the calling script — invoked with the same "always run, warn don't fail" pattern as `report:html`.

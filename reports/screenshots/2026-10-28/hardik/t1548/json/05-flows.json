@@ -1,0 +1,19 @@
+{
+  "rolesReleasesShot": "reports/screenshots/2026-10-28/hardik/t1548/admin-roles-releases-module.png",
+  "rolesReleasesText": [
+    "Releases | Roles | Scheduler | Teams | Teams Webhook Config | Up Scoring Config | Utilization Priority | Visa Information | Weekly Updates | Working Location | Action Permission\t | EMPLOYEE | RM | TM | EM | ADMIN | PM | PMO | CSM | DM | GOAL MANAGER | PROGRAM OWNER | Project Allocations | View\t | Self | Team | Department | Department | All | — | All | — | — | — | — | Add\t | — | — | — | — | All | — | All |"
+  ],
+  "signedOutUrl": "https://simerp-dev.simform.solutions/login",
+  "returnToStored": "/whats-new",
+  "signedOutShot": "reports/screenshots/2026-10-28/hardik/t1548/employee-signed-out-whats-new.png",
+  "afterLoginUrl": "https://simerp-dev.simform.solutions/profile",
+  "afterLoginShot": "reports/screenshots/2026-10-28/hardik/t1548/employee-return-to-whats-new.png",
+  "returnToAfter": "/whats-new",
+  "loggedOut": true,
+  "afterLogoutUrl": "https://simerp-dev.simform.solutions/login",
+  "releasesAfterLogout": 401,
+  "poisonedUrl": "https://simerp-dev.simform.solutions/profile",
+  "poisonedShot": "reports/screenshots/2026-10-28/hardik/t1548/employee-return-to-offsite-rejected.png",
+  "poisoned2Url": "https://simerp-dev.simform.solutions/profile",
+  "helpReturnUrl": "https://simerp-dev.simform.solutions/profile"
+}

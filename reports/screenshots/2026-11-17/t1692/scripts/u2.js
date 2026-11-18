@@ -1,0 +1,10 @@
+const H=require('./h'); const fs=require('fs'); const S=JSON.parse(fs.readFileSync('s1-state.json'));
+(async()=>{ const b=await H.chromium.launch(); const v=await H.login(b,'vihaan.chatterjee'); const page=v.page; const errs=[]; H.attach(page,errs);
+ await H.go(page,'/pre-sales/'+S.opp);
+ await page.getByRole('tab',{name:'Ticket Info'}).click(); await page.waitForTimeout(1500); await H.shot(page,'u2-ticket-info',true);
+ const ti=await page.locator('main').first().innerText(); const i=ti.indexOf('Ticket Info'); console.log(ti.slice(i,i+1800));
+ await page.getByRole('tab',{name:'Position Details'}).click(); await page.waitForTimeout(800);
+ await page.getByRole('button',{name:'Edit',exact:true}).first().click(); await page.waitForTimeout(2000); await H.shot(page,'u2-edit-drawer',true);
+ const dlg=page.getByRole('dialog').last(); console.log('DRAWER',(await dlg.innerText()).slice(0,2500));
+ console.log('combos',await dlg.getByRole('combobox').evaluateAll(a=>a.map(x=>[x.getAttribute('aria-label'),x.innerText.slice(0,80)])));
+ console.log('errs',JSON.stringify(errs).slice(0,600)); await b.close(); })();

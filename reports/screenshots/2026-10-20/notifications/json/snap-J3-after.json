@@ -1,0 +1,188 @@
+{
+  "label": "J3-after",
+  "takenAt": "2026-10-20T08:56:06.247Z",
+  "users": {
+    "iti.chatterjee": {
+      "status": 200,
+      "total": 4,
+      "latestAt": "2026-10-20T08:56:05.820Z",
+      "today": [
+        {
+          "id": "8510904a-a376-4000-b3c4-08df6d567492",
+          "eventType": "notification.allocation_ticket.allocation_cancelled",
+          "title": "Allocation Cancelled: ConfigHub | Configuration Management",
+          "body": "The upcoming allocation for Iti Chatterjee to ConfigHub | Configuration Management, due to start 2026-10-22, has been cancelled.",
+          "createdAt": "2026-10-20T08:56:05.820Z",
+          "isRead": false,
+          "ctx": {
+            "ticketPublicId": "ff8c0646-015a-4572-981b-a47c88d7d56e"
+          }
+        },
+        {
+          "id": "f7f82fdd-670b-4ba9-b8d2-094229dd419c",
+          "eventType": "notification.allocation_ticket.developer_assigned",
+          "title": "You've Been allocated to ConfigHub | Configuration Management",
+          "body": "You've been allocated to ConfigHub | Configuration Management starting 2026-10-22.",
+          "createdAt": "2026-10-20T08:53:31.609Z",
+          "isRead": false,
+          "ctx": {
+            "ticketPublicId": "2ca97f57-49b6-4131-ac65-721f657ffbf0"
+          }
+        }
+      ]
+    },
+    "jignesh.raval": {
+      "status": 200,
+      "total": 5,
+      "latestAt": "2026-10-20T08:56:05.820Z",
+      "today": [
+        {
+          "id": "edb56a71-3c41-4025-a8c3-aaaa63fb6e14",
+          "eventType": "notification.allocation_ticket.allocation_cancelled",
+          "title": "Allocation Cancelled: ConfigHub | Configuration Management",
+          "body": "The upcoming allocation for Iti Chatterjee to ConfigHub | Configuration Management, due to start 2026-10-22, has been cancelled.",
+          "createdAt": "2026-10-20T08:56:05.820Z",
+          "isRead": false,
+          "ctx": {
+            "ticketPublicId": "ff8c0646-015a-4572-981b-a47c88d7d56e"
+          }
+        },
+        {
+          "id": "36603866-9c5a-4bbd-83c4-fb73cd802208",
+          "eventType": "notification.allocation_ticket.pm_allocated",
+          "title": "Allocation Confirmed: ConfigHub | Configuration Management",
+          "body": "Your request to allocate Iti Chatterjee to ConfigHub | Configuration Management has been successfully processed.",
+          "createdAt": "2026-10-20T08:53:31.532Z",
+          "isRead": false,
+          "ctx": {
+            "ticketPublicId": "2ca97f57-49b6-4131-ac65-721f657ffbf0"
+          }
+        }
+      ]
+    },
+    "hardik.trivedi": {
+      "status": 200,
+      "total": 100,
+      "latestAt": "2026-10-20T08:56:05.820Z",
+      "today": [
+        {
+          "id": "9a159484-828d-44f6-a930-0e88ba591d55",
+          "eventType": "notification.allocation_ticket.allocation_cancelled",
+          "title": "Allocation Cancelled: ConfigHub | Configuration Management",
+          "body": "The upcoming allocation for Iti Chatterjee to ConfigHub | Configuration Management, due to start 2026-10-22, has been cancelled.",
+          "createdAt": "2026-10-20T08:56:05.820Z",
+          "isRead": false,
+          "ctx": {
+            "ticketPublicId": "ff8c0646-015a-4572-981b-a47c88d7d56e"
+          }
+        },
+        {
+          "id": "f3c22d31-ba0f-4c89-a6e0-9478a4c220a6",
+          "eventType": "notification.allocation_ticket.developer_rm_assigned",
+          "title": "Team Member Assigned: Iti Chatterjee",
+          "body": "Iti Chatterjee has been assigned to ConfigHub | Configuration Management starting 2026-10-22.",
+          "createdAt": "2026-10-20T08:53:31.638Z",
+          "isRead": false,
+          "ctx": {
+            "ticketPublicId": "2ca97f57-49b6-4131-ac65-721f657ffbf0"
+          }
+        },
+        {
+          "id": "04b6102e-21c9-4b04-aaf6-3b104fd8f240",
+          "eventType": "notification.allocation_ticket.pm_deallocated",
+          "title": "Assignment Ended: HyperScale | Scalability Engine",
+          "body": "Gaurav Dutta has been successfully deallocated from HyperScale | Scalability Engine.",
+          "createdAt": "2026-10-20T08:51:08.069Z",
+          "isRead": false,
+          "ctx": {
+            "ticketPublicId": "b2166221-d164-4b29-820f-975fd1579c20"
+          }
+        },
+        {
+          "id": "3379b7ca-1d17-40d1-b8a1-c5af24196804",
+          "eventType": "notification.allocation_ticket.pm_updated",
+          "title": "Assignment Updated: HyperScale | Scalability Engine",
+          "body": "The project assignment for Gaurav Dutta has been successfully updated.",
+          "createdAt": "2026-10-20T08:49:44.892Z",
+          "isRead": false,
+          "ctx": {
+            "ticketPublicId": "4c9c0a7d-640b-473f-9313-03508cdfe745"
+          }
+        },
+        {
+          "id": "00dfe1e1-c791-4bee-851a-c7235a162fba",
+          "eventType": "notification.allocation.direct_pm_notified",
+          "title": "Allocation Confirmed: HyperScale | Scalability Engine",
+          "body": "Gaurav Dutta has been allocated to HyperScale | Scalability Engine, effective 2026-10-20.",
+          "createdAt": "2026-10-20T08:48:43.958Z",
+          "isRead": false,
+          "ctx": {
+            "assignmentPublicId": "763b606e-3076-438b-8604-b5b800e18e09"
+          }
+        }
+      ]
+    },
+    "cto": {
+      "status": 200,
+      "total": 64,
+      "latestAt": "2026-10-20T08:56:05.820Z",
+      "today": [
+        {
+          "id": "56db1248-e9c5-416f-ba55-178ad0a035db",
+          "eventType": "notification.allocation_ticket.allocation_cancelled",
+          "title": "Allocation Cancelled: ConfigHub | Configuration Management",
+          "body": "The upcoming allocation for Iti Chatterjee to ConfigHub | Configuration Management, due to start 2026-10-22, has been cancelled.",
+          "createdAt": "2026-10-20T08:56:05.820Z",
+          "isRead": false,
+          "ctx": {
+            "ticketPublicId": "ff8c0646-015a-4572-981b-a47c88d7d56e"
+          }
+        },
+        {
+          "id": "949b7f15-4e04-4c64-83de-3d9d8e523edb",
+          "eventType": "notification.allocation_ticket.developer_rm_assigned",
+          "title": "Approval Bypassed: NA-0373",
+          "body": "PMO bypassed your department's approval for NA-0373.",
+          "createdAt": "2026-10-20T08:53:31.638Z",
+          "isRead": false,
+          "ctx": {
+            "ticketPublicId": "2ca97f57-49b6-4131-ac65-721f657ffbf0"
+          }
+        },
+        {
+          "id": "e3b2d01f-72a7-4988-a355-dd6d121c934a",
+          "eventType": "notification.allocation_ticket.developer_rm_deallocated",
+          "title": "Team Member Deallocated: Gaurav Dutta",
+          "body": "Gaurav Dutta has been deallocated from HyperScale | Scalability Engine, effective 2026-10-20.",
+          "createdAt": "2026-10-20T08:51:08.375Z",
+          "isRead": false,
+          "ctx": {
+            "ticketPublicId": "b2166221-d164-4b29-820f-975fd1579c20"
+          }
+        },
+        {
+          "id": "00621887-e9a0-459d-813e-2ec4a3f66361",
+          "eventType": "notification.allocation_ticket.developer_rm_updated",
+          "title": "Assignment Updated: Gaurav Dutta",
+          "body": "Gaurav Dutta's allocation for HyperScale | Scalability Engine has been updated.",
+          "createdAt": "2026-10-20T08:49:44.829Z",
+          "isRead": false,
+          "ctx": {
+            "ticketPublicId": "4c9c0a7d-640b-473f-9313-03508cdfe745"
+          }
+        },
+        {
+          "id": "c91dee4a-3c47-49fb-809b-4efccf2a03d3",
+          "eventType": "notification.allocation.direct_employee_rm_assigned",
+          "title": "Direct Allocation: HyperScale | Scalability Engine",
+          "body": "Bhumi Chauhan directly allocated Gaurav Dutta to HyperScale | Scalability Engine, bypassing the ticket workflow.",
+          "createdAt": "2026-10-20T08:48:44.213Z",
+          "isRead": false,
+          "ctx": {
+            "assignmentPublicId": "763b606e-3076-438b-8604-b5b800e18e09"
+          }
+        }
+      ]
+    }
+  }
+}

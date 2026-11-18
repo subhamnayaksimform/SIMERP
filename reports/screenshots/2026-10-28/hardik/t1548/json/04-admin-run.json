@@ -1,0 +1,57 @@
+{
+  "options": [
+    "All Jobs",
+    "Zoho Daily Data Sync",
+    "Zoho Project Sync",
+    "Stuck Job Recovery",
+    "Job History Cleanup",
+    "Visa Expiry Reminders",
+    "certification-expiry-notify",
+    "certification-new-joiners-sync",
+    "Scheduled Allocation Changes",
+    "Utilization Priority Refresh",
+    "Weekly Allocation Verification",
+    "direct-priority-recompute",
+    "lapsed-interview-stage",
+    "working-location-sync",
+    "New Release Notifications",
+    "profile-reminders"
+  ],
+  "shotDropdown": "reports/screenshots/2026-10-28/hardik/t1548/admin-scheduler-jobs-dropdown.png",
+  "run": {
+    "status": 202,
+    "body": {
+      "code": "SUCCESS",
+      "message": "Cron job triggered; poll the run list for its outcome",
+      "data": {
+        "jobName": "release-announcement"
+      }
+    }
+  },
+  "runUnknown": {
+    "status": 404,
+    "body": {
+      "code": "SYS_002",
+      "message": "No scheduled job exists with that name"
+    }
+  },
+  "runsAfter": {
+    "status": 200,
+    "body": {
+      "code": "SUCCESS",
+      "message": "Cron job runs fetched successfully",
+      "data": {
+        "items": [],
+        "total": 0,
+        "page": 1,
+        "limit": 100,
+        "totalPages": 0
+      }
+    }
+  },
+  "relNotif": false,
+  "shotRoles": "reports/screenshots/2026-10-28/hardik/t1548/admin-roles-releases.png",
+  "relRowText": [
+    "Releases\n\t"
+  ]
+}

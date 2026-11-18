@@ -1,0 +1,97 @@
+{
+  "tc015_pmo_approve_open": {
+    "status": 409,
+    "body": {
+      "message": "This action is not allowed in the ticket's current status",
+      "error": "Conflict",
+      "statusCode": 409
+    }
+  },
+  "tc016_bypass_with_shortlist": {
+    "status": 409,
+    "body": {
+      "code": "ALLOCATION_TICKET_172",
+      "message": "Complete the step 1 tickets (#DA-0101, #DA-0102) before actioning this ticket.",
+      "data": {
+        "blockingTickets": [
+          {
+            "publicId": "3e78994b-357d-4bbd-8485-c0192ad940dd",
+            "ticketNumber": "DA-0101",
+            "ticketType": "DEALLOCATE_ALLOCATION",
+            "step": 1,
+            "status": "AWAITING_CONFIRMATION"
+          },
+          {
+            "publicId": "3c5e2ab9-a5cf-4401-afc1-1e19b5540b6e",
+            "ticketNumber": "DA-0102",
+            "ticketType": "DEALLOCATE_ALLOCATION",
+            "step": 1,
+            "status": "AWAITING_CONFIRMATION"
+          }
+        ]
+      }
+    }
+  },
+  "nap_after_bypass": {
+    "status": "OPEN",
+    "keys": [
+      "publicId",
+      "ticketNumber",
+      "ticketType",
+      "intent",
+      "status",
+      "priority",
+      "requestType",
+      "allocationRequestCreationType",
+      "deptStack",
+      "isInterviewRequired",
+      "isClientFacing",
+      "allocationEndDate",
+      "effectiveStartDate",
+      "effectiveEndDate",
+      "project",
+      "additionalTechStacks",
+      "allocationStartDate",
+      "requestedAllocationType",
+      "requestedAllocationPercentage",
+      "allocationSnapshot",
+      "allocationSnapshots",
+      "targetScheduledChangePublicId",
+      "supersededTicketPublicId",
+      "supersededTicketNumber",
+      "preferredEmployees",
+      "shortlistedEmployees",
+      "requester",
+      "createdAt",
+      "updatedAt",
+      "statusSteps",
+      "approvals",
+      "feedbacks",
+      "group"
+    ]
+  },
+  "tc025_reject_da": {
+    "status": 409,
+    "body": {
+      "message": "Decrease/de-allocation tickets cannot be rejected",
+      "error": "Conflict",
+      "statusCode": 409
+    }
+  },
+  "tc027_edit_da_end_after_start": {
+    "status": 400,
+    "body": {
+      "message": "The promotion and new-shadow start dates must be after both deallocation dates",
+      "error": "Bad Request",
+      "statusCode": 400
+    }
+  },
+  "tc028_edit_promo_start_eq_D": {
+    "status": 400,
+    "body": {
+      "message": "The promotion and new-shadow start dates must be after both deallocation dates",
+      "error": "Bad Request",
+      "statusCode": 400
+    }
+  }
+}

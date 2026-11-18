@@ -1,0 +1,172 @@
+{
+  "results": [
+    {
+      "id": "dashboard-donut-hover2",
+      "ok": true,
+      "n": 2,
+      "res": [
+        {
+          "dx": -80,
+          "changed": [
+            true,
+            false
+          ],
+          "tip": [
+            "Fixed3,495.04"
+          ]
+        },
+        {
+          "dx": 80,
+          "changed": [
+            true,
+            false
+          ],
+          "tip": [
+            "Fixed3,495.04"
+          ]
+        }
+      ],
+      "errs": []
+    },
+    {
+      "id": "dashboard-empty-check",
+      "ok": true,
+      "bad": [],
+      "errs": []
+    },
+    {
+      "id": "skills",
+      "ok": true,
+      "url": "https://simerp-dev.simform.solutions/employee/skills",
+      "h": [
+        "Skills"
+      ],
+      "outputs": [],
+      "rows": 0,
+      "bad": [
+        {
+          "t": "-",
+          "ctx": "Skills:-"
+        }
+      ],
+      "shot": "reports/screenshots/2026-10-28/hardik/sonar-fe/q16-skills.png",
+      "errs": [
+        {
+          "type": "requestfailed",
+          "url": "https://simerp-dev.simform.solutions/employee/skills",
+          "text": "net::ERR_BLOCKED_BY_ORB https://example.com/logo.png"
+        },
+        {
+          "type": "requestfailed",
+          "url": "https://simerp-dev.simform.solutions/employee/skills",
+          "text": "net::ERR_BLOCKED_BY_ORB https://example.com/assets/logo.png"
+        }
+      ]
+    },
+    {
+      "id": "certifications",
+      "ok": true,
+      "url": "https://simerp-dev.simform.solutions/employee/certifications",
+      "h": [
+        "Certifications"
+      ],
+      "outputs": [],
+      "rows": 0,
+      "bad": [],
+      "shot": "reports/screenshots/2026-10-28/hardik/sonar-fe/q17-certifications.png",
+      "errs": []
+    },
+    {
+      "id": "notifications-search-highlight",
+      "ok": true,
+      "ph": "Search notifications",
+      "marks": [
+        "ALLOCATION",
+        "ALLOCATION",
+        "ALLOCATION",
+        "ALLOCATION",
+        "ALLOCATION",
+        "ALLOCATION"
+      ],
+      "dupKeys": 0,
+      "marks2": 0,
+      "shot": "reports/screenshots/2026-10-28/hardik/sonar-fe/q18-notifications-highlight.png",
+      "shot2": "reports/screenshots/2026-10-28/hardik/sonar-fe/q18b-notifications-regex-chars.png",
+      "errs": []
+    },
+    {
+      "id": "projects-na-context",
+      "ok": true,
+      "ths": [
+        "Action",
+        "Name",
+        "Project Manager",
+        "CSM",
+        "Employees",
+        "Total Hours",
+        "AG",
+        "PR Reviewers",
+        "Tech Stacks"
+      ],
+      "hits": [
+        {
+          "ri": 31,
+          "col": "Employees",
+          "proj": "CapacityX | Capacity Planning"
+        }
+      ],
+      "total": 1,
+      "shot": "reports/screenshots/2026-10-28/hardik/sonar-fe/q19-projects-na.png",
+      "errs": []
+    },
+    {
+      "id": "team-member-panel",
+      "ok": true,
+      "s": [
+        "1145 unread notifications",
+        "vihaan.chatterjee@simformsolutions.com -",
+        "PROJECT MANAGEMENT OFFICE",
+        "Add Team",
+        "Show All Details",
+        "Drag to reorder team column",
+        "Edit team",
+        "Arnav Rao",
+        "Chetan Mukherjee",
+        "Iti Kulkarni",
+        "Kartik Shetty",
+        "Aditya Langalia",
+        "Ravi Langalia",
+        "Rutu Yadav",
+        "Aditya Limbachiya",
+        "Tanvi Kapoor",
+        "Falgun Vyas",
+        "Drag to reorder team column",
+        "Edit team",
+        "Ekta Dodia",
+        "Darshan Thakkar",
+        "Bhavesh Ghosh",
+        "Rohan Iyer",
+        "Rohan Das",
+        "Gunjan Chauhan",
+        "Esha Nagar",
+        "Drag to reorder team column",
+        "Edit team",
+        "Tushar Sen",
+        "Tanvi Sharma"
+      ],
+      "errs": []
+    }
+  ],
+  "errs": [
+    {
+      "type": "requestfailed",
+      "url": "https://simerp-dev.simform.solutions/employee/skills",
+      "text": "net::ERR_BLOCKED_BY_ORB https://example.com/logo.png"
+    },
+    {
+      "type": "requestfailed",
+      "url": "https://simerp-dev.simform.solutions/employee/skills",
+      "text": "net::ERR_BLOCKED_BY_ORB https://example.com/assets/logo.png"
+    }
+  ]
+}

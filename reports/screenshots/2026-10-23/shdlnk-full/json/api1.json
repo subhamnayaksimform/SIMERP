@@ -1,0 +1,186 @@
+{
+  "016": {
+    "status": 409,
+    "body": {
+      "code": "ALLOCATION_TICKET_172",
+      "message": "Complete the step 1 tickets (#DA-0154, #DA-0155) before actioning this ticket.",
+      "data": {
+        "blockingTickets": [
+          {
+            "publicId": "5033202f-e077-4dc3-b3a1-922454740be1",
+            "ticketNumber": "DA-0154",
+            "ticketType": "DEALLOCATE_ALLOCATION",
+            "step": 1,
+            "status": "AWAITING_CONFIRMATION"
+          },
+          {
+            "publicId": "5df0ec57-f923-4ddf-8d77-209a592766fe",
+            "ticketNumber": "DA-0155",
+            "ticketType": "DEALLOCATE_ALLOCATION",
+            "step": 1,
+            "status": "AWAITING_CONFIRMATION"
+          }
+        ]
+      }
+    }
+  },
+  "015-open": {
+    "status": 409,
+    "body": {
+      "code": "SYS_004",
+      "message": "This action is not allowed in the ticket's current status"
+    }
+  },
+  "025-pmo": {
+    "status": 409,
+    "body": {
+      "code": "SYS_004",
+      "message": "Decrease/de-allocation tickets cannot be rejected"
+    }
+  },
+  "027": {
+    "status": 403,
+    "body": {
+      "code": "AUTH_004",
+      "message": "Access forbidden"
+    }
+  },
+  "027-pmo": {
+    "status": 400,
+    "body": {
+      "code": "SYS_004",
+      "message": "The promotion and new-shadow start dates must be after both deallocation dates"
+    }
+  },
+  "028": {
+    "status": 400,
+    "body": {
+      "code": "SYS_004",
+      "message": "The promotion and new-shadow start dates must be after both deallocation dates"
+    }
+  },
+  "028-csm": {
+    "status": 403,
+    "body": {
+      "code": "AUTH_004",
+      "message": "Access forbidden"
+    }
+  },
+  "031": {
+    "status": 409,
+    "body": {
+      "code": "SYS_004",
+      "message": "An active ticket already exists for this project assignment"
+    }
+  },
+  "032": {
+    "status": 403,
+    "body": {
+      "code": "AUTH_004",
+      "message": "Access forbidden"
+    }
+  },
+  "033a-wrong-pair": {
+    "status": 400,
+    "body": {
+      "code": "SYS_004",
+      "message": "mainDeallocation and shadowDeallocation must target a main developer and their own shadow developer on the project"
+    }
+  },
+  "033b-same-twice": {
+    "status": 400,
+    "body": {
+      "code": "SYS_004",
+      "message": "mainDeallocation and shadowDeallocation must target two different assignments"
+    }
+  },
+  "033c-start-eq-D": {
+    "status": 400,
+    "body": {
+      "code": "SYS_004",
+      "message": "The promotion and new-shadow start dates must be after both deallocation dates"
+    }
+  },
+  "033d-both-with-promo": {
+    "status": 400,
+    "body": {
+      "code": "SYS_004",
+      "message": "promotion and newShadow are not allowed for the BOTH_RELEASED flow"
+    }
+  },
+  "033e-pref-not-shadow": {
+    "status": 400,
+    "body": {
+      "code": "SYS_004",
+      "message": "The promotion must list exactly the outgoing shadow developer as its only developer preference"
+    }
+  },
+  "033f-promo-shadowdev": {
+    "status": 400,
+    "body": {
+      "code": "VAL_001",
+      "message": "Validation failed",
+      "errors": [
+        {
+          "field": "promotion.shadowForPublicId",
+          "message": "shadowForPublicId is required."
+        }
+      ]
+    }
+  },
+  "036": {
+    "status": 201,
+    "body": {
+      "code": "ALLOCATION_TICKET_070",
+      "message": "Direct allocation created successfully",
+      "data": {
+        "publicId": "ca40f6d6-654a-42c6-9b01-95e5514aed9b",
+        "allocationPercentage": 10,
+        "allocationType": "FIXED",
+        "typeOfWork": "DEVELOPMENT_WORK",
+        "allocationStartDate": "2026-11-01",
+        "allocationEndDate": "2026-12-31",
+        "status": "GREEN",
+        "note": "QA E2E SHDLNK re-test 2026-10-23 TC-036 direct allocation while G-15 pending",
+        "allocationOrigin": "PMO",
+        "employee": {
+          "publicId": "58d20850-0617-4f84-9dc5-c372236cfd90",
+          "name": "Janki Naik",
+          "email": "janki.naik@simformsolutions.com",
+          "photoUrl": "https://i.pravatar.cc/150?u=janki.naik@simformsolutions.com"
+        },
+        "shadowDeveloper": null,
+        "project": {
+          "publicId": "3d138a89-4d06-4839-8091-436fba0a2dd6",
+          "name": "HyperScale | Scalability Engine",
+          "alias": "",
+          "projectManager": {
+            "publicId": "5f1a4477-84fe-46aa-8360-ca4e0a16983c",
+            "name": "Hardik Trivedi",
+            "photoUrl": "https://i.pravatar.cc/150?u=hardik.trivedi@simformsolutions.com"
+          },
+          "customerSuccessManager": {
+            "publicId": "09d434e9-5346-4790-8ae7-f5105e5b4968",
+            "name": "Priya Chopra",
+            "photoUrl": "https://i.pravatar.cc/150?u=priya.chopra@simformsolutions.com"
+          }
+        },
+        "createdBy": {
+          "publicId": "e93f5377-1f74-42cb-9a40-255908e50310",
+          "name": "Bhumi Chauhan",
+          "email": "bhumi.chauhan@simformsolutions.com",
+          "photoUrl": "https://i.pravatar.cc/150?u=bhumi.chauhan@simformsolutions.com"
+        },
+        "ticketPublicId": "1c767c71-4c05-4693-a190-2b1e75c95b4f",
+        "ticketNumber": "NA-0434"
+      }
+    }
+  },
+  "036-shadow": {
+    "status": 409,
+    "body": {
+      "code": "SYS_004",
+      "message": "This employee already has an active (non-archived) allocation on this project"
+    }
+  }
+}

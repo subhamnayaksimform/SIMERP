@@ -1,0 +1,84 @@
+{
+  "req": {
+    "projectId": "3d138a89-4d06-4839-8091-436fba0a2dd6",
+    "flowType": "SHADOW_TO_MAIN_NEW_SHADOW",
+    "mainDeallocation": {
+      "projectAssignmentPublicId": "32c30658-ed74-4565-b5b0-632e8d54a850",
+      "allocationEndDate": "2026-10-31",
+      "deallocationReason": "ROLE_MISALIGNMENT",
+      "coreSkillRating": 7,
+      "communicationRating": 7,
+      "behavioralRating": 7,
+      "overallRating": 7,
+      "developerFeedback": "QA retest SI4-I483 2026-10-21 - linked swap",
+      "isOpenToWorkWithAgain": true
+    },
+    "shadowDeallocation": {
+      "projectAssignmentPublicId": "ef00c89f-2f4b-41bc-9f2f-6ba72e409c54",
+      "allocationEndDate": "2026-10-31",
+      "deallocationReason": "ROLE_MISALIGNMENT"
+    },
+    "promotion": {
+      "deptStackPublicId": "8c45d16e-90a3-4947-a13c-437baf2bf77d",
+      "requestedAllocationStartDate": "2026-11-01",
+      "requestedAllocationType": "FIXED",
+      "requestedAllocationPercentage": 20,
+      "isInterviewRequired": false,
+      "isClientFacing": false,
+      "requestType": "FRESH_ALLOCATION",
+      "shadowForPublicId": null,
+      "allocationRequestCreationType": "UPDATE_SHADOW_TO_MAIN",
+      "developerPreferencePublicIds": [
+        "f94d6cb2-e5b5-4c14-99d2-3fbd28a1cde9"
+      ]
+    },
+    "newShadow": {
+      "deptStackPublicId": "8c45d16e-90a3-4947-a13c-437baf2bf77d",
+      "requestedAllocationStartDate": "2026-11-01",
+      "requestedAllocationType": "FIXED",
+      "requestedAllocationPercentage": 20,
+      "isInterviewRequired": false,
+      "isClientFacing": false,
+      "requestType": "SHADOW_DEVELOPER",
+      "shadowForPublicId": "f94d6cb2-e5b5-4c14-99d2-3fbd28a1cde9",
+      "allocationRequestCreationType": null
+    }
+  },
+  "res": {
+    "status": 201,
+    "body": {
+      "code": "ALLOCATION_TICKET_173",
+      "message": "Shadow swap tickets created successfully",
+      "data": {
+        "groupPublicId": "f1f21398-df4f-49e4-9c4c-a02a2f2d381f",
+        "groupNumber": 7,
+        "tickets": [
+          {
+            "publicId": "0b7b0506-fb5f-4637-81dd-cf14f99d5376",
+            "ticketNumber": "DA-0128",
+            "ticketType": "DEALLOCATE_ALLOCATION",
+            "step": 1
+          },
+          {
+            "publicId": "15e27dc0-0e33-4223-ac2d-8d33237ee4f9",
+            "ticketNumber": "DA-0129",
+            "ticketType": "DEALLOCATE_ALLOCATION",
+            "step": 1
+          },
+          {
+            "publicId": "9cc7e59a-da81-4488-b817-57888c65ac8b",
+            "ticketNumber": "NA-0393",
+            "ticketType": "NEW_ALLOCATION",
+            "step": 2
+          },
+          {
+            "publicId": "0fdff240-42d4-4541-98de-e3809561ce4c",
+            "ticketNumber": "NA-0394",
+            "ticketType": "NEW_ALLOCATION",
+            "step": 2
+          }
+        ]
+      }
+    }
+  }
+}

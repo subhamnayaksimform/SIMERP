@@ -45,6 +45,14 @@ After **every** test-case generation (standalone Option 3, or Step 2 of the Full
 
 Fetching Zoho tasks/issues and filing Zoho bugs are handled directly by `@requirement-analyzer` and `@bug-reporter` (and `scripts/pipeline.ts` Options 2/6) via the Zoho Projects MCP server (`.mcp.json`) — not standalone skills. Each skill's `SKILL.md` documents its own input/output contract and CLI fallback.
 
+## QA Workspace (web UI for PMs and devs)
+
+```bash
+npm run ui        # opens http://localhost:4321 — status per module, test cases & reports, run tests, new requirement → test cases
+```
+
+Runs on your own computer, and AI steps use your own Claude login. Setup and everyday use: [docs/qa-workspace-guide.md](docs/qa-workspace-guide.md).
+
 ## Quick Start
 
 ```bash

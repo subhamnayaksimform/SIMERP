@@ -1,0 +1,16 @@
+{
+  "status": 201,
+  "body": {
+    "code": "ALLOCATION_TICKET_169",
+    "message": "Upcoming allocation cancelled successfully",
+    "data": {
+      "ticket": {
+        "publicId": "01e5d33e-8cd2-4541-9f86-fae82f4813e2",
+        "ticketNumber": "DA-0168",
+        "ticketType": "DEALLOCATE_ALLOCATION",
+        "status": "APPROVED"
+      },
+      "isAllocationCancelled": true
+    }
+  }
+}

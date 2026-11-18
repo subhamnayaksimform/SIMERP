@@ -1,0 +1,11 @@
+{
+  "results": [
+    {
+      "id": "close-ticket",
+      "ok": false,
+      "error": "locator.click: Timeout 30000ms exceeded.\nCall log:\n  - waiting for getByRole('menuitem', { name: /close/i }).first()\n",
+      "errs": []
+    }
+  ],
+  "errs": []
+}

@@ -1,0 +1,58 @@
+{
+  "actor": "bhumi.chauhan",
+  "T0": "2026-10-20T08:51:06.298Z",
+  "T1": "2026-10-20T08:51:07.764Z",
+  "method": "POST",
+  "path": "/allocation-tickets/remove-direct-allocation",
+  "req": {
+    "projectAssignmentPublicId": "763b606e-3076-438b-8604-b5b800e18e09",
+    "allocationEndDate": "2026-10-20",
+    "deallocationReason": "OTHERS",
+    "deallocationReasonNote": "QA retest cleanup (SI4-I580 2026-10-20)"
+  },
+  "res": {
+    "status": 201,
+    "body": {
+      "code": "ALLOCATION_TICKET_072",
+      "message": "Allocation removed successfully",
+      "data": {
+        "publicId": "b2166221-d164-4b29-820f-975fd1579c20",
+        "ticketNumber": "DA-0109",
+        "ticketType": "DEALLOCATE_ALLOCATION",
+        "status": "APPROVED",
+        "assignment": {
+          "publicId": "763b606e-3076-438b-8604-b5b800e18e09",
+          "allocationEndDate": "2026-10-20",
+          "employee": {
+            "publicId": "2c0a4d1e-4fe9-4adf-8675-8be9cfc56b92",
+            "name": "Gaurav Dutta",
+            "email": "gaurav.dutta@simformsolutions.com",
+            "photoUrl": "https://i.pravatar.cc/150?u=gaurav.dutta@simformsolutions.com"
+          },
+          "project": {
+            "publicId": "3d138a89-4d06-4839-8091-436fba0a2dd6",
+            "name": "HyperScale | Scalability Engine",
+            "alias": ""
+          }
+        },
+        "effectiveState": {
+          "isEffectiveImmediately": false,
+          "effectiveFrom": "2026-10-21",
+          "scheduledChange": {
+            "publicId": "65091191-981e-4b36-9335-9a56de36b6ae",
+            "changeType": "ASSIGNMENT_DEALLOCATE",
+            "status": "PENDING",
+            "effectiveDate": "2026-10-21",
+            "overrideEndDate": null,
+            "allocationType": null,
+            "allocationPercentage": null,
+            "effectiveStartDate": null,
+            "effectiveEndDate": "2026-10-20",
+            "previousAllocationPercentage": 20
+          }
+        },
+        "feedbackPublicId": "9e625877-5f44-4519-b5b0-9c17693b44d5"
+      }
+    }
+  }
+}

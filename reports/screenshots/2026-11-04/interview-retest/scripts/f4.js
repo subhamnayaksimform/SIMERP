@@ -1,0 +1,27 @@
+const H = require('./h'); const fs = require('fs');
+(async () => {
+  const b = await H.chromium.launch();
+  const R = H.runner('f4');
+  const v = await H.login(b, 'vihaan.chatterjee');
+  const A = (m,p,d)=>H.api(v.page,m,p,d);
+  const S = JSON.parse(fs.readFileSync('state2.json')); const [PA, PB] = S.opp.positions.map(p=>p.publicId); const T=S.opp.ticketNumber;
+  const seats = async () => (await A('GET','/opportunities/openings?limit=100&search='+T)).body.data.items;
+  const st = async () => (await seats())[0]?.opportunity.stats;
+  const seatOf = async (name) => (await seats()).find(s=>s.activeNomination?.employee?.name===name);
+  const ok = (r)=>({s:r.status,c:r.body?.code,m:r.status>=400?r.body?.message:undefined});
+  await R.step('reshortlist-released', async () => { const r=await A('POST','/opportunities/positions/'+PA+'/nominations',{candidates:[{employeePublicId:S.c[2].id},{employeePublicId:S.c[6].id}]}); return {...ok(r), stats:await st()}; });
+  await R.step('rejected-person-reshortlist', async () => { const r=await A('POST','/opportunities/positions/'+PA+'/nominations',{candidates:[{employeePublicId:S.c[0].id}]}); return {...ok(r), stats:await st()}; });
+  const g = await seatOf('Gunjan Rawat'); const nid = g.activeNomination.publicId;
+  await R.step('request-approval', async () => { const r=await A('POST','/opportunities/nominations/'+nid+'/request-approval'); return ok(r); });
+  await R.step('bypass-approval', async () => { const e=await A('POST','/opportunities/nominations/'+nid+'/bypass-approval',{bypassReason:''}); const r=await A('POST','/opportunities/nominations/'+nid+'/bypass-approval',{bypassReason:'QA bypass'}); return {empty:ok(e), r:ok(r), stage:(await seatOf('Gunjan Rawat')).stage}; });
+  await R.step('select', async () => { const r=await A('POST','/opportunities/nominations/'+nid+'/select'); return {...ok(r), stage:(await seatOf('Gunjan Rawat'))?.stage, stats:await st()}; });
+  await R.step('release-won', async () => { const r=await A('POST','/opportunities/nominations/'+nid+'/release',{reason:'x'}); return ok(r); });
+  await R.step('close-A-partial', async () => { const r=await A('POST','/opportunities/positions/'+PA+'/close',{reason:'QA partial close'}); const x=(await seats()).filter(s=>s.position.title==='FR Java A').map(s=>[s.seatId,s.stage,s.activeNomination?.employee?.name]); return {...ok(r), x, stats:await st()}; });
+  await R.step('kanban-counts', async () => { const r=await A('GET','/opportunities/openings/stage-counts?search='+T); return r.body.data; });
+  await R.step('reopen-A', async () => { const r=await A('POST','/opportunities/positions/'+PA+'/reopen'); return {...ok(r), stats:await st()}; });
+  await R.step('status-won', async () => { const r=await A('PATCH','/opportunities/'+S.opp.publicId+'/status',{status:'WON'}); const x=(await seats()).map(s=>[s.seatId,s.stage]); return {...ok(r), x}; });
+  await R.step('actions-on-won-ticket', async () => { const sh=await A('POST','/opportunities/positions/'+PB+'/nominations',{candidates:[{employeePublicId:S.c[7].id}]}); const cl=await A('POST','/opportunities/positions/'+PB+'/close',{reason:'x'}); const rel=await A('POST','/opportunities/nominations/'+nid+'/release',{reason:'x'}); return {shortlist:ok(sh), close:ok(cl), release:ok(rel)}; });
+  await R.step('status-back-open', async () => { const r=await A('PATCH','/opportunities/'+S.opp.publicId+'/status',{status:'OPEN'}); return ok(r); });
+  fs.writeFileSync('state3.json', JSON.stringify(S,null,1));
+  R.done(); await b.close();
+})();

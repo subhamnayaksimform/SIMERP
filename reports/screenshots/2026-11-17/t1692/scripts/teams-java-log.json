@@ -1,0 +1,204 @@
+{
+ "T": "OPP-0379",
+ "T2": "OPP-0380",
+ "DT": "OPP-0381",
+ "log": [
+  {
+   "at": "14:49:37",
+   "event": "NEW OPPORTUNITY — Interview, 2 JAVA positions",
+   "expectInYourChannel": "ONE card (not two)",
+   "status": 201,
+   "msg": "Opportunity created successfully"
+  },
+  {
+   "at": "14:49:42",
+   "event": "NEW OPPORTUNITY — positions in JAVA + QA",
+   "expectInYourChannel": "ONE card",
+   "status": 201,
+   "msg": "Opportunity created successfully"
+  },
+  {
+   "at": "14:49:47",
+   "event": "POSITION ADDED — \"Teams C\" on OPP-0379",
+   "expectInYourChannel": "one card",
+   "status": 201,
+   "msg": "Position created successfully"
+  },
+  {
+   "at": "14:49:52",
+   "event": "CANDIDATE SHORTLISTED — Payal Patel (JAVA)",
+   "expectInYourChannel": "one card, candidate Payal Patel",
+   "status": 201,
+   "msg": "Candidates nominated successfully"
+  },
+  {
+   "at": "14:49:56",
+   "event": "CANDIDATE SHORTLISTED — Yash Sinha (QA employee) on JAVA position",
+   "expectInYourChannel": "NO card here (goes to QA channel)",
+   "status": 201,
+   "msg": "Candidates nominated successfully"
+  },
+  {
+   "at": "14:50:02",
+   "event": "APPROVAL REQUESTED — Payal Patel",
+   "expectInYourChannel": "one card",
+   "status": 200,
+   "msg": "Candidate sent for TM approval successfully"
+  },
+  {
+   "at": "14:50:06",
+   "event": "APPROVAL REQUEST WITHDRAWN — Payal Patel",
+   "expectInYourChannel": "one card",
+   "status": 200,
+   "msg": "Approval request withdrawn successfully"
+  },
+  {
+   "at": "14:50:11",
+   "event": "(approval requested again — another APPROVAL REQUESTED card)",
+   "expectInYourChannel": "one card"
+  },
+  {
+   "at": "14:50:14",
+   "event": "CANDIDATE APPROVED by TM — Payal Patel",
+   "expectInYourChannel": "one card",
+   "status": 200,
+   "msg": "Nomination approved successfully"
+  },
+  {
+   "at": "14:50:19",
+   "event": "CANDIDATE SHORTLISTED — Tanmay Gandhi",
+   "expectInYourChannel": "one card"
+  },
+  {
+   "at": "14:50:22",
+   "event": "CANDIDATE REJECTED — Tanmay Gandhi (reason \"SECRET-REASON-123\")",
+   "expectInYourChannel": "one card, must NOT show SECRET-REASON-123",
+   "status": 200,
+   "msg": "Nomination rejected successfully"
+  },
+  {
+   "at": "14:50:28",
+   "event": "CANDIDATE SHORTLISTED — Siddharth Gupta",
+   "expectInYourChannel": "one card"
+  },
+  {
+   "at": "14:50:31",
+   "event": "CANDIDATE WITHDRAWN — Siddharth Gupta",
+   "expectInYourChannel": "one card",
+   "status": 200,
+   "msg": "Nomination removed successfully"
+  },
+  {
+   "at": "14:50:37",
+   "event": "PREPARATION COMPLETED — Payal Patel",
+   "expectInYourChannel": "one card",
+   "status": 200,
+   "msg": "Preparation Checklist updated successfully"
+  },
+  {
+   "at": "14:50:41",
+   "event": "INTERVIEW SCHEDULED — Payal Patel, Fri 20 Nov 2026 3:30 pm IST",
+   "expectInYourChannel": "one card, time must read 20 Nov 3:30 pm (IST)",
+   "status": 201,
+   "msg": "Interview Round added successfully"
+  },
+  {
+   "at": "14:50:46",
+   "event": "INTERVIEW SCHEDULED — Payal Patel, Mon 23 Nov 2026 11:00 am IST",
+   "expectInYourChannel": "one card",
+   "status": 201,
+   "msg": "Interview Round added successfully"
+  },
+  {
+   "at": "14:50:51",
+   "event": "INTERVIEW CANCELLED — Payal Patel (the 23 Nov round)",
+   "expectInYourChannel": "one card",
+   "status": 200,
+   "msg": "Interview Round removed successfully"
+  },
+  {
+   "at": "14:50:56",
+   "event": "INTERVIEW SCHEDULED — Payal Patel, back-dated to yesterday 2:30 pm IST",
+   "expectInYourChannel": "one card",
+   "status": 201,
+   "msg": "Interview Round added successfully"
+  },
+  {
+   "at": "14:51:01",
+   "event": "ROUND RESULT — Cleared (feedback \"SECRET-FEEDBACK-456\")",
+   "expectInYourChannel": "one card, result \"Cleared\", must NOT show SECRET-FEEDBACK-456",
+   "status": 200,
+   "msg": "Interview Round updated successfully"
+  },
+  {
+   "at": "14:51:06",
+   "event": "CANDIDATE SELECTED — Payal Patel",
+   "expectInYourChannel": "one card",
+   "status": 200,
+   "msg": "Candidate selected successfully"
+  },
+  {
+   "at": "14:51:10",
+   "event": "POSITION DELETED — \"Teams C\"",
+   "expectInYourChannel": "one card (still sent although the position is gone)",
+   "status": 200,
+   "msg": "Position deleted successfully"
+  },
+  {
+   "at": "14:51:15",
+   "event": "OPPORTUNITY STATUS CHANGED — OPP-0380 → On Hold",
+   "expectInYourChannel": "one card",
+   "status": 200,
+   "msg": "Opportunity status changed successfully"
+  },
+  {
+   "at": "14:51:20",
+   "event": "OPPORTUNITY STATUS CHANGED — OPP-0380 → Open",
+   "expectInYourChannel": "one card",
+   "status": 200,
+   "msg": "Opportunity status changed successfully"
+  },
+  {
+   "at": "14:51:24",
+   "event": "NEW OPPORTUNITY — Direct for Chintan Ghosh",
+   "expectInYourChannel": "one card",
+   "status": 201,
+   "msg": "Opportunity created successfully"
+  },
+  {
+   "at": "14:51:30",
+   "event": "DIRECT STAGE CHANGED — OPP-0381 → In Review",
+   "expectInYourChannel": "one card, Direct Stage \"In review\"",
+   "status": 200,
+   "msg": "Direct ticket stage updated successfully"
+  },
+  {
+   "at": "14:51:34",
+   "event": "DIRECT STAGE CHANGED — OPP-0381 → Awaiting",
+   "expectInYourChannel": "one card, Direct Stage \"Awaiting\"",
+   "status": 200,
+   "msg": "Direct ticket stage updated successfully"
+  },
+  {
+   "at": "14:51:39",
+   "event": "DIRECT CANCELLED — OPP-0381 (reason \"SECRET-CANCEL-789\")",
+   "expectInYourChannel": "one card, must NOT show SECRET-CANCEL-789",
+   "status": 200,
+   "msg": "Direct ticket marked as cancelled"
+  },
+  {
+   "at": "14:51:44",
+   "event": "BROKEN WEBHOOK TEST — shortlist Aditya Verma while webhook is broken",
+   "expectInYourChannel": "NO card (delivery fails) — action must still succeed",
+   "status": 201,
+   "msg": "Candidates nominated successfully"
+  },
+  {
+   "at": "14:51:48",
+   "event": "AFTER RESTORE — shortlist Sneha Joshi",
+   "expectInYourChannel": "one card (delivery works again)",
+   "status": 201,
+   "msg": "Candidates nominated successfully"
+  }
+ ]
+}

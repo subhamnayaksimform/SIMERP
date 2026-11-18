@@ -1,0 +1,1047 @@
+[
+ {
+  "name": "Kriti Desai",
+  "email": "kriti.desai@simformsolutions.com",
+  "contractor": false,
+  "canNominate": true,
+  "remain": 50,
+  "opps": 0,
+  "roles": [
+   "EMPLOYEE"
+  ]
+ },
+ {
+  "name": "Rushil Makwana",
+  "email": "rushil.makwana@simformsolutions.com",
+  "contractor": false,
+  "canNominate": true,
+  "remain": 55,
+  "opps": 1,
+  "roles": [
+   "EMPLOYEE"
+  ]
+ },
+ {
+  "name": "Uday Dave",
+  "email": "uday.dave@simformsolutions.com",
+  "contractor": true,
+  "canNominate": true,
+  "remain": 100,
+  "opps": 1,
+  "roles": [
+   "EMPLOYEE"
+  ]
+ },
+ {
+  "name": "Nimisha Kumar",
+  "email": "nimisha.kumar@simformsolutions.com",
+  "contractor": false,
+  "canNominate": true,
+  "remain": 30,
+  "opps": 1,
+  "roles": [
+   "EMPLOYEE"
+  ]
+ },
+ {
+  "name": "Manan Kapoor",
+  "email": "manan.kapoor@simformsolutions.com",
+  "contractor": true,
+  "canNominate": true,
+  "remain": 50,
+  "opps": 0,
+  "roles": [
+   "EMPLOYEE"
+  ]
+ },
+ {
+  "name": "Diya Nair",
+  "email": "diya.nair@simformsolutions.com",
+  "contractor": false,
+  "canNominate": true,
+  "remain": 100,
+  "opps": 3,
+  "roles": [
+   "EMPLOYEE",
+   "RM"
+  ]
+ },
+ {
+  "name": "Aarav Dutta",
+  "email": "aarav.dutta@simformsolutions.com",
+  "contractor": false,
+  "canNominate": true,
+  "remain": 1,
+  "opps": 0,
+  "roles": [
+   "EMPLOYEE"
+  ]
+ },
+ {
+  "name": "Vandana Mishra",
+  "email": "vandana.mishra@simformsolutions.com",
+  "contractor": false,
+  "canNominate": true,
+  "remain": 0,
+  "opps": 10,
+  "roles": [
+   "EMPLOYEE"
+  ]
+ },
+ {
+  "name": "Shaurya Agarwal",
+  "email": "shaurya.agarwal@simformsolutions.com",
+  "contractor": false,
+  "canNominate": true,
+  "remain": 50,
+  "opps": 1,
+  "roles": [
+   "EMPLOYEE",
+   "RM"
+  ]
+ },
+ {
+  "name": "Urvashi Saxena",
+  "email": "urvashi.saxena@simformsolutions.com",
+  "contractor": false,
+  "canNominate": true,
+  "remain": 100,
+  "opps": 1,
+  "roles": [
+   "EMPLOYEE"
+  ]
+ },
+ {
+  "name": "Kartik Dabhi",
+  "email": "kartik.dabhi@simformsolutions.com",
+  "contractor": false,
+  "canNominate": true,
+  "remain": 100,
+  "opps": 1,
+  "roles": [
+   "EMPLOYEE"
+  ]
+ },
+ {
+  "name": "Nisha Das",
+  "email": "nisha.das@simformsolutions.com",
+  "contractor": false,
+  "canNominate": true,
+  "remain": 0,
+  "opps": 1,
+  "roles": [
+   "EMPLOYEE"
+  ]
+ },
+ {
+  "name": "Siddharth Bansal",
+  "email": "siddharth.bansal@simformsolutions.com",
+  "contractor": false,
+  "canNominate": true,
+  "remain": 0,
+  "opps": 0,
+  "roles": [
+   "EMPLOYEE"
+  ]
+ },
+ {
+  "name": "Karan Contractor",
+  "email": "karan.contractor@simformsolutions.com",
+  "contractor": false,
+  "canNominate": true,
+  "remain": 90,
+  "opps": 0,
+  "roles": [
+   "EMPLOYEE"
+  ]
+ },
+ {
+  "name": "Aayush Kapoor",
+  "email": "aayush.kapoor@simformsolutions.com",
+  "contractor": false,
+  "canNominate": true,
+  "remain": 10,
+  "opps": 0,
+  "roles": [
+   "EMPLOYEE"
+  ]
+ },
+ {
+  "name": "Janki Naik",
+  "email": "janki.naik@simformsolutions.com",
+  "contractor": false,
+  "canNominate": true,
+  "remain": 0,
+  "opps": 9,
+  "roles": [
+   "EMPLOYEE"
+  ]
+ },
+ {
+  "name": "Riddhi Verma",
+  "email": "riddhi.verma@simformsolutions.com",
+  "contractor": false,
+  "canNominate": true,
+  "remain": 100,
+  "opps": 0,
+  "roles": [
+   "EMPLOYEE"
+  ]
+ },
+ {
+  "name": "Yamini Langalia",
+  "email": "yamini.langalia@simformsolutions.com",
+  "contractor": false,
+  "canNominate": true,
+  "remain": 100,
+  "opps": 0,
+  "roles": [
+   "EMPLOYEE"
+  ]
+ },
+ {
+  "name": "Diya Garg",
+  "email": "diya.garg@simformsolutions.com",
+  "contractor": false,
+  "canNominate": true,
+  "remain": 70,
+  "opps": 0,
+  "roles": [
+   "EMPLOYEE"
+  ]
+ },
+ {
+  "name": "Harsh Jobanputra",
+  "email": "harsh.jobanputra@simformsolutions.com",
+  "contractor": false,
+  "canNominate": true,
+  "remain": 42,
+  "opps": 0,
+  "roles": [
+   "EMPLOYEE"
+  ]
+ },
+ {
+  "name": "Anil Bansal",
+  "email": "anil.bansal@simformsolutions.com",
+  "contractor": false,
+  "canNominate": true,
+  "remain": 50,
+  "opps": 6,
+  "roles": [
+   "EMPLOYEE"
+  ]
+ },
+ {
+  "name": "Neel Pillai",
+  "email": "neel.pillai@simformsolutions.com",
+  "contractor": false,
+  "canNominate": true,
+  "remain": 80,
+  "opps": 0,
+  "roles": [
+   "EMPLOYEE"
+  ]
+ },
+ {
+  "name": "Yash Sinha",
+  "email": "yash.sinha@simformsolutions.com",
+  "contractor": false,
+  "canNominate": true,
+  "remain": 100,
+  "opps": 0,
+  "roles": [
+   "EMPLOYEE"
+  ]
+ },
+ {
+  "name": "Piyush Rawat",
+  "email": "piyush.rawat@simformsolutions.com",
+  "contractor": false,
+  "canNominate": true,
+  "remain": 0,
+  "opps": 0,
+  "roles": [
+   "EMPLOYEE"
+  ]
+ },
+ {
+  "name": "Prakash Pillai",
+  "email": "prakash.pillai@simformsolutions.com",
+  "contractor": false,
+  "canNominate": true,
+  "remain": 100,
+  "opps": 0,
+  "roles": [
+   "EMPLOYEE"
+  ]
+ },
+ {
+  "name": "Jigar Patel",
+  "email": "jigar.patel@simformsolutions.com",
+  "contractor": false,
+  "canNominate": true,
+  "remain": 50,
+  "opps": 0,
+  "roles": [
+   "EMPLOYEE"
+  ]
+ },
+ {
+  "name": "Tanmay Parekh",
+  "email": "tanmay.parekh@simformsolutions.com",
+  "contractor": true,
+  "canNominate": true,
+  "remain": 100,
+  "opps": 0,
+  "roles": [
+   "EMPLOYEE"
+  ]
+ },
+ {
+  "name": "Smriti Iyer",
+  "email": "smriti.iyer@simformsolutions.com",
+  "contractor": false,
+  "canNominate": true,
+  "remain": 110,
+  "opps": 0,
+  "roles": [
+   "EMPLOYEE"
+  ]
+ },
+ {
+  "name": "Ankita Das",
+  "email": "ankita.das@simformsolutions.com",
+  "contractor": false,
+  "canNominate": true,
+  "remain": 0,
+  "opps": 10,
+  "roles": [
+   "EMPLOYEE"
+  ]
+ },
+ {
+  "name": "Urvashi Kotak",
+  "email": "urvashi.kotak@simformsolutions.com",
+  "contractor": false,
+  "canNominate": true,
+  "remain": 100,
+  "opps": 0,
+  "roles": [
+   "EMPLOYEE"
+  ]
+ },
+ {
+  "name": "Keyur Dutta",
+  "email": "keyur.dutta@simformsolutions.com",
+  "contractor": false,
+  "canNominate": true,
+  "remain": 100,
+  "opps": 0,
+  "roles": [
+   "EMPLOYEE"
+  ]
+ },
+ {
+  "name": "Iti Trivedi",
+  "email": "iti.trivedi@simformsolutions.com",
+  "contractor": false,
+  "canNominate": true,
+  "remain": 90,
+  "opps": 0,
+  "roles": [
+   "EMPLOYEE"
+  ]
+ },
+ {
+  "name": "Dev Mukherjee",
+  "email": "dev.mukherjee@simformsolutions.com",
+  "contractor": false,
+  "canNominate": true,
+  "remain": 75,
+  "opps": 0,
+  "roles": [
+   "EMPLOYEE",
+   "RM"
+  ]
+ },
+ {
+  "name": "Kavya Naik",
+  "email": "kavya.naik@simformsolutions.com",
+  "contractor": false,
+  "canNominate": true,
+  "remain": 50,
+  "opps": 1,
+  "roles": [
+   "EMPLOYEE",
+   "RM"
+  ]
+ },
+ {
+  "name": "Aditya Patel",
+  "email": "aditya.patel@simformsolutions.com",
+  "contractor": false,
+  "canNominate": true,
+  "remain": 60,
+  "opps": 0,
+  "roles": [
+   "EMPLOYEE"
+  ]
+ },
+ {
+  "name": "Shaurya Menon",
+  "email": "shaurya.menon@simformsolutions.com",
+  "contractor": true,
+  "canNominate": true,
+  "remain": 70,
+  "opps": 0,
+  "roles": [
+   "EMPLOYEE"
+  ]
+ },
+ {
+  "name": "Charmi Sen",
+  "email": "charmi.sen@simformsolutions.com",
+  "contractor": false,
+  "canNominate": true,
+  "remain": 75,
+  "opps": 0,
+  "roles": [
+   "EMPLOYEE",
+   "RM"
+  ]
+ },
+ {
+  "name": "Reyansh Kotak",
+  "email": "reyansh.kotak@simformsolutions.com",
+  "contractor": true,
+  "canNominate": true,
+  "remain": 80,
+  "opps": 0,
+  "roles": [
+   "EMPLOYEE"
+  ]
+ },
+ {
+  "name": "Gunjan Modi",
+  "email": "gunjan.modi@simformsolutions.com",
+  "contractor": true,
+  "canNominate": true,
+  "remain": 50,
+  "opps": 3,
+  "roles": [
+   "EMPLOYEE"
+  ]
+ },
+ {
+  "name": "Maitri Hegde",
+  "email": "maitri.hegde@simformsolutions.com",
+  "contractor": false,
+  "canNominate": true,
+  "remain": 50,
+  "opps": 1,
+  "roles": [
+   "EMPLOYEE"
+  ]
+ },
+ {
+  "name": "Gargi Soni",
+  "email": "gargi.soni@simformsolutions.com",
+  "contractor": false,
+  "canNominate": true,
+  "remain": 50,
+  "opps": 0,
+  "roles": [
+   "EMPLOYEE"
+  ]
+ },
+ {
+  "name": "Punit Patil",
+  "email": "punit.patil@simformsolutions.com",
+  "contractor": false,
+  "canNominate": true,
+  "remain": 100,
+  "opps": 0,
+  "roles": [
+   "EMPLOYEE"
+  ]
+ },
+ {
+  "name": "Varsha Langalia",
+  "email": "varsha.langalia@simformsolutions.com",
+  "contractor": false,
+  "canNominate": true,
+  "remain": 100,
+  "opps": 0,
+  "roles": [
+   "EMPLOYEE",
+   "RM"
+  ]
+ },
+ {
+  "name": "Kashyap Makwana",
+  "email": "kashyap.makwana@simformsolutions.com",
+  "contractor": false,
+  "canNominate": true,
+  "remain": 66,
+  "opps": 0,
+  "roles": [
+   "EMPLOYEE"
+  ]
+ },
+ {
+  "name": "Fenil Kamath",
+  "email": "fenil.kamath@simformsolutions.com",
+  "contractor": false,
+  "canNominate": true,
+  "remain": 80,
+  "opps": 0,
+  "roles": [
+   "EMPLOYEE"
+  ]
+ },
+ {
+  "name": "Bhavesh Bansal",
+  "email": "bhavesh.bansal@simformsolutions.com",
+  "contractor": false,
+  "canNominate": true,
+  "remain": 100,
+  "opps": 0,
+  "roles": [
+   "EMPLOYEE",
+   "RM"
+  ]
+ },
+ {
+  "name": "Vihaan Patil",
+  "email": "vihaan.patil@simformsolutions.com",
+  "contractor": false,
+  "canNominate": true,
+  "remain": 30,
+  "opps": 0,
+  "roles": [
+   "EMPLOYEE"
+  ]
+ },
+ {
+  "name": "Nilesh Kumar",
+  "email": "nilesh.kumar@simformsolutions.com",
+  "contractor": false,
+  "canNominate": true,
+  "remain": 50,
+  "opps": 1,
+  "roles": [
+   "EMPLOYEE"
+  ]
+ },
+ {
+  "name": "Amit Sen",
+  "email": "amit.sen@simformsolutions.com",
+  "contractor": true,
+  "canNominate": true,
+  "remain": 0,
+  "opps": 4,
+  "roles": [
+   "EMPLOYEE"
+  ]
+ },
+ {
+  "name": "Deepak Contractor",
+  "email": "deepak.contractor@simformsolutions.com",
+  "contractor": false,
+  "canNominate": true,
+  "remain": 100,
+  "opps": 0,
+  "roles": [
+   "EMPLOYEE"
+  ]
+ },
+ {
+  "name": "Manish Desai",
+  "email": "manish.desai@simformsolutions.com",
+  "contractor": false,
+  "canNominate": true,
+  "remain": 59,
+  "opps": 0,
+  "roles": [
+   "EMPLOYEE",
+   "RM"
+  ]
+ },
+ {
+  "name": "Bhavin Reddy",
+  "email": "bhavin.reddy@simformsolutions.com",
+  "contractor": false,
+  "canNominate": true,
+  "remain": 70,
+  "opps": 0,
+  "roles": [
+   "EMPLOYEE"
+  ]
+ },
+ {
+  "name": "Nisha Roy",
+  "email": "nisha.roy@simformsolutions.com",
+  "contractor": false,
+  "canNominate": true,
+  "remain": 50,
+  "opps": 0,
+  "roles": [
+   "EMPLOYEE"
+  ]
+ },
+ {
+  "name": "Arjun Yadav",
+  "email": "arjun.yadav@simformsolutions.com",
+  "contractor": true,
+  "canNominate": true,
+  "remain": 70,
+  "opps": 0,
+  "roles": [
+   "EMPLOYEE"
+  ]
+ },
+ {
+  "name": "Dev Roy",
+  "email": "dev.roy@simformsolutions.com",
+  "contractor": false,
+  "canNominate": true,
+  "remain": 0,
+  "opps": 0,
+  "roles": [
+   "EMPLOYEE"
+  ]
+ },
+ {
+  "name": "Foram Patil",
+  "email": "foram.patil@simformsolutions.com",
+  "contractor": false,
+  "canNominate": true,
+  "remain": 75,
+  "opps": 0,
+  "roles": [
+   "EMPLOYEE"
+  ]
+ },
+ {
+  "name": "Nandini Kapoor",
+  "email": "nandini.kapoor@simformsolutions.com",
+  "contractor": false,
+  "canNominate": true,
+  "remain": 50,
+  "opps": 0,
+  "roles": [
+   "EMPLOYEE"
+  ]
+ },
+ {
+  "name": "Yamini Shah",
+  "email": "yamini.shah@simformsolutions.com",
+  "contractor": false,
+  "canNominate": true,
+  "remain": 65,
+  "opps": 0,
+  "roles": [
+   "EMPLOYEE"
+  ]
+ },
+ {
+  "name": "Rahul Mistry",
+  "email": "rahul.mistry@simformsolutions.com",
+  "contractor": false,
+  "canNominate": true,
+  "remain": 75,
+  "opps": 0,
+  "roles": [
+   "EMPLOYEE"
+  ]
+ },
+ {
+  "name": "Maitri Iyer",
+  "email": "maitri.iyer@simformsolutions.com",
+  "contractor": true,
+  "canNominate": true,
+  "remain": 70,
+  "opps": 0,
+  "roles": [
+   "EMPLOYEE"
+  ]
+ },
+ {
+  "name": "Kavya Khandelwal",
+  "email": "kavya.khandelwal@simformsolutions.com",
+  "contractor": false,
+  "canNominate": true,
+  "remain": 70,
+  "opps": 0,
+  "roles": [
+   "EMPLOYEE"
+  ]
+ },
+ {
+  "name": "Sudhansu Patel",
+  "email": "sudhansu.patel@simformsolutions.com",
+  "contractor": false,
+  "canNominate": true,
+  "remain": 50,
+  "opps": 0,
+  "roles": [
+   "EMPLOYEE",
+   "TM",
+   "RM"
+  ]
+ },
+ {
+  "name": "Tanvi Parekh",
+  "email": "tanvi.parekh@simformsolutions.com",
+  "contractor": false,
+  "canNominate": true,
+  "remain": 75,
+  "opps": 0,
+  "roles": [
+   "EMPLOYEE"
+  ]
+ },
+ {
+  "name": "Zeel Bhatt",
+  "email": "zeel.bhatt@simformsolutions.com",
+  "contractor": false,
+  "canNominate": true,
+  "remain": 90,
+  "opps": 0,
+  "roles": [
+   "EMPLOYEE"
+  ]
+ },
+ {
+  "name": "Punit Rao",
+  "email": "punit.rao@simformsolutions.com",
+  "contractor": false,
+  "canNominate": true,
+  "remain": 65,
+  "opps": 0,
+  "roles": [
+   "EMPLOYEE"
+  ]
+ },
+ {
+  "name": "Ekta Rathod",
+  "email": "ekta.rathod@simformsolutions.com",
+  "contractor": false,
+  "canNominate": true,
+  "remain": 70,
+  "opps": 0,
+  "roles": [
+   "EMPLOYEE"
+  ]
+ },
+ {
+  "name": "Prakash Ghosh",
+  "email": "prakash.ghosh@simformsolutions.com",
+  "contractor": false,
+  "canNominate": true,
+  "remain": 0,
+  "opps": 0,
+  "roles": [
+   "EMPLOYEE"
+  ]
+ },
+ {
+  "name": "Prachi Pillai",
+  "email": "prachi.pillai@simformsolutions.com",
+  "contractor": false,
+  "canNominate": true,
+  "remain": 100,
+  "opps": 1,
+  "roles": [
+   "EMPLOYEE"
+  ]
+ },
+ {
+  "name": "Vihaan Makwana",
+  "email": "vihaan.makwana@simformsolutions.com",
+  "contractor": false,
+  "canNominate": true,
+  "remain": 50,
+  "opps": 0,
+  "roles": [
+   "EMPLOYEE"
+  ]
+ },
+ {
+  "name": "Divya Rathod",
+  "email": "divya.rathod@simformsolutions.com",
+  "contractor": false,
+  "canNominate": true,
+  "remain": 50,
+  "opps": 2,
+  "roles": [
+   "EMPLOYEE"
+  ]
+ },
+ {
+  "name": "Tarun Arora",
+  "email": "tarun.arora@simformsolutions.com",
+  "contractor": false,
+  "canNominate": true,
+  "remain": 35,
+  "opps": 0,
+  "roles": [
+   "EMPLOYEE"
+  ]
+ },
+ {
+  "name": "Swati Yadav",
+  "email": "swati.yadav@simformsolutions.com",
+  "contractor": false,
+  "canNominate": true,
+  "remain": 50,
+  "opps": 1,
+  "roles": [
+   "EMPLOYEE"
+  ]
+ },
+ {
+  "name": "Kartik Reddy",
+  "email": "kartik.reddy@simformsolutions.com",
+  "contractor": false,
+  "canNominate": true,
+  "remain": 50,
+  "opps": 1,
+  "roles": [
+   "EMPLOYEE"
+  ]
+ },
+ {
+  "name": "Sneha Yadav",
+  "email": "sneha.yadav@simformsolutions.com",
+  "contractor": false,
+  "canNominate": true,
+  "remain": 100,
+  "opps": 0,
+  "roles": [
+   "EMPLOYEE"
+  ]
+ },
+ {
+  "name": "Vikram Dave",
+  "email": "vikram.dave@simformsolutions.com",
+  "contractor": false,
+  "canNominate": true,
+  "remain": 50,
+  "opps": 1,
+  "roles": [
+   "EMPLOYEE"
+  ]
+ },
+ {
+  "name": "Akash Singh",
+  "email": "akash.singh@simformsolutions.com",
+  "contractor": false,
+  "canNominate": true,
+  "remain": 100,
+  "opps": 6,
+  "roles": [
+   "EMPLOYEE"
+  ]
+ },
+ {
+  "name": "Suresh Mukherjee",
+  "email": "suresh.mukherjee@simformsolutions.com",
+  "contractor": false,
+  "canNominate": true,
+  "remain": 80,
+  "opps": 0,
+  "roles": [
+   "EMPLOYEE"
+  ]
+ },
+ {
+  "name": "Simran Nair",
+  "email": "simran.nair@simformsolutions.com",
+  "contractor": false,
+  "canNominate": true,
+  "remain": 0,
+  "opps": 0,
+  "roles": [
+   "EMPLOYEE"
+  ]
+ },
+ {
+  "name": "Meera Soni",
+  "email": "meera.soni@simformsolutions.com",
+  "contractor": false,
+  "canNominate": true,
+  "remain": 80,
+  "opps": 0,
+  "roles": [
+   "EMPLOYEE"
+  ]
+ },
+ {
+  "name": "Hardik Chaudhari",
+  "email": "hardik.chaudhari@simformsolutions.com",
+  "contractor": false,
+  "canNominate": true,
+  "remain": 50,
+  "opps": 0,
+  "roles": [
+   "EMPLOYEE"
+  ]
+ },
+ {
+  "name": "Dhruv Pillai",
+  "email": "dhruv.pillai@simformsolutions.com",
+  "contractor": false,
+  "canNominate": true,
+  "remain": 0,
+  "opps": 0,
+  "roles": [
+   "EMPLOYEE"
+  ]
+ },
+ {
+  "name": "Ekta Mistry",
+  "email": "ekta.mistry@simformsolutions.com",
+  "contractor": false,
+  "canNominate": true,
+  "remain": 80,
+  "opps": 0,
+  "roles": [
+   "EMPLOYEE",
+   "RM"
+  ]
+ },
+ {
+  "name": "Isha Gajjar",
+  "email": "isha.gajjar@simformsolutions.com",
+  "contractor": false,
+  "canNominate": true,
+  "remain": 50,
+  "opps": 0,
+  "roles": [
+   "EMPLOYEE"
+  ]
+ },
+ {
+  "name": "Drashti Parekh",
+  "email": "drashti.parekh@simformsolutions.com",
+  "contractor": false,
+  "canNominate": true,
+  "remain": 50,
+  "opps": 1,
+  "roles": [
+   "EMPLOYEE"
+  ]
+ },
+ {
+  "name": "Suresh Roy",
+  "email": "suresh.roy@simformsolutions.com",
+  "contractor": true,
+  "canNominate": true,
+  "remain": 50,
+  "opps": 1,
+  "roles": [
+   "EMPLOYEE"
+  ]
+ },
+ {
+  "name": "Yash Chauhan",
+  "email": "yash.chauhan@simformsolutions.com",
+  "contractor": true,
+  "canNominate": true,
+  "remain": 50,
+  "opps": 1,
+  "roles": [
+   "EMPLOYEE"
+  ]
+ },
+ {
+  "name": "Vandana Jain",
+  "email": "vandana.jain@simformsolutions.com",
+  "contractor": false,
+  "canNominate": true,
+  "remain": 50,
+  "opps": 0,
+  "roles": [
+   "EMPLOYEE"
+  ]
+ },
+ {
+  "name": "Swati Malhotra",
+  "email": "swati.malhotra@simformsolutions.com",
+  "contractor": false,
+  "canNominate": true,
+  "remain": 75,
+  "opps": 0,
+  "roles": [
+   "EMPLOYEE"
+  ]
+ },
+ {
+  "name": "Neel Rathod",
+  "email": "neel.rathod@simformsolutions.com",
+  "contractor": false,
+  "canNominate": true,
+  "remain": 50,
+  "opps": 0,
+  "roles": [
+   "EMPLOYEE"
+  ]
+ },
+ {
+  "name": "Gunjan Shetty",
+  "email": "gunjan.shetty@simformsolutions.com",
+  "contractor": false,
+  "canNominate": true,
+  "remain": 100,
+  "opps": 2,
+  "roles": [
+   "EMPLOYEE"
+  ]
+ },
+ {
+  "name": "Arnav Shetty",
+  "email": "arnav.shetty@simformsolutions.com",
+  "contractor": false,
+  "canNominate": true,
+  "remain": 100,
+  "opps": 0,
+  "roles": [
+   "EMPLOYEE"
+  ]
+ },
+ {
+  "name": "Kunal Shetty",
+  "email": "kunal.shetty@simformsolutions.com",
+  "contractor": false,
+  "canNominate": true,
+  "remain": 0,
+  "opps": 0,
+  "roles": [
+   "EMPLOYEE"
+  ]
+ },
+ {
+  "name": "Omkar Barot",
+  "email": "omkar.barot@simformsolutions.com",
+  "contractor": false,
+  "canNominate": true,
+  "remain": 70,
+  "opps": 0,
+  "roles": [
+   "EMPLOYEE"
+  ]
+ },
+ {
+  "name": "Tarun Khandelwal",
+  "email": "tarun.khandelwal@simformsolutions.com",
+  "contractor": false,
+  "canNominate": true,
+  "remain": 70,
+  "opps": 0,
+  "roles": [
+   "EMPLOYEE"
+  ]
+ }
+]

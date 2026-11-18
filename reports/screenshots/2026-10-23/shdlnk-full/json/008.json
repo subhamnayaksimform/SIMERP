@@ -1,0 +1,213 @@
+{
+  "d": {
+    "publicId": "3ab87780-1e29-42bd-bf6d-da8a934f107d",
+    "ticketNumber": "DA-0165",
+    "ticketType": "DEALLOCATE_ALLOCATION",
+    "intent": null,
+    "status": "AWAITING_CONFIRMATION",
+    "priority": "LOW",
+    "allocationRequestCreationType": null,
+    "allocationEndDate": "2026-10-31T00:00:00.000Z",
+    "effectiveStartDate": null,
+    "effectiveEndDate": null,
+    "project": {
+      "publicId": "3d138a89-4d06-4839-8091-436fba0a2dd6",
+      "name": "HyperScale | Scalability Engine",
+      "csmId": "3850",
+      "accountGrade": 6.8
+    },
+    "department": {
+      "publicId": "02258af1-79b0-4e88-bebb-aee86933bd9c",
+      "name": "DATA ENGINEERING",
+      "iconUrl": "https://d3e6uquevgpr8q.cloudfront.net/department-icons/data-engineering.svg"
+    },
+    "departmentTechStack": [
+      {
+        "name": "Databricks",
+        "logoUrl": "https://cdn.simpleicons.org/databricks"
+      },
+      {
+        "name": "Azure Fabric",
+        "logoUrl": "https://cdn.simpleicons.org/microsoftazure"
+      },
+      {
+        "name": "Snowflake",
+        "logoUrl": "https://cdn.simpleicons.org/snowflake"
+      },
+      {
+        "name": "GCP",
+        "logoUrl": "https://cdn.simpleicons.org/googlecloud"
+      },
+      {
+        "name": "Power BI",
+        "logoUrl": "https://cdn.simpleicons.org/powerbi"
+      },
+      {
+        "name": "Tableau",
+        "logoUrl": "https://cdn.simpleicons.org/tableau"
+      },
+      {
+        "name": "Looker",
+        "logoUrl": "https://cdn.simpleicons.org/looker"
+      },
+      {
+        "name": "AWS",
+        "logoUrl": "https://cdn.simpleicons.org/amazonaws"
+      }
+    ],
+    "additionalTechStacks": [],
+    "allocationStartDate": "2026-10-23T00:00:00.000Z",
+    "requestedAllocationType": "FIXED",
+    "requestedAllocationPercentage": null,
+    "allocationSnapshot": {
+      "reason": "UPDATED",
+      "allocationType": "FIXED",
+      "allocationPercentage": null,
+      "allocationStartDate": "2026-10-23T00:00:00.000Z",
+      "allocationEndDate": "2026-10-31T00:00:00.000Z",
+      "typeOfWork": "DEVELOPMENT_WORK",
+      "previousAllocationPercentage": 10,
+      "previousAllocationStartDate": "2026-10-23T00:00:00.000Z",
+      "previousAllocationEndDate": "2026-11-20T00:00:00.000Z",
+      "createdAt": "2026-10-23T12:51:13.953Z"
+    },
+    "allocationSnapshots": [
+      {
+        "reason": "UPDATED",
+        "allocationType": "FIXED",
+        "allocationPercentage": null,
+        "allocationStartDate": "2026-10-23T00:00:00.000Z",
+        "allocationEndDate": "2026-10-31T00:00:00.000Z",
+        "typeOfWork": "DEVELOPMENT_WORK",
+        "previousAllocationPercentage": 10,
+        "previousAllocationStartDate": "2026-10-23T00:00:00.000Z",
+        "previousAllocationEndDate": "2026-11-20T00:00:00.000Z",
+        "createdAt": "2026-10-23T12:51:13.953Z"
+      }
+    ],
+    "targetScheduledChangePublicId": null,
+    "supersededTicketPublicId": null,
+    "supersededTicketNumber": null,
+    "replacedAssignment": {
+      "publicId": "c6ab9bcf-d61e-4d79-abd4-2fb8dffc095a",
+      "employee": {
+        "publicId": "86d36ef8-8baa-4c97-9b3f-a2469cefe7bb",
+        "name": "Aarav Patel",
+        "photoUrl": "https://i.pravatar.cc/150?u=aarav.patel@simformsolutions.com"
+      },
+      "project": {
+        "publicId": "3d138a89-4d06-4839-8091-436fba0a2dd6",
+        "name": "HyperScale | Scalability Engine"
+      },
+      "allocationPercentage": 10,
+      "allocationType": "FIXED",
+      "allocationStartDate": "2026-10-23T00:00:00.000Z",
+      "allocationEndDate": "2026-11-20T00:00:00.000Z",
+      "status": "GREEN",
+      "typeOfWork": "DEVELOPMENT_WORK",
+      "allocationOrigin": "PMO",
+      "shadowDeveloper": {
+        "publicId": "ac6152ae-cd6e-4846-bda4-04f6ecc5f5fa",
+        "name": "Karan Contractor",
+        "photoUrl": "https://i.pravatar.cc/150?u=karan.contractor@simformsolutions.com"
+      }
+    },
+    "preferredEmployees": [],
+    "shortlistedEmployees": [],
+    "requester": {
+      "publicId": "09d434e9-5346-4790-8ae7-f5105e5b4968",
+      "name": "Priya Chopra",
+      "photoUrl": "https://i.pravatar.cc/150?u=priya.chopra@simformsolutions.com"
+    },
+    "createdAt": "2026-10-23T12:51:13.944Z",
+    "updatedAt": "2026-10-23T12:51:13.944Z",
+    "statusSteps": [
+      {
+        "key": "SUBMITTED",
+        "title": "CSM submits request",
+        "description": "CSM submits a deallocation request",
+        "state": "COMPLETED",
+        "completedAt": "2026-10-23T12:51:13.944Z",
+        "performedBy": {
+          "publicId": "09d434e9-5346-4790-8ae7-f5105e5b4968",
+          "name": "Priya Chopra",
+          "photoUrl": "https://i.pravatar.cc/150?u=priya.chopra@simformsolutions.com"
+        }
+      },
+      {
+        "key": "PMO_REVIEWED",
+        "title": "PMO Review",
+        "description": "Pending PMO action",
+        "state": "COMPLETED",
+        "completedAt": "2026-10-23T12:51:13.944Z",
+        "performedBy": {
+          "publicId": "09d434e9-5346-4790-8ae7-f5105e5b4968",
+          "name": "Priya Chopra",
+          "photoUrl": "https://i.pravatar.cc/150?u=priya.chopra@simformsolutions.com"
+        }
+      },
+      {
+        "key": "ACKNOWLEDGED",
+        "title": "PMO Acknowledges",
+        "description": "PMO approved",
+        "state": "CURRENT"
+      },
+      {
+        "key": "NOTIFIED",
+        "title": "RM/TM/EM Notified",
+        "description": "Awaiting confirmation",
+        "state": "PENDING"
+      },
+      {
+        "key": "FINALIZED",
+        "title": "Employee Deallocated",
+        "description": "Employee received notification",
+        "state": "PENDING"
+      }
+    ],
+    "approvals": {},
+    "feedbacks": [
+      {
+        "developer": {
+          "publicId": "86d36ef8-8baa-4c97-9b3f-a2469cefe7bb",
+          "name": "Aarav Patel",
+          "photoUrl": "https://i.pravatar.cc/150?u=aarav.patel@simformsolutions.com"
+        },
+        "coreSkillRating": 7,
+        "communicationRating": 7,
+        "behavioralRating": 7,
+        "overallRating": 7,
+        "developerFeedback": "QA SHDLNK re-test 2026-10-23 c-008",
+        "isOpenToWorkWithAgain": true,
+        "deallocationReason": "ROLE_MISALIGNMENT"
+      }
+    ],
+    "targetAssignmentTimeline": [
+      {
+        "ticketPublicId": "1b4570ef-c20d-498c-9702-8dbd148d8f84",
+        "ticketNumber": "NA-0430",
+        "scheduledChangePublicId": null,
+        "effectiveFrom": "2026-10-23",
+        "effectiveTo": "2026-11-20",
+        "allocationType": "FIXED",
+        "allocationPercentage": 10,
+        "isCurrent": true,
+        "isPending": false,
+        "segmentType": "STANDING"
+      }
+    ],
+    "group": null
+  },
+  "c": {
+    "status": 200,
+    "body": {
+      "code": "SUCCESS",
+      "message": "Ticket closed successfully",
+      "data": {
+        "publicId": "3ab87780-1e29-42bd-bf6d-da8a934f107d",
+        "ticketNumber": "DA-0165",
+        "status": "CLOSED"
+      }
+    }
+  }
+}

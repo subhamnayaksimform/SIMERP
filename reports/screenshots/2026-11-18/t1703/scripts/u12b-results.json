@@ -1,0 +1,32 @@
+[
+ {
+  "area": "4.alloc-edit",
+  "name": "UI: Fixed 20 -> Dynamic -> Fixed restores saved 20, not 0",
+  "pass": true,
+  "detail": "{\"before\":\"20\",\"dyn\":\"0\",\"back\":\"20\"}"
+ },
+ {
+  "area": "4.alloc-edit",
+  "name": "UI: clearing End Date + Effective From enables Save",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "area": "4.alloc-edit",
+  "name": "saved: End Date and Effective From cleared",
+  "pass": true,
+  "detail": "{\"eff\":null,\"type\":\"FIXED\",\"pct\":20,\"status\":\"AWAITING_CONFIRMATION\"}"
+ },
+ {
+  "area": "4.alloc-edit",
+  "name": "reopen: End Date and Effective From stay blank",
+  "pass": true,
+  "detail": "{\"endV\":\"Pick a date\",\"effV\":\"Pick a date\"}"
+ },
+ {
+  "area": "4.alloc-edit",
+  "name": "UI: live-Dynamic (UA-0146) cannot go to Fixed - message shown",
+  "pass": true,
+  "detail": "{\"radioDisabled\":false,\"m\":[\"Cannot change to Fixed allocation. Deallocate the employee first.\",\"Allocation % is required\"]}"
+ }
+]

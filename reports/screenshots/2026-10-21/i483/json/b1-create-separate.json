@@ -1,0 +1,51 @@
+{
+  "req": {
+    "projectPublicId": "3d138a89-4d06-4839-8091-436fba0a2dd6",
+    "description": "QA retest SI4-I483 2026-10-21: manual shadow-to-main (separate tickets)",
+    "resourceRequests": [
+      {
+        "deptStackPublicId": "8c45d16e-90a3-4947-a13c-437baf2bf77d",
+        "requestedAllocationStartDate": "2026-11-01",
+        "requestedAllocationType": "FIXED",
+        "requestedAllocationPercentage": 20,
+        "isInterviewRequired": false,
+        "isClientFacing": false,
+        "requestType": "FRESH_ALLOCATION",
+        "developerPreferencePublicIds": [
+          "f94d6cb2-e5b5-4c14-99d2-3fbd28a1cde9"
+        ],
+        "note": "I483 promotion of Kunal Menon (shadow) to main"
+      },
+      {
+        "deptStackPublicId": "8c45d16e-90a3-4947-a13c-437baf2bf77d",
+        "requestedAllocationStartDate": "2026-11-01",
+        "requestedAllocationType": "FIXED",
+        "requestedAllocationPercentage": 20,
+        "isInterviewRequired": false,
+        "isClientFacing": false,
+        "requestType": "SHADOW_DEVELOPER",
+        "shadowForPublicId": "f94d6cb2-e5b5-4c14-99d2-3fbd28a1cde9",
+        "note": "I483 new shadow for Kunal Menon"
+      }
+    ]
+  },
+  "res": {
+    "status": 201,
+    "body": {
+      "code": "ALLOCATION_TICKET_006",
+      "message": "New allocation ticket(s) created successfully",
+      "data": [
+        {
+          "publicId": "9c12bcd1-0a40-489d-ba79-fec426880220",
+          "ticketNumber": "NA-0390",
+          "status": "OPEN"
+        },
+        {
+          "publicId": "68a2feb8-fbbf-4d36-a629-6e9d43473bfe",
+          "ticketNumber": "NA-0391",
+          "status": "OPEN"
+        }
+      ]
+    }
+  }
+}

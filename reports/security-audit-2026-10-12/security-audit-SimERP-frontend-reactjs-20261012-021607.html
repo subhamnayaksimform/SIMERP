@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Security Audit Report — SimERP-frontend-reactjs</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --brand:#E3232D;--brand-dark:#B01A23;--brand-light:#FEF2F3;--brand-muted:#fbd5da;
+  --pass:#16a34a;--pass-bg:#dcfce7;
+  --fail:#dc2626;--fail-bg:#fee2e2;
+  --warn:#d97706;--warn-bg:#fef3c7;
+  --critical:#DC2626;--critical-bg:#FEE2E2;
+  --na:#6b7280;--na-bg:#f3f4f6;
+  --azure-c:#1D4ED8;--azure-bg:#EFF6FF;
+  --manual-c:#6D28D9;--manual-bg:#F5F3FF;
+  --text:#111827;--text-muted:#6b7280;
+  --border:#e5e7eb;--surface:#ffffff;--bg:#f9fafb;
+  --radius:8px;
+  --shadow:0 1px 3px rgba(0,0,0,.1),0 1px 2px rgba(0,0,0,.06);
+  --mono:'JetBrains Mono','Fira Code',Consolas,monospace;
+  --sans:'DM Sans',system-ui,sans-serif;
+}
+body{font-family:var(--sans);background:var(--bg);color:var(--text);font-size:14px;line-height:1.6}
+.report-header{background:var(--brand);color:#fff;padding:28px 48px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.header-logo img{height:32px;filter:brightness(0) invert(1)}
+.header-title h1{font-size:22px;font-weight:700;letter-spacing:-.3px}
+.header-title p{font-size:13px;opacity:.85;margin-top:4px}
+.header-meta{display:flex;gap:10px;flex-wrap:wrap}
+.meta-chip{background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.3);border-radius:20px;padding:4px 14px;font-size:12px;white-space:nowrap}
+.score-bar{background:var(--surface);border-bottom:1px solid var(--border);padding:20px 48px;display:flex;gap:16px;flex-wrap:wrap;align-items:center}
+.score-card{flex:1;min-width:110px;background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);padding:14px 18px;text-align:center;box-shadow:var(--shadow)}
+.score-card .sc-value{font-size:28px;font-weight:800;line-height:1.1}
+.score-card .sc-label{font-size:10px;text-transform:uppercase;letter-spacing:.8px;color:var(--text-muted);margin-top:4px}
+.score-card.risk-critical .sc-value{color:var(--critical)}
+.score-card.risk-high .sc-value{color:var(--fail)}
+.score-card.risk-medium .sc-value{color:var(--warn)}
+.score-card.risk-low .sc-value{color:var(--pass)}
+.score-card.c-pass .sc-value{color:var(--pass)}
+.score-card.c-fail .sc-value{color:var(--fail)}
+.score-card.c-warn .sc-value{color:var(--warn)}
+.score-card.c-na .sc-value{color:var(--na)}
+.score-card.c-crit .sc-value{color:var(--critical)}
+.toc{background:var(--surface);border-bottom:1px solid var(--border);padding:0 48px;display:flex;flex-wrap:wrap;gap:2px}
+.toc a{padding:12px 14px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--text-muted);text-decoration:none;border-bottom:3px solid transparent;transition:all .15s}
+.toc a:hover{color:var(--brand);border-bottom-color:var(--brand)}
+.report-body{max-width:1300px;margin:0 auto;padding:36px 48px 72px}
+.section{margin-bottom:48px}
+.section-heading{display:flex;align-items:center;gap:10px;margin-bottom:20px;padding-bottom:10px;border-bottom:2px solid var(--brand)}
+.section-number{background:var(--brand);color:#fff;font-size:11px;font-weight:700;padding:3px 9px;border-radius:4px;letter-spacing:.5px}
+.section-title{font-size:17px;font-weight:700;color:var(--text)}
+.risk-banner{border-radius:var(--radius);padding:16px 22px;font-size:15px;font-weight:700;margin-bottom:24px;border:2px solid}
+.risk-banner.risk-critical{background:var(--critical-bg);color:var(--critical);border-color:#fecaca}
+.risk-banner.risk-high{background:var(--fail-bg);color:var(--fail);border-color:#fecaca}
+.risk-banner.risk-medium{background:var(--warn-bg);color:var(--warn);border-color:#fde68a}
+.risk-banner.risk-low{background:var(--pass-bg);color:var(--pass);border-color:#bbf7d0}
+.meta-grid-2col{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
+.meta-col-hdr{padding:10px 16px;background:#1A1A2E}
+.meta-col-hdr span{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.6)}
+.meta-tbl{width:100%;border-collapse:collapse}
+.meta-tbl td{padding:10px 16px;border-bottom:1px solid var(--border);font-size:13px;vertical-align:top}
+.meta-tbl tr:last-child td{border-bottom:none}
+.meta-tbl td:first-child{font-weight:600;color:var(--text-muted);width:180px;background:var(--bg)}
+.meta-tbl td:last-child{background:var(--surface)}
+.meta-col-left{border-right:1px solid var(--border)}
+.subsec-hdr{display:flex;align-items:center;gap:10px;margin:0 0 12px}
+.subsec-num{width:26px;height:26px;background:#2D3748;color:#fff;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0}
+.subsec-title{font-size:15px;font-weight:700;color:var(--text)}
+.subsec-sub{font-size:11px;color:var(--text-muted);margin-top:1px}
+.table-wrap{overflow-x:auto;border-radius:var(--radius);border:1px solid var(--border);box-shadow:var(--shadow);margin-bottom:24px}
+table{width:100%;border-collapse:collapse;background:var(--surface)}
+thead th{background:#1A1A2E;color:rgba(255,255,255,.85);padding:10px 14px;text-align:left;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;white-space:nowrap}
+tbody tr{border-bottom:1px solid var(--border);transition:background .15s}
+tbody tr:last-child{border-bottom:none}
+tbody tr:hover{background:var(--brand-light)}
+tbody td{padding:10px 14px;font-size:13px;vertical-align:top}
+tbody td:first-child{font-weight:600;color:var(--text-muted);width:36px}
+code{background:var(--bg);border:1px solid var(--border);border-radius:4px;padding:1px 6px;font-family:var(--mono);font-size:12px;color:var(--brand-dark)}
+.code-block{font-family:var(--mono);font-size:12px;background:#1E1E2E;color:#CDD6F4;padding:14px 18px;border-radius:8px;overflow-x:auto;line-height:1.65;margin:8px 0;white-space:pre-wrap;word-break:break-all}
+.hl{color:#F38BA8;font-weight:700}
+.rule-id{display:inline-block;background:var(--brand-light);color:var(--brand-dark);border:1px solid var(--brand-muted);border-radius:4px;padding:1px 7px;font-size:11px;font-weight:700;margin-right:6px;white-space:nowrap;font-family:var(--mono)}
+.badge-critical,.badge-high,.badge-medium,.badge-low,.badge-pass,.badge-na,.badge-azure,.badge-manual{display:inline-block;border-radius:12px;padding:2px 10px;font-size:10px;font-weight:700;white-space:nowrap}
+.badge-critical{background:var(--critical-bg);color:var(--critical);border:1px solid #fecaca}
+.badge-high{background:var(--fail-bg);color:var(--fail);border:1px solid #fecaca}
+.badge-medium{background:var(--warn-bg);color:var(--warn);border:1px solid #fde68a}
+.badge-low{background:var(--na-bg);color:var(--na);border:1px solid #d1d5db}
+.badge-pass{background:var(--pass-bg);color:var(--pass);border:1px solid #bbf7d0}
+.badge-na{background:var(--manual-bg);color:var(--manual-c);border:1px solid #ddd6fe}
+.badge-azure{background:var(--azure-bg);color:var(--azure-c);border:1px solid #bfdbfe}
+.badge-manual{background:var(--manual-bg);color:var(--manual-c);border:1px solid #ddd6fe}
+.analysis-block{background:var(--surface);border:1px solid var(--border);border-left:4px solid var(--brand);border-radius:var(--radius);margin-bottom:16px;box-shadow:var(--shadow);overflow:hidden}
+.analysis-header{background:var(--brand-light);border-bottom:1px solid var(--brand-muted);padding:12px 18px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.analysis-title{font-size:13px;font-weight:700;color:var(--text);flex:1}
+.analysis-body{padding:18px;display:flex;flex-direction:column;gap:10px;font-size:13px}
+.analysis-body p{line-height:1.6}
+.analysis-body ol,.analysis-body ul{padding-left:20px;display:flex;flex-direction:column;gap:6px;margin-top:6px}
+.ditem{display:flex;gap:14px;padding:14px 18px;border-bottom:1px solid var(--border);align-items:flex-start}
+.ditem:last-child{border-bottom:none}
+.dref{font-size:10px;font-weight:700;background:var(--bg);color:var(--text-muted);border:1px solid var(--border);padding:2px 8px;border-radius:4px;white-space:nowrap;align-self:flex-start;margin-top:2px;font-family:var(--mono)}
+.card{background:var(--surface);border-radius:var(--radius);border:1px solid var(--border);overflow:hidden;box-shadow:var(--shadow)}
+.empty{text-align:center;padding:40px;color:var(--text-muted);font-size:14px}
+.report-footer{background:var(--brand);color:rgba(255,255,255,.85);text-align:center;padding:20px 48px;font-size:12px;margin-top:40px}
+.report-footer img{height:24px;filter:brightness(0) invert(1);margin-bottom:8px}
+.report-footer p{margin-top:4px}
+</style>
+</head>
+<body>
+
+<header class="report-header">
+  <div class="header-logo">
+    <img src="https://www.simform.com/wp-content/uploads/2024/12/simform-logo.svg" alt="Simform"
+         onerror="this.outerHTML='&lt;span style=&quot;font-size:20px;font-weight:800;color:#fff&quot;&gt;simform&lt;/span&gt;'"/>
+  </div>
+  <div class="header-title">
+    <h1>Security Audit Report</h1>
+    <p>SimERP-frontend-reactjs</p>
+  </div>
+  <div class="header-meta">
+    <span class="meta-chip">&#128197; 12 October 2026, 07:44 IST</span>
+    <span class="meta-chip">&#128256; N/A</span>
+    <span class="meta-chip">Frontend SPA (React 19 + Vite + TypeScript)</span>
+    <span class="meta-chip">Agent v2.2</span>
+  </div>
+</header>
+
+<div class="score-bar">
+  <div class="score-card risk-critical">
+    <div class="sc-value">CRITICAL</div>
+    <div class="sc-label">Overall Risk</div>
+  </div>
+  <div class="score-card c-pass">
+    <div class="sc-value">8</div>
+    <div class="sc-label">Passed</div>
+  </div>
+  <div class="score-card c-fail">
+    <div class="sc-value">1</div>
+    <div class="sc-label">Failed</div>
+  </div>
+  <div class="score-card c-na">
+    <div class="sc-value">20</div>
+    <div class="sc-label">N/A</div>
+  </div>
+  <div class="score-card c-crit">
+    <div class="sc-value">1</div>
+    <div class="sc-label">Critical</div>
+  </div>
+  <div class="score-card c-fail">
+    <div class="sc-value">0</div>
+    <div class="sc-label">High</div>
+  </div>
+  <div class="score-card c-warn">
+    <div class="sc-value">0</div>
+    <div class="sc-label">Medium</div>
+  </div>
+  <div class="score-card c-na">
+    <div class="sc-value">0</div>
+    <div class="sc-label">Low</div>
+  </div>
+</div>
+
+<nav class="toc">
+  <a href="#s1">&#167;1 Audit Metadata</a>
+  <a href="#s2">&#167;2 Violated Rules</a>
+  <a href="#s3">&#167;3 Passed &amp; N/A</a>
+  <a href="#s4">&#167;4 Rule-wise Analysis</a>
+  <a href="#s5">&#167;5 Delegated Items</a>
+</nav>
+
+<div class="report-body">
+
+<!-- SECTION 1 — AUDIT METADATA -->
+<section class="section" id="s1">
+  <div class="section-heading">
+    <span class="section-number">SECTION 1</span>
+    <span class="section-title">Audit Metadata</span>
+  </div>
+  <div class="risk-banner risk-critical">
+    &#128274; Overall Risk Rating: CRITICAL
+  </div>
+  <div class="meta-grid-2col">
+    <div class="meta-col-left">
+      <div class="meta-col-hdr"><span>Scan Information</span></div>
+      <table class="meta-tbl">
+        <tbody>
+          <tr><td>Project Name</td><td>SimERP-frontend-reactjs</td></tr>
+          <tr><td>Git Commit</td><td><code>N/A</code></td></tr>
+          <tr><td>Project Type</td><td>Frontend SPA (React 19 + Vite + TypeScript)</td></tr>
+          <tr><td>Scan Date &amp; Time</td><td>12 October 2026, 07:44 IST</td></tr>
+          <tr><td>Files Scanned</td><td>2143</td></tr>
+          <tr><td>Agent</td><td>Simform Security Review Agent v2.2</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div>
+      <div class="meta-col-hdr"><span>Compliance Score</span></div>
+      <table class="meta-tbl">
+        <tbody>
+          <tr><td>Scoreable Rules</td><td>9</td></tr>
+          <tr><td>Rules Passed</td><td><span style="color:var(--pass);font-weight:700">8</span></td></tr>
+          <tr><td>Rules Failed</td><td><span style="color:var(--critical);font-weight:700">1</span></td></tr>
+          <tr><td>N/A Rules</td><td><span style="color:var(--na);font-weight:700">20</span></td></tr>
+          <tr><td>Adjusted Score</td><td><strong style="font-size:20px;color:#22d3ee">84 / 100</strong></td></tr>
+          <tr><td>Grade</td><td><strong style="font-size:24px;color:#22d3ee">B</strong></td></tr>
+          <tr><td>Scoring Note</td><td style="font-size:12px;color:var(--text-muted)">Base=(passed/scoreable)&times;100 minus severity penalty. Critical=&minus;5pt, High=&minus;3, Medium=&minus;2, Low=&minus;1. Azure and Manual rules excluded. NA rules (no applicable code) excluded from denominator.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 2 — VIOLATED RULES -->
+<section class="section" id="s2">
+  <div class="section-heading">
+    <span class="section-number">SECTION 2</span>
+    <span class="section-title">Violated Rules Summary</span>
+  </div>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Rule</th>
+          <th>File &middot; Line</th>
+          <th>Impact</th>
+          <th>Fix</th>
+          <th>Severity</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+  <td>1</td>
+  <td><span class="rule-id">SEC-BE-02</span> Insecure HTTP / protocol usage</td>
+  <td><code>src/lib/env.ts:23</code><br/><code>src/lib/env.ts:43</code><br/><code>src/services/notifications/notificationsSocket.ts:31</code><br/></td>
+  <td>A plaintext WebSocket origin can expose the notification handshake token and session cookie to network interception.</td>
+  <td>Reject non-HTTPS remote WebSocket origins before creating a credentialed Socket.IO connection.</td>
+  <td><span class="badge-critical">Critical</span></td>
+</tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- SECTION 3 — PASSED & N/A -->
+<section class="section" id="s3">
+  <div class="section-heading">
+    <span class="section-number">SECTION 3</span>
+    <span class="section-title">Passed &amp; N/A Rules</span>
+  </div>
+
+  <!-- 3.1 Passed -->
+  <div style="margin-bottom:28px">
+    <div class="subsec-hdr">
+      <div class="subsec-num">3.1</div>
+      <div>
+        <div class="subsec-title">Passed Rules</div>
+        <div class="subsec-sub">Rules with zero violations found in the scanned codebase</div>
+      </div>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>#</th><th>Rule (verbatim)</th><th>Category</th><th>Severity</th><th>Evidence / Why Passed</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+  <td>1</td>
+  <td><span class="rule-id">SEC-FE-01</span> User input into API calls without validation</td>
+  <td>Frontend</td>
+  <td><span class="badge-high">High</span></td>
+  <td>Reviewed Zod schemas and React Hook Form integrations, including src/schemas/auth/index.ts:24-27 and src/pages/dev-login/DevLoginPage.tsx:47-62; repository searches also confirmed bounded and enum-parsed API filter input, including src/hooks/dashboard/useDashboardFilters.ts:110-145.</td>
+</tr>
+<tr>
+  <td>2</td>
+  <td><span class="rule-id">SEC-FE-02</span> Secrets/tokens exposed in frontend (visible via DevTools)</td>
+  <td>Frontend</td>
+  <td><span class="badge-critical">Critical</span></td>
+  <td>Searched source, environment examples, workflows, and configuration for credential patterns and token handling; src/services/api.ts:42-46 uses HttpOnly-compatible credentialed cookies, and no embedded secret or production token was found.</td>
+</tr>
+<tr>
+  <td>3</td>
+  <td><span class="rule-id">SEC-FE-03</span> Secrets in localStorage / sessionStorage</td>
+  <td>Frontend</td>
+  <td><span class="badge-high">High</span></td>
+  <td>Reviewed all localStorage and sessionStorage references plus src/constants/common.ts:66-101; persisted values are an authentication-state boolean, UI preferences, filters, and seen-state flags, with no session token or secret stored.</td>
+</tr>
+<tr>
+  <td>4</td>
+  <td><span class="rule-id">SEC-FE-04</span> Unauthenticated frontend access</td>
+  <td>Frontend</td>
+  <td><span class="badge-high">High</span></td>
+  <td>Reviewed src/routes/index.tsx:28-51 and src/components/common/protected-route/ProtectedRoute.tsx:61-115; application routes are nested under the authentication guard, while only login, error, and not-found pages remain public.</td>
+</tr>
+<tr>
+  <td>5</td>
+  <td><span class="rule-id">SEC-FE-05</span> Pages hidden but not RBAC-controlled</td>
+  <td>Frontend</td>
+  <td><span class="badge-medium">Medium</span></td>
+  <td>Reviewed src/routes/coreRoutes.tsx, src/routes/workRoutes.tsx, src/routes/adminRoutes.tsx, and src/routes/employeeRatingsRoutes.tsx; protected pages declare CASL subject/action gates and ProtectedRoute denies unresolved or unauthorized access.</td>
+</tr>
+<tr>
+  <td>6</td>
+  <td><span class="rule-id">SEC-FE-06</span> Sensitive data in URL parameters</td>
+  <td>Frontend</td>
+  <td><span class="badge-medium">Medium</span></td>
+  <td>Searched all useSearchParams, URLSearchParams, navigation, and query-key usage; URLs contain filters, public identifiers, and SSO status/error fields, while no password, session token, secret, or private credential is placed in a URL.</td>
+</tr>
+<tr>
+  <td>7</td>
+  <td><span class="rule-id">SEC-FE-07</span> Session tokens not revoked on logout</td>
+  <td>Frontend</td>
+  <td><span class="badge-high">High</span></td>
+  <td>Reviewed src/services/auth/authApi.ts:26-31 and src/hooks/auth/mutations.ts:13-24; logout calls the server revocation endpoint, then clears authentication state and the complete React Query cache even when the request settles with an error.</td>
+</tr>
+<tr>
+  <td>8</td>
+  <td><span class="rule-id">SEC-BE-05</span> Hardcoded secrets in source/config files</td>
+  <td>Cross-cutting</td>
+  <td><span class="badge-critical">Critical</span></td>
+  <td>Searched source, JSON, environment examples, and workflow YAML for common private-key, cloud-key, GitHub-token, payment-key, password, and client-secret signatures; only placeholders, test fixtures, and GitHub secret references were found.</td>
+</tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- 3.2 N/A -->
+  <div>
+    <div class="subsec-hdr">
+      <div class="subsec-num">3.2</div>
+      <div>
+        <div class="subsec-title">Not Applicable Rules</div>
+        <div class="subsec-sub">Rules not evaluated &mdash; Azure Agent, Manual Review, or no applicable code found</div>
+      </div>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>#</th><th>Rule (verbatim)</th><th>Category</th><th>Severity</th><th>Assigned To</th><th>Reason</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+  <td>1</td>
+  <td><span class="rule-id">SEC-FE-08</span> Borderline frontend concerns (manual review)</td>
+  <td>Frontend</td>
+  <td><span class="badge-low">Low</span></td>
+  <td><span class="badge-manual">Manual Review</span></td>
+  <td>Requires contextual review of browser behavior, trust boundaries, third-party content, and business-specific sensitivity that static evidence cannot conclusively classify.</td>
+</tr>
+<tr>
+  <td>2</td>
+  <td><span class="rule-id">SEC-BE-01</span> Missing server-side input validation</td>
+  <td>Backend</td>
+  <td><span class="badge-high">High</span></td>
+  <td><span class="badge-na">N/A — No Backend</span></td>
+  <td>The requested scope and detected repository contain a React frontend only, so server-side validation implementation is not present to evaluate.</td>
+</tr>
+<tr>
+  <td>3</td>
+  <td><span class="rule-id">SEC-BE-03</span> Public APIs without authentication</td>
+  <td>Backend</td>
+  <td><span class="badge-high">High</span></td>
+  <td><span class="badge-na">N/A — No Backend</span></td>
+  <td>The repository contains API clients but no server routes or controllers whose authentication middleware can be evaluated.</td>
+</tr>
+<tr>
+  <td>4</td>
+  <td><span class="rule-id">SEC-BE-04</span> Missing rate limiting</td>
+  <td>Backend</td>
+  <td><span class="badge-medium">Medium</span></td>
+  <td><span class="badge-na">N/A — No Backend</span></td>
+  <td>The repository contains no backend request pipeline or API gateway rate-limit configuration.</td>
+</tr>
+<tr>
+  <td>5</td>
+  <td><span class="rule-id">SEC-BE-06</span> Sensitive data in logs or error responses</td>
+  <td>Backend</td>
+  <td><span class="badge-high">High</span></td>
+  <td><span class="badge-na">N/A — No Backend</span></td>
+  <td>No backend logging or server error-response implementation exists in the frontend-only audit scope.</td>
+</tr>
+<tr>
+  <td>6</td>
+  <td><span class="rule-id">SEC-BE-07</span> Borderline concerns (manual review)</td>
+  <td>Backend</td>
+  <td><span class="badge-low">Low</span></td>
+  <td><span class="badge-manual">Manual Review</span></td>
+  <td>Backend borderline concerns require review of the separate API implementation and runtime environment, neither of which is included here.</td>
+</tr>
+<tr>
+  <td>7</td>
+  <td><span class="rule-id">SEC-BE-08</span> Payment APIs called from frontend</td>
+  <td>Backend</td>
+  <td><span class="badge-critical">Critical</span></td>
+  <td><span class="badge-na">N/A — No Payment SDK</span></td>
+  <td>package.json and source searches found no Stripe, Razorpay, PayPal, Braintree, Adyen, Square, or other payment gateway integration.</td>
+</tr>
+<tr>
+  <td>8</td>
+  <td><span class="rule-id">SEC-BE-09</span> Backend IPs not whitelisted on payment platforms</td>
+  <td>Backend</td>
+  <td><span class="badge-high">High</span></td>
+  <td><span class="badge-na">N/A — No Payment SDK</span></td>
+  <td>No payment platform integration is present, so payment-provider IP allowlisting does not apply.</td>
+</tr>
+<tr>
+  <td>9</td>
+  <td><span class="rule-id">SEC-DO-01</span> DevOps / cloud security control (delegated)</td>
+  <td>DevOps / Cloud</td>
+  <td><span class="badge-na">N/A (delegated)</span></td>
+  <td><span class="badge-azure">Azure Review Agent</span></td>
+  <td>Requires live cloud, identity, network, deployment, and platform configuration evidence that is not established by this source-only scan.</td>
+</tr>
+<tr>
+  <td>10</td>
+  <td><span class="rule-id">SEC-DO-02</span> DevOps / cloud security control (delegated)</td>
+  <td>DevOps / Cloud</td>
+  <td><span class="badge-na">N/A (delegated)</span></td>
+  <td><span class="badge-azure">Azure Review Agent</span></td>
+  <td>Requires live cloud, identity, network, deployment, and platform configuration evidence that is not established by this source-only scan.</td>
+</tr>
+<tr>
+  <td>11</td>
+  <td><span class="rule-id">SEC-DO-03</span> DevOps / cloud security control (delegated)</td>
+  <td>DevOps / Cloud</td>
+  <td><span class="badge-na">N/A (delegated)</span></td>
+  <td><span class="badge-azure">Azure Review Agent</span></td>
+  <td>Requires live cloud, identity, network, deployment, and platform configuration evidence that is not established by this source-only scan.</td>
+</tr>
+<tr>
+  <td>12</td>
+  <td><span class="rule-id">SEC-DO-04</span> DevOps / cloud security control (delegated)</td>
+  <td>DevOps / Cloud</td>
+  <td><span class="badge-na">N/A (delegated)</span></td>
+  <td><span class="badge-azure">Azure Review Agent</span></td>
+  <td>Requires live cloud, identity, network, deployment, and platform configuration evidence that is not established by this source-only scan.</td>
+</tr>
+<tr>
+  <td>13</td>
+  <td><span class="rule-id">SEC-DO-05</span> DevOps / cloud security control (delegated)</td>
+  <td>DevOps / Cloud</td>
+  <td><span class="badge-na">N/A (delegated)</span></td>
+  <td><span class="badge-azure">Azure Review Agent</span></td>
+  <td>Requires live cloud, identity, network, deployment, and platform configuration evidence that is not established by this source-only scan.</td>
+</tr>
+<tr>
+  <td>14</td>
+  <td><span class="rule-id">SEC-DO-06</span> DevOps / cloud security control (delegated)</td>
+  <td>DevOps / Cloud</td>
+  <td><span class="badge-na">N/A (delegated)</span></td>
+  <td><span class="badge-azure">Azure Review Agent</span></td>
+  <td>Requires live cloud, identity, network, deployment, and platform configuration evidence that is not established by this source-only scan.</td>
+</tr>
+<tr>
+  <td>15</td>
+  <td><span class="rule-id">SEC-DO-07</span> DevOps / cloud security control (delegated)</td>
+  <td>DevOps / Cloud</td>
+  <td><span class="badge-na">N/A (delegated)</span></td>
+  <td><span class="badge-azure">Azure Review Agent</span></td>
+  <td>Requires live cloud, identity, network, deployment, and platform configuration evidence that is not established by this source-only scan.</td>
+</tr>
+<tr>
+  <td>16</td>
+  <td><span class="rule-id">SEC-DO-08</span> DevOps / cloud security control (delegated)</td>
+  <td>DevOps / Cloud</td>
+  <td><span class="badge-na">N/A (delegated)</span></td>
+  <td><span class="badge-azure">Azure Review Agent</span></td>
+  <td>Requires live cloud, identity, network, deployment, and platform configuration evidence that is not established by this source-only scan.</td>
+</tr>
+<tr>
+  <td>17</td>
+  <td><span class="rule-id">SEC-DO-09</span> DevOps / cloud security control (delegated)</td>
+  <td>DevOps / Cloud</td>
+  <td><span class="badge-na">N/A (delegated)</span></td>
+  <td><span class="badge-azure">Azure Review Agent</span></td>
+  <td>Requires live cloud, identity, network, deployment, and platform configuration evidence that is not established by this source-only scan.</td>
+</tr>
+<tr>
+  <td>18</td>
+  <td><span class="rule-id">SEC-DO-10</span> DevOps / cloud security control (delegated)</td>
+  <td>DevOps / Cloud</td>
+  <td><span class="badge-na">N/A (delegated)</span></td>
+  <td><span class="badge-azure">Azure Review Agent</span></td>
+  <td>Requires live cloud, identity, network, deployment, and platform configuration evidence that is not established by this source-only scan.</td>
+</tr>
+<tr>
+  <td>19</td>
+  <td><span class="rule-id">SEC-DO-11</span> DevOps / cloud security control (delegated)</td>
+  <td>DevOps / Cloud</td>
+  <td><span class="badge-na">N/A (delegated)</span></td>
+  <td><span class="badge-azure">Azure Review Agent</span></td>
+  <td>Requires live cloud, identity, network, deployment, and platform configuration evidence that is not established by this source-only scan.</td>
+</tr>
+<tr>
+  <td>20</td>
+  <td><span class="rule-id">SEC-DO-12</span> DevOps / cloud security control (delegated)</td>
+  <td>DevOps / Cloud</td>
+  <td><span class="badge-na">N/A (delegated)</span></td>
+  <td><span class="badge-azure">Azure Review Agent</span></td>
+  <td>Requires live cloud, identity, network, deployment, and platform configuration evidence that is not established by this source-only scan.</td>
+</tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 4 — RULE-WISE ANALYSIS (violated rules only) -->
+<section class="section" id="s4">
+  <div class="section-heading">
+    <span class="section-number">SECTION 4</span>
+    <span class="section-title">Rule-wise Analysis (Violated Rules Only)</span>
+  </div>
+  <div class="analysis-block">
+  <div class="analysis-header">
+    <span class="rule-id">SEC-BE-02</span>
+    <span class="analysis-title">Insecure HTTP / protocol usage</span>
+    <span class="badge-critical">Critical</span>
+  </div>
+  <div class="analysis-body">
+    <p><strong>What was found:</strong> The optional VITE_WS_BASE_URL is normalized with the standard URL parser but is not restricted to HTTPS, then the resulting origin is used for a Socket.IO connection configured to send both an authentication token and browser credentials.</p>
+    <p><strong>Files affected:</strong> <code>src/lib/env.ts:23</code> — accepts any URL protocol; <code>src/lib/env.ts:43</code> — exports the unchecked WebSocket origin; <code>src/services/notifications/notificationsSocket.ts:31</code> — opens the credentialed connection.</p>
+    <div class="code-block">const toOrigin = (url?: string): string | undefined =&gt; {
+    const trimmed = url?.trim();
+    if (!trimmed) return undefined;
+    try {
+<span class="hl">        const { origin } = new URL(trimmed);</span>
+        return origin;
+    } catch {
+        return undefined;
+    }
+};
+
+<span class="hl">export const WS_BASE_URL = toOrigin(env.VITE_WS_BASE_URL) ?? toOrigin(env.VITE_API_BASE_URL);</span>
+
+<span class="hl">return io(resolveNamespaceUrl(), {</span>
+    auth,
+<span class="hl">    withCredentials: true,</span>
+    autoConnect: false,
+});</div>
+    <p><strong>Why this violates the rule:</strong> A remote value such as http://notifications.example.com passes normalization, allowing authentication material to cross an unencrypted transport despite the API proxy's separate HTTPS check.</p>
+    <p><strong>Remediation steps:</strong></p>
+    <ol>
+      <li>Validate VITE_WS_BASE_URL and VITE_API_BASE_URL origins so non-loopback targets must use HTTPS.</li>
+      <li>Fail the build or application startup with a clear configuration error when a remote plaintext origin is supplied.</li>
+      <li>Add tests covering rejected remote HTTP origins and allowed localhost development origins.</li>
+    </ol>
+  </div>
+</div>
+</section>
+
+<!-- SECTION 5 — DELEGATED ITEMS -->
+<section class="section" id="s5">
+  <div class="section-heading">
+    <span class="section-number">SECTION 5</span>
+    <span class="section-title">Rules Moved to Other Agents / Manual Review</span>
+  </div>
+  <div class="card"><div style="padding:0">
+    <div class="ditem">
+  <span class="dref">SEC-DO-01</span>
+  <span class="badge-azure" style="flex-shrink:0">Azure Review Agent</span>
+  <span style="font-size:13px">Review cloud identity, subscription ownership, and privileged-role assignments.</span>
+</div>
+<div class="ditem">
+  <span class="dref">SEC-DO-02</span>
+  <span class="badge-azure" style="flex-shrink:0">Azure Review Agent</span>
+  <span style="font-size:13px">Review network boundaries, public exposure, private endpoints, and firewall policy.</span>
+</div>
+<div class="ditem">
+  <span class="dref">SEC-DO-03</span>
+  <span class="badge-azure" style="flex-shrink:0">Azure Review Agent</span>
+  <span style="font-size:13px">Review secrets management, vault access controls, rotation, and managed identities.</span>
+</div>
+<div class="ditem">
+  <span class="dref">SEC-DO-04</span>
+  <span class="badge-azure" style="flex-shrink:0">Azure Review Agent</span>
+  <span style="font-size:13px">Review storage account access, encryption, public access, and retention controls.</span>
+</div>
+<div class="ditem">
+  <span class="dref">SEC-DO-05</span>
+  <span class="badge-azure" style="flex-shrink:0">Azure Review Agent</span>
+  <span style="font-size:13px">Review compute and application hosting configuration, patching, and hardening.</span>
+</div>
+<div class="ditem">
+  <span class="dref">SEC-DO-06</span>
+  <span class="badge-azure" style="flex-shrink:0">Azure Review Agent</span>
+  <span style="font-size:13px">Review database exposure, encryption, authentication, auditing, and backup controls.</span>
+</div>
+<div class="ditem">
+  <span class="dref">SEC-DO-07</span>
+  <span class="badge-azure" style="flex-shrink:0">Azure Review Agent</span>
+  <span style="font-size:13px">Review TLS certificates, ingress policy, approved protocols, and endpoint encryption.</span>
+</div>
+<div class="ditem">
+  <span class="dref">SEC-DO-08</span>
+  <span class="badge-azure" style="flex-shrink:0">Azure Review Agent</span>
+  <span style="font-size:13px">Review monitoring, diagnostic logs, alerting, and security-event retention.</span>
+</div>
+<div class="ditem">
+  <span class="dref">SEC-DO-09</span>
+  <span class="badge-azure" style="flex-shrink:0">Azure Review Agent</span>
+  <span style="font-size:13px">Review deployment identities, CI/CD permissions, artifact integrity, and environment approvals.</span>
+</div>
+<div class="ditem">
+  <span class="dref">SEC-DO-10</span>
+  <span class="badge-azure" style="flex-shrink:0">Azure Review Agent</span>
+  <span style="font-size:13px">Review backup, disaster recovery, regional resilience, and restoration evidence.</span>
+</div>
+<div class="ditem">
+  <span class="dref">SEC-DO-11</span>
+  <span class="badge-azure" style="flex-shrink:0">Azure Review Agent</span>
+  <span style="font-size:13px">Review policy compliance, Defender recommendations, vulnerability findings, and exceptions.</span>
+</div>
+<div class="ditem">
+  <span class="dref">SEC-DO-12</span>
+  <span class="badge-azure" style="flex-shrink:0">Azure Review Agent</span>
+  <span style="font-size:13px">Review remaining cloud configuration and coordinate any business-context validation requiring manual evidence.</span>
+</div>
+<div class="ditem">
+  <span class="dref">SEC-FE-08</span>
+  <span class="badge-manual" style="flex-shrink:0">Manual Review</span>
+  <span style="font-size:13px">Borderline frontend concerns (manual review): inspect browser behavior, third-party trust boundaries, sensitive workflows, and business-context risks in a live environment.</span>
+</div>
+<div class="ditem">
+  <span class="dref">SEC-BE-07</span>
+  <span class="badge-manual" style="flex-shrink:0">Manual Review</span>
+  <span style="font-size:13px">Borderline concerns (manual review): inspect the separate backend, runtime controls, authorization assumptions, and business-sensitive processing not present in this repository.</span>
+</div>
+<div class="ditem">
+  <span class="dref">SEC-DO-12</span>
+  <span class="badge-manual" style="flex-shrink:0">Manual Review</span>
+  <span style="font-size:13px">Validate business ownership, operational exceptions, incident-response readiness, and evidence that requires stakeholder confirmation beyond automated Azure inspection.</span>
+</div>
+  </div></div>
+</section>
+
+</div>
+
+<footer class="report-footer">
+  <img src="https://www.simform.com/wp-content/uploads/2024/12/simform-logo.svg" alt="Simform"
+       onerror="this.style.display='none'"/>
+  <p>Security Audit Report &middot; Generated by Simform Security Review Agent v2.2 &middot; 12 October 2026, 07:44 IST</p>
+  <p style="margin-top:4px;opacity:.7">Powered by Simform Engineering Excellence Program &middot; All Critical and High findings must be independently verified before remediation.</p>
+</footer>
+
+</body>
+</html>

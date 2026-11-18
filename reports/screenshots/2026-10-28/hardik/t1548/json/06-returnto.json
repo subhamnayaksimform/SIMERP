@@ -1,0 +1,35 @@
+{
+  "landed": "https://simerp-dev.simform.solutions/profile",
+  "whatsNew": {
+    "set": "/whats-new",
+    "url": "https://simerp-dev.simform.solutions/whats-new",
+    "left": null,
+    "shot": "reports/screenshots/2026-10-28/hardik/t1548/employee-login-return-to-whats-new.png"
+  },
+  "helpQuery": {
+    "set": "/help?module=profile",
+    "url": "https://simerp-dev.simform.solutions/help?module=profile",
+    "left": null
+  },
+  "protoRel": {
+    "set": "//evil.example.com/phish",
+    "url": "https://simerp-dev.simform.solutions/profile",
+    "left": null,
+    "shot": "reports/screenshots/2026-10-28/hardik/t1548/employee-login-return-to-offsite-blocked.png"
+  },
+  "backslash": {
+    "set": "/\\evil.example.com",
+    "url": "https://simerp-dev.simform.solutions/profile",
+    "left": null
+  },
+  "absolute": {
+    "set": "https://evil.example.com/",
+    "url": "https://simerp-dev.simform.solutions/profile",
+    "left": null
+  },
+  "loginLoop": {
+    "set": "/login",
+    "url": "https://simerp-dev.simform.solutions/profile",
+    "left": null
+  }
+}

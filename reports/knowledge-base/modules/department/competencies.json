@@ -1,0 +1,27 @@
+{
+  "module": "DEPTCMP",
+  "subModule": "Competencies",
+  "description": "Competencies Module",
+  "businessRules": [
+    "Submitting the Add Competency form twice in quick succession (double-click Save) must not create two competency records for the same department/goal.",
+    "A Competency's Status must only move between valid states (Not Started -> In progress -> Completed) and must not silently allow an invalid backward or skipped transition.",
+    "Each role's permitted and forbidden Competency actions (RM: view-only; TM/EM/Admin: add/edit/delete) must be enforced at both UI level (controls hidden/disabled) and API level (403 on unauthorized write).",
+    "Deleting a Competency must present a confirmation dialog before executing, and dismissing/cancelling that dialog must leave the competency unchanged in the listing.",
+    "After adding, editing, or deleting a Competency, the Competencies Listing must reflect the change immediately without requiring a manual page refresh."
+  ],
+  "edgeCases": [
+    "Competency with 0 targeted members displayed in listing",
+    "Competency with 0% progress because no employees have started the linked goal",
+    "Department has no goals defined — Goal dropdown in Add Competency is empty, blocking competency creation",
+    "Progress average calculation when the linked goal has zero employees currently assigned/progressing (potential divide-by-zero)",
+    "Switching the selected Department after partially filling the Add Competency form — verify Goal and other dependent fields reset and re-disable correctly",
+    "Description left blank (optional field) — listing renders without error for a competency with no description",
+    "Targeted Members = 'All' vs 'Selected' — No of Employees value display/behavior differs depending on which option is chosen",
+    "TM/EM/Admin managing multiple departments switches between departments repeatedly — competency listing and Add Competency form state must not leak between departments",
+    "Click Save on Add Competency twice in quick succession — verify only one competency record is created for that department/goal combination",
+    "Attempt every invalid Status transition (e.g. Completed -> Not Started, or skipping In progress) via the Edit Competency form and verify it is rejected or requires explicit confirmation",
+    "Use an RM session to attempt every write action available to TM/EM/Admin (add, edit, delete Competency) via both UI and direct API call — verify both are blocked",
+    "Trigger Delete Competency and verify a confirmation dialog appears; cancel it and verify the competency remains unchanged in the listing",
+    "Add, edit, and delete a Competency in sequence and verify the listing updates after each action without a manual page refresh (no F5 between steps)"
+  ]
+}

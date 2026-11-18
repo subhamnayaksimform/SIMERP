@@ -1,0 +1,179 @@
+{
+  "cancelPrakash": {
+    "status": 400,
+    "body": {
+      "code": "SYS_004",
+      "message": "This allocation has already started, so it cannot be cancelled — end it with a de-allocation request instead, which records the last working day and the developer feedback"
+    }
+  },
+  "cancelYamini": {
+    "status": 400,
+    "body": {
+      "code": "SYS_004",
+      "message": "This allocation has already started, so it cannot be cancelled — end it with a de-allocation request instead, which records the last working day and the developer feedback"
+    }
+  },
+  "mainAnkita": {
+    "status": 201,
+    "body": {
+      "code": "ALLOCATION_TICKET_070",
+      "message": "Direct allocation created successfully",
+      "data": {
+        "publicId": "613f8060-a26e-43ff-85aa-99fd7386485e",
+        "allocationPercentage": 20,
+        "allocationType": "FIXED",
+        "typeOfWork": "DEVELOPMENT_WORK",
+        "allocationStartDate": "2026-10-21",
+        "allocationEndDate": null,
+        "status": "GREEN",
+        "note": "QA E2E SHDLNK 2026-10-21: main for swap tests",
+        "allocationOrigin": "PMO",
+        "employee": {
+          "publicId": "3b99da7c-21f0-4179-8273-972663422709",
+          "name": "Ankita Das",
+          "email": "ankita.das@simformsolutions.com",
+          "photoUrl": "https://i.pravatar.cc/150?u=ankita.das@simformsolutions.com"
+        },
+        "shadowDeveloper": null,
+        "project": {
+          "publicId": "3d138a89-4d06-4839-8091-436fba0a2dd6",
+          "name": "HyperScale | Scalability Engine",
+          "alias": "",
+          "projectManager": {
+            "publicId": "5f1a4477-84fe-46aa-8360-ca4e0a16983c",
+            "name": "Hardik Trivedi",
+            "photoUrl": "https://i.pravatar.cc/150?u=hardik.trivedi@simformsolutions.com"
+          },
+          "customerSuccessManager": {
+            "publicId": "09d434e9-5346-4790-8ae7-f5105e5b4968",
+            "name": "Priya Chopra",
+            "photoUrl": "https://i.pravatar.cc/150?u=priya.chopra@simformsolutions.com"
+          }
+        },
+        "createdBy": {
+          "publicId": "e93f5377-1f74-42cb-9a40-255908e50310",
+          "name": "Bhumi Chauhan",
+          "email": "bhumi.chauhan@simformsolutions.com",
+          "photoUrl": "https://i.pravatar.cc/150?u=bhumi.chauhan@simformsolutions.com"
+        },
+        "ticketPublicId": "aa9e7d99-99cd-4fc9-9a95-2ea7d1b43861",
+        "ticketNumber": "NA-0398"
+      }
+    }
+  },
+  "mainRiddhi": {
+    "status": 201,
+    "body": {
+      "code": "ALLOCATION_TICKET_070",
+      "message": "Direct allocation created successfully",
+      "data": {
+        "publicId": "0c829387-d285-4975-bd2b-c29c6e20e6ea",
+        "allocationPercentage": 20,
+        "allocationType": "FIXED",
+        "typeOfWork": "DEVELOPMENT_WORK",
+        "allocationStartDate": "2026-10-21",
+        "allocationEndDate": "2026-11-14",
+        "status": "GREEN",
+        "note": "QA E2E SHDLNK 2026-10-21: main with end date for TC-040",
+        "allocationOrigin": "PMO",
+        "employee": {
+          "publicId": "5f78306e-a004-44dd-a972-9589a6a2518b",
+          "name": "Riddhi Verma",
+          "email": "riddhi.verma@simformsolutions.com",
+          "photoUrl": "https://i.pravatar.cc/150?u=riddhi.verma@simformsolutions.com"
+        },
+        "shadowDeveloper": null,
+        "project": {
+          "publicId": "3d138a89-4d06-4839-8091-436fba0a2dd6",
+          "name": "HyperScale | Scalability Engine",
+          "alias": "",
+          "projectManager": {
+            "publicId": "5f1a4477-84fe-46aa-8360-ca4e0a16983c",
+            "name": "Hardik Trivedi",
+            "photoUrl": "https://i.pravatar.cc/150?u=hardik.trivedi@simformsolutions.com"
+          },
+          "customerSuccessManager": {
+            "publicId": "09d434e9-5346-4790-8ae7-f5105e5b4968",
+            "name": "Priya Chopra",
+            "photoUrl": "https://i.pravatar.cc/150?u=priya.chopra@simformsolutions.com"
+          }
+        },
+        "createdBy": {
+          "publicId": "e93f5377-1f74-42cb-9a40-255908e50310",
+          "name": "Bhumi Chauhan",
+          "email": "bhumi.chauhan@simformsolutions.com",
+          "photoUrl": "https://i.pravatar.cc/150?u=bhumi.chauhan@simformsolutions.com"
+        },
+        "ticketPublicId": "2ce1225c-08a6-4781-91f8-d0466d861664",
+        "ticketNumber": "NA-0399"
+      }
+    }
+  },
+  "shPrakash": {
+    "status": 409,
+    "body": {
+      "code": "SYS_004",
+      "message": "This employee already has an active (non-archived) allocation on this project"
+    }
+  },
+  "shYamini": {
+    "status": 409,
+    "body": {
+      "code": "SYS_004",
+      "message": "This employee already has an active (non-archived) allocation on this project"
+    }
+  },
+  "shKriti": {
+    "status": 201,
+    "body": {
+      "code": "ALLOCATION_TICKET_070",
+      "message": "Direct allocation created successfully",
+      "data": {
+        "publicId": "b58b3a73-31af-4c73-b0e6-4f797af19f36",
+        "allocationPercentage": 10,
+        "allocationType": "FIXED",
+        "typeOfWork": "DEVELOPMENT_WORK",
+        "allocationStartDate": "2026-10-21",
+        "allocationEndDate": "2026-11-14",
+        "status": "GREEN",
+        "note": "QA E2E SHDLNK 2026-10-21: Kriti shadow of Riddhi",
+        "allocationOrigin": "PMO",
+        "employee": {
+          "publicId": "58891c8e-f56a-4fc3-bad4-a0bc5c12fceb",
+          "name": "Kriti Desai",
+          "email": "kriti.desai@simformsolutions.com",
+          "photoUrl": "https://i.pravatar.cc/150?u=kriti.desai@simformsolutions.com"
+        },
+        "shadowDeveloper": {
+          "publicId": "5f78306e-a004-44dd-a972-9589a6a2518b",
+          "name": "Riddhi Verma",
+          "email": "riddhi.verma@simformsolutions.com",
+          "photoUrl": "https://i.pravatar.cc/150?u=riddhi.verma@simformsolutions.com"
+        },
+        "project": {
+          "publicId": "3d138a89-4d06-4839-8091-436fba0a2dd6",
+          "name": "HyperScale | Scalability Engine",
+          "alias": "",
+          "projectManager": {
+            "publicId": "5f1a4477-84fe-46aa-8360-ca4e0a16983c",
+            "name": "Hardik Trivedi",
+            "photoUrl": "https://i.pravatar.cc/150?u=hardik.trivedi@simformsolutions.com"
+          },
+          "customerSuccessManager": {
+            "publicId": "09d434e9-5346-4790-8ae7-f5105e5b4968",
+            "name": "Priya Chopra",
+            "photoUrl": "https://i.pravatar.cc/150?u=priya.chopra@simformsolutions.com"
+          }
+        },
+        "createdBy": {
+          "publicId": "e93f5377-1f74-42cb-9a40-255908e50310",
+          "name": "Bhumi Chauhan",
+          "email": "bhumi.chauhan@simformsolutions.com",
+          "photoUrl": "https://i.pravatar.cc/150?u=bhumi.chauhan@simformsolutions.com"
+        },
+        "ticketPublicId": "f1ff18a4-ae4f-49b7-8ee7-abc8979000c3",
+        "ticketNumber": "NA-0402"
+      }
+    }
+  }
+}

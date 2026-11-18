@@ -1,0 +1,9 @@
+[
+  {
+    "url": "https://simerp-dev-api.simform.solutions/api/v1/allocation-tickets/shadow-swap",
+    "method": "POST",
+    "req": "{\"projectId\":\"3d138a89-4d06-4839-8091-436fba0a2dd6\",\"flowType\":\"SHADOW_TO_MAIN\",\"mainDeallocation\":{\"projectAssignmentPublicId\":\"32c30658-ed74-4565-b5b0-632e8d54a850\",\"allocationEndDate\":\"2026-10-31\",\"deallocationReason\":\"ROLE_MISALIGNMENT\",\"coreSkillRating\":7,\"communicationRating\":7,\"behavioralRating\":7,\"overallRating\":7,\"developerFeedback\":\"QA test SI4-T1464 >20h shadow check 2026-10-19.\",\"isOpenToWorkWithAgain\":true},\"shadowDeallocation\":{\"projectAssignmentPublicId\":\"89c7a281-488e-414f-a610-0c6bbbacaa10\",\"allocationEndDate\":\"2026-10-31\",\"deallocationReason\":\"ROLE_MISALIGNMENT\"},\"promotion\":{\"deptStackPublicId\":\"8c45d16e-90a3-4947-a13c-437baf2bf77d\",\"requestedAllocationStartDate\":\"2026-11-01\",\"requestedAllocationEndDate\":\"2026-12-31\",\"requestType\":\"FRESH_ALLOCATION\",\"shadowForPublicId\":null,\"allocationRequestCreationType\":null,\"requestedAllocationType\":\"FIXED\",\"requestedAllocationPercentage\":10,\"developerPreferencePublicIds\":[\"f94d6cb2-e5b5-4c14-99d2-3fbd28a1cde9\"],\"isInterviewRequired\":false,\"isClientFacing\":false}}",
+    "status": 400,
+    "body": "{\"message\":\"All four ratings and isOpenToWorkWithAgain are required because the developer has logged more than 20 hours on this project; the feedback can only be skipped when 20 hours or less are logged\",\"error\":\"Bad Request\",\"statusCode\":400}"
+  }
+]

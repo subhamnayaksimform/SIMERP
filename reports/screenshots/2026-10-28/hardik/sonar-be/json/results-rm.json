@@ -1,0 +1,111 @@
+[
+  {
+    "key": "access:matrix",
+    "pass": "info",
+    "actual": "{\"GET /allocation-tickets\":\"403\",\"GET /allocation-tickets/filters\":\"403\",\"GET /allocation-tickets/interview-requests\":\"403\",\"GET /projects\":\"200 (n=18)\",\"GET /projects/filters\":\"200 (n=3)\",\"GET /employees\":\"200 (n=10)\",\"GET /employee-roles\":\"403\",\"GET /employee-ratings\":\"200 (n=0)\",\"GET /utilization-priority\":\"403\",\"GET /opportunities/openings\":\"200 (n=0)\",\"GET /opportunities/candidates\":\"403\",\"GET /dashboard/overview\":\"200 (n=-)\",\"GET /dashboard/activity\":\"200 (n=0)\",\"GET /dashboard/filter-options\":\"200 (n=-)\",\"GET /working-location/overview\":\"403\",\"GET /working-location/list\":\"200 (n=11)\",\"GET /working-location/employees\":\"403\",\"GET /weekly-update\":\"200 (n=0)\",\"GET /notifications\":\"200 (n=0)\",\"GET /teams (own dept)\":\"403\"}",
+    "data": {
+      "GET /allocation-tickets": "403",
+      "GET /allocation-tickets/filters": "403",
+      "GET /allocation-tickets/interview-requests": "403",
+      "GET /projects": "200 (n=18)",
+      "GET /projects/filters": "200 (n=3)",
+      "GET /employees": "200 (n=10)",
+      "GET /employee-roles": "403",
+      "GET /employee-ratings": "200 (n=0)",
+      "GET /utilization-priority": "403",
+      "GET /opportunities/openings": "200 (n=0)",
+      "GET /opportunities/candidates": "403",
+      "GET /dashboard/overview": "200 (n=-)",
+      "GET /dashboard/activity": "200 (n=0)",
+      "GET /dashboard/filter-options": "200 (n=-)",
+      "GET /working-location/overview": "403",
+      "GET /working-location/list": "200 (n=11)",
+      "GET /working-location/employees": "403",
+      "GET /weekly-update": "200 (n=0)",
+      "GET /notifications": "200 (n=0)",
+      "GET /teams (own dept)": "403"
+    },
+    "ms": 0
+  },
+  {
+    "key": "notif:isRead",
+    "pass": true,
+    "actual": "all=0 read=0 unread=0 wrongRows=0; newest: ",
+    "ms": 995
+  },
+  {
+    "key": "hier:employeesList",
+    "pass": "calc",
+    "actual": "visible=10 subtreeMembers=10 missingFromList=0  extraNotInSubtree=0  depts=DOT NET",
+    "data": {
+      "visible": 10,
+      "sub": 10,
+      "missing": [],
+      "extra": [],
+      "depts": [
+        "DOT NET"
+      ]
+    },
+    "ms": 469
+  },
+  {
+    "key": "hier:workingLocationList",
+    "pass": "calc",
+    "actual": "list rows=11 employees-table total=undefined rowsWithoutOverall=0",
+    "data": {
+      "rows": 11,
+      "overallNull": 0,
+      "tableEmails": []
+    },
+    "ms": 708
+  },
+  {
+    "key": "emp:ratingsShape",
+    "pass": "calc",
+    "actual": "rows=10 withRatingsKey=10 withNumericRating=10 zeroRatings=1 badValues=0 sample=[[\"Khushi Langalia\",{\"overallRating\":6.4,\"aiRating\":7.2,\"communicationRating\":null}],[\"Sneha Mistry\",{\"overallRating\":6,\"aiRating\":2.2,\"communicationRating\":6.3}]] selfRowRatings=n/a",
+    "data": {
+      "rows": 10,
+      "withKey": 10,
+      "nonNull": 10,
+      "bad": 0
+    },
+    "ms": 508
+  },
+  {
+    "key": "dash:filterOptions",
+    "pass": "calc",
+    "actual": "departments=0 [] projects=18",
+    "data": {
+      "departments": [],
+      "projects": 18
+    },
+    "ms": 356
+  },
+  {
+    "key": "weekly:reads",
+    "pass": "calc",
+    "actual": "{\"/weekly-update\":\"200\",\"/weekly-update/filters\":\"200\",\"/weekly-update/sessions\":\"200\",\"/weekly-update/status\":\"400 {\\\"code\\\":\\\"VAL_001\\\",\\\"message\\\":\\\"Validation failed\\\",\\\"errors\\\":[{\\\"field\\\":\\\"teamPublicId\\\",\\\"message\\\":\\\"teamPublicId is required.\\\"},{\\\"field\\\":\\\"meetingDate\\\",\\\"message\\\":\\\"meeti\",\"/weekly-update/last-notes\":\"400 {\\\"code\\\":\\\"VAL_001\\\",\\\"message\\\":\\\"Validation failed\\\",\\\"errors\\\":[{\\\"field\\\":\\\"reportingManagerPublicId\\\",\\\"message\\\":\\\"reportingManagerPublicId is required.\\\"},{\\\"field\\\":\\\"asOfD\",\"sortDesc\":\"ok\",\"total\":0,\"first\":[]}",
+    "data": {
+      "/weekly-update": "200",
+      "/weekly-update/filters": "200",
+      "/weekly-update/sessions": "200",
+      "/weekly-update/status": "400 {\"code\":\"VAL_001\",\"message\":\"Validation failed\",\"errors\":[{\"field\":\"teamPublicId\",\"message\":\"teamPublicId is required.\"},{\"field\":\"meetingDate\",\"message\":\"meeti",
+      "/weekly-update/last-notes": "400 {\"code\":\"VAL_001\",\"message\":\"Validation failed\",\"errors\":[{\"field\":\"reportingManagerPublicId\",\"message\":\"reportingManagerPublicId is required.\"},{\"field\":\"asOfD",
+      "sortDesc": "ok",
+      "total": 0,
+      "first": []
+    },
+    "ms": 2261
+  },
+  {
+    "key": "wl:selfAndOthers",
+    "pass": "calc",
+    "actual": "own=200 ownOverall={\"wfoPercentage\":39.8,\"wfhPercentage\":60.2,\"daysLogged\":283,\"daysInWindow\":null} ceoRecord=404",
+    "data": {
+      "own": 200,
+      "ownOverall": "{\"wfoPercentage\":39.8,\"wfhPercentage\":60.2,\"daysLogged\":283,\"daysInWindow\":null}",
+      "other": 404
+    },
+    "ms": 1029
+  }
+]

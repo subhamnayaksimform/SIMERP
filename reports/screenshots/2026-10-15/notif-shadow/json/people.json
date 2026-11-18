@@ -1,0 +1,130 @@
+{
+  "Rajesh Kumar": [
+    {
+      "publicId": "bebb33ef-0df8-4750-a727-e22865181aba",
+      "email": "rajesh.kumar@simformsolutions.com",
+      "dept": "ENGINEERING MANAGEMENT",
+      "rm": "David Lais"
+    }
+  ],
+  "David Lais": [
+    {
+      "publicId": "b97b389b-d9fe-4ce7-be8e-f142083a2a77",
+      "email": "david.lais@simformsolutions.com",
+      "dept": "ENGINEERING MANAGEMENT",
+      "rm": "Chief Technology Officer"
+    }
+  ],
+  "Abhishek Hingorani": [
+    {
+      "publicId": "bb181c7f-2439-4bd6-a7b3-11475fba36c3",
+      "email": "abhishek.hingorani@simformsolutions.com",
+      "dept": "MEAN STACK",
+      "rm": "Priya Sharma"
+    }
+  ],
+  "Ekta Mistry": [
+    {
+      "publicId": "a7d578dc-3e9f-4136-98a1-d86b4bdcf476",
+      "email": "ekta.mistry@simformsolutions.com",
+      "dept": "QA",
+      "rm": "Sudhansu Patel"
+    }
+  ],
+  "Kavya Naik": [
+    {
+      "publicId": "4d944f8d-98a3-4ff8-97be-2b46de7915f0",
+      "email": "kavya.naik@simformsolutions.com",
+      "dept": "QA",
+      "rm": "Sudhansu Patel"
+    }
+  ],
+  "Yatharth Patil": [
+    {
+      "publicId": "c5740f52-ab1a-4499-a156-db41411b7bbe",
+      "email": "yatharth.patil@simformsolutions.com",
+      "dept": "PROJECT MANAGEMENT",
+      "rm": "Hardik Trivedi"
+    }
+  ],
+  "Amit Patel": [
+    {
+      "publicId": "3fb3909f-5d70-4f09-979a-3f36cbc70372",
+      "email": "amit.patel@simformsolutions.com",
+      "dept": "ENGINEERING MANAGEMENT",
+      "rm": "Jinal Patel"
+    }
+  ],
+  "Jinal Patel": [
+    {
+      "publicId": "e5e2f59f-168b-44db-9d43-bfb854c2d0de",
+      "email": "jinal.patel@simformsolutions.com",
+      "dept": "ENGINEERING MANAGEMENT",
+      "rm": "Chief Technology Officer"
+    }
+  ],
+  "Sagar Khanpara": [
+    {
+      "publicId": "818aa719-2170-486e-bf21-87f4f1e137e6",
+      "email": "sagar.khanpara@simformsolutions.com",
+      "dept": "FRONT END",
+      "rm": "Rajesh Kumar"
+    }
+  ],
+  "Hardik Trivedi": [
+    {
+      "publicId": "5f1a4477-84fe-46aa-8360-ca4e0a16983c",
+      "email": "hardik.trivedi@simformsolutions.com",
+      "dept": "PROJECT MANAGEMENT",
+      "rm": "Amit Patel"
+    }
+  ],
+  "Sudhansu Patel": [
+    {
+      "publicId": "8951ac85-7a7e-4b99-aa13-ebfe00509930",
+      "email": "sudhansu.patel@simformsolutions.com",
+      "dept": "QA",
+      "rm": "Amit Patel"
+    }
+  ],
+  "Tejas Limbachiya": [
+    {
+      "publicId": "38ef8ef2-6d6c-448c-8670-30023a018b55",
+      "email": "tejas.limbachiya@simformsolutions.com",
+      "dept": "PROJECT MANAGEMENT",
+      "rm": "Hardik Trivedi"
+    }
+  ],
+  "Tirth Chopra": [
+    {
+      "publicId": "6acbb73d-52bd-4108-89d0-4382da11d60f",
+      "email": "tirth.chopra@simformsolutions.com",
+      "dept": "PROJECT MANAGEMENT",
+      "rm": "Varsha Rawat"
+    }
+  ],
+  "Nimisha Bose": [
+    {
+      "publicId": "91da7795-4b70-4b60-aab6-837abe5de0b0",
+      "email": "nimisha.bose@simformsolutions.com",
+      "dept": "POST-SALES BA",
+      "rm": "Hardik Kulkarni"
+    }
+  ],
+  "Urvashi Kamath": [
+    {
+      "publicId": "f33a8f2b-9d83-43ef-8dce-362f2c627313",
+      "email": "urvashi.kamath@simformsolutions.com",
+      "dept": "FRONT END",
+      "rm": "Sagar Khanpara"
+    }
+  ],
+  "Ankita Das": [
+    {
+      "publicId": "3b99da7c-21f0-4179-8273-972663422709",
+      "email": "ankita.das@simformsolutions.com",
+      "dept": "QA",
+      "rm": "Ekta Mistry"
+    }
+  ]
+}

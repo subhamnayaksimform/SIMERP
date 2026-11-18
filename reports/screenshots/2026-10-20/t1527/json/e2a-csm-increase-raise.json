@@ -1,0 +1,26 @@
+{
+  "actor": "ravi.vyas",
+  "T0": "2026-10-20T12:47:58.443Z",
+  "T1": "2026-10-20T12:47:59.476Z",
+  "method": "POST",
+  "path": "/allocation-tickets/update-allocation",
+  "req": {
+    "projectAssignmentPublicId": "3870e221-a711-4c9d-ad3f-a65b02111cb2",
+    "newAllocationPercentage": 20,
+    "newStartDate": "2026-10-20"
+  },
+  "res": {
+    "status": 201,
+    "body": {
+      "code": "ALLOCATION_TICKET_019",
+      "message": "Update allocation ticket created successfully",
+      "data": {
+        "outcome": "TICKET_CREATED",
+        "publicId": "14bab8ce-94de-4116-a6ec-926ce8c2c618",
+        "ticketNumber": "UA-0135",
+        "ticketType": "UPDATE_ALLOCATION",
+        "status": "OPEN"
+      }
+    }
+  }
+}

@@ -1,0 +1,230 @@
+[
+ {
+  "area": "approval",
+  "name": "request",
+  "pass": true,
+  "detail": "[200,\"SUCCESS\"]"
+ },
+ {
+  "area": "approval",
+  "name": "TM approves PMO request",
+  "pass": true,
+  "detail": "[200,\"SUCCESS\",\"Nomination approved successfully\"]"
+ },
+ {
+  "area": "approval",
+  "name": "stage BEING_PREPARED after TM approval",
+  "pass": true,
+  "detail": "BEING_PREPARED"
+ },
+ {
+  "area": "rounds",
+  "name": "planned rounds seeded on approval (2)",
+  "pass": true,
+  "detail": "[\"R1: Tech\",\"R2: Practical\"]"
+ },
+ {
+  "area": "approval",
+  "name": "TM cannot send a PMO-shortlisted candidate (OPP_105)",
+  "pass": true,
+  "detail": "[403,\"OPP_105\"]"
+ },
+ {
+  "area": "reject",
+  "name": "TM rejects (not own approver, record)",
+  "pass": true,
+  "detail": "[400,\"OPP_110\"]"
+ },
+ {
+  "area": "rounds",
+  "name": "reorder both rounds",
+  "pass": true,
+  "detail": "[200,\"SUCCESS\",\"Interview Rounds reordered successfully\"]"
+ },
+ {
+  "area": "rounds",
+  "name": "reorder missing a round refused (OPP_141)",
+  "pass": true,
+  "detail": "[400,\"OPP_141\"]"
+ },
+ {
+  "area": "rounds",
+  "name": "schedule round 1 (tomorrow)",
+  "pass": true,
+  "detail": "[200,\"SUCCESS\",\"Interview Round updated successfully\"]"
+ },
+ {
+  "area": "stage",
+  "name": "stage auto INTERVIEW_SCHEDULED",
+  "pass": true,
+  "detail": "INTERVIEW_SCHEDULED"
+ },
+ {
+  "area": "rounds",
+  "name": "PASSED on a future date refused",
+  "pass": true,
+  "detail": "[400,\"OPP_138\",\"A round can be marked Cleared or Not Cleared only once it has an interview date of today or earlier\"]"
+ },
+ {
+  "area": "stage",
+  "name": "move back to BEING_PREPARED clears schedule",
+  "pass": true,
+  "detail": "[200,\"SUCCESS\",\"BEING_PREPARED\"]"
+ },
+ {
+  "area": "stage",
+  "name": "WAITING_FOR_FEEDBACK with future date refused (OPP_061)",
+  "pass": true,
+  "detail": "[400,\"OPP_015\"]"
+ },
+ {
+  "area": "stage",
+  "name": "WAITING_FOR_APPROVAL never a target",
+  "pass": true,
+  "detail": "[400,\"OPP_014\"]"
+ },
+ {
+  "area": "stage",
+  "name": "DID_INTERVIEW_HAPPEN never a target",
+  "pass": true,
+  "detail": "[400,\"OPP_014\"]"
+ },
+ {
+  "area": "stage",
+  "name": "held interview -> WAITING_FOR_FEEDBACK (skip needs confirm?)",
+  "pass": true,
+  "detail": "[400,\"OPP_015\",\"This change skips a step and needs a confirmation\"]"
+ },
+ {
+  "area": "stage",
+  "name": "same with isConfirmed",
+  "pass": true,
+  "detail": "[200,\"SUCCESS\",\"Opening moved successfully\"]"
+ },
+ {
+  "area": "rounds",
+  "name": "round 1 PASSED (past date)",
+  "pass": true,
+  "detail": "[200,\"SUCCESS\",\"Interview Round updated successfully\"]"
+ },
+ {
+  "area": "rounds",
+  "name": "javascript: recording URL refused",
+  "pass": true,
+  "detail": "[400,\"VAL_001\"]"
+ },
+ {
+  "area": "rounds",
+  "name": "round 2 FAILED",
+  "pass": true,
+  "detail": "[200,\"SUCCESS\",\"Interview Round updated successfully\"]"
+ },
+ {
+  "area": "select",
+  "name": "select after rounds (record)",
+  "pass": true,
+  "detail": "[400,\"OPP_015\",\"This change skips a step and needs a confirmation\"]"
+ },
+ {
+  "area": "select",
+  "name": "select with isConfirmed",
+  "pass": true,
+  "detail": "[200,\"SUCCESS\",\"Candidate selected successfully\"]"
+ },
+ {
+  "area": "select",
+  "name": "seat WON, filled=1",
+  "pass": true,
+  "detail": "[\"WON\",{\"shortlistedCount\":3,\"rejectedCount\":0,\"filledCount\":1,\"requiredCount\":3}]"
+ },
+ {
+  "area": "release",
+  "name": "WON cannot be released (OPP_185)",
+  "pass": true,
+  "detail": "[409,\"OPP_185\"]"
+ },
+ {
+  "area": "close",
+  "name": "close B while A has Won seat",
+  "pass": true,
+  "detail": "[200,\"SUCCESS\"]"
+ },
+ {
+  "area": "close",
+  "name": "close A (Won seat + 1 open)",
+  "pass": true,
+  "detail": "[200,\"SUCCESS\"]"
+ },
+ {
+  "area": "close",
+  "name": "stats filled<=required after partial close",
+  "pass": true,
+  "detail": "{\"shortlistedCount\":1,\"rejectedCount\":0,\"filledCount\":1,\"requiredCount\":1}"
+ },
+ {
+  "area": "close",
+  "name": "Won seat stays in WON column on a closed position",
+  "pass": true,
+  "detail": "{\"PENDING_TO_SHORTLIST\":0,\"SHORTLISTED\":0,\"WAITING_FOR_APPROVAL\":0,\"BEING_PREPARED\":0,\"INTERVIEW_SCHEDULED\":0,\"DID_INTERVIEW_HAPPEN\":0,\"WAITING_FOR_FEEDBACK\":0,\"WON\":1,\"PROJECT_ALLOCATED\":0,\"REJECTED\":0,\"LOST\":0,\"ON_HOLD\":0,\"NO_LONGER_REQUIRED\":2}"
+ },
+ {
+  "area": "close",
+  "name": "reopen A",
+  "pass": true,
+  "detail": "[200,\"SUCCESS\"]"
+ },
+ {
+  "area": "reinitiate",
+  "name": "empty reason refused",
+  "pass": true,
+  "detail": "[400,\"VAL_001\"]"
+ },
+ {
+  "area": "reinitiate",
+  "name": "reinitiate with reason",
+  "pass": true,
+  "detail": "[200,\"SUCCESS\",\"Position re-initiated successfully\"]"
+ },
+ {
+  "area": "reinitiate",
+  "name": "Won seat after reinitiate (record: released by design?)",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "area": "status",
+  "name": "ON_HOLD",
+  "pass": true,
+  "detail": "[200,\"SUCCESS\",\"Opportunity status changed successfully\"]"
+ },
+ {
+  "area": "status",
+  "name": "shortlist while ON_HOLD refused",
+  "pass": true,
+  "detail": "[400,\"OPP_013\"]"
+ },
+ {
+  "area": "status",
+  "name": "resume to OPEN",
+  "pass": true,
+  "detail": "[200,\"SUCCESS\",\"Opportunity status changed successfully\"]"
+ },
+ {
+  "area": "status",
+  "name": "invalid status refused",
+  "pass": true,
+  "detail": "[400,\"VAL_001\"]"
+ },
+ {
+  "area": "status",
+  "name": "LOST",
+  "pass": true,
+  "detail": "[200,\"SUCCESS\",\"Opportunity status changed successfully\"]"
+ },
+ {
+  "area": "status",
+  "name": "LOST -> OPEN (record)",
+  "pass": true,
+  "detail": "[200,\"SUCCESS\",\"Opportunity status changed successfully\"]"
+ }
+]

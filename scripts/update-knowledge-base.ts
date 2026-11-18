@@ -146,6 +146,14 @@ function isoDate(dateStr?: string): string {
   try { return new Date(dateStr).toISOString().slice(0, 10); } catch { return new Date().toISOString().slice(0, 10); }
 }
 
+/** Keep any existing entry not superseded by a fresh one sharing the same key, then append the fresh set. */
+function mergeByKey<T>(existing: unknown, fresh: T[], key: string): unknown[] {
+  const existingArr = Array.isArray(existing) ? existing : [];
+  const freshKeys = new Set(fresh.map(e => (e as unknown as Record<string, unknown>)[key]));
+  const preserved = existingArr.filter(e => !(e && typeof e === 'object' && freshKeys.has((e as Record<string, unknown>)[key])));
+  return [...preserved, ...fresh];
+}
+
 function nextEdgeCaseId(module: ModuleEntry): string {
   const existing = module.edgeCases.map(e => {
     const m = e.id.match(/-(\d+)$/);
@@ -182,8 +190,9 @@ async function fetchAllIssues(token: string): Promise<ZohoIssue[]> {
   const all: ZohoIssue[] = [];
   let index = 1;
   const range = 100;
+  const MAX_PAGES = 25; // safety cap (25 * 100 = 2500 issues) so a bad/looping API can't hang the sync
 
-  while (true) {
+  for (let page = 0; page < MAX_PAGES; page++) {
     const res = await withRetry(() => axios.get(baseUrl, {
       headers,
       params: { index, range, status: 'all' },
@@ -258,7 +267,7 @@ function updateCatalog(catalog: Catalog, issues: ZohoIssue[], since: string): { 
     added++;
   }
 
-  catalog.totalBugsAnalyzed += issues.length;
+  catalog.totalBugsAnalyzed += added;
   catalog.lastUpdated = new Date().toISOString().slice(0, 10);
   catalog.lastUpdateMethod = 'cli-fallback-shallow';
   return { added, updated };
@@ -322,9 +331,9 @@ async function main() {
     const merged = {
       ...existing,
       moduleCode: entry.moduleCode,
-      edgeCases: entry.edgeCases,
-      bugPatterns: entry.bugPatterns,
-      regressionTriggers: entry.regressionTriggers,
+      edgeCases: mergeByKey(existing['edgeCases'], entry.edgeCases, 'id'),
+      bugPatterns: mergeByKey(existing['bugPatterns'], entry.bugPatterns, 'pattern'),
+      regressionTriggers: mergeByKey(existing['regressionTriggers'], entry.regressionTriggers, 'trigger'),
       // Only the full knowledge-base-curator agent sets this true after semantic review —
       // this shallow script must never claim reviewed status it didn't do the work for.
       curatorReviewed: existing['curatorReviewed'] === true,

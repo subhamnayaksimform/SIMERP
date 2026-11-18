@@ -1,0 +1,32 @@
+{
+  "results": [
+    {
+      "id": "edit-ticket",
+      "ok": true,
+      "labels": [
+        "Existing Client",
+        "Prospect",
+        "Client Name\n*",
+        "Website URL",
+        "LinkedIn URL",
+        "Link Zoho Project\n(Optional)",
+        "Prospect Contact",
+        "Prospect Notes",
+        "Opportunity Title\n*",
+        "Assign to PM",
+        "Assign to CSM",
+        "Job Description",
+        "Interviewer LinkedIn",
+        "Special Instructions"
+      ],
+      "combos": [
+        "Select project",
+        "QA-AUTO edge cases 02-11",
+        "Choose PM",
+        "Choose CSM"
+      ],
+      "errs": []
+    }
+  ],
+  "errs": []
+}

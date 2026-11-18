@@ -1,0 +1,146 @@
+[
+ {
+  "area": "2.delete",
+  "name": "PMO releases cleared Sneha from B",
+  "pass": true,
+  "detail": "[200,\"SUCCESS\",\"Candidate released successfully\"]"
+ },
+ {
+  "area": "2.delete",
+  "name": "PMO deletes Position B (Punit still awaiting approval)",
+  "pass": true,
+  "detail": "[200,\"SUCCESS\",\"Position deleted successfully\"]"
+ },
+ {
+  "area": "2.delete",
+  "name": "delete position: Punit (awaiting approval) is NOT notified",
+  "pass": true,
+  "detail": "[]"
+ },
+ {
+  "area": "2.delete",
+  "name": "Punit never heard anything about the ticket",
+  "pass": true,
+  "detail": "[]"
+ },
+ {
+  "area": "2.direct",
+  "name": "Direct ticket d1 created for deepak.contractor",
+  "pass": true,
+  "detail": "[201,\"OPP_002\",\"Opportunity created successfully\"]"
+ },
+ {
+  "area": "2.direct",
+  "name": "d1 OPEN: deepak.contractor gets no notification",
+  "pass": true,
+  "detail": "[]"
+ },
+ {
+  "area": "2.direct",
+  "name": "d1 OPEN: deepak.contractor detail 403",
+  "pass": true,
+  "detail": "[403,\"OPP_193\"]"
+ },
+ {
+  "area": "2.direct",
+  "name": "d1 -> IN_REVIEW",
+  "pass": true,
+  "detail": "[200,\"SUCCESS\",\"Direct ticket stage updated successfully\"]"
+ },
+ {
+  "area": "2.direct",
+  "name": "d1 IN_REVIEW: deepak.contractor no notification, not on board",
+  "pass": true,
+  "detail": "{\"n\":[],\"board\":false}"
+ },
+ {
+  "area": "2.direct",
+  "name": "Direct ticket d2 created for iti.trivedi",
+  "pass": true,
+  "detail": "[201,\"OPP_002\",\"Opportunity created successfully\"]"
+ },
+ {
+  "area": "2.direct",
+  "name": "d2 OPEN: iti.trivedi gets no notification",
+  "pass": true,
+  "detail": "[]"
+ },
+ {
+  "area": "2.direct",
+  "name": "d2 OPEN: iti.trivedi detail 403",
+  "pass": true,
+  "detail": "[403,\"OPP_193\"]"
+ },
+ {
+  "area": "2.direct",
+  "name": "d2 -> IN_REVIEW",
+  "pass": true,
+  "detail": "[200,\"SUCCESS\",\"Direct ticket stage updated successfully\"]"
+ },
+ {
+  "area": "2.direct",
+  "name": "d2 IN_REVIEW: iti.trivedi no notification, not on board",
+  "pass": true,
+  "detail": "{\"n\":[],\"board\":false}"
+ },
+ {
+  "area": "2.direct",
+  "name": "d1 rejected from IN_REVIEW",
+  "pass": true,
+  "detail": "[200,\"SUCCESS\",\"Direct ticket stage updated successfully\"]"
+ },
+ {
+  "area": "2.direct",
+  "name": "reject from In Review: employee hears nothing",
+  "pass": true,
+  "detail": "[]"
+ },
+ {
+  "area": "2.direct",
+  "name": "reject from In Review: employee cannot open it (403/404)",
+  "pass": true,
+  "detail": "[403,\"OPP_193\"]"
+ },
+ {
+  "area": "2.direct",
+  "name": "d2 -> AWAITING",
+  "pass": true,
+  "detail": "[200,\"SUCCESS\",\"Direct ticket stage updated successfully\"]"
+ },
+ {
+  "area": "2.direct",
+  "name": "AWAITING (cleared): employee now sees it on board + opens it",
+  "pass": false,
+  "detail": "{\"board\":false,\"status\":200}"
+ },
+ {
+  "area": "2.direct",
+  "name": "AWAITING: employee notified (record)",
+  "pass": true,
+  "detail": "[[\"notification.opportunity.direct_stage_changed\",\"Update on OPP-0385\"]]"
+ },
+ {
+  "area": "2.direct",
+  "name": "d2 rejected from AWAITING",
+  "pass": true,
+  "detail": "[200,\"SUCCESS\",\"Direct ticket stage updated successfully\"]"
+ },
+ {
+  "area": "2.direct",
+  "name": "reject from Awaiting: employee gets rejection notification",
+  "pass": false,
+  "detail": "[]"
+ },
+ {
+  "area": "2.direct",
+  "name": "rejection notification carries no link to the ticket",
+  "pass": false,
+  "detail": "null"
+ },
+ {
+  "area": "2.direct",
+  "name": "rejection notification shows no rejection reason",
+  "pass": false,
+  "detail": ""
+ }
+]

@@ -1,0 +1,76 @@
+{
+  "approve": {
+    "status": 409,
+    "body": {
+      "code": "ALLOCATION_TICKET_172",
+      "message": "Complete the step 1 tickets (#DA-0101, #DA-0102) before actioning this ticket.",
+      "data": {
+        "blockingTickets": [
+          {
+            "publicId": "3e78994b-357d-4bbd-8485-c0192ad940dd",
+            "ticketNumber": "DA-0101",
+            "ticketType": "DEALLOCATE_ALLOCATION",
+            "step": 1,
+            "status": "AWAITING_CONFIRMATION"
+          },
+          {
+            "publicId": "3c5e2ab9-a5cf-4401-afc1-1e19b5540b6e",
+            "ticketNumber": "DA-0102",
+            "ticketType": "DEALLOCATE_ALLOCATION",
+            "step": 1,
+            "status": "AWAITING_CONFIRMATION"
+          }
+        ]
+      }
+    }
+  },
+  "group": {
+    "publicId": "e272a12c-6456-426d-9ee6-ad622da401b5",
+    "groupNumber": 2,
+    "flowType": "SHADOW_TO_MAIN_NEW_SHADOW",
+    "step": 2,
+    "totalSteps": 2,
+    "isBlocked": true,
+    "blockedBy": [
+      {
+        "publicId": "3c5e2ab9-a5cf-4401-afc1-1e19b5540b6e",
+        "ticketNumber": "DA-0102"
+      }
+    ],
+    "hasHiddenTickets": true,
+    "tickets": [
+      {
+        "publicId": "3c5e2ab9-a5cf-4401-afc1-1e19b5540b6e",
+        "ticketNumber": "DA-0102",
+        "ticketType": "DEALLOCATE_ALLOCATION",
+        "step": 1,
+        "status": "AWAITING_CONFIRMATION",
+        "employee": {
+          "publicId": "da3c4542-13bb-452b-b619-42095c913d94",
+          "name": "Prakash Pillai",
+          "photoUrl": "https://i.pravatar.cc/150?u=prakash.pillai@simformsolutions.com"
+        }
+      },
+      {
+        "publicId": "9c022c4a-9928-4e31-b196-fb89a80c7123",
+        "ticketNumber": "NA-0365",
+        "ticketType": "NEW_ALLOCATION",
+        "step": 2,
+        "status": "AWAITING_CONFIRMATION",
+        "employee": {
+          "publicId": "da3c4542-13bb-452b-b619-42095c913d94",
+          "name": "Prakash Pillai",
+          "photoUrl": "https://i.pravatar.cc/150?u=prakash.pillai@simformsolutions.com"
+        }
+      }
+    ]
+  },
+  "approvals": {
+    "pmoApprovedBy": {
+      "publicId": "e93f5377-1f74-42cb-9a40-255908e50310",
+      "name": "Bhumi Chauhan",
+      "photoUrl": "https://i.pravatar.cc/150?u=bhumi.chauhan@simformsolutions.com"
+    },
+    "pmoApprovedAt": "2026-10-19T10:54:19.699Z"
+  }
+}

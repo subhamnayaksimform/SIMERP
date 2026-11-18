@@ -1,0 +1,17 @@
+const {H}=require('./lib2');
+(async()=>{ const b=await H.chromium.launch(); const v=await H.login(b,'vihaan.chatterjee'); const page=v.page; const R=H.runner('u5'); H.attach(page,R.errs);
+ const pick=async(i,text,create)=>{ const c=page.getByRole('combobox').nth(i); await c.click(); await page.waitForTimeout(500); if(text){ await page.keyboard.type(text,{delay:40}); await page.waitForTimeout(1500);} await H.shot(page,'U-pick-'+i); const o=create?page.getByRole('option',{name:/Create new/}).first():page.getByRole('option').first(); await o.click({timeout:8000}).catch(async e=>{ await H.shot(page,'U-pickfail-'+i); throw e; }); await page.waitForTimeout(500); };
+ await R.step('fill',async()=>{ await H.go(page,'/pre-sales/new'); await page.getByText('Interview Opportunity').first().click(); await page.getByText('Prospect',{exact:true}).first().click(); await page.waitForTimeout(500);
+  await pick(0,'QA-AUTO UI Client',true);
+  await pick(2,'QA-AUTO UI create 04-11',true);
+  await pick(5,'Java',false); await page.keyboard.press('Escape');
+  await pick(6,'JAVA',false); await page.keyboard.press('Escape');
+  await pick(7,null,false); await pick(8,null,false);
+  await page.waitForTimeout(500); await H.shot(page,'U-form-filled',true);
+  const inputs=await page.locator('input:visible').evaluateAll(a=>a.map(x=>[x.placeholder,x.value,x.type]).filter(x=>x[2]!=='radio'));
+  return {combos:await page.getByRole('combobox').allInnerTexts(), inputs:inputs.slice(0,14)}; });
+ await R.step('submit',async()=>{ await page.getByPlaceholder(/Senior Node/i).fill('UI Java Dev'); await page.getByRole('button',{name:'Increase'}).or(page.locator('button:has(svg.lucide-plus)').last()).first().click().catch(()=>{}); await page.getByPlaceholder('75%').fill('15');
+  await page.getByRole('button',{name:/Create Opportunity/}).click(); await page.waitForTimeout(3500); await H.shot(page,'U-after-create',true);
+  const toast=await page.locator('[data-sonner-toast], [role="status"]').allInnerTexts().catch(()=>[]);
+  return {url:page.url(), toast, errs:(await page.locator('[data-slot="form-message"], .text-destructive').allInnerTexts()).slice(0,6)}; });
+ R.done(); await b.close(); })();

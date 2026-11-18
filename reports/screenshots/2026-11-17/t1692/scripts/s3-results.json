@@ -1,0 +1,86 @@
+[
+ {
+  "area": "3.teams-trigger",
+  "name": "POSITION ADDED (QA) on OPP-0374",
+  "pass": true,
+  "detail": "[201,\"OPP_021\",\"Position created successfully\"]"
+ },
+ {
+  "area": "3.teams-trigger",
+  "name": "CANDIDATE SHORTLISTED: ANDROID employee Rushil Thakor on QA position A (card should go to ANDROID channel)",
+  "pass": true,
+  "detail": "[201,\"OPP_074\",\"Candidates nominated successfully\"]"
+ },
+ {
+  "area": "3.teams-trigger",
+  "name": "APPROVAL REQUESTED for Rushil Thakor",
+  "pass": true,
+  "detail": "[200,\"SUCCESS\",\"Candidate sent for TM approval successfully\"]"
+ },
+ {
+  "area": "3.teams-trigger",
+  "name": "APPROVAL REQUEST WITHDRAWN for Rushil Thakor",
+  "pass": true,
+  "detail": "[200,\"SUCCESS\",\"Approval request withdrawn successfully\"]"
+ },
+ {
+  "area": "3.teams-trigger",
+  "name": "CANDIDATE WITHDRAWN: Rushil Thakor",
+  "pass": false,
+  "detail": "[400,\"VAL_001\",\"Validation failed\"]"
+ },
+ {
+  "area": "3.teams-trigger",
+  "name": "PREPARATION COMPLETED: Neel Rathod",
+  "pass": true,
+  "detail": "[200,\"SUCCESS\",\"Preparation Checklist updated successfully\"]"
+ },
+ {
+  "area": "3.teams-trigger",
+  "name": "INTERVIEW SCHEDULED: Neel Rathod round 1 at 15:30 IST 20/11/2026",
+  "pass": true,
+  "detail": "[201,\"OPP_051\",\"Interview Round added successfully\"]"
+ },
+ {
+  "area": "3.teams-trigger",
+  "name": "INTERVIEW SCHEDULED: Neel Rathod round 2 at 11:00 IST 23/11/2026 (to be cancelled)",
+  "pass": true,
+  "detail": "[201,\"OPP_051\",\"Interview Round added successfully\"]"
+ },
+ {
+  "area": "3.teams-trigger",
+  "name": "INTERVIEW CANCELLED: Neel Rathod round 2",
+  "pass": true,
+  "detail": "[200,\"SUCCESS\",\"Interview Round removed successfully\"]"
+ },
+ {
+  "area": "3.teams-trigger",
+  "name": "ROUND RESULT: Neel Rathod round 1 Cleared",
+  "pass": false,
+  "detail": "[400,\"OPP_138\",\"A round can be marked Cleared or Not Cleared only once it has an interview date of today or earlier\"]"
+ },
+ {
+  "area": "3.teams-trigger",
+  "name": "CANDIDATE SELECTED: Neel Rathod",
+  "pass": false,
+  "detail": "[400,\"OPP_015\",\"This change skips a step and needs a confirmation\"]"
+ },
+ {
+  "area": "3.teams-trigger",
+  "name": "OPPORTUNITY STATUS CHANGED: OPP-0374 -> On Hold",
+  "pass": false,
+  "detail": "[400,\"VAL_001\",\"Validation failed\"]"
+ },
+ {
+  "area": "3.teams-trigger",
+  "name": "OPPORTUNITY STATUS CHANGED: OPP-0374 -> Open",
+  "pass": false,
+  "detail": "[400,\"OPP_014\",\"This change is not allowed from the current stage\"]"
+ },
+ {
+  "area": "3.teams-trigger",
+  "name": "DIRECT CANCELLED: OPP-0377 (Swati Malhotra)",
+  "pass": true,
+  "detail": "[200,\"SUCCESS\",\"Direct ticket marked as cancelled\"]"
+ }
+]

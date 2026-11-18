@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SimERP Ops</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div class="shell">
+  <aside class="side">
+    <div class="brand" aria-label="SimERP Ops"><span class="brand-name">SimERP</span><span class="brand-ops">Ops</span></div>
+    <div class="side-sub">QA control room</div>
+    <nav id="nav">
+      <button data-tab="overview" class="on"><span class="ic">▦</span> Overview</button>
+      <button data-tab="running"><span class="ic">⟳</span> Running <span class="badge live-badge" id="nb-running"></span></button>
+      <button data-tab="tbt"><span class="ic">✓</span> To be tested <span class="badge" id="nb-tbt"></span></button>
+      <button data-tab="suite"><span class="ic">◎</span> Test suite <span class="badge" id="nb-suite"></span></button>
+      <button data-tab="links"><span class="ic">⇄</span> Task ↔ tests <span class="badge" id="nb-links"></span></button>
+      <button data-tab="runs"><span class="ic">▤</span> Runs &amp; reports</button>
+      <button data-tab="work"><span class="ic">☰</span> My work <span class="badge" id="nb-work"></span></button>
+      <button data-tab="bugs"><span class="ic" id="nav-bug"></span> Bugs <span class="badge" id="nb-bugs"></span></button>
+      <button data-tab="health"><span class="ic">♥</span> Health</button>
+      <button data-tab="activity"><span class="ic">↺</span> Activity</button>
+    </nav>
+    <div class="side-foot">
+      <div class="live" id="live"><span id="live-beat"></span><span id="live-text">Loading…</span></div>
+      <div class="qa-mini" id="qa-mini"></div>
+      <button class="ghost small" id="calm" aria-pressed="false" title="Turn off all animations and glow">😌 Calm</button>
+      <select id="theme" aria-label="Theme" title="Theme">
+        <option value="dark">🌌 Blue (dark)</option><option value="light">☀️ Light</option><option value="orange">🟠 Orange</option><option value="green">🟢 Green</option><option value="purple">🟣 Purple</option>
+      </select>
+    </div>
+  </aside>
+
+  <div class="main">
+    <header class="page-head">
+      <div>
+        <h1 id="page-title">Overview</h1>
+        <p class="sub" id="page-sub"></p>
+      </div>
+      <div class="head-actions">
+        <span class="muted small" id="sync-info"></span>
+        <button id="sync-now" class="primary">↻ Sync now</button>
+      </div>
+    </header>
+    <div id="banner" class="banner hidden"></div>
+
+    <!-- Overview -->
+    <section id="tab-overview">
+      <div class="ov-grid">
+        <div class="ov-main">
+          <div class="stats" id="stats">
+            <div class="stat skel"></div><div class="stat skel"></div><div class="stat skel"></div><div class="stat skel"></div>
+          </div>
+          <div class="two">
+            <div class="panel">
+              <div class="panel-head">
+                <div><h3>Pending to be tested</h3><p class="sub">Tasks and issues waiting for QA · one point per Zoho sync</p></div>
+                <div class="pills" id="tbt-range"><button data-r="1">1D</button><button data-r="7" class="on">1W</button><button data-r="30">1M</button><button data-r="9999">All</button></div>
+              </div>
+              <div class="legend" id="tbt-legend"></div>
+              <div class="chart" id="tbt-trend"><div class="skel tall"></div></div>
+              <h4 class="mini-h">Waiting longest</h4>
+              <div id="tbt-oldest" class="rows"></div>
+              <a class="go" data-goto="tbt">Open the To-be-tested queue →</a>
+            </div>
+            <div class="panel">
+              <div class="panel-head">
+                <div><h3>System health</h3><p class="sub" id="ovh-sub">API checks + regression suite per health run</p></div>
+                <a class="go" data-goto="health">Health report →</a>
+              </div>
+              <div class="legend" id="ovh-legend"></div>
+              <div class="chart" id="ovh-chart"><div class="skel tall"></div></div>
+              <div class="hk" id="ovh-kpis"></div>
+              <h4 class="mini-h">API response time</h4>
+              <div class="chart" id="ovh-latency"></div>
+            </div>
+          </div>
+          <div class="two">
+            <div class="panel">
+              <div class="panel-head"><div><h3>Open bugs by status</h3><p class="sub">Click a status to open those bugs</p></div></div>
+              <div id="donut"><div class="skel tall"></div></div>
+            </div>
+            <div class="panel">
+              <div class="panel-head"><div><h3>Open bugs by assignee</h3><p class="sub">Click a person to open their bugs</p></div></div>
+              <div id="bars"><div class="skel tall"></div></div>
+            </div>
+          </div>
+        </div>
+        <aside class="ov-feed">
+          <div class="panel">
+            <div class="panel-head"><div><h3>Re-test readiness</h3><p class="sub">To-be-tested items</p></div></div>
+            <div id="readiness"><div class="skel"></div></div>
+          </div>
+          <div class="panel feed-panel">
+            <div class="panel-head"><div><h3>Live feed</h3><p class="sub">Zoho changes · sends · test runs</p></div></div>
+            <div id="feed" class="feed"><div class="skel"></div><div class="skel"></div><div class="skel"></div></div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Running -->
+    <section id="tab-running" class="hidden">
+      <div id="run-list" class="tbt-list"><div class="skel tall"></div></div>
+    </section>
+
+    <!-- To be tested -->
+    <section id="tab-tbt" class="hidden">
+      <div class="toolbar">
+        <div class="pills" id="tbt-filter">
+          <button data-f="all" class="on">All</button><button data-f="task">Tasks</button><button data-f="bug">Bugs</button><button data-f="mine">Mine</button><button data-f="unlinked">No tests linked</button>
+        </div>
+        <input type="search" id="tbt-q" placeholder="Search key or title…">
+      </div>
+      <div id="tbt-list" class="tbt-list"><div class="skel tall"></div></div>
+    </section>
+
+    <!-- Test suite -->
+    <section id="tab-suite" class="hidden">
+      <div class="stats" id="suite-kpis"><div class="stat skel"></div><div class="stat skel"></div><div class="stat skel"></div><div class="stat skel"></div></div>
+      <div class="toolbar" style="margin-top:20px">
+        <div class="pills" id="suite-view"><button data-v="modules" class="on">Modules</button><button data-v="cases">All test cases</button></div>
+        <input type="search" id="suite-q" placeholder="Search module…">
+        <div class="pills" id="suite-sort">
+          <button data-sort="group" class="on">By group</button><button data-sort="worst">Lowest pass rate</button><button data-sort="cases">Most cases</button><button data-sort="stale">Oldest run</button>
+        </div>
+      </div>
+      <div class="mgrid" id="suite-grid"><div class="skel tall"></div></div>
+      <div id="suite-cases" class="hidden">
+        <div class="toolbar">
+          <input type="search" id="sc-q" placeholder="Search id or title…">
+          <select id="sc-mod"><option value="">All modules</option></select>
+          <select id="sc-cat"><option value="">All categories</option></select>
+          <select id="sc-link"><option value="">Linked or not</option><option value="linked">Linked to a task</option><option value="unlinked">Not linked</option></select>
+          <span class="small muted" id="sc-count"></span>
+        </div>
+        <div class="panel flush"><table class="list" id="sc-table"></table></div>
+      </div>
+    </section>
+
+    <!-- Task ↔ tests -->
+    <section id="tab-links" class="hidden">
+      <div class="stats" id="links-kpis"><div class="stat skel"></div><div class="stat skel"></div><div class="stat skel"></div><div class="stat skel"></div></div>
+      <div class="toolbar" style="margin-top:20px">
+        <div class="pills" id="links-filter">
+          <button data-f="all" class="on">All</button><button data-f="tbt">To be tested</button><button data-f="open">Open</button><button data-f="closed">Closed</button><button data-f="bug">Bugs</button><button data-f="mine">Mine</button><button data-f="missing">Not in Zoho</button>
+        </div>
+        <input type="search" id="links-q" placeholder="Search key, title or module…">
+      </div>
+      <div id="links-list" class="tbt-list"><div class="skel tall"></div></div>
+      <div class="panel" style="margin-top:20px" id="links-unmapped-panel">
+        <div class="panel-head"><div><h3>Test cases written from documents, not a Zoho task</h3><p class="sub">Pick the task each one belongs to — it is remembered for every future view</p></div></div>
+        <div id="links-unmapped" class="rows"></div>
+      </div>
+    </section>
+
+    <!-- Runs & reports -->
+    <section id="tab-runs" class="hidden">
+      <div class="stats" id="runs-kpis"><div class="stat skel"></div><div class="stat skel"></div><div class="stat skel"></div><div class="stat skel"></div></div>
+      <div class="panel" style="margin-top:20px">
+        <div class="panel-head">
+          <div><h3>Pass rate per run</h3><p class="sub">QA Workspace runs and QA reports, merged</p></div>
+          <div class="pills" id="runs-range"><button data-range="30">1M</button><button data-range="90" class="on">3M</button><button data-range="9999">All</button></div>
+        </div>
+        <div class="chart" id="runs-chart"><div class="skel tall"></div></div>
+      </div>
+      <div class="two" style="margin-top:20px">
+        <div class="panel">
+          <div class="panel-head"><div><h3>Most failing tests</h3><p class="sub">Across the last 25 runs</p></div></div>
+          <div id="failing" class="rows"><div class="skel"></div></div>
+        </div>
+        <div class="panel">
+          <div class="panel-head">
+            <div><h3>Reports</h3><p class="sub">Open any generated report</p></div>
+            <div class="pills" id="rep-kind"><button data-k="qa" class="on">QA reports</button><button data-k="pipeline">Pipeline</button></div>
+          </div>
+          <input type="search" id="rep-q" placeholder="Search reports…" style="width:100%;margin-bottom:10px">
+          <div id="reports" class="rows replist"><div class="skel"></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- My work -->
+    <section id="tab-work" class="hidden">
+      <div class="stats" id="work-kpis" style="margin-bottom:18px"></div>
+      <div class="toolbar">
+        <input type="search" id="work-q" placeholder="Search key or title…">
+        <select id="work-status"><option value="">All statuses</option></select>
+        <label class="chk"><input type="checkbox" id="work-hide-closed" checked> Hide closed</label>
+        <span class="grow"></span>
+        <button class="primary" id="new-task">+ New task</button>
+      </div>
+      <div class="panel flush"><table class="list" id="work-table"></table></div>
+    </section>
+
+    <!-- Bugs -->
+    <section id="tab-bugs" class="hidden">
+      <div class="toolbar">
+        <div class="pills" id="bug-scope">
+          <button data-scope="reportedByMe" class="on">Reported by me</button><button data-scope="assignedToMe">Assigned to me</button><button data-scope="all">All</button>
+        </div>
+        <input type="search" id="bug-q" placeholder="Search key or title…">
+        <select id="bug-status"><option value="">All statuses</option></select>
+        <select id="bug-sev"><option value="">All severities</option></select>
+        <select id="bug-asg"><option value="">All assignees</option></select>
+        <label class="chk"><input type="checkbox" id="bug-hide-closed" checked> Hide closed</label>
+        <span class="grow"></span>
+        <button class="primary" id="new-bug">+ New bug</button>
+      </div>
+      <div class="panel flush"><table class="list" id="bug-table"></table></div>
+    </section>
+
+    <!-- Health -->
+    <section id="tab-health" class="hidden">
+      <div class="toolbar">
+        <div class="pills" id="h-env"></div>
+        <span class="grow"></span>
+        <span id="h-running" class="small muted"></span>
+        <button class="primary" id="h-run">▶ Run health check</button>
+      </div>
+      <div class="stats" id="h-kpis"><div class="stat skel"></div><div class="stat skel"></div><div class="stat skel"></div><div class="stat skel"></div></div>
+      <div class="panel" style="margin-top:20px">
+        <div class="panel-head">
+          <div><h3>Passed vs failed per health run</h3><p class="sub">API checks + regression suite, run after every deploy</p></div>
+          <div class="legend" id="h-legend"></div>
+        </div>
+        <div class="chart" id="h-runs-chart"><div class="skel tall"></div></div>
+      </div>
+      <div class="two" style="margin-top:20px">
+        <div class="panel">
+          <div class="panel-head"><div><h3>API response time</h3><p class="sub" id="h-avail">health-check probe every 10 minutes</p></div>
+            <div class="pills" id="h-days"><button data-d="1">1D</button><button data-d="7" class="on">1W</button><button data-d="14">2W</button></div></div>
+          <div class="chart" id="h-latency"><div class="skel tall"></div></div>
+        </div>
+        <div class="panel">
+          <div class="panel-head"><div><h3>Failures by module</h3><p class="sub" id="h-mod-sub">selected run</p></div></div>
+          <div id="h-modules"><div class="skel"></div></div>
+        </div>
+      </div>
+      <div class="two" style="margin-top:20px">
+        <div class="panel">
+          <div class="panel-head"><div><h3 id="h-fail-title">Failures</h3><p class="sub" id="h-fail-sub"></p></div></div>
+          <div id="h-failures" class="rows"><div class="skel"></div></div>
+        </div>
+        <div class="panel">
+          <div class="panel-head"><div><h3>Deploys &amp; health runs</h3><p class="sub">Click a run to see its failures</p></div></div>
+          <div id="h-timeline" class="feed"><div class="skel"></div></div>
+        </div>
+      </div>
+          <div class="panel" style="margin-top:20px">
+        <div class="panel-head">
+          <div><h3>Test cases in this run</h3><p class="sub" id="htc-sub"></p></div>
+          <div class="pills" id="htc-view"><button data-v="api" class="on">API checks</button><button data-v="reg">Regression by module</button></div>
+        </div>
+        <div id="htc-body"></div>
+      </div>
+    </section>
+
+    <!-- Activity -->
+    <section id="tab-activity" class="hidden">
+      <div class="two">
+        <div class="panel"><h3>Sync log</h3><div id="sync-log" class="rows"></div></div>
+        <div class="panel"><h3>Sent to Zoho from here</h3><div id="actions-log" class="rows"></div></div>
+      </div>
+    </section>
+  </div>
+</div>
+
+<div id="tip" class="tip hidden"></div>
+
+<button id="chat-fab" class="chat-fab" aria-label="Ask the assistant">💬 <span>Ask</span></button>
+<section id="chat" class="chat hidden" aria-label="Assistant">
+  <header class="chat-head"><b>Assistant</b><span class="grow"></span><button class="ghost small" id="chat-new">New chat</button><button class="ghost" id="chat-close" aria-label="Close">✕</button></header>
+  <div id="chat-msgs" class="chat-msgs"></div>
+  <form id="chat-form" class="chat-form"><textarea id="chat-input" rows="2" placeholder="Ask anything, or tell it what to do…"></textarea><button class="primary" id="chat-send">Send</button></form>
+  <div class="small muted chat-note" id="chat-note"></div>
+</section>
+
+<div id="viewer-back" class="drawer-back hidden"></div>
+<section id="viewer" class="viewer hidden" aria-label="Report viewer">
+  <header class="viewer-head"><b id="viewer-title"></b><span class="grow"></span><a id="viewer-open" class="small" target="_blank" rel="noopener">Open in new tab ↗</a><button class="ghost" id="viewer-close" aria-label="Close">✕</button></header>
+  <div class="viewer-body"><iframe id="viewer-frame" title="Report" sandbox="allow-scripts allow-popups"></iframe><aside id="viewer-side" class="viewer-side"></aside></div>
+</section>
+
+<div id="drawer-back" class="drawer-back hidden"></div>
+<aside id="drawer" class="drawer hidden" aria-label="Details">
+  <div class="drawer-head" id="drawer-head"></div>
+  <div class="pills drawer-tabs" id="drawer-tabs"></div>
+  <div class="drawer-body" id="drawer-body"></div>
+</aside>
+
+<dialog id="dlg">
+  <form method="dialog" id="dlg-form">
+    <h3 id="dlg-title"></h3>
+    <div id="dlg-body"></div>
+    <div class="dlg-err hidden" id="dlg-err"></div>
+    <div class="dlg-actions">
+      <button value="cancel" id="dlg-cancel" formnovalidate>Cancel</button>
+      <button value="ok" class="primary" id="dlg-ok">OK</button>
+    </div>
+  </form>
+</dialog>
+
+<script src="/charts.js"></script>
+<script src="/app.js"></script>
+<script src="/suite.js"></script>
+<script src="/health.js"></script>
+<script src="/links.js"></script>
+<script src="/detail.js"></script>
+<script src="/running.js"></script>
+<script src="/reports.js"></script>
+<script src="/chat.js"></script>
+</body>
+</html>

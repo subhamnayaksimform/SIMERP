@@ -1,0 +1,41 @@
+{
+  "results": [
+    {
+      "id": "empty-submit",
+      "ok": true,
+      "label": "Create Opportunity",
+      "errors": [
+        "*",
+        "*",
+        "*",
+        "Client / company name is required",
+        "*",
+        "Title is required",
+        "*",
+        "Title is required",
+        "*",
+        "Select at least one tech stack",
+        "*",
+        "Select at least one department"
+      ],
+      "buttons": [
+        "Pick a date",
+        "",
+        "Pick a date",
+        "",
+        "",
+        "Add Link",
+        "Cancel",
+        "Create Opportunity"
+      ],
+      "errs": []
+    },
+    {
+      "id": "fill-and-create",
+      "ok": true,
+      "opts": [],
+      "errs": []
+    }
+  ],
+  "errs": []
+}

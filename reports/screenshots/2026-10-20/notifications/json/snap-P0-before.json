@@ -1,0 +1,182 @@
+{
+  "label": "P0-before",
+  "takenAt": "2026-10-20T11:26:31.353Z",
+  "users": {
+    "falgun.solanki": {
+      "status": 200,
+      "total": 2,
+      "latestAt": "2026-10-19T11:35:49.493Z",
+      "today": []
+    },
+    "bhumi.chauhan": {
+      "status": 200,
+      "total": 100,
+      "latestAt": "2026-10-20T08:56:05.820Z",
+      "today": [
+        {
+          "id": "289fff0e-8387-4960-b4f9-557c0e9ebc7c",
+          "eventType": "notification.allocation_ticket.allocation_cancelled",
+          "title": "Allocation Cancelled: ConfigHub | Configuration Management",
+          "body": "The upcoming allocation for Iti Chatterjee to ConfigHub | Configuration Management, due to start 2026-10-22, has been cancelled.",
+          "createdAt": "2026-10-20T08:56:05.820Z",
+          "isRead": false,
+          "ctx": {
+            "ticketPublicId": "ff8c0646-015a-4572-981b-a47c88d7d56e"
+          }
+        },
+        {
+          "id": "c1939609-9f19-488a-b629-faf2a90eb628",
+          "eventType": "notification.allocation_ticket.created",
+          "title": "New Ticket: DA-0110",
+          "body": "Jignesh Raval created a new DEALLOCATE ALLOCATION ticket DA-0110 for project ConfigHub | Configuration Management.",
+          "createdAt": "2026-10-20T08:55:21.933Z",
+          "isRead": false,
+          "ctx": {
+            "ticketPublicId": "ff8c0646-015a-4572-981b-a47c88d7d56e"
+          }
+        },
+        {
+          "id": "517b7b70-d1fa-4134-afac-1363fe6511a4",
+          "eventType": "notification.allocation_ticket.created",
+          "title": "New Ticket: NA-0373",
+          "body": "Jignesh Raval created a new NEW ALLOCATION ticket NA-0373 for project ConfigHub | Configuration Management.",
+          "createdAt": "2026-10-20T08:52:39.572Z",
+          "isRead": false,
+          "ctx": {
+            "ticketPublicId": "2ca97f57-49b6-4131-ac65-721f657ffbf0"
+          }
+        }
+      ]
+    },
+    "Palak.Saxena": {
+      "status": 200,
+      "total": 100,
+      "latestAt": "2026-10-20T10:38:29.971Z",
+      "today": [
+        {
+          "id": "8fa6997e-e364-438e-bba4-9b1d37784218",
+          "eventType": "notification.employee.roles_updated",
+          "title": "Roles & Permissions Updated",
+          "body": "Your access has been updated. Current roles: PMO. Department access: PROJECT MANAGEMENT OFFICE.",
+          "createdAt": "2026-10-20T10:38:29.971Z",
+          "isRead": false,
+          "ctx": {
+            "employeePublicId": "6fcd4dbb-609f-46c0-b91b-969ae39de067"
+          }
+        },
+        {
+          "id": "b86c7c4d-3d9f-40cd-a599-35a9375b7728",
+          "eventType": "notification.employee.roles_updated",
+          "title": "Roles & Permissions Updated",
+          "body": "Your access has been updated. Current roles: EMPLOYEE, PMO, DM. Department access: PROJECT MANAGEMENT OFFICE.",
+          "createdAt": "2026-10-20T09:51:43.081Z",
+          "isRead": false,
+          "ctx": {
+            "employeePublicId": "6fcd4dbb-609f-46c0-b91b-969ae39de067"
+          }
+        },
+        {
+          "id": "cbb84ab5-2f28-467f-b1ad-221b9d4fac53",
+          "eventType": "notification.allocation_ticket.allocation_cancelled",
+          "title": "Allocation Cancelled: ConfigHub | Configuration Management",
+          "body": "The upcoming allocation for Iti Chatterjee to ConfigHub | Configuration Management, due to start 2026-10-22, has been cancelled.",
+          "createdAt": "2026-10-20T08:56:05.820Z",
+          "isRead": false,
+          "ctx": {
+            "ticketPublicId": "ff8c0646-015a-4572-981b-a47c88d7d56e"
+          }
+        },
+        {
+          "id": "0b2e6469-bb5e-4cae-9e19-ff14bac6c6ea",
+          "eventType": "notification.allocation_ticket.created",
+          "title": "New Ticket: DA-0110",
+          "body": "Jignesh Raval created a new DEALLOCATE ALLOCATION ticket DA-0110 for project ConfigHub | Configuration Management.",
+          "createdAt": "2026-10-20T08:55:21.933Z",
+          "isRead": false,
+          "ctx": {
+            "ticketPublicId": "ff8c0646-015a-4572-981b-a47c88d7d56e"
+          }
+        },
+        {
+          "id": "83c8de0b-dcc1-45e2-9c8d-fece22f8dc33",
+          "eventType": "notification.allocation_ticket.created",
+          "title": "New Ticket: NA-0373",
+          "body": "Jignesh Raval created a new NEW ALLOCATION ticket NA-0373 for project ConfigHub | Configuration Management.",
+          "createdAt": "2026-10-20T08:52:39.572Z",
+          "isRead": false,
+          "ctx": {
+            "ticketPublicId": "2ca97f57-49b6-4131-ac65-721f657ffbf0"
+          }
+        }
+      ]
+    },
+    "neha.gupta": {
+      "status": 200,
+      "total": 11,
+      "latestAt": "2026-10-19T11:35:49.493Z",
+      "today": []
+    },
+    "cto": {
+      "status": 200,
+      "total": 64,
+      "latestAt": "2026-10-20T08:56:05.820Z",
+      "today": [
+        {
+          "id": "56db1248-e9c5-416f-ba55-178ad0a035db",
+          "eventType": "notification.allocation_ticket.allocation_cancelled",
+          "title": "Allocation Cancelled: ConfigHub | Configuration Management",
+          "body": "The upcoming allocation for Iti Chatterjee to ConfigHub | Configuration Management, due to start 2026-10-22, has been cancelled.",
+          "createdAt": "2026-10-20T08:56:05.820Z",
+          "isRead": false,
+          "ctx": {
+            "ticketPublicId": "ff8c0646-015a-4572-981b-a47c88d7d56e"
+          }
+        },
+        {
+          "id": "949b7f15-4e04-4c64-83de-3d9d8e523edb",
+          "eventType": "notification.allocation_ticket.developer_rm_assigned",
+          "title": "Approval Bypassed: NA-0373",
+          "body": "PMO bypassed your department's approval for NA-0373.",
+          "createdAt": "2026-10-20T08:53:31.638Z",
+          "isRead": false,
+          "ctx": {
+            "ticketPublicId": "2ca97f57-49b6-4131-ac65-721f657ffbf0"
+          }
+        },
+        {
+          "id": "e3b2d01f-72a7-4988-a355-dd6d121c934a",
+          "eventType": "notification.allocation_ticket.developer_rm_deallocated",
+          "title": "Team Member Deallocated: Gaurav Dutta",
+          "body": "Gaurav Dutta has been deallocated from HyperScale | Scalability Engine, effective 2026-10-20.",
+          "createdAt": "2026-10-20T08:51:08.375Z",
+          "isRead": false,
+          "ctx": {
+            "ticketPublicId": "b2166221-d164-4b29-820f-975fd1579c20"
+          }
+        },
+        {
+          "id": "00621887-e9a0-459d-813e-2ec4a3f66361",
+          "eventType": "notification.allocation_ticket.developer_rm_updated",
+          "title": "Assignment Updated: Gaurav Dutta",
+          "body": "Gaurav Dutta's allocation for HyperScale | Scalability Engine has been updated.",
+          "createdAt": "2026-10-20T08:49:44.829Z",
+          "isRead": false,
+          "ctx": {
+            "ticketPublicId": "4c9c0a7d-640b-473f-9313-03508cdfe745"
+          }
+        },
+        {
+          "id": "c91dee4a-3c47-49fb-809b-4efccf2a03d3",
+          "eventType": "notification.allocation.direct_employee_rm_assigned",
+          "title": "Direct Allocation: HyperScale | Scalability Engine",
+          "body": "Bhumi Chauhan directly allocated Gaurav Dutta to HyperScale | Scalability Engine, bypassing the ticket workflow.",
+          "createdAt": "2026-10-20T08:48:44.213Z",
+          "isRead": false,
+          "ctx": {
+            "assignmentPublicId": "763b606e-3076-438b-8604-b5b800e18e09"
+          }
+        }
+      ]
+    }
+  }
+}

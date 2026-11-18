@@ -1,0 +1,54 @@
+{
+  "vihaan.chatterjee": {
+    "url": "https://simerp-dev.simform.solutions/employee?sortBy=availabilityPercentage&sortOrder=desc",
+    "n": 133,
+    "rbac": false,
+    "rbacUpd": false,
+    "emp": true,
+    "proj": true,
+    "team": true,
+    "alloc_corr": [],
+    "wu": [],
+    "dept": true,
+    "keys": [
+      "rules",
+      "scopeMap"
+    ]
+  },
+  "yatharth.patil": {
+    "url": "https://simerp-dev.simform.solutions/profile",
+    "n": 64,
+    "rbac": false,
+    "rbacUpd": false,
+    "emp": false,
+    "proj": false,
+    "team": false,
+    "alloc_corr": [],
+    "wu": [],
+    "dept": false,
+    "keys": [
+      "rules",
+      "scopeMap"
+    ]
+  },
+  "zalak.das": {
+    "url": "https://simerp-dev.simform.solutions/employee?sortBy=availabilityPercentage&sortOrder=desc",
+    "n": 107,
+    "rbac": false,
+    "rbacUpd": false,
+    "emp": true,
+    "proj": true,
+    "team": true,
+    "alloc_corr": [],
+    "wu": [
+      "create:weekly_updates",
+      "read:weekly_updates",
+      "update:weekly_updates"
+    ],
+    "dept": true,
+    "keys": [
+      "rules",
+      "scopeMap"
+    ]
+  }
+}

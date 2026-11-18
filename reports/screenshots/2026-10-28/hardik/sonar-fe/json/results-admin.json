@@ -1,0 +1,617 @@
+{
+  "results": [
+    {
+      "id": "rbac-load",
+      "ok": true,
+      "count": 31,
+      "rows": [
+        {
+          "id": "allocations",
+          "label": "Project Allocations",
+          "rowCls": [
+            "bg-muted/40",
+            "bg-secondary/70",
+            "bg-muted"
+          ],
+          "cellCls": [
+            "font-semibold",
+            "bg-muted"
+          ],
+          "cell2": [
+            "bg-muted"
+          ],
+          "rowBg": "oklch(0.968 0.004 264)",
+          "cellBg": "oklch(0.968 0.004 264)",
+          "cell2Bg": "oklch(0.968 0.004 264)"
+        },
+        {
+          "id": "allocation_tickets",
+          "label": "Allocation Tickets",
+          "rowCls": [
+            "bg-muted/40",
+            "bg-secondary/60",
+            "bg-secondary/40"
+          ],
+          "cellCls": [
+            "font-semibold",
+            "bg-secondary/40"
+          ],
+          "cell2": [
+            "bg-secondary/40"
+          ],
+          "rowBg": "oklab(0.933961 0.0079037 -0.0115788 / 0.4)",
+          "cellBg": "oklab(0.933961 0.0079037 -0.0115788 / 0.4)",
+          "cell2Bg": "oklab(0.933961 0.0079037 -0.0115788 / 0.4)"
+        },
+        {
+          "id": "allocation_verification",
+          "label": "Allocation Verification",
+          "rowCls": [
+            "bg-muted/40",
+            "bg-secondary/60",
+            "bg-secondary/40"
+          ],
+          "cellCls": [
+            "font-semibold",
+            "bg-secondary/40"
+          ],
+          "cell2": [
+            "bg-secondary/40"
+          ],
+          "rowBg": "oklab(0.933961 0.0079037 -0.0115788 / 0.4)",
+          "cellBg": "oklab(0.933961 0.0079037 -0.0115788 / 0.4)",
+          "cell2Bg": "oklab(0.933961 0.0079037 -0.0115788 / 0.4)"
+        },
+        {
+          "id": "assign_goals",
+          "label": "Assign Goals",
+          "rowCls": [
+            "bg-muted/40",
+            "bg-secondary/60",
+            "bg-secondary/40"
+          ],
+          "cellCls": [
+            "font-semibold",
+            "bg-secondary/40"
+          ],
+          "cell2": [
+            "bg-secondary/40"
+          ],
+          "rowBg": "oklab(0.933961 0.0079037 -0.0115788 / 0.4)",
+          "cellBg": "oklab(0.933961 0.0079037 -0.0115788 / 0.4)",
+          "cell2Bg": "oklab(0.933961 0.0079037 -0.0115788 / 0.4)"
+        },
+        {
+          "id": "assign_roles",
+          "label": "Assign Roles",
+          "rowCls": [
+            "bg-muted/40",
+            "bg-secondary/60",
+            "bg-secondary/40"
+          ],
+          "cellCls": [
+            "font-semibold",
+            "bg-secondary/40"
+          ],
+          "cell2": [
+            "bg-secondary/40"
+          ],
+          "rowBg": "oklab(0.933961 0.0079037 -0.0115788 / 0.4)",
+          "cellBg": "oklab(0.933961 0.0079037 -0.0115788 / 0.4)",
+          "cell2Bg": "oklab(0.933961 0.0079037 -0.0115788 / 0.4)"
+        },
+        {
+          "id": "certifications",
+          "label": "Certifications",
+          "rowCls": [
+            "bg-muted/40",
+            "bg-secondary/60",
+            "bg-secondary/40"
+          ],
+          "cellCls": [
+            "font-semibold",
+            "bg-secondary/40"
+          ],
+          "cell2": [
+            "bg-secondary/40"
+          ],
+          "rowBg": "oklab(0.933961 0.0079037 -0.0115788 / 0.4)",
+          "cellBg": "oklab(0.933961 0.0079037 -0.0115788 / 0.4)",
+          "cell2Bg": "oklab(0.933961 0.0079037 -0.0115788 / 0.4)"
+        },
+        {
+          "id": "contractors",
+          "label": "Contractors",
+          "rowCls": [
+            "bg-muted/40",
+            "bg-secondary/60",
+            "bg-secondary/40"
+          ],
+          "cellCls": [
+            "font-semibold",
+            "bg-secondary/40"
+          ],
+          "cell2": [
+            "bg-secondary/40"
+          ],
+          "rowBg": "oklab(0.933961 0.0079037 -0.0115788 / 0.4)",
+          "cellBg": "oklab(0.933961 0.0079037 -0.0115788 / 0.4)",
+          "cell2Bg": "oklab(0.933961 0.0079037 -0.0115788 / 0.4)"
+        },
+        {
+          "id": "departments",
+          "label": "Departments",
+          "rowCls": [
+            "bg-muted/40",
+            "bg-secondary/60",
+            "bg-secondary/40"
+          ],
+          "cellCls": [
+            "font-semibold",
+            "bg-secondary/40"
+          ],
+          "cell2": [
+            "bg-secondary/40"
+          ],
+          "rowBg": "oklab(0.933961 0.0079037 -0.0115788 / 0.4)",
+          "cellBg": "oklab(0.933961 0.0079037 -0.0115788 / 0.4)",
+          "cell2Bg": "oklab(0.933961 0.0079037 -0.0115788 / 0.4)"
+        },
+        {
+          "id": "competencies",
+          "label": "Competencies",
+          "rowCls": [
+            "bg-muted/40",
+            "bg-secondary/60",
+            "bg-secondary/20"
+          ],
+          "cellCls": [
+            "pl-8",
+            "font-medium",
+            "bg-secondary/20"
+          ],
+          "cell2": [
+            "bg-secondary/20"
+          ],
+          "rowBg": "oklab(0.933961 0.0079037 -0.0115788 / 0.2)",
+          "cellBg": "oklab(0.933961 0.0079037 -0.0115788 / 0.2)",
+          "cell2Bg": "oklab(0.933961 0.0079037 -0.0115788 / 0.2)"
+        },
+        {
+          "id": "employee_ratings",
+          "label": "Employee Ratings",
+          "rowCls": [
+            "bg-muted/40",
+            "bg-secondary/60",
+            "bg-secondary/40"
+          ],
+          "cellCls": [
+            "font-semibold",
+            "bg-secondary/40"
+          ],
+          "cell2": [
+            "bg-secondary/40"
+          ],
+          "rowBg": "oklab(0.933961 0.0079037 -0.0115788 / 0.4)",
+          "cellBg": "oklab(0.933961 0.0079037 -0.0115788 / 0.4)",
+          "cell2Bg": "oklab(0.933961 0.0079037 -0.0115788 / 0.4)"
+        },
+        {
+          "id": "employees",
+          "label": "Employees",
+          "rowCls": [
+            "bg-muted/40",
+            "bg-secondary/60",
+            "bg-secondary/40"
+          ],
+          "cellCls": [
+            "font-semibold",
+            "bg-secondary/40"
+          ],
+          "cell2": [
+            "bg-secondary/40"
+          ],
+          "rowBg": "oklab(0.933961 0.0079037 -0.0115788 / 0.4)",
+          "cellBg": "oklab(0.933961 0.0079037 -0.0115788 / 0.4)",
+          "cell2Bg": "oklab(0.933961 0.0079037 -0.0115788 / 0.4)"
+        },
+        {
+          "id": "dashboard",
+          "label": "Dashboard",
+          "rowCls": [
+            "bg-muted/40",
+            "bg-secondary/60",
+            "bg-secondary/20"
+          ],
+          "cellCls": [
+            "pl-8",
+            "font-medium",
+            "bg-secondary/20"
+          ],
+          "cell2": [
+            "bg-secondary/20"
+          ],
+          "rowBg": "oklab(0.933961 0.0079037 -0.0115788 / 0.2)",
+          "cellBg": "oklab(0.933961 0.0079037 -0.0115788 / 0.2)",
+          "cell2Bg": "oklab(0.933961 0.0079037 -0.0115788 / 0.2)"
+        }
+      ],
+      "shot": "reports/screenshots/2026-10-28/hardik/sonar-fe/a01-rbac-matrix.png",
+      "errs": []
+    },
+    {
+      "id": "rbac-active-module",
+      "ok": true,
+      "clicked": null,
+      "active": [
+        {
+          "id": "allocations",
+          "cell": [
+            "font-semibold",
+            "bg-muted"
+          ],
+          "cell2": [
+            "bg-muted"
+          ],
+          "bg": [
+            "oklch(0.968 0.004 264)",
+            "oklch(0.968 0.004 264)",
+            "oklch(0.968 0.004 264)"
+          ]
+        }
+      ],
+      "shot": "reports/screenshots/2026-10-28/hardik/sonar-fe/a02-rbac-active-module.png",
+      "errs": []
+    },
+    {
+      "id": "rbac-search",
+      "ok": true,
+      "labels": [
+        "Assign Goals",
+        "Employees",
+        "Dashboard",
+        "Goals",
+        "Skills"
+      ],
+      "none": true,
+      "after": 31,
+      "shot": "reports/screenshots/2026-10-28/hardik/sonar-fe/a03-rbac-search-goal.png",
+      "errs": []
+    },
+    {
+      "id": "rbac-collapse-expand",
+      "ok": true,
+      "before": 151,
+      "mid": 143,
+      "after": 151,
+      "errs": []
+    },
+    {
+      "id": "rbac-header-roles",
+      "ok": true,
+      "ths": [
+        "Action Permission",
+        "EMPLOYEE",
+        "RM",
+        "TM",
+        "EM",
+        "ADMIN",
+        "PM",
+        "PMO",
+        "CSM",
+        "DM",
+        "GOAL MANAGER",
+        "PROGRAM OWNER",
+        ""
+      ],
+      "errs": []
+    },
+    {
+      "id": "rbac-toggle-dirty-discard",
+      "ok": true,
+      "note": "no editable checkbox (all system roles)",
+      "errs": []
+    },
+    {
+      "id": "rbac-scope-cell",
+      "ok": true,
+      "n": 814,
+      "texts": [
+        "Self",
+        "Team",
+        "Department",
+        "All",
+        "—"
+      ],
+      "items": [],
+      "shot": "reports/screenshots/2026-10-28/hardik/sonar-fe/a05-rbac-scope-menu.png",
+      "errs": []
+    },
+    {
+      "id": "rbac-add-role-dialog",
+      "ok": false,
+      "error": "locator.click: Timeout 30000ms exceeded.\nCall log:\n  - waiting for getByRole('button', { name: /Add New Role/ }).first()\n",
+      "errs": []
+    },
+    {
+      "id": "rbac-duplicate-dialog",
+      "ok": false,
+      "error": "locator.click: Timeout 30000ms exceeded.\nCall log:\n  - waiting for locator('thead button[aria-haspopup=\"menu\"]').first()\n",
+      "errs": []
+    },
+    {
+      "id": "rbac-empty-scan",
+      "ok": true,
+      "bad": [
+        {
+          "t": "—",
+          "ctx": "—"
+        },
+        {
+          "t": "—",
+          "ctx": "—"
+        },
+        {
+          "t": "—",
+          "ctx": "—"
+        },
+        {
+          "t": "—",
+          "ctx": "—"
+        },
+        {
+          "t": "—",
+          "ctx": "—"
+        },
+        {
+          "t": "—",
+          "ctx": "—"
+        },
+        {
+          "t": "—",
+          "ctx": "—"
+        },
+        {
+          "t": "—",
+          "ctx": "—"
+        },
+        {
+          "t": "—",
+          "ctx": "—"
+        },
+        {
+          "t": "—",
+          "ctx": "—"
+        },
+        {
+          "t": "—",
+          "ctx": "—"
+        },
+        {
+          "t": "—",
+          "ctx": "—"
+        },
+        {
+          "t": "—",
+          "ctx": "—"
+        },
+        {
+          "t": "—",
+          "ctx": "—"
+        },
+        {
+          "t": "—",
+          "ctx": "—"
+        }
+      ],
+      "errs": []
+    },
+    {
+      "id": "aur-load",
+      "ok": true,
+      "rows": 100,
+      "rolePh": {
+        "text": "Select employee(s) first",
+        "disabled": true
+      },
+      "pager": [
+        "Showing 1 - 100 of 3632 results"
+      ],
+      "bad": [],
+      "shot": "reports/screenshots/2026-10-28/hardik/sonar-fe/a08-assign-user-roles.png",
+      "errs": []
+    },
+    {
+      "id": "aur-edit-dialog-cancel",
+      "ok": true,
+      "names": [
+        "Edit Chief Executive Officer",
+        "Show 37 more departments"
+      ],
+      "title": "Edit Employee",
+      "closed": true,
+      "shot": "reports/screenshots/2026-10-28/hardik/sonar-fe/a09-aur-edit-dialog.png",
+      "errs": [
+        {
+          "type": "warning",
+          "url": "https://simerp-dev.simform.solutions/admin/assign-user-roles",
+          "text": "Form submission canceled because the form is not connected"
+        }
+      ]
+    },
+    {
+      "id": "aur-delete-dialog-cancel",
+      "ok": false,
+      "error": "locator.click: Timeout 30000ms exceeded.\nCall log:\n  - waiting for locator('table tbody tr').first().getByRole('button', { name: /Delete|Remove/i }).first()\n",
+      "errs": []
+    },
+    {
+      "id": "jobq",
+      "ok": true,
+      "url": "https://simerp-dev.simform.solutions/admin/job-queue-scheduler",
+      "h": [
+        "Job Scheduler",
+        "No Jobs Found"
+      ],
+      "tabs": [
+        "Sync Jobs",
+        "Scheduled Jobs"
+      ],
+      "rows": 0,
+      "outputs": [],
+      "bad": [],
+      "shot": "reports/screenshots/2026-10-28/hardik/sonar-fe/a11-job-queue.png",
+      "errs": []
+    },
+    {
+      "id": "contractors",
+      "ok": true,
+      "url": "https://simerp-dev.simform.solutions/admin/contractors",
+      "h": [
+        "Contractors",
+        "Contractors",
+        "1"
+      ],
+      "tabs": [
+        "Active Contractors",
+        "Past Contractors"
+      ],
+      "rows": 100,
+      "outputs": [
+        "Showing 1 - 100 of 272 results"
+      ],
+      "bad": [],
+      "shot": "reports/screenshots/2026-10-28/hardik/sonar-fe/a13-contractors.png",
+      "errs": []
+    },
+    {
+      "id": "teams-notif",
+      "ok": true,
+      "url": "https://simerp-dev.simform.solutions/admin/teams-notifications",
+      "h": [
+        "Teams Notifications"
+      ],
+      "tabs": [
+        "Project Manager",
+        "CSM",
+        "Department",
+        "PMO"
+      ],
+      "rows": 1,
+      "outputs": [],
+      "bad": [],
+      "shot": "reports/screenshots/2026-10-28/hardik/sonar-fe/a14-teams-notifications.png",
+      "errs": []
+    },
+    {
+      "id": "dept-settings",
+      "ok": true,
+      "url": "https://simerp-dev.simform.solutions/department-settings",
+      "h": [
+        "Department Settings",
+        "Departments Settings"
+      ],
+      "tabs": [
+        "Departmental Settings",
+        "Weekly Updates Settings"
+      ],
+      "rows": 0,
+      "outputs": [],
+      "bad": [],
+      "shot": "reports/screenshots/2026-10-28/hardik/sonar-fe/a15-department-settings.png",
+      "errs": [
+        {
+          "type": "error",
+          "url": "https://simerp-dev.simform.solutions/department-settings",
+          "text": "Failed to load resource: net::ERR_CERT_COMMON_NAME_INVALID"
+        }
+      ]
+    },
+    {
+      "id": "competencies",
+      "ok": true,
+      "url": "https://simerp-dev.simform.solutions/competencies?year=2026&departmentIds=d1baf5b2-8213-4925-bb77-f9934094d092",
+      "h": [
+        "Competencies",
+        "Competencies",
+        "1"
+      ],
+      "tabs": [],
+      "rows": 2,
+      "outputs": [
+        "Showing 1 - 2 of 2 results"
+      ],
+      "bad": [],
+      "shot": "reports/screenshots/2026-10-28/hardik/sonar-fe/a16-competencies.png",
+      "errs": []
+    },
+    {
+      "id": "alloc-correction",
+      "ok": true,
+      "url": "https://simerp-dev.simform.solutions/allocation-correction",
+      "h": [
+        "404 – Page Not Found"
+      ],
+      "tabs": [],
+      "rows": 0,
+      "outputs": [],
+      "bad": [],
+      "shot": "reports/screenshots/2026-10-28/hardik/sonar-fe/a17-allocation-correction.png",
+      "errs": []
+    },
+    {
+      "id": "jobq-cron-tab",
+      "ok": true,
+      "tab0": {
+        "name": "Sync Jobs",
+        "cellBtns": [],
+        "sample": [],
+        "tip": null,
+        "bad": []
+      },
+      "tab1": {
+        "name": "Scheduled Jobs",
+        "cellBtns": [],
+        "sample": [],
+        "tip": null,
+        "bad": []
+      },
+      "errs": []
+    },
+    {
+      "id": "weekly-update-settings",
+      "ok": true,
+      "tabFound": 1,
+      "switches": 4,
+      "liveDivs": [
+        "SECTION:"
+      ],
+      "outputs": 0,
+      "shot": "reports/screenshots/2026-10-28/hardik/sonar-fe/a18-dept-weekly-update-settings.png",
+      "errs": [
+        {
+          "type": "error",
+          "url": "https://simerp-dev.simform.solutions/department-settings",
+          "text": "Failed to load resource: net::ERR_CERT_COMMON_NAME_INVALID"
+        }
+      ]
+    }
+  ],
+  "errs": [
+    {
+      "type": "warning",
+      "url": "https://simerp-dev.simform.solutions/admin/assign-user-roles",
+      "text": "Form submission canceled because the form is not connected"
+    },
+    {
+      "type": "error",
+      "url": "https://simerp-dev.simform.solutions/department-settings",
+      "text": "Failed to load resource: net::ERR_CERT_COMMON_NAME_INVALID"
+    },
+    {
+      "type": "error",
+      "url": "https://simerp-dev.simform.solutions/department-settings",
+      "text": "Failed to load resource: net::ERR_CERT_COMMON_NAME_INVALID"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+[
+  {
+    "url": "https://simerp-dev-api.simform.solutions/api/v1/allocation-tickets/remove-allocation",
+    "method": "POST",
+    "req": "{\"projectAssignmentPublicId\":\"c6ab9bcf-d61e-4d79-abd4-2fb8dffc095a\",\"allocationEndDate\":\"2026-10-31\",\"deallocationReason\":\"ROLE_MISALIGNMENT\",\"coreSkillRating\":7,\"communicationRating\":7,\"behavioralRating\":7,\"overallRating\":7,\"developerFeedback\":\"QA SHDLNK re-test 2026-10-23 c-008\",\"isOpenToWorkWithAgain\":true}",
+    "status": 201,
+    "body": "{\"code\":\"ALLOCATION_TICKET_097\",\"message\":\"Deallocation ticket created successfully\",\"data\":{\"outcome\":\"TICKET_CREATED\",\"publicId\":\"3ab87780-1e29-42bd-bf6d-da8a934f107d\",\"ticketNumber\":\"DA-0165\",\"ticketType\":\"DEALLOCATE_ALLOCATION\",\"status\":\"AWAITING_CONFIRMATION\"}}"
+  }
+]

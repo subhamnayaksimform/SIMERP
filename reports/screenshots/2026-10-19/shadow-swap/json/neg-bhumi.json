@@ -1,0 +1,47 @@
+{
+  "tc032_pmo_not_owner": {
+    "req": {
+      "projectId": "c20430eb-7e7e-44e6-b769-3c7756e6a9e2",
+      "flowType": "SHADOW_TO_MAIN",
+      "mainDeallocation": {
+        "projectAssignmentPublicId": "b10689fa-2edb-4f79-99d1-3c7c7371b540",
+        "allocationEndDate": "2026-10-31",
+        "deallocationReason": "ROLE_MISALIGNMENT",
+        "coreSkillRating": 7,
+        "communicationRating": 7,
+        "behavioralRating": 7,
+        "overallRating": 7,
+        "developerFeedback": "QA probe",
+        "isOpenToWorkWithAgain": true
+      },
+      "shadowDeallocation": {
+        "projectAssignmentPublicId": "4186a764-485d-4b1c-89c0-4d3e4604ef06",
+        "allocationEndDate": "2026-10-31",
+        "deallocationReason": "ROLE_MISALIGNMENT"
+      },
+      "promotion": {
+        "deptStackPublicId": "2f46cbf6-894b-4d87-8580-4e525da41760",
+        "requestedAllocationStartDate": "2026-11-01",
+        "requestedAllocationEndDate": "2027-05-31",
+        "requestType": "FRESH_ALLOCATION",
+        "shadowForPublicId": null,
+        "allocationRequestCreationType": null,
+        "requestedAllocationType": "FIXED",
+        "requestedAllocationPercentage": 55,
+        "developerPreferencePublicIds": [
+          "da3c4542-13bb-452b-b619-42095c913d94"
+        ],
+        "isInterviewRequired": false,
+        "isClientFacing": false
+      }
+    },
+    "res": {
+      "status": 403,
+      "body": {
+        "message": "Access forbidden",
+        "error": "Forbidden",
+        "statusCode": 403
+      }
+    }
+  }
+}

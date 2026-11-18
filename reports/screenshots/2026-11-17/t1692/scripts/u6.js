@@ -1,0 +1,11 @@
+const H=require('./h'); const fs=require('fs'); const S2=JSON.parse(fs.readFileSync('s2-state.json'));
+const {chk,save,as,QA}=require('./lib3');
+(async()=>{ const b=await H.chromium.launch(); const P=await as(b,'vihaan.chatterjee');
+ const U=await as(b,'urvashi.kotak'); let r=await U('GET','/opportunities/'+S2.opp); console.log('urvashi api now',r.status,r.body.code);
+ const cand=(await P('GET','/opportunities/candidates?limit=100&departmentPublicIds='+QA)).body.data.items; const id=e=>cand.find(c=>c.email===e+'@simformsolutions.com').publicId;
+ r=await P('POST','/opportunities/positions/'+S2.PA+'/nominations',{candidates:[{employeePublicId:id('neel.rathod')}]}); console.log('shortlist neel',r.status,r.body.code);
+ const N=await as(b,'neel.rathod'); r=await N('GET','/opportunities/'+S2.opp); chk('2.ui','fresh pending candidate (Neel Rathod) API detail -> 403',r.status===403,[r.status,r.body.code]);
+ const s=await H.login(b,'neel.rathod'); await H.go(s.page,'/pre-sales/'+S2.opp); await s.page.waitForTimeout(2000); await H.shot(s.page,'u6-pending-candidate-url');
+ const t=(await s.page.locator('body').innerText()); const url=s.page.url(); console.log(url, t.slice(0,500));
+ chk('2.ui','pending candidate opens opportunity URL -> redirected to Unauthorized page',/unauthori[sz]ed/i.test(url+t),{url,t:t.slice(150,400)});
+ save('u6-results'); await b.close(); })().catch(e=>console.error('CRASH',e));

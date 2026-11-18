@@ -1,0 +1,77 @@
+{
+  "before": "P1-after",
+  "after": "P2-after",
+  "beforeAt": "2026-10-19T11:34:18.453Z",
+  "afterAt": "2026-10-19T11:35:53.625Z",
+  "newByUser": {
+    "falgun.solanki": [
+      {
+        "eventType": "allocation_ticket.allocation_cancelled",
+        "title": "Allocation Cancelled: XCrypt | Blockchain Wallet",
+        "body": "The upcoming allocation for Falgun Solanki to XCrypt | Blockchain Wallet, due to start 2026-10-21, has been cancelled.",
+        "createdAt": "2026-10-19T11:35:49.493Z",
+        "ctx": {
+          "ticketPublicId": "249dcec8-8205-482b-b1b2-a5b37843ad06"
+        }
+      }
+    ],
+    "bhumi.chauhan": [
+      {
+        "eventType": "allocation_ticket.allocation_cancelled",
+        "title": "Allocation Cancelled: XCrypt | Blockchain Wallet",
+        "body": "The upcoming allocation for Falgun Solanki to XCrypt | Blockchain Wallet, due to start 2026-10-21, has been cancelled.",
+        "createdAt": "2026-10-19T11:35:49.493Z",
+        "ctx": {
+          "ticketPublicId": "249dcec8-8205-482b-b1b2-a5b37843ad06"
+        }
+      }
+    ],
+    "Palak.Saxena": [
+      {
+        "eventType": "allocation_ticket.allocation_cancelled",
+        "title": "Allocation Cancelled: XCrypt | Blockchain Wallet",
+        "body": "The upcoming allocation for Falgun Solanki to XCrypt | Blockchain Wallet, due to start 2026-10-21, has been cancelled.",
+        "createdAt": "2026-10-19T11:35:49.493Z",
+        "ctx": {
+          "ticketPublicId": "249dcec8-8205-482b-b1b2-a5b37843ad06"
+        }
+      }
+    ],
+    "neha.gupta": [
+      {
+        "eventType": "allocation_ticket.allocation_cancelled",
+        "title": "Allocation Cancelled: XCrypt | Blockchain Wallet",
+        "body": "The upcoming allocation for Falgun Solanki to XCrypt | Blockchain Wallet, due to start 2026-10-21, has been cancelled.",
+        "createdAt": "2026-10-19T11:35:49.493Z",
+        "ctx": {
+          "ticketPublicId": "249dcec8-8205-482b-b1b2-a5b37843ad06"
+        }
+      }
+    ],
+    "jinal.patel": [
+      {
+        "eventType": "allocation_ticket.allocation_cancelled",
+        "title": "Allocation Cancelled: XCrypt | Blockchain Wallet",
+        "body": "The upcoming allocation for Falgun Solanki to XCrypt | Blockchain Wallet, due to start 2026-10-21, has been cancelled.",
+        "createdAt": "2026-10-19T11:35:49.493Z",
+        "ctx": {
+          "ticketPublicId": "249dcec8-8205-482b-b1b2-a5b37843ad06"
+        }
+      }
+    ],
+    "cto": [
+      {
+        "eventType": "allocation_ticket.allocation_cancelled",
+        "title": "Allocation Cancelled: XCrypt | Blockchain Wallet",
+        "body": "The upcoming allocation for Falgun Solanki to XCrypt | Blockchain Wallet, due to start 2026-10-21, has been cancelled.",
+        "createdAt": "2026-10-19T11:35:49.493Z",
+        "ctx": {
+          "ticketPublicId": "249dcec8-8205-482b-b1b2-a5b37843ad06"
+        }
+      }
+    ],
+    "ceo": [],
+    "keyur.hegde": [],
+    "tarun.sharma": []
+  }
+}

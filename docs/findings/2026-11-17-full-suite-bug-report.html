@@ -1,0 +1,364 @@
+<title>SimERP Dev Bug Report</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@87,600;87,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: one reading column; summary table up top, then priority-grouped bug sheets with a left severity stripe. */
+:root {
+  --bg: #f6f7f9; --surface: #ffffff; --fg: #1a2029; --muted: #5a6474; --line: #dde1e7;
+  --accent: #2f5bd3; --code-bg: #eef1f6;
+  --p1: #c4322b; --p1-bg: #fbeceb; --p2: #a8640a; --p2-bg: #fbf2e3; --p3: #4f6385; --p3-bg: #edf0f6;
+  --ok: #2c7a4b;
+  --display: "Archivo", "Arial Narrow", system-ui, sans-serif;
+  --body: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #12161c; --surface: #1a2029; --fg: #e4e8ee; --muted: #9aa4b3; --line: #2c3440;
+  --accent: #7f9ff0; --code-bg: #232b36;
+  --p1: #f0807a; --p1-bg: #3a1f1e; --p2: #e6ad5c; --p2-bg: #36291a; --p3: #9fb0cf; --p3-bg: #222b3a; --ok: #6fc796;
+  color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #12161c; --surface: #1a2029; --fg: #e4e8ee; --muted: #9aa4b3; --line: #2c3440;
+  --accent: #7f9ff0; --code-bg: #232b36;
+  --p1: #f0807a; --p1-bg: #3a1f1e; --p2: #e6ad5c; --p2-bg: #36291a; --p3: #9fb0cf; --p3-bg: #222b3a; --ok: #6fc796;
+  color-scheme: dark }
+
+body { background: var(--bg); color: var(--fg); font: 15px/1.6 var(--body); }
+.wrap { max-width: 920px; margin: 0 auto; padding-block: 40px 64px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+  display: grid; gap: 36px; }
+h1, h2, h3 { font-family: var(--display); font-stretch: 87%; text-wrap: balance; margin: 0; line-height: 1.2; }
+h1 { font-size: 2rem; font-weight: 700; }
+h2 { font-size: 1.35rem; font-weight: 700; display: flex; align-items: center; gap: 10px; }
+h3 { font-size: 1.1rem; font-weight: 600; }
+p { margin: 0; }
+code, .mono { font-family: var(--mono); font-size: 0.86em; }
+code { background: var(--code-bg); padding: 1px 5px; border-radius: 4px; overflow-wrap: anywhere; }
+.muted { color: var(--muted); }
+.eyebrow { font: 500 0.75rem/1 var(--mono); letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+
+header { display: grid; gap: 14px; }
+.meta { display: grid; grid-template-columns: max-content 1fr; gap: 4px 16px; font-size: 0.92rem; }
+.meta dt { color: var(--muted); }
+.meta dd { margin: 0; min-width: 0; }
+
+.counts { display: flex; flex-wrap: wrap; gap: 8px; }
+.pill { font: 600 0.8rem/1 var(--body); padding: 6px 10px; border-radius: 999px; border: 1px solid transparent; }
+.pill.p1 { color: var(--p1); background: var(--p1-bg); }
+.pill.p2 { color: var(--p2); background: var(--p2-bg); }
+.pill.p3 { color: var(--p3); background: var(--p3-bg); }
+
+.filters { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.filters button { font: 500 0.85rem/1 var(--body); padding: 8px 12px; border-radius: 6px; cursor: pointer;
+  border: 1px solid var(--line); background: var(--surface); color: var(--fg); }
+.filters button[aria-pressed="true"] { border-color: var(--accent); color: var(--accent); }
+.filters button:focus-visible, a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+.scroll { overflow-x: auto; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); }
+table { border-collapse: collapse; width: 100%; font-size: 0.9rem; }
+th, td { text-align: left; padding: 9px 12px; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { font: 500 0.72rem/1.2 var(--mono); letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+tr:last-child td { border-bottom: 0; }
+td a { color: var(--accent); text-decoration: none; }
+td a:hover { text-decoration: underline; }
+.prio { font: 600 0.75rem/1 var(--mono); padding: 3px 6px; border-radius: 4px; white-space: nowrap; }
+.prio.p1 { color: var(--p1); background: var(--p1-bg); }
+.prio.p2 { color: var(--p2); background: var(--p2-bg); }
+.prio.p3 { color: var(--p3); background: var(--p3-bg); }
+
+section.group { display: grid; gap: 16px; }
+.bug { background: var(--surface); border: 1px solid var(--line); border-left: 4px solid var(--stripe, var(--line));
+  border-radius: 8px; padding: 18px 20px; display: grid; gap: 12px; min-width: 0; scroll-margin-top: 16px; }
+.bug.p1 { --stripe: var(--p1); } .bug.p2 { --stripe: var(--p2); }
+.bug-head { display: flex; flex-wrap: wrap; gap: 6px 12px; align-items: baseline; }
+.bug-id { font: 500 0.8rem/1 var(--mono); color: var(--muted); }
+.tags { font-size: 0.85rem; color: var(--muted); }
+.bug ol { margin: 0; padding-left: 1.3em; display: grid; gap: 3px; }
+.bug ul { margin: 0; padding-left: 1.2em; display: grid; gap: 3px; }
+.ea { display: grid; grid-template-columns: max-content 1fr; gap: 6px 14px; }
+.ea dt { font: 600 0.78rem/1.6 var(--mono); text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); }
+.ea dd { margin: 0; min-width: 0; }
+.ea dd.actual { color: var(--fg); }
+.note { font-size: 0.9rem; color: var(--muted); border-top: 1px dashed var(--line); padding-top: 10px; }
+.status { font-size: 0.85rem; color: var(--ok); }
+
+.minor li { margin-bottom: 2px; }
+.outside { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 18px 20px; display: grid; gap: 10px; }
+.outside ul { margin: 0; padding-left: 1.2em; display: grid; gap: 6px; }
+
+@media (max-width: 560px) {
+  h1 { font-size: 1.6rem; }
+  .ea, .meta { grid-template-columns: 1fr; gap: 2px; }
+  .ea dd, .meta dd { margin-bottom: 8px; }
+  .bug { padding: 14px 14px; }
+}
+@media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; } }
+</style>
+
+<div class="wrap">
+  <header>
+    <span class="eyebrow">SimERP DEV · build 6.9.0 · 17 Nov 2026</span>
+    <h1>SimERP Dev Bug Report</h1>
+    <p>Open bugs from the full Playwright run (1,139 tests), each re-checked on the live dev build. Every bug has steps to reproduce, what should happen, what actually happens, and a suggested priority.</p>
+    <dl class="meta">
+      <dt>Environment</dt><dd><code>simerp-dev.simform.solutions</code>, build 6.9.0</dd>
+      <dt>Checked</dt><dd>Failed in the full run on 13/11 and again in a re-run on 16/11 (Dashboard bugs last checked 13/11)</dd>
+      <dt>Accounts</dt><dd>Standard dev password for all accounts. “Admin” means the <code>ceo</code> account.</dd>
+      <dt>Evidence</dt><dd><code>reports/results/results-2026-11-13-full-suite.json</code> and the matching QA report</dd>
+    </dl>
+    <div class="counts">
+      <span class="pill p1">6 × P1 High</span>
+      <span class="pill p2">7 × P2 Medium</span>
+      <span class="pill p3">8 × P3 Low + 12 small items</span>
+    </div>
+  </header>
+
+  <section class="group" aria-labelledby="key">
+    <h2 id="key">Priority key</h2>
+    <div class="scroll"><table>
+      <tr><th>Priority</th><th>Meaning</th></tr>
+      <tr><td><span class="prio p1">P1 High</span></td><td>Security gap, a screen people can't reach, a record that can't be saved, or wrong numbers shown with no warning. Fix first.</td></tr>
+      <tr><td><span class="prio p2">P2 Medium</span></td><td>Wrong behaviour with a workaround, or bad data that can be saved.</td></tr>
+      <tr><td><span class="prio p3">P3 Low</span></td><td>Display, wording or accessibility polish.</td></tr>
+    </table></div>
+  </section>
+
+  <section class="group" aria-labelledby="sum">
+    <h2 id="sum">Summary</h2>
+    <div class="filters" role="group" aria-label="Filter by priority">
+      <button type="button" id="f-all" data-f="all" aria-pressed="true">All</button>
+      <button type="button" id="f-p1" data-f="p1" aria-pressed="false">P1 only</button>
+      <button type="button" id="f-p2" data-f="p2" aria-pressed="false">P2 only</button>
+      <button type="button" id="f-p3" data-f="p3" aria-pressed="false">P3 only</button>
+    </div>
+    <div class="scroll"><table id="summary">
+      <tr><th>ID</th><th>Priority</th><th>Module</th><th>Bug</th><th>Test</th></tr>
+      <tr data-p="p1"><td><a href="#bug-01" class="mono">BUG-01</a></td><td><span class="prio p1">P1</span></td><td>Goals</td><td>Employee and CSM can read the Goals APIs</td><td class="mono">TC-EMPGOL-515</td></tr>
+      <tr data-p="p1"><td><a href="#bug-02" class="mono">BUG-02</a></td><td><span class="prio p1">P1</span></td><td>Goals</td><td>TM can edit any goal through the API</td><td class="mono">TC-EMPGOL-519</td></tr>
+      <tr data-p="p1"><td><a href="#bug-03" class="mono">BUG-03</a></td><td><span class="prio p1">P1</span></td><td>Dashboard</td><td>Dashboard link missing for every role; Employee blocked</td><td class="mono">TC-DASH-001/021/022</td></tr>
+      <tr data-p="p1"><td><a href="#bug-04" class="mono">BUG-04</a></td><td><span class="prio p1">P1</span></td><td>Employee Details</td><td>Saving Sagar Khanpara's record always fails</td><td class="mono">TC-EMPDET-003/033/043</td></tr>
+      <tr data-p="p1"><td><a href="#bug-05" class="mono">BUG-05</a></td><td><span class="prio p1">P1</span></td><td>Working Location</td><td>Project page shows the 90-day figure for “Last 15/30 days”</td><td class="mono">TC-EMPWLC-010</td></tr>
+      <tr data-p="p1"><td><a href="#bug-06" class="mono">BUG-06</a></td><td><span class="prio p1">P1</span></td><td>Working Location</td><td>Employee list shows another range for “Last 5 days” / “Last 6 months”</td><td class="mono">TC-EMPWLC-009</td></tr>
+      <tr data-p="p2"><td><a href="#bug-07" class="mono">BUG-07</a></td><td><span class="prio p2">P2</span></td><td>Goals</td><td>Clear doesn't reset “No Goals Assigned”</td><td class="mono">TC-EMPGOL-444</td></tr>
+      <tr data-p="p2"><td><a href="#bug-08" class="mono">BUG-08</a></td><td><span class="prio p2">P2</span></td><td>Goals</td><td><code>%</code> and <code>_</code> in search match everyone</td><td class="mono">TC-EMPGOL-459</td></tr>
+      <tr data-p="p2"><td><a href="#bug-09" class="mono">BUG-09</a></td><td><span class="prio p2">P2</span></td><td>Goals</td><td>Duplicate goal names allowed if case or spaces differ</td><td class="mono">TC-EMPGOL-494</td></tr>
+      <tr data-p="p2"><td><a href="#bug-10" class="mono">BUG-10</a></td><td><span class="prio p2">P2</span></td><td>Goals</td><td>Goal name of only spaces is accepted</td><td class="mono">TC-EMPGOL-482</td></tr>
+      <tr data-p="p2"><td><a href="#bug-11" class="mono">BUG-11</a></td><td><span class="prio p2">P2</span></td><td>Goals</td><td>Estimated Duration accepts 9,999</td><td class="mono">TC-EMPGOL-487</td></tr>
+      <tr data-p="p2"><td><a href="#bug-12" class="mono">BUG-12</a></td><td><span class="prio p2">P2</span></td><td>Goals</td><td>Description link accepts “not a url”</td><td class="mono">TC-EMPGOL-490</td></tr>
+      <tr data-p="p2"><td><a href="#bug-13" class="mono">BUG-13</a></td><td><span class="prio p2">P2</span></td><td>My Projects</td><td>A bad filter in the URL breaks the whole page</td><td class="mono">TC-PMPROJ-128</td></tr>
+      <tr data-p="p3"><td><a href="#low" class="mono">BUG-14–21</a></td><td><span class="prio p3">P3</span></td><td>Several</td><td>Smaller issues, see the P3 section</td><td>—</td></tr>
+    </table></div>
+  </section>
+
+  <section class="group" data-group="p1" aria-labelledby="h-p1">
+    <h2 id="h-p1"><span class="prio p1">P1</span> High</h2>
+
+    <article class="bug p1" id="bug-01">
+      <div class="bug-head"><span class="bug-id">BUG-01</span><h3>Employee and CSM can read the Goals APIs</h3></div>
+      <p class="tags">Goals · TC-EMPGOL-515 · Security</p>
+      <ol>
+        <li>Log in as an Employee user (or a CSM user).</li>
+        <li>With that session call:
+          <ul><li><code>GET /api/v1/employee-goals/dashboard?timeFrame=15d</code></li>
+          <li><code>GET /api/v1/employee-goals/filter-options</code></li>
+          <li><code>GET /api/v1/employee-goals/employees?page=1&amp;limit=100</code></li></ul></li>
+      </ol>
+      <dl class="ea"><dt>Expected</dt><dd>403 for all three. These roles have no Goals screen.</dd>
+      <dt>Actual</dt><dd class="actual">200 for all three, for both Employee and CSM.</dd></dl>
+    </article>
+
+    <article class="bug p1" id="bug-02">
+      <div class="bug-head"><span class="bug-id">BUG-02</span><h3>TM can edit any goal through the API</h3></div>
+      <p class="tags">Goals · TC-EMPGOL-519 · Security</p>
+      <ol>
+        <li>As Admin, create a goal that is not assigned to anyone.</li>
+        <li>Log in as a TM user.</li>
+        <li>Send <code>PATCH /api/v1/goals/&lt;goal id&gt;</code> with <code>{ "description": "test" }</code>.</li>
+      </ol>
+      <dl class="ea"><dt>Expected</dt><dd>403. The TM should only change goals in their own departments.</dd>
+      <dt>Actual</dt><dd class="actual">200, and the goal is changed. (<code>POST /api/v1/goals</code> for another department correctly fails with 400.)</dd></dl>
+      <p class="note">This is the same as finding F-1 from the 13/11 re-test (goal writes by RM/TM/EM). Please confirm the rule with product, since the goal list is org-wide.</p>
+    </article>
+
+    <article class="bug p1" id="bug-03">
+      <div class="bug-head"><span class="bug-id">BUG-03</span><h3>Dashboard can't be reached from the sidebar</h3></div>
+      <p class="tags">Dashboard · TC-DASH-001, 021, 022</p>
+      <ol>
+        <li>Log in as any role and look at the sidebar.</li>
+        <li>Log in as an Employee user and open <code>/dashboard</code>.</li>
+      </ol>
+      <dl class="ea"><dt>Expected</dt><dd>“Dashboard” is the first sidebar item, and Employees can open it (FRD sections 3 and 10).</dd>
+      <dt>Actual</dt><dd class="actual"><ul>
+        <li>No role has a Dashboard link. The sidebar starts with Overview, Employee, Team and so on.</li>
+        <li>Employees are sent to <code>/unauthorized</code>, and their sidebar only shows Employee › Certifications.</li>
+      </ul></dd></dl>
+      <p class="note">The Employee part is already filed as DEF-DASH-001 (Zoho 688906000093525946). The missing link for all roles looks like it was removed by mistake in frontend commit <code>756c6c6b</code> (“fix-merge-conflict”, 15/09). No release note mentions it.</p>
+    </article>
+
+    <article class="bug p1" id="bug-04">
+      <div class="bug-head"><span class="bug-id">BUG-04</span><h3>Saving Sagar Khanpara's record always fails</h3></div>
+      <p class="tags">Employee Details · TC-EMPDET-003, 033, 043</p>
+      <ol>
+        <li>Log in as Admin and open Employee.</li>
+        <li>Click Edit on Sagar Khanpara (the first row in the default sort).</li>
+        <li>Change any field, for example Overall Rating, and click Save.</li>
+      </ol>
+      <dl class="ea"><dt>Expected</dt><dd>The record saves and the drawer closes.</dd>
+      <dt>Actual</dt><dd class="actual"><code>PATCH /api/v1/employees/818aa719…</code> returns <strong>400 “Team does not belong to the specified department”</strong>. The drawer stays open and nothing saves, whichever field was changed.</dd></dl>
+      <p class="note">First seen 10/09, still happening. Probably his team and department data are out of step. This also blocks the double-click Save check (TC-EMPDET-033).</p>
+    </article>
+
+    <article class="bug p1" id="bug-05">
+      <div class="bug-head"><span class="bug-id">BUG-05</span><h3>Project page shows the 90-day figure for “Last 15/30 days”</h3></div>
+      <p class="tags">Working Location · TC-EMPWLC-010</p>
+      <ol>
+        <li>Log in as a CSM user and open any project's detail page.</li>
+        <li>Click a member's Working Location cell. The popup shows different office % for 15, 30 and 90 days.</li>
+        <li>Change the time-range dropdown to “Last 15 days”, then to “Last 30 days”.</li>
+      </ol>
+      <dl class="ea"><dt>Expected</dt><dd>The column shows the 15-day figure, then the 30-day figure.</dd>
+      <dt>Actual</dt><dd class="actual">It shows the 90-day figure both times (for example 83% where the 15-day figure is 89%).</dd></dl>
+      <p class="note">Cause: the project page doesn't send <code>timeFrame</code> to the API.</p>
+    </article>
+
+    <article class="bug p1" id="bug-06">
+      <div class="bug-head"><span class="bug-id">BUG-06</span><h3>Employee list shows another range for “Last 5 days” / “Last 6 months”</h3></div>
+      <p class="tags">Working Location · TC-EMPWLC-009</p>
+      <ol>
+        <li>Log in as Admin, open Employee and turn on the Working Location column.</li>
+        <li>Note Punit Patel's figure for “Last 15 days” and for “All time”.</li>
+        <li>Choose “Last 5 days”, then “Last 6 months”.</li>
+      </ol>
+      <dl class="ea"><dt>Expected</dt><dd>The 5-day and 6-month figures, or a clear note that this range isn't available.</dd>
+      <dt>Actual</dt><dd class="actual">“Last 5 days” quietly shows the 15-day figure, and “Last 6 months” shows the all-time figure. The API maps <code>timeFrame=5d</code> to the <code>15d</code> window and <code>6m</code> to <code>overall</code>.</dd></dl>
+    </article>
+  </section>
+
+  <section class="group" data-group="p2" aria-labelledby="h-p2">
+    <h2 id="h-p2"><span class="prio p2">P2</span> Medium</h2>
+
+    <article class="bug p2" id="bug-07">
+      <div class="bug-head"><span class="bug-id">BUG-07</span><h3>Clear doesn't reset “No Goals Assigned”</h3></div>
+      <p class="tags">Goals › By Employee · TC-EMPGOL-444</p>
+      <ol>
+        <li>Log in as Admin and open Goals › By Employee. The footer shows “of 3648 results”.</li>
+        <li>Open the Goals column filter, turn on <strong>No Goals Assigned</strong> and Save. The footer shows about 1,223.</li>
+        <li>Open the same filter and click <strong>Clear</strong>.</li>
+      </ol>
+      <dl class="ea"><dt>Expected</dt><dd>The footer goes back to “of 3648 results”.</dd>
+      <dt>Actual</dt><dd class="actual">It still shows “of 1223 results”. The request still sends <code>hasNoGoals=true</code>.</dd></dl>
+    </article>
+
+    <article class="bug p2" id="bug-08">
+      <div class="bug-head"><span class="bug-id">BUG-08</span><h3><code>%</code> and <code>_</code> in search match everyone</h3></div>
+      <p class="tags">Goals › By Employee · TC-EMPGOL-459</p>
+      <ol><li>Open Goals › By Employee.</li><li>Search for <code>%</code>, then for <code>_</code>.</li></ol>
+      <dl class="ea"><dt>Expected</dt><dd>Only names that contain those characters, which is usually 0.</dd>
+      <dt>Actual</dt><dd class="actual"><code>%</code> returns 3,648 of 3,648 rows and <code>_</code> returns 3,647. The server treats them as wildcards.</dd></dl>
+    </article>
+
+    <article class="bug p2" id="bug-09">
+      <div class="bug-head"><span class="bug-id">BUG-09</span><h3>Duplicate goal names allowed if case or spaces differ</h3></div>
+      <p class="tags">Goals › By Goal · TC-EMPGOL-494</p>
+      <ol>
+        <li>Create goal <code>AUTO-GOL-123-dup</code>.</li>
+        <li>Create <code>AUTO-GOL-123-dup</code> again. Blocked with 409, which is correct.</li>
+        <li>Create <code>auto-gol-123-dup</code> (lower case).</li>
+        <li>Create <code>AUTO-GOL-123-dup&nbsp;&nbsp;</code> (with trailing spaces).</li>
+      </ol>
+      <dl class="ea"><dt>Expected</dt><dd>Steps 3 and 4 are blocked as duplicates, like step 2.</dd>
+      <dt>Actual</dt><dd class="actual">Steps 3 and 4 both save (201).</dd></dl>
+    </article>
+
+    <article class="bug p2" id="bug-10">
+      <div class="bug-head"><span class="bug-id">BUG-10</span><h3>Goal name of only spaces is accepted</h3></div>
+      <p class="tags">Goals › By Goal · TC-EMPGOL-482</p>
+      <ol><li>Open Add Goal.</li><li>Type only spaces in Goal Name.</li></ol>
+      <dl class="ea"><dt>Expected</dt><dd>Save stays disabled, or the field shows “required”.</dd>
+      <dt>Actual</dt><dd class="actual">Save becomes enabled and there's no error under Goal Name.</dd></dl>
+    </article>
+
+    <article class="bug p2" id="bug-11">
+      <div class="bug-head"><span class="bug-id">BUG-11</span><h3>Estimated Duration accepts 9,999</h3></div>
+      <p class="tags">Goals › By Goal · TC-EMPGOL-487</p>
+      <ol><li>Open Add Goal and enter a name.</li><li>Set Estimated Duration to 9999 months, 9999 weeks and 9999 days.</li><li>Click Save.</li></ol>
+      <dl class="ea"><dt>Expected</dt><dd>A maximum limit, or an error message.</dd>
+      <dt>Actual</dt><dd class="actual">The goal saves (201) with no message.</dd></dl>
+    </article>
+
+    <article class="bug p2" id="bug-12">
+      <div class="bug-head"><span class="bug-id">BUG-12</span><h3>Description link accepts “not a url”</h3></div>
+      <p class="tags">Goals › By Goal · TC-EMPGOL-490</p>
+      <ol><li>Open Add Goal and type some text in Description.</li><li>Select the text, click the <strong>Link</strong> button, type <code>not a url</code>, and click Apply.</li></ol>
+      <dl class="ea"><dt>Expected</dt><dd>Apply stays disabled or shows “invalid URL”.</dd>
+      <dt>Actual</dt><dd class="actual">The text becomes a link to “not a url”.</dd></dl>
+    </article>
+
+    <article class="bug p2" id="bug-13">
+      <div class="bug-head"><span class="bug-id">BUG-13</span><h3>A bad filter in the URL breaks the whole My Projects page</h3></div>
+      <p class="tags">My Projects · TC-PMPROJ-128</p>
+      <ol><li>Log in as a CSM user.</li><li>Open <code>/my-projects?adv_allocationStage=FOO</code>.</li></ol>
+      <dl class="ea"><dt>Expected</dt><dd>The bad value is ignored, or a readable message is shown with a way to clear it.</dd>
+      <dt>Actual</dt><dd class="actual">The API returns 400 and shows the toast <code>Filter "allocationStage" must be a non-empty array of: …</code>. The whole page is replaced by “Failed to load projects”, which hides search and the stats cards. There's no way to clear the filter apart from editing the URL.</dd></dl>
+    </article>
+  </section>
+
+  <section class="group" data-group="p3" id="low" aria-labelledby="h-p3">
+    <h2 id="h-p3"><span class="prio p3">P3</span> Low</h2>
+    <div class="scroll"><table>
+      <tr><th>ID</th><th>Module</th><th>Bug</th><th>How to see it</th><th>Test</th></tr>
+      <tr><td class="mono">BUG-14</td><td>Working Location</td><td>Office % + home % add up to 101% in some popups and department rows</td><td>WL dashboard by department, e.g. POST-SALES BA shows 50% + 51%</td><td class="mono">TC-EMPWLC-039</td></tr>
+      <tr><td class="mono">BUG-15</td><td>Working Location</td><td>No info icon next to the “Location Preference” tag (Night Shift Preference has one)</td><td>Employee profile, Working Location card</td><td class="mono">TC-EMPWLC-007</td></tr>
+      <tr><td class="mono">BUG-16</td><td>Working Location</td><td>No Working Location column on Employee › Past Employee, or on a project's Past Allocations tab (FRD 3.2 / 3.3)</td><td>Table options on those tabs only offer “Projects”</td><td class="mono">TC-EMPWLC-010, 075</td></tr>
+      <tr><td class="mono">BUG-17</td><td>Long-Running Allocations</td><td>LR badge text contrast is 2.45:1 (orange on light orange); 4.5:1 is needed</td><td>Any LR badge</td><td class="mono">TC-PMPROJ-177</td></tr>
+      <tr><td class="mono">BUG-18</td><td>Employee / Projects</td><td>Bare “—” or “-” instead of a word: Employee list (Start → End Hours, Work Pattern, Active Opportunities); Projects PR Reviewers sometimes blank</td><td>Employee list and Projects list</td><td class="mono">empty-data regression</td></tr>
+      <tr><td class="mono">BUG-19</td><td>Goals</td><td>Bare “—” in expanded rows (start/end dates); one description shows “undefined”; one By Employee row has a blank name (manager Suresh Kapoor, first row sorted A–Z)</td><td>Goals › By Employee, expand rows</td><td class="mono">TC-EMPGOL-441, 452, 474, 544</td></tr>
+      <tr><td class="mono">BUG-20</td><td>Goals</td><td>Accessibility: focus lost from the view tabs; not returned after closing Add Goal or View All; charts and popovers have no accessible name</td><td>Keyboard and screen reader</td><td class="mono">TC-EMPGOL-532–537</td></tr>
+      <tr><td class="mono">BUG-21</td><td>Skills</td><td>In Add Skills, if you clear the pre-filled Department, “Search or Create Skill” and “Assign to Employees” stay usable</td><td>Skills › Add Skills, clear Department</td><td class="mono">TC-EMPSKL-012, 046</td></tr>
+    </table></div>
+    <div class="outside minor">
+      <h3>Other small Goals issues, still failing on 16/11</h3>
+      <ul>
+        <li>Disabled Delete has no tooltip (500).</li>
+        <li>The delete dialog doesn't name the goal (501).</li>
+        <li>Changing Department drops the reporting-manager filter (446).</li>
+        <li>An expanded row re-opens after going back a page (461).</li>
+        <li>Browser Back leaves Goals (531).</li>
+        <li>Chart total 3,644 vs 3,648 Total Employees (419).</li>
+        <li>Progress History is empty on a 20%-complete goal (453).</li>
+        <li>No “0 results” footer for an empty search (456).</li>
+        <li>Certificate Code has no required marker (480).</li>
+        <li>An empty Goal Name shows no invalid state (481).</li>
+        <li>Save stays enabled after an edit is undone (498).</li>
+        <li>A legend click doesn't hide its chart series (413).</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="outside" aria-labelledby="h-out">
+    <h2 id="h-out">Not in this report</h2>
+    <ul>
+      <li><strong>Certifications:</strong> being changed under SI4-T1685 and tested separately.</li>
+      <li><strong>Already fixed:</strong> SI4-I637 (TM sees “Add Skills” but gets 403) <span class="status">passes on 16/11</span>.</li>
+      <li><strong>Need a product decision, not filed as bugs:</strong> “Overdue”, “Delayed” and “At risk” are never explained (TC-EMPGOL-543); L&amp;D Hours on employees with no goals are not explained (454); opening a second row closes the first (450).</li>
+      <li><strong>Not proven:</strong> adding an employee to a skill doesn't change its holder count (TC-EMPSKL-120). The test may be picking someone who already has the skill.</li>
+      <li><strong>Obsolete tests:</strong> 10 Skills and 4 Competencies tests check behaviour the app no longer has. Waiting for a retirement decision.</li>
+    </ul>
+  </section>
+</div>
+
+<script>
+(function () {
+  var buttons = document.querySelectorAll('.filters button');
+  function apply(f) {
+    buttons.forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.f === f)); });
+    document.querySelectorAll('#summary tr[data-p]').forEach(function (r) { r.hidden = f !== 'all' && r.dataset.p !== f; });
+    document.querySelectorAll('section[data-group]').forEach(function (s) { s.hidden = f !== 'all' && s.dataset.group !== f; });
+    try { localStorage.setItem('bug-filter', f); } catch (e) {}
+  }
+  buttons.forEach(function (b) { b.addEventListener('click', function () { apply(b.dataset.f); }); });
+  var saved = 'all';
+  try { saved = localStorage.getItem('bug-filter') || 'all'; } catch (e) {}
+  apply(saved);
+})();
+</script>

@@ -1,0 +1,99 @@
+{
+  "results": [
+    {
+      "id": "wu-tm-list",
+      "ok": true,
+      "rows": [
+        "\t19/08/2026\tSuresh Reddy\tSuresh Reddy\tDraft"
+      ],
+      "rowBtns": [
+        "Edit"
+      ],
+      "shot": "reports/screenshots/2026-10-28/hardik/sonar-fe/w10-tm-weekly-list.png",
+      "errs": []
+    },
+    {
+      "id": "wu-tm-edit-open",
+      "ok": true,
+      "url": "https://simerp-dev.simform.solutions/weekly-updates/e1260ed9-1f89-4160-bd3a-40aaa87e8329/edit",
+      "h": [
+        "Edit",
+        "Meeting Details"
+      ],
+      "tables": [
+        "Project Name / Weekly Notes",
+        "Goal Name / Progress % / Status / Start Date / End Date / Progress History / Exam Attempts / Weekly Notes / Action"
+      ],
+      "tabs": [
+        "Current Projects",
+        "Past Projects"
+      ],
+      "inputs": {
+        "total": 18,
+        "disabled": 0
+      },
+      "blocked": [],
+      "shot": "reports/screenshots/2026-10-28/hardik/sonar-fe/w11-tm-weekly-edit.png",
+      "errs": []
+    },
+    {
+      "id": "wu-tm-current-projects",
+      "ok": true,
+      "tables": [
+        {
+          "head": "Project Name / Weekly Notes",
+          "rows": 5,
+          "first": "XmlToJson\n[39]\n\t"
+        },
+        {
+          "head": "Goal Name / Progress % / Status / Start Date / End Date / Progress History / Exam Attempts / Weekly Notes / Action",
+          "rows": 5,
+          "first": "8i0\t\t\nDelayed\nNot Started\nIn Progress\nCompleted\nDelayed\n\t\n19/08/2026\n\t\n25/08/2026\n\tNo history yet\t\nNo attempts\n\t\t"
+        }
+      ],
+      "chipBtns": [
+        "XmlToJson[39]",
+        "ResilienceHub[39]",
+        "Ontime[4]",
+        "L&D[4]",
+        "Unassigned[3]",
+        "Delayed"
+      ],
+      "actionCols": 2,
+      "shot": "reports/screenshots/2026-10-28/hardik/sonar-fe/w12-tm-weekly-current-projects.png",
+      "errs": []
+    },
+    {
+      "id": "wu-tm-past-projects",
+      "ok": true,
+      "tables": [
+        "Project Name / Start Date / End Date / Total Logged Hours",
+        "Goal Name / Progress % / Status / Start Date / End Date / Progress History / Exam Attempts / Weekly Notes / Action"
+      ],
+      "btns": [
+        "Delayed|false",
+        "19/08/2026|false",
+        "25/08/2026|false",
+        "No attempts|false",
+        "Delete goal 8i0|false",
+        "In Progress|false"
+      ],
+      "shot": "reports/screenshots/2026-10-28/hardik/sonar-fe/w13-tm-weekly-past-projects.png",
+      "errs": []
+    },
+    {
+      "id": "wu-tm-goals-section",
+      "ok": true,
+      "emptyState": null,
+      "goalTables": 1,
+      "examCells": [
+        "No attempts",
+        "No attempts",
+        "No attempts"
+      ],
+      "blocked": [],
+      "errs": []
+    }
+  ],
+  "errs": []
+}

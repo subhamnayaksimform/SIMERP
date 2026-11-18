@@ -1,0 +1,61 @@
+{
+  "reqs": [
+    {
+      "url": "https://simerp-dev-api.simform.solutions/api/v1/allocation-tickets/0ac7c6a2-fd9e-4eb4-bf5a-af06e212ba6b/close",
+      "method": "PATCH",
+      "req": "{\"remarks\":\"QA retest SI4-I577/I578 close cascade (c2-close-main-da)\"}",
+      "status": 200,
+      "body": "{\"code\":\"SUCCESS\",\"message\":\"Ticket closed successfully\",\"data\":{\"publicId\":\"0ac7c6a2-fd9e-4eb4-bf5a-af06e212ba6b\",\"ticketNumber\":\"DA-0112\",\"status\":\"CLOSED\"}}"
+    }
+  ],
+  "state": {
+    "DA1": {
+      "n": "DA-0112",
+      "status": "CLOSED",
+      "isBlocked": false,
+      "remarks": [
+        [
+          "CLOSE",
+          "QA retest SI4-I577/I578 close cascade (c2-close-main-da)"
+        ]
+      ],
+      "timeline": []
+    },
+    "DA2": {
+      "n": "DA-0113",
+      "status": "CLOSED",
+      "isBlocked": false,
+      "remarks": [
+        [
+          "CLOSE",
+          "Closed automatically because prerequisite #DA-0112 was closed"
+        ]
+      ],
+      "timeline": []
+    },
+    "NAP": {
+      "n": "NA-0376",
+      "status": "CLOSED",
+      "isBlocked": false,
+      "remarks": [
+        [
+          "CLOSE",
+          "QA retest SI4-I577/I578 close cascade (c1-close-promotion)"
+        ]
+      ],
+      "timeline": []
+    },
+    "NAS": {
+      "n": "NA-0377",
+      "status": "CLOSED",
+      "isBlocked": false,
+      "remarks": [
+        [
+          "CLOSE",
+          "Closed automatically because prerequisite #NA-0376 was closed"
+        ]
+      ],
+      "timeline": []
+    }
+  }
+}

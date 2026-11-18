@@ -1,0 +1,12 @@
+{
+  "status": 200,
+  "body": {
+    "code": "SUCCESS",
+    "message": "Ticket closed successfully",
+    "data": {
+      "publicId": "dbc424e6-ee38-4c3d-b6fe-b8684fea5f75",
+      "ticketNumber": "DA-0136",
+      "status": "CLOSED"
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "results": [
+    {
+      "id": "close",
+      "ok": true,
+      "s": 200,
+      "errs": []
+    },
+    {
+      "id": "ui-won",
+      "ok": true,
+      "opts": [],
+      "items": [],
+      "errs": []
+    }
+  ],
+  "errs": []
+}

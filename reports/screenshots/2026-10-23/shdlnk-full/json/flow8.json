@@ -1,0 +1,91 @@
+{
+  "024-reject": {
+    "status": 200,
+    "body": {
+      "code": "SUCCESS",
+      "message": "Ticket rejected and returned to review",
+      "data": {
+        "publicId": "2dc3d3f9-ca1f-44d7-912e-dc316c703bea",
+        "ticketNumber": "NA-0433",
+        "status": "IN_REVIEW"
+      }
+    }
+  },
+  "020-resend": {
+    "status": 200,
+    "body": {
+      "code": "SUCCESS",
+      "message": "Allocation ticket updated successfully",
+      "data": {
+        "publicId": "2dc3d3f9-ca1f-44d7-912e-dc316c703bea",
+        "ticketNumber": "NA-0433",
+        "status": "AWAITING_CONFIRMATION",
+        "warnings": []
+      }
+    }
+  },
+  "020-tm-approve": {
+    "status": 200,
+    "body": {
+      "code": "SUCCESS",
+      "message": "Ticket approved",
+      "data": {
+        "publicId": "2dc3d3f9-ca1f-44d7-912e-dc316c703bea",
+        "ticketNumber": "NA-0433",
+        "status": "APPROVED"
+      }
+    }
+  },
+  "DAM-sc": "46219819-bcd3-41b1-83e8-e06f2642e24b",
+  "026-close-DAM": {
+    "status": 409,
+    "body": {
+      "code": "SYS_004",
+      "message": "An APPROVED ticket cannot be closed — raise a remove-allocation ticket to end the allocation"
+    }
+  },
+  "049-delete-sc-DAM": {
+    "status": 409,
+    "body": {
+      "code": "ALLOCATION_TICKET_182",
+      "message": "This allocation period cannot be removed because a later step of its linked ticket group (#NA-0433) is already approved and depends on it",
+      "data": {
+        "blockingTickets": [
+          {
+            "publicId": "2dc3d3f9-ca1f-44d7-912e-dc316c703bea",
+            "ticketNumber": "NA-0433",
+            "ticketType": "NEW_ALLOCATION",
+            "step": 2,
+            "status": "APPROVED"
+          }
+        ]
+      }
+    }
+  },
+  "DAS-sc": "ae08c783-708c-4881-938c-606ce6e1eb90",
+  "026-close-DAS": {
+    "status": 409,
+    "body": {
+      "code": "SYS_004",
+      "message": "An APPROVED ticket cannot be closed — raise a remove-allocation ticket to end the allocation"
+    }
+  },
+  "049-delete-sc-DAS": {
+    "status": 409,
+    "body": {
+      "code": "ALLOCATION_TICKET_182",
+      "message": "This allocation period cannot be removed because a later step of its linked ticket group (#NA-0433) is already approved and depends on it",
+      "data": {
+        "blockingTickets": [
+          {
+            "publicId": "2dc3d3f9-ca1f-44d7-912e-dc316c703bea",
+            "ticketNumber": "NA-0433",
+            "ticketType": "NEW_ALLOCATION",
+            "step": 2,
+            "status": "APPROVED"
+          }
+        ]
+      }
+    }
+  }
+}

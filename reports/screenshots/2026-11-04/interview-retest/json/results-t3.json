@@ -1,0 +1,41 @@
+{
+  "results": [
+    {
+      "id": "I628-kanban",
+      "ok": true,
+      "cols": [
+        "Project Allocated column, 1 card"
+      ],
+      "labels": [
+        "Pending to Shortlist column, 0 cards",
+        "Shortlisted column, 0 cards",
+        "Waiting for Approval column, 0 cards",
+        "Being Prepared column, 0 cards",
+        "Interview Scheduled column, 0 cards",
+        "Did Interview Happen? column, 0 cards",
+        "Waiting for Feedback column, 0 cards",
+        "Won column, 0 cards",
+        "Project Allocated column, 1 card",
+        "Rejected column, 0 cards",
+        "Lost column, 0 cards",
+        "On Hold column, 0 cards",
+        "No Longer Required column, 1 card"
+      ],
+      "errs": []
+    },
+    {
+      "id": "I626-detail",
+      "ok": true,
+      "links": [
+        "/pre-sales/b4de8cc1-d99f-4387-a95f-b20ab37470e0#position-afd372a8-2db5-493f-93da-12be07c045af",
+        "/pre-sales/b4de8cc1-d99f-4387-a95f-b20ab37470e0#position-afd372a8-2db5-493f-93da-12be07c045af",
+        "/pre-sales/b4de8cc1-d99f-4387-a95f-b20ab37470e0#position-afd372a8-2db5-493f-93da-12be07c045af",
+        "/pre-sales/b4de8cc1-d99f-4387-a95f-b20ab37470e0#position-afd372a8-2db5-493f-93da-12be07c045af",
+        "/pre-sales/b4de8cc1-d99f-4387-a95f-b20ab37470e0#position-97c347fb-5011-4d74-8346-d6668ba0545a"
+      ],
+      "txt": "SimERP\n6.8.1\nToggle Sidebar\nOverview\nEmployee\nTeam\nRequests Tracking\nProject Allocation\nUpdated\nOpportunity Allocation\nProjects\nAdmin\nWhat's New & History\nHelp & Support\nOpportunity Allocation\nOpportunity Allocation\n99+\nOpportunity Allocation\n\nTrack every candidate across every position, from shortlisting to won/lost.\n\nNew Opportunities\nAll Opportunities\n295\nOpen\n278\nWon\n06\nLost\n03\nOn Hold\n00\nNo Longer Required\n08\nInterview\nDirect\nAll Clients\nStatus\nFilter\nList\nKanban\nPending to Shortlist\n1\nOPP-0335 #3\nHigh\n\nJava Developer\n\nQA-AUTO Rejection Client — QA-AUTO NLR retest A 02-11\nJava\n\nShortlist ",
+      "errs": []
+    }
+  ],
+  "errs": []
+}

@@ -1,0 +1,12 @@
+{
+  "status": 200,
+  "body": {
+    "code": "SUCCESS",
+    "message": "De-allocation acknowledged; allocation change applied",
+    "data": {
+      "publicId": "43f22793-a3ec-458f-8cd1-4f8bb9461e25",
+      "ticketNumber": "DA-0133",
+      "status": "APPROVED"
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "before": "J2-after",
+  "after": "J3-before",
+  "beforeAt": "2026-10-19T11:28:22.872Z",
+  "afterAt": "2026-10-19T11:30:04.713Z",
+  "newByUser": {
+    "iti.chatterjee": [],
+    "jignesh.raval": [],
+    "hardik.trivedi": [],
+    "amit.patel": [],
+    "jinal.patel": [],
+    "cto": [],
+    "ceo": [],
+    "priya.chopra": []
+  }
+}

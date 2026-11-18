@@ -1,0 +1,165 @@
+{
+  "label": "H0-before",
+  "takenAt": "2026-10-19T11:12:08.103Z",
+  "users": {
+    "gaurav.dutta": {
+      "status": 200,
+      "total": 4,
+      "latestAt": "2026-08-31T12:46:02.131Z",
+      "today": []
+    },
+    "kartik.hegde": {
+      "status": 200,
+      "total": 2,
+      "latestAt": "2026-09-01T06:34:34.210Z",
+      "today": []
+    },
+    "hardik.trivedi": {
+      "status": 200,
+      "total": 100,
+      "latestAt": "2026-10-19T11:00:24.074Z",
+      "today": [
+        {
+          "id": "8088893f-dc13-44a0-b448-33fe721f6b39",
+          "eventType": "notification.allocation_ticket.pm_deallocated",
+          "title": "Assignment Ended: HyperScale | Scalability Engine",
+          "body": "Kunal Menon has been successfully deallocated from HyperScale | Scalability Engine.",
+          "createdAt": "2026-10-19T11:00:24.074Z",
+          "isRead": false,
+          "ctx": {
+            "ticketPublicId": "a4fffb39-876d-4a87-a28a-6b0e43d9750d"
+          }
+        },
+        {
+          "id": "8e2d1e2a-7d5a-4876-b68e-fde6912b609f",
+          "eventType": "notification.allocation.direct_pm_notified",
+          "title": "Allocation Confirmed: HyperScale | Scalability Engine",
+          "body": "Kunal Menon has been allocated to HyperScale | Scalability Engine, effective 2026-10-19.",
+          "createdAt": "2026-10-19T10:59:08.825Z",
+          "isRead": false,
+          "ctx": {
+            "assignmentPublicId": "89c7a281-488e-414f-a610-0c6bbbacaa10"
+          }
+        }
+      ]
+    },
+    "amit.patel": {
+      "status": 200,
+      "total": 19,
+      "latestAt": "2026-10-15T10:25:15.050Z",
+      "today": []
+    },
+    "jinal.patel": {
+      "status": 200,
+      "total": 2,
+      "latestAt": "2026-10-15T10:25:15.050Z",
+      "today": []
+    },
+    "cto": {
+      "status": 200,
+      "total": 50,
+      "latestAt": "2026-10-19T11:00:46.676Z",
+      "today": [
+        {
+          "id": "f914941d-f151-4951-97ee-0e58e5e427b2",
+          "eventType": "notification.allocation.direct_employee_rm_assigned",
+          "title": "Direct Allocation: ViewForge | BI Dashboard",
+          "body": "Bhumi Chauhan directly allocated Nimisha Bose to ViewForge | BI Dashboard, bypassing the ticket workflow.",
+          "createdAt": "2026-10-19T11:00:46.676Z",
+          "isRead": false,
+          "ctx": {
+            "assignmentPublicId": "6554552b-c10c-4e65-bab4-7df76f153147"
+          }
+        },
+        {
+          "id": "f11e8bd2-f3a0-40a6-92c5-011089176785",
+          "eventType": "notification.allocation_ticket.developer_rm_deallocated",
+          "title": "Team Member Deallocated: Ankita Das",
+          "body": "Ankita Das has been deallocated from ViewForge | BI Dashboard, effective 2026-10-18.",
+          "createdAt": "2026-10-19T11:00:46.284Z",
+          "isRead": false,
+          "ctx": {
+            "ticketPublicId": "47855181-ea54-41e7-a462-5d70a9527d9d"
+          }
+        },
+        {
+          "id": "4167a821-7ace-47b4-a850-6e7453a92855",
+          "eventType": "notification.allocation_ticket.developer_rm_deallocated",
+          "title": "Team Member Deallocated: Kunal Menon",
+          "body": "Kunal Menon has been deallocated from HyperScale | Scalability Engine, effective 2026-10-19.",
+          "createdAt": "2026-10-19T11:00:24.113Z",
+          "isRead": false,
+          "ctx": {
+            "ticketPublicId": "a4fffb39-876d-4a87-a28a-6b0e43d9750d"
+          }
+        },
+        {
+          "id": "61e86a68-341d-48b8-b318-91f47be28790",
+          "eventType": "notification.allocation.direct_employee_rm_assigned",
+          "title": "Direct Allocation: HyperScale | Scalability Engine",
+          "body": "Bhumi Chauhan directly allocated Kunal Menon to HyperScale | Scalability Engine, bypassing the ticket workflow.",
+          "createdAt": "2026-10-19T10:59:08.838Z",
+          "isRead": false,
+          "ctx": {
+            "assignmentPublicId": "89c7a281-488e-414f-a610-0c6bbbacaa10"
+          }
+        },
+        {
+          "id": "c440492e-5f0c-4c22-bebb-ceabdff7d4d0",
+          "eventType": "notification.allocation_ticket.developer_rm_deallocated",
+          "title": "Team Member Deallocated: Prakash Pillai",
+          "body": "Prakash Pillai has been deallocated from XCrypt | Blockchain Wallet, effective 2026-10-19.",
+          "createdAt": "2026-10-19T10:58:39.115Z",
+          "isRead": false,
+          "ctx": {
+            "ticketPublicId": "4b1711be-f239-449c-9e87-19c669cd5e69"
+          }
+        },
+        {
+          "id": "362dd1c2-98f7-4732-8d37-048e6cdf1b94",
+          "eventType": "notification.allocation_ticket.developer_selected",
+          "title": "Developer Selected: NA-0365",
+          "body": "Prakash Pillai has been selected for NA-0365 (project  XCrypt | Blockchain Wallet) and is awaiting your confirmation.",
+          "createdAt": "2026-10-19T10:54:19.729Z",
+          "isRead": false,
+          "ctx": {
+            "ticketPublicId": "9c022c4a-9928-4e31-b196-fb89a80c7123"
+          }
+        },
+        {
+          "id": "10d2dfc8-637c-4925-ad6a-117d8f4fb621",
+          "eventType": "notification.allocation_ticket.assigned_to_department",
+          "title": "New Ticket for Review: NA-0365",
+          "body": "NA-0365 (NEW ALLOCATION) for project XCrypt | Blockchain Wallet has been assigned to QA department and is awaiting your review.",
+          "createdAt": "2026-10-19T10:54:19.411Z",
+          "isRead": false,
+          "ctx": {
+            "ticketPublicId": "9c022c4a-9928-4e31-b196-fb89a80c7123"
+          }
+        },
+        {
+          "id": "10d6998e-26b5-42af-bd54-096cd4c334a6",
+          "eventType": "notification.allocation.direct_employee_rm_assigned",
+          "title": "Direct Allocation: XCrypt | Blockchain Wallet",
+          "body": "Bhumi Chauhan directly allocated Prakash Pillai to XCrypt | Blockchain Wallet, bypassing the ticket workflow.",
+          "createdAt": "2026-10-19T10:48:27.648Z",
+          "isRead": false,
+          "ctx": {
+            "assignmentPublicId": "4186a764-485d-4b1c-89c0-4d3e4604ef06"
+          }
+        }
+      ]
+    },
+    "ceo": {
+      "status": 200,
+      "total": 5,
+      "latestAt": "2026-09-29T10:16:24.152Z",
+      "today": []
+    },
+    "priya.chopra": {
+      "status": 200,
+      "total": 0,
+      "today": []
+    }
+  }
+}

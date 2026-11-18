@@ -1,0 +1,86 @@
+{
+  "before": "H4-before",
+  "after": "H4-after",
+  "beforeAt": "2026-10-19T11:20:27.647Z",
+  "afterAt": "2026-10-19T11:21:54.776Z",
+  "newByUser": {
+    "gaurav.dutta": [
+      {
+        "eventType": "allocation_ticket.developer_updated",
+        "title": "Allocation Updated: HyperScale | Scalability Engine",
+        "body": "Your allocation for HyperScale | Scalability Engine has been updated.",
+        "createdAt": "2026-10-19T11:21:50.812Z",
+        "ctx": {
+          "ticketPublicId": "f057a3cb-fd04-43b1-b372-8fa3fd2bedc4"
+        }
+      }
+    ],
+    "kartik.hegde": [
+      {
+        "eventType": "allocation_ticket.developer_rm_updated",
+        "title": "Assignment Updated: Gaurav Dutta",
+        "body": "Gaurav Dutta's allocation for HyperScale | Scalability Engine has been updated.",
+        "createdAt": "2026-10-19T11:21:50.862Z",
+        "ctx": {
+          "ticketPublicId": "f057a3cb-fd04-43b1-b372-8fa3fd2bedc4"
+        }
+      }
+    ],
+    "hardik.trivedi": [
+      {
+        "eventType": "allocation_ticket.developer_rm_updated",
+        "title": "Assignment Updated: Gaurav Dutta",
+        "body": "Gaurav Dutta's allocation for HyperScale | Scalability Engine has been updated.",
+        "createdAt": "2026-10-19T11:21:50.862Z",
+        "ctx": {
+          "ticketPublicId": "f057a3cb-fd04-43b1-b372-8fa3fd2bedc4"
+        }
+      }
+    ],
+    "amit.patel": [
+      {
+        "eventType": "allocation_ticket.developer_rm_updated",
+        "title": "Assignment Updated: Gaurav Dutta",
+        "body": "Gaurav Dutta's allocation for HyperScale | Scalability Engine has been updated.",
+        "createdAt": "2026-10-19T11:21:50.862Z",
+        "ctx": {
+          "ticketPublicId": "f057a3cb-fd04-43b1-b372-8fa3fd2bedc4"
+        }
+      }
+    ],
+    "jinal.patel": [
+      {
+        "eventType": "allocation_ticket.developer_rm_updated",
+        "title": "Assignment Updated: Gaurav Dutta",
+        "body": "Gaurav Dutta's allocation for HyperScale | Scalability Engine has been updated.",
+        "createdAt": "2026-10-19T11:21:50.862Z",
+        "ctx": {
+          "ticketPublicId": "f057a3cb-fd04-43b1-b372-8fa3fd2bedc4"
+        }
+      }
+    ],
+    "cto": [
+      {
+        "eventType": "allocation_ticket.developer_rm_updated",
+        "title": "Assignment Updated: Gaurav Dutta",
+        "body": "Gaurav Dutta's allocation for HyperScale | Scalability Engine has been updated.",
+        "createdAt": "2026-10-19T11:21:50.862Z",
+        "ctx": {
+          "ticketPublicId": "f057a3cb-fd04-43b1-b372-8fa3fd2bedc4"
+        }
+      }
+    ],
+    "ceo": [],
+    "priya.chopra": [
+      {
+        "eventType": "allocation_ticket.pm_updated",
+        "title": "Assignment Updated: HyperScale | Scalability Engine",
+        "body": "The project assignment for Gaurav Dutta has been successfully updated.",
+        "createdAt": "2026-10-19T11:21:50.892Z",
+        "ctx": {
+          "ticketPublicId": "f057a3cb-fd04-43b1-b372-8fa3fd2bedc4"
+        }
+      }
+    ]
+  }
+}

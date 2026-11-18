@@ -1,0 +1,10 @@
+const H=require('./h'); const fs=require('fs'); const S=JSON.parse(fs.readFileSync('s4-state.json'));
+(async()=>{ const b=await H.chromium.launch(); const s=await H.login(b,'vihaan.chatterjee'); const page=s.page; const errs=[]; H.attach(page,errs);
+ await H.go(page,'/my-tickets/'+S.A); await page.waitForTimeout(1500); await H.shot(page,'u8-ua145-detail',true);
+ console.log('buttons',(await page.getByRole('button').allInnerTexts()).filter(Boolean).slice(8,40));
+ await page.getByRole('button',{name:/^Edit/}).first().click(); await page.waitForTimeout(2000);
+ const dlg=page.getByRole('dialog').last(); await H.shot(page,'u8-ua145-edit-open',true);
+ console.log((await dlg.innerText()).slice(0,1800));
+ console.log('inputs',await dlg.locator('input').evaluateAll(a=>a.map(x=>[x.name,x.placeholder,x.value,x.type,x.disabled])));
+ console.log('radios',await dlg.getByRole('radio').evaluateAll(a=>a.map(x=>[x.getAttribute('value'),x.getAttribute('aria-checked')||x.getAttribute('data-state'),x.innerText])));
+ console.log('errs',JSON.stringify(errs).slice(0,500)); await b.close(); })().catch(e=>console.error('CRASH',e));

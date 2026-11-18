@@ -1,0 +1,63 @@
+{
+  "before": "H2-after",
+  "after": "H3-after",
+  "beforeAt": "2026-10-20T08:50:07.661Z",
+  "afterAt": "2026-10-20T08:51:08.215Z",
+  "newByUser": {
+    "gaurav.dutta": [
+      {
+        "eventType": "allocation_ticket.developer_deallocated",
+        "title": "Allocation Ended: HyperScale | Scalability Engine",
+        "body": "Your allocation to HyperScale | Scalability Engine has ended, effective 2026-10-20.",
+        "createdAt": "2026-10-20T08:51:08.071Z",
+        "ctx": {
+          "ticketPublicId": "b2166221-d164-4b29-820f-975fd1579c20"
+        }
+      }
+    ],
+    "kartik.hegde": [
+      {
+        "eventType": "allocation_ticket.developer_rm_deallocated",
+        "title": "Team Member Deallocated: Gaurav Dutta",
+        "body": "Gaurav Dutta has been deallocated from HyperScale | Scalability Engine, effective 2026-10-20.",
+        "createdAt": "2026-10-20T08:51:08.375Z",
+        "ctx": {
+          "ticketPublicId": "b2166221-d164-4b29-820f-975fd1579c20"
+        }
+      }
+    ],
+    "hardik.trivedi": [
+      {
+        "eventType": "allocation_ticket.pm_deallocated",
+        "title": "Assignment Ended: HyperScale | Scalability Engine",
+        "body": "Gaurav Dutta has been successfully deallocated from HyperScale | Scalability Engine.",
+        "createdAt": "2026-10-20T08:51:08.069Z",
+        "ctx": {
+          "ticketPublicId": "b2166221-d164-4b29-820f-975fd1579c20"
+        }
+      }
+    ],
+    "amit.patel": [
+      {
+        "eventType": "allocation_ticket.developer_rm_deallocated",
+        "title": "Team Member Deallocated: Gaurav Dutta",
+        "body": "Gaurav Dutta has been deallocated from HyperScale | Scalability Engine, effective 2026-10-20.",
+        "createdAt": "2026-10-20T08:51:08.375Z",
+        "ctx": {
+          "ticketPublicId": "b2166221-d164-4b29-820f-975fd1579c20"
+        }
+      }
+    ],
+    "cto": [
+      {
+        "eventType": "allocation_ticket.developer_rm_deallocated",
+        "title": "Team Member Deallocated: Gaurav Dutta",
+        "body": "Gaurav Dutta has been deallocated from HyperScale | Scalability Engine, effective 2026-10-20.",
+        "createdAt": "2026-10-20T08:51:08.375Z",
+        "ctx": {
+          "ticketPublicId": "b2166221-d164-4b29-820f-975fd1579c20"
+        }
+      }
+    ]
+  }
+}

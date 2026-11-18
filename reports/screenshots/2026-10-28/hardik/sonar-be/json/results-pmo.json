@@ -1,0 +1,427 @@
+[
+  {
+    "key": "esc:openings:wildcards",
+    "pass": true,
+    "actual": "base=491; {\"%\":0,\"_\":0,\"\\\\\":0,\"%%\":0,\"a%b\":0,\"%_%\":0}",
+    "data": {
+      "base": 491,
+      "row": {
+        "%": 0,
+        "_": 0,
+        "\\": 0,
+        "%%": 0,
+        "a%b": 0,
+        "%_%": 0
+      }
+    },
+    "ms": 4415
+  },
+  {
+    "key": "esc:openings:quotes",
+    "pass": true,
+    "actual": "{\"'\":0,\"\\\"\":0,\"O'Brien\":0,\"a\\\"b\":0,\"--\":0,\";\":0}",
+    "ms": 2431
+  },
+  {
+    "key": "esc:interviewRequests:wildcards",
+    "pass": true,
+    "actual": "base=316; {\"%\":0,\"_\":0,\"\\\\\":0,\"%%\":0,\"a%b\":0,\"%_%\":0}",
+    "data": {
+      "base": 316,
+      "row": {
+        "%": 0,
+        "_": 0,
+        "\\": 0,
+        "%%": 0,
+        "a%b": 0,
+        "%_%": 0
+      }
+    },
+    "ms": 2775
+  },
+  {
+    "key": "esc:interviewRequests:quotes",
+    "pass": true,
+    "actual": "{\"'\":0,\"\\\"\":0,\"O'Brien\":0,\"a\\\"b\":0,\"--\":0,\";\":0}",
+    "ms": 2229
+  },
+  {
+    "key": "esc:candidates:wildcards",
+    "pass": true,
+    "actual": "base=3649; {\"%\":0,\"_\":0,\"\\\\\":0,\"%%\":0,\"a%b\":0,\"%_%\":0}",
+    "data": {
+      "base": 3649,
+      "row": {
+        "%": 0,
+        "_": 0,
+        "\\": 0,
+        "%%": 0,
+        "a%b": 0,
+        "%_%": 0
+      }
+    },
+    "ms": 3301
+  },
+  {
+    "key": "esc:candidates:quotes",
+    "pass": true,
+    "actual": "{\"'\":0,\"\\\"\":0,\"O'Brien\":0,\"a\\\"b\":0,\"--\":0,\";\":0}",
+    "ms": 2310
+  },
+  {
+    "key": "esc:assignees:wildcards",
+    "pass": true,
+    "actual": "base=91; {\"%\":0,\"_\":0,\"\\\\\":0,\"%%\":0,\"a%b\":0,\"%_%\":0}",
+    "data": {
+      "base": 91,
+      "row": {
+        "%": 0,
+        "_": 0,
+        "\\": 0,
+        "%%": 0,
+        "a%b": 0,
+        "%_%": 0
+      }
+    },
+    "ms": 2407
+  },
+  {
+    "key": "esc:assignees:quotes",
+    "pass": true,
+    "actual": "{\"'\":0,\"\\\"\":0,\"O'Brien\":0,\"a\\\"b\":0,\"--\":0,\";\":0}",
+    "ms": 1979
+  },
+  {
+    "key": "esc:lookup:wildcards",
+    "pass": false,
+    "actual": "base=50; {\"%\":\"E400\",\"_\":\"E400\",\"\\\\\":\"E400\",\"%%\":\"E400\",\"a%b\":\"E400\",\"%_%\":\"E400\"}",
+    "data": {
+      "base": 50,
+      "row": {
+        "%": "E400",
+        "_": "E400",
+        "\\": "E400",
+        "%%": "E400",
+        "a%b": "E400",
+        "%_%": "E400"
+      }
+    },
+    "ms": 2251
+  },
+  {
+    "key": "esc:lookup:quotes",
+    "pass": false,
+    "actual": "{\"'\":\"E400\",\"\\\"\":\"E400\",\"O'Brien\":\"E400\",\"a\\\"b\":\"E400\",\"--\":\"E400\",\";\":\"E400\"}",
+    "ms": 2022
+  },
+  {
+    "key": "esc:openings:normal",
+    "pass": true,
+    "actual": "status=200 total=70 nonMatching=0",
+    "ms": 402
+  },
+  {
+    "key": "esc:interviewRequests:normal",
+    "pass": true,
+    "actual": "status=200 total=65 nonMatching=0",
+    "ms": 396
+  },
+  {
+    "key": "esc:candidates:normal",
+    "pass": true,
+    "actual": "status=200 total=31 names=Tarun Mistry, Tarun Barot, Tarun Bhatt, Tarun Joshi, Tarun Thakkar nonMatching=0",
+    "ms": 432
+  },
+  {
+    "key": "esc:openings:titleFilters",
+    "pass": true,
+    "actual": "base=491; {\"positionTitle=%\":0,\"positionTitle=_\":0,\"positionTitle=Java\":66,\"opportunityTitle=%\":0,\"opportunityTitle=_\":0,\"opportunityTitle=Java\":6}",
+    "ms": 2965
+  },
+  {
+    "key": "esc:employeeOpportunityHistory",
+    "pass": true,
+    "actual": "{\"none\":0,\"%\":0,\"_\":0,\"\\\\\":0}",
+    "ms": 1664
+  },
+  {
+    "key": "raw:employees:wildcards",
+    "pass": false,
+    "actual": "base=3648; {\"%\":3648,\"_\":3648,\"a%b\":1210,\"'\":0,\"zzzz-no-match\":0}",
+    "data": {
+      "base": 3648,
+      "row": {
+        "%": 3648,
+        "_": 3648,
+        "a%b": 1210,
+        "'": 0,
+        "zzzz-no-match": 0
+      }
+    },
+    "ms": 6563
+  },
+  {
+    "key": "raw:projects:wildcards",
+    "pass": false,
+    "actual": "base=402; {\"%\":402,\"_\":402,\"a%b\":122,\"'\":0,\"zzzz-no-match\":0}",
+    "data": {
+      "base": 402,
+      "row": {
+        "%": 402,
+        "_": 402,
+        "a%b": 122,
+        "'": 0,
+        "zzzz-no-match": 0
+      }
+    },
+    "ms": 7328
+  },
+  {
+    "key": "raw:allocationTickets:wildcards",
+    "pass": false,
+    "actual": "base=770; {\"%\":770,\"_\":770,\"a%b\":393,\"'\":0,\"zzzz-no-match\":0}",
+    "data": {
+      "base": 770,
+      "row": {
+        "%": 770,
+        "_": 770,
+        "a%b": 393,
+        "'": 0,
+        "zzzz-no-match": 0
+      }
+    },
+    "ms": 2910
+  },
+  {
+    "key": "raw:notifications:wildcards",
+    "pass": false,
+    "actual": "base=1198; {\"%\":1198,\"_\":1198,\"a%b\":946,\"'\":93,\"zzzz-no-match\":0}",
+    "data": {
+      "base": 1198,
+      "row": {
+        "%": 1198,
+        "_": 1198,
+        "a%b": 946,
+        "'": 93,
+        "zzzz-no-match": 0
+      }
+    },
+    "ms": 2158
+  },
+  {
+    "key": "raw:utilizationPriority:wildcards",
+    "pass": false,
+    "actual": "base=3649; {\"%\":3649,\"_\":3649,\"a%b\":682,\"'\":0,\"zzzz-no-match\":0}",
+    "data": {
+      "base": 3649,
+      "row": {
+        "%": 3649,
+        "_": 3649,
+        "a%b": 682,
+        "'": 0,
+        "zzzz-no-match": 0
+      }
+    },
+    "ms": 2729
+  },
+  {
+    "key": "raw:employeeRoles:wildcards",
+    "pass": false,
+    "actual": "base=3632; {\"%\":3632,\"_\":3632,\"a%b\":348,\"'\":0,\"zzzz-no-match\":0}",
+    "data": {
+      "base": 3632,
+      "row": {
+        "%": 3632,
+        "_": 3632,
+        "a%b": 348,
+        "'": 0,
+        "zzzz-no-match": 0
+      }
+    },
+    "ms": 2214
+  },
+  {
+    "key": "raw:dashboardActivity:wildcards",
+    "pass": false,
+    "actual": "base=257; {\"%\":257,\"_\":257,\"a%b\":82,\"'\":0,\"zzzz-no-match\":0}",
+    "data": {
+      "base": 257,
+      "row": {
+        "%": 257,
+        "_": 257,
+        "a%b": 82,
+        "'": 0,
+        "zzzz-no-match": 0
+      }
+    },
+    "ms": 2280
+  },
+  {
+    "key": "tickets:sort",
+    "pass": true,
+    "actual": "{\"ticketNumber:asc\":\"ok\",\"ticketNumber:desc\":\"ok\",\"createdAt:asc\":\"ok\",\"createdAt:desc\":\"ok\",\"project.name:asc\":\"ok\",\"project.name:desc\":\"ok\",\"allocationStartDate:asc\":\"ok\",\"allocationStartDate:desc\":\"ok\"}",
+    "ms": 3057
+  },
+  {
+    "key": "tickets:filterStatusAndCounts",
+    "pass": true,
+    "actual": "{\"total\":770,\"paged\":770,\"byStatus\":{\"APPROVED\":454,\"CLOSED\":100,\"OPEN\":126,\"IN_REVIEW\":33,\"AWAITING_CONFIRMATION\":57},\"stats\":{\"open\":126,\"inReview\":33,\"awaiting\":57,\"approved\":454}}",
+    "data": {
+      "total": 770,
+      "paged": 770,
+      "byStatus": {
+        "APPROVED": 454,
+        "CLOSED": 100,
+        "OPEN": 126,
+        "IN_REVIEW": 33,
+        "AWAITING_CONFIRMATION": 57
+      },
+      "stats": {
+        "open": 126,
+        "inReview": 33,
+        "awaiting": 57,
+        "approved": 454
+      }
+    },
+    "ms": 5193
+  },
+  {
+    "key": "tickets:filterProjectCsm",
+    "pass": true,
+    "actual": "status=200 total=40 wrongRows=0",
+    "ms": 370
+  },
+  {
+    "key": "ir:prioritiesParsing",
+    "pass": true,
+    "actual": "comma=316 repeated=316 spaced=200/316 HIGH+MEDIUM=312+4 wrongRowsOnPage1=0 nested[a]=400 invalidEnum=400",
+    "ms": 2563
+  },
+  {
+    "key": "ir:statusTiles",
+    "pass": true,
+    "actual": "{\"stats\":{\"all\":316,\"open\":287,\"won\":19,\"lost\":10,\"onHold\":0},\"OPEN\":287,\"WON\":19,\"LOST\":10,\"ON_HOLD\":0}",
+    "ms": 1833
+  },
+  {
+    "key": "cand:sorts",
+    "pass": true,
+    "actual": "{\"availabilityPercentage:asc\":\"ok\",\"availabilityPercentage:desc\":\"ok\",\"remainingAllocationPercentage:asc\":\"ok\",\"remainingAllocationPercentage:desc\":\"ok\",\"name:asc\":\"ok\",\"name:desc\":\"ok\"}",
+    "ms": 4154
+  },
+  {
+    "key": "cand:rangesAndLists",
+    "pass": true,
+    "actual": "range50-80 total=127 outOfRangeOnPage=0; deptComma=186 deptRepeated=186; nested[x]=400",
+    "ms": 2242
+  },
+  {
+    "key": "opp:allocationConflicts",
+    "pass": true,
+    "actual": "comma=200 repeated=200 trailingComma=200 sameBody=true nested=400 invalidUuid=400",
+    "ms": 2182
+  },
+  {
+    "key": "opp:openingsEnumLists",
+    "pass": true,
+    "actual": "comma=407 repeated=407 sum=376+31 wrongRows=0 nested=400",
+    "ms": 1945
+  },
+  {
+    "key": "notif:isRead",
+    "pass": true,
+    "actual": "all=1198 read=0 unread=1198 wrongRead=0 wrongUnread=0",
+    "ms": 989
+  },
+  {
+    "key": "dash:filterOptionsPmo",
+    "pass": true,
+    "actual": "status=200 departments=41 projects=399",
+    "ms": 375
+  },
+  {
+    "key": "dash:listParams",
+    "pass": true,
+    "actual": "activity comma=11 repeated=11; overview summaries equal=true; nested activity=400 overview=400; statuses filter=200/31 wrong=0",
+    "ms": 2678
+  },
+  {
+    "key": "dash:exportCsv",
+    "pass": true,
+    "actual": "status=200 type=text/csv; charset=utf-8 bytes=52037 sections=# Trend / # Allocation Type / # Hours by Project / # All Activity quotedCells=2609 unneutralisedFormulaCells=0",
+    "ms": 408
+  },
+  {
+    "key": "dash:exportXlsx",
+    "pass": true,
+    "actual": "status=200 type=application/vnd.openxmlformats-officedocument.spreadsheetml.sheet bytes=39501 magic=PK ",
+    "ms": 531
+  },
+  {
+    "key": "wl:overviewVsList",
+    "pass": false,
+    "actual": "overview.asOfDate=2026-10-13 max(list.asOfDate)=2026-10-13 listRows=200 trendDays=7 sorted=true diffs=2026-10-07: api 54.8/45.2 vs recomputed 56.4/43.6; 2026-10-08: api 54.5/45.5 vs recomputed 52.9/47.1; 2026-10-09: api 56.3/43.7 vs recomputed 60.4/39.6; 2026-10-10: api 56.2/43.8 vs recomputed 66/34; 2026-10-11: api 54.6/45.4 vs recomputed 53.3/46.7; 2026-10-12: api 56.7/43.3 vs recomputed 59/41; 2026-10-13: api 56/44 vs recomputed 63.5/36.5",
+    "ms": 953
+  },
+  {
+    "key": "wl:percentages",
+    "pass": true,
+    "actual": "employees=3649/3649 badWindows=0  nullWindows=0 distinctAsOfDates=2026-10-13",
+    "ms": 15275
+  },
+  {
+    "key": "emp:sorts",
+    "pass": true,
+    "actual": "{\"name:asc\":\"ok\",\"name:desc\":\"ok\",\"dateOfJoining:asc\":\"ok\",\"dateOfJoining:desc\":\"ok\",\"availabilityPercentage:asc\":\"ok\",\"availabilityPercentage:desc\":\"ok\"}",
+    "ms": 5352
+  },
+  {
+    "key": "emp:visaFilters",
+    "pass": true,
+    "actual": "all=3648 {\"{\\\"visaStatus\\\":[\\\"NOT_ADDED\\\"]}\":3634,\"{\\\"visaStatus\\\":[\\\"VALID\\\"]}\":3,\"{\\\"visaStatus\\\":[\\\"VALID\\\",\\\"EXPIRING_SOON\\\",\\\"EXPIRED\\\"]}\":8,\"{\\\"visaCountry\\\":[\\\"UNITED_STATES\\\"]}\":2,\"{\\\"visaCountry\\\":[\\\"UNITED_STATES\\\"],\\\"visaStatus\\\":[\\\"VALID\\\"]}\":0,\"{\\\"visaStatus\\\":[]}\":\"E400\",\"{\\\"visaStatus\\\":[\\\"BOGUS\\\"]}\":\"E400\"}",
+    "ms": 3709
+  },
+  {
+    "key": "emp:detailRatings",
+    "pass": false,
+    "actual": "Rachna Gupta:200:undefined; Vihaan Patil:200:undefined; Kriti Desai:200:undefined; Riddhi Verma:200:undefined; Vandana Mishra:200:undefined",
+    "data": [
+      "absent",
+      "absent",
+      "absent",
+      "absent",
+      "absent"
+    ],
+    "ms": 2156
+  },
+  {
+    "key": "emp:zohoSyncFresh",
+    "pass": false,
+    "actual": "employees.lastSyncedAt=null projects.lastSyncedAt=null",
+    "ms": 2190
+  },
+  {
+    "key": "ratings:rehireFlags",
+    "pass": true,
+    "actual": "rows=57 expected={\"YES\":40,\"NO\":21,\"UNANSWERED\":0} YES|NO=57 got={\"YES\":40,\"NO\":21,\"UNANSWERED\":0,\"YES,NO\":57,\"YES&NO\":57} nested=400",
+    "ms": 2448
+  },
+  {
+    "key": "up:rangeFilter",
+    "pass": true,
+    "actual": "all=3649 {\"[30,80]\":148,\"[null,50]\":2065,\"[50,null]\":1586,\"[null,null]\":3649} violationsOnPage1=0  malformed=400",
+    "ms": 4090
+  },
+  {
+    "key": "proj:filters",
+    "pass": true,
+    "actual": "all=402 {\"csm\":4,\"pm\":7,\"grade7_10\":85,\"employeeTarun\":5,\"csmAndGrade\":2,\"unknownKey\":\"E400\"} wrongRows=0 ",
+    "ms": 6907
+  },
+  {
+    "key": "teams:noDuplicateOrNewDefaultTeams",
+    "pass": true,
+    "actual": "teams=405 rm+deptDuplicates=0 teamsCreatedAfter22Oct=0 employeesInMultipleTeams=0 teamsWithoutRm=0",
+    "ms": 8
+  }
+]

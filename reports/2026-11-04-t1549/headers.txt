@@ -1,0 +1,16 @@
+Action
+Name
+Department
+RM
+UP (System)
+UP (Manual)
+Projects
+Log Hours
+Availability %
+Remaining Allocation
+Start → End Hours
+Work Pattern
+Night Shift Preference
+Skills
+Visa
+Active Opportunities

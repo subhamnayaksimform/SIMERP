@@ -1,0 +1,260 @@
+[
+ {
+  "area": "create",
+  "name": "interview ticket created",
+  "pass": true,
+  "detail": "{\"code\":\"OPP_002\",\"message\":\"Opportunity created successfully\",\"data\":{\"publicId\":\"14d59ba8-77e1-4a00-bf7b-8eb987840d30\",\"ticketNumber\":\"OPP-0346\",\"title\":\"QA-AUTO E2E full 04-11\",\"clientType\":\"PROSPECT\",\"requestType\":\"INTERVIEW\",\"clientName\":\"QA-AUTO E2E Client\",\"websiteUrl\":null,\"linkedinUrl\":null"
+ },
+ {
+  "area": "candidates",
+  "name": "picker returns candidates with fields",
+  "pass": true,
+  "detail": "8"
+ },
+ {
+  "area": "create",
+  "name": "checklist seeded on position (5 items, OBS present, no Resume)",
+  "pass": true,
+  "detail": "[\"JD_CLIENT_CONTEXT_REVIEWED\",\"SPECIAL_INSTRUCTIONS_ACKNOWLEDGED\",\"AI_MOCK_COMPLETED\",\"MANUAL_MOCK_COMPLETED\",\"OBS_SYSTEM_CHECK\"]"
+ },
+ {
+  "area": "create",
+  "name": "4 seats created (2+1 ... A=2,B=1 => 3)",
+  "pass": true,
+  "detail": "3"
+ },
+ {
+  "area": "create",
+  "name": "stats initial 0/0/0/3",
+  "pass": true,
+  "detail": "{\"shortlistedCount\":0,\"rejectedCount\":0,\"filledCount\":0,\"requiredCount\":3}"
+ },
+ {
+  "area": "shortlist",
+  "name": "2 shortlisted on A",
+  "pass": true,
+  "detail": "OPP_074"
+ },
+ {
+  "area": "shortlist",
+  "name": "1 shortlisted on B",
+  "pass": true,
+  "detail": "OPP_074"
+ },
+ {
+  "area": "shortlist",
+  "name": "same employee on 2nd position of same ticket refused or allowed (record)",
+  "pass": true,
+  "detail": "[201,\"OPP_074\"]"
+ },
+ {
+  "area": "shortlist",
+  "name": "empty list refused",
+  "pass": true,
+  "detail": "[400,\"VAL_001\"]"
+ },
+ {
+  "area": "shortlist",
+  "name": "unknown employee refused",
+  "pass": true,
+  "detail": "[404,\"OPP_048\"]"
+ },
+ {
+  "area": "shortlist",
+  "name": "bad position id refused",
+  "pass": true,
+  "detail": "[400,\"SYS_004\"]"
+ },
+ {
+  "area": "approval",
+  "name": "PMO request approval",
+  "pass": true,
+  "detail": "[200,\"SUCCESS\"]"
+ },
+ {
+  "area": "approval",
+  "name": "second request refused (OPP_104)",
+  "pass": true,
+  "detail": "[400,\"OPP_104\"]"
+ },
+ {
+  "area": "approval",
+  "name": "requester cannot approve own request (OPP_111)",
+  "pass": true,
+  "detail": "[403,\"OPP_111\"]"
+ },
+ {
+  "area": "approval",
+  "name": "withdraw pending request",
+  "pass": true,
+  "detail": "[200,\"SUCCESS\"]"
+ },
+ {
+  "area": "approval",
+  "name": "stage back to SHORTLISTED after withdraw",
+  "pass": true,
+  "detail": "SHORTLISTED"
+ },
+ {
+  "area": "approval",
+  "name": "TM of candidate dept can approve (record who)",
+  "pass": true,
+  "detail": "[[\"sudhansu.patel\",404,\"OPP_040\"],[\"punit.patel\",403,\"AUTH_004\"],[\"mehul.pandya\",200,\"SUCCESS\"]]"
+ },
+ {
+  "area": "approval",
+  "name": "bypass without reason refused",
+  "pass": true,
+  "detail": "[400,\"VAL_001\"]"
+ },
+ {
+  "area": "approval",
+  "name": "bypass with reason",
+  "pass": true,
+  "detail": "[200,\"SUCCESS\",\"TM Approval bypassed successfully\"]"
+ },
+ {
+  "area": "approval",
+  "name": "candidate 0 now BEING_PREPARED",
+  "pass": true,
+  "detail": "[\"BEING_PREPARED\",\"IN_PROCESS\"]"
+ },
+ {
+  "area": "approval",
+  "name": "candidate 1 now BEING_PREPARED",
+  "pass": true,
+  "detail": "[\"BEING_PREPARED\",\"IN_PROCESS\"]"
+ },
+ {
+  "area": "checklist",
+  "name": "tick 2 items",
+  "pass": true,
+  "detail": "[200,\"SUCCESS\"]"
+ },
+ {
+  "area": "checklist",
+  "name": "unknown code refused",
+  "pass": true,
+  "detail": "[400,\"OPP_094\"]"
+ },
+ {
+  "area": "checklist",
+  "name": "same item both done and skipped refused",
+  "pass": true,
+  "detail": "[400,\"OPP_168\"]"
+ },
+ {
+  "area": "checklist",
+  "name": "done + skipped mix ok",
+  "pass": true,
+  "detail": "[200,\"SUCCESS\"]"
+ },
+ {
+  "area": "checklist",
+  "name": "checklist on SHORTLISTED (not started) record",
+  "pass": true,
+  "detail": "[200,\"SUCCESS\"]"
+ },
+ {
+  "area": "rounds",
+  "name": "add round default title",
+  "pass": true,
+  "detail": "[201,\"OPP_051\",null]"
+ },
+ {
+  "area": "rounds",
+  "name": "add round custom",
+  "pass": true,
+  "detail": "[201,\"OPP_051\"]"
+ },
+ {
+  "area": "rounds",
+  "name": "title 201 chars refused",
+  "pass": true,
+  "detail": "[400,\"VAL_001\"]"
+ },
+ {
+  "area": "rounds",
+  "name": "bad date refused",
+  "pass": true,
+  "detail": "[400,\"VAL_001\"]"
+ },
+ {
+  "area": "rounds",
+  "name": "html title stored as text",
+  "pass": true,
+  "detail": "[201,\"<script>alert(1)</script>\"]"
+ },
+ {
+  "area": "rounds",
+  "name": "rename round",
+  "pass": true,
+  "detail": "[200,\"SUCCESS\"]"
+ },
+ {
+  "area": "rounds",
+  "name": "reorder rounds",
+  "pass": false,
+  "detail": "[400,\"OPP_141\",\"The new order must list every Interview Round of the Candidate exactly once\"]"
+ },
+ {
+  "area": "rounds",
+  "name": "delete round",
+  "pass": true,
+  "detail": "[200,\"SUCCESS\"]"
+ },
+ {
+  "area": "rounds",
+  "name": "round on non-IN_PROCESS refused (OPP_054)",
+  "pass": true,
+  "detail": "[400,\"OPP_054\"]"
+ },
+ {
+  "area": "stage",
+  "name": "skip straight to WON needs confirmation",
+  "pass": true,
+  "detail": "[400,\"OPP_014\"]"
+ },
+ {
+  "area": "stage",
+  "name": "BEING_PREPARED -> INTERVIEW_SCHEDULED",
+  "pass": false,
+  "detail": "[400,\"OPP_014\",\"This change is not allowed from the current stage\"]"
+ },
+ {
+  "area": "stage",
+  "name": "-> DID_INTERVIEW_HAPPEN",
+  "pass": false,
+  "detail": "[400,\"OPP_014\",\"This change is not allowed from the current stage\"]"
+ },
+ {
+  "area": "stage",
+  "name": "-> WAITING_FOR_FEEDBACK",
+  "pass": false,
+  "detail": "[400,\"OPP_061\",\"The interview has been held, so its date cannot be after today\"]"
+ },
+ {
+  "area": "stage",
+  "name": "select -> WON",
+  "pass": false,
+  "detail": "[400,\"OPP_015\",\"This change skips a step and needs a confirmation\"]"
+ },
+ {
+  "area": "stage",
+  "name": "seat WON and stats filled=1",
+  "pass": false,
+  "detail": "{\"shortlistedCount\":4,\"rejectedCount\":0,\"filledCount\":0,\"requiredCount\":3}"
+ },
+ {
+  "area": "release",
+  "name": "WON cannot be released (OPP_185)",
+  "pass": false,
+  "detail": "[200,\"SUCCESS\"]"
+ },
+ {
+  "area": "reject",
+  "name": "reject a WON candidate (record)",
+  "pass": false,
+  "detail": "[404,\"OPP_040\"]"
+ }
+]

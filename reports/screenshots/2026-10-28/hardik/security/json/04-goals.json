@@ -1,0 +1,45 @@
+{
+  "account": "hardik.trivedi@simformsolutions.com",
+  "ranAt": "2026-10-28T06:22:43.573Z",
+  "goalsApi": {
+    "/goals?page=1&limit=5": {
+      "status": 400,
+      "bodyKeys": [
+        "code",
+        "message",
+        "errors"
+      ],
+      "snippet": "{\"code\":\"VAL_001\",\"message\":\"Validation failed\",\"errors\":[{\"field\":\"limit\",\"message\":\"limit must be one of the following values: 100, 200, 300\"}]}"
+    },
+    "/goals/my?page=1&limit=5": {
+      "status": 400,
+      "bodyKeys": [
+        "code",
+        "message"
+      ],
+      "snippet": "{\"code\":\"SYS_004\",\"message\":\"Validation failed (uuid is expected)\"}"
+    },
+    "/employees/goals?page=1&limit=5": {
+      "status": 400,
+      "bodyKeys": [
+        "code",
+        "message",
+        "errors"
+      ],
+      "snippet": "{\"code\":\"VAL_001\",\"message\":\"Validation failed\",\"errors\":[{\"field\":\"page\",\"message\":\"property page should not exist\"},{\"field\":\"limit\",\"message\":\"property limit should not exist\"}]}"
+    },
+    "/goals/by-employee?page=1&limit=5": {
+      "status": 400,
+      "bodyKeys": [
+        "code",
+        "message"
+      ],
+      "snippet": "{\"code\":\"SYS_004\",\"message\":\"Validation failed (uuid is expected)\"}"
+    }
+  },
+  "goalsUi": {
+    "url": "https://simerp-dev.simform.solutions/employee/goals",
+    "is404": false,
+    "shot": "reports/screenshots/2026-10-28/hardik/security/12-goals-via-nav.png"
+  }
+}

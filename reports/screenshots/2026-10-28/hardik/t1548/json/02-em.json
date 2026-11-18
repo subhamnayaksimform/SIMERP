@@ -1,0 +1,117 @@
+{
+  "user": "kunal.jadeja",
+  "landed": "https://simerp-dev.simform.solutions/employee?sortBy=availabilityPercentage&sortOrder=desc",
+  "releasePerms": [
+    "\"releases\":{\"read\":[\"ALL\"]}"
+  ],
+  "roles": null,
+  "GET /releases": {
+    "status": 200,
+    "body": {
+      "code": "REL_001",
+      "message": "Release notes fetched successfully.",
+      "data": []
+    }
+  },
+  "GET /releases?includePlanned=true": {
+    "status": 200,
+    "body": {
+      "code": "REL_001",
+      "message": "Release notes fetched successfully.",
+      "data": []
+    }
+  },
+  "GET /releases?includePlanned=false": {
+    "status": 200,
+    "body": {
+      "code": "REL_001",
+      "message": "Release notes fetched successfully.",
+      "data": []
+    }
+  },
+  "GET /releases?includePlanned=1": {
+    "status": 400,
+    "body": {
+      "code": "VAL_001",
+      "message": "Validation failed",
+      "errors": [
+        {
+          "field": "includePlanned",
+          "message": "includePlanned must be a boolean value"
+        }
+      ]
+    }
+  },
+  "GET /releases?includePlanned=abc": {
+    "status": 400,
+    "body": {
+      "code": "VAL_001",
+      "message": "Validation failed",
+      "errors": [
+        {
+          "field": "includePlanned",
+          "message": "includePlanned must be a boolean value"
+        }
+      ]
+    }
+  },
+  "GET /releases/6.6.0": {
+    "status": 404,
+    "body": {
+      "code": "SYS_002",
+      "message": "Cannot GET /api/v1/releases/6.6.0"
+    }
+  },
+  "GET /sync-queue/cron-runs/summary": {
+    "status": 403,
+    "body": {
+      "code": "AUTH_004",
+      "message": "Access forbidden"
+    }
+  },
+  "POST /releases": {
+    "status": 404,
+    "body": {
+      "code": "SYS_002",
+      "message": "Cannot POST /api/v1/releases"
+    }
+  },
+  "POST run": {
+    "status": 403,
+    "body": {
+      "code": "AUTH_004",
+      "message": "Access forbidden"
+    }
+  },
+  "notifStatus": 200,
+  "notifCount": 100,
+  "eventTypes": [
+    "notification.opportunity.position_added"
+  ],
+  "releaseNotifs": [],
+  "emptyBodyNotifs": 0,
+  "whatsNewUrl": "https://simerp-dev.simform.solutions/whats-new",
+  "whatsNewText": "",
+  "shotWhatsNew": "reports/screenshots/2026-10-28/hardik/t1548/em-whats-new.png",
+  "plannedToggle": 0,
+  "helpUrl": "https://simerp-dev.simform.solutions/help",
+  "helpText": "",
+  "helpBadTokens": [],
+  "shotHelp": "reports/screenshots/2026-10-28/hardik/t1548/em-help.png",
+  "sidebarWhatsNew": 1,
+  "bellFound": 1,
+  "shotBell": "reports/screenshots/2026-10-28/hardik/t1548/em-bell.png",
+  "bellWhatsNewTab": 1,
+  "bellWhatsNewText": "You're up to date\n\nNew features and fixes for your pages will appear here.\n\nView What's New & History",
+  "shotBellWN": "reports/screenshots/2026-10-28/hardik/t1548/em-bell-whats-new-tab.png",
+  "releaseCalls": [
+    {
+      "url": "https://simerp-dev-api.simform.solutions/api/v1/releases?includePlanned=true",
+      "status": 200
+    },
+    {
+      "url": "https://simerp-dev-api.simform.solutions/api/v1/releases?includePlanned=true",
+      "status": 200
+    }
+  ]
+}

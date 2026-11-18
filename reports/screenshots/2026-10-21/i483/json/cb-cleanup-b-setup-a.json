@@ -1,0 +1,48 @@
+{
+  "prakash-shadow": {
+    "status": 201,
+    "body": {
+      "code": "ALLOCATION_TICKET_169",
+      "message": "Upcoming allocation cancelled successfully",
+      "data": {
+        "ticket": {
+          "publicId": "e08eef82-2068-4e86-b7eb-bb4c0d73a1c8",
+          "ticketNumber": "DA-0126",
+          "ticketType": "DEALLOCATE_ALLOCATION",
+          "status": "APPROVED"
+        },
+        "isAllocationCancelled": true
+      }
+    }
+  },
+  "kunal-main": {
+    "status": 201,
+    "body": {
+      "code": "ALLOCATION_TICKET_169",
+      "message": "Upcoming allocation cancelled successfully",
+      "data": {
+        "ticket": {
+          "publicId": "27c872e4-6c04-4750-9129-9d87465b2832",
+          "ticketNumber": "DA-0127",
+          "ticketType": "DEALLOCATE_ALLOCATION",
+          "status": "APPROVED"
+        },
+        "isAllocationCancelled": true
+      }
+    }
+  },
+  "kunal-shadow": {
+    "status": 409,
+    "body": {
+      "code": "SYS_004",
+      "message": "This allocation already has a de-allocation scheduled — cancel it before ending or replacing the assignment again"
+    }
+  },
+  "addA": {
+    "status": 409,
+    "body": {
+      "code": "SYS_004",
+      "message": "This employee already has an active (non-archived) allocation on this project"
+    }
+  }
+}

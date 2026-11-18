@@ -40,4 +40,15 @@ EXIT=$?
 
 echo "[playwright-runner] exit=$EXIT"
 echo "[playwright-runner] results: $ROOT_DIR/reports/results/results.json"
+
+# Refresh the consolidated HTML dashboard regardless of pass/fail — a failed run is exactly
+# when the report matters most, so this must not be skipped just because tests exited non-zero.
+echo "[playwright-runner] refreshing consolidated HTML report…"
+npm run report:html || echo "[playwright-runner] WARNING: HTML report generation failed — see errors above" >&2
+
+# Same "always run, warn don't fail" treatment for the rich per-test QA report (donut chart,
+# filters, expandable steps/preconditions/expected/tags, embedded failure screenshots).
+echo "[playwright-runner] refreshing per-test QA report…"
+npm run report:qa || echo "[playwright-runner] WARNING: QA report generation failed — see errors above" >&2
+
 exit $EXIT

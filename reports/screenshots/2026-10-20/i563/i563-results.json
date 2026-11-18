@@ -1,0 +1,152 @@
+{
+ "emp_1440_Hardik Trivedi": [
+  {
+   "text": "Project Planning",
+   "cls": "block truncate text-xs text-muted-foreground",
+   "h": 16,
+   "w": 93,
+   "cut": false,
+   "rowH": 83
+  }
+ ],
+ "emp_1440_Jignesh Raval": [
+  {
+   "text": "Agile Delivery",
+   "cls": "block truncate text-xs text-muted-foreground",
+   "h": 16,
+   "w": 79,
+   "cut": false,
+   "rowH": 83
+  }
+ ],
+ "emp_1440_Vihaan Dodia": [
+  {
+   "text": "Salesforce",
+   "cls": "block truncate text-xs text-muted-foreground",
+   "h": 16,
+   "w": 61,
+   "cut": false,
+   "rowH": 62
+  }
+ ],
+ "emp_1440_Rajan Kale": [
+  {
+   "text": "CRM Tools",
+   "cls": "block truncate text-xs text-muted-foreground",
+   "h": 16,
+   "w": 61,
+   "cut": false,
+   "rowH": 62
+  }
+ ],
+ "team_1440_PM": {
+  "n": 0,
+  "multi": [],
+  "cut": []
+ },
+ "team_1440_CSM": {
+  "n": 0,
+  "multi": [],
+  "cut": []
+ },
+ "emp_1280_Hardik Trivedi": [
+  {
+   "text": "Project Planning",
+   "cls": "block truncate text-xs text-muted-foreground",
+   "h": 16,
+   "w": 93,
+   "cut": false,
+   "rowH": 83
+  }
+ ],
+ "emp_1280_Jignesh Raval": [
+  {
+   "text": "Agile Delivery",
+   "cls": "block truncate text-xs text-muted-foreground",
+   "h": 16,
+   "w": 79,
+   "cut": false,
+   "rowH": 83
+  }
+ ],
+ "emp_1280_Vihaan Dodia": [
+  {
+   "text": "Salesforce",
+   "cls": "block truncate text-xs text-muted-foreground",
+   "h": 16,
+   "w": 61,
+   "cut": false,
+   "rowH": 62
+  }
+ ],
+ "emp_1280_Rajan Kale": [
+  {
+   "text": "CRM Tools",
+   "cls": "block truncate text-xs text-muted-foreground",
+   "h": 16,
+   "w": 61,
+   "cut": false,
+   "rowH": 62
+  }
+ ],
+ "team_1280_PM": {
+  "n": 0,
+  "multi": [],
+  "cut": []
+ },
+ "team_1280_CSM": {
+  "n": 0,
+  "multi": [],
+  "cut": []
+ },
+ "emp_1024_Hardik Trivedi": [
+  {
+   "text": "Project Planning",
+   "cls": "block truncate text-xs text-muted-foreground",
+   "h": 16,
+   "w": 93,
+   "cut": false,
+   "rowH": 83
+  }
+ ],
+ "emp_1024_Jignesh Raval": [
+  {
+   "text": "Agile Delivery",
+   "cls": "block truncate text-xs text-muted-foreground",
+   "h": 16,
+   "w": 79,
+   "cut": false,
+   "rowH": 83
+  }
+ ],
+ "emp_1024_Vihaan Dodia": [
+  {
+   "text": "Salesforce",
+   "cls": "block truncate text-xs text-muted-foreground",
+   "h": 16,
+   "w": 61,
+   "cut": false,
+   "rowH": 62
+  }
+ ],
+ "emp_1024_Rajan Kale": [
+  {
+   "text": "CRM Tools",
+   "cls": "block truncate text-xs text-muted-foreground",
+   "h": 16,
+   "w": 61,
+   "cut": false,
+   "rowH": 62
+  }
+ ],
+ "team_1024_PM": {
+  "n": 0,
+  "multi": [],
+  "cut": []
+ },
+ "team_1024_CSM": {
+  "n": 0,
+  "multi": [],
+  "cut": []
+ }
+}

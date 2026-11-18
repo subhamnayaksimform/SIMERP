@@ -1,0 +1,52 @@
+{
+  "before": "J3-before",
+  "after": "J3-after",
+  "beforeAt": "2026-10-20T08:55:22.396Z",
+  "afterAt": "2026-10-20T08:56:06.247Z",
+  "newByUser": {
+    "iti.chatterjee": [
+      {
+        "eventType": "allocation_ticket.allocation_cancelled",
+        "title": "Allocation Cancelled: ConfigHub | Configuration Management",
+        "body": "The upcoming allocation for Iti Chatterjee to ConfigHub | Configuration Management, due to start 2026-10-22, has been cancelled.",
+        "createdAt": "2026-10-20T08:56:05.820Z",
+        "ctx": {
+          "ticketPublicId": "ff8c0646-015a-4572-981b-a47c88d7d56e"
+        }
+      }
+    ],
+    "jignesh.raval": [
+      {
+        "eventType": "allocation_ticket.allocation_cancelled",
+        "title": "Allocation Cancelled: ConfigHub | Configuration Management",
+        "body": "The upcoming allocation for Iti Chatterjee to ConfigHub | Configuration Management, due to start 2026-10-22, has been cancelled.",
+        "createdAt": "2026-10-20T08:56:05.820Z",
+        "ctx": {
+          "ticketPublicId": "ff8c0646-015a-4572-981b-a47c88d7d56e"
+        }
+      }
+    ],
+    "hardik.trivedi": [
+      {
+        "eventType": "allocation_ticket.allocation_cancelled",
+        "title": "Allocation Cancelled: ConfigHub | Configuration Management",
+        "body": "The upcoming allocation for Iti Chatterjee to ConfigHub | Configuration Management, due to start 2026-10-22, has been cancelled.",
+        "createdAt": "2026-10-20T08:56:05.820Z",
+        "ctx": {
+          "ticketPublicId": "ff8c0646-015a-4572-981b-a47c88d7d56e"
+        }
+      }
+    ],
+    "cto": [
+      {
+        "eventType": "allocation_ticket.allocation_cancelled",
+        "title": "Allocation Cancelled: ConfigHub | Configuration Management",
+        "body": "The upcoming allocation for Iti Chatterjee to ConfigHub | Configuration Management, due to start 2026-10-22, has been cancelled.",
+        "createdAt": "2026-10-20T08:56:05.820Z",
+        "ctx": {
+          "ticketPublicId": "ff8c0646-015a-4572-981b-a47c88d7d56e"
+        }
+      }
+    ]
+  }
+}

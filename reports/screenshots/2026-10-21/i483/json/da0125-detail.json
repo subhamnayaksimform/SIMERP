@@ -1,0 +1,256 @@
+{
+  "code": "SUCCESS",
+  "message": "Allocation ticket details retrieved successfully",
+  "data": {
+    "publicId": "8cd17af2-0df7-4378-9dc3-decd71b36b2c",
+    "ticketNumber": "DA-0125",
+    "ticketType": "DEALLOCATE_ALLOCATION",
+    "intent": null,
+    "status": "APPROVED",
+    "priority": "LOW",
+    "allocationRequestCreationType": null,
+    "allocationEndDate": "2026-10-31T00:00:00.000Z",
+    "effectiveStartDate": null,
+    "effectiveEndDate": null,
+    "project": {
+      "publicId": "3d138a89-4d06-4839-8091-436fba0a2dd6",
+      "name": "HyperScale | Scalability Engine",
+      "csmId": "3850",
+      "accountGrade": 6.8
+    },
+    "department": {
+      "publicId": "02258af1-79b0-4e88-bebb-aee86933bd9c",
+      "name": "DATA ENGINEERING",
+      "iconUrl": "https://d3e6uquevgpr8q.cloudfront.net/department-icons/data-engineering.svg"
+    },
+    "departmentTechStack": [
+      {
+        "name": "Databricks",
+        "logoUrl": "https://cdn.simpleicons.org/databricks"
+      },
+      {
+        "name": "Azure Fabric",
+        "logoUrl": "https://cdn.simpleicons.org/microsoftazure"
+      },
+      {
+        "name": "Snowflake",
+        "logoUrl": "https://cdn.simpleicons.org/snowflake"
+      },
+      {
+        "name": "GCP",
+        "logoUrl": "https://cdn.simpleicons.org/googlecloud"
+      },
+      {
+        "name": "Power BI",
+        "logoUrl": "https://cdn.simpleicons.org/powerbi"
+      },
+      {
+        "name": "Tableau",
+        "logoUrl": "https://cdn.simpleicons.org/tableau"
+      },
+      {
+        "name": "Looker",
+        "logoUrl": "https://cdn.simpleicons.org/looker"
+      },
+      {
+        "name": "AWS",
+        "logoUrl": "https://cdn.simpleicons.org/amazonaws"
+      }
+    ],
+    "additionalTechStacks": [],
+    "allocationStartDate": "2026-10-22T00:00:00.000Z",
+    "requestedAllocationType": "FIXED",
+    "requestedAllocationPercentage": null,
+    "allocationSnapshot": {
+      "reason": "UPDATED",
+      "allocationType": "FIXED",
+      "allocationPercentage": null,
+      "allocationStartDate": "2026-10-22T00:00:00.000Z",
+      "allocationEndDate": "2026-10-31T00:00:00.000Z",
+      "typeOfWork": "DEVELOPMENT_WORK",
+      "previousAllocationPercentage": 10,
+      "previousAllocationStartDate": "2026-10-22T00:00:00.000Z",
+      "previousAllocationEndDate": "2026-12-31T00:00:00.000Z",
+      "createdAt": "2026-10-21T06:55:53.703Z"
+    },
+    "allocationSnapshots": [
+      {
+        "reason": "UPDATED",
+        "allocationType": "FIXED",
+        "allocationPercentage": null,
+        "allocationStartDate": "2026-10-22T00:00:00.000Z",
+        "allocationEndDate": "2026-10-31T00:00:00.000Z",
+        "typeOfWork": "DEVELOPMENT_WORK",
+        "previousAllocationPercentage": 10,
+        "previousAllocationStartDate": "2026-10-22T00:00:00.000Z",
+        "previousAllocationEndDate": "2026-12-31T00:00:00.000Z",
+        "createdAt": "2026-10-21T06:55:53.703Z"
+      }
+    ],
+    "scheduledChanges": [
+      {
+        "publicId": "f9d8cd5d-9b72-4cbb-8ab5-1b457264b066",
+        "changeType": "ASSIGNMENT_DEALLOCATE",
+        "status": "PENDING",
+        "effectiveDate": "2026-11-01",
+        "overrideEndDate": null,
+        "allocationType": null,
+        "allocationPercentage": null,
+        "effectiveStartDate": null,
+        "effectiveEndDate": "2026-10-31",
+        "previousAllocationPercentage": 10
+      }
+    ],
+    "targetScheduledChangePublicId": null,
+    "supersededTicketPublicId": null,
+    "supersededTicketNumber": null,
+    "replacedAssignment": {
+      "publicId": "ef00c89f-2f4b-41bc-9f2f-6ba72e409c54",
+      "employee": {
+        "publicId": "f94d6cb2-e5b5-4c14-99d2-3fbd28a1cde9",
+        "name": "Kunal Menon",
+        "photoUrl": "https://i.pravatar.cc/150?u=kunal.menon@simformsolutions.com"
+      },
+      "project": {
+        "publicId": "3d138a89-4d06-4839-8091-436fba0a2dd6",
+        "name": "HyperScale | Scalability Engine"
+      },
+      "allocationPercentage": 10,
+      "allocationType": "FIXED",
+      "allocationStartDate": "2026-10-22T00:00:00.000Z",
+      "allocationEndDate": "2026-10-31T00:00:00.000Z",
+      "status": "GREEN",
+      "typeOfWork": "DEVELOPMENT_WORK",
+      "allocationOrigin": "PMO",
+      "shadowDeveloper": {
+        "publicId": "12e25516-2373-4925-9ecc-1732ca6f61b6",
+        "name": "Bhavesh Bansal",
+        "photoUrl": "https://i.pravatar.cc/150?u=bhavesh.bansal@simformsolutions.com"
+      }
+    },
+    "preferredEmployees": [],
+    "shortlistedEmployees": [],
+    "requester": {
+      "publicId": "09d434e9-5346-4790-8ae7-f5105e5b4968",
+      "name": "Priya Chopra",
+      "photoUrl": "https://i.pravatar.cc/150?u=priya.chopra@simformsolutions.com"
+    },
+    "createdAt": "2026-10-21T06:55:53.692Z",
+    "updatedAt": "2026-10-21T06:56:03.951Z",
+    "finalApprovalDate": "2026-10-21T06:56:03.962Z",
+    "statusSteps": [
+      {
+        "key": "SUBMITTED",
+        "title": "CSM submits request",
+        "description": "CSM submits a deallocation request",
+        "state": "COMPLETED",
+        "completedAt": "2026-10-21T06:55:53.692Z",
+        "performedBy": {
+          "publicId": "09d434e9-5346-4790-8ae7-f5105e5b4968",
+          "name": "Priya Chopra",
+          "photoUrl": "https://i.pravatar.cc/150?u=priya.chopra@simformsolutions.com"
+        }
+      },
+      {
+        "key": "PMO_REVIEWED",
+        "title": "PMO Review",
+        "description": "Pending PMO action",
+        "state": "COMPLETED",
+        "completedAt": "2026-10-21T06:55:53.692Z",
+        "performedBy": {
+          "publicId": "09d434e9-5346-4790-8ae7-f5105e5b4968",
+          "name": "Priya Chopra",
+          "photoUrl": "https://i.pravatar.cc/150?u=priya.chopra@simformsolutions.com"
+        }
+      },
+      {
+        "key": "ACKNOWLEDGED",
+        "title": "PMO Acknowledges",
+        "description": "Acknowledged by PMO",
+        "state": "COMPLETED",
+        "completedAt": "2026-10-21T06:56:03.962Z",
+        "performedBy": {
+          "publicId": "e93f5377-1f74-42cb-9a40-255908e50310",
+          "name": "Bhumi Chauhan",
+          "photoUrl": "https://i.pravatar.cc/150?u=bhumi.chauhan@simformsolutions.com"
+        }
+      },
+      {
+        "key": "NOTIFIED",
+        "title": "RM/TM/EM Notified",
+        "description": "Completed",
+        "state": "COMPLETED",
+        "completedAt": "2026-10-21T06:56:03.962Z",
+        "performedBy": {
+          "publicId": "e93f5377-1f74-42cb-9a40-255908e50310",
+          "name": "Bhumi Chauhan",
+          "photoUrl": "https://i.pravatar.cc/150?u=bhumi.chauhan@simformsolutions.com"
+        }
+      },
+      {
+        "key": "FINALIZED",
+        "title": "Employee Deallocated",
+        "description": "Completed",
+        "state": "COMPLETED",
+        "completedAt": "2026-10-21T06:56:03.962Z",
+        "performedBy": {
+          "publicId": "e93f5377-1f74-42cb-9a40-255908e50310",
+          "name": "Bhumi Chauhan",
+          "photoUrl": "https://i.pravatar.cc/150?u=bhumi.chauhan@simformsolutions.com"
+        }
+      }
+    ],
+    "approvals": {
+      "pmoApprovedBy": {
+        "publicId": "e93f5377-1f74-42cb-9a40-255908e50310",
+        "name": "Bhumi Chauhan",
+        "photoUrl": "https://i.pravatar.cc/150?u=bhumi.chauhan@simformsolutions.com"
+      },
+      "pmoApprovedAt": "2026-10-21T06:56:03.943Z"
+    },
+    "feedbacks": [
+      {
+        "developer": {
+          "publicId": "f94d6cb2-e5b5-4c14-99d2-3fbd28a1cde9",
+          "name": "Kunal Menon",
+          "photoUrl": "https://i.pravatar.cc/150?u=kunal.menon@simformsolutions.com"
+        },
+        "coreSkillRating": 7,
+        "communicationRating": 7,
+        "behavioralRating": 7,
+        "overallRating": 7,
+        "developerFeedback": "QA retest SI4-I483 2026-10-21: end shadow row before promotion",
+        "isOpenToWorkWithAgain": true,
+        "deallocationReason": "ROLE_MISALIGNMENT"
+      }
+    ],
+    "remarks": [
+      {
+        "publicId": "2e221b8a-8e70-4cf2-bb9a-b81c4e2b5813",
+        "action": "ACKNOWLEDGE",
+        "remarks": "QA retest SI4-I483",
+        "addedBy": {
+          "publicId": "e93f5377-1f74-42cb-9a40-255908e50310",
+          "name": "Bhumi Chauhan",
+          "photoUrl": "https://i.pravatar.cc/150?u=bhumi.chauhan@simformsolutions.com"
+        },
+        "createdAt": "2026-10-21T06:56:03.959Z"
+      }
+    ],
+    "targetAssignmentTimeline": [
+      {
+        "ticketPublicId": "81a264e6-aa91-4ca5-a22c-e3a83ba48e85",
+        "ticketNumber": "NA-0389",
+        "scheduledChangePublicId": null,
+        "effectiveFrom": "2026-10-22",
+        "effectiveTo": "2026-10-31",
+        "allocationType": "FIXED",
+        "allocationPercentage": 10,
+        "isCurrent": false,
+        "isPending": true,
+        "segmentType": "STANDING"
+      }
+    ],
+    "group": null
+  }
+}

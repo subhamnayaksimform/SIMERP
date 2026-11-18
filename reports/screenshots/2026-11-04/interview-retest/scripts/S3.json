@@ -1,0 +1,156 @@
+{
+ "opp": {
+  "publicId": "82a4f918-2c8b-4b1b-89fd-b8475360dee2",
+  "ticketNumber": "OPP-0349",
+  "title": "QA-AUTO E2E won+open b 04-11",
+  "clientType": "PROSPECT",
+  "requestType": "INTERVIEW",
+  "clientName": "QA-AUTO E2E Client",
+  "websiteUrl": null,
+  "linkedinUrl": null,
+  "prospectContact": null,
+  "prospectNotes": null,
+  "jobDescription": "<p>jd</p>",
+  "interviewerLinkedinUrl": null,
+  "specialInstructions": null,
+  "createdAt": "2026-11-04T06:12:13.794Z",
+  "updatedAt": "2026-11-04T06:12:13.794Z",
+  "assignedPm": null,
+  "assignedCsm": null,
+  "raisedBy": {
+   "publicId": "ed40fe03-4ede-45be-878a-4e02edf24851",
+   "name": "Vihaan Chatterjee",
+   "photoUrl": "https://i.pravatar.cc/150?u=vihaan.chatterjee@simformsolutions.com"
+  },
+  "updatedBy": null,
+  "status": "OPEN",
+  "project": null,
+  "viewerCanEdit": true,
+  "viewerCanCancel": false,
+  "viewerCanConfirmAllocation": false,
+  "priority": "MEDIUM",
+  "positions": [
+   {
+    "publicId": "2902390b-dc09-4166-b256-4ac623f9c2f2",
+    "displayId": "QA-WX-468",
+    "title": "WO X",
+    "requiredCount": 2,
+    "techStacks": [
+     "Java"
+    ],
+    "preferredSeniority": "MID",
+    "allocationType": "FIXED",
+    "allocationPercentage": 10,
+    "tentativeAllocationDate": "2027-01-11T00:00:00.000Z",
+    "tentativeAllocationEndDate": null,
+    "priority": "MEDIUM",
+    "isAllocationConfirmed": true,
+    "tentativeInterviewDate": null,
+    "roundTitles": [
+     "R1: Tech",
+     "R2: Practical"
+    ],
+    "note": null,
+    "reinitiatedAt": null,
+    "reinitiationCount": 0,
+    "reinitiatedBy": null,
+    "closedAt": null,
+    "closedReason": null,
+    "closedBy": null,
+    "departments": [
+     {
+      "publicId": "50d6a999-05dd-455f-8264-8e2d9308bb7d",
+      "name": "JAVA"
+     }
+    ],
+    "preferredEmployees": [],
+    "prepMaterials": [],
+    "checklistItems": [
+     {
+      "code": "JD_CLIENT_CONTEXT_REVIEWED",
+      "title": "JD & Client Context reviewed",
+      "description": "Read the attached JD and client website link"
+     },
+     {
+      "code": "SPECIAL_INSTRUCTIONS_ACKNOWLEDGED",
+      "title": "Special Instructions acknowledged",
+      "description": "Read the opportunity-level special instructions"
+     },
+     {
+      "code": "AI_MOCK_COMPLETED",
+      "title": "AI Mock completed",
+      "description": "Self-paced — no fixed date required"
+     },
+     {
+      "code": "MANUAL_MOCK_COMPLETED",
+      "title": "Manual Mock",
+      "description": "Mock interview with PMO or a peer"
+     },
+     {
+      "code": "OBS_SYSTEM_CHECK",
+      "title": "OBS & System check",
+      "description": "OBS set up; camera, mic, screen share and internet checked"
+     }
+    ],
+    "openings": [
+     {
+      "publicId": "9c03d4bc-3d0e-401a-9596-566fbaf0e389",
+      "ordinal": 1,
+      "seatId": "OPP-0349 #1",
+      "stage": "PENDING_TO_SHORTLIST",
+      "directStage": null,
+      "stageEnteredAt": "2026-11-04T06:12:13.794Z",
+      "createdAt": "2026-11-04T06:12:13.794Z",
+      "nominations": [],
+      "cancellation": null
+     },
+     {
+      "publicId": "59330a83-fca7-4e83-9a7f-9f5c4d989ab5",
+      "ordinal": 2,
+      "seatId": "OPP-0349 #2",
+      "stage": "PENDING_TO_SHORTLIST",
+      "directStage": null,
+      "stageEnteredAt": "2026-11-04T06:12:13.794Z",
+      "createdAt": "2026-11-04T06:12:13.794Z",
+      "nominations": [],
+      "cancellation": null
+     }
+    ],
+    "allowedActions": [
+     "CLOSE"
+    ],
+    "openingCount": 2,
+    "filledCount": 0,
+    "shortlistedCount": 0
+   }
+  ]
+ },
+ "PX": "2902390b-dc09-4166-b256-4ac623f9c2f2",
+ "T": "OPP-0349",
+ "c": [
+  {
+   "id": "b47ebe34-8dce-4ba6-8307-26a2239ea65c",
+   "name": "Neel Menon"
+  },
+  {
+   "id": "01e8b5d6-a188-4fa2-8364-8659869f7b7f",
+   "name": "Falgun Thakor"
+  },
+  {
+   "id": "95fff3d1-d23f-4d52-8d75-05568b763b18",
+   "name": "Ojas Pillai"
+  },
+  {
+   "id": "e8ad3757-a329-42a2-98b5-bc367687557c",
+   "name": "Hiral Contractor"
+  },
+  {
+   "id": "8c17a887-1454-4f0b-aefa-8a49519126fd",
+   "name": "Prachi Mistry"
+  },
+  {
+   "id": "4b5b79ca-6ff5-4ea5-bc97-fe65d3f56c57",
+   "name": "Hetvi Kotak"
+  }
+ ]
+}

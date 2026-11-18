@@ -1,0 +1,77 @@
+{
+  "results": [
+    {
+      "id": "rbac-buttons",
+      "ok": true,
+      "btns": [
+        "Toggle Sidebar|",
+        "Overview|",
+        "Employee|",
+        "Team|",
+        "Requests Tracking|",
+        "Projects|",
+        "Department|",
+        "Admin|",
+        "4 unread notifications|dialog",
+        "smit.shah@simformsolutions.com - User me|menu",
+        "Project Allocations|",
+        "Allocation Tickets|",
+        "Allocation Verification|",
+        "Assign Goals|",
+        "Assign Roles|",
+        "Certifications|",
+        "Contractors|",
+        "Departments|",
+        "Employee Activity|",
+        "Employee Ratings|",
+        "Employees|",
+        "Feature Flags|",
+        "Notifications|",
+        "Opportunities|",
+        "Pm Projects|",
+        "Profile|",
+        "Releases|",
+        "Roles|",
+        "Scheduler|",
+        "Teams|",
+        "Teams Webhook Config|",
+        "Up Scoring Config|",
+        "Utilization Priority|",
+        "Visa Information|",
+        "Weekly Updates|",
+        "Working Location|",
+        "Self|menu",
+        "Team|menu",
+        "Department|menu",
+        "All|menu",
+        "—|menu"
+      ],
+      "shot": "reports/screenshots/2026-10-28/hardik/sonar-fe/g01-rbac-toolbar.png",
+      "errs": []
+    },
+    {
+      "id": "rbac-add-role-dialog",
+      "ok": false,
+      "error": "locator.click: Timeout 8000ms exceeded.\nCall log:\n  - waiting for getByRole('button', { name: /add.*role|new role|create role/i }).first()\n",
+      "errs": []
+    },
+    {
+      "id": "rbac-duplicate-dialog",
+      "ok": true,
+      "note": "no role-column menu",
+      "n": 0,
+      "errs": []
+    },
+    {
+      "id": "aur-delete-dialog-cancel",
+      "ok": true,
+      "rowBtns": [
+        "Edit Chief Executive Officer",
+        "Show 37 more departments"
+      ],
+      "note": "no delete control in first row",
+      "errs": []
+    }
+  ],
+  "errs": []
+}

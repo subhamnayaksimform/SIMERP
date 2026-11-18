@@ -1,0 +1,2 @@
+const H=require('./h');
+(async()=>{ const b=await H.chromium.launch(); for(const u of ['neel.rathod','sudhansu.patel']){ const s=await H.login(b,u); const r=await H.api(s.page,'GET','/permissions/me'); const r2=r.status===200?r:await H.api(s.page,'GET','/auth/permissions'); console.log(u,r.status,r2.status,JSON.stringify(r2.body?.data?.scopeMap?.opportunities||r2.body).slice(0,400)); await s.ctx.close(); } await b.close(); })();

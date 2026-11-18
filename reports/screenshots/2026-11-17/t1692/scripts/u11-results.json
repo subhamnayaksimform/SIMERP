@@ -1,0 +1,8 @@
+[
+ {
+  "area": "4.alloc-edit",
+  "name": "UI: UA-0147 (clean allocation) edited back to Fixed (20%) in UI and saved",
+  "pass": true,
+  "detail": "{\"type\":\"FIXED\",\"pct\":20,\"st\":{\"msgs\":[],\"save\":true}}"
+ }
+]

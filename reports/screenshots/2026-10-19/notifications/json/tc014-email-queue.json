@@ -1,0 +1,47 @@
+{
+  "takenAt": "2026-10-19T11:12:00.899Z",
+  "out": {
+    "/sync-queue/jobs?dataType=NOTIFICATION_EMAIL": {
+      "status": 200,
+      "body": {
+        "code": "SUCCESS",
+        "message": "Sync jobs retrieved successfully",
+        "data": {
+          "items": [],
+          "total": 0,
+          "page": 1,
+          "limit": 100,
+          "totalPages": 0
+        }
+      }
+    },
+    "/sync-queue/jobs": {
+      "status": 200,
+      "body": {
+        "code": "SUCCESS",
+        "message": "Sync jobs retrieved successfully",
+        "data": {
+          "items": [],
+          "total": 0,
+          "page": 1,
+          "limit": 100,
+          "totalPages": 0
+        }
+      }
+    },
+    "/sync-queue/jobs?dataType=NOTIFICATION_EMAIL&page=1&limit=100": {
+      "status": 200,
+      "body": {
+        "code": "SUCCESS",
+        "message": "Sync jobs retrieved successfully",
+        "data": {
+          "items": [],
+          "total": 0,
+          "page": 1,
+          "limit": 100,
+          "totalPages": 0
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "before": "J3-before",
+  "after": "J3-after",
+  "beforeAt": "2026-10-19T11:30:04.713Z",
+  "afterAt": "2026-10-19T11:31:29.256Z",
+  "newByUser": {
+    "iti.chatterjee": [
+      {
+        "eventType": "allocation_ticket.allocation_cancelled",
+        "title": "Allocation Cancelled: ConfigHub | Configuration Management",
+        "body": "The upcoming allocation for Iti Chatterjee to ConfigHub | Configuration Management, due to start 2026-10-21, has been cancelled.",
+        "createdAt": "2026-10-19T11:31:25.167Z",
+        "ctx": {
+          "ticketPublicId": "c57310e3-4873-4c8d-a8ca-7196eb43c838"
+        }
+      }
+    ],
+    "jignesh.raval": [
+      {
+        "eventType": "allocation_ticket.allocation_cancelled",
+        "title": "Allocation Cancelled: ConfigHub | Configuration Management",
+        "body": "The upcoming allocation for Iti Chatterjee to ConfigHub | Configuration Management, due to start 2026-10-21, has been cancelled.",
+        "createdAt": "2026-10-19T11:31:25.167Z",
+        "ctx": {
+          "ticketPublicId": "c57310e3-4873-4c8d-a8ca-7196eb43c838"
+        }
+      }
+    ],
+    "hardik.trivedi": [
+      {
+        "eventType": "allocation_ticket.allocation_cancelled",
+        "title": "Allocation Cancelled: ConfigHub | Configuration Management",
+        "body": "The upcoming allocation for Iti Chatterjee to ConfigHub | Configuration Management, due to start 2026-10-21, has been cancelled.",
+        "createdAt": "2026-10-19T11:31:25.167Z",
+        "ctx": {
+          "ticketPublicId": "c57310e3-4873-4c8d-a8ca-7196eb43c838"
+        }
+      }
+    ],
+    "amit.patel": [
+      {
+        "eventType": "allocation_ticket.allocation_cancelled",
+        "title": "Allocation Cancelled: ConfigHub | Configuration Management",
+        "body": "The upcoming allocation for Iti Chatterjee to ConfigHub | Configuration Management, due to start 2026-10-21, has been cancelled.",
+        "createdAt": "2026-10-19T11:31:25.167Z",
+        "ctx": {
+          "ticketPublicId": "c57310e3-4873-4c8d-a8ca-7196eb43c838"
+        }
+      }
+    ],
+    "jinal.patel": [
+      {
+        "eventType": "allocation_ticket.allocation_cancelled",
+        "title": "Allocation Cancelled: ConfigHub | Configuration Management",
+        "body": "The upcoming allocation for Iti Chatterjee to ConfigHub | Configuration Management, due to start 2026-10-21, has been cancelled.",
+        "createdAt": "2026-10-19T11:31:25.167Z",
+        "ctx": {
+          "ticketPublicId": "c57310e3-4873-4c8d-a8ca-7196eb43c838"
+        }
+      }
+    ],
+    "cto": [
+      {
+        "eventType": "allocation_ticket.allocation_cancelled",
+        "title": "Allocation Cancelled: ConfigHub | Configuration Management",
+        "body": "The upcoming allocation for Iti Chatterjee to ConfigHub | Configuration Management, due to start 2026-10-21, has been cancelled.",
+        "createdAt": "2026-10-19T11:31:25.167Z",
+        "ctx": {
+          "ticketPublicId": "c57310e3-4873-4c8d-a8ca-7196eb43c838"
+        }
+      }
+    ],
+    "ceo": [],
+    "priya.chopra": []
+  }
+}

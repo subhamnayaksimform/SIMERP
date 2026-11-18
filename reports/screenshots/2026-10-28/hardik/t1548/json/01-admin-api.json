@@ -1,0 +1,1356 @@
+{
+  "url": "https://simerp-dev.simform.solutions/employee?sortBy=availabilityPercentage&sortOrder=desc",
+  "/releases": {
+    "status": 200,
+    "body": {
+      "code": "REL_001",
+      "message": "Release notes fetched successfully.",
+      "data": []
+    }
+  },
+  "/releases?includePlanned=true": {
+    "status": 200,
+    "body": {
+      "code": "REL_001",
+      "message": "Release notes fetched successfully.",
+      "data": []
+    }
+  },
+  "/releases?includePlanned=abc": {
+    "status": 400,
+    "body": {
+      "code": "VAL_001",
+      "message": "Validation failed",
+      "errors": [
+        {
+          "field": "includePlanned",
+          "message": "includePlanned must be a boolean value"
+        }
+      ]
+    }
+  },
+  "/sync-queue/cron-runs/summary": {
+    "status": 200,
+    "body": {
+      "code": "SUCCESS",
+      "message": "Cron job summary fetched successfully",
+      "data": [
+        {
+          "jobName": "zoho-sync-daily",
+          "cronExpression": "0 0 * * *",
+          "lastRun": null
+        },
+        {
+          "jobName": "zoho-projects-sync-every-3h",
+          "cronExpression": "0 */3 * * *",
+          "lastRun": null
+        },
+        {
+          "jobName": "stale-job-recovery",
+          "cronExpression": "*/5 * * * *",
+          "lastRun": null
+        },
+        {
+          "jobName": "sync-job-cleanup",
+          "cronExpression": "0 0 * * *",
+          "lastRun": null
+        },
+        {
+          "jobName": "visa-expiry-notify",
+          "cronExpression": "0 0 * * *",
+          "lastRun": null
+        },
+        {
+          "jobName": "certification-expiry-notify",
+          "cronExpression": "0 0 * * *",
+          "lastRun": null
+        },
+        {
+          "jobName": "certification-new-joiners-sync",
+          "cronExpression": "0 0 * * *",
+          "lastRun": null
+        },
+        {
+          "jobName": "allocation-effective-date",
+          "cronExpression": "5 0 * * *",
+          "lastRun": null
+        },
+        {
+          "jobName": "up-cycle-recompute",
+          "cronExpression": "0 0 * * 6",
+          "lastRun": null
+        },
+        {
+          "jobName": "allocation-verification",
+          "cronExpression": "0 2 * * 6",
+          "lastRun": null
+        },
+        {
+          "jobName": "direct-priority-recompute",
+          "cronExpression": "30 0 * * *",
+          "lastRun": null
+        },
+        {
+          "jobName": "lapsed-interview-stage",
+          "cronExpression": "5 0 * * *",
+          "lastRun": null
+        },
+        {
+          "jobName": "working-location-sync",
+          "cronExpression": "0 5 * * *",
+          "lastRun": null
+        },
+        {
+          "jobName": "release-announcement",
+          "cronExpression": "*/15 * * * *",
+          "lastRun": null
+        },
+        {
+          "jobName": "profile-reminders",
+          "cronExpression": "0 9 * * 1",
+          "lastRun": null
+        }
+      ]
+    }
+  },
+  "/sync-queue/cron-runs?jobName=release-announcement&limit=20": {
+    "status": 400,
+    "body": {
+      "code": "VAL_001",
+      "message": "Validation failed",
+      "errors": [
+        {
+          "field": "limit",
+          "message": "limit must be one of the following values: 100, 200, 300"
+        }
+      ]
+    }
+  },
+  "/shared/feature-flags": {
+    "status": 200,
+    "body": {
+      "code": "SUCCESS",
+      "message": "Feature flags retrieved successfully",
+      "data": [
+        {
+          "id": 13,
+          "key": "allocation-correction",
+          "enabled": true
+        },
+        {
+          "id": 20,
+          "key": "feature.allocationVerification.enabled",
+          "enabled": false
+        },
+        {
+          "id": 12,
+          "key": "feature.competencies.enabled",
+          "enabled": true
+        },
+        {
+          "id": 21,
+          "key": "feature.cron.allocation.effectiveDate.enabled",
+          "enabled": true
+        },
+        {
+          "id": 17,
+          "key": "feature.cron.allocation.verification.enabled",
+          "enabled": true
+        },
+        {
+          "id": 23,
+          "key": "feature.cron.certification.expiryNotify.enabled",
+          "enabled": true
+        },
+        {
+          "id": 24,
+          "key": "feature.cron.certification.newJoinersSync.enabled",
+          "enabled": true
+        },
+        {
+          "id": 3,
+          "key": "feature.cron.enabled",
+          "enabled": false
+        },
+        {
+          "id": 25,
+          "key": "feature.cron.opportunities.directPriority.enabled",
+          "enabled": true
+        },
+        {
+          "id": 26,
+          "key": "feature.cron.opportunities.lapsedInterview.enabled",
+          "enabled": true
+        },
+        {
+          "id": 28,
+          "key": "feature.cron.profile.reminders.enabled",
+          "enabled": false
+        },
+        {
+          "id": 27,
+          "key": "feature.cron.releaseAnnouncement.enabled",
+          "enabled": true
+        },
+        {
+          "id": 18,
+          "key": "feature.cron.up.cycleRecompute.enabled",
+          "enabled": false
+        },
+        {
+          "id": 16,
+          "key": "feature.cron.visa.expiryNotify.enabled",
+          "enabled": true
+        },
+        {
+          "id": 22,
+          "key": "feature.cron.workingLocation.sync.enabled",
+          "enabled": true
+        },
+        {
+          "id": 5,
+          "key": "feature.cron.zoho.employeeLeaves.enabled",
+          "enabled": false
+        },
+        {
+          "id": 2,
+          "key": "feature.cron.zoho.employeeLogs.enabled",
+          "enabled": false
+        },
+        {
+          "id": 6,
+          "key": "feature.cron.zoho.employeeMetadata.enabled",
+          "enabled": false
+        },
+        {
+          "id": 15,
+          "key": "feature.cron.zoho.employeePip.enabled",
+          "enabled": true
+        },
+        {
+          "id": 14,
+          "key": "feature.cron.zoho.projectMetadata.enabled",
+          "enabled": true
+        },
+        {
+          "id": 19,
+          "key": "feature.dashboard.enabled",
+          "enabled": true
+        },
+        {
+          "id": 8,
+          "key": "feature.employeeGoals.enabled",
+          "enabled": true
+        },
+        {
+          "id": 7,
+          "key": "feature.goals.enabled",
+          "enabled": true
+        },
+        {
+          "id": 1,
+          "key": "feature.rolesAndPermissions.enabled",
+          "enabled": true
+        },
+        {
+          "id": 9,
+          "key": "feature.skills.enabled",
+          "enabled": true
+        },
+        {
+          "id": 11,
+          "key": "feature.weeklyUpdateConfig.enabled",
+          "enabled": true
+        },
+        {
+          "id": 10,
+          "key": "feature.weeklyUpdate.enabled",
+          "enabled": true
+        }
+      ]
+    }
+  },
+  "/employees/permissions": {
+    "status": 200,
+    "body": {
+      "code": "SYS_003",
+      "message": "Operation completed successfully",
+      "data": {
+        "rules": [
+          [
+            "read",
+            "profile"
+          ],
+          [
+            "update",
+            "profile"
+          ],
+          [
+            "read",
+            "allocations"
+          ],
+          [
+            "read",
+            "skills"
+          ],
+          [
+            "update",
+            "skills"
+          ],
+          [
+            "read",
+            "employee_goals"
+          ],
+          [
+            "update",
+            "notifications"
+          ],
+          [
+            "read",
+            "notifications"
+          ],
+          [
+            "create",
+            "visa_information"
+          ],
+          [
+            "read",
+            "visa_information"
+          ],
+          [
+            "update",
+            "visa_information"
+          ],
+          [
+            "delete",
+            "visa_information"
+          ],
+          [
+            "read",
+            "allocation_verification"
+          ],
+          [
+            "export",
+            "dashboard"
+          ],
+          [
+            "read",
+            "dashboard"
+          ],
+          [
+            "read",
+            "feature_flags"
+          ],
+          [
+            "read",
+            "working_location"
+          ],
+          [
+            "read",
+            "certifications"
+          ],
+          [
+            "create",
+            "certifications"
+          ],
+          [
+            "read",
+            "opportunities"
+          ],
+          [
+            "prepare",
+            "opportunities"
+          ],
+          [
+            "update",
+            "certifications"
+          ],
+          [
+            "read",
+            "releases"
+          ],
+          [
+            "create",
+            "projects"
+          ],
+          [
+            "update",
+            "projects"
+          ],
+          [
+            "delete",
+            "projects"
+          ],
+          [
+            "create",
+            "project_integrations"
+          ],
+          [
+            "read",
+            "project_integrations"
+          ],
+          [
+            "update",
+            "project_integrations"
+          ],
+          [
+            "delete",
+            "project_integrations"
+          ],
+          [
+            "create",
+            "employees"
+          ],
+          [
+            "read",
+            "projects",
+            0,
+            0,
+            "accountGrade,description"
+          ],
+          [
+            "read",
+            "dashboard"
+          ],
+          [
+            "create",
+            "teams"
+          ],
+          [
+            "read",
+            "teams"
+          ],
+          [
+            "update",
+            "teams"
+          ],
+          [
+            "read",
+            "logged_hours"
+          ],
+          [
+            "create",
+            "upcoming_joiners"
+          ],
+          [
+            "read",
+            "upcoming_joiners"
+          ],
+          [
+            "update",
+            "upcoming_joiners"
+          ],
+          [
+            "delete",
+            "upcoming_joiners"
+          ],
+          [
+            "read",
+            "roles"
+          ],
+          [
+            "read",
+            "departments"
+          ],
+          [
+            "update",
+            "departments"
+          ],
+          [
+            "create",
+            "departments"
+          ],
+          [
+            "delete",
+            "departments"
+          ],
+          [
+            "create",
+            "assign_roles"
+          ],
+          [
+            "read",
+            "assign_roles"
+          ],
+          [
+            "update",
+            "assign_roles"
+          ],
+          [
+            "read",
+            "profile"
+          ],
+          [
+            "update",
+            "profile"
+          ],
+          [
+            "create",
+            "allocations"
+          ],
+          [
+            "read",
+            "allocations"
+          ],
+          [
+            "update",
+            "allocations"
+          ],
+          [
+            "read",
+            "weekly_updates"
+          ],
+          [
+            "create",
+            "skills"
+          ],
+          [
+            "create",
+            "goals"
+          ],
+          [
+            "create",
+            "competencies"
+          ],
+          [
+            "read",
+            "competencies"
+          ],
+          [
+            "update",
+            "competencies"
+          ],
+          [
+            "delete",
+            "competencies"
+          ],
+          [
+            "read",
+            "skills"
+          ],
+          [
+            "update",
+            "skills"
+          ],
+          [
+            "delete",
+            "skills"
+          ],
+          [
+            "update",
+            "employees",
+            0,
+            0,
+            "teamId,overallRating,aiRating,communicationRating,departmentId"
+          ],
+          [
+            "create",
+            "employee_goals"
+          ],
+          [
+            "read",
+            "employee_goals"
+          ],
+          [
+            "update",
+            "employee_goals"
+          ],
+          [
+            "create",
+            "tech_stack"
+          ],
+          [
+            "read",
+            "tech_stack"
+          ],
+          [
+            "update",
+            "tech_stack"
+          ],
+          [
+            "assign_rm",
+            "employees"
+          ],
+          [
+            "read",
+            "scheduler"
+          ],
+          [
+            "delete",
+            "allocations"
+          ],
+          [
+            "read",
+            "goals"
+          ],
+          [
+            "update",
+            "goals"
+          ],
+          [
+            "delete",
+            "goals"
+          ],
+          [
+            "update",
+            "assign_goals"
+          ],
+          [
+            "read",
+            "employees",
+            0,
+            0,
+            "teamId,overallRating,aiRating,communicationRating,departmentId"
+          ],
+          [
+            "delete",
+            "weekly_updates"
+          ],
+          [
+            "update",
+            "department_settings"
+          ],
+          [
+            "read",
+            "department_settings"
+          ],
+          [
+            "create",
+            "department_settings"
+          ],
+          [
+            "delete",
+            "department_settings"
+          ],
+          [
+            "delete",
+            "employee_goals"
+          ],
+          [
+            "read",
+            "notifications"
+          ],
+          [
+            "update",
+            "notifications"
+          ],
+          [
+            "read",
+            "contractors"
+          ],
+          [
+            "delete",
+            "tech_stack"
+          ],
+          [
+            "update",
+            "contractors"
+          ],
+          [
+            "bypass_approval",
+            "allocation_tickets"
+          ],
+          [
+            "create_direct",
+            "allocations"
+          ],
+          [
+            "delete_direct",
+            "allocations"
+          ],
+          [
+            "deallocate",
+            "allocations"
+          ],
+          [
+            "close",
+            "allocation_tickets"
+          ],
+          [
+            "reject",
+            "allocation_tickets"
+          ],
+          [
+            "approve",
+            "allocation_tickets"
+          ],
+          [
+            "read",
+            "allocation_tickets",
+            0,
+            0,
+            "departmentId"
+          ],
+          [
+            "update",
+            "allocation_tickets",
+            0,
+            0,
+            "departmentId"
+          ],
+          [
+            "advance",
+            "allocation_tickets"
+          ],
+          [
+            "acknowledge",
+            "allocation_tickets"
+          ],
+          [
+            "create",
+            "visa_information"
+          ],
+          [
+            "read",
+            "visa_information"
+          ],
+          [
+            "update",
+            "visa_information"
+          ],
+          [
+            "delete",
+            "visa_information"
+          ],
+          [
+            "update_direct",
+            "allocations"
+          ],
+          [
+            "create",
+            "teams_webhook_config"
+          ],
+          [
+            "read",
+            "teams_webhook_config"
+          ],
+          [
+            "update",
+            "teams_webhook_config"
+          ],
+          [
+            "delete",
+            "teams_webhook_config"
+          ],
+          [
+            "impersonate",
+            "employees"
+          ],
+          [
+            "update_allocation_ticket",
+            "allocation_tickets"
+          ],
+          [
+            "update",
+            "allocation_verification"
+          ],
+          [
+            "read",
+            "allocation_verification"
+          ],
+          [
+            "export",
+            "dashboard"
+          ],
+          [
+            "read",
+            "up_scoring_config"
+          ],
+          [
+            "update",
+            "up_scoring_config"
+          ],
+          [
+            "delete",
+            "up_scoring_config"
+          ],
+          [
+            "read",
+            "utilization_priority"
+          ],
+          [
+            "set_manual_priority",
+            "utilization_priority"
+          ],
+          [
+            "read",
+            "feature_flags"
+          ],
+          [
+            "update",
+            "feature_flags"
+          ],
+          [
+            "update",
+            "employee_ratings"
+          ],
+          [
+            "read",
+            "employee_ratings"
+          ],
+          [
+            "view_overview",
+            "working_location"
+          ],
+          [
+            "read",
+            "working_location"
+          ],
+          [
+            "program_owner_delete",
+            "certifications"
+          ],
+          [
+            "program_owner_edit",
+            "certifications"
+          ],
+          [
+            "program_owner_add",
+            "certifications"
+          ],
+          [
+            "delete",
+            "certifications"
+          ],
+          [
+            "update",
+            "certifications"
+          ],
+          [
+            "create",
+            "certifications"
+          ],
+          [
+            "read",
+            "certifications"
+          ],
+          [
+            "create_partnership",
+            "certifications"
+          ],
+          [
+            "manage_new_joiners",
+            "certifications"
+          ],
+          [
+            "impersonate_admin",
+            "employees"
+          ],
+          [
+            "read",
+            "opportunities"
+          ],
+          [
+            "view_board",
+            "opportunities"
+          ],
+          [
+            "assign_owner",
+            "allocation_tickets"
+          ],
+          [
+            "read",
+            "releases"
+          ],
+          [
+            "view_all",
+            "releases"
+          ],
+          [
+            "create",
+            "projects",
+            0,
+            1,
+            "accountGrade,description"
+          ],
+          [
+            "update",
+            "projects",
+            0,
+            1,
+            "accountGrade,description"
+          ],
+          [
+            "delete",
+            "projects",
+            0,
+            1,
+            "accountGrade,description"
+          ],
+          [
+            "create",
+            "employees",
+            0,
+            1,
+            "departmentId,teamId,overallRating,aiRating,communicationRating"
+          ],
+          [
+            "assign_rm",
+            "employees",
+            0,
+            1,
+            "departmentId,teamId,overallRating,aiRating,communicationRating"
+          ],
+          [
+            "bypass_approval",
+            "allocation_tickets",
+            0,
+            1,
+            "departmentId"
+          ],
+          [
+            "close",
+            "allocation_tickets",
+            0,
+            1,
+            "departmentId"
+          ],
+          [
+            "reject",
+            "allocation_tickets",
+            0,
+            1,
+            "departmentId"
+          ],
+          [
+            "approve",
+            "allocation_tickets",
+            0,
+            1,
+            "departmentId"
+          ],
+          [
+            "advance",
+            "allocation_tickets",
+            0,
+            1,
+            "departmentId"
+          ],
+          [
+            "acknowledge",
+            "allocation_tickets",
+            0,
+            1,
+            "departmentId"
+          ],
+          [
+            "impersonate",
+            "employees",
+            0,
+            1,
+            "teamId,departmentId,overallRating,aiRating,communicationRating"
+          ],
+          [
+            "update_allocation_ticket",
+            "allocation_tickets",
+            0,
+            1,
+            "departmentId"
+          ],
+          [
+            "impersonate_admin",
+            "employees",
+            0,
+            1,
+            "teamId,departmentId,overallRating,aiRating,communicationRating"
+          ],
+          [
+            "assign_owner",
+            "allocation_tickets",
+            0,
+            1,
+            "departmentId"
+          ]
+        ],
+        "scopeMap": {
+          "allocations": {
+            "read": [
+              "SELF",
+              "ALL"
+            ],
+            "create": [
+              "ALL"
+            ],
+            "update": [
+              "ALL"
+            ],
+            "delete": [
+              "ALL"
+            ],
+            "create_direct": [
+              "ALL"
+            ],
+            "delete_direct": [
+              "ALL"
+            ],
+            "deallocate": [
+              "ALL"
+            ],
+            "update_direct": [
+              "ALL"
+            ]
+          },
+          "skills": {
+            "read": [
+              "SELF",
+              "ALL"
+            ],
+            "update": [
+              "SELF",
+              "ALL"
+            ],
+            "create": [
+              "ALL"
+            ],
+            "delete": [
+              "ALL"
+            ]
+          },
+          "employee_goals": {
+            "read": [
+              "SELF",
+              "ALL"
+            ],
+            "create": [
+              "ALL"
+            ],
+            "update": [
+              "ALL"
+            ],
+            "delete": [
+              "ALL"
+            ]
+          },
+          "notifications": {
+            "update": [
+              "ALL"
+            ],
+            "read": [
+              "ALL"
+            ]
+          },
+          "visa_information": {
+            "create": [
+              "SELF",
+              "ALL"
+            ],
+            "read": [
+              "SELF",
+              "ALL"
+            ],
+            "update": [
+              "SELF",
+              "ALL"
+            ],
+            "delete": [
+              "SELF",
+              "ALL"
+            ]
+          },
+          "allocation_verification": {
+            "read": [
+              "SELF",
+              "ALL"
+            ],
+            "update": [
+              "ALL"
+            ]
+          },
+          "dashboard": {
+            "export": [
+              "SELF",
+              "ALL"
+            ],
+            "read": [
+              "SELF",
+              "ALL"
+            ]
+          },
+          "feature_flags": {
+            "read": [
+              "ALL"
+            ],
+            "update": [
+              "ALL"
+            ]
+          },
+          "working_location": {
+            "read": [
+              "SELF",
+              "ALL"
+            ],
+            "view_overview": [
+              "ALL"
+            ]
+          },
+          "certifications": {
+            "read": [
+              "SELF",
+              "ALL"
+            ],
+            "create": [
+              "SELF",
+              "ALL"
+            ],
+            "update": [
+              "SELF",
+              "ALL"
+            ],
+            "program_owner_delete": [
+              "ALL"
+            ],
+            "program_owner_edit": [
+              "ALL"
+            ],
+            "program_owner_add": [
+              "ALL"
+            ],
+            "delete": [
+              "ALL"
+            ],
+            "create_partnership": [
+              "ALL"
+            ],
+            "manage_new_joiners": [
+              "ALL"
+            ]
+          },
+          "opportunities": {
+            "read": [
+              "SELF",
+              "ALL"
+            ],
+            "prepare": [
+              "SELF"
+            ],
+            "view_board": [
+              "ALL"
+            ]
+          },
+          "releases": {
+            "read": [
+              "ALL"
+            ],
+            "view_all": [
+              "ALL"
+            ]
+          },
+          "projects": {
+            "create": [
+              "ALL"
+            ],
+            "update": [
+              "ALL"
+            ],
+            "delete": [
+              "ALL"
+            ],
+            "read": [
+              "ALL"
+            ]
+          },
+          "employees": {
+            "create": [
+              "ALL"
+            ],
+            "update": [
+              "ALL"
+            ],
+            "assign_rm": [
+              "ALL"
+            ],
+            "read": [
+              "ALL"
+            ],
+            "impersonate": [
+              "ALL"
+            ],
+            "impersonate_admin": [
+              "ALL"
+            ]
+          },
+          "teams": {
+            "create": [
+              "ALL"
+            ],
+            "read": [
+              "ALL"
+            ],
+            "update": [
+              "ALL"
+            ]
+          },
+          "departments": {
+            "read": [
+              "ALL"
+            ],
+            "update": [
+              "ALL"
+            ],
+            "create": [
+              "ALL"
+            ],
+            "delete": [
+              "ALL"
+            ]
+          },
+          "weekly_updates": {
+            "read": [
+              "ALL"
+            ],
+            "delete": [
+              "ALL"
+            ]
+          },
+          "goals": {
+            "create": [
+              "ALL"
+            ],
+            "read": [
+              "ALL"
+            ],
+            "update": [
+              "ALL"
+            ],
+            "delete": [
+              "ALL"
+            ]
+          },
+          "competencies": {
+            "create": [
+              "ALL"
+            ],
+            "read": [
+              "ALL"
+            ],
+            "update": [
+              "ALL"
+            ],
+            "delete": [
+              "ALL"
+            ]
+          },
+          "tech_stack": {
+            "create": [
+              "ALL"
+            ],
+            "read": [
+              "ALL"
+            ],
+            "update": [
+              "ALL"
+            ],
+            "delete": [
+              "ALL"
+            ]
+          },
+          "scheduler": {
+            "read": [
+              "ALL"
+            ]
+          },
+          "assign_goals": {
+            "update": [
+              "ALL"
+            ]
+          },
+          "department_settings": {
+            "update": [
+              "ALL"
+            ],
+            "read": [
+              "ALL"
+            ],
+            "create": [
+              "ALL"
+            ],
+            "delete": [
+              "ALL"
+            ]
+          },
+          "contractors": {
+            "read": [
+              "ALL"
+            ],
+            "update": [
+              "ALL"
+            ]
+          },
+          "allocation_tickets": {
+            "bypass_approval": [
+              "ALL"
+            ],
+            "close": [
+              "ALL"
+            ],
+            "reject": [
+              "ALL"
+            ],
+            "approve": [
+              "ALL"
+            ],
+            "read": [
+              "ALL"
+            ],
+            "update": [
+              "ALL"
+            ],
+            "advance": [
+              "ALL"
+            ],
+            "acknowledge": [
+              "ALL"
+            ],
+            "update_allocation_ticket": [
+              "ALL"
+            ],
+            "assign_owner": [
+              "ALL"
+            ]
+          },
+          "teams_webhook_config": {
+            "create": [
+              "ALL"
+            ],
+            "read": [
+              "ALL"
+            ],
+            "update": [
+              "ALL"
+            ],
+            "delete": [
+              "ALL"
+            ]
+          },
+          "up_scoring_config": {
+            "read": [
+              "ALL"
+            ],
+            "update": [
+              "ALL"
+            ],
+            "delete": [
+              "ALL"
+            ]
+          },
+          "utilization_priority": {
+            "read": [
+              "ALL"
+            ],
+            "set_manual_priority": [
+              "ALL"
+            ]
+          },
+          "employee_ratings": {
+            "update": [
+              "ALL"
+            ],
+            "read": [
+              "ALL"
+            ]
+          }
+        }
+      }
+    }
+  }
+}

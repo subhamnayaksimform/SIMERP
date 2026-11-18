@@ -1,0 +1,14 @@
+[
+  {
+    "key": "dash:iconUrls",
+    "pass": "info",
+    "actual": "departments=0 withIcon=0 malformed=0 sample=undefined",
+    "ms": 1048
+  },
+  {
+    "key": "notif:humanizedText",
+    "pass": true,
+    "actual": "postDeployNotifications=122 withRawEnumToken=0  sample=Manish Bose was selected for 'Java Developer' on OPP-0322 — proceed to Project Association. | Gunjan Rawat was rejected for 'Java Developer' on OPP-0322 — the slot is open again. Reason: Needed on a release this month",
+    "ms": 882
+  }
+]

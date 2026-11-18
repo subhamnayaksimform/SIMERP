@@ -1,0 +1,53 @@
+{
+  "promo-send": {
+    "status": 200,
+    "body": {
+      "code": "SUCCESS",
+      "message": "Allocation ticket updated successfully",
+      "data": {
+        "publicId": "77f55860-3c96-41a2-b78d-bb7f3409a527",
+        "ticketNumber": "NA-0422",
+        "status": "AWAITING_CONFIRMATION",
+        "warnings": []
+      }
+    }
+  },
+  "promo-tm-approve": {
+    "status": 200,
+    "body": {
+      "code": "SUCCESS",
+      "message": "Ticket approved",
+      "data": {
+        "publicId": "77f55860-3c96-41a2-b78d-bb7f3409a527",
+        "ticketNumber": "NA-0422",
+        "status": "APPROVED"
+      }
+    }
+  },
+  "ns-send": {
+    "status": 200,
+    "body": {
+      "code": "SUCCESS",
+      "message": "Allocation ticket updated successfully",
+      "data": {
+        "publicId": "44b28e2e-38eb-4efc-8270-67b47700d79a",
+        "ticketNumber": "NA-0423",
+        "status": "AWAITING_CONFIRMATION",
+        "warnings": []
+      }
+    }
+  },
+  "ns-bypass": {
+    "status": 200,
+    "body": {
+      "code": "SUCCESS",
+      "message": "TM/EM approval bypassed; ticket approved and applied",
+      "data": {
+        "publicId": "44b28e2e-38eb-4efc-8270-67b47700d79a",
+        "ticketNumber": "NA-0423",
+        "status": "APPROVED",
+        "warnings": []
+      }
+    }
+  }
+}

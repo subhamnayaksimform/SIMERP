@@ -1,0 +1,331 @@
+{
+  "results": [
+    {
+      "id": "emp-list-load",
+      "ok": true,
+      "rows": 22,
+      "out": [
+        "Showing 1 - 100 of 3648 results",
+        "Showing 3648 results"
+      ],
+      "url": "https://simerp-dev.simform.solutions/employee?sortBy=availabilityPercentage&sortOrder=desc",
+      "bad": [],
+      "shot": "reports/screenshots/2026-10-28/hardik/sonar-fe/p01-employee-list.png",
+      "errs": []
+    },
+    {
+      "id": "emp-sort-cycle",
+      "ok": true,
+      "labels": [
+        "Sort ascending@Name",
+        "Sort ascending@Department",
+        "Sort ascending@UP (System)",
+        "Sort ascending@UP (Manual)",
+        "Clear sort@Availability %",
+        "Sort ascending@Remaining Allocation"
+      ],
+      "th": "Name",
+      "seq": [
+        {
+          "sortBy": "name",
+          "sortOrder": "asc",
+          "aria": "Sort descending"
+        },
+        {
+          "sortBy": "name",
+          "sortOrder": "desc",
+          "aria": "Clear sort"
+        },
+        {
+          "sortBy": null,
+          "sortOrder": null,
+          "aria": "Sort ascending"
+        }
+      ],
+      "shot": "reports/screenshots/2026-10-28/hardik/sonar-fe/p02-employee-sort.png",
+      "errs": [
+        {
+          "type": "error",
+          "url": "https://simerp-dev.simform.solutions/employee",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "error",
+          "url": "https://simerp-dev.simform.solutions/employee",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        }
+      ]
+    },
+    {
+      "id": "emp-search-page",
+      "ok": true,
+      "u1": "https://simerp-dev.simform.solutions/employee",
+      "out1": [
+        "Showing 1 - 100 of 3648 results",
+        "Showing 3648 results"
+      ],
+      "u2": "https://simerp-dev.simform.solutions/employee?page=2",
+      "out2": [
+        "Showing 101 - 200 of 3648 results",
+        "Showing 3648 results"
+      ],
+      "u3": "https://simerp-dev.simform.solutions/employee?page=2",
+      "shot": "reports/screenshots/2026-10-28/hardik/sonar-fe/p03-employee-search-page.png",
+      "errs": []
+    },
+    {
+      "id": "emp-adv-filter",
+      "ok": true,
+      "vis": true,
+      "txt": "DepartmentADMINANDROIDBIBLOCKCHAINCMSCSMDATA ENGINEERINGDELIVERYDESIGNDEVOPSDOT NETENGINEERING MANAGEMENTFLUTTERFRONT ENDGOLANGIOSIOTJAVAL1 SUPPORTLAB & INNOVATIONSMACHINE LEARNINGMANAGEMENTMARKETINGMEAN STACKMERNMS AI BUSINESS SOLUTIONSOPEN SOURCEPOST-SALES BAPRE-SALES BAPROJECT MANAGEMENTPROJECT M",
+      "res": [],
+      "u": "https://simerp-dev.simform.solutions/employee?page=2",
+      "uAfterClear": "https://simerp-dev.simform.solutions/employee?page=2",
+      "shot": "reports/screenshots/2026-10-28/hardik/sonar-fe/p04-employee-adv-filter.png",
+      "shot2": "reports/screenshots/2026-10-28/hardik/sonar-fe/p04b-employee-adv-filter-applied.png",
+      "errs": []
+    },
+    {
+      "id": "emp-projects-popover",
+      "ok": true,
+      "info": [
+        {
+          "t": "",
+          "btn": 1,
+          "nested": 0
+        },
+        {
+          "t": "Rajesh GargNot specified13y 3m",
+          "btn": 1,
+          "nested": 0
+        },
+        {
+          "t": "POST-SALES BA",
+          "btn": 0,
+          "nested": 0
+        },
+        {
+          "t": "P1 · Red",
+          "btn": 1,
+          "nested": 0
+        },
+        {
+          "t": "Not set",
+          "btn": 1,
+          "nested": 0
+        },
+        {
+          "t": "Ontime[29]Unassigned[29]L&D[29",
+          "btn": 7,
+          "nested": 0
+        },
+        {
+          "t": "88h",
+          "btn": 0,
+          "nested": 0
+        },
+        {
+          "t": "100%",
+          "btn": 0,
+          "nested": 0
+        },
+        {
+          "t": "100% Remaining of 100%",
+          "btn": 1,
+          "nested": 0
+        },
+        {
+          "t": "NONENONE",
+          "btn": 0,
+          "nested": 0
+        },
+        {
+          "t": "SQLTableauScrumSQLTableau+1",
+          "btn": 1,
+          "nested": 0
+        },
+        {
+          "t": "Not specified",
+          "btn": 0,
+          "nested": 0
+        },
+        {
+          "t": "",
+          "btn": 0,
+          "nested": 0
+        }
+      ],
+      "nestedAll": 0,
+      "errs": []
+    },
+    {
+      "id": "emp-up-pill-keyboard",
+      "ok": true,
+      "focused": "BUTTON:P1 · Red",
+      "tip": [
+        "How Value Score is CalculatedEffective Availability: 100 × 50% = 50Rating: 78 × 30% = 23.4Seniority: 0 × 20% = 0Final Value Score = 73.4 → P1"
+      ],
+      "shot": "reports/screenshots/2026-10-28/hardik/sonar-fe/p05-up-pill-tooltip.png",
+      "errs": []
+    },
+    {
+      "id": "emp-project-badge-click",
+      "ok": true,
+      "idx": 5,
+      "cells": [
+        {
+          "t": "Ontime[29]Unassigned[29]L&D[29]Ontime[29]Unassigne",
+          "btns": [
+            "Ontime",
+            "Unassigned",
+            "L&D",
+            "Ontime",
+            "Unassigned",
+            "L&D",
+            "Project actions"
+          ]
+        },
+        {
+          "t": "1L&D[30]Ontime[29]Unassigned[29]L&D[30]Ontime[29]U",
+          "btns": [
+            "Developers shadowing this empl",
+            "L&D",
+            "Ontime",
+            "Unassigned",
+            "L&D",
+            "Ontime",
+            "Unassigned",
+            "Project actions"
+          ]
+        },
+        {
+          "t": "Ontime[29]Unassigned[29]L&D[29]VibeCheck[10]Ontime",
+          "btns": [
+            "Ontime",
+            "Unassigned",
+            "L&D",
+            "VibeCheck",
+            "Ontime",
+            "Unassigned",
+            "L&D",
+            "+1",
+            "Project actions"
+          ]
+        },
+        {
+          "t": "L&D[21]Ontime[21]Unassigned[21]FaultTolerant | Res",
+          "btns": [
+            "L&D",
+            "Ontime",
+            "Unassigned",
+            "FaultTolerant | Resilience Pla",
+            "VectorDB",
+            "L&D",
+            "Ontime",
+            "Unassigned",
+            "+2",
+            "Project actions"
+          ]
+        },
+        {
+          "t": "L&D[30]Ontime[29]Unassigned[29]ZenPatch[8]L&D[30]O",
+          "btns": [
+            "L&D",
+            "Ontime",
+            "Unassigned",
+            "ZenPatch",
+            "L&D",
+            "Ontime",
+            "Unassigned",
+            "+1",
+            "Project actions"
+          ]
+        },
+        {
+          "t": "Unassigned[30]L&D[29]Ontime[29]PinPoint[11]Unassig",
+          "btns": [
+            "Unassigned",
+            "L&D",
+            "Ontime",
+            "PinPoint",
+            "Unassigned",
+            "L&D",
+            "Ontime",
+            "+1",
+            "Project actions"
+          ]
+        },
+        {
+          "t": "Unassigned[30]Ontime[30]L&D[29]JetPack[12]Unassign",
+          "btns": [
+            "Unassigned",
+            "Ontime",
+            "L&D",
+            "JetPack",
+            "Unassigned",
+            "Ontime",
+            "L&D",
+            "+1",
+            "Project actions"
+          ]
+        },
+        {
+          "t": "1Ontime[30]Unassigned[29]L&D[29]HelpBot | Support ",
+          "btns": [
+            "Developers shadowing this empl",
+            "Ontime",
+            "Unassigned",
+            "L&D",
+            "HelpBot | Support Automation",
+            "CloudNest",
+            "Ontime",
+            "Unassigned",
+            "+3",
+            "Project actions"
+          ]
+        },
+        {
+          "t": "Unassigned[30]L&D[29]Ontime[29]GlobeSight | Global",
+          "btns": [
+            "Unassigned",
+            "L&D",
+            "Ontime",
+            "GlobeSight | Global Analytics",
+            "ProxyShield2",
+            "XenoBridge | Protocol Adapter",
+            "Unassigned",
+            "L&D",
+            "Ontime",
+            "+3",
+            "Project actions"
+          ]
+        },
+        {
+          "t": "Unassigned[30]Ontime[29]L&D[29]Unassigned[30]Ontim",
+          "btns": [
+            "Unassigned",
+            "Ontime",
+            "L&D",
+            "Unassigned",
+            "Ontime",
+            "L&D",
+            "Project actions"
+          ]
+        }
+      ],
+      "errs": []
+    }
+  ],
+  "errs": [
+    {
+      "type": "error",
+      "url": "https://simerp-dev.simform.solutions/employee",
+      "text": "Failed to load resource: the server responded with a status of 404 ()"
+    },
+    {
+      "type": "error",
+      "url": "https://simerp-dev.simform.solutions/employee",
+      "text": "Failed to load resource: the server responded with a status of 404 ()"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "actor": "ravi.vyas",
+  "T0": "2026-10-20T12:56:21.761Z",
+  "T1": "2026-10-20T12:56:22.764Z",
+  "method": "POST",
+  "path": "/allocation-tickets/remove-allocation",
+  "req": {
+    "projectAssignmentPublicId": "3870e221-a711-4c9d-ad3f-a65b02111cb2",
+    "allocationEndDate": "2026-10-20",
+    "deallocationReason": "OTHERS",
+    "deallocationReasonNote": "QA test cleanup (SI4-T1527 retest 2026-10-20 evening)"
+  },
+  "res": {
+    "status": 201,
+    "body": {
+      "code": "ALLOCATION_TICKET_097",
+      "message": "Deallocation ticket created successfully",
+      "data": {
+        "outcome": "TICKET_CREATED",
+        "publicId": "6b29258b-3470-4061-bd44-e867a62e4f4a",
+        "ticketNumber": "DA-0117",
+        "ticketType": "DEALLOCATE_ALLOCATION",
+        "status": "AWAITING_CONFIRMATION"
+      }
+    }
+  }
+}

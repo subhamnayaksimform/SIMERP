@@ -1,0 +1,44 @@
+[
+ {
+  "area": "I625",
+  "name": "employee list shows a pill and +N (not only +N)",
+  "pass": false,
+  "detail": "-"
+ },
+ {
+  "area": "I626",
+  "name": "Released rows visible on detail",
+  "pass": true,
+  "detail": "2"
+ },
+ {
+  "area": "I628",
+  "name": "Project Allocated seat stays in its column",
+  "pass": true,
+  "detail": "{\"PENDING_TO_SHORTLIST\":0,\"SHORTLISTED\":0,\"WAITING_FOR_APPROVAL\":0,\"BEING_PREPARED\":0,\"INTERVIEW_SCHEDULED\":0,\"DID_INTERVIEW_HAPPEN\":0,\"WAITING_FOR_FEEDBACK\":0,\"WON\":0,\"PROJECT_ALLOCATED\":1,\"REJECTED\":0,\"LOST\":0,\"ON_HOLD\":0,\"NO_LONGER_REQUIRED\":1}"
+ },
+ {
+  "area": "I630",
+  "name": "filled<=required",
+  "pass": true,
+  "detail": "{\"shortlistedCount\":1,\"rejectedCount\":0,\"filledCount\":1,\"requiredCount\":1}"
+ },
+ {
+  "area": "I629",
+  "name": "client rejection still flagged",
+  "pass": true,
+  "detail": "1"
+ },
+ {
+  "area": "I629",
+  "name": "no non-client role in clientRejection",
+  "pass": true,
+  "detail": "[]"
+ },
+ {
+  "area": "I631",
+  "name": "Admin allowed to close (400 validation, not 403)",
+  "pass": true,
+  "detail": "[400,\"VAL_001\"]"
+ }
+]

@@ -1,0 +1,194 @@
+{
+  "code": "SUCCESS",
+  "message": "Allocation ticket details retrieved successfully",
+  "data": {
+    "publicId": "4962972f-67af-4c71-a373-6c9ad234ac74",
+    "ticketNumber": "NA-0362",
+    "ticketType": "NEW_ALLOCATION",
+    "intent": null,
+    "status": "OPEN",
+    "priority": "HIGH",
+    "requestType": "FRESH_ALLOCATION",
+    "allocationRequestCreationType": null,
+    "deptStack": {
+      "publicId": "d1b08b1f-d08f-4403-ae96-b7df6abbb979",
+      "stack": "Performance",
+      "iconUrl": "https://cdn.simpleicons.org/apachejmeter",
+      "department": {
+        "publicId": "c868f1aa-6bc1-430c-b26a-11222919627f",
+        "name": "QA"
+      }
+    },
+    "isInterviewRequired": false,
+    "isClientFacing": false,
+    "allocationEndDate": "2026-12-22T00:00:00.000Z",
+    "effectiveStartDate": null,
+    "effectiveEndDate": null,
+    "project": {
+      "publicId": "fd79a71e-c3c3-4c75-8a06-38509a14c7a3",
+      "name": "ViewForge | BI Dashboard",
+      "csmId": "3831",
+      "accountGrade": 9
+    },
+    "additionalTechStacks": [],
+    "allocationStartDate": "2026-10-16T00:00:00.000Z",
+    "requestedAllocationType": "DYNAMIC",
+    "requestedAllocationPercentage": null,
+    "allocationSnapshot": {
+      "reason": "CREATED",
+      "allocationType": "DYNAMIC",
+      "allocationPercentage": null,
+      "allocationStartDate": "2026-10-16T00:00:00.000Z",
+      "allocationEndDate": "2026-12-22T00:00:00.000Z",
+      "requestType": "FRESH_ALLOCATION",
+      "typeOfWork": "DEVELOPMENT_WORK",
+      "previousAllocationPercentage": null,
+      "createdAt": "2026-10-15T10:29:13.968Z"
+    },
+    "allocationSnapshots": [
+      {
+        "reason": "CREATED",
+        "allocationType": "DYNAMIC",
+        "allocationPercentage": null,
+        "allocationStartDate": "2026-10-16T00:00:00.000Z",
+        "allocationEndDate": "2026-12-22T00:00:00.000Z",
+        "requestType": "FRESH_ALLOCATION",
+        "typeOfWork": "DEVELOPMENT_WORK",
+        "previousAllocationPercentage": null,
+        "createdAt": "2026-10-15T10:29:13.968Z"
+      }
+    ],
+    "targetScheduledChangePublicId": null,
+    "supersededTicketPublicId": null,
+    "supersededTicketNumber": null,
+    "preferredEmployees": [
+      {
+        "employee": {
+          "publicId": "3b99da7c-21f0-4179-8273-972663422709",
+          "name": "Ankita Das",
+          "photoUrl": "https://i.pravatar.cc/150?u=ankita.das@simformsolutions.com"
+        },
+        "designation": {
+          "publicId": "f103adb0-1abc-4fae-b590-bc908157abbd",
+          "title": "Sr. QA Engineer",
+          "alias": "Sr. QAE"
+        },
+        "deptStack": {
+          "name": "Performance",
+          "logoUrl": "https://cdn.simpleicons.org/apachejmeter"
+        },
+        "availabilityPercentage": 100,
+        "allocationAvailabilityPercentage": 100,
+        "bookedAllocationPercentage": 0,
+        "remainingAllocationPercentage": 100,
+        "addedBy": {
+          "publicId": "4174b8c1-9d89-4b61-bfd7-075924620091",
+          "name": "Tarun Sharma",
+          "photoUrl": "https://i.pravatar.cc/150?u=tarun.sharma@simformsolutions.com"
+        },
+        "sequence": 0
+      }
+    ],
+    "shortlistedEmployees": [],
+    "requester": {
+      "publicId": "4174b8c1-9d89-4b61-bfd7-075924620091",
+      "name": "Tarun Sharma",
+      "photoUrl": "https://i.pravatar.cc/150?u=tarun.sharma@simformsolutions.com"
+    },
+    "createdAt": "2026-10-15T10:29:13.951Z",
+    "updatedAt": "2026-10-15T10:29:13.951Z",
+    "statusSteps": [
+      {
+        "key": "SUBMITTED",
+        "title": "CSM submits request",
+        "description": "CSM submits a new allocation request",
+        "state": "COMPLETED",
+        "completedAt": "2026-10-15T10:29:13.951Z",
+        "performedBy": {
+          "publicId": "4174b8c1-9d89-4b61-bfd7-075924620091",
+          "name": "Tarun Sharma",
+          "photoUrl": "https://i.pravatar.cc/150?u=tarun.sharma@simformsolutions.com"
+        }
+      },
+      {
+        "key": "DEPARTMENT_ASSIGNED",
+        "title": "PMO assigns department",
+        "description": "Pending PMO action",
+        "state": "CURRENT"
+      },
+      {
+        "key": "EMPLOYEE_SELECTED",
+        "title": "Employee Shortlisting",
+        "description": "Not yet started",
+        "state": "PENDING"
+      },
+      {
+        "key": "APPROVAL",
+        "title": "TM / EM approval",
+        "description": "Final approval step",
+        "state": "PENDING"
+      },
+      {
+        "key": "APPLIED",
+        "title": "Approved & applied",
+        "description": "PM notified",
+        "state": "PENDING"
+      }
+    ],
+    "approvals": {},
+    "feedbacks": [],
+    "group": {
+      "publicId": "1887d3de-bb10-4871-9277-2de8fea8b75c",
+      "groupNumber": 1,
+      "flowType": "SHADOW_TO_MAIN",
+      "step": 2,
+      "totalSteps": 2,
+      "isBlocked": true,
+      "blockedBy": [
+        {
+          "publicId": "3d78e476-53dc-4cd4-92a5-07bf1788823a",
+          "ticketNumber": "DA-0099"
+        },
+        {
+          "publicId": "a02ef199-9cf4-4f0e-ac7a-ca018a2b0c7c",
+          "ticketNumber": "DA-0100"
+        }
+      ],
+      "hasHiddenTickets": false,
+      "tickets": [
+        {
+          "publicId": "3d78e476-53dc-4cd4-92a5-07bf1788823a",
+          "ticketNumber": "DA-0099",
+          "ticketType": "DEALLOCATE_ALLOCATION",
+          "step": 1,
+          "status": "AWAITING_CONFIRMATION",
+          "employee": {
+            "publicId": "91da7795-4b70-4b60-aab6-837abe5de0b0",
+            "name": "Nimisha Bose",
+            "photoUrl": "https://i.pravatar.cc/150?u=nimisha.bose@simformsolutions.com"
+          }
+        },
+        {
+          "publicId": "a02ef199-9cf4-4f0e-ac7a-ca018a2b0c7c",
+          "ticketNumber": "DA-0100",
+          "ticketType": "DEALLOCATE_ALLOCATION",
+          "step": 1,
+          "status": "AWAITING_CONFIRMATION",
+          "employee": {
+            "publicId": "3b99da7c-21f0-4179-8273-972663422709",
+            "name": "Ankita Das",
+            "photoUrl": "https://i.pravatar.cc/150?u=ankita.das@simformsolutions.com"
+          }
+        },
+        {
+          "publicId": "4962972f-67af-4c71-a373-6c9ad234ac74",
+          "ticketNumber": "NA-0362",
+          "ticketType": "NEW_ALLOCATION",
+          "step": 2,
+          "status": "OPEN",
+          "employee": null
+        }
+      ]
+    }
+  }
+}

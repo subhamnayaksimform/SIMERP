@@ -1,0 +1,933 @@
+{
+  "at": "2026-10-19T11:37:57.459Z",
+  "tickets": [
+    {
+      "n": "DA-0108",
+      "type": "DEALLOCATE_ALLOCATION",
+      "status": "APPROVED",
+      "project": "XCrypt",
+      "employee": "Falgun Solanki",
+      "requester": "Palak Saxena",
+      "createdAt": "2026-10-19T11:35:49.438Z"
+    },
+    {
+      "n": "NA-0371",
+      "type": "NEW_ALLOCATION",
+      "status": "APPROVED",
+      "project": "XCrypt",
+      "employee": "Falgun Solanki",
+      "requester": "Palak Saxena",
+      "createdAt": "2026-10-19T11:34:14.297Z"
+    },
+    {
+      "n": "DA-0107",
+      "type": "DEALLOCATE_ALLOCATION",
+      "status": "APPROVED",
+      "project": "ConfigHub",
+      "employee": "Iti Chatterjee",
+      "requester": "Jignesh Raval",
+      "createdAt": "2026-10-19T11:30:00.537Z"
+    },
+    {
+      "n": "NA-0370",
+      "type": "NEW_ALLOCATION",
+      "status": "APPROVED",
+      "project": "ConfigHub",
+      "employee": "Iti Chatterjee",
+      "requester": "Jignesh Raval",
+      "createdAt": "2026-10-19T11:26:59.472Z"
+    },
+    {
+      "n": "DA-0106",
+      "type": "DEALLOCATE_ALLOCATION",
+      "status": "APPROVED",
+      "project": "HyperScale",
+      "employee": "Gaurav Dutta",
+      "requester": "Priya Chopra",
+      "createdAt": "2026-10-19T11:23:10.343Z"
+    },
+    {
+      "n": "UA-0133",
+      "type": "UPDATE_ALLOCATION",
+      "status": "APPROVED",
+      "project": "HyperScale",
+      "employee": "Gaurav Dutta",
+      "requester": "Priya Chopra",
+      "createdAt": "2026-10-19T11:20:23.483Z"
+    },
+    {
+      "n": "UA-0132",
+      "type": "UPDATE_ALLOCATION",
+      "status": "APPROVED",
+      "project": "HyperScale",
+      "employee": "Gaurav Dutta",
+      "requester": "Priya Chopra",
+      "createdAt": "2026-10-19T11:17:30.409Z"
+    },
+    {
+      "n": "UA-0131",
+      "type": "UPDATE_ALLOCATION",
+      "status": "APPROVED",
+      "project": "HyperScale",
+      "employee": "Gaurav Dutta",
+      "requester": "Bhumi Chauhan",
+      "createdAt": "2026-10-19T11:15:44.992Z"
+    },
+    {
+      "n": "NA-0369",
+      "type": "NEW_ALLOCATION",
+      "status": "APPROVED",
+      "project": "HyperScale",
+      "employee": "Gaurav Dutta",
+      "requester": "Bhumi Chauhan",
+      "createdAt": "2026-10-19T11:13:44.011Z"
+    },
+    {
+      "n": "NA-0368",
+      "type": "NEW_ALLOCATION",
+      "status": "APPROVED",
+      "project": "ViewForge",
+      "employee": "Nimisha Bose",
+      "requester": "Bhumi Chauhan",
+      "createdAt": "2026-10-19T11:00:46.616Z"
+    },
+    {
+      "n": "DA-0105",
+      "type": "DEALLOCATE_ALLOCATION",
+      "status": "APPROVED",
+      "project": "ViewForge",
+      "employee": "Ankita Das",
+      "requester": "Bhumi Chauhan",
+      "createdAt": "2026-10-19T11:00:46.211Z"
+    },
+    {
+      "n": "DA-0104",
+      "type": "DEALLOCATE_ALLOCATION",
+      "status": "APPROVED",
+      "project": "HyperScale",
+      "employee": "Kunal Menon",
+      "requester": "Bhumi Chauhan",
+      "createdAt": "2026-10-19T11:00:23.854Z"
+    },
+    {
+      "n": "NA-0367",
+      "type": "NEW_ALLOCATION",
+      "status": "APPROVED",
+      "project": "HyperScale",
+      "employee": "Kunal Menon",
+      "requester": "Bhumi Chauhan",
+      "createdAt": "2026-10-19T10:59:08.781Z"
+    },
+    {
+      "n": "DA-0103",
+      "type": "DEALLOCATE_ALLOCATION",
+      "status": "APPROVED",
+      "project": "XCrypt",
+      "employee": "Prakash Pillai",
+      "requester": "Bhumi Chauhan",
+      "createdAt": "2026-10-19T10:58:38.904Z"
+    },
+    {
+      "n": "NA-0366",
+      "type": "NEW_ALLOCATION",
+      "status": "CLOSED",
+      "project": "XCrypt",
+      "employee": null,
+      "requester": "Tarun Sharma",
+      "createdAt": "2026-10-19T10:51:50.167Z"
+    },
+    {
+      "n": "NA-0365",
+      "type": "NEW_ALLOCATION",
+      "status": "CLOSED",
+      "project": "XCrypt",
+      "employee": "Prakash Pillai",
+      "requester": "Tarun Sharma",
+      "createdAt": "2026-10-19T10:51:50.146Z"
+    },
+    {
+      "n": "DA-0102",
+      "type": "DEALLOCATE_ALLOCATION",
+      "status": "CLOSED",
+      "project": "XCrypt",
+      "employee": "Prakash Pillai",
+      "requester": "Tarun Sharma",
+      "createdAt": "2026-10-19T10:51:50.116Z"
+    },
+    {
+      "n": "DA-0101",
+      "type": "DEALLOCATE_ALLOCATION",
+      "status": "CLOSED",
+      "project": "XCrypt",
+      "employee": "Ananya Hegde",
+      "requester": "Tarun Sharma",
+      "createdAt": "2026-10-19T10:51:50.051Z"
+    },
+    {
+      "n": "NA-0364",
+      "type": "NEW_ALLOCATION",
+      "status": "APPROVED",
+      "project": "XCrypt",
+      "employee": "Prakash Pillai",
+      "requester": "Bhumi Chauhan",
+      "createdAt": "2026-10-19T10:48:27.528Z"
+    },
+    {
+      "n": "UA-0130",
+      "type": "UPDATE_ALLOCATION",
+      "status": "APPROVED",
+      "project": "WavePoint",
+      "employee": "Kabir Soni",
+      "requester": "Chief Executive Officer",
+      "createdAt": "2026-10-16T09:35:11.029Z"
+    },
+    {
+      "n": "NA-0363",
+      "type": "NEW_ALLOCATION",
+      "status": "APPROVED",
+      "project": "AbsoluteUI",
+      "employee": "Sagar Khanpara",
+      "requester": "Vihaan Chatterjee",
+      "createdAt": "2026-10-15T12:33:40.894Z"
+    },
+    {
+      "n": "NA-0362",
+      "type": "NEW_ALLOCATION",
+      "status": "APPROVED",
+      "project": "ViewForge",
+      "employee": "Ankita Das",
+      "requester": "Tarun Sharma",
+      "createdAt": "2026-10-15T10:29:13.951Z"
+    },
+    {
+      "n": "DA-0100",
+      "type": "DEALLOCATE_ALLOCATION",
+      "status": "APPROVED",
+      "project": "ViewForge",
+      "employee": "Ankita Das",
+      "requester": "Tarun Sharma",
+      "createdAt": "2026-10-15T10:29:13.925Z"
+    },
+    {
+      "n": "DA-0099",
+      "type": "DEALLOCATE_ALLOCATION",
+      "status": "APPROVED",
+      "project": "ViewForge",
+      "employee": "Nimisha Bose",
+      "requester": "Tarun Sharma",
+      "createdAt": "2026-10-15T10:29:13.896Z"
+    },
+    {
+      "n": "DA-0098",
+      "type": "DEALLOCATE_ALLOCATION",
+      "status": "APPROVED",
+      "project": "HyperScale",
+      "employee": "Kashyap Vyas",
+      "requester": "Bhumi Chauhan",
+      "createdAt": "2026-10-15T10:25:14.743Z"
+    },
+    {
+      "n": "NA-0361",
+      "type": "NEW_ALLOCATION",
+      "status": "APPROVED",
+      "project": "HyperScale",
+      "employee": "Kashyap Vyas",
+      "requester": "Bhumi Chauhan",
+      "createdAt": "2026-10-15T10:23:51.513Z"
+    },
+    {
+      "n": "NA-0360",
+      "type": "NEW_ALLOCATION",
+      "status": "APPROVED",
+      "project": "ViewForge",
+      "employee": "Ankita Das",
+      "requester": "Bhumi Chauhan",
+      "createdAt": "2026-10-15T10:21:07.720Z"
+    },
+    {
+      "n": "DA-0097",
+      "type": "DEALLOCATE_ALLOCATION",
+      "status": "APPROVED",
+      "project": "XCrypt",
+      "employee": "Urvashi Kamath",
+      "requester": "Bhumi Chauhan",
+      "createdAt": "2026-10-15T10:18:56.658Z"
+    },
+    {
+      "n": "NA-0359",
+      "type": "NEW_ALLOCATION",
+      "status": "APPROVED",
+      "project": "XCrypt",
+      "employee": "Urvashi Kamath",
+      "requester": "Bhumi Chauhan",
+      "createdAt": "2026-10-15T10:16:58.787Z"
+    },
+    {
+      "n": "UA-0129",
+      "type": "UPDATE_ALLOCATION",
+      "status": "APPROVED",
+      "project": "DataBricks",
+      "employee": "Aditi Modi",
+      "requester": "Chief Executive Officer",
+      "createdAt": "2026-10-15T08:45:04.942Z"
+    },
+    {
+      "n": "UA-0128",
+      "type": "UPDATE_ALLOCATION",
+      "status": "APPROVED",
+      "project": "DataBricks",
+      "employee": "Aditi Modi",
+      "requester": "Yatharth Patil",
+      "createdAt": "2026-10-15T08:42:21.251Z"
+    },
+    {
+      "n": "RA-0015",
+      "type": "REPLACE_ALLOCATION",
+      "status": "APPROVED",
+      "project": "GridCompute",
+      "employee": "Vivaan Rawat",
+      "requester": "Darshan Rathod",
+      "createdAt": "2026-10-13T11:16:25.672Z"
+    },
+    {
+      "n": "NA-0358",
+      "type": "NEW_ALLOCATION",
+      "status": "APPROVED",
+      "project": "AlphaTest",
+      "employee": "Prakash Verma",
+      "requester": "Yatharth Thakor",
+      "createdAt": "2026-10-12T09:40:20.466Z"
+    },
+    {
+      "n": "UA-0127",
+      "type": "UPDATE_ALLOCATION",
+      "status": "APPROVED",
+      "project": "CapacityX",
+      "employee": "Swati Mistry",
+      "requester": "Feni Vasani",
+      "createdAt": "2026-09-30T10:23:44.851Z"
+    },
+    {
+      "n": "UA-0126",
+      "type": "UPDATE_ALLOCATION",
+      "status": "OPEN",
+      "project": "CapacityX",
+      "employee": "Kabir Limbachiya",
+      "requester": "Feni Vasani",
+      "createdAt": "2026-09-30T10:01:54.369Z"
+    },
+    {
+      "n": "NA-0357",
+      "type": "NEW_ALLOCATION",
+      "status": "APPROVED",
+      "project": "OneClick",
+      "employee": "Aarav Barot",
+      "requester": "Aarushi Rawat",
+      "createdAt": "2026-09-30T09:52:29.041Z"
+    },
+    {
+      "n": "UA-0125",
+      "type": "UPDATE_ALLOCATION",
+      "status": "APPROVED",
+      "project": "LambdaStack",
+      "employee": "Harsh Thakkar",
+      "requester": "Chief Executive Officer",
+      "createdAt": "2026-09-30T06:34:23.730Z"
+    },
+    {
+      "n": "UA-0124",
+      "type": "UPDATE_ALLOCATION",
+      "status": "APPROVED",
+      "project": "LambdaStack",
+      "employee": "Harsh Thakkar",
+      "requester": "Chief Executive Officer",
+      "createdAt": "2026-09-30T06:34:23.668Z"
+    },
+    {
+      "n": "NA-0356",
+      "type": "NEW_ALLOCATION",
+      "status": "APPROVED",
+      "project": "DataSync",
+      "employee": "Priya Pillai",
+      "requester": "Vihaan Gajjar",
+      "createdAt": "2026-09-29T11:29:42.972Z"
+    },
+    {
+      "n": "UA-0123",
+      "type": "UPDATE_ALLOCATION",
+      "status": "APPROVED",
+      "project": "LedgerSync2",
+      "employee": "Chintan Kulkarni",
+      "requester": "Chief Executive Officer",
+      "createdAt": "2026-09-29T10:16:51.371Z"
+    },
+    {
+      "n": "UA-0122",
+      "type": "UPDATE_ALLOCATION",
+      "status": "APPROVED",
+      "project": "LedgerSync2",
+      "employee": "Chintan Kulkarni",
+      "requester": "Chief Executive Officer",
+      "createdAt": "2026-09-29T10:16:51.289Z"
+    },
+    {
+      "n": "DA-0096",
+      "type": "DEALLOCATE_ALLOCATION",
+      "status": "APPROVED",
+      "project": "DeltaSync",
+      "employee": "Pranav Dave",
+      "requester": "Drashti Chauhan",
+      "createdAt": "2026-09-25T13:38:40.706Z"
+    },
+    {
+      "n": "NA-0355",
+      "type": "NEW_ALLOCATION",
+      "status": "APPROVED",
+      "project": "QuickSetup",
+      "employee": "Komal Roy",
+      "requester": "Chief Technology Officer",
+      "createdAt": "2026-09-25T06:12:33.216Z"
+    },
+    {
+      "n": "NA-0354",
+      "type": "NEW_ALLOCATION",
+      "status": "APPROVED",
+      "project": "DeployTrack",
+      "employee": "Komal Roy",
+      "requester": "Chief Technology Officer",
+      "createdAt": "2026-09-25T06:07:48.742Z"
+    },
+    {
+      "n": "NA-0347",
+      "type": "NEW_ALLOCATION",
+      "status": "APPROVED",
+      "project": "AbsoluteUI",
+      "employee": "Reyansh Vyas",
+      "requester": "Bhumi Chauhan",
+      "createdAt": "2026-09-25T05:54:26.241Z"
+    },
+    {
+      "n": "NA-0346",
+      "type": "NEW_ALLOCATION",
+      "status": "APPROVED",
+      "project": "AbsoluteUI",
+      "employee": "Sagar Khanpara",
+      "requester": "Chief Technology Officer",
+      "createdAt": "2026-09-25T03:51:17.759Z"
+    },
+    {
+      "n": "DA-0095",
+      "type": "DEALLOCATE_ALLOCATION",
+      "status": "APPROVED",
+      "project": "ElitePay",
+      "employee": "Aarav Iyer",
+      "requester": "Tarun Sharma",
+      "createdAt": "2026-09-24T09:12:35.714Z"
+    },
+    {
+      "n": "UA-0121",
+      "type": "UPDATE_ALLOCATION",
+      "status": "APPROVED",
+      "project": "HiveSync",
+      "employee": "Foram Menon",
+      "requester": "Chief Executive Officer",
+      "createdAt": "2026-09-24T05:42:52.366Z"
+    },
+    {
+      "n": "UA-0120",
+      "type": "UPDATE_ALLOCATION",
+      "status": "APPROVED",
+      "project": "AdaptiveX",
+      "employee": "Sagar Khanpara",
+      "requester": "Palak Saxena",
+      "createdAt": "2026-09-23T13:58:44.396Z"
+    },
+    {
+      "n": "NA-0344",
+      "type": "NEW_ALLOCATION",
+      "status": "IN_REVIEW",
+      "project": "YieldOps",
+      "employee": null,
+      "requester": "Jigar Pandya",
+      "createdAt": "2026-09-21T11:48:46.333Z"
+    },
+    {
+      "n": "NA-0343",
+      "type": "NEW_ALLOCATION",
+      "status": "IN_REVIEW",
+      "project": "GrowthMap2",
+      "employee": null,
+      "requester": "Maitri Mistry",
+      "createdAt": "2026-09-21T11:46:30.489Z"
+    },
+    {
+      "n": "NA-0342",
+      "type": "NEW_ALLOCATION",
+      "status": "OPEN",
+      "project": "LiveOps",
+      "employee": null,
+      "requester": "Tejas Limbachiya",
+      "createdAt": "2026-09-21T11:43:28.832Z"
+    },
+    {
+      "n": "NA-0341",
+      "type": "NEW_ALLOCATION",
+      "status": "OPEN",
+      "project": "CloudGuard",
+      "employee": null,
+      "requester": "Sahil Dave",
+      "createdAt": "2026-09-21T11:42:43.492Z"
+    },
+    {
+      "n": "NA-0340",
+      "type": "NEW_ALLOCATION",
+      "status": "OPEN",
+      "project": "AlphaFlow",
+      "employee": null,
+      "requester": "Darshan Doshi",
+      "createdAt": "2026-09-21T11:19:20.401Z"
+    },
+    {
+      "n": "NA-0339",
+      "type": "NEW_ALLOCATION",
+      "status": "OPEN",
+      "project": "YieldOps",
+      "employee": null,
+      "requester": "Jigar Pandya",
+      "createdAt": "2026-09-18T12:06:57.043Z"
+    },
+    {
+      "n": "NA-0338",
+      "type": "NEW_ALLOCATION",
+      "status": "OPEN",
+      "project": "HyperTest",
+      "employee": null,
+      "requester": "Jigar Pandya",
+      "createdAt": "2026-09-18T09:39:12.081Z"
+    },
+    {
+      "n": "NA-0337",
+      "type": "NEW_ALLOCATION",
+      "status": "OPEN",
+      "project": "HyperTest",
+      "employee": null,
+      "requester": "Jigar Pandya",
+      "createdAt": "2026-09-18T09:34:05.796Z"
+    },
+    {
+      "n": "DA-0094",
+      "type": "DEALLOCATE_ALLOCATION",
+      "status": "APPROVED",
+      "project": "CapacityX",
+      "employee": "Sai Gandhi",
+      "requester": "Feni Vasani",
+      "createdAt": "2026-09-17T06:07:30.583Z"
+    },
+    {
+      "n": "NA-0336",
+      "type": "NEW_ALLOCATION",
+      "status": "OPEN",
+      "project": "GatewayPro",
+      "employee": null,
+      "requester": "Nisha Patil",
+      "createdAt": "2026-09-17T05:47:50.037Z"
+    },
+    {
+      "n": "NA-0335",
+      "type": "NEW_ALLOCATION",
+      "status": "APPROVED",
+      "project": "LinkTrack",
+      "employee": "Shruti Singh",
+      "requester": "Nisha Patil",
+      "createdAt": "2026-09-16T13:05:53.914Z"
+    },
+    {
+      "n": "NA-0334",
+      "type": "NEW_ALLOCATION",
+      "status": "APPROVED",
+      "project": "JourneyQ",
+      "employee": "Chetan Nagar",
+      "requester": "Nisha Patil",
+      "createdAt": "2026-09-16T13:04:44.252Z"
+    },
+    {
+      "n": "DA-0093",
+      "type": "DEALLOCATE_ALLOCATION",
+      "status": "APPROVED",
+      "project": "DeltaSync",
+      "employee": "Yamini Shah",
+      "requester": "Drashti Chauhan",
+      "createdAt": "2026-09-16T12:55:41.300Z"
+    },
+    {
+      "n": "NA-0333",
+      "type": "NEW_ALLOCATION",
+      "status": "APPROVED",
+      "project": "DeltaSync",
+      "employee": "Yamini Shah",
+      "requester": "Drashti Chauhan",
+      "createdAt": "2026-09-16T12:50:27.287Z"
+    },
+    {
+      "n": "NA-0332",
+      "type": "NEW_ALLOCATION",
+      "status": "OPEN",
+      "project": "KeyVault",
+      "employee": null,
+      "requester": "Drashti Chauhan",
+      "createdAt": "2026-09-16T10:28:44.573Z"
+    },
+    {
+      "n": "NA-0331",
+      "type": "NEW_ALLOCATION",
+      "status": "OPEN",
+      "project": "BlockChainX",
+      "employee": null,
+      "requester": "Laxmi Shetty",
+      "createdAt": "2026-09-16T10:23:31.704Z"
+    },
+    {
+      "n": "NA-0330",
+      "type": "NEW_ALLOCATION",
+      "status": "OPEN",
+      "project": "PeakView",
+      "employee": null,
+      "requester": "Darshan Rathod",
+      "createdAt": "2026-09-16T10:21:28.283Z"
+    },
+    {
+      "n": "NA-0329",
+      "type": "NEW_ALLOCATION",
+      "status": "OPEN",
+      "project": "LunarBase",
+      "employee": null,
+      "requester": "Darshan Rathod",
+      "createdAt": "2026-09-16T10:21:21.977Z"
+    },
+    {
+      "n": "UA-0119",
+      "type": "UPDATE_ALLOCATION",
+      "status": "OPEN",
+      "project": "BlockChainX",
+      "employee": "Darshan Thakor",
+      "requester": "Laxmi Shetty",
+      "createdAt": "2026-09-16T10:19:54.424Z"
+    },
+    {
+      "n": "NA-0328",
+      "type": "NEW_ALLOCATION",
+      "status": "OPEN",
+      "project": "GridCompute",
+      "employee": null,
+      "requester": "Darshan Rathod",
+      "createdAt": "2026-09-16T10:19:52.278Z"
+    },
+    {
+      "n": "UA-0118",
+      "type": "UPDATE_ALLOCATION",
+      "status": "OPEN",
+      "project": "CapacityX",
+      "employee": "Yatharth Sen",
+      "requester": "Feni Vasani",
+      "createdAt": "2026-09-16T10:16:59.492Z"
+    },
+    {
+      "n": "NA-0327",
+      "type": "NEW_ALLOCATION",
+      "status": "OPEN",
+      "project": "RapidForms",
+      "employee": null,
+      "requester": "Darshan Rathod",
+      "createdAt": "2026-09-16T08:06:10.084Z"
+    },
+    {
+      "n": "NA-0326",
+      "type": "NEW_ALLOCATION",
+      "status": "OPEN",
+      "project": "LunarBase",
+      "employee": null,
+      "requester": "Darshan Rathod",
+      "createdAt": "2026-09-16T08:05:13.035Z"
+    },
+    {
+      "n": "NA-0325",
+      "type": "NEW_ALLOCATION",
+      "status": "OPEN",
+      "project": "GridCompute",
+      "employee": null,
+      "requester": "Darshan Rathod",
+      "createdAt": "2026-09-16T08:04:40.281Z"
+    },
+    {
+      "n": "NA-0324",
+      "type": "NEW_ALLOCATION",
+      "status": "OPEN",
+      "project": "HiveSync",
+      "employee": null,
+      "requester": "Darshan Rathod",
+      "createdAt": "2026-09-16T08:04:01.591Z"
+    },
+    {
+      "n": "DA-0092",
+      "type": "DEALLOCATE_ALLOCATION",
+      "status": "AWAITING_CONFIRMATION",
+      "project": "ZoneGuard",
+      "employee": "Vishal Thakor",
+      "requester": "Sai Jain",
+      "createdAt": "2026-09-16T06:33:29.282Z"
+    },
+    {
+      "n": "RA-0014",
+      "type": "REPLACE_ALLOCATION",
+      "status": "APPROVED",
+      "project": "UtilityX",
+      "employee": "Ravi Vyas",
+      "requester": "Sai Jain",
+      "createdAt": "2026-09-16T06:27:41.269Z"
+    },
+    {
+      "n": "NA-0323",
+      "type": "NEW_ALLOCATION",
+      "status": "APPROVED",
+      "project": "DriftNet",
+      "employee": "Omkar Raval",
+      "requester": "Chief Technology Officer",
+      "createdAt": "2026-09-15T06:26:39.127Z"
+    },
+    {
+      "n": "NA-0319",
+      "type": "NEW_ALLOCATION",
+      "status": "APPROVED",
+      "project": "AdaptiveX",
+      "employee": "Omkar Raval",
+      "requester": "Chief Technology Officer",
+      "createdAt": "2026-09-15T06:25:36.520Z"
+    },
+    {
+      "n": "NA-0318",
+      "type": "NEW_ALLOCATION",
+      "status": "APPROVED",
+      "project": "AgilePulse",
+      "employee": "Omkar Raval",
+      "requester": "Chief Technology Officer",
+      "createdAt": "2026-09-15T06:25:08.774Z"
+    },
+    {
+      "n": "UA-0117",
+      "type": "UPDATE_ALLOCATION",
+      "status": "APPROVED",
+      "project": "ZoneGuard",
+      "employee": "Omkar Raval",
+      "requester": "Sai Jain",
+      "createdAt": "2026-09-15T06:22:13.415Z"
+    },
+    {
+      "n": "UA-0116",
+      "type": "UPDATE_ALLOCATION",
+      "status": "CLOSED",
+      "project": "ZoneGuard",
+      "employee": "Omkar Raval",
+      "requester": "Sai Jain",
+      "createdAt": "2026-09-15T06:20:52.021Z"
+    },
+    {
+      "n": "NA-0317",
+      "type": "NEW_ALLOCATION",
+      "status": "APPROVED",
+      "project": "UtilityX",
+      "employee": "Sai Solanki",
+      "requester": "Sai Jain",
+      "createdAt": "2026-09-15T06:09:45.603Z"
+    },
+    {
+      "n": "NA-0316",
+      "type": "NEW_ALLOCATION",
+      "status": "APPROVED",
+      "project": "UtilityX",
+      "employee": "Dhruv Gupta",
+      "requester": "Sai Jain",
+      "createdAt": "2026-09-15T05:48:10.463Z"
+    },
+    {
+      "n": "NA-0315",
+      "type": "NEW_ALLOCATION",
+      "status": "APPROVED",
+      "project": "ZoneGuard",
+      "employee": "Omkar Raval",
+      "requester": "Sai Jain",
+      "createdAt": "2026-09-15T05:23:16.749Z"
+    },
+    {
+      "n": "NA-0314",
+      "type": "NEW_ALLOCATION",
+      "status": "APPROVED",
+      "project": "UtilityX",
+      "employee": "Diya Bhatia",
+      "requester": "Sai Jain",
+      "createdAt": "2026-09-15T05:21:04.783Z"
+    },
+    {
+      "n": "NA-0313",
+      "type": "NEW_ALLOCATION",
+      "status": "APPROVED",
+      "project": "UtilityX",
+      "employee": "Omkar Raval",
+      "requester": "Chief Technology Officer",
+      "createdAt": "2026-09-15T05:20:16.109Z"
+    },
+    {
+      "n": "UA-0115",
+      "type": "UPDATE_ALLOCATION",
+      "status": "APPROVED",
+      "project": "AbsoluteUI",
+      "employee": "Yatharth Agarwal",
+      "requester": "Chief Executive Officer",
+      "createdAt": "2026-09-15T04:25:27.965Z"
+    },
+    {
+      "n": "UA-0114",
+      "type": "UPDATE_ALLOCATION",
+      "status": "APPROVED",
+      "project": "AbsoluteUI",
+      "employee": "Yatharth Agarwal",
+      "requester": "Chief Executive Officer",
+      "createdAt": "2026-09-15T04:25:10.792Z"
+    },
+    {
+      "n": "UA-0113",
+      "type": "UPDATE_ALLOCATION",
+      "status": "APPROVED",
+      "project": "AbsoluteUI",
+      "employee": "Yatharth Agarwal",
+      "requester": "Chief Executive Officer",
+      "createdAt": "2026-09-15T04:23:24.749Z"
+    },
+    {
+      "n": "UA-0112",
+      "type": "UPDATE_ALLOCATION",
+      "status": "APPROVED",
+      "project": "AbsoluteUI",
+      "employee": "Yatharth Agarwal",
+      "requester": "Chief Executive Officer",
+      "createdAt": "2026-09-15T04:23:15.376Z"
+    },
+    {
+      "n": "UA-0111",
+      "type": "UPDATE_ALLOCATION",
+      "status": "APPROVED",
+      "project": "AbsoluteUI",
+      "employee": "Yatharth Agarwal",
+      "requester": "Chief Executive Officer",
+      "createdAt": "2026-09-15T04:23:15.328Z"
+    },
+    {
+      "n": "UA-0110",
+      "type": "UPDATE_ALLOCATION",
+      "status": "APPROVED",
+      "project": "AdaptiveX",
+      "employee": "Nayan Kotak",
+      "requester": "Chief Executive Officer",
+      "createdAt": "2026-09-15T04:21:09.120Z"
+    },
+    {
+      "n": "UA-0109",
+      "type": "UPDATE_ALLOCATION",
+      "status": "APPROVED",
+      "project": "AdaptiveX",
+      "employee": "Nayan Kotak",
+      "requester": "Chief Executive Officer",
+      "createdAt": "2026-09-15T04:21:09.067Z"
+    },
+    {
+      "n": "NA-0312",
+      "type": "NEW_ALLOCATION",
+      "status": "IN_REVIEW",
+      "project": "UtilityX",
+      "employee": null,
+      "requester": "Sai Jain",
+      "createdAt": "2026-09-14T10:38:37.297Z"
+    },
+    {
+      "n": "DA-0091",
+      "type": "DEALLOCATE_ALLOCATION",
+      "status": "AWAITING_CONFIRMATION",
+      "project": "DataBricks",
+      "employee": "Yash Jain",
+      "requester": "Yatharth Patil",
+      "createdAt": "2026-09-14T10:37:08.903Z"
+    },
+    {
+      "n": "NA-0311",
+      "type": "NEW_ALLOCATION",
+      "status": "APPROVED",
+      "project": "ZoneGuard",
+      "employee": "Vishal Desai",
+      "requester": "Sai Jain",
+      "createdAt": "2026-09-14T10:35:52.918Z"
+    },
+    {
+      "n": "NA-0310",
+      "type": "NEW_ALLOCATION",
+      "status": "APPROVED",
+      "project": "ZoneGuard",
+      "employee": "Zalak Jain",
+      "requester": "Chief Technology Officer",
+      "createdAt": "2026-09-14T10:34:44.580Z"
+    },
+    {
+      "n": "NA-0309",
+      "type": "NEW_ALLOCATION",
+      "status": "APPROVED",
+      "project": "ZoneGuard",
+      "employee": "Kriti Dabhi",
+      "requester": "Sai Jain",
+      "createdAt": "2026-09-14T10:30:03.682Z"
+    },
+    {
+      "n": "NA-0308",
+      "type": "NEW_ALLOCATION",
+      "status": "APPROVED",
+      "project": "ZoneGuard",
+      "employee": "Kabir Soni",
+      "requester": "Sai Jain",
+      "createdAt": "2026-09-14T10:26:54.370Z"
+    },
+    {
+      "n": "NA-0307",
+      "type": "NEW_ALLOCATION",
+      "status": "APPROVED",
+      "project": "UtilityX",
+      "employee": "Rajan Kale",
+      "requester": "Sai Jain",
+      "createdAt": "2026-09-14T10:22:49.376Z"
+    }
+  ],
+  "projects": {
+    "HyperScale | Scalability Engine": [
+      {
+        "a": "c3b65d73-e16b-4e34-9cfd-9e15b6033826",
+        "t": "FIXED",
+        "pct": 20,
+        "s": "2026-10-19",
+        "e": "2026-10-19",
+        "up": false
+      }
+    ],
+    "ConfigHub | Configuration Management": [],
+    "XCrypt | Blockchain Wallet": []
+  },
+  "emailQueue": {
+    "status": 200,
+    "body": {
+      "code": "SUCCESS",
+      "message": "Sync jobs retrieved successfully",
+      "data": {
+        "items": [],
+        "total": 0,
+        "page": 1,
+        "limit": 100,
+        "totalPages": 0
+      }
+    }
+  }
+}

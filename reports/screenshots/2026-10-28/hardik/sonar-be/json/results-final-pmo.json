@@ -1,0 +1,14 @@
+[
+  {
+    "key": "dash:iconUrls",
+    "pass": true,
+    "actual": "departments=41 withIcon=41 malformed=0 sample=https://d3e6uquevgpr8q.cloudfront.net/department-icons/admin.svg",
+    "ms": 1546
+  },
+  {
+    "key": "notif:humanizedText",
+    "pass": false,
+    "actual": "postDeployNotifications=497 withRawEnumToken=1 NA-0433 for project HyperScale | Scalability Engine was rejected and moved back to IN_REVIEW. sample=QA-AUTO OB bug-033 PM direct for AnalytixHub has been raised as OPP-0331. | QA-AUTO OB prep-draft 91182 for AnalytixHub has been raised as OPP-0330.",
+    "ms": 4399
+  }
+]

@@ -1,0 +1,67 @@
+{
+  "T0": "2026-10-15T10:21:06.660Z",
+  "req": {
+    "employeePublicId": "3b99da7c-21f0-4179-8273-972663422709",
+    "projectPublicId": "fd79a71e-c3c3-4c75-8a06-38509a14c7a3",
+    "allocationType": "DYNAMIC",
+    "allocationStartDate": "2026-10-15",
+    "allocationEndDate": "2026-12-22",
+    "status": "GREEN",
+    "typeOfWork": "DEVELOPMENT_WORK",
+    "shadowDeveloperPublicId": "91da7795-4b70-4b60-aab6-837abe5de0b0",
+    "note": "QA test SI4-T1464 shadow swap (shadow of Nimisha Bose)"
+  },
+  "res": {
+    "status": 201,
+    "body": {
+      "code": "ALLOCATION_TICKET_070",
+      "message": "Direct allocation created successfully",
+      "data": {
+        "publicId": "0e9f02fe-3e0d-4c6c-b91e-306745063e92",
+        "allocationPercentage": null,
+        "allocationType": "DYNAMIC",
+        "typeOfWork": "DEVELOPMENT_WORK",
+        "allocationStartDate": "2026-10-15",
+        "allocationEndDate": "2026-12-22",
+        "status": "GREEN",
+        "note": "QA test SI4-T1464 shadow swap (shadow of Nimisha Bose)",
+        "allocationOrigin": "PMO",
+        "employee": {
+          "publicId": "3b99da7c-21f0-4179-8273-972663422709",
+          "name": "Ankita Das",
+          "email": "ankita.das@simformsolutions.com",
+          "photoUrl": "https://i.pravatar.cc/150?u=ankita.das@simformsolutions.com"
+        },
+        "shadowDeveloper": {
+          "publicId": "91da7795-4b70-4b60-aab6-837abe5de0b0",
+          "name": "Nimisha Bose",
+          "email": "nimisha.bose@simformsolutions.com",
+          "photoUrl": "https://i.pravatar.cc/150?u=nimisha.bose@simformsolutions.com"
+        },
+        "project": {
+          "publicId": "fd79a71e-c3c3-4c75-8a06-38509a14c7a3",
+          "name": "ViewForge | BI Dashboard",
+          "alias": "",
+          "projectManager": {
+            "publicId": "6acbb73d-52bd-4108-89d0-4382da11d60f",
+            "name": "Tirth Chopra",
+            "photoUrl": "https://i.pravatar.cc/150?u=tirth.chopra@simformsolutions.com"
+          },
+          "customerSuccessManager": {
+            "publicId": "4174b8c1-9d89-4b61-bfd7-075924620091",
+            "name": "Tarun Sharma",
+            "photoUrl": "https://i.pravatar.cc/150?u=tarun.sharma@simformsolutions.com"
+          }
+        },
+        "createdBy": {
+          "publicId": "e93f5377-1f74-42cb-9a40-255908e50310",
+          "name": "Bhumi Chauhan",
+          "email": "bhumi.chauhan@simformsolutions.com",
+          "photoUrl": "https://i.pravatar.cc/150?u=bhumi.chauhan@simformsolutions.com"
+        },
+        "ticketPublicId": "6839db22-9ff0-409a-bbe1-422c7860e5f3",
+        "ticketNumber": "NA-0360"
+      }
+    }
+  }
+}

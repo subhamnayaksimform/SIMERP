@@ -15,7 +15,9 @@
     "tests/**/*.ts",
     ".github/skills/**/scripts/**/*.ts",
     ".claude/skills/**/scripts/**/*.ts",
-    "scripts/**/*.ts"
+    "scripts/**/*.ts",
+    "ci-cd-pipeline/**/*.ts",
+    "ui/**/*.ts"
   ],
   "exclude": ["node_modules", "dist"]
 }

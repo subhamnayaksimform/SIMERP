@@ -1,0 +1,68 @@
+{
+  "shortlist": {
+    "status": 200,
+    "body": {
+      "code": "SUCCESS",
+      "message": "Allocation ticket updated successfully",
+      "data": {
+        "publicId": "4962972f-67af-4c71-a373-6c9ad234ac74",
+        "ticketNumber": "NA-0362",
+        "status": "IN_REVIEW",
+        "warnings": [],
+        "employeeAvailability": [
+          {
+            "employeePublicId": "3b99da7c-21f0-4179-8273-972663422709",
+            "availabilityPercentage": 100,
+            "isAvailable": true,
+            "allocationCapPercentage": 100,
+            "consumedPercentage": 0,
+            "remainingPercentage": 100,
+            "overlappingAllocations": [
+              {
+                "projectAssignmentPublicId": "0e9f02fe-3e0d-4c6c-b91e-306745063e92",
+                "projectPublicId": "fd79a71e-c3c3-4c75-8a06-38509a14c7a3",
+                "allocationType": "DYNAMIC",
+                "allocationPercentage": 0,
+                "allocationStartDate": "2026-10-15T00:00:00.000Z",
+                "allocationEndDate": "2026-12-22T00:00:00.000Z",
+                "shadowDeveloperId": null,
+                "conflictingFrom": "2026-10-16T00:00:00.000Z",
+                "conflictingTo": "2026-12-22T00:00:00.000Z"
+              }
+            ],
+            "reasons": []
+          }
+        ]
+      }
+    }
+  },
+  "send": {
+    "status": 200,
+    "body": {
+      "code": "SUCCESS",
+      "message": "Allocation ticket updated successfully",
+      "data": {
+        "publicId": "4962972f-67af-4c71-a373-6c9ad234ac74",
+        "ticketNumber": "NA-0362",
+        "status": "AWAITING_CONFIRMATION",
+        "warnings": []
+      }
+    }
+  },
+  "approve": {
+    "status": 409,
+    "body": {
+      "message": "This approval has already been recorded for the ticket",
+      "error": "Conflict",
+      "statusCode": 409
+    }
+  },
+  "approvals": {
+    "pmoApprovedBy": {
+      "publicId": "e93f5377-1f74-42cb-9a40-255908e50310",
+      "name": "Bhumi Chauhan",
+      "photoUrl": "https://i.pravatar.cc/150?u=bhumi.chauhan@simformsolutions.com"
+    },
+    "pmoApprovedAt": "2026-10-15T10:31:45.072Z"
+  }
+}

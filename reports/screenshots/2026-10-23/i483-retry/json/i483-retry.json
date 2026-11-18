@@ -1,0 +1,198 @@
+{
+  "V1-na": {
+    "status": 201,
+    "body": {
+      "code": "ALLOCATION_TICKET_006",
+      "message": "New allocation ticket(s) created successfully",
+      "data": [
+        {
+          "publicId": "0513a0c0-d525-40bb-964c-ace767eca552",
+          "ticketNumber": "NA-0442",
+          "status": "OPEN"
+        },
+        {
+          "publicId": "0715bd68-800a-49d1-8dde-e5bbf92084c2",
+          "ticketNumber": "NA-0443",
+          "status": "OPEN"
+        }
+      ]
+    }
+  },
+  "V1-da-main": {
+    "status": 201,
+    "body": {
+      "code": "ALLOCATION_TICKET_097",
+      "message": "Deallocation ticket created successfully",
+      "data": {
+        "outcome": "TICKET_CREATED",
+        "publicId": "26b3bee6-b520-4333-8fbd-17cecaf2d692",
+        "ticketNumber": "DA-0169",
+        "ticketType": "DEALLOCATE_ALLOCATION",
+        "status": "AWAITING_CONFIRMATION"
+      }
+    }
+  },
+  "V1-promo-prep": {
+    "status": 200,
+    "body": {
+      "code": "SUCCESS",
+      "message": "Allocation ticket updated successfully",
+      "data": {
+        "publicId": "0513a0c0-d525-40bb-964c-ace767eca552",
+        "ticketNumber": "NA-0442",
+        "status": "AWAITING_CONFIRMATION",
+        "warnings": [],
+        "employeeAvailability": [
+          {
+            "employeePublicId": "312ce495-7c5b-431e-8d2a-75f73953b7e4",
+            "availabilityPercentage": 48.26,
+            "isAvailable": true,
+            "allocationCapPercentage": 100,
+            "consumedPercentage": 10,
+            "remainingPercentage": 90,
+            "overlappingAllocations": [
+              {
+                "projectAssignmentPublicId": "6f08b458-c2e6-4c35-bacf-d7699a1ff123",
+                "projectPublicId": "3d138a89-4d06-4839-8091-436fba0a2dd6",
+                "allocationType": "FIXED",
+                "allocationPercentage": 10,
+                "allocationStartDate": "2026-10-23T00:00:00.000Z",
+                "allocationEndDate": "2026-12-31T00:00:00.000Z",
+                "shadowDeveloperId": null,
+                "conflictingFrom": "2026-11-01T00:00:00.000Z",
+                "conflictingTo": "2026-12-31T00:00:00.000Z"
+              }
+            ],
+            "reasons": []
+          }
+        ]
+      }
+    }
+  },
+  "V1-promo-bypass": {
+    "status": 409,
+    "body": {
+      "code": "SYS_004",
+      "message": "This employee already has an active (non-archived) allocation on this project"
+    }
+  },
+  "V1-ns-prep": {
+    "status": 200,
+    "body": {
+      "code": "SUCCESS",
+      "message": "Allocation ticket updated successfully",
+      "data": {
+        "publicId": "0715bd68-800a-49d1-8dde-e5bbf92084c2",
+        "ticketNumber": "NA-0443",
+        "status": "AWAITING_CONFIRMATION",
+        "warnings": [],
+        "employeeAvailability": [
+          {
+            "employeePublicId": "dcfc5685-8cdd-440a-af8d-f1af386032e4",
+            "availabilityPercentage": 19.42,
+            "isAvailable": true,
+            "allocationCapPercentage": 100,
+            "consumedPercentage": 0,
+            "remainingPercentage": 100,
+            "overlappingAllocations": [
+              {
+                "projectAssignmentPublicId": "2ea32a56-bb5d-4c3b-b2e4-bf71bd7a6855",
+                "projectPublicId": "d793f948-cde0-4dc5-a6de-987ccce2bb25",
+                "allocationType": "DYNAMIC",
+                "allocationPercentage": 0,
+                "allocationStartDate": "2026-09-19T00:00:00.000Z",
+                "allocationEndDate": "2028-02-27T00:00:00.000Z",
+                "shadowDeveloperId": null,
+                "conflictingFrom": "2026-11-01T00:00:00.000Z",
+                "conflictingTo": "2028-02-27T00:00:00.000Z"
+              }
+            ],
+            "reasons": []
+          }
+        ]
+      }
+    }
+  },
+  "V1-ns-bypass": {
+    "status": 200,
+    "body": {
+      "code": "SUCCESS",
+      "message": "TM/EM approval bypassed; ticket approved and applied",
+      "data": {
+        "publicId": "0715bd68-800a-49d1-8dde-e5bbf92084c2",
+        "ticketNumber": "NA-0443",
+        "status": "APPROVED",
+        "warnings": []
+      }
+    }
+  },
+  "V2-na": {
+    "status": 201,
+    "body": {
+      "code": "ALLOCATION_TICKET_006",
+      "message": "New allocation ticket(s) created successfully",
+      "data": [
+        {
+          "publicId": "7d6cadd9-63c9-471a-95b9-9bee00ca61ab",
+          "ticketNumber": "NA-0444",
+          "status": "OPEN"
+        },
+        {
+          "publicId": "2be69eae-218a-4038-bd43-390c9904b530",
+          "ticketNumber": "NA-0445",
+          "status": "OPEN"
+        }
+      ]
+    }
+  },
+  "V2-ns-prep": {
+    "status": 200,
+    "body": {
+      "code": "SUCCESS",
+      "message": "Allocation ticket updated successfully",
+      "data": {
+        "publicId": "2be69eae-218a-4038-bd43-390c9904b530",
+        "ticketNumber": "NA-0445",
+        "status": "AWAITING_CONFIRMATION",
+        "warnings": [],
+        "employeeAvailability": [
+          {
+            "employeePublicId": "a47311de-ba03-4389-a356-e45b6651082d",
+            "availabilityPercentage": 100,
+            "isAvailable": true,
+            "allocationCapPercentage": 100,
+            "consumedPercentage": 0,
+            "remainingPercentage": 100,
+            "overlappingAllocations": [],
+            "reasons": []
+          }
+        ]
+      }
+    }
+  },
+  "V2-ns-tm-approve": {
+    "status": 200,
+    "body": {
+      "code": "SUCCESS",
+      "message": "Ticket approved",
+      "data": {
+        "publicId": "2be69eae-218a-4038-bd43-390c9904b530",
+        "ticketNumber": "NA-0445",
+        "status": "APPROVED"
+      }
+    }
+  },
+  "V3-create": {
+    "status": 400,
+    "body": {
+      "code": "SYS_004",
+      "message": "The selected Shadow For developer is not currently assigned to this project"
+    }
+  },
+  "ids": {
+    "P1": "0513a0c0-d525-40bb-964c-ace767eca552",
+    "N1": "0715bd68-800a-49d1-8dde-e5bbf92084c2",
+    "P2": "7d6cadd9-63c9-471a-95b9-9bee00ca61ab",
+    "N2": "2be69eae-218a-4038-bd43-390c9904b530"
+  }
+}

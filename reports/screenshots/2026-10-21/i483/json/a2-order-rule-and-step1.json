@@ -1,0 +1,76 @@
+{
+  "nasEarly": {
+    "status": 409,
+    "body": {
+      "code": "ALLOCATION_TICKET_172",
+      "message": "Complete the step 1 tickets (#DA-0128, #DA-0129) before actioning this ticket.",
+      "data": {
+        "blockingTickets": [
+          {
+            "publicId": "0b7b0506-fb5f-4637-81dd-cf14f99d5376",
+            "ticketNumber": "DA-0128",
+            "ticketType": "DEALLOCATE_ALLOCATION",
+            "step": 1,
+            "status": "AWAITING_CONFIRMATION"
+          },
+          {
+            "publicId": "15e27dc0-0e33-4223-ac2d-8d33237ee4f9",
+            "ticketNumber": "DA-0129",
+            "ticketType": "DEALLOCATE_ALLOCATION",
+            "step": 1,
+            "status": "AWAITING_CONFIRMATION"
+          }
+        ]
+      }
+    }
+  },
+  "napEarly": {
+    "status": 409,
+    "body": {
+      "code": "ALLOCATION_TICKET_172",
+      "message": "Complete the step 1 tickets (#DA-0128, #DA-0129) before actioning this ticket.",
+      "data": {
+        "blockingTickets": [
+          {
+            "publicId": "0b7b0506-fb5f-4637-81dd-cf14f99d5376",
+            "ticketNumber": "DA-0128",
+            "ticketType": "DEALLOCATE_ALLOCATION",
+            "step": 1,
+            "status": "AWAITING_CONFIRMATION"
+          },
+          {
+            "publicId": "15e27dc0-0e33-4223-ac2d-8d33237ee4f9",
+            "ticketNumber": "DA-0129",
+            "ticketType": "DEALLOCATE_ALLOCATION",
+            "step": 1,
+            "status": "AWAITING_CONFIRMATION"
+          }
+        ]
+      }
+    }
+  },
+  "ack1": {
+    "status": 200,
+    "body": {
+      "code": "SUCCESS",
+      "message": "De-allocation acknowledged; allocation change applied",
+      "data": {
+        "publicId": "0b7b0506-fb5f-4637-81dd-cf14f99d5376",
+        "ticketNumber": "DA-0128",
+        "status": "APPROVED"
+      }
+    }
+  },
+  "ack2": {
+    "status": 200,
+    "body": {
+      "code": "SUCCESS",
+      "message": "De-allocation acknowledged; allocation change applied",
+      "data": {
+        "publicId": "15e27dc0-0e33-4223-ac2d-8d33237ee4f9",
+        "ticketNumber": "DA-0129",
+        "status": "APPROVED"
+      }
+    }
+  }
+}

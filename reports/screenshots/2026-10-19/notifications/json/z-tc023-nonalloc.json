@@ -1,0 +1,336 @@
+{
+  "label": "tc023-nonalloc",
+  "rx": ".",
+  "since": "2026-10-15T10:00:00Z",
+  "users": {
+    "sagar.khanpara": [
+      {
+        "id": "cd078655-3a2e-4da3-9323-03d795109df7",
+        "eventType": "notification.allocation.direct_employee_assigned",
+        "title": "You've Been allocated to AbsoluteUI | Design System",
+        "body": "You've been allocated to AbsoluteUI | Design System starting 2026-10-16.",
+        "createdAt": "2026-10-15T12:33:41.067Z",
+        "isRead": false,
+        "ctx": {
+          "assignmentPublicId": "5d897045-1b88-4e62-978d-e4a991915fea"
+        }
+      },
+      {
+        "id": "b66c2543-3437-4e28-aee8-c101826de8a0",
+        "eventType": "notification.allocation_ticket.developer_rm_deallocated",
+        "title": "Team Member Deallocated: Urvashi Kamath",
+        "body": "Urvashi Kamath has been deallocated from XCrypt | Blockchain Wallet, effective 2026-10-15.",
+        "createdAt": "2026-10-15T10:18:56.981Z",
+        "isRead": false,
+        "ctx": {
+          "ticketPublicId": "1a8695f1-cc9d-421e-8332-fca76079532d"
+        }
+      },
+      {
+        "id": "c3f04455-a083-43c3-a417-1a799b7d96e0",
+        "eventType": "notification.allocation.direct_employee_rm_assigned",
+        "title": "Team Member Assigned: Urvashi Kamath",
+        "body": "Urvashi Kamath has been assigned to XCrypt | Blockchain Wallet starting 2026-10-15.",
+        "createdAt": "2026-10-15T10:16:58.881Z",
+        "isRead": false,
+        "ctx": {
+          "assignmentPublicId": "c89a92ff-56c5-472d-9217-e9e1a8b135b1"
+        }
+      }
+    ],
+    "rajesh.kumar": [
+      {
+        "id": "8c825577-ac33-4479-8818-e60b50af3a0a",
+        "eventType": "notification.allocation.direct_employee_rm_assigned",
+        "title": "Team Member Assigned: Sagar Khanpara",
+        "body": "Sagar Khanpara has been assigned to AbsoluteUI | Design System starting 2026-10-16.",
+        "createdAt": "2026-10-15T12:33:41.163Z",
+        "isRead": false,
+        "ctx": {
+          "assignmentPublicId": "5d897045-1b88-4e62-978d-e4a991915fea"
+        }
+      },
+      {
+        "id": "16e820cf-a1e6-4c93-9f48-6f7b2a8d26ee",
+        "eventType": "notification.allocation_ticket.developer_rm_deallocated",
+        "title": "Team Member Deallocated: Urvashi Kamath",
+        "body": "Urvashi Kamath has been deallocated from XCrypt | Blockchain Wallet, effective 2026-10-15.",
+        "createdAt": "2026-10-15T10:18:56.981Z",
+        "isRead": false,
+        "ctx": {
+          "ticketPublicId": "1a8695f1-cc9d-421e-8332-fca76079532d"
+        }
+      },
+      {
+        "id": "20e9494a-36a4-4ccf-bce4-d511e4ae2041",
+        "eventType": "notification.allocation.direct_employee_rm_assigned",
+        "title": "Team Member Assigned: Urvashi Kamath",
+        "body": "Urvashi Kamath has been assigned to XCrypt | Blockchain Wallet starting 2026-10-15.",
+        "createdAt": "2026-10-15T10:16:58.881Z",
+        "isRead": false,
+        "ctx": {
+          "assignmentPublicId": "c89a92ff-56c5-472d-9217-e9e1a8b135b1"
+        }
+      }
+    ],
+    "david.lais": [
+      {
+        "id": "bdb0d16c-ebb6-4dbf-80d1-96957132338f",
+        "eventType": "notification.allocation.direct_employee_rm_assigned",
+        "title": "Team Member Assigned: Sagar Khanpara",
+        "body": "Sagar Khanpara has been assigned to AbsoluteUI | Design System starting 2026-10-16.",
+        "createdAt": "2026-10-15T12:33:41.163Z",
+        "isRead": false,
+        "ctx": {
+          "assignmentPublicId": "5d897045-1b88-4e62-978d-e4a991915fea"
+        }
+      },
+      {
+        "id": "ae8e5e60-a178-4a60-89ce-ed6f581f21b6",
+        "eventType": "notification.allocation_ticket.developer_rm_deallocated",
+        "title": "Team Member Deallocated: Urvashi Kamath",
+        "body": "Urvashi Kamath has been deallocated from XCrypt | Blockchain Wallet, effective 2026-10-15.",
+        "createdAt": "2026-10-15T10:18:56.981Z",
+        "isRead": false,
+        "ctx": {
+          "ticketPublicId": "1a8695f1-cc9d-421e-8332-fca76079532d"
+        }
+      },
+      {
+        "id": "54390cec-90d1-4f8d-955f-2f8043fa2833",
+        "eventType": "notification.allocation.direct_employee_rm_assigned",
+        "title": "Team Member Assigned: Urvashi Kamath",
+        "body": "Urvashi Kamath has been assigned to XCrypt | Blockchain Wallet starting 2026-10-15.",
+        "createdAt": "2026-10-15T10:16:58.881Z",
+        "isRead": false,
+        "ctx": {
+          "assignmentPublicId": "c89a92ff-56c5-472d-9217-e9e1a8b135b1"
+        }
+      }
+    ],
+    "kartik.hegde": [
+      {
+        "id": "72ae9162-9e94-4c49-846e-2960dfff8c82",
+        "eventType": "notification.allocation_ticket.developer_rm_deallocated",
+        "title": "Team Member Deallocated: Gaurav Dutta",
+        "body": "Gaurav Dutta has been deallocated from HyperScale | Scalability Engine, effective 2026-10-19.",
+        "createdAt": "2026-10-19T11:24:32.220Z",
+        "isRead": false,
+        "ctx": {
+          "ticketPublicId": "552716f0-d274-443a-97fe-4cfa86f97637"
+        }
+      },
+      {
+        "id": "76b41672-23c4-4ab7-bf55-cb24bf5a85c5",
+        "eventType": "notification.allocation_ticket.developer_rm_updated",
+        "title": "Assignment Updated: Gaurav Dutta",
+        "body": "Gaurav Dutta's allocation for HyperScale | Scalability Engine has been updated.",
+        "createdAt": "2026-10-19T11:21:50.862Z",
+        "isRead": false,
+        "ctx": {
+          "ticketPublicId": "f057a3cb-fd04-43b1-b372-8fa3fd2bedc4"
+        }
+      },
+      {
+        "id": "5fec4d69-3c0f-48e4-8caf-85e36cd97214",
+        "eventType": "notification.allocation_ticket.developer_rm_updated",
+        "title": "Assignment Updated: Gaurav Dutta",
+        "body": "Gaurav Dutta's allocation for HyperScale | Scalability Engine has been updated.",
+        "createdAt": "2026-10-19T11:19:00.262Z",
+        "isRead": false,
+        "ctx": {
+          "ticketPublicId": "fe5dca51-8d29-43e5-927c-a0fb2fa660c0"
+        }
+      },
+      {
+        "id": "1a0b7362-c3d9-4d13-a60d-4fed84a64ee5",
+        "eventType": "notification.allocation_ticket.developer_rm_updated",
+        "title": "Assignment Updated: Gaurav Dutta",
+        "body": "Gaurav Dutta's allocation for HyperScale | Scalability Engine has been updated.",
+        "createdAt": "2026-10-19T11:15:45.267Z",
+        "isRead": false,
+        "ctx": {
+          "ticketPublicId": "35608d6d-6d0d-43a4-b03e-67ae867c2343"
+        }
+      },
+      {
+        "id": "90c53bee-45a8-4d96-8025-3ccfadec8c95",
+        "eventType": "notification.allocation.direct_employee_rm_assigned",
+        "title": "Team Member Assigned: Gaurav Dutta",
+        "body": "Gaurav Dutta has been assigned to HyperScale | Scalability Engine starting 2026-10-19.",
+        "createdAt": "2026-10-19T11:13:44.096Z",
+        "isRead": false,
+        "ctx": {
+          "assignmentPublicId": "c3b65d73-e16b-4e34-9cfd-9e15b6033826"
+        }
+      }
+    ],
+    "hardik.trivedi": [
+      {
+        "id": "bbeacd69-9505-44e3-ba7b-1fef1a5ecfa5",
+        "eventType": "notification.allocation_ticket.allocation_cancelled",
+        "title": "Allocation Cancelled: ConfigHub | Configuration Management",
+        "body": "The upcoming allocation for Iti Chatterjee to ConfigHub | Configuration Management, due to start 2026-10-21, has been cancelled.",
+        "createdAt": "2026-10-19T11:31:25.167Z",
+        "isRead": false,
+        "ctx": {
+          "ticketPublicId": "c57310e3-4873-4c8d-a8ca-7196eb43c838"
+        }
+      },
+      {
+        "id": "45f20b62-0f84-416e-9c64-eee06744abd9",
+        "eventType": "notification.allocation_ticket.developer_rm_assigned",
+        "title": "Team Member Assigned: Iti Chatterjee",
+        "body": "Iti Chatterjee has been assigned to ConfigHub | Configuration Management starting 2026-10-21.",
+        "createdAt": "2026-10-19T11:28:19.006Z",
+        "isRead": false,
+        "ctx": {
+          "ticketPublicId": "0bf76174-342a-4cd6-9942-bf36975b518e"
+        }
+      },
+      {
+        "id": "55c44654-4182-4182-8630-250d8acbe36c",
+        "eventType": "notification.allocation_ticket.developer_rm_deallocated",
+        "title": "Team Member Deallocated: Gaurav Dutta",
+        "body": "Gaurav Dutta has been deallocated from HyperScale | Scalability Engine, effective 2026-10-19.",
+        "createdAt": "2026-10-19T11:24:32.220Z",
+        "isRead": false,
+        "ctx": {
+          "ticketPublicId": "552716f0-d274-443a-97fe-4cfa86f97637"
+        }
+      },
+      {
+        "id": "097bd044-9cbb-4e0b-a15d-39c6c86d218c",
+        "eventType": "notification.allocation_ticket.developer_rm_updated",
+        "title": "Assignment Updated: Gaurav Dutta",
+        "body": "Gaurav Dutta's allocation for HyperScale | Scalability Engine has been updated.",
+        "createdAt": "2026-10-19T11:21:50.862Z",
+        "isRead": false,
+        "ctx": {
+          "ticketPublicId": "f057a3cb-fd04-43b1-b372-8fa3fd2bedc4"
+        }
+      },
+      {
+        "id": "e86bf932-b90a-4ce1-b8ef-1eac1a1d0094",
+        "eventType": "notification.allocation_ticket.developer_rm_updated",
+        "title": "Assignment Updated: Gaurav Dutta",
+        "body": "Gaurav Dutta's allocation for HyperScale | Scalability Engine has been updated.",
+        "createdAt": "2026-10-19T11:19:00.262Z",
+        "isRead": false,
+        "ctx": {
+          "ticketPublicId": "fe5dca51-8d29-43e5-927c-a0fb2fa660c0"
+        }
+      },
+      {
+        "id": "1947b1c2-b677-445c-ba37-fad1f2bac454",
+        "eventType": "notification.allocation_ticket.pm_updated",
+        "title": "Assignment Updated: HyperScale | Scalability Engine",
+        "body": "The project assignment for Gaurav Dutta has been successfully updated.",
+        "createdAt": "2026-10-19T11:15:45.285Z",
+        "isRead": false,
+        "ctx": {
+          "ticketPublicId": "35608d6d-6d0d-43a4-b03e-67ae867c2343"
+        }
+      },
+      {
+        "id": "9e81e645-ebcf-4050-a41d-f4191c8476f9",
+        "eventType": "notification.allocation_ticket.developer_rm_updated",
+        "title": "Assignment Updated: Gaurav Dutta",
+        "body": "Gaurav Dutta's allocation for HyperScale | Scalability Engine has been updated.",
+        "createdAt": "2026-10-19T11:15:45.267Z",
+        "isRead": false,
+        "ctx": {
+          "ticketPublicId": "35608d6d-6d0d-43a4-b03e-67ae867c2343"
+        }
+      },
+      {
+        "id": "f83a5ff7-ad9a-4aac-86f7-c29427ab9d97",
+        "eventType": "notification.allocation.direct_employee_rm_assigned",
+        "title": "Team Member Assigned: Gaurav Dutta",
+        "body": "Gaurav Dutta has been assigned to HyperScale | Scalability Engine starting 2026-10-19.",
+        "createdAt": "2026-10-19T11:13:44.096Z",
+        "isRead": false,
+        "ctx": {
+          "assignmentPublicId": "c3b65d73-e16b-4e34-9cfd-9e15b6033826"
+        }
+      },
+      {
+        "id": "41c3244d-8bee-44bc-9cc1-2aa4ed6e052f",
+        "eventType": "notification.allocation.direct_pm_notified",
+        "title": "Allocation Confirmed: HyperScale | Scalability Engine",
+        "body": "Gaurav Dutta has been allocated to HyperScale | Scalability Engine, effective 2026-10-19.",
+        "createdAt": "2026-10-19T11:13:44.081Z",
+        "isRead": false,
+        "ctx": {
+          "assignmentPublicId": "c3b65d73-e16b-4e34-9cfd-9e15b6033826"
+        }
+      },
+      {
+        "id": "8088893f-dc13-44a0-b448-33fe721f6b39",
+        "eventType": "notification.allocation_ticket.pm_deallocated",
+        "title": "Assignment Ended: HyperScale | Scalability Engine",
+        "body": "Kunal Menon has been successfully deallocated from HyperScale | Scalability Engine.",
+        "createdAt": "2026-10-19T11:00:24.074Z",
+        "isRead": false,
+        "ctx": {
+          "ticketPublicId": "a4fffb39-876d-4a87-a28a-6b0e43d9750d"
+        }
+      },
+      {
+        "id": "8e2d1e2a-7d5a-4876-b68e-fde6912b609f",
+        "eventType": "notification.allocation.direct_pm_notified",
+        "title": "Allocation Confirmed: HyperScale | Scalability Engine",
+        "body": "Kunal Menon has been allocated to HyperScale | Scalability Engine, effective 2026-10-19.",
+        "createdAt": "2026-10-19T10:59:08.825Z",
+        "isRead": false,
+        "ctx": {
+          "assignmentPublicId": "89c7a281-488e-414f-a610-0c6bbbacaa10"
+        }
+      },
+      {
+        "id": "41546bac-4e59-46b4-bcf6-8b473d0501a7",
+        "eventType": "notification.allocation_ticket.developer_rm_deallocated",
+        "title": "Team Member Deallocated: Kashyap Vyas",
+        "body": "Kashyap Vyas has been deallocated from HyperScale | Scalability Engine, effective 2026-10-15.",
+        "createdAt": "2026-10-15T10:25:15.050Z",
+        "isRead": false,
+        "ctx": {
+          "ticketPublicId": "e47659c2-591e-44dc-a984-a20a57932fb2"
+        }
+      },
+      {
+        "id": "c9037cc1-0916-4deb-96ee-5da5403bd36e",
+        "eventType": "notification.allocation_ticket.pm_deallocated",
+        "title": "Assignment Ended: HyperScale | Scalability Engine",
+        "body": "Kashyap Vyas has been successfully deallocated from HyperScale | Scalability Engine.",
+        "createdAt": "2026-10-15T10:25:15.029Z",
+        "isRead": false,
+        "ctx": {
+          "ticketPublicId": "e47659c2-591e-44dc-a984-a20a57932fb2"
+        }
+      },
+      {
+        "id": "3f1cf58b-bce0-4918-a915-4d7f1298a478",
+        "eventType": "notification.allocation.direct_employee_rm_assigned",
+        "title": "Team Member Assigned: Kashyap Vyas",
+        "body": "Kashyap Vyas has been assigned to HyperScale | Scalability Engine starting 2026-10-15.",
+        "createdAt": "2026-10-15T10:23:51.642Z",
+        "isRead": false,
+        "ctx": {
+          "assignmentPublicId": "8a72c6d0-720a-4e9c-ace7-37e8ad0aaf8c"
+        }
+      },
+      {
+        "id": "a5d76ea4-4c29-4238-a7fa-2241b2be4d68",
+        "eventType": "notification.allocation.direct_pm_notified",
+        "title": "Allocation Confirmed: HyperScale | Scalability Engine",
+        "body": "Kashyap Vyas has been allocated to HyperScale | Scalability Engine, effective 2026-10-15.",
+        "createdAt": "2026-10-15T10:23:51.615Z",
+        "isRead": false,
+        "ctx": {
+          "assignmentPublicId": "8a72c6d0-720a-4e9c-ace7-37e8ad0aaf8c"
+        }
+      }
+    ]
+  }
+}

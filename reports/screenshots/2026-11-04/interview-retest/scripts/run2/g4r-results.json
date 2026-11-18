@@ -1,0 +1,92 @@
+[
+ {
+  "area": "direct",
+  "name": "create without allocation status (isAllocationConfirmed omitted) — record",
+  "pass": true,
+  "detail": "[201,\"OPP_002\",\"Opportunity created successfully\"]"
+ },
+ {
+  "area": "direct",
+  "name": "create unconfirmed Direct ticket",
+  "pass": true,
+  "detail": "[201,\"OPP_002\",\"Opportunity created successfully\"]"
+ },
+ {
+  "area": "direct",
+  "name": "Direct with 2 positions refused",
+  "pass": true,
+  "detail": "[400,\"OPP_175\"]"
+ },
+ {
+  "area": "direct",
+  "name": "Direct with interview date refused",
+  "pass": true,
+  "detail": "[400,\"OPP_128\"]"
+ },
+ {
+  "area": "direct",
+  "name": "Direct without employee refused",
+  "pass": true,
+  "detail": "[400,\"OPP_126\"]"
+ },
+ {
+  "area": "direct",
+  "name": "Direct for a prospect without project allowed by design (project can be linked later)",
+  "pass": true,
+  "detail": "[201,\"OPP_002\"]"
+ },
+ {
+  "area": "direct",
+  "name": "Direct ticket on board with direct stage",
+  "pass": true,
+  "detail": "[[\"SHORTLISTED\",\"OPEN\",[\"IN_REVIEW\",\"REJECTED\"]]]"
+ },
+ {
+  "area": "direct",
+  "name": "Close (No Longer Required) refused on Direct",
+  "pass": true,
+  "detail": "[400,\"OPP_124\"]"
+ },
+ {
+  "area": "direct",
+  "name": "shortlisting a 2nd person on Direct refused",
+  "pass": true,
+  "detail": "[400,\"OPP_124\"]"
+ },
+ {
+  "area": "direct",
+  "name": "reject without reason refused",
+  "pass": true,
+  "detail": "[400,\"OPP_131\"]"
+ },
+ {
+  "area": "direct",
+  "name": "invalid stage refused",
+  "pass": true,
+  "detail": "[400,\"VAL_001\"]"
+ },
+ {
+  "area": "direct",
+  "name": "cancel without reason refused",
+  "pass": true,
+  "detail": "[400,\"VAL_001\"]"
+ },
+ {
+  "area": "direct",
+  "name": "cancel with spaces refused",
+  "pass": true,
+  "detail": "[400,\"VAL_001\"]"
+ },
+ {
+  "area": "direct",
+  "name": "cancel with reason",
+  "pass": true,
+  "detail": "[200,\"SUCCESS\",\"Direct ticket marked as cancelled\"]"
+ },
+ {
+  "area": "direct",
+  "name": "cancel twice refused",
+  "pass": true,
+  "detail": "[409,\"OPP_148\"]"
+ }
+]

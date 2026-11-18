@@ -1,0 +1,205 @@
+{
+  "T0": "2026-10-15T10:34:18.000Z",
+  "res": {
+    "ankita.das": {
+      "email": "ankita.das@simformsolutions.com",
+      "count": 2,
+      "items": [
+        {
+          "id": "6b8f940f-6373-457c-a6de-be66d0f2b5cb",
+          "eventType": "notification.allocation_ticket.developer_assigned",
+          "title": "You've Been allocated to ViewForge | BI Dashboard",
+          "body": "You've been allocated to ViewForge | BI Dashboard starting 2026-10-16.",
+          "createdAt": "2026-10-15T10:36:21.947Z",
+          "isRead": false,
+          "ctx": {
+            "ticketPublicId": "4962972f-67af-4c71-a373-6c9ad234ac74"
+          }
+        },
+        {
+          "id": "348c1dc3-9f83-421e-bbfa-af489b1de87c",
+          "eventType": "notification.allocation_ticket.developer_deallocated",
+          "title": "Allocation Ended: ViewForge | BI Dashboard",
+          "body": "Your allocation to ViewForge | BI Dashboard has ended, effective 2026-10-15.",
+          "createdAt": "2026-10-15T10:34:28.327Z",
+          "isRead": false,
+          "ctx": {
+            "ticketPublicId": "a02ef199-9cf4-4f0e-ac7a-ca018a2b0c7c"
+          }
+        }
+      ]
+    },
+    "ekta.mistry": {
+      "email": "ekta.mistry@simformsolutions.com",
+      "count": 2,
+      "items": [
+        {
+          "id": "839af578-f144-47b9-9f8d-777b98d206c1",
+          "eventType": "notification.allocation_ticket.developer_rm_assigned",
+          "title": "Team Member Assigned: Ankita Das",
+          "body": "Ankita Das has been assigned to ViewForge | BI Dashboard starting 2026-10-16.",
+          "createdAt": "2026-10-15T10:36:22.018Z",
+          "isRead": false,
+          "ctx": {
+            "ticketPublicId": "4962972f-67af-4c71-a373-6c9ad234ac74"
+          }
+        },
+        {
+          "id": "f135c37a-2d8c-463b-bd4b-33d4e00cf835",
+          "eventType": "notification.allocation_ticket.developer_rm_deallocated",
+          "title": "Team Member Deallocated: Ankita Das",
+          "body": "Ankita Das has been deallocated from ViewForge | BI Dashboard, effective 2026-10-15.",
+          "createdAt": "2026-10-15T10:34:28.361Z",
+          "isRead": false,
+          "ctx": {
+            "ticketPublicId": "a02ef199-9cf4-4f0e-ac7a-ca018a2b0c7c"
+          }
+        }
+      ]
+    },
+    "sudhansu.patel": {
+      "email": "sudhansu.patel@simformsolutions.com",
+      "count": 3,
+      "items": [
+        {
+          "id": "d92ef1d2-5def-4587-a942-0006a7c99b89",
+          "eventType": "notification.allocation_ticket.developer_rm_assigned",
+          "title": "Team Member Assigned: Ankita Das",
+          "body": "Ankita Das has been assigned to ViewForge | BI Dashboard starting 2026-10-16.",
+          "createdAt": "2026-10-15T10:36:22.018Z",
+          "isRead": false,
+          "ctx": {
+            "ticketPublicId": "4962972f-67af-4c71-a373-6c9ad234ac74"
+          }
+        },
+        {
+          "id": "80dbde9f-f2c4-4f18-bded-f6b6c85a85a0",
+          "eventType": "notification.allocation_ticket.approved",
+          "title": "Ticket Approved: NA-0362",
+          "body": "NA-0362 (NEW ALLOCATION) for project ViewForge | BI Dashboard has been fully approved and applied for Ankita Das.",
+          "createdAt": "2026-10-15T10:36:21.951Z",
+          "isRead": false,
+          "ctx": {
+            "ticketPublicId": "4962972f-67af-4c71-a373-6c9ad234ac74"
+          }
+        },
+        {
+          "id": "b3a1dd44-b572-4ba1-bdcf-b41077430acc",
+          "eventType": "notification.allocation_ticket.developer_rm_deallocated",
+          "title": "Team Member Deallocated: Ankita Das",
+          "body": "Ankita Das has been deallocated from ViewForge | BI Dashboard, effective 2026-10-15.",
+          "createdAt": "2026-10-15T10:34:28.361Z",
+          "isRead": false,
+          "ctx": {
+            "ticketPublicId": "a02ef199-9cf4-4f0e-ac7a-ca018a2b0c7c"
+          }
+        }
+      ]
+    },
+    "amit.patel": {
+      "email": "amit.patel@simformsolutions.com",
+      "count": 0,
+      "items": []
+    },
+    "kunal.jadeja": {
+      "email": "kunal.jadeja@simformsolutions.com",
+      "count": 0,
+      "items": []
+    },
+    "tarun.sharma": {
+      "email": "tarun.sharma@simformsolutions.com",
+      "count": 3,
+      "items": [
+        {
+          "id": "14170e3a-4402-4121-9758-979ced8127e5",
+          "eventType": "notification.allocation_ticket.pm_allocated",
+          "title": "Allocation Confirmed: ViewForge | BI Dashboard",
+          "body": "Your request to allocate Ankita Das to ViewForge | BI Dashboard has been successfully processed.",
+          "createdAt": "2026-10-15T10:36:21.874Z",
+          "isRead": false,
+          "ctx": {
+            "ticketPublicId": "4962972f-67af-4c71-a373-6c9ad234ac74"
+          }
+        },
+        {
+          "id": "dee128b2-cafe-432f-96df-63e1fd5781eb",
+          "eventType": "notification.allocation_ticket.pm_deallocated",
+          "title": "Assignment Ended: ViewForge | BI Dashboard",
+          "body": "Nimisha Bose has been successfully deallocated from ViewForge | BI Dashboard.",
+          "createdAt": "2026-10-15T10:35:41.340Z",
+          "isRead": false,
+          "ctx": {
+            "ticketPublicId": "3d78e476-53dc-4cd4-92a5-07bf1788823a"
+          }
+        },
+        {
+          "id": "dfbbe6ad-74ad-416b-8e0a-f5b27fe0083b",
+          "eventType": "notification.allocation_ticket.pm_deallocated",
+          "title": "Assignment Ended: ViewForge | BI Dashboard",
+          "body": "Ankita Das has been successfully deallocated from ViewForge | BI Dashboard.",
+          "createdAt": "2026-10-15T10:34:28.323Z",
+          "isRead": false,
+          "ctx": {
+            "ticketPublicId": "a02ef199-9cf4-4f0e-ac7a-ca018a2b0c7c"
+          }
+        }
+      ]
+    },
+    "tirth.chopra": {
+      "email": "tirth.chopra@simformsolutions.com",
+      "count": 0,
+      "items": []
+    },
+    "nimisha.bose": {
+      "email": "nimisha.bose@simformsolutions.com",
+      "count": 1,
+      "items": [
+        {
+          "id": "19409e42-ab1d-4962-8a6a-1cbfa30b3612",
+          "eventType": "notification.allocation_ticket.developer_deallocated",
+          "title": "Allocation Ended: ViewForge | BI Dashboard",
+          "body": "Your allocation to ViewForge | BI Dashboard has ended, effective 2026-10-15.",
+          "createdAt": "2026-10-15T10:35:41.347Z",
+          "isRead": false,
+          "ctx": {
+            "ticketPublicId": "3d78e476-53dc-4cd4-92a5-07bf1788823a"
+          }
+        }
+      ]
+    },
+    "hardik.kulkarni": {
+      "email": "hardik.kulkarni@simformsolutions.com",
+      "count": 1,
+      "items": [
+        {
+          "id": "86404305-8f1b-4ef9-91ab-6e10faedbce0",
+          "eventType": "notification.allocation_ticket.developer_rm_deallocated",
+          "title": "Team Member Deallocated: Nimisha Bose",
+          "body": "Nimisha Bose has been deallocated from ViewForge | BI Dashboard, effective 2026-10-15.",
+          "createdAt": "2026-10-15T10:35:41.369Z",
+          "isRead": false,
+          "ctx": {
+            "ticketPublicId": "3d78e476-53dc-4cd4-92a5-07bf1788823a"
+          }
+        }
+      ]
+    },
+    "bhumi.chauhan": {
+      "email": "bhumi.chauhan@simformsolutions.com",
+      "count": 1,
+      "items": [
+        {
+          "id": "f487aaef-bb11-4f20-b459-163b11854c14",
+          "eventType": "notification.allocation_ticket.approved",
+          "title": "Ticket Approved: NA-0362",
+          "body": "NA-0362 (NEW ALLOCATION) for project ViewForge | BI Dashboard has been fully approved and applied for Ankita Das.",
+          "createdAt": "2026-10-15T10:36:21.951Z",
+          "isRead": false,
+          "ctx": {
+            "ticketPublicId": "4962972f-67af-4c71-a373-6c9ad234ac74"
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,114 @@
+{
+  "ack-yamini-DA-0138": {
+    "status": 200,
+    "body": {
+      "code": "SUCCESS",
+      "message": "De-allocation acknowledged; allocation change applied",
+      "data": {
+        "publicId": "9e9ff07a-508d-499b-b35b-8786875ab96c",
+        "ticketNumber": "DA-0138",
+        "status": "APPROVED"
+      }
+    }
+  },
+  "da-prakash": {
+    "status": 201,
+    "body": {
+      "code": "ALLOCATION_TICKET_097",
+      "message": "Deallocation ticket created successfully",
+      "data": {
+        "outcome": "TICKET_CREATED",
+        "publicId": "282fce83-cc2d-4cfa-a33f-2145cd57ff1d",
+        "ticketNumber": "DA-0147",
+        "ticketType": "DEALLOCATE_ALLOCATION",
+        "status": "AWAITING_CONFIRMATION"
+      }
+    }
+  },
+  "ack-prakash": {
+    "status": 200,
+    "body": {
+      "code": "SUCCESS",
+      "message": "De-allocation acknowledged; allocation change applied",
+      "data": {
+        "publicId": "282fce83-cc2d-4cfa-a33f-2145cd57ff1d",
+        "ticketNumber": "DA-0147",
+        "status": "APPROVED"
+      }
+    }
+  },
+  "da-uday": {
+    "status": 201,
+    "body": {
+      "code": "ALLOCATION_TICKET_097",
+      "message": "Deallocation ticket created successfully",
+      "data": {
+        "outcome": "TICKET_CREATED",
+        "publicId": "eb817c59-5c64-44bc-affa-242e469e410a",
+        "ticketNumber": "DA-0148",
+        "ticketType": "DEALLOCATE_ALLOCATION",
+        "status": "AWAITING_CONFIRMATION"
+      }
+    }
+  },
+  "ack-uday": {
+    "status": 200,
+    "body": {
+      "code": "SUCCESS",
+      "message": "De-allocation acknowledged; allocation change applied",
+      "data": {
+        "publicId": "eb817c59-5c64-44bc-affa-242e469e410a",
+        "ticketNumber": "DA-0148",
+        "status": "APPROVED"
+      }
+    }
+  },
+  "cancel-Tanmay Parekh-2026-11-01": {
+    "status": 201,
+    "body": {
+      "code": "ALLOCATION_TICKET_169",
+      "message": "Upcoming allocation cancelled successfully",
+      "data": {
+        "ticket": {
+          "publicId": "4ed0fcef-1dd8-490b-b709-eb7985425c1a",
+          "ticketNumber": "DA-0149",
+          "ticketType": "DEALLOCATE_ALLOCATION",
+          "status": "APPROVED"
+        },
+        "isAllocationCancelled": true
+      }
+    }
+  },
+  "cancel-Kriti Desai-2026-11-08": {
+    "status": 201,
+    "body": {
+      "code": "ALLOCATION_TICKET_169",
+      "message": "Upcoming allocation cancelled successfully",
+      "data": {
+        "ticket": {
+          "publicId": "9d36d9d4-d3e1-49bc-af17-bfd61292a220",
+          "ticketNumber": "DA-0150",
+          "ticketType": "DEALLOCATE_ALLOCATION",
+          "status": "APPROVED"
+        },
+        "isAllocationCancelled": true
+      }
+    }
+  },
+  "cancel-Suresh Mukherjee-2026-11-08": {
+    "status": 201,
+    "body": {
+      "code": "ALLOCATION_TICKET_169",
+      "message": "Upcoming allocation cancelled successfully",
+      "data": {
+        "ticket": {
+          "publicId": "367733e0-81b0-4474-94be-79e9d563a1d0",
+          "ticketNumber": "DA-0151",
+          "ticketType": "DEALLOCATE_ALLOCATION",
+          "status": "APPROVED"
+        },
+        "isAllocationCancelled": true
+      }
+    }
+  }
+}

@@ -1,0 +1,156 @@
+{
+ "opp": {
+  "publicId": "3b4d081b-f9b0-469b-9f41-0fa2df684cf5",
+  "ticketNumber": "OPP-0363",
+  "title": "QA-AUTO E2E run2 won+open",
+  "clientType": "PROSPECT",
+  "requestType": "INTERVIEW",
+  "clientName": "QA-AUTO E2E Client",
+  "websiteUrl": null,
+  "linkedinUrl": null,
+  "prospectContact": null,
+  "prospectNotes": null,
+  "jobDescription": "<p>jd</p>",
+  "interviewerLinkedinUrl": null,
+  "specialInstructions": null,
+  "createdAt": "2026-11-04T12:31:34.100Z",
+  "updatedAt": "2026-11-04T12:31:34.100Z",
+  "assignedPm": null,
+  "assignedCsm": null,
+  "raisedBy": {
+   "publicId": "ed40fe03-4ede-45be-878a-4e02edf24851",
+   "name": "Vihaan Chatterjee",
+   "photoUrl": "https://i.pravatar.cc/150?u=vihaan.chatterjee@simformsolutions.com"
+  },
+  "updatedBy": null,
+  "status": "OPEN",
+  "project": null,
+  "viewerCanEdit": true,
+  "viewerCanCancel": false,
+  "viewerCanConfirmAllocation": false,
+  "priority": "MEDIUM",
+  "positions": [
+   {
+    "publicId": "48a5c18d-93b7-42d6-b7ef-5c756e3626af",
+    "displayId": "QA-WX-486",
+    "title": "WO X",
+    "requiredCount": 2,
+    "techStacks": [
+     "Java"
+    ],
+    "preferredSeniority": "MID",
+    "allocationType": "FIXED",
+    "allocationPercentage": 10,
+    "tentativeAllocationDate": "2027-01-11T00:00:00.000Z",
+    "tentativeAllocationEndDate": null,
+    "priority": "MEDIUM",
+    "isAllocationConfirmed": true,
+    "tentativeInterviewDate": null,
+    "roundTitles": [
+     "R1: Tech",
+     "R2: Practical"
+    ],
+    "note": null,
+    "reinitiatedAt": null,
+    "reinitiationCount": 0,
+    "reinitiatedBy": null,
+    "closedAt": null,
+    "closedReason": null,
+    "closedBy": null,
+    "departments": [
+     {
+      "publicId": "50d6a999-05dd-455f-8264-8e2d9308bb7d",
+      "name": "JAVA"
+     }
+    ],
+    "preferredEmployees": [],
+    "prepMaterials": [],
+    "checklistItems": [
+     {
+      "code": "JD_CLIENT_CONTEXT_REVIEWED",
+      "title": "JD & Client Context reviewed",
+      "description": "Read the attached JD and client website link"
+     },
+     {
+      "code": "SPECIAL_INSTRUCTIONS_ACKNOWLEDGED",
+      "title": "Special Instructions acknowledged",
+      "description": "Read the opportunity-level special instructions"
+     },
+     {
+      "code": "AI_MOCK_COMPLETED",
+      "title": "AI Mock completed",
+      "description": "Self-paced — no fixed date required"
+     },
+     {
+      "code": "MANUAL_MOCK_COMPLETED",
+      "title": "Manual Mock",
+      "description": "Mock interview with PMO or a peer"
+     },
+     {
+      "code": "OBS_SYSTEM_CHECK",
+      "title": "OBS & System check",
+      "description": "OBS set up; camera, mic, screen share and internet checked"
+     }
+    ],
+    "openings": [
+     {
+      "publicId": "efae20b9-0b5d-44e3-8922-205905a56f91",
+      "ordinal": 1,
+      "seatId": "OPP-0363 #1",
+      "stage": "PENDING_TO_SHORTLIST",
+      "directStage": null,
+      "stageEnteredAt": "2026-11-04T12:31:34.100Z",
+      "createdAt": "2026-11-04T12:31:34.100Z",
+      "nominations": [],
+      "cancellation": null
+     },
+     {
+      "publicId": "c17d400a-09ef-44bb-a77c-924d47b94ea1",
+      "ordinal": 2,
+      "seatId": "OPP-0363 #2",
+      "stage": "PENDING_TO_SHORTLIST",
+      "directStage": null,
+      "stageEnteredAt": "2026-11-04T12:31:34.100Z",
+      "createdAt": "2026-11-04T12:31:34.100Z",
+      "nominations": [],
+      "cancellation": null
+     }
+    ],
+    "allowedActions": [
+     "CLOSE"
+    ],
+    "openingCount": 2,
+    "filledCount": 0,
+    "shortlistedCount": 0
+   }
+  ]
+ },
+ "PX": "48a5c18d-93b7-42d6-b7ef-5c756e3626af",
+ "T": "OPP-0363",
+ "c": [
+  {
+   "id": "dd62b1d5-1c36-4b08-8e96-e88e7b1457e2",
+   "name": "Mihir Dabhi"
+  },
+  {
+   "id": "63b1ff16-2cff-40fb-a71f-96b8806a6d04",
+   "name": "Ira Ghosh"
+  },
+  {
+   "id": "130e2210-1690-4bfd-839a-37112ec2b5c4",
+   "name": "Varsha Kotak"
+  },
+  {
+   "id": "08fa42f6-7ace-4b68-9594-d91f5e539f5e",
+   "name": "Karan Mukherjee"
+  },
+  {
+   "id": "fa46cee8-fd25-4ed4-8ed5-cfe1376c6edd",
+   "name": "Fenil Gajjar"
+  },
+  {
+   "id": "1b1b1985-26b1-4c17-97d0-5114af15c770",
+   "name": "Fenil Nair"
+  }
+ ]
+}

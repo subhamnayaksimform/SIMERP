@@ -1,0 +1,186 @@
+{
+  "results": [
+    {
+      "id": "reshortlist-released",
+      "ok": true,
+      "s": 201,
+      "c": "OPP_074",
+      "stats": {
+        "shortlistedCount": 2,
+        "rejectedCount": 2,
+        "filledCount": 0,
+        "requiredCount": 4
+      },
+      "errs": []
+    },
+    {
+      "id": "rejected-person-reshortlist",
+      "ok": true,
+      "s": 409,
+      "c": "OPP_183",
+      "m": "This Employee was rejected for this Position and cannot be shortlisted for it again",
+      "stats": {
+        "shortlistedCount": 2,
+        "rejectedCount": 2,
+        "filledCount": 0,
+        "requiredCount": 4
+      },
+      "errs": []
+    },
+    {
+      "id": "request-approval",
+      "ok": true,
+      "s": 200,
+      "c": "SUCCESS",
+      "errs": []
+    },
+    {
+      "id": "bypass-approval",
+      "ok": true,
+      "empty": {
+        "s": 400,
+        "c": "VAL_001",
+        "m": "Validation failed"
+      },
+      "r": {
+        "s": 400,
+        "c": "VAL_001",
+        "m": "Validation failed"
+      },
+      "stage": "WAITING_FOR_APPROVAL",
+      "errs": []
+    },
+    {
+      "id": "select",
+      "ok": true,
+      "s": 400,
+      "c": "OPP_014",
+      "m": "This change is not allowed from the current stage",
+      "stage": "WAITING_FOR_APPROVAL",
+      "stats": {
+        "shortlistedCount": 2,
+        "rejectedCount": 2,
+        "filledCount": 0,
+        "requiredCount": 4
+      },
+      "errs": []
+    },
+    {
+      "id": "release-won",
+      "ok": true,
+      "s": 200,
+      "c": "SUCCESS",
+      "errs": []
+    },
+    {
+      "id": "close-A-partial",
+      "ok": true,
+      "s": 200,
+      "c": "SUCCESS",
+      "x": [],
+      "stats": {
+        "shortlistedCount": 0,
+        "rejectedCount": 2,
+        "filledCount": 0,
+        "requiredCount": 1
+      },
+      "errs": []
+    },
+    {
+      "id": "kanban-counts",
+      "ok": true,
+      "PENDING_TO_SHORTLIST": 1,
+      "SHORTLISTED": 0,
+      "WAITING_FOR_APPROVAL": 0,
+      "BEING_PREPARED": 0,
+      "INTERVIEW_SCHEDULED": 0,
+      "DID_INTERVIEW_HAPPEN": 0,
+      "WAITING_FOR_FEEDBACK": 0,
+      "WON": 0,
+      "PROJECT_ALLOCATED": 0,
+      "REJECTED": 0,
+      "LOST": 0,
+      "ON_HOLD": 0,
+      "NO_LONGER_REQUIRED": 6,
+      "errs": []
+    },
+    {
+      "id": "reopen-A",
+      "ok": true,
+      "s": 200,
+      "c": "SUCCESS",
+      "stats": {
+        "shortlistedCount": 0,
+        "rejectedCount": 2,
+        "filledCount": 0,
+        "requiredCount": 4
+      },
+      "errs": []
+    },
+    {
+      "id": "status-won",
+      "ok": true,
+      "s": 200,
+      "c": "SUCCESS",
+      "x": [
+        [
+          "OPP-0345 #5",
+          "PENDING_TO_SHORTLIST"
+        ],
+        [
+          "OPP-0345 #6",
+          "PENDING_TO_SHORTLIST"
+        ],
+        [
+          "OPP-0345 #7",
+          "PENDING_TO_SHORTLIST"
+        ],
+        [
+          "OPP-0345 #1",
+          "PENDING_TO_SHORTLIST"
+        ],
+        [
+          "OPP-0345 #2",
+          "PENDING_TO_SHORTLIST"
+        ],
+        [
+          "OPP-0345 #3",
+          "PENDING_TO_SHORTLIST"
+        ],
+        [
+          "OPP-0345 #4",
+          "PENDING_TO_SHORTLIST"
+        ]
+      ],
+      "errs": []
+    },
+    {
+      "id": "actions-on-won-ticket",
+      "ok": true,
+      "shortlist": {
+        "s": 400,
+        "c": "OPP_013",
+        "m": "This action is not allowed while the Opportunity is not open"
+      },
+      "close": {
+        "s": 409,
+        "c": "OPP_013",
+        "m": "This action is not allowed while the Opportunity is not open"
+      },
+      "release": {
+        "s": 404,
+        "c": "OPP_040",
+        "m": "Nomination not found"
+      },
+      "errs": []
+    },
+    {
+      "id": "status-back-open",
+      "ok": true,
+      "s": 200,
+      "c": "SUCCESS",
+      "errs": []
+    }
+  ],
+  "errs": []
+}

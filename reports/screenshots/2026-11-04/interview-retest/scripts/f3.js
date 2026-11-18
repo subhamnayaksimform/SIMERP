@@ -1,0 +1,25 @@
+const H = require('./h'); const fs = require('fs');
+(async () => {
+  const b = await H.chromium.launch();
+  const R = H.runner('f3');
+  const v = await H.login(b, 'vihaan.chatterjee');
+  const A = (m,p,d)=>H.api(v.page,m,p,d);
+  const S = JSON.parse(fs.readFileSync('state2.json')); const [PA, PB] = S.opp.positions.map(p=>p.publicId); const T=S.opp.ticketNumber;
+  const seats = async () => (await A('GET','/opportunities/openings?limit=100&search='+T)).body.data.items;
+  const st = async () => { const s=(await seats()); return s[0]?.opportunity.stats; };
+  const nom = async (name) => (await seats()).find(s=>s.activeNomination?.employee?.name===name)?.activeNomination?.publicId;
+  const ok = (r)=>({s:r.status,c:r.body?.code});
+  const inv = async (tag) => { const x = await st(); return { tag, ...x, invariantOK: x.filledCount <= x.requiredCount }; };
+  await R.step('reject-client', async () => { const id=await nom('Mehul Pandya'); const r=await A('POST','/opportunities/nominations/'+id+'/reject',{reason:'QA client no',rejectedByRole:'CLIENT'}); return {...ok(r), ...(await inv('after client reject'))}; });
+  await R.step('reject-pmo', async () => { const id=await nom('Karan Modi'); const r=await A('POST','/opportunities/nominations/'+id+'/reject',{reason:'QA pmo no',rejectedByRole:'PMO'}); return {...ok(r), ...(await inv('after pmo reject'))}; });
+  await R.step('reject-no-reason', async () => { const id=await nom('Gunjan Rawat'); const r=await A('POST','/opportunities/nominations/'+id+'/reject',{reason:'  '}); return ok(r); });
+  await R.step('release-validation', async () => { const id=await nom('Gunjan Rawat'); const e=await A('POST','/opportunities/nominations/'+id+'/release',{reason:''}); const sp=await A('POST','/opportunities/nominations/'+id+'/release',{reason:'   '}); const long=await A('POST','/opportunities/nominations/'+id+'/release',{reason:'x'.repeat(501)}); return {empty:ok(e), spaces:ok(sp), long:ok(long)}; });
+  await R.step('release-ok', async () => { const id=await nom('Gunjan Rawat'); const r=await A('POST','/opportunities/nominations/'+id+'/release',{reason:'QA <b>html</b> 🚀 released'}); const again=await A('POST','/opportunities/nominations/'+id+'/release',{reason:'again'}); return {first:ok(r), again:ok(again), ...(await inv('after release'))}; });
+  await R.step('detail-shows-released', async () => { const d=(await A('GET','/opportunities/'+S.opp.publicId)).body.data; return { keys:Object.keys(d).filter(k=>/nomin|candid|releas|reject/i.test(k)), positions:d.positions.map(p=>({t:p.title,req:p.requiredCount})) }; });
+  await R.step('rejected-list', async () => { const r=(await A('GET','/opportunities/openings/rejected?search='+T)).body.data.items; return r.map(i=>[i.nomination?.employee?.name,i.nomination?.status,i.nomination?.rejectedByRole]); });
+  await R.step('close-B-empty', async () => { const e=await A('POST','/opportunities/positions/'+PB+'/close',{reason:''}); const r=await A('POST','/opportunities/positions/'+PB+'/close',{reason:'QA close B'}); const again=await A('POST','/opportunities/positions/'+PB+'/close',{reason:'again'}); const sh=await A('POST','/opportunities/positions/'+PB+'/nominations',{candidates:[{employeePublicId:S.c[6].id}]}); return {empty:ok(e), close:ok(r), again:ok(again), shortlistOnClosed:ok(sh), ...(await inv('after close B'))}; });
+  await R.step('reopen-B', async () => { const r=await A('POST','/opportunities/positions/'+PB+'/reopen'); const again=await A('POST','/opportunities/positions/'+PB+'/reopen'); return {r:ok(r), again:ok(again), ...(await inv('after reopen B'))}; });
+  await R.step('close-A-with-live', async () => { const r=await A('POST','/opportunities/positions/'+PA+'/close',{reason:'QA close A'}); const x=(await seats()).filter(s=>s.position.title==='FR Java A').map(s=>[s.seatId,s.stage,s.activeNomination?.status]); return {r:ok(r), x, ...(await inv('after close A'))}; });
+  await R.step('reopen-A', async () => { const r=await A('POST','/opportunities/positions/'+PA+'/reopen'); const x=(await seats()).filter(s=>s.position.title==='FR Java A').map(s=>[s.seatId,s.stage]); return {r:ok(r), x, ...(await inv('after reopen A'))}; });
+  R.done(); await b.close();
+})();

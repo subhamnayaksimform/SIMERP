@@ -1,0 +1,121 @@
+{
+ "partnerships": [
+  "AWS",
+  "Claude",
+  "DataDog",
+  "GCP",
+  "IBM",
+  "Microsoft",
+  "NPTEL",
+  "Partnership 1",
+  "Partnership 2",
+  "QA-E2E Partner 2026-10-15",
+  "Snowflake"
+ ],
+ "053_typing_notaurl_errors": [
+  "*",
+  "*",
+  "*",
+  "*",
+  "*",
+  "Enter a valid URL starting with http:// or https://."
+ ],
+ "053_valid_errors": [
+  "*",
+  "*",
+  "*",
+  "*",
+  "*"
+ ],
+ "055_cleared_errors": [
+  "*",
+  "*",
+  "*",
+  "*",
+  "*",
+  "Add a verification link or upload the certificate."
+ ],
+ "055_save_enabled": false,
+ "054_hosts": {
+  "https://dddddd": [
+   "*",
+   "*",
+   "*",
+   "*",
+   "*",
+   "Enter a valid URL starting with http:// or https://."
+  ],
+  "https://localhost/x": [
+   "*",
+   "*",
+   "*",
+   "*",
+   "*",
+   "Enter a valid URL starting with http:// or https://."
+  ],
+  "http://999.1.1.1/x": [
+   "*",
+   "*",
+   "*",
+   "*",
+   "*",
+   "Enter a valid URL starting with http:// or https://."
+  ],
+  "https://a.b1": [
+   "*",
+   "*",
+   "*",
+   "*",
+   "*",
+   "Enter a valid URL starting with http:// or https://."
+  ],
+  "https://credly.com/b/1": [
+   "*",
+   "*",
+   "*",
+   "*",
+   "*"
+  ],
+  "https://in.credly.com/x": [
+   "*",
+   "*",
+   "*",
+   "*",
+   "*"
+  ],
+  "http://10.0.0.1/x": [
+   "*",
+   "*",
+   "*",
+   "*",
+   "*"
+  ]
+ },
+ "expiry_disabled_initial": false,
+ "056_Partnership 1_issue_2026-10-10": {
+  "expire": "10/10/2027",
+  "disabled": true
+ },
+ "056_issue_2026-09-10": {
+  "expire": "10/09/2027",
+  "disabled": true
+ },
+ "057_AWS": {
+  "expire": "10/09/2029",
+  "disabled": true,
+  "note": []
+ },
+ "057_Claude": {
+  "expire": "dd/mm/yyyy",
+  "disabled": true,
+  "note": [
+   "This partnership never expires."
+  ]
+ },
+ "057_Partnership 1": {
+  "expire": "10/09/2027",
+  "disabled": true,
+  "note": []
+ },
+ "expiry_click_opens_calendar": false
+}

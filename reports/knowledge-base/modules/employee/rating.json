@@ -1,0 +1,16 @@
+{
+  "module": "GEN",
+  "subModule": "Ratings",
+  "description": "Employee Module — Ratings (Overall / AI / Communication rating popups, Advanced Filter by Rating, Employee Ratings edit drawer). Suggested dedicated code EMPRAT (not yet assigned — see req-2026-07-13-GEN-doc.json unclear[]). Filed under moduleCode GEN pending that decision.",
+  "businessRules": [
+    "Double-clicking Save in the Overall/AI/Communication rating popup must not create duplicate rating records or cause a conflicting overwrite of the value.",
+    "Saving the Employee Ratings edit drawer must reflect updated rating values in the Ratings table immediately without a page reload, mirroring the cache-refresh requirement already established for the base Employee edit drawer."
+  ],
+  "edgeCases": [
+    "Advanced Filter by Rating combined criteria yielding 0 results — verify the empty-state/'0 results show' rendering (the brief only captured a nonzero '2 results show' sample).",
+    "V1 (7 filters) vs V2 (9 filters) — verify which variant is the live build before asserting a fixed filter-row count in automation.",
+    "Rating popup positioned near the table edge/last row — verify the small anchored popup (~260x190px) does not render off-screen or clipped.",
+    "Rating category popup pattern (Overall/AI/Communication) — verify Cancel discards the edit and Save persists it identically across all three categories, since a fix/break in one is likely to affect all (shared-component regression risk).",
+    "Ratings tab shows only 2 Table Rows in this export (vs. 11+ on the Employee tab) — verify this reflects a genuinely small rated-team sample rather than an unintended filter/bug hiding rows."
+  ]
+}

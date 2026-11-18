@@ -1,11 +1,17 @@
 /**
  * Playwright global-setup — runs once before the test suite.
  *
- * Creates two authenticated sessions:
- *   tests/fixtures/storageState.json       → ceo@simformsolutions.com  (direct credentials)
- *   tests/fixtures/storageState-punit.json → punit.patel               (direct credentials)
+ * Creates authenticated sessions:
+ *   tests/fixtures/storageState.json       → ceo@simformsolutions.com  (direct credentials, Admin)
+ *   tests/fixtures/storageState-punit.json → punit.patel               (direct credentials, TM/Employee)
+ *   tests/fixtures/storageState-pm.json    → PM persona                (direct credentials, Project Manager)
+ *   tests/fixtures/storageState-pmo.json   → PMO persona               (direct credentials, PMO)
+ *   tests/fixtures/storageState-tm.json    → TM persona                (direct credentials, department approver)
+ *   tests/fixtures/storageState-emp.json   → Employee persona          (direct credentials, base worker)
+ *   tests/fixtures/storageState-em.json    → EM persona                (direct credentials, Engineering/Employee Manager)
+ *   tests/fixtures/storageState-csm.json   → CSM persona               (direct credentials)
  *
- * Both files are re-used for 72 hours.
+ * All files are re-used for 72 hours.
  * Session validity is confirmed via a live HTTP probe — not just file age.
  */
 
@@ -17,14 +23,35 @@ import * as path from 'path';
 dotenv.config({ path: path.resolve(__dirname, '..', '.env') });
 
 const BASE_URL      = process.env.BASE_URL || 'https://simerp-dev.simform.solutions';
+// Local dev servers (e.g. Vite's HTTPS mode) commonly use a self-signed certificate — only
+// relax cert validation when actually pointed at localhost, so staging behavior is unchanged.
+const IGNORE_HTTPS_ERRORS = /^https?:\/\/localhost/i.test(BASE_URL);
 const PRIMARY_EMAIL = (process.env.SIMERP_USERNAME     || '').trim();
 const PRIMARY_PASS  = (process.env.SIMERP_PASSWORD     || '').trim();
 const TEST_EMAIL    = (process.env.SIMERP_TEST_USERNAME || '').trim();
 const TEST_PASS     = (process.env.SIMERP_TEST_PASSWORD || '').trim();
+const PM_EMAIL      = (process.env.SIMERP_PM_USERNAME    || '').trim();
+const PM_PASS       = (process.env.SIMERP_PM_PASSWORD    || '').trim();
+const PMO_EMAIL     = (process.env.SIMERP_PMO_USERNAME   || '').trim();
+const PMO_PASS      = (process.env.SIMERP_PMO_PASSWORD   || '').trim();
+const TM_EMAIL      = (process.env.SIMERP_TM_USERNAME    || '').trim();
+const TM_PASS       = (process.env.SIMERP_TM_PASSWORD    || '').trim();
+const EMP_EMAIL     = (process.env.SIMERP_EMP_USERNAME   || '').trim();
+const EMP_PASS      = (process.env.SIMERP_EMP_PASSWORD   || '').trim();
+const EM_EMAIL      = (process.env.SIMERP_EM_USERNAME    || '').trim();
+const EM_PASS       = (process.env.SIMERP_EM_PASSWORD    || '').trim();
+const CSM_EMAIL     = (process.env.SIMERP_CSM_USERNAME   || '').trim();
+const CSM_PASS      = (process.env.SIMERP_CSM_PASSWORD   || '').trim();
 
 const FIXTURE_DIR   = path.join(__dirname, 'fixtures');
 const PRIMARY_STATE = path.join(FIXTURE_DIR, 'storageState.json');
 const TEST_STATE    = path.join(FIXTURE_DIR, 'storageState-punit.json');
+const PM_STATE      = path.join(FIXTURE_DIR, 'storageState-pm.json');
+const PMO_STATE     = path.join(FIXTURE_DIR, 'storageState-pmo.json');
+const TM_STATE      = path.join(FIXTURE_DIR, 'storageState-tm.json');
+const EMP_STATE     = path.join(FIXTURE_DIR, 'storageState-emp.json');
+const EM_STATE      = path.join(FIXTURE_DIR, 'storageState-em.json');
+const CSM_STATE     = path.join(FIXTURE_DIR, 'storageState-csm.json');
 
 const CACHE_HOURS = 72; // Microsoft SSO sessions stay alive for days
 
@@ -45,7 +72,7 @@ async function isSessionLive(statePath: string): Promise<boolean> {
   if (!isStateValid(statePath)) return false;
   try {
     const { request } = await import('@playwright/test');
-    const ctx = await request.newContext({ storageState: statePath, baseURL: BASE_URL });
+    const ctx = await request.newContext({ storageState: statePath, baseURL: BASE_URL, ignoreHTTPSErrors: IGNORE_HTTPS_ERRORS });
     const resp = await ctx.get('/', { maxRedirects: 5 });
     await ctx.dispose();
     const url  = resp.url();
@@ -184,17 +211,20 @@ async function loginWithCredentials(page: Page, email: string, password: string)
   console.log(`\n  [CRED] Direct credentials login for ${email}`);
 
   await page.goto(BASE_URL, { waitUntil: 'domcontentloaded', timeout: 30_000 });
+  // SPA needs a beat past domcontentloaded to hydrate before the login toggle renders.
+  await page.waitForLoadState('networkidle', { timeout: 15_000 }).catch(() => {});
 
-  // Click "Login with Credentials" button if the app shows one
+  // Click "Login with Credentials" button if the app shows one.
+  // NOTE: the `text=` engine prefix cannot be mixed into a comma-joined CSS selector string
+  // (Playwright throws "Unexpected token '='" when it does) — combine via `.or()` instead.
   const credBtn = page.locator([
     'button:has-text("Login with Credentials")',
     'button:has-text("Login with Email")',
     'button:has-text("Sign in with Email")',
     'a:has-text("Login with Credentials")',
-    'text=Login with Credentials',
-  ].join(', ')).first();
+  ].join(', ')).or(page.getByText('Login with Credentials')).first();
 
-  if (await credBtn.isVisible({ timeout: 5_000 }).catch(() => false)) {
+  if (await credBtn.isVisible({ timeout: 10_000 }).catch(() => false)) {
     await credBtn.click();
     await page.waitForTimeout(600);
   }
@@ -242,15 +272,20 @@ async function loginWithCredentials(page: Page, email: string, password: string)
   }
   await submitBtn.click();
 
-  // Wait for navigation away from login page
+  // Wait for navigation away from login page. NOTE: the credentials form itself lives at
+  // /dev-login, which does not match /login|/signin|/auth/login — without excluding it here too,
+  // this predicate is already satisfied on the pre-submit URL and returns instantly, before the
+  // async sign-in call has resolved (page is still showing a "Signing in…" loading state).
   try {
     await page.waitForURL(
-      url => !/\/login|\/signin|\/auth\/login/i.test(url.toString()),
+      url => !/\/login|\/signin|\/auth\/login|\/dev-login/i.test(url.toString()),
       { timeout: 20_000 },
     );
   } catch { /* URL might not change for SPAs */ }
 
-  await page.waitForLoadState('domcontentloaded', { timeout: 10_000 }).catch(() => {});
+  // domcontentloaded fires instantly for an SPA (no real navigation) — wait for the async
+  // sign-in call to actually settle before checking login state.
+  await page.waitForLoadState('networkidle', { timeout: 15_000 }).catch(() => {});
   const ok = await isLoggedIn(page);
   console.log(`  [CRED] ${ok ? '✓ Logged in' : '✗ Login check failed'}`);
   return ok;
@@ -274,7 +309,7 @@ async function setupAccount(
 
   console.log(`\n━━ ${label} ━━`);
   const browser = await getBrowser();
-  const ctx: BrowserContext = await browser.newContext({ viewport: { width: 1280, height: 900 } });
+  const ctx: BrowserContext = await browser.newContext({ viewport: { width: 1280, height: 900 }, ignoreHTTPSErrors: IGNORE_HTTPS_ERRORS });
   const page: Page = await ctx.newPage();
 
   let ok = false;
@@ -347,6 +382,48 @@ async function globalSetup(): Promise<void> {
       await setupAccount(getBrowser, TEST_STATE, TEST_EMAIL, TEST_PASS, 'credentials', `Direct login — ${TEST_EMAIL}`);
     } else {
       console.warn('  ⚠  SIMERP_TEST_USERNAME / SIMERP_TEST_PASSWORD not set — skipping test-user login');
+    }
+
+    // 3. PM persona — direct credentials
+    if (PM_EMAIL && PM_PASS) {
+      await setupAccount(getBrowser, PM_STATE, PM_EMAIL, PM_PASS, 'credentials', `Direct login — ${PM_EMAIL} (PM)`);
+    } else {
+      console.warn('  ⚠  SIMERP_PM_USERNAME / SIMERP_PM_PASSWORD not set — skipping PM login');
+    }
+
+    // 4. PMO persona — direct credentials
+    if (PMO_EMAIL && PMO_PASS) {
+      await setupAccount(getBrowser, PMO_STATE, PMO_EMAIL, PMO_PASS, 'credentials', `Direct login — ${PMO_EMAIL} (PMO)`);
+    } else {
+      console.warn('  ⚠  SIMERP_PMO_USERNAME / SIMERP_PMO_PASSWORD not set — skipping PMO login');
+    }
+
+    // 5. TM persona — direct credentials
+    if (TM_EMAIL && TM_PASS) {
+      await setupAccount(getBrowser, TM_STATE, TM_EMAIL, TM_PASS, 'credentials', `Direct login — ${TM_EMAIL} (TM)`);
+    } else {
+      console.warn('  ⚠  SIMERP_TM_USERNAME / SIMERP_TM_PASSWORD not set — skipping TM login');
+    }
+
+    // 6. Employee persona — direct credentials (base worker)
+    if (EMP_EMAIL && EMP_PASS) {
+      await setupAccount(getBrowser, EMP_STATE, EMP_EMAIL, EMP_PASS, 'credentials', `Direct login — ${EMP_EMAIL} (Employee)`);
+    } else {
+      console.warn('  ⚠  SIMERP_EMP_USERNAME / SIMERP_EMP_PASSWORD not set — skipping Employee login');
+    }
+
+    // 7. EM persona — direct credentials (Engineering/Employee Manager)
+    if (EM_EMAIL && EM_PASS) {
+      await setupAccount(getBrowser, EM_STATE, EM_EMAIL, EM_PASS, 'credentials', `Direct login — ${EM_EMAIL} (EM)`);
+    } else {
+      console.warn('  ⚠  SIMERP_EM_USERNAME / SIMERP_EM_PASSWORD not set — skipping EM login');
+    }
+
+    // 8. CSM persona — direct credentials
+    if (CSM_EMAIL && CSM_PASS) {
+      await setupAccount(getBrowser, CSM_STATE, CSM_EMAIL, CSM_PASS, 'credentials', `Direct login — ${CSM_EMAIL} (CSM)`);
+    } else {
+      console.warn('  ⚠  SIMERP_CSM_USERNAME / SIMERP_CSM_PASSWORD not set — skipping CSM login');
     }
   } finally {
     if (state.browser) await state.browser.close();

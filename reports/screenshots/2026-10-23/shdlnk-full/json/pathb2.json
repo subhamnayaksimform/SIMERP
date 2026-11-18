@@ -1,0 +1,136 @@
+{
+  "044-prep": {
+    "status": 200,
+    "body": {
+      "code": "SUCCESS",
+      "message": "Allocation ticket updated successfully",
+      "data": {
+        "publicId": "f988d386-0a4f-4826-a8e5-394a9a875b9e",
+        "ticketNumber": "NA-0440",
+        "status": "AWAITING_CONFIRMATION",
+        "warnings": [],
+        "employeeAvailability": [
+          {
+            "employeePublicId": "a3c7173d-5129-4875-b776-aa5bb13d1ee7",
+            "availabilityPercentage": 90,
+            "isAvailable": true,
+            "allocationCapPercentage": 100,
+            "consumedPercentage": 10,
+            "remainingPercentage": 90,
+            "overlappingAllocations": [
+              {
+                "projectAssignmentPublicId": "6e464a4d-b8ba-49a1-9517-b8353bbabaa1",
+                "projectPublicId": "3d138a89-4d06-4839-8091-436fba0a2dd6",
+                "allocationType": "FIXED",
+                "allocationPercentage": 10,
+                "allocationStartDate": "2026-10-23T00:00:00.000Z",
+                "allocationEndDate": "2026-12-31T00:00:00.000Z",
+                "shadowDeveloperId": null,
+                "conflictingFrom": "2026-11-01T00:00:00.000Z",
+                "conflictingTo": "2026-12-31T00:00:00.000Z"
+              }
+            ],
+            "reasons": []
+          }
+        ]
+      }
+    }
+  },
+  "044-bypass": {
+    "status": 409,
+    "body": {
+      "code": "SYS_004",
+      "message": "This employee already has an active (non-archived) allocation on this project"
+    }
+  },
+  "043-prep": {
+    "status": 200,
+    "body": {
+      "code": "SUCCESS",
+      "message": "Allocation ticket updated successfully",
+      "data": {
+        "publicId": "77bafd96-e630-41e8-b8a6-d9969381ec42",
+        "ticketNumber": "NA-0441",
+        "status": "AWAITING_CONFIRMATION",
+        "warnings": [],
+        "employeeAvailability": [
+          {
+            "employeePublicId": "487c97e3-4c7f-4e3b-962c-b7af7c6ad75a",
+            "availabilityPercentage": 100,
+            "isAvailable": true,
+            "allocationCapPercentage": 100,
+            "consumedPercentage": 0,
+            "remainingPercentage": 100,
+            "overlappingAllocations": [],
+            "reasons": []
+          }
+        ]
+      }
+    }
+  },
+  "043-bypass": {
+    "status": 200,
+    "body": {
+      "code": "SUCCESS",
+      "message": "TM/EM approval bypassed; ticket approved and applied",
+      "data": {
+        "publicId": "77bafd96-e630-41e8-b8a6-d9969381ec42",
+        "ticketNumber": "NA-0441",
+        "status": "APPROVED",
+        "warnings": []
+      }
+    }
+  },
+  "045-da-shadow": {
+    "status": 201,
+    "body": {
+      "code": "ALLOCATION_TICKET_097",
+      "message": "Deallocation ticket created successfully",
+      "data": {
+        "outcome": "TICKET_CREATED",
+        "publicId": "3bda5c44-913d-48ef-b724-735c14bf43a2",
+        "ticketNumber": "DA-0167",
+        "ticketType": "DEALLOCATE_ALLOCATION",
+        "status": "AWAITING_CONFIRMATION"
+      }
+    }
+  },
+  "045-ack-shadow": {
+    "status": 200,
+    "body": {
+      "code": "SUCCESS",
+      "message": "De-allocation acknowledged; allocation change applied",
+      "data": {
+        "publicId": "3bda5c44-913d-48ef-b724-735c14bf43a2",
+        "ticketNumber": "DA-0167",
+        "status": "APPROVED"
+      }
+    }
+  },
+  "045-ack-main": {
+    "status": 200,
+    "body": {
+      "code": "SUCCESS",
+      "message": "De-allocation acknowledged; allocation change applied",
+      "data": {
+        "publicId": "6083f39b-b3d3-4c64-9eaa-d18ca2a2b045",
+        "ticketNumber": "DA-0166",
+        "status": "APPROVED"
+      }
+    }
+  },
+  "045-retry": {
+    "status": 200,
+    "body": {
+      "code": "SUCCESS",
+      "message": "TM/EM approval bypassed; ticket approved and applied",
+      "data": {
+        "publicId": "f988d386-0a4f-4826-a8e5-394a9a875b9e",
+        "ticketNumber": "NA-0440",
+        "status": "APPROVED",
+        "warnings": []
+      }
+    }
+  },
+  "das": "3bda5c44-913d-48ef-b724-735c14bf43a2"
+}

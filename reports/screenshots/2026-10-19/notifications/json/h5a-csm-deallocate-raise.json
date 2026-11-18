@@ -1,0 +1,27 @@
+{
+  "actor": "priya.chopra",
+  "T0": "2026-10-19T11:23:09.373Z",
+  "T1": "2026-10-19T11:23:10.469Z",
+  "method": "POST",
+  "path": "/allocation-tickets/remove-allocation",
+  "req": {
+    "projectAssignmentPublicId": "c3b65d73-e16b-4e34-9cfd-9e15b6033826",
+    "allocationEndDate": "2026-10-19",
+    "deallocationReason": "OTHERS",
+    "deallocationReasonNote": "QA test cleanup (SI4-T1527 retest 2026-10-19)"
+  },
+  "res": {
+    "status": 201,
+    "body": {
+      "code": "ALLOCATION_TICKET_097",
+      "message": "Deallocation ticket created successfully",
+      "data": {
+        "outcome": "TICKET_CREATED",
+        "publicId": "552716f0-d274-443a-97fe-4cfa86f97637",
+        "ticketNumber": "DA-0106",
+        "ticketType": "DEALLOCATE_ALLOCATION",
+        "status": "AWAITING_CONFIRMATION"
+      }
+    }
+  }
+}

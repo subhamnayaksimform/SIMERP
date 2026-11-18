@@ -1,0 +1,123 @@
+{
+  "T0": "2026-10-15T10:23:50.000Z",
+  "res": {
+    "hardik.trivedi": {
+      "email": "hardik.trivedi@simformsolutions.com",
+      "count": 2,
+      "items": [
+        {
+          "id": "3f1cf58b-bce0-4918-a915-4d7f1298a478",
+          "eventType": "notification.allocation.direct_employee_rm_assigned",
+          "title": "Team Member Assigned: Kashyap Vyas",
+          "body": "Kashyap Vyas has been assigned to HyperScale | Scalability Engine starting 2026-10-15.",
+          "createdAt": "2026-10-15T10:23:51.642Z",
+          "isRead": false,
+          "ctx": {
+            "assignmentPublicId": "8a72c6d0-720a-4e9c-ace7-37e8ad0aaf8c"
+          }
+        },
+        {
+          "id": "a5d76ea4-4c29-4238-a7fa-2241b2be4d68",
+          "eventType": "notification.allocation.direct_pm_notified",
+          "title": "Allocation Confirmed: HyperScale | Scalability Engine",
+          "body": "Kashyap Vyas has been allocated to HyperScale | Scalability Engine, effective 2026-10-15.",
+          "createdAt": "2026-10-15T10:23:51.615Z",
+          "isRead": false,
+          "ctx": {
+            "assignmentPublicId": "8a72c6d0-720a-4e9c-ace7-37e8ad0aaf8c"
+          }
+        }
+      ]
+    },
+    "yatharth.patil": {
+      "email": "yatharth.patil@simformsolutions.com",
+      "count": 1,
+      "items": [
+        {
+          "id": "45e905e9-46f2-4c5b-8820-13b836c6c30f",
+          "eventType": "notification.allocation.direct_employee_rm_assigned",
+          "title": "Team Member Assigned: Kashyap Vyas",
+          "body": "Kashyap Vyas has been assigned to HyperScale | Scalability Engine starting 2026-10-15.",
+          "createdAt": "2026-10-15T10:23:51.642Z",
+          "isRead": false,
+          "ctx": {
+            "assignmentPublicId": "8a72c6d0-720a-4e9c-ace7-37e8ad0aaf8c"
+          }
+        }
+      ]
+    },
+    "amit.patel": {
+      "email": "amit.patel@simformsolutions.com",
+      "count": 1,
+      "items": [
+        {
+          "id": "d96b1898-a0ae-4cdd-8e29-44a46ab11953",
+          "eventType": "notification.allocation.direct_employee_rm_assigned",
+          "title": "Team Member Assigned: Kashyap Vyas",
+          "body": "Kashyap Vyas has been assigned to HyperScale | Scalability Engine starting 2026-10-15.",
+          "createdAt": "2026-10-15T10:23:51.642Z",
+          "isRead": false,
+          "ctx": {
+            "assignmentPublicId": "8a72c6d0-720a-4e9c-ace7-37e8ad0aaf8c"
+          }
+        }
+      ]
+    },
+    "jinal.patel": {
+      "email": "jinal.patel@simformsolutions.com",
+      "count": 1,
+      "items": [
+        {
+          "id": "dd157583-9c13-4199-b9d4-44a99552819c",
+          "eventType": "notification.allocation.direct_employee_rm_assigned",
+          "title": "Team Member Assigned: Kashyap Vyas",
+          "body": "Kashyap Vyas has been assigned to HyperScale | Scalability Engine starting 2026-10-15.",
+          "createdAt": "2026-10-15T10:23:51.642Z",
+          "isRead": false,
+          "ctx": {
+            "assignmentPublicId": "8a72c6d0-720a-4e9c-ace7-37e8ad0aaf8c"
+          }
+        }
+      ]
+    },
+    "cto": {
+      "email": "cto@simformsolutions.com",
+      "count": 1,
+      "items": [
+        {
+          "id": "712375bd-5251-4995-9db6-6a51708cfaa0",
+          "eventType": "notification.allocation.direct_employee_rm_assigned",
+          "title": "Direct Allocation: HyperScale | Scalability Engine",
+          "body": "Bhumi Chauhan directly allocated Kashyap Vyas to HyperScale | Scalability Engine, bypassing the ticket workflow.",
+          "createdAt": "2026-10-15T10:23:51.642Z",
+          "isRead": false,
+          "ctx": {
+            "assignmentPublicId": "8a72c6d0-720a-4e9c-ace7-37e8ad0aaf8c"
+          }
+        }
+      ]
+    },
+    "kashyap.vyas": {
+      "email": "kashyap.vyas@simformsolutions.com",
+      "count": 1,
+      "items": [
+        {
+          "id": "dd0a3b43-c369-40b7-8d07-5917f7258c99",
+          "eventType": "notification.allocation.direct_employee_assigned",
+          "title": "You've Been allocated to HyperScale | Scalability Engine",
+          "body": "You've been allocated to HyperScale | Scalability Engine starting 2026-10-15.",
+          "createdAt": "2026-10-15T10:23:51.610Z",
+          "isRead": false,
+          "ctx": {
+            "assignmentPublicId": "8a72c6d0-720a-4e9c-ace7-37e8ad0aaf8c"
+          }
+        }
+      ]
+    },
+    "priya.chopra": {
+      "email": "priya.chopra@simformsolutions.com",
+      "count": 0,
+      "items": []
+    }
+  }
+}

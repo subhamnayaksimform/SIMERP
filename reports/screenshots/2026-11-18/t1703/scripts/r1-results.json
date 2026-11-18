@@ -1,0 +1,38 @@
+[
+ {
+  "area": "regression",
+  "name": "TM Team board lists the QA ticket",
+  "pass": true,
+  "detail": "[200,4]"
+ },
+ {
+  "area": "regression",
+  "name": "TM My Opportunity tab loads",
+  "pass": true,
+  "detail": "200"
+ },
+ {
+  "area": "regression",
+  "name": "RM board loads",
+  "pass": true,
+  "detail": "[200,0]"
+ },
+ {
+  "area": "regression",
+  "name": "PM not assigned to a Prospect ticket gets 404 (unchanged rule)",
+  "pass": true,
+  "detail": "[404,\"OPP_001\"]"
+ },
+ {
+  "area": "regression",
+  "name": "CSM Direct board loads",
+  "pass": true,
+  "detail": "[200,51]"
+ },
+ {
+  "area": "regression",
+  "name": "cleared Selected candidate still opens their ticket",
+  "pass": true,
+  "detail": "200"
+ }
+]

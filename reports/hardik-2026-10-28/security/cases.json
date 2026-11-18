@@ -1,0 +1,693 @@
+[
+  {
+    "id": "TC-SECAUD-001",
+    "module": "Security Audit Fixes",
+    "moduleCode": "SECAUD",
+    "subModule": "Swagger exposure",
+    "taskId": "SI4-T1515",
+    "title": "Swagger /docs on dev is not openly accessible and requires authentication",
+    "category": "security",
+    "priority": "High",
+    "severity": "Critical",
+    "tags": [
+      "@security",
+      "@api"
+    ],
+    "role": "Employee",
+    "preconditions": "Dev API reachable at https://simerp-dev-api.simform.solutions",
+    "testData": {
+      "paths": [
+        "/docs",
+        "/docs/"
+      ]
+    },
+    "steps": [
+      "GET https://simerp-dev-api.simform.solutions/docs with no credentials",
+      "GET https://simerp-dev-api.simform.solutions/docs/ with no credentials"
+    ],
+    "expected": "Docs are not served without auth; endpoint returns 401 with a WWW-Authenticate: Basic challenge (not 200 open HTML, not a default-credential login)",
+    "requirementRef": "SEC-BE-05",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "automationHint": "Playwright request.get, assert status 401 and header www-authenticate=Basic",
+    "lastResult": "passed",
+    "actualResult": "/docs=401 (WWW-Authenticate: Basic), /docs/=401 (WWW-Authenticate: Basic). Swagger is mounted on dev but gated behind basic auth; no open docs page.",
+    "notes": "",
+    "screenshot": ""
+  },
+  {
+    "id": "TC-SECAUD-002",
+    "module": "Security Audit Fixes",
+    "moduleCode": "SECAUD",
+    "subModule": "Swagger exposure",
+    "taskId": "SI4-T1515",
+    "title": "Swagger machine formats (/docs-json, /docs-yaml) also require authentication",
+    "category": "security",
+    "priority": "High",
+    "severity": "High",
+    "tags": [
+      "@security",
+      "@api"
+    ],
+    "role": "Employee",
+    "preconditions": "Dev API reachable",
+    "testData": {
+      "paths": [
+        "/docs-json",
+        "/docs-yaml",
+        "/api/docs",
+        "/swagger",
+        "/api-json"
+      ]
+    },
+    "steps": [
+      "GET /docs-json and /docs-yaml with no credentials",
+      "GET common alternative doc paths (/api/docs, /swagger, /api-json)"
+    ],
+    "expected": "Machine-readable spec endpoints require auth (401); no alternative unauthenticated doc route exists",
+    "requirementRef": "SEC-BE-05",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "automationHint": "Assert /docs-json and /docs-yaml return 401; alt paths 404",
+    "lastResult": "passed",
+    "actualResult": "/docs-json=401/Basic, /docs-yaml=401/Basic. /api/docs=404, /api/v1/docs=404, /swagger=404, /api-json=404. No open spec route.",
+    "notes": "",
+    "screenshot": ""
+  },
+  {
+    "id": "TC-SECAUD-003",
+    "module": "Security Audit Fixes",
+    "moduleCode": "SECAUD",
+    "subModule": "Swagger exposure",
+    "taskId": "SI4-T1515",
+    "title": "Removed hardcoded swagger fallback credentials (admin/admin123) must not grant access",
+    "category": "security",
+    "priority": "High",
+    "severity": "Critical",
+    "tags": [
+      "@security",
+      "@api"
+    ],
+    "role": "Employee",
+    "preconditions": "Dev API reachable; /docs requires basic auth",
+    "testData": {
+      "removedDefaults": [
+        "admin/admin123",
+        "test/test123"
+      ]
+    },
+    "steps": [
+      "Confirm from code that app.config.ts no longer falls back to admin/admin123",
+      "Live confirmation of the specific credential pair was NOT attempted (out of scope: no auth brute force)"
+    ],
+    "expected": "Docs are protected by DevOps-configured credentials only; the old literal fallback is gone (app.config.ts swaggerUsername/Password default to '')",
+    "requirementRef": "SEC-BE-05",
+    "automatable": false,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "automationHint": "Code-level: assert no 'admin123' literal in app.config.ts; live cred-guessing is out of scope",
+    "lastResult": "blocked",
+    "actualResult": "/docs returns 401 Basic challenge, so credentials are required. The hardcoded fallback was removed in commit 7f44b6e5 (app.config.ts now defaults both to ''). Actively testing admin/admin123 against the live endpoint was intentionally skipped as auth guessing is out of scope.",
+    "notes": "Blocked: verifying the specific removed credentials live would be auth guessing (prohibited). Code-confirmed removed.",
+    "screenshot": ""
+  },
+  {
+    "id": "TC-SECAUD-004",
+    "module": "Security Audit Fixes",
+    "moduleCode": "SECAUD",
+    "subModule": "Security headers",
+    "taskId": "SI4-T1515",
+    "title": "API responses carry helmet security headers (CSP, HSTS, X-Frame-Options, nosniff)",
+    "category": "security",
+    "priority": "High",
+    "severity": "High",
+    "tags": [
+      "@security",
+      "@api"
+    ],
+    "role": "Employee",
+    "preconditions": "Dev API reachable",
+    "testData": {
+      "endpoint": "/api/v1/health-check"
+    },
+    "steps": [
+      "GET /api/v1/health-check and inspect response headers"
+    ],
+    "expected": "Response includes Content-Security-Policy, Strict-Transport-Security, X-Frame-Options, X-Content-Type-Options, and omits X-Powered-By",
+    "requirementRef": "SEC-BE-05",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "automationHint": "Assert presence of helmet headers on any API response",
+    "lastResult": "passed",
+    "actualResult": "CSP=default-src 'self';...frame-ancestors 'self';object-src 'none';upgrade-insecure-requests; HSTS=max-age=31536000; includeSubDomains; X-Frame-Options=SAMEORIGIN; X-Content-Type-Options=nosniff; COOP=same-origin; CORP=same-origin; Referrer-Policy=no-referrer; X-Powered-By absent.",
+    "notes": "",
+    "screenshot": ""
+  },
+  {
+    "id": "TC-SECAUD-005",
+    "module": "Security Audit Fixes",
+    "moduleCode": "SECAUD",
+    "subModule": "Error leakage",
+    "taskId": "SI4-T1515",
+    "title": "API error responses do not leak stack traces or raw exception text",
+    "category": "security",
+    "priority": "Medium",
+    "severity": "High",
+    "tags": [
+      "@security",
+      "@api",
+      "@negative"
+    ],
+    "role": "Employee",
+    "preconditions": "Authenticated session (hardik.trivedi)",
+    "testData": {
+      "probes": [
+        "GET /this-route-does-not-exist-xyz",
+        "GET /employees/not-a-uuid",
+        "POST /auth/login {bad}"
+      ]
+    },
+    "steps": [
+      "Request a non-existent route, a bad UUID param, and a malformed login body",
+      "Inspect response bodies for stack frames / file paths / node_modules"
+    ],
+    "expected": "Errors return structured codes/messages only; no stack trace, file path, or exception text",
+    "requirementRef": "SEC-BE-06",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "automationHint": "Assert body has no /.ts:\\d+/ or 'at (...)' stack patterns",
+    "lastResult": "passed",
+    "actualResult": "404 -> {code:SYS_002}, bad uuid -> {code:SYS_004, 'Validation failed (uuid is expected)'}, malformed login -> 404/validation. No stack traces, no file paths, no exception text in any response.",
+    "notes": "",
+    "screenshot": ""
+  },
+  {
+    "id": "TC-SECAUD-006",
+    "module": "Security Audit Fixes",
+    "moduleCode": "SECAUD",
+    "subModule": "PII in logs",
+    "taskId": "SI4-T1515",
+    "title": "Employee/Zoho-sync log lines no longer carry names, emails or raw error text",
+    "category": "security",
+    "priority": "High",
+    "severity": "High",
+    "tags": [
+      "@security",
+      "@api"
+    ],
+    "role": "n/a",
+    "preconditions": "Access to CloudWatch / server logs",
+    "testData": {},
+    "steps": [
+      "Trigger employee create/update/delete and Zoho sync",
+      "Inspect emitted log lines for emails/names/exception text"
+    ],
+    "expected": "Log messages use constant strings with identifiers (public UUID / employee number) in meta only; no PII in message text",
+    "requirementRef": "SEC-BE-06",
+    "automatable": false,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "automationHint": "Not black-box testable without log access",
+    "lastResult": "blocked",
+    "actualResult": "Not verifiable from outside: application logs go to CloudWatch and are not accessible in black-box scope. Code review of commit 7f44b6e5 confirms log sites in employees.service.ts and employees-metadata.service.ts were converted to constant messages + meta, with audit lines for CRUD. No external surface exposes these logs.",
+    "notes": "Blocked: no log/DB access. Fix verified by code review only.",
+    "screenshot": ""
+  },
+  {
+    "id": "TC-SECAUD-007",
+    "module": "Security Audit Fixes",
+    "moduleCode": "SECAUD",
+    "subModule": "CORS",
+    "taskId": "SI4-T1515",
+    "title": "CORS rejects a foreign origin with no header reflection",
+    "category": "security",
+    "priority": "High",
+    "severity": "High",
+    "tags": [
+      "@security",
+      "@api",
+      "@negative"
+    ],
+    "role": "Employee",
+    "preconditions": "Dev API reachable",
+    "testData": {
+      "origin": "https://evil.example.com"
+    },
+    "steps": [
+      "Send OPTIONS preflight and GET with Origin: https://evil.example.com"
+    ],
+    "expected": "Request is blocked (403); no Access-Control-Allow-Origin reflected, no credentials allowed",
+    "requirementRef": "SEC-BE-05",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "automationHint": "Assert status 403 and absent ACAO for foreign origin",
+    "lastResult": "passed",
+    "actualResult": "Foreign origin: preflight=403, GET=403, ACAO=null, ACAC=null. No origin reflection.",
+    "notes": "",
+    "screenshot": ""
+  },
+  {
+    "id": "TC-SECAUD-008",
+    "module": "Security Audit Fixes",
+    "moduleCode": "SECAUD",
+    "subModule": "CORS",
+    "taskId": "SI4-T1515",
+    "title": "CORS allows the configured frontend origin with credentials",
+    "category": "security",
+    "priority": "Medium",
+    "severity": "Medium",
+    "tags": [
+      "@security",
+      "@api"
+    ],
+    "role": "Employee",
+    "preconditions": "Dev API reachable",
+    "testData": {
+      "origin": "https://simerp-dev.simform.solutions"
+    },
+    "steps": [
+      "Send OPTIONS preflight and GET with Origin: https://simerp-dev.simform.solutions"
+    ],
+    "expected": "Allowed origin is reflected specifically (never '*') with Access-Control-Allow-Credentials: true",
+    "requirementRef": "SEC-BE-05",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "automationHint": "Assert ACAO equals the request origin and ACAC=true",
+    "lastResult": "passed",
+    "actualResult": "Allowed frontend: preflight=204, ACAO=https://simerp-dev.simform.solutions, ACAC=true. localhost:5173 also allowed (dev). No wildcard with credentials.",
+    "notes": "",
+    "screenshot": ""
+  },
+  {
+    "id": "TC-SECAUD-009",
+    "module": "Security Audit Fixes",
+    "moduleCode": "SECAUD",
+    "subModule": "Insecure transport",
+    "taskId": "SI4-T1513",
+    "title": "Deployed frontend bundle uses only an https API origin (no plaintext credentialed sink)",
+    "category": "security",
+    "priority": "High",
+    "severity": "Critical",
+    "tags": [
+      "@security",
+      "@frontend"
+    ],
+    "role": "Employee",
+    "preconditions": "Frontend served at https://simerp-dev.simform.solutions",
+    "testData": {
+      "bundles": [
+        "index-*.js",
+        "vendor-*.js"
+      ]
+    },
+    "steps": [
+      "Fetch index.html, enumerate JS bundles",
+      "Grep bundles for API/WS origins and any remote http:// references"
+    ],
+    "expected": "Only https:// (and wss://) origins; no remote http://host that would carry the cookie/JWT in plaintext",
+    "requirementRef": "SEC-BE-02",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "automationHint": "Grep built JS for http:// non-loopback origins",
+    "lastResult": "passed",
+    "actualResult": "Only API origin in bundle is https://simerp-dev-api.simform.solutions. No remote http:// origins present. assertSecureTransport/buildEnvConfig would stop the app at startup on a plaintext remote origin; the app boots normally, consistent with an https config.",
+    "notes": "",
+    "screenshot": ""
+  },
+  {
+    "id": "TC-SECAUD-010",
+    "module": "Security Audit Fixes",
+    "moduleCode": "SECAUD",
+    "subModule": "Secret exposure",
+    "taskId": "SI4-T1513",
+    "title": "No secrets or API keys are embedded in the frontend JS bundle",
+    "category": "security",
+    "priority": "High",
+    "severity": "High",
+    "tags": [
+      "@security",
+      "@frontend"
+    ],
+    "role": "Employee",
+    "preconditions": "Frontend bundles fetched",
+    "testData": {
+      "patterns": [
+        "AKIA...",
+        "AIza...",
+        "sk_live/sk_test",
+        "ghp_",
+        "xox[baprs]-",
+        "BEGIN PRIVATE KEY",
+        "JWT"
+      ]
+    },
+    "steps": [
+      "Scan all shipped JS bundles for AWS/GCP/Stripe/GitHub/Slack keys, private keys and JWTs"
+    ],
+    "expected": "No credential material in the client bundle; only public config (e.g. Sentry DSN) and VITE_ var names",
+    "requirementRef": "SEC-BE-02",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "automationHint": "Grep bundles for known secret patterns; expect none",
+    "lastResult": "passed",
+    "actualResult": "No AWS/GCP/Stripe/GitHub/Slack keys, no hardcoded JWT or PRIVATE KEY blocks found across index + 6 vendor bundles (~1.2MB). Only VITE_ variable-name references appear.",
+    "notes": "",
+    "screenshot": ""
+  },
+  {
+    "id": "TC-SECAUD-011",
+    "module": "Security Audit Fixes",
+    "moduleCode": "SECAUD",
+    "subModule": "Insecure transport",
+    "taskId": "SI4-T1513",
+    "title": "App starts normally with a valid https origin config (secure-origin check does not false-block)",
+    "category": "regression",
+    "priority": "Medium",
+    "severity": "Medium",
+    "tags": [
+      "@security",
+      "@frontend",
+      "@regression"
+    ],
+    "role": "Employee",
+    "preconditions": "Login as hardik.trivedi",
+    "testData": {},
+    "steps": [
+      "Load the app and log in; confirm it reaches an authenticated page"
+    ],
+    "expected": "assertSecureTransport allows the configured https origin; app loads and authenticates without a startup throw",
+    "requirementRef": "SEC-BE-02",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "automationHint": "Login flow succeeds end to end",
+    "lastResult": "passed",
+    "actualResult": "App loaded, login succeeded, landed on /employee. No startup error from the origin validation.",
+    "notes": "",
+    "screenshot": "reports/screenshots/2026-10-28/hardik/security/00-logged-in.png"
+  },
+  {
+    "id": "TC-SECAUD-012",
+    "module": "Security Audit Fixes",
+    "moduleCode": "SECAUD",
+    "subModule": "Security headers",
+    "taskId": "SI4-T1513",
+    "title": "Frontend (CloudFront/S3) is missing security response headers (CSP, HSTS, X-Frame-Options)",
+    "category": "security",
+    "priority": "Medium",
+    "severity": "Medium",
+    "tags": [
+      "@security",
+      "@frontend"
+    ],
+    "role": "Employee",
+    "preconditions": "Frontend served from S3/CloudFront",
+    "testData": {
+      "url": "https://simerp-dev.simform.solutions/"
+    },
+    "steps": [
+      "GET the frontend root and inspect response headers"
+    ],
+    "expected": "Frontend should carry CSP, HSTS and X-Frame-Options/frame-ancestors to prevent clickjacking and downgrade",
+    "requirementRef": "SEC-BE-02",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "automationHint": "Assert frontend has X-Frame-Options or CSP frame-ancestors",
+    "lastResult": "failed",
+    "actualResult": "Frontend root (server: AmazonS3) returns NO security headers: CSP=null, HSTS=null, X-Frame-Options=null, X-Content-Type-Options=null. The app can be framed (clickjacking) and has no HSTS. This is a DevOps/CloudFront config gap explicitly flagged as 'NEEDS ACTION OUTSIDE THIS REPO' in the SI4-T1513 commit; not a code defect in Hardik's change.",
+    "notes": "BUG-SEC-01 (DevOps-owned, acknowledged in T1513 commit body)",
+    "screenshot": ""
+  },
+  {
+    "id": "TC-SECAUD-013",
+    "module": "Security Audit Fixes",
+    "moduleCode": "SECAUD",
+    "subModule": "Access control",
+    "taskId": "SI4-T1515",
+    "title": "Non-privileged roles are denied admin-only endpoints (role-based access intact)",
+    "category": "security",
+    "priority": "Medium",
+    "severity": "Medium",
+    "tags": [
+      "@security",
+      "@api",
+      "@negative"
+    ],
+    "role": "Employee",
+    "preconditions": "Login as hardik.trivedi (Employee/RM/DM) and kriti.desai",
+    "testData": {
+      "endpoints": [
+        "/roles",
+        "/projects (kriti)"
+      ]
+    },
+    "steps": [
+      "As Employee, GET /roles and (as kriti) GET /projects"
+    ],
+    "expected": "Privileged endpoints return 403 for non-privileged roles",
+    "requirementRef": "SEC-BE-07",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "automationHint": "Assert 403 AUTH_004 on /roles for Employee",
+    "lastResult": "passed",
+    "actualResult": "/roles -> 403 AUTH_004 for both accounts; kriti.desai /projects -> 403. Data-scoping holds: hardik (RM) sees 139 projects (his scope), kriti sees none.",
+    "notes": "",
+    "screenshot": ""
+  },
+  {
+    "id": "TC-SECAUD-014",
+    "module": "Security Audit Fixes",
+    "moduleCode": "SECAUD",
+    "subModule": "Regression - Employee",
+    "taskId": "SI4-T1515",
+    "title": "Employee Details list screen and employees API still work",
+    "category": "regression",
+    "priority": "High",
+    "severity": "High",
+    "tags": [
+      "@regression",
+      "@api"
+    ],
+    "role": "Employee",
+    "preconditions": "Login as hardik.trivedi",
+    "testData": {},
+    "steps": [
+      "Open /employee; confirm list renders",
+      "GET /employees?page=1&limit=100"
+    ],
+    "expected": "Employee list renders with data; employees API returns 200 with records",
+    "requirementRef": "SEC-BE-06",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "automationHint": "Assert list rows > 0 and API 200",
+    "lastResult": "passed",
+    "actualResult": "UI shows 92 employees (v6.5.0). GET /employees -> 200, 92 records with full field set (team, department, designation, etc.). No errors after the logging/audit refactor.",
+    "notes": "",
+    "screenshot": "reports/screenshots/2026-10-28/hardik/security/10-employee-list.png"
+  },
+  {
+    "id": "TC-SECAUD-015",
+    "module": "Security Audit Fixes",
+    "moduleCode": "SECAUD",
+    "subModule": "Regression - Goals",
+    "taskId": "SI4-T1515",
+    "title": "Goals screen and goals API still work (goals.service.ts touched)",
+    "category": "regression",
+    "priority": "High",
+    "severity": "Medium",
+    "tags": [
+      "@regression",
+      "@api"
+    ],
+    "role": "Employee",
+    "preconditions": "Login as hardik.trivedi",
+    "testData": {},
+    "steps": [
+      "Navigate Employee > Goals in the sidebar",
+      "GET /goals?page=1&limit=100"
+    ],
+    "expected": "Goals route resolves (no crash/404) and goals API returns 200 with data",
+    "requirementRef": "SEC-BE-05",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "automationHint": "Assert /goals API 200 and items>0",
+    "lastResult": "passed",
+    "actualResult": "GET /goals?limit=100 -> 200 SUCCESS, 100 goal items. UI nav reaches /employee/goals (no 404). The redundant-cast removal in goals.service.ts caused no regression. (Top-level /goals is a graceful SPA 404 - not a route - not a defect.)",
+    "notes": "",
+    "screenshot": "reports/screenshots/2026-10-28/hardik/security/12-goals-via-nav.png"
+  },
+  {
+    "id": "TC-SECAUD-016",
+    "module": "Security Audit Fixes",
+    "moduleCode": "SECAUD",
+    "subModule": "Regression - Zoho analytics metadata",
+    "taskId": "SI4-T1515",
+    "title": "Zoho-analytics-driven employee metadata (team/department/designation) still populates",
+    "category": "regression",
+    "priority": "Medium",
+    "severity": "Medium",
+    "tags": [
+      "@regression",
+      "@api"
+    ],
+    "role": "Employee",
+    "preconditions": "Login as hardik.trivedi",
+    "testData": {},
+    "steps": [
+      "GET /employees and inspect metadata-derived fields",
+      "View list columns Department / RM / Projects"
+    ],
+    "expected": "team, department, designation, projects fields are present and populated after the employees-metadata.service refactor",
+    "requirementRef": "SEC-BE-06",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "automationHint": "Assert employee objects carry team/department/designation",
+    "lastResult": "passed",
+    "actualResult": "Employees carry team, department, designation, projects, noticePeriod etc. UI list shows Department (PROJECT MANAGEMENT), RM (Hardik Trivedi), Projects, Log Hours correctly. Metadata pipeline unaffected.",
+    "notes": "",
+    "screenshot": "reports/screenshots/2026-10-28/hardik/security/10-employee-list.png"
+  },
+  {
+    "id": "TC-DATFIX-001",
+    "module": "Data Fix – Duplicate Project",
+    "moduleCode": "DATFIX",
+    "subModule": "Allio Capital dedupe",
+    "taskId": "SI4-I589",
+    "title": "Exactly one 'Allio Capital' project exists after the migration",
+    "category": "functional",
+    "priority": "High",
+    "severity": "High",
+    "tags": [
+      "@regression",
+      "@api"
+    ],
+    "role": "Admin/PMO",
+    "preconditions": "An Admin/PMO account that can list all projects",
+    "testData": {
+      "projectName": "Allio Capital | Staff Augmentation",
+      "staleZohoId": "688906000093443667",
+      "liveZohoId": "688906000093443672"
+    },
+    "steps": [
+      "As Admin, search projects for 'Allio Capital'",
+      "Count matching active projects and check zohoProjectId"
+    ],
+    "expected": "Exactly one active Allio Capital project remains, with zohoProjectId 688906000093443672; the stale 688906000093443667 row is gone",
+    "requirementRef": "SI4-I589",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "automationHint": "Admin project search, assert count==1 and zohoProjectId",
+    "lastResult": "blocked",
+    "actualResult": "Could not verify. (1) The migration is a documented no-op on dev/local - it runs only where BOTH Zoho projects exist (production data). (2) Neither allowed account can list all projects: kriti.desai /projects -> 403; hardik.trivedi sees only his scoped 139 projects (zero Allio). (3) The roles API is 403 for both accounts, so no Admin/PMO account could be sourced per the allowed-accounts rule. No DB access. | 28/10 Admin re-check (ceo@): all 402 dev projects scanned (4 pages) — no project contains 'Allio', no duplicate project names at all; control search 'EventDriven' finds 1, so search works. Evidence reports/screenshots/2026-10-28/hardik/security/json/allio-admin.json.",
+    "notes": "Blocked: the Allio Capital data exists only in production; dev has neither project, so the migration is a no-op here. Needs a production check (or prod DB query) to confirm one project with the merged Zoho id.",
+    "screenshot": ""
+  },
+  {
+    "id": "TC-DATFIX-002",
+    "module": "Data Fix – Duplicate Project",
+    "moduleCode": "DATFIX",
+    "subModule": "Allio Capital dedupe",
+    "taskId": "SI4-I589",
+    "title": "No duplicate Allio Capital projects appear in the accessible project list",
+    "category": "functional",
+    "priority": "Medium",
+    "severity": "Medium",
+    "tags": [
+      "@regression",
+      "@api"
+    ],
+    "role": "Employee + Admin",
+    "preconditions": "Login as hardik.trivedi (RM scope)",
+    "testData": {},
+    "steps": [
+      "GET /projects?limit=300 and /projects?search=Allio",
+      "Filter for any 'Allio' rows and check for duplicates"
+    ],
+    "expected": "No duplicate Allio entries in the visible set; project listing returns cleanly",
+    "requirementRef": "SI4-I589",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "automationHint": "Assert no two rows share the Allio name",
+    "lastResult": "passed",
+    "actualResult": "GET /projects?limit=300 -> 200 with 139 projects, zero named Allio (none in this RM's scope); search=Allio -> 200 with 0 results. No duplicates, no listing errors. | 28/10 Admin re-check (ceo@): all 402 dev projects scanned (4 pages) — no project contains 'Allio', no duplicate project names at all; control search 'EventDriven' finds 1, so search works. Evidence reports/screenshots/2026-10-28/hardik/security/json/allio-admin.json.",
+    "notes": "Partial: confirms no duplicate in accessible scope; full-tenant count is TC-DATFIX-001 (blocked).",
+    "screenshot": ""
+  },
+  {
+    "id": "TC-DATFIX-003",
+    "module": "Data Fix – Duplicate Project",
+    "moduleCode": "DATFIX",
+    "subModule": "Time logs",
+    "taskId": "SI4-I589",
+    "title": "Project listing and time-log driven screens load without error",
+    "category": "regression",
+    "priority": "Medium",
+    "severity": "Medium",
+    "tags": [
+      "@regression",
+      "@api"
+    ],
+    "role": "Employee",
+    "preconditions": "Login as hardik.trivedi",
+    "testData": {},
+    "steps": [
+      "GET /projects and load the Employee Details list (which shows Log Hours)"
+    ],
+    "expected": "Projects API returns 200; screens showing time/log-hours data render without error after the stale-time-log deletion logic",
+    "requirementRef": "SI4-I589",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "automationHint": "Assert projects 200 and employee list Log Hours column renders",
+    "lastResult": "passed",
+    "actualResult": "Projects API 200 (139 rows). Employee Details list renders Log Hours (e.g. 88h/89h) with no error. Time-log data displays sanely.",
+    "notes": "",
+    "screenshot": "reports/screenshots/2026-10-28/hardik/security/10-employee-list.png"
+  },
+  {
+    "id": "TC-DATFIX-004",
+    "module": "Data Fix – Duplicate Project",
+    "moduleCode": "DATFIX",
+    "subModule": "Allio Capital dedupe",
+    "taskId": "SI4-I589",
+    "title": "Allio Capital allocations and time data look sane after dedupe",
+    "category": "functional",
+    "priority": "Medium",
+    "severity": "Medium",
+    "tags": [
+      "@regression",
+      "@api"
+    ],
+    "role": "Admin/PMO",
+    "preconditions": "Admin/PMO access to the Allio Capital project",
+    "testData": {},
+    "steps": [
+      "Open the Allio Capital project as Admin and review allocations/time logs"
+    ],
+    "expected": "Allocations and time-log hours are consistent (hours re-synced to the live project, no orphaned data)",
+    "requirementRef": "SI4-I589",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "automationHint": "Admin project detail for Allio",
+    "lastResult": "blocked",
+    "actualResult": "Could not verify: Allio Capital is not visible to either allowed account and no Admin/PMO account could be sourced; prod-only migration, no DB access. | 28/10 Admin re-check (ceo@): all 402 dev projects scanned (4 pages) — no project contains 'Allio', no duplicate project names at all; control search 'EventDriven' finds 1, so search works. Evidence reports/screenshots/2026-10-28/hardik/security/json/allio-admin.json.",
+    "notes": "Blocked: the Allio Capital data exists only in production; dev has neither project, so the migration is a no-op here. Needs a production check (or prod DB query) to confirm one project with the merged Zoho id.",
+    "screenshot": ""
+  }
+]

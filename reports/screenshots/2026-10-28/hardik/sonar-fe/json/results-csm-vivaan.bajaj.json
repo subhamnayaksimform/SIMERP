@@ -1,0 +1,184 @@
+{
+  "results": [
+    {
+      "id": "mp-load",
+      "ok": true,
+      "url": "https://simerp-dev.simform.solutions/my-projects",
+      "kpi": {
+        "tag": "DIV",
+        "role": null,
+        "busy": "false",
+        "text": "Total Active Projects | 4 | Total Allocation | 56 | Fixed Allocation | 44 | Dynamic Allocation | 12 | Long-Running Allocations | 18",
+        "outputDivChildren": 0
+      },
+      "outs": [
+        "Showing 1 - 4 of 4 results"
+      ],
+      "rows": 4,
+      "bad": [],
+      "shot": "reports/screenshots/2026-10-28/hardik/sonar-fe/c01-my-projects.png",
+      "errs": []
+    },
+    {
+      "id": "mp-long-running-tile",
+      "ok": true,
+      "names": [
+        "Long-Running Allocations18|false"
+      ],
+      "before": [
+        "Showing 1 - 4 of 4 results"
+      ],
+      "after": [
+        "Showing 1 - 4 of 4 results"
+      ],
+      "u": "https://simerp-dev.simform.solutions/my-projects?adv_allocationStage=LONG_RUNNING",
+      "pressed": "true",
+      "uAfter": "https://simerp-dev.simform.solutions/my-projects",
+      "shot": "reports/screenshots/2026-10-28/hardik/sonar-fe/c02-my-projects-long-running.png",
+      "errs": []
+    },
+    {
+      "id": "mp-sort-search",
+      "ok": true,
+      "u1": "https://simerp-dev.simform.solutions/my-projects?sortBy=name&sortOrder=asc",
+      "u2": "https://simerp-dev.simform.solutions/my-projects?sortBy=name&sortOrder=asc&search=a",
+      "outs": [
+        "Showing 1 - 4 of 4 results"
+      ],
+      "errs": []
+    },
+    {
+      "id": "mp-detail",
+      "ok": true,
+      "t": "",
+      "url": "https://simerp-dev.simform.solutions/my-projects/5adbf39c-b5dc-4a3c-a7fd-8118fcb622de",
+      "tabs": [
+        "Active Allocations19",
+        "Past Allocations7"
+      ],
+      "ths": [
+        "Action",
+        "Employee Name",
+        "Department",
+        "Allocation %",
+        "Start Date",
+        "End Date",
+        "Logged hours",
+        "Working Location"
+      ],
+      "rows": 19,
+      "bad": [],
+      "shot": "reports/screenshots/2026-10-28/hardik/sonar-fe/c03-project-detail.png",
+      "errs": []
+    },
+    {
+      "id": "mp-row-actions",
+      "ok": true,
+      "items": [
+        "Update Allocation",
+        "Request Replacement",
+        "Deallocate Employee"
+      ],
+      "shot": "reports/screenshots/2026-10-28/hardik/sonar-fe/c04-row-actions-menu.png",
+      "errs": []
+    },
+    {
+      "id": "mp-deallocate-dialog-cancel",
+      "ok": true,
+      "note": "no deallocate action found",
+      "errs": []
+    },
+    {
+      "id": "mp-employee-name-cell",
+      "ok": true,
+      "info": [
+        "\t | Sunil Mistry | Sr. SE | \tL1 SUPPORT\t | 50% (4 hrs/day) | \t29/12/2025\t10/06/2026\t77.82h\t | 84% WFO | 16% WFH",
+        "\t | Pranav Kumar | SE | LR | \tL1 SUPPORT\t | 25% (2 hrs/day) | \t25/02/2026\t24/05/2027\t25.47h\t | 52% WFO | 48% WFH",
+        "\t | Kriti Kulkarni | Sr. UIXD | \tDESIGN\t | 100% (8 hrs/day) | \t10/10/2025\t01/06/2026\t71.73h\t | 30% WFO | 70% WFH",
+        "\t | Bhumi Bhatia | Sr. IoTE | \tIOT\t | 25% (2 hrs/day) | \t15/06/2025\t24/05/2026\t24.18h\t | 88% WFO | 12% WFH",
+        "\t | Kavya Ghosh | LE | \tSALES\t | 40% (3 hrs/day) | \t17/06/2025\t25/05/2026\t13.24h\t | 53% WFO | 47% WFH"
+      ],
+      "errs": []
+    },
+    {
+      "id": "tickets-load",
+      "ok": true,
+      "url": "https://simerp-dev.simform.solutions/my-tickets",
+      "tabs": [
+        "Direct Allocation",
+        "Interview Allocation"
+      ],
+      "kpi": {
+        "tag": "DIV",
+        "role": null,
+        "text": "All Tickets | 01 | Open | 01 | In Review | 00 | Awaiting | 00 | Approved | 00"
+      },
+      "outs": [
+        "Showing 1 - 1 of 1 results"
+      ],
+      "rows": 1,
+      "bad": [],
+      "shot": "reports/screenshots/2026-10-28/hardik/sonar-fe/c06-my-tickets.png",
+      "errs": [
+        {
+          "type": "requestfailed",
+          "url": "https://simerp-dev.simform.solutions/my-tickets",
+          "text": "net::ERR_CERT_COMMON_NAME_INVALID https://stack.com/"
+        },
+        {
+          "type": "error",
+          "url": "https://simerp-dev.simform.solutions/my-tickets",
+          "text": "Failed to load resource: net::ERR_CERT_COMMON_NAME_INVALID"
+        }
+      ]
+    },
+    {
+      "id": "tickets-kpi-filter",
+      "ok": true,
+      "names": [
+        "Open01",
+        "In Review00",
+        "Awaiting00",
+        "Approved00"
+      ],
+      "u": "https://simerp-dev.simform.solutions/my-tickets?adv_status=IN_REVIEW",
+      "outs": [],
+      "shot": "reports/screenshots/2026-10-28/hardik/sonar-fe/c07-tickets-kpi-filter.png",
+      "uAfter": "https://simerp-dev.simform.solutions/my-tickets",
+      "errs": [
+        {
+          "type": "requestfailed",
+          "url": "https://simerp-dev.simform.solutions/my-tickets",
+          "text": "net::ERR_CERT_COMMON_NAME_INVALID https://stack.com/"
+        },
+        {
+          "type": "error",
+          "url": "https://simerp-dev.simform.solutions/my-tickets",
+          "text": "Failed to load resource: net::ERR_CERT_COMMON_NAME_INVALID"
+        }
+      ]
+    }
+  ],
+  "errs": [
+    {
+      "type": "requestfailed",
+      "url": "https://simerp-dev.simform.solutions/my-tickets",
+      "text": "net::ERR_CERT_COMMON_NAME_INVALID https://stack.com/"
+    },
+    {
+      "type": "error",
+      "url": "https://simerp-dev.simform.solutions/my-tickets",
+      "text": "Failed to load resource: net::ERR_CERT_COMMON_NAME_INVALID"
+    },
+    {
+      "type": "requestfailed",
+      "url": "https://simerp-dev.simform.solutions/my-tickets",
+      "text": "net::ERR_CERT_COMMON_NAME_INVALID https://stack.com/"
+    },
+    {
+      "type": "error",
+      "url": "https://simerp-dev.simform.solutions/my-tickets",
+      "text": "Failed to load resource: net::ERR_CERT_COMMON_NAME_INVALID"
+    }
+  ]
+}

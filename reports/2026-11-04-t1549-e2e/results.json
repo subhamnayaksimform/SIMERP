@@ -1,0 +1,272 @@
+[
+ {
+  "id": "1",
+  "check": "Columns on Active tab",
+  "result": "PASS",
+  "detail": "Start → End Hours | Work Pattern"
+ },
+ {
+  "id": "16a",
+  "check": "API returns all employees for 30/60/90",
+  "result": "PASS",
+  "detail": "30d=3648, 60d=3648, 90d=3648"
+ },
+ {
+  "id": "16b",
+  "check": "30/60/90 return different values",
+  "result": "PASS",
+  "detail": "rows differing 30v60=3102, 30v90=3102"
+ },
+ {
+  "id": "16c",
+  "check": "activityPeriod=45 rejected",
+  "result": "PASS",
+  "detail": "HTTP 400"
+ },
+ {
+  "id": "16c",
+  "check": "activityPeriod=365 rejected",
+  "result": "PASS",
+  "detail": "HTTP 400"
+ },
+ {
+  "id": "16c",
+  "check": "activityPeriod=abc rejected",
+  "result": "PASS",
+  "detail": "HTTP 400"
+ },
+ {
+  "id": "8",
+  "check": "Flag matches thresholds (30d)",
+  "result": "PASS",
+  "detail": "mismatches=0 "
+ },
+ {
+  "id": "11",
+  "check": "No-hours row has no flag (30d)",
+  "result": "PASS",
+  "detail": "rows=0 "
+ },
+ {
+  "id": "10",
+  "check": "Coverage-note rows carry no times/flag (30d)",
+  "result": "PASS",
+  "detail": "coverage rows=176, violating=0"
+ },
+ {
+  "id": "9",
+  "check": "No-data rows have no hours (30d)",
+  "result": "PASS",
+  "detail": "no-data rows=357"
+ },
+ {
+  "id": "8",
+  "check": "Flag matches thresholds (60d)",
+  "result": "PASS",
+  "detail": "mismatches=0 "
+ },
+ {
+  "id": "11",
+  "check": "No-hours row has no flag (60d)",
+  "result": "PASS",
+  "detail": "rows=0 "
+ },
+ {
+  "id": "10",
+  "check": "Coverage-note rows carry no times/flag (60d)",
+  "result": "PASS",
+  "detail": "coverage rows=176, violating=0"
+ },
+ {
+  "id": "9",
+  "check": "No-data rows have no hours (60d)",
+  "result": "PASS",
+  "detail": "no-data rows=357"
+ },
+ {
+  "id": "8",
+  "check": "Flag matches thresholds (90d)",
+  "result": "PASS",
+  "detail": "mismatches=0 "
+ },
+ {
+  "id": "11",
+  "check": "No-hours row has no flag (90d)",
+  "result": "PASS",
+  "detail": "rows=0 "
+ },
+ {
+  "id": "10",
+  "check": "Coverage-note rows carry no times/flag (90d)",
+  "result": "PASS",
+  "detail": "coverage rows=176, violating=0"
+ },
+ {
+  "id": "9",
+  "check": "No-data rows have no hours (90d)",
+  "result": "PASS",
+  "detail": "no-data rows=357"
+ },
+ {
+  "id": "4",
+  "check": "Row sample has start/close values",
+  "result": "PASS",
+  "detail": "{\"status\":\"ok\",\"startHours\":9.5,\"closeHoursAdjusted\":19.25,\"density\":58.4,\"workPattern\":\"HIGH\",\"coverageNote\":null}"
+ },
+ {
+  "id": "5a",
+  "check": "API has close-after-midnight rows (adjusted ≥ 24)",
+  "result": "PASS",
+  "detail": "rows=2"
+ },
+ {
+  "id": "G1",
+  "check": "lastSyncedAt present (Data as of source)",
+  "result": "FAIL",
+  "detail": "non-null=0"
+ },
+ {
+  "id": "4b",
+  "check": "UI cell shows range e.g. 9:30 AM – 7:15 PM",
+  "result": "PASS",
+  "detail": ""
+ },
+ {
+  "id": "7",
+  "check": "UI Work Pattern badges (High/Low · n min/hr, No flag)",
+  "result": "PASS",
+  "detail": ""
+ },
+ {
+  "id": "9b",
+  "check": "UI no-data shows readable placeholder (not bare dash only)",
+  "result": "PASS",
+  "detail": "cell shows —"
+ },
+ {
+  "id": "6",
+  "check": "Hover card: period, avg start/close IST, min/hr",
+  "result": "PASS",
+  "detail": "Active Hours last 30 days Average start 9:30 AM IST Average close 7:15 PM IST Logged per hour 58 min Based on time logs, not HR shifts."
+ },
+ {
+  "id": "19",
+  "check": "Header ⓘ tooltips open (both)",
+  "result": "PASS",
+  "detail": "Average start to close, shown as one range in IST. From daily time logs; a close after midnight shows +1. || Calculation: Logged minutes ÷ elapsed hours. Low: ≤40 min/hr High: >55 min/hr Sparse logging"
+ },
+ {
+  "id": "G3",
+  "check": "IST stated in header tooltip",
+  "result": "PASS",
+  "detail": ""
+ },
+ {
+  "id": "G3b",
+  "check": "IST visible in the cell itself",
+  "result": "FAIL",
+  "detail": "cell text has no IST (only tooltip/hover)"
+ },
+ {
+  "id": "G2",
+  "check": "Column header named \"Active Hours\"",
+  "result": "FAIL",
+  "detail": "header: Start → End Hours"
+ },
+ {
+  "id": "G1b",
+  "check": "\"Data as of\" note shown on page",
+  "result": "FAIL",
+  "detail": ""
+ },
+ {
+  "id": "2",
+  "check": "Columns NOT on Past Employee tab",
+  "result": "PASS",
+  "detail": "Name | Projects"
+ },
+ {
+  "id": "12",
+  "check": "Filter dialog: 30/60/90 single choice, default 30, Save",
+  "result": "PASS",
+  "detail": "default=Last 30 Days singleAfterPick=1 opts=Last 30 Days,Last 60 Days,Last 90 Days url=https://simerp-dev.simform.solutions/employee?sortBy=availabilityPercentage&sortOrder=desc&activityPeriod=60"
+ },
+ {
+  "id": "14a",
+  "check": "Period in URL",
+  "result": "PASS",
+  "detail": "https://simerp-dev.simform.solutions/employee?sortBy=availabilityPercentage&sortOrder=desc&activityPeriod=60"
+ },
+ {
+  "id": "14b",
+  "check": "Period kept after reload",
+  "result": "PASS",
+  "detail": "https://simerp-dev.simform.solutions/employee?sortBy=availabilityPercentage&sortOrder=desc&activityPeriod=60"
+ },
+ {
+  "id": "15",
+  "check": "Hover card follows period (last 60 days)",
+  "result": "PASS",
+  "detail": "Active Hours last 60 days Average start 9:35 AM IST Average close 7:10 PM IST Logged per hour 57 min Based on time logs, not HR shifts."
+ },
+ {
+  "id": "13",
+  "check": "Filter shared by both columns (Work Pattern shows 60)",
+  "result": "PASS",
+  "detail": "checked=Last 60 Days"
+ },
+ {
+  "id": "17",
+  "check": "Sort Start → End asc/desc, no-data last",
+  "result": "PASS",
+  "detail": "activeHours:asc → activeHours:desc | activeHours:asc rows=3648 ordered=true noDataLast=true ; activeHours:desc rows=3648 ordered=true noDataLast=true"
+ },
+ {
+  "id": "18",
+  "check": "Sort Work Pattern asc/desc, no-data last",
+  "result": "PASS",
+  "detail": "workPattern:asc → workPattern:desc | workPattern:asc rows=3648 ordered=true noDataLast=true ; workPattern:desc rows=3648 ordered=true noDataLast=true"
+ },
+ {
+  "id": "cron",
+  "check": "employee-activity-sync cron has run (nightly proof)",
+  "result": "FAIL",
+  "detail": "employee-activity-sync\",\"cronExpression\":\"15 2 * * *\",\"lastRun\":null}"
+ },
+ {
+  "id": "3",
+  "check": "Role TM: page opens + columns shown",
+  "result": "PASS",
+  "detail": "url=https://simerp-dev.simform.solutions/employee?sortBy=availabilityPercentage&sortOrder=desc cols=true activityInApi=true"
+ },
+ {
+  "id": "3",
+  "check": "Role EM: page opens + columns shown",
+  "result": "PASS",
+  "detail": "url=https://simerp-dev.simform.solutions/employee?sortBy=availabilityPercentage&sortOrder=desc cols=true activityInApi=true"
+ },
+ {
+  "id": "3",
+  "check": "Role PMO: page opens + columns shown",
+  "result": "PASS",
+  "detail": "url=https://simerp-dev.simform.solutions/employee?sortBy=availabilityPercentage&sortOrder=desc cols=true activityInApi=true"
+ },
+ {
+  "id": "3",
+  "check": "Role RM/DM (hardik): page opens, columns hidden",
+  "result": "PASS",
+  "detail": "url=https://simerp-dev.simform.solutions/employee?sortBy=availabilityPercentage&sortOrder=desc cols=false activityInApi=false"
+ },
+ {
+  "id": "3",
+  "check": "Role CSM: blocked",
+  "result": "PASS",
+  "detail": "url=https://simerp-dev.simform.solutions/unauthorized cols=false"
+ },
+ {
+  "id": "3",
+  "check": "Role Employee: blocked",
+  "result": "PASS",
+  "detail": "url=https://simerp-dev.simform.solutions/unauthorized cols=false"
+ }
+]

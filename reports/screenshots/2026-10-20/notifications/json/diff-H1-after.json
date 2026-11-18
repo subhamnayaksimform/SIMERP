@@ -1,0 +1,63 @@
+{
+  "before": "H0-before",
+  "after": "H1-after",
+  "beforeAt": "2026-10-20T08:47:43.041Z",
+  "afterAt": "2026-10-20T08:48:47.979Z",
+  "newByUser": {
+    "gaurav.dutta": [
+      {
+        "eventType": "allocation.direct_employee_assigned",
+        "title": "You've Been allocated to HyperScale | Scalability Engine",
+        "body": "You've been allocated to HyperScale | Scalability Engine starting 2026-10-20.",
+        "createdAt": "2026-10-20T08:48:43.932Z",
+        "ctx": {
+          "assignmentPublicId": "763b606e-3076-438b-8604-b5b800e18e09"
+        }
+      }
+    ],
+    "kartik.hegde": [
+      {
+        "eventType": "allocation.direct_employee_rm_assigned",
+        "title": "Team Member Assigned: Gaurav Dutta",
+        "body": "Gaurav Dutta has been assigned to HyperScale | Scalability Engine starting 2026-10-20.",
+        "createdAt": "2026-10-20T08:48:44.213Z",
+        "ctx": {
+          "assignmentPublicId": "763b606e-3076-438b-8604-b5b800e18e09"
+        }
+      }
+    ],
+    "hardik.trivedi": [
+      {
+        "eventType": "allocation.direct_pm_notified",
+        "title": "Allocation Confirmed: HyperScale | Scalability Engine",
+        "body": "Gaurav Dutta has been allocated to HyperScale | Scalability Engine, effective 2026-10-20.",
+        "createdAt": "2026-10-20T08:48:43.958Z",
+        "ctx": {
+          "assignmentPublicId": "763b606e-3076-438b-8604-b5b800e18e09"
+        }
+      }
+    ],
+    "amit.patel": [
+      {
+        "eventType": "allocation.direct_employee_rm_assigned",
+        "title": "Team Member Assigned: Gaurav Dutta",
+        "body": "Gaurav Dutta has been assigned to HyperScale | Scalability Engine starting 2026-10-20.",
+        "createdAt": "2026-10-20T08:48:44.213Z",
+        "ctx": {
+          "assignmentPublicId": "763b606e-3076-438b-8604-b5b800e18e09"
+        }
+      }
+    ],
+    "cto": [
+      {
+        "eventType": "allocation.direct_employee_rm_assigned",
+        "title": "Direct Allocation: HyperScale | Scalability Engine",
+        "body": "Bhumi Chauhan directly allocated Gaurav Dutta to HyperScale | Scalability Engine, bypassing the ticket workflow.",
+        "createdAt": "2026-10-20T08:48:44.213Z",
+        "ctx": {
+          "assignmentPublicId": "763b606e-3076-438b-8604-b5b800e18e09"
+        }
+      }
+    ]
+  }
+}

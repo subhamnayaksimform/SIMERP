@@ -1,0 +1,33 @@
+[
+ {
+  "publicId": "2c4777c5-2613-4211-98f3-9da4dfd57913",
+  "eventType": "notification.opportunity.direct_stage_changed",
+  "title": "Update on OPP-0385",
+  "body": "The direct allocation request OPP-0385 for you is now rejected.",
+  "isRead": false,
+  "readAt": null,
+  "createdAt": "2026-11-18T09:30:13.771Z",
+  "context": {
+   "directStage": "REJECTED",
+   "isCandidateCopy": "true",
+   "employeePublicId": "ec1537ce-7627-4334-9720-607a921f0172",
+   "positionPublicId": "75d9f00b-0144-4a2c-80b1-59006f42af19"
+  }
+ },
+ {
+  "publicId": "f6fe2697-19c6-4692-9892-7149e5aa279a",
+  "eventType": "notification.opportunity.direct_stage_changed",
+  "title": "Update on OPP-0385",
+  "body": "The direct allocation request OPP-0385 for you is now awaiting.",
+  "isRead": false,
+  "readAt": null,
+  "createdAt": "2026-11-18T09:30:08.972Z",
+  "context": {
+   "directStage": "AWAITING",
+   "isCandidateCopy": "true",
+   "employeePublicId": "ec1537ce-7627-4334-9720-607a921f0172",
+   "positionPublicId": "75d9f00b-0144-4a2c-80b1-59006f42af19",
+   "opportunityPublicId": "820dbe81-eec8-423e-8b56-d9550bb01c76"
+  }
+ }
+]

@@ -1,0 +1,21 @@
+{
+  "total": 402,
+  "controlSearchEventDriven": 1,
+  "allioHits": [],
+  "duplicateNames": [],
+  "sampleKeys": [
+    "publicId",
+    "name",
+    "alias",
+    "isBillable",
+    "externalPrReviewers",
+    "accountGrade",
+    "description",
+    "projectManager",
+    "customerSuccessManager",
+    "employees",
+    "totalHoursLogged",
+    "prReviewers",
+    "techStacks"
+  ]
+}

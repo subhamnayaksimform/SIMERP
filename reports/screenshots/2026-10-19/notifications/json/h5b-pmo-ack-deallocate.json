@@ -1,0 +1,22 @@
+{
+  "actor": "bhumi.chauhan",
+  "T0": "2026-10-19T11:24:30.549Z",
+  "T1": "2026-10-19T11:24:32.135Z",
+  "method": "PATCH",
+  "path": "/allocation-tickets/552716f0-d274-443a-97fe-4cfa86f97637/acknowledge",
+  "req": {
+    "remarks": "QA test SI4-T1527 cleanup ack"
+  },
+  "res": {
+    "status": 200,
+    "body": {
+      "code": "SUCCESS",
+      "message": "De-allocation acknowledged; allocation change applied",
+      "data": {
+        "publicId": "552716f0-d274-443a-97fe-4cfa86f97637",
+        "ticketNumber": "DA-0106",
+        "status": "APPROVED"
+      }
+    }
+  }
+}

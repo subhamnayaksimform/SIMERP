@@ -1,0 +1,25 @@
+{
+  "results": [
+    {
+      "id": "emp-projects-overflow-popover",
+      "ok": true,
+      "n": 10,
+      "label": "+1",
+      "aria": {
+        "al": null,
+        "hp": "dialog",
+        "ex": "false",
+        "row": "\t\nPunit Patel\nLE\n13y 1m\n\tFRONT END\tP1 · Red\t\nP3 · Green\n\t\n22\nAgilePulse | Sprint Tracker\nAgilePulse | Sprint Tracker\n+1\n"
+      },
+      "after": {
+        "ex": "true",
+        "ctrl": "radix-_r_45_"
+      },
+      "popTxt": null,
+      "kbOpen": "true",
+      "focusBack": "Inactive (",
+      "errs": []
+    }
+  ],
+  "errs": []
+}

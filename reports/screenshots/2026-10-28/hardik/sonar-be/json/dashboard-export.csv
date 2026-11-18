@@ -1,0 +1,477 @@
+﻿# Summary
+"Metric","Value"
+"Period start","2026-10-01"
+"Period end","2026-10-31"
+"Total allocated hours/day",47.12
+"Total de-allocated hours/day",583.6
+"Net utilization hours/day",-536.48
+"Net direction","down"
+"Allocation count",39
+"De-allocation count",248
+"Timesheet-estimated hours/day (DYNAMIC share)",0
+"Figures truncated by row cap","No"
+
+# Trend
+"Bucket","Period Start","Period End","Allocated Hours/Day","De-allocated Hours/Day","Net Hours/Day","Allocations","De-allocations"
+"1 Oct","2026-10-01","2026-10-01",0,23.6,-23.6,1,10
+"2 Oct","2026-10-02","2026-10-02",0,7.6,-7.6,0,7
+"3 Oct","2026-10-03","2026-10-03",0,24.4,-24.4,0,9
+"4 Oct","2026-10-04","2026-10-04",0,17.6,-17.6,0,9
+"5 Oct","2026-10-05","2026-10-05",0,22.8,-22.8,0,8
+"6 Oct","2026-10-06","2026-10-06",0,29.2,-29.2,0,10
+"7 Oct","2026-10-07","2026-10-07",0,30,-30,0,9
+"8 Oct","2026-10-08","2026-10-08",0,23.6,-23.6,0,10
+"9 Oct","2026-10-09","2026-10-09",0,21.2,-21.2,0,5
+"10 Oct","2026-10-10","2026-10-10",0,14,-14,0,6
+"11 Oct","2026-10-11","2026-10-11",0,22.4,-22.4,0,8
+"12 Oct","2026-10-12","2026-10-12",4,10,-6,1,5
+"13 Oct","2026-10-13","2026-10-13",0,7.6,-7.6,0,3
+"14 Oct","2026-10-14","2026-10-14",2.32,24,-21.68,2,9
+"15 Oct","2026-10-15","2026-10-15",1.6,8.4,-6.8,3,9
+"16 Oct","2026-10-16","2026-10-16",4,16,-12,2,6
+"17 Oct","2026-10-17","2026-10-17",0,23.2,-23.2,0,9
+"18 Oct","2026-10-18","2026-10-18",0,9.2,-9.2,0,5
+"19 Oct","2026-10-19","2026-10-19",4.8,12.4,-7.6,4,8
+"20 Oct","2026-10-20","2026-10-20",4,29.6,-25.6,4,12
+"21 Oct","2026-10-21","2026-10-21",8.8,15.2,-6.4,9,10
+"22 Oct","2026-10-22","2026-10-22",0.8,26,-25.2,1,11
+"23 Oct","2026-10-23","2026-10-23",12.8,4,8.8,11,3
+"24 Oct","2026-10-24","2026-10-24",0,10.8,-10.8,0,5
+"25 Oct","2026-10-25","2026-10-25",0,12.4,-12.4,0,4
+"26 Oct","2026-10-26","2026-10-26",0,22,-22,0,6
+"27 Oct","2026-10-27","2026-10-27",0,10,-10,0,4
+"28 Oct","2026-10-28","2026-10-28",0,27.2,-27.2,0,10
+"29 Oct","2026-10-29","2026-10-29",0,18,-18,0,8
+"30 Oct","2026-10-30","2026-10-30",0,24,-24,0,7
+"31 Oct","2026-10-31","2026-10-31",4,37.2,-33.2,1,23
+
+# Allocation Type
+"Allocation Type","Hours/Day","Allocations","Share %"
+"FIXED",47.12,34,100
+"DYNAMIC",0,5,0
+
+# Hours by Project
+"Project","Allocated Hours/Day","De-allocated Hours/Day","Allocations","De-allocations"
+"HyperScale | Scalability Engine",28,25.6,26,23
+"AnalytixHub | Advanced Analytics",4,2.8,1,1
+"AlphaTest | QA Orchestration",4,2.8,1,1
+"AbsoluteUI | Design System",4,8,1,3
+"GridCompute | Distributed Computing",2.32,0,1,0
+"ViewForge | BI Dashboard",1.6,3.6,3,4
+"XCrypt | Blockchain Wallet",1.6,1.6,2,2
+"KubeDash | Kubernetes Dashboard",1.6,1.6,1,1
+"KeyVault | Secrets Manager",0,7.6,0,3
+"CloudNative | Cloud Native Platform",0,2,0,1
+"DataSync | CDC Pipeline",0,1.6,0,1
+"JourneyX | Customer Journey",0,3.2,0,1
+"HaloFit | Wearable Platform",0,2,0,1
+"QualityX | Quality Platform",0,1.6,0,1
+"LogStream | Centralized Logging",0,6,0,2
+"ZenithX | Zenith Platform",0,16,0,2
+"EventDriven | CQRS Framework",0,5.2,0,3
+"PerformanceX | Speed Optimizer",0,2.4,0,1
+"UrbanPulse | Smart City IoT",0,2.8,0,2
+"FieldOps | Field Service App",0,1.6,0,1
+"FieldSync | Remote Data Collection",0,6,0,2
+"HealthX | Health Systems",0,16.4,0,4
+"JetDB | In-Process Database",0,2,0,1
+"WaveX | Wave Platform",0,2,0,1
+"NexGen | E-Commerce Platform",0,3.6,0,1
+"AppShield | Runtime Protection",0,2,0,1
+"GlobeSight | Global Analytics",0,7.6,0,2
+"PinPoint | Location Analytics",0,4.4,0,2
+"XFlux | Reactive Framework",0,3.6,0,1
+"CipherLock2 | Encryption Service",0,4.4,0,2
+"Quorum | Distributed Consensus",0,7.6,0,3
+"TuneX | Performance Tuning",0,6.8,0,3
+"LaunchPad | Startup Incubator",0,4,0,2
+"FabricAI2 | ML Pipeline",0,3.2,0,1
+"NovaPulse | Fitness Tracker",0,2.8,0,1
+"PerformanceMaxX | Performance Maximizer",0,8.4,0,3
+"ZeroDowntimeX | Zero Downtime Platform",0,4.4,0,1
+"EfficiencyX | Efficiency Engine",0,1.6,0,1
+"ForecastAI | Demand Planning",0,10.8,0,3
+"GlowUp | Beauty Marketplace",0,10.4,0,5
+"SyncMate | Data Synchronization",0,5.6,0,3
+"SolarGrid | Renewable Dashboard",0,2.8,0,1
+"HyperLink | URL Shortener API",0,2.8,0,2
+"Ridgeline | Construction Mgmt",0,2,0,1
+"InkDrop | Note Taking App",0,3.6,0,2
+"YieldMaxX | Yield Maximization",0,2.4,0,1
+"WarpSpeed | Performance Testing",0,9.2,0,3
+"RealSync | Live Data Platform",0,1.6,0,1
+"InfoSec | Security Dashboard",0,2,0,2
+"JustifyX | Justification Engine",0,6,0,2
+"XcelAPI | High-Performance API",0,2,0,1
+"UILabs | Component Library",0,2,0,1
+"DynamicX | Dynamic Platform",0,4.8,0,1
+"OrchestrAI | AI Workflows",0,3.6,0,1
+"JobQueue | Task Scheduler",0,2,0,1
+"EdgeAI | Inference at Edge",0,2.8,0,1
+"ChainLink | Workflow Engine",0,8,0,1
+"FlowState | Process Automation",0,1.6,0,2
+"NormalizeX | Normalization Engine",0,2,0,1
+"MedPortal | Healthcare App",0,2.8,0,1
+"BenchMark | Performance Testing",0,1.6,0,1
+"OmniAuth | SSO Gateway",0,11.6,0,2
+"UserFlows | UX Analytics",0,8,0,1
+"KaleidoscopeX | Kaleidoscope Analytics",0,2,0,1
+"ZenPatch | Patch Management",0,6,0,2
+"UpStream | Video CDN",0,2.8,0,1
+"AlphaFlow | Pipeline Automation",0,2.8,0,1
+"EchoBase | Voice Assistant",0,8,0,1
+"ServiceMesh | Microservice Gov",0,5.6,0,2
+"GrowthMap | CRM Analytics",0,11.6,0,2
+"OpsBoard | DevOps Dashboard",0,6,0,2
+"QuantTest | Benchmark Suite",0,2.8,0,1
+"WorkflowHub | Process Management",0,12.4,0,2
+"IronClad | Compliance Engine",0,1.6,0,1
+"EagleEye | Surveillance Platform",0,2.4,0,1
+"UnifiedAPI | API Aggregator",0,4.4,0,3
+"LazyLoad | Performance Optimizer",0,4,0,1
+"EcoTrack | Sustainability Platform",0,2.8,0,1
+"KernelOS2 | OS Monitoring",0,2.4,0,2
+"QuantumDB | Quantum-Ready DB",0,2.8,0,1
+"BrandKit | Marketing Platform",0,2,0,1
+"ElasticMesh | Distributed System",0,8,0,1
+"JadeTree | Family Tree App",0,1.6,0,1
+"AgilePulse | Sprint Tracker",0,3.6,0,2
+"PeakView | Mountain Tourism App",0,3.2,0,1
+"WindMill | Renewable Energy",0,5.6,0,2
+"OpenSearch | Enterprise Search",0,2.8,0,1
+"YieldPoint | Revenue Management",0,8,0,1
+"GraphCache | GQL Caching Layer",0,8,0,2
+"XcelERPM | Enterprise Resource",0,1.6,0,1
+"NodeX | Graph Database",0,2,0,1
+"ZenithOS | Internal Tooling",0,3.6,0,2
+"FlowDash | Workflow Dashboard",0,3.2,0,1
+"VectorDB | Vector Database",0,2.4,0,1
+"RouteOptimizer | Fleet Management",0,2.8,0,1
+"JiraSync | Project Sync Engine",0,2,0,1
+"RepoBot | Git Automation",0,2.8,0,1
+"LocalFirst | Offline-First Platform",0,5.6,0,2
+"GeoFence | Location Services",0,2.8,0,1
+"FinanceX | Financial Systems",0,2,0,1
+"ZoneControl | Region Manager",0,8,0,1
+"HiveSync | Collaboration Tool",0,2.4,0,1
+"DataShield | Privacy Compliance",0,7.6,0,2
+"OptimAI | AI Resource Planner",0,2.8,0,3
+"ByteCode | Code Compiler",0,4.4,0,1
+"SnapDeploy | Blue-Green Deployments",0,4.4,0,1
+"UltraAPI | HyperScale API",0,2,0,1
+"HelpBot | Support Automation",0,5.2,0,2
+"FluxDB | Time-series DB Tool",0,2,0,1
+"CapacityX | Capacity Planning",0,2.4,0,1
+"YieldMax | Agri Analytics",0,2,0,1
+"VersionVault | Release Manager",0,4.8,0,1
+"OptiRoute | Logistics Planner",0,2,0,1
+"JournalX | Audit Logging",0,2.8,0,1
+"JetPack | Deployment Automation",0,2,0,1
+"QueryBridge | SQL-to-NoSQL Bridge",0,8,0,1
+"ZoneGuard | Network Segmentation",0,1.6,0,1
+"BetaLaunch | Feature Flags",0,7.2,0,2
+"ResilientX | Fault Tolerance",0,1.6,0,1
+"TrackPro | Asset Tracking",0,2.8,0,1
+"KloudKit | Multi-Cloud Toolkit",0,2.8,0,1
+"QuickSetup | Infra Provisioner",0,3.6,0,2
+"ThinkBoard | Idea Management",0,2.8,0,1
+"UptimeTrack | Availability Monitor",0,1.6,0,1
+"UnifyX | Unification Platform",0,3.2,0,1
+"XmlToJson | Data Transformer",0,1.6,0,1
+"ProxyShield2 | API Security",0,2.4,0,1
+"VaultManager | Credential Store",0,2.8,0,1
+"PulseCheck | Health Monitor",0,8,0,1
+"XRealtime | Real-Time Engine",0,2,0,1
+"TicketDesk | Issue Tracker",0,2,0,2
+"AdaptiveX | Adaptive Platform",0,4.8,1,2
+"MetricHub | Monitoring Platform",0,0,0,1
+"XenoBridge | Protocol Adapter",0,0,0,1
+"RecordPro | Audit Records",0,3.2,0,1
+"HorizonDB | Distributed Database",0,0,0,1
+"OmniAuth2 | SSO Gateway",0,0,0,1
+"QuickFix | Issue Resolution",0,0,0,1
+"KnowledgeBase | Internal Wiki",0,0,0,1
+"AuditBox | Compliance Logger",0,0,0,1
+"CacheLayer | Redis Toolkit",0,0,0,1
+"PackageHub | Artifact Registry",0,0,0,1
+"YieldPlusX | Yield Plus",0,0,0,1
+"TestBench | Load Testing",0,0,0,1
+"TrustVault | Identity Management",0,0,0,1
+"YieldBot | Agri AI Platform",0,4,0,1
+"WebGateway | API Gateway",0,0,0,1
+"OmniChannel | Multi-Channel Platform",0,0,0,1
+"WatchTower | Observability Platform",0,2,0,1
+"ResilienceHub | Fault Injection",0,0,0,1
+"DataForge | ETL Pipeline",0,0,0,1
+"HybridCloud | Multi-Cloud Manager",0,0,0,1
+"VibeCheck | Social Sentiment",0,0,0,1
+"InferAI | Inference Engine",0,4.4,0,1
+"WarehouseX | Data Warehouse",0,1.6,0,1
+"StreamHub | Data Streaming",0,0,0,1
+"NanoScale | IoT Data Platform",0,0,0,1
+"WorkflowX | BPM Engine",0,0,0,1
+"PayLink | Payment Integration",0,0,0,1
+"LunarBase | Cloud Migration",0,0,0,1
+"LeverageX | Leverage Platform",0,0,0,1
+"ZenMonitor | APM Platform",0,0,1,1
+"AlertBridge | Notification Platform",0,0,1,1
+
+# All Activity
+"Employee","Employee Code","Designation","Department","Project","Allocation Type","Allocation %","Hours/Day","Log Hours","Status","Start Date","End Date"
+"Drashti Parekh","2b216717-6c54-49d2-85c6-b926fb5e995e","QAE","QA","AnalytixHub | Advanced Analytics","FIXED",50,4,0,"upcoming_allocation","2026-10-31",
+"Kartik Dabhi","81c8825c-5574-454d-8246-59eded3797d4","Sr. QAE","QA","HyperScale | Scalability Engine","FIXED",10,0.8,0,"upcoming_deallocation","2026-10-23","2026-10-31"
+"Yash Sinha","4be64283-7a6c-4a6f-aa2f-a36ca7c5c5cb","QAE","QA","HyperScale | Scalability Engine","FIXED",20,1.6,0,"upcoming_deallocation","2026-10-23","2026-10-31"
+"Aarav Patel","60a4ee5e-3012-4c27-a9a1-2f6b098f6191","Sr. DE","DATA ENGINEERING","HyperScale | Scalability Engine","FIXED",10,0.8,0,"upcoming_deallocation","2026-10-23","2026-11-20"
+"Karan Contractor","322b28ca-6c82-46f8-be9c-62c9ad4d9a0b","Sr. QAE","QA","HyperScale | Scalability Engine","FIXED",20,1.6,0,"upcoming_deallocation","2026-10-23","2026-11-20"
+"Zalak Chopra","c37c4817-b4ab-42be-a4d5-f013d537fb06","SE","MERN","HyperScale | Scalability Engine","FIXED",10,0.8,73.05,"upcoming_deallocation","2026-10-23","2026-10-31"
+"Vandana Mishra","f189380a-14b3-493a-9846-a1850796778b","Sr. QAE","QA","HyperScale | Scalability Engine","FIXED",20,1.6,0,"upcoming_deallocation","2026-10-23","2026-10-31"
+"Iti Trivedi","5e732896-3eed-43d0-ac1c-239be25074db","QAL","QA","HyperScale | Scalability Engine","FIXED",10,0.8,0,"upcoming_deallocation","2026-10-23","2026-12-31"
+"Fenil Kamath","cd50ad39-0e39-46f9-886d-27c06c775e15","Sr. QAE","QA","HyperScale | Scalability Engine","FIXED",10,0.8,0,"upcoming_deallocation","2026-10-23","2026-10-31"
+"Smriti Iyer","1b2277de-87ce-471d-9c21-0e2bc1f79c4c","QAE","QA","HyperScale | Scalability Engine","FIXED",20,1.6,0,"upcoming_deallocation","2026-10-23","2026-10-31"
+"Urvashi Kotak","d367764e-a835-48ef-acad-bc5850418651","QAE","QA","HyperScale | Scalability Engine","FIXED",10,0.8,0,"upcoming_deallocation","2026-10-23","2026-10-31"
+"Tanmay Parekh","52362232-b35c-42cd-9896-63e66cfd04b0","QAE","QA","HyperScale | Scalability Engine","FIXED",20,1.6,0,"upcoming_deallocation","2026-10-23","2026-10-31"
+"Kunal Menon","0fe63566-47b8-4aaa-bf12-986d9470f08f","Sr. DE","DATA ENGINEERING","HyperScale | Scalability Engine","FIXED",10,0.8,80.65,"upcoming_deallocation","2026-10-22","2026-10-31"
+"Uday Dave","e6429ccf-a840-480f-ae92-74d9da3e1d1d","QAL","QA","HyperScale | Scalability Engine","FIXED",10,0.8,0,"deallocation","2026-10-21","2026-10-21"
+"Neel Pillai","c5fe019a-db11-46cb-a8a8-6ac834b81437","QAE","QA","HyperScale | Scalability Engine","FIXED",10,0.8,0,"upcoming_deallocation","2026-10-21","2026-10-31"
+"Kriti Desai","4b15775f-9f5c-4692-bd16-4ba3f3f45997","Sr. QAE","QA","HyperScale | Scalability Engine","FIXED",10,0.8,0,"upcoming_deallocation","2026-10-21","2026-11-07"
+"Riddhi Verma","d74ef9c4-e63d-4c96-b3b0-e9e529fd2ea9","Sr. QAE","QA","HyperScale | Scalability Engine","FIXED",20,1.6,0,"upcoming_deallocation","2026-10-21","2026-11-07"
+"Ankita Das","dcc9179c-6c22-4649-8c9e-7f3a1fc70dcf","Sr. QAE","QA","HyperScale | Scalability Engine","FIXED",20,1.6,0,"upcoming_deallocation","2026-10-21","2026-10-31"
+"Mansi Raval","2a3d32a0-2da4-4306-abf1-8993ff2e317f","DE","DATA ENGINEERING","HyperScale | Scalability Engine","FIXED",10,0.8,50.31,"upcoming_deallocation","2026-10-21","2026-10-31"
+"Yamini Langalia","3c130aba-63f3-46bf-b71a-de313193c4c8","Sr. QAE","QA","HyperScale | Scalability Engine","FIXED",10,0.8,0,"upcoming_deallocation","2026-10-21","2026-10-31"
+"Prakash Pillai","87f12519-666f-42f6-91b4-41d321d578e9","QAE","QA","HyperScale | Scalability Engine","FIXED",10,0.8,0,"deallocation","2026-10-21","2026-10-21"
+"Kunal Menon","0fe63566-47b8-4aaa-bf12-986d9470f08f","Sr. DE","DATA ENGINEERING","HyperScale | Scalability Engine","FIXED",10,0.8,80.65,"deallocation","2026-10-21","2026-10-21"
+"Jignesh Raval","e649c500-454f-42a1-945f-4166b41317f8","LE","PROJECT MANAGEMENT","AdaptiveX | Adaptive Platform","DYNAMIC",0,0,0,"deallocation","2026-10-20","2026-10-21"
+"Gaurav Dutta","58d819dc-ce1e-443a-9843-6b13eb926572","PM","PROJECT MANAGEMENT","KubeDash | Kubernetes Dashboard","FIXED",20,1.6,0,"deallocation","2026-10-20","2026-10-20"
+"Kunal Menon","0fe63566-47b8-4aaa-bf12-986d9470f08f","Sr. DE","DATA ENGINEERING","HyperScale | Scalability Engine","FIXED",10,0.8,80.65,"deallocation","2026-10-20","2026-10-20"
+"Gaurav Dutta","58d819dc-ce1e-443a-9843-6b13eb926572","PM","PROJECT MANAGEMENT","HyperScale | Scalability Engine","FIXED",20,1.6,0,"deallocation","2026-10-20","2026-10-20"
+"Gaurav Dutta","58d819dc-ce1e-443a-9843-6b13eb926572","PM","PROJECT MANAGEMENT","HyperScale | Scalability Engine","FIXED",20,1.6,0,"deallocation","2026-10-19","2026-10-19"
+"Nimisha Bose","7140927b-d6a3-4385-b47a-794347959498",,"POST-SALES BA","ViewForge | BI Dashboard","FIXED",20,1.6,0,"upcoming_deallocation","2026-10-19","2026-12-22"
+"Kunal Menon","0fe63566-47b8-4aaa-bf12-986d9470f08f","Sr. DE","DATA ENGINEERING","HyperScale | Scalability Engine","FIXED",10,0.8,80.65,"deallocation","2026-10-19","2026-10-19"
+"Prakash Pillai","87f12519-666f-42f6-91b4-41d321d578e9","QAE","QA","XCrypt | Blockchain Wallet","FIXED",10,0.8,0,"deallocation","2026-10-19","2026-10-19"
+"Sagar Khanpara","dc5a0999-a7a1-4c4a-8e47-c0f3c5b4cb2a","TM","FRONT END","AbsoluteUI | Design System","FIXED",50,4,0,"deallocation","2026-10-16","2026-10-20"
+"Ankita Das","dcc9179c-6c22-4649-8c9e-7f3a1fc70dcf","Sr. QAE","QA","ViewForge | BI Dashboard","DYNAMIC",0,0,0,"deallocation","2026-10-16","2026-10-18"
+"Kashyap Vyas","75540994-e65e-400a-8b08-c8f69888e5a7","Sr. PM","PROJECT MANAGEMENT","HyperScale | Scalability Engine","FIXED",10,0.8,0,"deallocation","2026-10-15","2026-10-15"
+"Ankita Das","dcc9179c-6c22-4649-8c9e-7f3a1fc70dcf","Sr. QAE","QA","ViewForge | BI Dashboard","DYNAMIC",0,0,0,"deallocation","2026-10-15","2026-10-15"
+"Urvashi Kamath","226547b4-6093-41db-9d0b-d83fb248148d","Sr. SE","FRONT END","XCrypt | Blockchain Wallet","FIXED",10,0.8,0,"deallocation","2026-10-15","2026-10-15"
+"Isha Naik","c37cebf9-91f0-405a-bc16-593037475a7a","PM","PROJECT MANAGEMENT","AlertBridge | Notification Platform","DYNAMIC",0,0,0,"upcoming_deallocation","2026-10-14","2026-10-28"
+"Shaurya Gandhi","bd8e2ac1-1d79-4997-b36a-24a31b246134","LE","IOT","GridCompute | Distributed Computing","FIXED",29,2.32,0,"allocation","2026-10-14",
+"Prakash Verma","255da2fe-3112-44a7-badc-8fe796f7ae70","LE","ANDROID","AlphaTest | QA Orchestration","FIXED",50,4,0,"allocation","2026-10-12",
+"Diya Nair","33f0fd3c-78a0-4a9b-97d0-9b868c2ac27b","LE","QA","ZenMonitor | APM Platform","DYNAMIC",0,0,0,"deallocation","2026-10-01","2026-10-01"
+"Sagar Khanpara","dc5a0999-a7a1-4c4a-8e47-c0f3c5b4cb2a","TM","FRONT END","AbsoluteUI | Design System","FIXED",50,4,0,"deallocation","2026-08-30","2026-10-03"
+"Bhavesh Bansal","09716b7d-d689-4934-a25d-ed5c669d6434","LE","QA","HyperScale | Scalability Engine","FIXED",20,1.6,0,"upcoming_deallocation","2026-08-25","2026-10-31"
+"Manish Desai","40f467ed-203a-4b3d-9077-f3c2a63e9abb","LE","QA","HyperScale | Scalability Engine","FIXED",20,1.6,0,"upcoming_deallocation","2026-08-20","2026-10-31"
+"Yatharth Modi","fecee717-cb03-41a4-8bc9-bd42946ec0ec","IoTE","IOT","LeverageX | Leverage Platform","DYNAMIC",0,0,0,"upcoming_deallocation","2026-07-29","2026-10-28"
+"Siddhi Gajjar","b935036c-0143-4af9-8938-26eff28c4bcd","Sr. DE","DATA ENGINEERING","LunarBase | Cloud Migration","DYNAMIC",0,0,0,"upcoming_deallocation","2026-07-20","2026-10-29"
+"Yatharth Langalia","4281e878-1c87-4723-bf4d-fab5e9e2f7cd","Sr. SE","LAB & INNOVATIONS","PayLink | Payment Integration","DYNAMIC",0,0,0,"deallocation","2026-07-16","2026-10-15"
+"Keyur Nair","061dd0cd-6579-4965-8998-9ba82cc4f0a1","SE","DELIVERY","WorkflowX | BPM Engine","DYNAMIC",0,0,0,"upcoming_deallocation","2026-07-13","2026-10-28"
+"Vishal Patel","63b5cb26-b84d-4bb6-9689-b14a41db9f9d","Sr. DE","DATA ENGINEERING","NanoScale | IoT Data Platform","DYNAMIC",0,0,0,"upcoming_deallocation","2026-07-11","2026-10-29"
+"Chintan Dave","43014b99-99aa-4592-a35c-2bb2f8cda1e3","TM","OPEN SOURCE","StreamHub | Data Streaming","DYNAMIC",0,0,0,"deallocation","2026-07-11","2026-10-27"
+"Foram Arora","97f0986f-cd54-4842-88e6-bb8cf23219e5","SE","VUE.JS","AgilePulse | Sprint Tracker","FIXED",20,1.6,0,"deallocation","2026-07-07","2026-10-08"
+"Uday Das","2a59c9df-b490-4768-99c8-d71e935d7005","Sr. SE","FRONT END","GraphCache | GQL Caching Layer","DYNAMIC",0,0,0,"deallocation","2026-07-07","2026-10-15"
+"Trisha Parekh","3d3a5f3c-9f84-4747-a3d2-3f08314c0451","Sr. SE","PYTHON","WarehouseX | Data Warehouse","FIXED",20,1.6,0,"deallocation","2026-07-05","2026-10-07"
+"Aayush Sharma","677fa311-6275-4538-9bce-96920c2381f4","LE","PROJECT MANAGEMENT OFFICE","DataShield | Privacy Compliance","FIXED",55,4.4,0,"deallocation","2026-07-02","2026-10-06"
+"Sai Desai","f83dca86-2696-496a-b66e-fdd2f4afe9d0","SE","MARKETING","InferAI | Inference Engine","FIXED",55,4.4,0,"deallocation","2026-06-30","2026-10-16"
+"Laxmi Sinha","45518495-a232-4694-86ad-63c73d3f13b9","SE","FLUTTER","VibeCheck | Social Sentiment","DYNAMIC",0,0,0,"deallocation","2026-06-30","2026-10-08"
+"Piyush Solanki","c70f083c-0550-4f7c-86c3-6ba23dc37c34","Sr. SE","REACT","HybridCloud | Multi-Cloud Manager","DYNAMIC",0,0,0,"deallocation","2026-06-29","2026-10-03"
+"Gargi Chopra","ce14ed5c-adda-454a-852c-c10070c4e22a","UIXD","DESIGN","DataForge | ETL Pipeline","DYNAMIC",0,0,0,"upcoming_deallocation","2026-06-27","2026-10-31"
+"Yash Arora","cafacdb3-10c4-4cf9-b26a-e94ee865c234","Sr. SE","FRONT END","OptimAI | AI Resource Planner","DYNAMIC",0,0,0,"deallocation","2026-06-26","2026-10-05"
+"Nandini Modi","09ef8f85-6f08-4510-aac7-0b4c594b1d59",,"POST-SALES BA","ResilienceHub | Fault Injection","DYNAMIC",0,0,0,"deallocation","2026-06-24","2026-10-02"
+"Amit Kumar","94412f98-db15-48ce-b7ec-3527b19c3819","Sr. SE","TECH LEADERSHIP","ZenithOS | Internal Tooling","DYNAMIC",0,0,0,"deallocation","2026-06-23","2026-10-06"
+"Akash Parmar","b2c8b1bc-723f-46c4-9565-6d78c983441a","SA","PRE-SALES BA","WatchTower | Observability Platform","FIXED",25,2,0,"deallocation","2026-06-23","2026-10-20"
+"Sai Naik","f92df47a-89fd-4931-9f7f-55d0270a6e6c","Sr. SE","BI","AbsoluteUI | Design System","DYNAMIC",0,0,0,"deallocation","2026-06-23","2026-10-23"
+"Aditya Gajjar","e57126e5-81a6-427e-9fb9-1347831ce4ea","LE","TRAINEES","OmniChannel | Multi-Channel Platform","DYNAMIC",0,0,0,"deallocation","2026-06-22","2026-10-02"
+"Nikhil Kamath","a72a86db-b433-40f5-8d44-57225150c828","Sr. UIXD","DESIGN","HyperLink | URL Shortener API","DYNAMIC",0,0,0,"deallocation","2026-06-20","2026-10-24"
+"Riddhi Yadav","448a6611-431a-4c36-8cdb-74c9823d85a7","Sr. SE","DELIVERY","KernelOS2 | OS Monitoring","DYNAMIC",0,0,0,"upcoming_deallocation","2026-06-18","2026-10-31"
+"Tirth Parmar","e34ee122-415d-4f13-8029-c7e06e967116","CSM","CSM","WebGateway | API Gateway","DYNAMIC",0,0,0,"deallocation","2026-06-15","2026-10-26"
+"Brijesh Modi","7492d28d-6fea-4db5-b9b4-e2911bcb1d97","SE","REACT NATIVE","YieldBot | Agri AI Platform","FIXED",50,4,0,"deallocation","2026-06-15","2026-10-03"
+"Riddhi Kamath","eda8be5d-4bbd-4a4d-a350-a324c89e60a0","SE","FRONT END","UnifiedAPI | API Aggregator","FIXED",25,2,0,"deallocation","2026-06-12","2026-10-19"
+"Kartik Dabhi","81c8825c-5574-454d-8246-59eded3797d4","Sr. QAE","QA","FlowState | Process Automation","DYNAMIC",0,0,0,"upcoming_deallocation","2026-06-11","2026-10-30"
+"Bhavesh Bansal","09716b7d-d689-4934-a25d-ed5c669d6434","LE","QA","TrustVault | Identity Management","DYNAMIC",0,0,0,"deallocation","2026-06-09","2026-10-25"
+"Nikhil Parmar","a9f8c288-fc10-40ec-bb00-57b08e7c29a2","Sr. SE","ANDROID","UrbanPulse | Smart City IoT","DYNAMIC",0,0,0,"deallocation","2026-06-05","2026-10-04"
+"Rohan Parmar","8d93f320-802c-45de-8a76-3fc0006cce03","SE","SALES","TestBench | Load Testing","DYNAMIC",0,0,0,"deallocation","2026-06-04","2026-10-01"
+"Drashti Contractor","a5d2e088-eb83-435b-a78b-d8916003b861","SE","FRONT END","QuickSetup | Infra Provisioner","DYNAMIC",0,0,0,"upcoming_deallocation","2026-06-04","2026-10-30"
+"Yatharth Thakor","712d80a6-bcac-4f67-999e-adaec0f466fd","CSM","CSM","SyncMate | Data Synchronization","DYNAMIC",0,0,0,"deallocation","2026-06-03","2026-10-09"
+"Deepak Sharma","ea3824a1-d652-4b10-a003-42e9ea6ed5ec","SE","JAVA","YieldPlusX | Yield Plus","DYNAMIC",0,0,0,"deallocation","2026-06-01","2026-10-23"
+"Rishi Makwana","243cdcbb-d501-4629-9861-a0d73436a17a","SE","BI","PackageHub | Artifact Registry","DYNAMIC",0,0,0,"deallocation","2026-05-31","2026-10-22"
+"Vatsal Sinha","4ef1db6e-a73c-44dd-9305-a5e9db7b36bc","Sr. SE","SALES","CacheLayer | Redis Toolkit","DYNAMIC",0,0,0,"deallocation","2026-05-29","2026-10-04"
+"Foram Vyas","cb6b9f78-8878-4a9f-9f99-33dd4b6b970d","Sr. MLE","MACHINE LEARNING","InfoSec | Security Dashboard","DYNAMIC",0,0,0,"deallocation","2026-05-29","2026-10-17"
+"Gaurav Rao","f37d2364-a550-4353-a14f-0fd53288be6b","Sr. SE","L1 SUPPORT","AuditBox | Compliance Logger","DYNAMIC",0,0,0,"deallocation","2026-05-29","2026-10-17"
+"Laxmi Mistry","86a35876-c312-476d-acc5-487ae940a734","Sr. SE","TRAINEES","KnowledgeBase | Internal Wiki","DYNAMIC",0,0,0,"deallocation","2026-05-25","2026-10-19"
+"Komal Gajjar","e7838e26-a89b-427b-a450-118994a64140","Sr. AISE","MS AI BUSINESS SOLUTIONS","QuickFix | Issue Resolution","DYNAMIC",0,0,0,"deallocation","2026-05-17","2026-10-05"
+"Tirth Nagar","aee8b688-a251-460c-b798-33050fd6fce0","Sr. SE","REACT NATIVE","TicketDesk | Issue Tracker","FIXED",25,2,0,"deallocation","2026-05-13","2026-10-16"
+"Ritika Gupta","0c2ee78e-1c54-4351-939d-36326b47831e","Sr. SE","MEAN STACK","GlowUp | Beauty Marketplace","DYNAMIC",0,0,0,"deallocation","2026-05-13","2026-10-19"
+"Neel Khandelwal","74eb69c9-eeeb-48f4-a45e-53aeedc8e077","SE","DELIVERY","TuneX | Performance Tuning","FIXED",20,1.6,0,"deallocation","2026-05-09","2026-10-01"
+"Lalit Shetty","eb18b76a-68a9-4715-b4e9-a6a40128c4b5","BAL","POST-SALES BA","OmniAuth2 | SSO Gateway","DYNAMIC",0,0,0,"deallocation","2026-05-06","2026-10-10"
+"Kavya Vyas","674543e3-9054-4617-ad53-f456e936348e","DOE","DEVOPS","HorizonDB | Distributed Database","DYNAMIC",0,0,0,"upcoming_deallocation","2026-05-05","2026-10-31"
+"Nilesh Roy","5fcae765-fcd8-4fb1-b259-25d4d2722b90","Sr. DE","DATA ENGINEERING","RecordPro | Audit Records","FIXED",40,3.2,0,"deallocation","2026-04-28","2026-10-14"
+"Punit Solanki","81c88e0b-8315-4a0b-b771-bd2ac5631d1a","Sr. SE","OPEN SOURCE","XenoBridge | Protocol Adapter","DYNAMIC",0,0,0,"upcoming_deallocation","2026-04-27","2026-10-29"
+"Tanvi Parekh","6caddb02-dac8-4e42-89ee-cacf11029a4b","QAE","QA","MetricHub | Monitoring Platform","DYNAMIC",0,0,0,"deallocation","2026-04-25","2026-10-14"
+"Yatharth Saxena","09eeb601-0b27-4f46-a005-120ce4004027","SE","PYTHON","OptimAI | AI Resource Planner","DYNAMIC",0,0,0,"deallocation","2026-04-23","2026-10-02"
+"Palak Bhatt","ec6e212c-61d9-4cd8-92d5-2dcf0052253e","Sr. SE","REACT NATIVE","ForecastAI | Demand Planning","DYNAMIC",0,0,0,"deallocation","2026-04-23","2026-10-18"
+"Palak Limbachiya","2ca179bf-5bfe-4bd5-8ad5-870eaec4ba44","Sr. SE","REACT","AdaptiveX | Adaptive Platform","FIXED",60,4.8,0,"deallocation","2026-04-22","2026-10-27"
+"Nikhil Dave","3b87f29e-205b-4ed4-9c33-f7d727e39d70","Sr. SE","DELIVERY","TicketDesk | Issue Tracker","DYNAMIC",0,0,0,"deallocation","2026-04-20","2026-10-11"
+"Pranav Chopra","aacf9f83-ca1f-41b4-8f15-5418defcd3f9","Sr. SE","SALES","UnifiedAPI | API Aggregator","DYNAMIC",0,0,0,"deallocation","2026-04-19","2026-10-21"
+"Kavya Dodia","0b63a934-5360-4fff-aae3-967a0311d6f6","Sr. SE","REACT NATIVE","HelpBot | Support Automation","FIXED",25,2,53.31,"deallocation","2026-03-04","2026-10-08"
+"Prachi Patel","02fccd67-5ad8-484e-9323-b83095451abe","SE","BI","XRealtime | Real-Time Engine","FIXED",25,2,145.62,"deallocation","2026-02-27","2026-10-11"
+"Anil Thakkar","c8d51317-2df5-42c4-96ee-ac515f60762c","SE","MEAN STACK","PulseCheck | Health Monitor","FIXED",100,8,143.84,"upcoming_deallocation","2026-02-24","2026-10-28"
+"Trupti Modi","1d3a5e07-545c-44e4-a7e5-e161bafa82dc","SE","TECH LEADERSHIP","PerformanceMaxX | Performance Maximizer","FIXED",20,1.6,50.01,"deallocation","2026-02-23","2026-10-16"
+"Shaurya Das","f33039ec-9739-459c-9dbb-58293250b646","Sr. SE","PYTHON","EventDriven | CQRS Framework","FIXED",25,2,51.32,"deallocation","2026-02-22","2026-10-14"
+"Nilesh Mistry","09c767f1-e1e6-4ea3-a3cd-f84f66455fef","SE","MEAN STACK","TuneX | Performance Tuning","FIXED",40,3.2,75.42,"deallocation","2026-02-22","2026-10-22"
+"Rajesh Roy","71cb9f0e-cc01-461d-a250-6a11b3dd1f0e","SE","DELIVERY","BetaLaunch | Feature Flags","FIXED",35,2.8,152.78,"upcoming_deallocation","2026-02-21","2026-10-28"
+"Suresh Hegde","20194a05-0289-4f51-bd60-32963261f1ce","Sr. SE","DOT NET","PinPoint | Location Analytics","FIXED",20,1.6,29.88,"deallocation","2026-02-20","2026-10-17"
+"Dev Vasani","c3af95ab-37b6-425d-b4b5-0d13d808f98a","CSM","CSM","VaultManager | Credential Store","FIXED",35,2.8,47.92,"deallocation","2026-02-18","2026-10-18"
+"Ananya Naik","a6d4b029-99de-40c0-a84c-4ab0f7985863","Sr. IoTE","IOT","ProxyShield2 | API Security","FIXED",30,2.4,73.82,"deallocation","2026-02-18","2026-10-11"
+"Ishaan Sharma","a9f32409-3f35-4079-8d83-72a8200dfc73","CSA","CSM","XmlToJson | Data Transformer","FIXED",20,1.6,47.03,"deallocation","2026-02-14","2026-10-22"
+"Pooja Khandelwal","79d2b534-ceb5-4458-a502-eb0e28839cf0","SE","SCALA","UnifyX | Unification Platform","FIXED",40,3.2,146.13,"deallocation","2026-02-10","2026-10-05"
+"Nimisha Parekh","09a3792e-1a46-4d1f-bd35-e4c2acf8846c","SE","LAB & INNOVATIONS","UptimeTrack | Availability Monitor","FIXED",20,1.6,53.2,"deallocation","2026-02-08","2026-10-15"
+"Akash Desai","ad9fbd06-14d6-4e53-8180-4554cd444232","Sr. SE","IOS","WindMill | Renewable Energy","FIXED",50,4,78.84,"deallocation","2026-02-07","2026-10-07"
+"Tirth Gajjar","d03aebd7-b152-46c6-975c-db0299dbe697","SE","FLUTTER","ThinkBoard | Idea Management","FIXED",35,2.8,72.33,"deallocation","2026-02-07","2026-10-21"
+"Piyush Barot","841ecb64-6e00-479d-a18a-5c99be08fcc2","SE","DELIVERY","QuickSetup | Infra Provisioner","FIXED",45,3.6,26.52,"deallocation","2026-02-03","2026-10-06"
+"Aarav Pillai","b8e8e1a4-530c-457d-a9b8-0a8d5d9d0aba","LE","DESIGN","SyncMate | Data Synchronization","FIXED",25,2,75.91,"deallocation","2026-01-31","2026-10-04"
+"Zalak Goyal","3d3d4815-e1a0-4786-9e35-832ec7f42633","Sr. SE","VUE.JS","KloudKit | Multi-Cloud Toolkit","FIXED",35,2.8,51.18,"deallocation","2026-01-30","2026-10-13"
+"Maitri Sharma","47b1d84b-4104-4bc5-a742-b9b25b957be2","Sr. SE","L1 SUPPORT","TrackPro | Asset Tracking","FIXED",35,2.8,74.66,"deallocation","2026-01-25","2026-10-19"
+"Dhrumil Thakor","68ec1022-05d7-44c3-902a-6694c487362f","Sr. PM","PROJECT MANAGEMENT","ResilientX | Fault Tolerance","FIXED",20,1.6,149.9,"upcoming_deallocation","2026-01-21","2026-10-29"
+"Swati Mishra","c5efcfec-5151-4131-8c68-93a7f5819874","UIXD","DESIGN","BetaLaunch | Feature Flags","FIXED",55,4.4,77.02,"deallocation","2026-01-21","2026-10-20"
+"Meera Reddy","a670c94b-9a8d-4c55-98cc-06a8d407345e","LE","MERN","GrowthMap | CRM Analytics","FIXED",100,8,143.32,"deallocation","2026-01-20","2026-10-11"
+"Nikhil Langalia","25697ef1-cbf8-4e25-b5ab-744bf26f37c9","Sr. SE","VUE.JS","ZenithX | Zenith Platform","FIXED",100,8,147.13,"deallocation","2026-01-19","2026-10-01"
+"Vishal Thakor","fbd600d1-e204-4c80-83f5-ef86a2aaf25d","SE","GOLANG","ZoneGuard | Network Segmentation","FIXED",20,1.6,38.2,"deallocation","2026-01-18","2026-10-06"
+"Feni Garg","ba88e473-a8b5-4a15-ad50-2c3cde02056c","PM","PROJECT MANAGEMENT","QueryBridge | SQL-to-NoSQL Bridge","FIXED",100,8,141.64,"deallocation","2026-01-16","2026-10-05"
+"Tushar Patel","2a217f37-779e-4a57-aecf-a8d3d611bb28","SE","REACT NATIVE","HealthX | Health Systems","FIXED",100,8,154.84,"deallocation","2026-01-13","2026-10-09"
+"Hetvi Doshi","65ebc861-49d2-4f76-8e4c-595f80ccb06f","Sr. SE","MERN","JetPack | Deployment Automation","FIXED",25,2,53.16,"deallocation","2026-01-13","2026-10-01"
+"Pooja Roy","1bc95eb8-de71-4cbd-900f-13c6af06d754","Sr. SE","TRAINEES","JournalX | Audit Logging","FIXED",35,2.8,48.65,"deallocation","2026-01-12","2026-10-22"
+"Tejas Dodia","6de467c8-a050-416b-a687-8f5193ab2915","SE","IOS","LocalFirst | Offline-First Platform","FIXED",25,2,0,"deallocation","2026-01-12","2026-10-02"
+"Gunjan Verma","e95a2810-372d-4d16-8371-05d96a6e7318","SE","ANDROID","OptiRoute | Logistics Planner","FIXED",25,2,51.27,"deallocation","2026-01-11","2026-10-20"
+"Pooja Raval","981f1d28-ea10-4c5c-9261-d6152a7e54aa","SE","GOLANG","VersionVault | Release Manager","FIXED",60,4.8,78.76,"upcoming_deallocation","2026-01-10","2026-10-28"
+"Darshan Dodia","8681e739-4e06-40aa-af98-85c6f9045372","Sr. SE","JAVA","FieldSync | Remote Data Collection","FIXED",55,4.4,78.3,"deallocation","2026-01-09","2026-10-19"
+"Ojas Nair","5566f912-3fa2-4f72-b124-8c22bf520c6f","SE","SCALA","WarpSpeed | Performance Testing","FIXED",25,2,70.93,"deallocation","2026-01-08","2026-10-01"
+"Vikram Rao","d9c44ce9-c5bd-4770-903a-a90173d3a93d","Sr. SE","CMS","YieldMax | Agri Analytics","FIXED",25,2,37.12,"deallocation","2026-01-07","2026-10-22"
+"Sneha Bhatia","7c05b8d3-2afc-4054-aad5-9d61d702f6c8","CSA","CSM","CapacityX | Capacity Planning","FIXED",30,2.4,150,"deallocation","2026-01-04","2026-10-24"
+"Bhavin Desai","74a927b4-3eb7-46ee-90cc-a32500500133","SE","IOS","WorkflowHub | Process Management","FIXED",100,8,113.77,"deallocation","2026-01-04","2026-10-08"
+"Ujjwal Verma","fd4796d5-8d85-492c-bc80-2d69676389c7","Sr. SE","FLUTTER","KeyVault | Secrets Manager","FIXED",35,2.8,53.85,"deallocation","2026-01-01","2026-10-10"
+"Drashti Soni","e3e34983-a72c-4f91-a4f7-a9a81decfb4d","PM","PROJECT MANAGEMENT","FluxDB | Time-series DB Tool","FIXED",25,2,40.23,"deallocation","2025-12-31","2026-10-08"
+"Nimisha Bose","7140927b-d6a3-4385-b47a-794347959498",,"POST-SALES BA","ViewForge | BI Dashboard","FIXED",20,1.6,0,"deallocation","2025-12-30","2026-10-15"
+"Gargi Chatterjee","48120b7b-6181-4bd4-9e3a-44659ddf8733","SE","REACT NATIVE","HelpBot | Support Automation","FIXED",40,3.2,78.55,"deallocation","2025-12-29","2026-10-13"
+"Vikram Mehta","b544f1f8-0b4a-42e9-855d-bee70112e462","SE","FRONT END","UltraAPI | HyperScale API","FIXED",25,2,77.04,"deallocation","2025-12-27","2026-10-20"
+"Fenil Malhotra","384d16f0-0451-4f1f-848b-9fc495c414dc","SE","LAB & INNOVATIONS","SnapDeploy | Blue-Green Deployments","FIXED",55,4.4,73.9,"upcoming_deallocation","2025-12-26","2026-10-28"
+"Vivaan Limbachiya","25bf9658-2f27-4fe8-b3b5-9c0089a3e742","SE","ANDROID","GlowUp | Beauty Marketplace","FIXED",35,2.8,52.45,"deallocation","2025-12-25","2026-10-22"
+"Zalak Sinha","0eae5634-34dd-47ab-8089-6743a7bb883e","SE","FLUTTER","ByteCode | Code Compiler","FIXED",55,4.4,71.52,"deallocation","2025-12-24","2026-10-10"
+"Nisha Modi","931a8d6a-d1d6-42bb-80cb-0555d898bd2c","DOE","DEVOPS","OptimAI | AI Resource Planner","FIXED",35,2.8,151.48,"deallocation","2025-12-21","2026-10-22"
+"Payal Dave","41df7174-67d3-4ef2-af88-755b662e0c55","SE","REACT","ViewForge | BI Dashboard","FIXED",25,2,38.81,"deallocation","2025-12-15","2026-10-03"
+"Neha Mehta","fe080088-ea29-481f-8e4d-45c2a3c60d84","SE","DOT NET","DataShield | Privacy Compliance","FIXED",40,3.2,144.53,"upcoming_deallocation","2025-12-13","2026-10-31"
+"Rachna Kumar","88affba5-ad94-4c78-ba4f-f73eeddf9f4a","Sr. SE","REACT NATIVE","HiveSync | Collaboration Tool","FIXED",30,2.4,0,"deallocation","2025-12-08","2026-10-05"
+"Urvi Langalia","5864d625-5603-4b7b-9d2e-e52a3bf98fee","SE","FLUTTER","ZoneControl | Region Manager","FIXED",100,8,179.65,"deallocation","2025-12-07","2026-10-26"
+"Priya Das","8dd457fb-72ff-4555-b11e-bcde864f6dd3","Sr. SE","DOT NET","FinanceX | Financial Systems","FIXED",25,2,50.81,"deallocation","2025-12-05","2026-10-21"
+"Aarushi Pillai","795e88ea-1904-42e1-aa10-35f33f738ccd","Sr. SE","SALES","GeoFence | Location Services","FIXED",35,2.8,71.34,"deallocation","2025-12-03","2026-10-24"
+"Esha Singh","a2936ef2-a715-4a07-ad74-f030cbb0e646","SE","FLUTTER","LocalFirst | Offline-First Platform","FIXED",45,3.6,153.43,"deallocation","2025-12-01","2026-10-05"
+"Diya Bhatt","bebb175b-c8e3-4e65-9b32-0cf477cebf31","CSML","CSM","RepoBot | Git Automation","FIXED",35,2.8,143.77,"deallocation","2025-11-25","2026-10-21"
+"Jagruti Garg","3f62d221-3636-48d7-9fa2-107d825b11a0","Sr. SE","FRONT END","Quorum | Distributed Consensus","FIXED",20,1.6,18,"deallocation","2025-11-25","2026-10-11"
+"Rahul Bhatia","8b1c60f5-ec64-49e1-9ea3-ee212d18c6bc","SE","TRAINEES","JiraSync | Project Sync Engine","FIXED",25,2,38.48,"deallocation","2025-11-23","2026-10-12"
+"Arnav Roy","375cc4cb-b785-490f-bcaf-d6cca3516ceb","LE","ADMIN","ForecastAI | Demand Planning","FIXED",100,8,154.72,"deallocation","2025-11-20","2026-10-09"
+"Swati Reddy","e0f24ef6-afa0-42f0-b7e5-c5c3bab0d9f7","IoTE","IOT","RouteOptimizer | Fleet Management","FIXED",35,2.8,73.8,"deallocation","2025-11-20","2026-10-17"
+"Smriti Patil","a36609dd-c751-4fab-bca4-1bf588291227","CSM","CSM","OmniAuth | SSO Gateway","FIXED",45,3.6,141.69,"deallocation","2025-11-16","2026-10-01"
+"Arnav Solanki","87597784-3188-4dcf-afa7-51a8f3dae011","CSM","CSM","VectorDB | Vector Database","FIXED",30,2.4,75.98,"deallocation","2025-11-14","2026-10-06"
+"Tarun Menon","26b5bb49-976a-4c73-97e3-4ea0fac040fc","SE","OPEN SOURCE","PerformanceMaxX | Performance Maximizer","FIXED",40,3.2,77.28,"deallocation","2025-11-14","2026-10-26"
+"Nilesh Kumar","42a1934a-0a06-4e48-b06f-9fc2def7ce80","Sr. QAE","QA","FlowDash | Workflow Dashboard","FIXED",40,3.2,0,"deallocation","2025-11-11","2026-10-14"
+"Sonal Singh","f121a6dd-66f2-4812-9c77-5540aa0b9629","DelvL","PROJECT MANAGEMENT","ZenithOS | Internal Tooling","FIXED",45,3.6,26.52,"deallocation","2025-11-10","2026-10-24"
+"Kavya Malhotra","9541686e-b371-4da8-a7d7-d7f082b01376","LE","DOT NET","NodeX | Graph Database","FIXED",25,2,51,"upcoming_deallocation","2025-11-08","2026-10-28"
+"Kartik Singh","dbcb7d84-ba07-4285-9608-f57395605343","Sr. SE","OPEN SOURCE","XcelERPM | Enterprise Resource","FIXED",20,1.6,46.88,"deallocation","2025-11-07","2026-10-13"
+"Neha Patel","cfd530ed-8214-4a61-9655-18a54001695c","SE","ADMIN","ServiceMesh | Microservice Gov","FIXED",35,2.8,47.91,"deallocation","2025-11-03","2026-10-27"
+"Pranav Mehta","f15ebf50-2753-4530-8ed6-9ad9bab4025b","SE","FRONT END","GraphCache | GQL Caching Layer","FIXED",100,8,155.16,"upcoming_deallocation","2025-10-31","2026-10-29"
+"Swati Trivedi","e5230409-b1ce-47c6-863b-09e29cc55fb6","SE","ROR","OpsBoard | DevOps Dashboard","FIXED",40,3.2,183.33,"deallocation","2025-10-27","2026-10-21"
+"Nilesh Saxena","e87cef2d-986d-43fb-86c1-9f6d941a51af","UIXD","DESIGN","EventDriven | CQRS Framework","FIXED",20,1.6,49.87,"deallocation","2025-10-27","2026-10-17"
+"Tanmay Gandhi","68e371d1-f63e-4389-bc4e-f54a6b5e3c71","Sr. SE","JAVA","Quorum | Distributed Consensus","FIXED",45,3.6,22,"deallocation","2025-10-26","2026-10-03"
+"Rachna Rao","7070cb8e-9edc-44be-b21a-354ef0a00678","UIXD","DESIGN","YieldPoint | Revenue Management","FIXED",100,8,143.78,"upcoming_deallocation","2025-10-22","2026-10-30"
+"Riddhi Bansal","84b64fb7-f9da-43ca-9498-1687d266f921","Sr. DE","DATA ENGINEERING","OpenSearch | Enterprise Search","FIXED",35,2.8,48.49,"deallocation","2025-10-21","2026-10-17"
+"Uday Patil","9321f7a3-cb84-4b1b-891c-037908b199ec","SE","TRAINEES","WindMill | Renewable Energy","FIXED",20,1.6,31.11,"deallocation","2025-10-21","2026-10-15"
+"Ekta Parmar","3a032f77-c191-4aeb-b3ea-39d2586c03eb","AISE","MS AI BUSINESS SOLUTIONS","PeakView | Mountain Tourism App","FIXED",40,3.2,145.29,"upcoming_deallocation","2025-10-18","2026-10-28"
+"Fenil Desai","a8a406c2-d368-41eb-918a-48a2babdebbf","Sr. SE","OPEN SOURCE","AgilePulse | Sprint Tracker","FIXED",25,2,71.14,"deallocation","2025-10-17","2026-10-03"
+"Jay Bhatt","455f8748-424b-4ece-8b05-be3b2ab09972","Sr. SE","MARKETING","ZenPatch | Patch Management","FIXED",25,2,79.17,"deallocation","2025-10-07","2026-10-02"
+"Kabir Ghosh","e0f5e95c-1b61-4f27-8b4a-30d9bfb1a905","SE","ROR","JadeTree | Family Tree App","FIXED",20,1.6,52.55,"deallocation","2025-10-05","2026-10-08"
+"Urvi Raval","16e72fbf-29a7-46ee-832f-be3dfa682d0c","SE","ANDROID","JustifyX | Justification Engine","FIXED",45,3.6,155.75,"deallocation","2025-10-04","2026-10-18"
+"Sahil Arora","7e1d85ed-a30f-4305-bf0e-7158f3651722","Sr. SE","MEAN STACK","ElasticMesh | Distributed System","FIXED",100,8,156.7,"upcoming_deallocation","2025-10-04","2026-10-30"
+"Gunjan Parmar","a95d683d-747b-44b8-843e-fc9bc05ab325","CSA","CSM","BrandKit | Marketing Platform","FIXED",25,2,49.77,"deallocation","2025-10-03","2026-10-07"
+"Dev Jadeja","fb3dd960-9344-4b06-ac34-680087110417","Sr. SE","REACT NATIVE","QuantumDB | Quantum-Ready DB","FIXED",35,2.8,30.1,"deallocation","2025-10-01","2026-10-16"
+"Priya Gajjar","04ebdb93-50d4-4e05-85f8-4208fb1f282b","Sr. SE","GOLANG","GlowUp | Beauty Marketplace","FIXED",35,2.8,49.66,"deallocation","2025-09-30","2026-10-05"
+"Kriti Chopra","91e5ac33-8ca2-4cef-a11e-e0deb7f7088a","Sr. SE","BLOCKCHAIN","KernelOS2 | OS Monitoring","FIXED",30,2.4,50.95,"deallocation","2025-09-22","2026-10-06"
+"Sneha Yadav","92c34625-c00b-4697-b664-f9adbd292e87","QAE","QA","EcoTrack | Sustainability Platform","FIXED",35,2.8,50.78,"upcoming_deallocation","2025-09-21","2026-10-30"
+"Charmi Rao","257b58bf-4f02-4690-8a43-ad48c34582e0","SE","SALES","LazyLoad | Performance Optimizer","FIXED",50,4,74.12,"deallocation","2025-09-14","2026-10-22"
+"Jagruti Kotak","bbadba66-fc13-4c14-93c2-66a208799f39","SE","REACT NATIVE","UnifiedAPI | API Aggregator","FIXED",30,2.4,48.2,"deallocation","2025-09-14","2026-10-22"
+"Lalit Jain","6e63ce41-2c3c-4c51-8e80-f50e8ea98384","SE","DOT NET","EagleEye | Surveillance Platform","FIXED",30,2.4,75.13,"deallocation","2025-09-12","2026-10-14"
+"Rutu Gajjar","591f3224-3572-4a78-a4a0-255be258a2fe","Sr. SE","SALES","IronClad | Compliance Engine","FIXED",20,1.6,50.13,"deallocation","2025-09-11","2026-10-04"
+"Janki Kotak","ad79aa1c-a1af-44f3-adb2-1864485ac4fa","SE","ROR","WorkflowHub | Process Management","FIXED",55,4.4,79.58,"deallocation","2025-09-11","2026-10-26"
+"Anil Trivedi","6d08f9b9-048d-4c0d-84c0-3bcc695f0f09",,"POST-SALES BA","LaunchPad | Startup Incubator","FIXED",25,2,0,"deallocation","2025-09-11","2026-10-08"
+"Sai Hegde","a4d6a2cf-dace-4219-a4b2-929978c007c2","SE","TRAINEES","GlobeSight | Global Analytics","FIXED",45,3.6,168.68,"deallocation","2025-09-09","2026-10-20"
+"Punit Bhatt","dde77c61-35c5-48e7-a43e-d161beed8073","SE","LAB & INNOVATIONS","QuantTest | Benchmark Suite","FIXED",35,2.8,0,"deallocation","2025-09-08","2026-10-14"
+"Bhavin Parekh","bb158d15-bebd-4c8b-a960-3a4bd1d31dc9","Sr. MLE","MACHINE LEARNING","OpsBoard | DevOps Dashboard","FIXED",35,2.8,70.16,"deallocation","2025-09-06","2026-10-18"
+"Meera Panchal","c05a437f-f2e6-41c3-a03a-97f3034cceba","SE","ANDROID","GrowthMap | CRM Analytics","FIXED",45,3.6,156,"deallocation","2025-09-04","2026-10-07"
+"Mansi Barot","11ec4b31-0d05-4dfd-965d-a731d1b27c3e","PM","PROJECT MANAGEMENT","ServiceMesh | Microservice Gov","FIXED",35,2.8,154.4,"deallocation","2025-09-03","2026-10-08"
+"Ankita Chatterjee","e46617f8-6d88-486c-8510-648652f24dee","Sr. SE","DELIVERY","EchoBase | Voice Assistant","FIXED",100,8,152.21,"deallocation","2025-09-03","2026-10-25"
+"Falgun Ghosh","fb75f5c3-d321-488c-9665-b7d4e6b63bc0","Sr. DOE","DEVOPS","AlphaFlow | Pipeline Automation","FIXED",35,2.8,74.68,"deallocation","2025-09-01","2026-10-06"
+"Deepak Soni","a1c6ad8a-4c22-4909-bdf9-ca00f1c360b7","Sr. SE","BI","UpStream | Video CDN","FIXED",35,2.8,78.62,"deallocation","2025-08-31","2026-10-20"
+"Kriti Mehta","1ea675bc-d65e-4568-bbd2-b1c26cdaa2b5","SE","LAB & INNOVATIONS","CipherLock2 | Encryption Service","FIXED",30,2.4,152.4,"deallocation","2025-08-31","2026-10-10"
+"Akash Singh","3ef7b7c9-7486-4f95-a6df-2303c50342df","QAE","QA","ZenPatch | Patch Management","FIXED",50,4,0,"deallocation","2025-08-29","2026-10-07"
+"Punit Jain","bf5020d9-b6e5-48f2-8171-0ebcf69fa70b","Sr. SE","MERN","KaleidoscopeX | Kaleidoscope Analytics","FIXED",25,2,77.58,"deallocation","2025-08-28","2026-10-20"
+"Bhumi Sharma","f7274195-4c7b-4289-b9c3-68f77b0ff3c9","Sr. UIXD","DESIGN","GlowUp | Beauty Marketplace","FIXED",25,2,39.11,"deallocation","2025-08-21","2026-10-02"
+"Rajesh Patil","48b47ebe-fad4-4931-a247-8d9c398fe791","Sr. SA","PRE-SALES BA","UserFlows | UX Analytics","FIXED",100,8,144.03,"deallocation","2025-08-20","2026-10-07"
+"Dhrumil Sharma","84451721-2e6f-41c1-995f-9ced2850d93b","IoTE","IOT","InkDrop | Note Taking App","FIXED",20,1.6,38.18,"deallocation","2025-08-19","2026-10-04"
+"Gunjan Menon","533c7a0a-93c8-486d-a8b9-adf2b01f1a88","Sr. SE","TRAINEES","WarpSpeed | Performance Testing","FIXED",60,4.8,77.48,"deallocation","2025-08-17","2026-10-26"
+"Kabir Parmar","6c035141-3aea-4683-8a35-61f0ed6931a0","SE","MEAN STACK","OmniAuth | SSO Gateway","FIXED",100,8,154.62,"upcoming_deallocation","2025-08-16","2026-10-31"
+"Ojas Khandelwal","cde76023-261c-4763-815d-9845c7fbbc9c","PM","PROJECT MANAGEMENT","BenchMark | Performance Testing","FIXED",20,1.6,46.22,"deallocation","2025-08-11","2026-10-22"
+"Aarushi Jain","36900673-adca-485f-a753-2befc4073240","SE","SCALA","MedPortal | Healthcare App","FIXED",35,2.8,48.08,"deallocation","2025-08-10","2026-10-09"
+"Tanmay Gupta","942db77a-5d76-4bcb-8233-a527148320b2","Sr. SE","BI","NormalizeX | Normalization Engine","FIXED",25,2,71.17,"deallocation","2025-08-09","2026-10-24"
+"Jagruti Solanki","1c914555-31fa-4445-a681-2f98c7061804","Sr. SE","DELIVERY","FlowState | Process Automation","FIXED",20,1.6,78.34,"deallocation","2025-08-09","2026-10-26"
+"Fenil Mishra","e8f77de0-d57a-4222-8462-aca9ce24bbd7","LE","TECH LEADERSHIP","ChainLink | Workflow Engine","FIXED",100,8,152.56,"deallocation","2025-08-02","2026-10-17"
+"Tanmay Trivedi","de0c2193-01d0-4db0-b45c-4c26b568d599","SA","PRE-SALES BA","EdgeAI | Inference at Edge","FIXED",35,2.8,74.12,"deallocation","2025-08-02","2026-10-10"
+"Gunjan Verma","e95a2810-372d-4d16-8371-05d96a6e7318","SE","ANDROID","JobQueue | Task Scheduler","FIXED",25,2,51.97,"deallocation","2025-08-01","2026-10-04"
+"Iti Kulkarni","5b64dff2-04c8-4fee-acf6-878a32dd6d8f","SE","PROJECT MANAGEMENT OFFICE","OrchestrAI | AI Workflows","FIXED",45,3.6,71.68,"upcoming_deallocation","2025-07-28","2026-10-31"
+"Lalit Chauhan","d8c41603-fc7d-4350-ba01-0fa7e5fda0df","SE","ROR","DynamicX | Dynamic Platform","FIXED",60,4.8,78.86,"deallocation","2025-07-28","2026-10-14"
+"Gunjan Bhatia","71e1b715-77c7-42cb-8ea4-d0bae023490b","SE","BLOCKCHAIN","UILabs | Component Library","FIXED",25,2,51.77,"deallocation","2025-07-25","2026-10-17"
+"Parth Khandelwal","32ff5b63-b883-4fe1-8b65-88d7c6bea9ee","SA","PRE-SALES BA","XcelAPI | High-Performance API","FIXED",25,2,48.6,"deallocation","2025-07-22","2026-10-06"
+"Sai Chatterjee","3566da52-2c6d-49f6-a3c6-3810a41ea861","Sr. IoTE","IOT","JustifyX | Justification Engine","FIXED",30,2.4,51.73,"upcoming_deallocation","2025-07-22","2026-10-29"
+"Ujjwal Mehta","43936565-f6db-4c5e-8baa-3ff2e513b987","SE","MERN","InfoSec | Security Dashboard","FIXED",25,2,40.04,"deallocation","2025-07-19","2026-10-07"
+"Bhavesh Rawat","8cada41a-01c9-40ad-a93f-4ee17a625043","Sr. SE","GOLANG","RealSync | Live Data Platform","FIXED",20,1.6,73.82,"deallocation","2025-07-16","2026-10-25"
+"Hardik Soni","537fc7c4-375f-4ddd-af9c-ee7b0e6b9ed3","SE","REACT","WarpSpeed | Performance Testing","FIXED",30,2.4,49.5,"deallocation","2025-07-07","2026-10-11"
+"Sunil Reddy","5ab1bbb7-60e2-4593-93e2-8c4b335de133","SE","MARKETING","YieldMaxX | Yield Maximization","FIXED",30,2.4,77.96,"deallocation","2025-07-06","2026-10-09"
+"Darshan Joshi","2126c10d-a4ef-4ee3-9a14-ea46204b396c","Sr. SE","REACT","InkDrop | Note Taking App","FIXED",25,2,38.29,"deallocation","2025-07-04","2026-10-21"
+"Deepak Naik","8ee0735f-8f85-4972-9860-78ff7f0f0f2d","LE","DESIGN","Ridgeline | Construction Mgmt","FIXED",25,2,35.57,"deallocation","2025-06-30","2026-10-12"
+"Lalit Gupta","188835a6-4be3-4d7c-91fa-75df0ac16fc4","Sr. MLE","MACHINE LEARNING","HyperLink | URL Shortener API","FIXED",35,2.8,144.92,"deallocation","2025-06-28","2026-10-12"
+"Sneha Yadav","92c34625-c00b-4697-b664-f9adbd292e87","QAE","QA","SolarGrid | Renewable Dashboard","FIXED",35,2.8,50.97,"deallocation","2025-06-26","2026-10-22"
+"Jignesh Nair","c762c8ce-ccd9-4433-aec3-2484cb605d50","SE","MEAN STACK","SyncMate | Data Synchronization","FIXED",45,3.6,72.77,"deallocation","2025-06-25","2026-10-04"
+"Meera Makwana","9d473ab5-e966-4aa8-a673-f3c17ded6a46","Sr. IoTE","IOT","GlowUp | Beauty Marketplace","FIXED",35,2.8,0,"deallocation","2025-06-23","2026-10-20"
+"Uday Patel","923e1e67-9321-42de-8bb4-b1542ee957d8","Sr. MLE","MACHINE LEARNING","ForecastAI | Demand Planning","FIXED",35,2.8,52.46,"upcoming_deallocation","2025-06-22","2026-10-31"
+"Aditya Patel","9e289511-7210-4726-96e7-5c0a0f998849","QAL","QA","EfficiencyX | Efficiency Engine","FIXED",20,1.6,36.8,"deallocation","2025-06-19","2026-10-12"
+"Sneha Joshi","255d202d-7bfe-4a76-9b1f-468fafea1883","LE","JAVA","ZeroDowntimeX | Zero Downtime Platform","FIXED",55,4.4,73.13,"deallocation","2025-06-16","2026-10-17"
+"Aditi Modi","448f0e62-e690-451b-8e0a-323996a93d45","AISE","MS AI BUSINESS SOLUTIONS","PerformanceMaxX | Performance Maximizer","FIXED",45,3.6,72.46,"deallocation","2025-06-14","2026-10-03"
+"Varun Rawat","ed992950-ffe2-4020-a3fe-5eec43500ca6","SE","SCALA","NovaPulse | Fitness Tracker","FIXED",35,2.8,157.84,"upcoming_deallocation","2025-06-13","2026-10-29"
+"Arnav Bhatt","4cd2885a-bcb8-4b9c-9ec9-0fde767e9983","SE","ADMIN","FabricAI2 | ML Pipeline","FIXED",40,3.2,154.12,"upcoming_deallocation","2025-06-13","2026-10-29"
+"Chetan Vasani","d4a97e9a-27f9-46a9-a875-6b2ac663acd8","Sr. DE","DATA ENGINEERING","LaunchPad | Startup Incubator","FIXED",25,2,36.44,"deallocation","2025-06-11","2026-10-08"
+"Krishna Desai","ca0573fa-09d8-489a-ac02-9b0c64706958","Sr. MLE","MACHINE LEARNING","TuneX | Performance Tuning","FIXED",25,2,37.46,"deallocation","2025-06-11","2026-10-06"
+"Aarushi Jain","36900673-adca-485f-a753-2befc4073240","SE","SCALA","Quorum | Distributed Consensus","FIXED",30,2.4,19,"deallocation","2025-06-10","2026-10-27"
+"Ira Sharma","0ba47151-7a64-4faf-9843-cbdc350d5a62","UIXD","DESIGN","CipherLock2 | Encryption Service","FIXED",25,2,53.51,"upcoming_deallocation","2025-06-05","2026-10-28"
+"Divya Doshi","99e33f32-ecff-4bef-b0ea-cc28f88fa164","SE","L1 SUPPORT","XFlux | Reactive Framework","FIXED",45,3.6,147.95,"deallocation","2025-06-02","2026-10-14"
+"Shaurya Parmar","a1b1f984-26c1-4c92-a7f9-bbbb474bb0e2","SE","OPEN SOURCE","PinPoint | Location Analytics","FIXED",35,2.8,75.12,"upcoming_deallocation","2025-06-01","2026-10-30"
+"Laxmi Patel","711e3e02-80d6-4959-9591-28a99374faba","Sr. SE","TECH LEADERSHIP","LogStream | Centralized Logging","FIXED",35,2.8,51.14,"deallocation","2025-05-31","2026-10-25"
+"Hetvi Kulkarni","73a016bb-5bb8-4d13-ab77-cfe0c05b5869","Sr. SE","GOLANG","HealthX | Health Systems","FIXED",30,2.4,69.41,"deallocation","2025-05-31","2026-10-01"
+"Reyansh Ghosh","d5f7f94e-8284-440e-b970-880d543def50","Sr. SE","VUE.JS","HealthX | Health Systems","FIXED",25,2,48.01,"deallocation","2025-05-29","2026-10-01"
+"Keyur Chopra","44ad1b53-ecc2-40ac-bf3c-df1c8aacb13f","Sr. SE","ADMIN","GlobeSight | Global Analytics","FIXED",50,4,26.5,"deallocation","2025-05-28","2026-10-23"
+"Priya Mistry","b5de5eae-c464-45e8-869f-d7cfbdb98293","SE","OPEN SOURCE","AppShield | Runtime Protection","FIXED",25,2,66.02,"deallocation","2025-05-25","2026-10-15"
+"Zalak Rathod","daab2fc1-bfb4-4e15-b9b5-be4993e5326c","SE","FRONT END","AlphaTest | QA Orchestration","FIXED",35,2.8,156.85,"deallocation","2025-05-25","2026-10-11"
+"Drashti Doshi","c7677eba-b056-46ff-a1ac-e65b1f2ecb82","SE","DELIVERY","NexGen | E-Commerce Platform","FIXED",45,3.6,76.04,"deallocation","2025-05-23","2026-10-03"
+"Ira Makwana","53299807-b80e-4aca-a6f2-71700b187ea1","SE","SCALA","WaveX | Wave Platform","FIXED",25,2,38.83,"deallocation","2025-05-20","2026-10-16"
+"Shruti Mistry","67b9677e-6dd6-43cd-baf8-0d15f6689f34","SE","BI","JetDB | In-Process Database","FIXED",25,2,37.57,"deallocation","2025-05-17","2026-10-07"
+"Hemal Dave","c37a318f-8c63-416b-9727-eba19e68c50d","Sr. IoTE","IOT","HealthX | Health Systems","FIXED",50,4,150.57,"deallocation","2025-05-16","2026-10-04"
+"Trisha Iyer","6fd58e74-c24a-4e06-a152-5624b8fb44f6","Sr. SE","MERN","FieldSync | Remote Data Collection","FIXED",20,1.6,36.43,"deallocation","2025-05-15","2026-10-08"
+"Deepak Contractor","c950469b-9aaa-4f90-8bba-f51db9dc2dd3","Sr. QAE","QA","KeyVault | Secrets Manager","FIXED",25,2,50.41,"upcoming_deallocation","2025-05-12","2026-10-31"
+"Neha Patil","57dc9834-ddc1-4792-a6af-fcf9fc529245","Sr. SE","MARKETING","FieldOps | Field Service App","FIXED",20,1.6,0,"deallocation","2025-05-10","2026-10-02"
+"Janki Sharma","9c7f8f63-2e4b-4b02-9e80-2c46a5233f88","SE","VUE.JS","AnalytixHub | Advanced Analytics","FIXED",35,2.8,17.65,"deallocation","2025-05-09","2026-10-05"
+"Gaurav Panchal","1c51495e-b16e-443e-8b8f-0b126aee65dd","Sr. PM","PROJECT MANAGEMENT","UrbanPulse | Smart City IoT","FIXED",35,2.8,52.83,"deallocation","2025-05-09","2026-10-07"
+"Manan Verma","0725d923-7010-44da-801a-e3ab6ab60833","Sr. SE","L1 SUPPORT","PerformanceX | Speed Optimizer","FIXED",30,2.4,70.98,"upcoming_deallocation","2025-05-08","2026-10-30"
+"Tejas Sen","30d4f50e-1c8c-4461-808c-51002af02d82","LE","DOT NET","EventDriven | CQRS Framework","FIXED",20,1.6,29.61,"deallocation","2025-05-07","2026-10-03"
+"Kashyap Verma","054eca3e-38e6-416a-bfc5-51c713f52b39","SE","MARKETING","ZenithX | Zenith Platform","FIXED",100,8,0,"deallocation","2025-05-04","2026-10-06"
+"Neel Ghosh","b3b50438-9de6-4449-8a0d-47631bc774ef","SE","REACT","LogStream | Centralized Logging","FIXED",40,3.2,78.02,"deallocation","2025-04-30","2026-10-11"
+"Jagruti Garg","3f62d221-3636-48d7-9fa2-107d825b11a0","Sr. SE","FRONT END","QualityX | Quality Platform","FIXED",20,1.6,46.85,"deallocation","2025-04-28","2026-10-12"
+"Janki Jain","0b02836a-785e-43f4-b5fe-996bfefa7b68","Sr. SE","MARKETING","HaloFit | Wearable Platform","FIXED",25,2,75.57,"deallocation","2025-04-26","2026-10-01"
+"Nisha Patil","ac855470-f033-4955-9545-a783ce8e0d69","LE","PROJECT MANAGEMENT","JourneyX | Customer Journey","FIXED",40,3.2,74.66,"deallocation","2025-04-25","2026-10-16"
+"Hardik Dabhi","9a3e2bd9-caee-4539-b467-cf36ebaade6b","SA","PRE-SALES BA","DataSync | CDC Pipeline","FIXED",20,1.6,75.91,"deallocation","2025-04-25","2026-10-10"
+"Vatsal Kamath","495cd200-b3b1-4c06-9844-d6a1a4ed3179","SE","GOLANG","CloudNative | Cloud Native Platform","FIXED",25,2,17.64,"deallocation","2025-04-25","2026-10-14"
+"Zeel Ghosh","8124e684-205c-404b-82b8-fe175ccd2756","LE","MEAN STACK","KeyVault | Secrets Manager","FIXED",35,2.8,71.1,"deallocation","2025-04-16","2026-10-04"

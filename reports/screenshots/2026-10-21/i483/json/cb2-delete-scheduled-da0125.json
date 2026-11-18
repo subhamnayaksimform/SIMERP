@@ -1,0 +1,36 @@
+{
+  "status": 200,
+  "body": {
+    "code": "ALLOCATION_TICKET_141",
+    "message": "Scheduled allocation change cancelled successfully",
+    "data": {
+      "scheduledChange": {
+        "publicId": "f9d8cd5d-9b72-4cbb-8ab5-1b457264b066",
+        "changeType": "ASSIGNMENT_DEALLOCATE",
+        "status": "SUPERSEDED",
+        "effectiveDate": "2026-11-01",
+        "overrideEndDate": null,
+        "allocationType": null,
+        "allocationPercentage": null,
+        "effectiveStartDate": null,
+        "effectiveEndDate": "2026-10-31",
+        "previousAllocationPercentage": 10
+      },
+      "ticket": null,
+      "allocationTimeline": [
+        {
+          "ticketPublicId": "81a264e6-aa91-4ca5-a22c-e3a83ba48e85",
+          "ticketNumber": "NA-0389",
+          "scheduledChangePublicId": null,
+          "effectiveFrom": "2026-10-22",
+          "effectiveTo": "2026-10-31",
+          "allocationType": "FIXED",
+          "allocationPercentage": 10,
+          "isCurrent": false,
+          "isPending": true,
+          "segmentType": "STANDING"
+        }
+      ]
+    }
+  }
+}

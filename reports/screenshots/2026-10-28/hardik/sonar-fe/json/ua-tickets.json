@@ -1,0 +1,105 @@
+[
+  {
+    "id": "14bab8ce-94de-4116-a6ec-926ce8c2c618",
+    "status": "APPROVED"
+  },
+  {
+    "id": "4c9c0a7d-640b-473f-9313-03508cdfe745",
+    "status": "APPROVED"
+  },
+  {
+    "id": "f057a3cb-fd04-43b1-b372-8fa3fd2bedc4",
+    "status": "APPROVED"
+  },
+  {
+    "id": "fe5dca51-8d29-43e5-927c-a0fb2fa660c0",
+    "status": "APPROVED"
+  },
+  {
+    "id": "35608d6d-6d0d-43a4-b03e-67ae867c2343",
+    "status": "APPROVED"
+  },
+  {
+    "id": "25c08b45-2c86-4bb1-9e5d-7dff8027bbeb",
+    "status": "APPROVED"
+  },
+  {
+    "id": "d9251ca2-be7d-4002-9393-3438d1e4fa54",
+    "status": "APPROVED"
+  },
+  {
+    "id": "920b813a-75c8-4149-bd6a-13d5a962aa5f",
+    "status": "APPROVED",
+    "hist": "\"editHistory\":[{\"changedFields\":[\"requestedAllocationPercentage\""
+  },
+  {
+    "id": "522815e5-d5dc-4286-9d47-6d70d0aa0161",
+    "status": "APPROVED",
+    "hist": "\"editHistory\":[{\"changedFields\":[\"requestedAllocationPercentage\",\"effectiveEndDate\""
+  },
+  {
+    "id": "e124acc9-6315-443a-a19b-5ea1d97d118a",
+    "status": "OPEN"
+  },
+  {
+    "id": "70400a8a-86b4-44cd-ae52-8c08db4a312b",
+    "status": "APPROVED"
+  },
+  {
+    "id": "0927731d-462b-4a4b-a140-3d333de5128f",
+    "status": "APPROVED"
+  },
+  {
+    "id": "5108a826-8642-4d24-8caf-52a403cc57d6",
+    "status": "APPROVED"
+  },
+  {
+    "id": "61f3d5ec-9852-4de5-acda-c2794a9716c4",
+    "status": "APPROVED"
+  },
+  {
+    "id": "296944ed-3448-47b6-8221-fe23b10fe695",
+    "status": "APPROVED"
+  },
+  {
+    "id": "be11f29a-01b2-4af3-a8c9-02607f4e976e",
+    "status": "APPROVED"
+  },
+  {
+    "id": "fae3d426-bcb3-4b6f-bbc2-b5be3dca5b36",
+    "status": "OPEN"
+  },
+  {
+    "id": "be4dbf92-3955-4455-95c1-fa5fb58c5456",
+    "status": "OPEN"
+  },
+  {
+    "id": "73b3e72d-d594-439a-ac89-d4fcfa47fd91",
+    "status": "APPROVED",
+    "hist": "\"editHistory\":[{\"changedFields\":[\"requestedAllocationPercentage\""
+  },
+  {
+    "id": "fe2d6908-4507-4093-8247-23957924872d",
+    "status": "CLOSED"
+  },
+  {
+    "id": "b19cd636-a63e-4481-8088-e4a50760a709",
+    "status": "APPROVED"
+  },
+  {
+    "id": "542f3903-291c-40bd-94f2-8c2c08366393",
+    "status": "APPROVED"
+  },
+  {
+    "id": "7af42b13-4dce-4083-b722-6464060160e9",
+    "status": "APPROVED"
+  },
+  {
+    "id": "a989a049-e782-482d-bdbb-4d3e3eef40ec",
+    "status": "APPROVED"
+  },
+  {
+    "id": "970f6954-8637-4d14-a753-0885dec9ea8e",
+    "status": "APPROVED"
+  }
+]

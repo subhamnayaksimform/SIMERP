@@ -6,8 +6,8 @@
  * Option 1 — Run Full Pipeline        (task IDs / requirement doc → all steps → HTML report)
  * Option 2 — Fetch & Analyze          (tasks by ID/suite/filter/previous fetch  OR  issues by status)
  * Option 3 — Create Test Cases        (AI → cases JSON + Excel)
- * Option 4 — Generate Automation      (AI → Playwright scripts, no execution)
- * Option 5 — Run Playwright Tests     (select target → run → results Excel + HTML report)
+ * Option 4 — Generate Automation      (AI → Playwright scripts; choose generate-only or generate+run together)
+ * Option 5 — Run Playwright Tests     (standalone run-only — select target → run → results Excel + HTML report)
  * Option 6 — Report Bugs to Zoho      (results.json → one-by-one confirmation)
  */
 
@@ -47,6 +47,10 @@ async function readDocumentText(filePath: string): Promise<string> {
 dotenv.config({ path: path.resolve(__dirname, '..', '.env') });
 
 const ROOT        = path.resolve(__dirname, '..');
+// Set by scripts/pipeline-headless.ts (the QA Workspace UI) — no prompts can be answered, so
+// confirmations take their safe default and "background" side jobs run inline so their files
+// exist before the job reports done.
+const HEADLESS    = process.env.PIPELINE_HEADLESS === '1';
 const REPORTS_DIR = path.join(ROOT, 'reports');
 const RESULTS_JSON = path.join(REPORTS_DIR, 'results', 'results.json');
 const CASES_DIR   = path.join(REPORTS_DIR, 'test-cases');
@@ -56,6 +60,7 @@ const EXCEL_DIR   = path.join(REPORTS_DIR, 'excel');
 const HTML_DIR    = path.join(REPORTS_DIR, 'html');
 const COVERAGE_DIR = path.join(REPORTS_DIR, 'coverage');
 const REVIEW_DIR  = path.join(REPORTS_DIR, 'test-cases-review');
+const MD_DIR      = path.join(ROOT, 'docs', 'test-cases');
 const AGENTS_DIR  = path.join(ROOT, '.claude', 'agents');
 const SKILLS_DIR  = path.join(ROOT, '.claude', 'skills');
 
@@ -95,6 +100,7 @@ function runAsync(cmd: string, cwd = ROOT): Promise<{ ok: boolean; stdout: strin
 }
 
 function runBackground(label: string, cmd: string, cwd = ROOT): void {
+  if (HEADLESS) { p.log.info(label); spawnSync(cmd, { shell: true, cwd, stdio: 'inherit' }); return; }
   spawn(cmd, { shell: true, cwd, stdio: 'ignore' });
   p.log.info(`${label} — started in background`);
 }
@@ -110,6 +116,11 @@ async function withRetry<T>(fn: () => Promise<T>, attempts = 3): Promise<T> {
     }
   }
   throw new Error('unreachable');
+}
+
+/** Same slug rule as scripts/generate-test-case-md.ts, so the Markdown path can be predicted here. */
+function mdSlug(v: string): string {
+  return v.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 }
 
 function latestFile(dir: string, prefix: string, ext = '.json'): string | null {
@@ -146,28 +157,48 @@ async function selectFile(dir: string, match: (filename: string) => boolean, lab
   return String(custom).trim();
 }
 
-/** Ask which Playwright spec file/directory to run — offers all e2e module folders plus a free-text override. */
+/** Ask which Playwright spec file/directory to run — drills down module → sub-feature → suite (past test suites included), or accepts a free-text override at any level. */
 async function selectTestTarget(suggested?: string): Promise<string> {
-  const e2eDir = path.join(ROOT, 'tests', 'e2e');
-  const modules = fs.existsSync(e2eDir)
-    ? fs.readdirSync(e2eDir).filter(d => fs.statSync(path.join(e2eDir, d)).isDirectory()).sort()
-    : [];
-  const options: Array<{ value: string; label: string }> = [];
-  if (suggested) options.push({ value: suggested, label: `Just-generated: ${suggested}` });
-  options.push({ value: '', label: 'All tests (tests/e2e/**)' });
-  for (const m of modules) options.push({ value: `tests/e2e/${m}`, label: `Module: ${m}` });
-  options.push({ value: '__custom__', label: 'Enter a specific spec file or path…' });
+  const listSubdirs = (dir: string) =>
+    fs.existsSync(dir) ? fs.readdirSync(dir).filter(d => fs.statSync(path.join(dir, d)).isDirectory()).sort() : [];
+  const listSpecs = (dir: string) =>
+    fs.existsSync(dir) ? fs.readdirSync(dir).filter(f => f.endsWith('.spec.ts')).sort() : [];
 
-  const choice = await p.select({ message: 'Which tests to run?', options });
-  if (p.isCancel(choice)) return suggested ?? '';
-  if (choice !== '__custom__') return choice as string;
-  const custom = await p.text({
-    message: 'Spec file or directory (relative to project root)',
-    placeholder: 'tests/e2e/employee/employee-details/smoke.spec.ts',
-    validate: v => (!v?.trim() ? 'Required' : undefined),
-  });
-  if (p.isCancel(custom)) return suggested ?? '';
-  return String(custom).trim();
+  let dir = path.join(ROOT, 'tests', 'e2e');
+  let rel = 'tests/e2e';
+  let atRoot = true;
+
+  while (true) {
+    const options: Array<{ value: string; label: string }> = [];
+    if (atRoot && suggested) options.push({ value: suggested, label: `Just-generated: ${suggested}` });
+    options.push({ value: atRoot ? '' : rel, label: `All tests (${rel}/**)` });
+    for (const d of listSubdirs(dir)) options.push({ value: `dir:${d}`, label: `${atRoot ? 'Module' : 'Sub-feature'}: ${d}` });
+    for (const s of listSpecs(dir)) options.push({ value: `${rel}/${s}`, label: `Suite: ${s.replace(/\.spec\.ts$/, '')}` });
+    options.push({ value: '__custom__', label: 'Enter a specific spec file or path…' });
+
+    const choice = await p.select({ message: atRoot ? 'Which tests to run?' : `Which tests within ${rel}?`, options });
+    if (p.isCancel(choice)) return suggested ?? '';
+
+    if (choice === '__custom__') {
+      const custom = await p.text({
+        message: 'Spec file or directory (relative to project root)',
+        placeholder: 'tests/e2e/employee/employee-details/smoke.spec.ts',
+        validate: v => (!v?.trim() ? 'Required' : undefined),
+      });
+      if (p.isCancel(custom)) return suggested ?? '';
+      return String(custom).trim();
+    }
+
+    if (typeof choice === 'string' && choice.startsWith('dir:')) {
+      const d = choice.slice('dir:'.length);
+      dir = path.join(dir, d);
+      rel = `${rel}/${d}`;
+      atRoot = false;
+      continue;
+    }
+
+    return choice as string;
+  }
 }
 
 /** Ask which Playwright JSON results file to feed into bug reporting — defaults to the live results.json. */
@@ -199,6 +230,72 @@ function loadAgentPrompt(filename: string): string {
 }
 
 const KB_MODULES_DIR = path.join(ROOT, 'reports', 'knowledge-base', 'modules');
+
+// Mirrors the Module Codes table in requirement-analyzer.agent.md (the moduleCode field is
+// constrained to exactly these values) and the per-file mapping in that agent's Step 3.5 —
+// single source of truth for where a given moduleCode's knowledge base file lives.
+const MODULE_CODE_TO_KB_FILE: Record<string, string> = {
+  EMPDET: 'employee/employee-details.json',
+  EMPSKL: 'employee/skills.json',
+  EMPGOL: 'employee/goals.json',
+  EMPALC: 'employee/allocation-correction.json',
+  TEAMDET: 'team/team-details.json',
+  TEAMWKU: 'team/weekly-updates.json',
+  PROJDET: 'projects/project-details.json',
+  PROJTCH: 'projects/tech-stack.json',
+  DEPTSET: 'department/department-settings.json',
+  DEPTCMP: 'department/competencies.json',
+  ADMROL: 'admin/roles-permissions.json',
+  ADMUSR: 'admin/assign-user-roles.json',
+  ADMCTR: 'admin/contractors.json',
+  HELP: 'help-support.json',
+  AUTH: 'auth.json',
+  GEN: 'generic/ui-patterns.json',
+};
+
+/**
+ * Persist the genuinely-new knowledge a single requirement analysis surfaced — edge cases with
+ * no matching KB entry, and regression-derived business rules — into that sub-feature's KB file,
+ * so every requirement analysis grows the knowledge base module-wise instead of living only in
+ * the transient reports/test-cases/req-*.json. Never overwrites or removes existing entries;
+ * KB-echoed businessRules (source: "knowledge-base") are skipped since they already live there.
+ */
+function mergeRequirementIntoKb(req: Record<string, unknown>): { file: string; addedEdgeCases: number; addedBusinessRules: number } | null {
+  const moduleCode = String(req['moduleCode'] ?? '').trim();
+  if (!moduleCode) return null;
+  const relFile = MODULE_CODE_TO_KB_FILE[moduleCode] ?? MODULE_CODE_TO_KB_FILE['GEN'];
+  const abs = path.join(KB_MODULES_DIR, relFile);
+
+  let kb: Record<string, unknown> = {};
+  if (fs.existsSync(abs)) {
+    try { kb = JSON.parse(fs.readFileSync(abs, 'utf8')); } catch { kb = {}; }
+  }
+  kb['module'] = kb['module'] ?? moduleCode;
+  kb['subModule'] = kb['subModule'] ?? (req['module'] || req['feature'] || '');
+  kb['description'] = kb['description'] ?? (req['feature'] ? String(req['feature']) : '');
+  const existingEdgeCases: string[] = Array.isArray(kb['edgeCases']) ? kb['edgeCases'] as string[] : (kb['edgeCases'] = []);
+  const existingBusinessRules: string[] = Array.isArray(kb['businessRules']) ? kb['businessRules'] as string[] : (kb['businessRules'] = []);
+
+  const seenEdgeCases = new Set(existingEdgeCases.map(s => s.toLowerCase().trim()));
+  const seenBusinessRules = new Set(existingBusinessRules.map(s => s.toLowerCase().trim()));
+
+  const newEdgeCases = (Array.isArray(req['edgeCases']) ? req['edgeCases'] as string[] : [])
+    .filter(ec => typeof ec === 'string' && !seenEdgeCases.has(ec.toLowerCase().trim()));
+  const newBusinessRules = (Array.isArray(req['businessRules']) ? req['businessRules'] as Array<Record<string, unknown>> : [])
+    .filter(br => br['source'] === 'regression-derived' && typeof br['rule'] === 'string')
+    .map(br => String(br['rule']))
+    .filter(rule => !seenBusinessRules.has(rule.toLowerCase().trim()));
+
+  if (!newEdgeCases.length && !newBusinessRules.length) return { file: relFile, addedEdgeCases: 0, addedBusinessRules: 0 };
+
+  existingEdgeCases.push(...newEdgeCases);
+  existingBusinessRules.push(...newBusinessRules);
+  kb['lastRequirementAnalysisUpdate'] = new Date(Date.now()).toISOString();
+
+  fs.mkdirSync(path.dirname(abs), { recursive: true });
+  fs.writeFileSync(abs, JSON.stringify(kb, null, 2));
+  return { file: relFile, addedEdgeCases: newEdgeCases.length, addedBusinessRules: newBusinessRules.length };
+}
 
 function loadAccountContext(): string {
   const primary = process.env.SIMERP_USERNAME?.trim();
@@ -246,6 +343,63 @@ function loadKbContext(text: string): string {
 function loadSkillPrompt(skillName: string): string {
   const raw = fs.readFileSync(path.join(SKILLS_DIR, skillName, 'SKILL.md'), 'utf8');
   return raw.replace(/^---[\s\S]*?---\s*/m, '').trim();
+}
+
+function listFilesRecursive(dir: string, predicate: (name: string) => boolean): string[] {
+  if (!fs.existsSync(dir)) return [];
+  const out: string[] = [];
+  for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+    const abs = path.join(dir, entry.name);
+    if (entry.isDirectory()) out.push(...listFilesRecursive(abs, predicate));
+    else if (predicate(entry.name)) out.push(abs);
+  }
+  return out;
+}
+
+/**
+ * Find already-generated spec files (and their sibling page objects) that belong to the same
+ * TC-<CODE> sub-feature as this batch of cases, so the AI can be given their current content and
+ * return a merged file instead of a fresh one that would otherwise silently overwrite/skip it.
+ */
+function gatherExistingAutomationContext(cases: Record<string, unknown>[]): { context: string; existingFiles: Map<string, string> } {
+  const codes = new Set<string>();
+  for (const c of cases) {
+    const m = String(c['id'] ?? '').match(/^TC-([A-Z0-9]+)-/);
+    if (m) codes.add(m[1]);
+  }
+  const existingFiles = new Map<string, string>();
+  if (codes.size) {
+    const e2eDir = path.join(ROOT, 'tests', 'e2e');
+    const pageObjectPaths = new Set<string>();
+    for (const abs of listFilesRecursive(e2eDir, n => n.endsWith('.spec.ts'))) {
+      const content = fs.readFileSync(abs, 'utf8');
+      if (![...codes].some(code => content.includes(`TC-${code}-`))) continue;
+      const rel = path.relative(ROOT, abs).split(path.sep).join('/');
+      existingFiles.set(rel, content);
+      // tests/e2e/<module>/<sub-feature>/<category>.spec.ts → tests/page-objects/<module>/<sub-feature>.page.ts
+      // tests/e2e/<module>/<category>.spec.ts (no sub-feature level) → tests/page-objects/<module>.page.ts
+      const parts = path.dirname(rel).split('/'); // ['tests','e2e', ...]
+      if (parts.length >= 4) pageObjectPaths.add(`tests/page-objects/${parts[2]}/${parts[3]}.page.ts`);
+      else if (parts.length === 3) pageObjectPaths.add(`tests/page-objects/${parts[2]}.page.ts`);
+    }
+    for (const rel of pageObjectPaths) {
+      const abs = path.join(ROOT, rel);
+      if (fs.existsSync(abs)) existingFiles.set(rel, fs.readFileSync(abs, 'utf8'));
+    }
+  }
+
+  if (!existingFiles.size) return { context: '', existingFiles };
+
+  const MAX_CHARS_PER_FILE = 6000;
+  const parts: string[] = [
+    'The following files already exist for the sub-feature(s) covered by this batch of test cases. ' +
+    'If a case in this batch belongs to one of these files, return the FULL UPDATED file content in your ' +
+    'write_files output — preserve every existing test/method already in the file and add the new ones for ' +
+    'this batch. Do not drop or rewrite unrelated existing tests. Do not omit a file from your response just ' +
+    'because it already exists.',
+  ];
+  for (const [rel, content] of existingFiles) parts.push(`### Existing file: ${rel}\n\`\`\`ts\n${content.slice(0, MAX_CHARS_PER_FILE)}\n\`\`\``);
+  return { context: parts.join('\n\n'), existingFiles };
 }
 
 function extractJson(text: string): unknown {
@@ -444,7 +598,8 @@ async function aiChat(
   return msg.content[0].type === 'text' ? msg.content[0].text : '';
 }
 
-async function aiGenerateAutomation(backend: AIBackend, systemPrompt: string, casesJson: string, onTick?: (s: string) => void, model?: string): Promise<AIFile[]> {
+async function aiGenerateAutomation(backend: AIBackend, systemPrompt: string, casesJson: string, onTick?: (s: string) => void, model?: string, existingFilesContext?: string): Promise<AIFile[]> {
+  const userMessage = existingFilesContext ? `${existingFilesContext}\n\n${casesJson}` : casesJson;
   if (backend.type === 'sdk') {
     const tool: Anthropic.Tool = {
       name: 'write_files',
@@ -459,7 +614,7 @@ async function aiGenerateAutomation(backend: AIBackend, systemPrompt: string, ca
       model: model ?? STAGE_MODELS.automationGeneration, max_tokens: 16000,
       system: [{ type: 'text', text: systemPrompt, cache_control: { type: 'ephemeral' } }],
       tools: [tool], tool_choice: { type: 'any' },
-      messages: [{ role: 'user', content: `Generate page objects and spec files. Call write_files with ALL files:\n\n${casesJson}` }],
+      messages: [{ role: 'user', content: `Generate page objects and spec files. Call write_files with ALL files:\n\n${userMessage}` }],
     });
     for (const block of msg.content)
       if (block.type === 'tool_use' && block.name === 'write_files')
@@ -471,7 +626,7 @@ async function aiGenerateAutomation(backend: AIBackend, systemPrompt: string, ca
     '\n\n## Output Format (REQUIRED)\n' +
     'After explanation output a ```files block with [{path,content}] JSON.\n' +
     'Escape newlines in content as \\n. Include EVERY file.';
-  const response = await aiChat(backend, augmented, `Generate page objects and spec files:\n\n${casesJson}`, onTick, false, model);
+  const response = await aiChat(backend, augmented, `Generate page objects and spec files:\n\n${userMessage}`, onTick, false, model);
   return parseFilesFromResponse(response);
 }
 
@@ -764,6 +919,18 @@ async function runRequirementAnalysis(
   const reqFile = saveJson(REQ_DIR, 'requirements', validated.data);
   spin.stop(`${label} — saved`);
   p.note(reqFile, 'requirements JSON');
+
+  const reqArray = Array.isArray(validated.data) ? validated.data : [validated.data];
+  const kbUpdates = (reqArray as Record<string, unknown>[])
+    .map(mergeRequirementIntoKb)
+    .filter((r): r is { file: string; addedEdgeCases: number; addedBusinessRules: number } => r !== null && (r.addedEdgeCases > 0 || r.addedBusinessRules > 0));
+  if (kbUpdates.length) {
+    p.note(
+      kbUpdates.map(u => `modules/${u.file}  (+${u.addedEdgeCases} edge case${u.addedEdgeCases === 1 ? '' : 's'}, +${u.addedBusinessRules} business rule${u.addedBusinessRules === 1 ? '' : 's'})`).join('\n'),
+      'Knowledge base updated (module-wise)',
+    );
+  }
+
   return { reqFile };
 }
 
@@ -1175,13 +1342,22 @@ async function option4GenerateAutomation() {
   const casesFile = await selectFile(CASES_DIR, f => f.startsWith('cases-') && f.endsWith('.json'), 'test cases JSON');
   if (!casesFile) { p.log.warn('No test cases file selected — run Option 3 first, or provide a path.'); return; }
 
+  const mode = await p.select({
+    message: 'Generate only, or generate and run together?',
+    initialValue: 'generate-only',
+    options: [
+      { value: 'generate-only', label: 'Generate only', hint: 'default — review before running' },
+      { value: 'generate-and-run', label: 'Generate + run together', hint: 'chain straight into Option 5, no extra prompt' },
+    ],
+  });
+  if (p.isCancel(mode)) return;
+
   let backend: AIBackend;
   try { backend = resolveAIBackend(); } catch (e: unknown) { p.log.error((e as Error).message); return; }
 
   const automationFiles = await runAutomationGeneration(backend, casesFile);
-  if (automationFiles.length) {
-    const runNow = await p.confirm({ message: 'Automation generated — go to Option 5 to run these tests now?' });
-    if (!p.isCancel(runNow) && runNow) await option5RunTests(automationFiles);
+  if (automationFiles.length && mode === 'generate-and-run') {
+    await option5RunTests(automationFiles);
   }
 }
 
@@ -1325,7 +1501,25 @@ async function option6ReportBugs(skipConfirm = false, resultsPathOverride?: stri
  * written cases file, right after test case generation — so both are always in hand before
  * a human decides whether to proceed to automation generation (Option 4).
  */
+/**
+ * Test-case lifecycle guard (scripts/cases-lifecycle.ts). Advisory — it never stops the pipeline, but it is loud:
+ * a generated case that reuses an existing ID silently overwrites the older case in "newest file wins" reports,
+ * and a vanished case would otherwise go unnoticed. When the check passes, new cases are recorded in the snapshot
+ * so they are protected from then on.
+ */
+function runLifecycleCheck(): void {
+  const check = spawnSync('npm', ['run', '-s', 'cases:check'], { cwd: ROOT, encoding: 'utf8', timeout: 120_000 });
+  const out = `${check.stdout ?? ''}${check.stderr ?? ''}`.trim();
+  if (check.status !== 0) {
+    p.note(out.split('\n').slice(0, 25).join('\n'), 'Case library check FAILED — a case was lost or an ID was reused. Fix before relying on these cases (npm run cases:next-id -- <CODE> gives a free ID).');
+    return;
+  }
+  const snap = spawnSync('npm', ['run', '-s', 'cases:snapshot'], { cwd: ROOT, encoding: 'utf8', timeout: 120_000 });
+  p.log.success(`Case library check passed (no case lost, no ID reused). ${(snap.stdout ?? '').trim().split('\n').pop() ?? ''}`);
+}
+
 function runCoverageAndReview(reqFile: string, casesFile: string): void {
+  runLifecycleCheck();
   const covResult = run('Generating requirement coverage report…', `npm run report:coverage -- "${reqFile}" "${casesFile}"`);
   const coverageHtml = covResult.ok ? latestFile(COVERAGE_DIR, 'coverage', '.html') : null;
   if (coverageHtml) p.note(coverageHtml, 'Requirement coverage report');
@@ -1337,16 +1531,48 @@ function runCoverageAndReview(reqFile: string, casesFile: string): void {
   else p.log.warn('Test case review page generation failed — see log above');
 }
 
+/**
+ * Direct KB read for test-case generation — a widen-the-scope safety net on top of whatever
+ * requirement-analyzer already folded into the requirements JSON. Loads each involved module's
+ * own slim file plus cross-module.json so the TCG can add cross-module/regression cases the
+ * upstream analysis may not have surfaced (e.g. an older requirements file, or a KB entry added
+ * after that analysis ran).
+ */
+function loadKbContextForTestCases(reqArray: Record<string, unknown>[]): string {
+  if (!fs.existsSync(KB_MODULES_DIR)) return '';
+  const moduleCodes = new Set<string>();
+  for (const r of reqArray) {
+    const mc = String(r['moduleCode'] ?? '').trim();
+    if (mc) moduleCodes.add(mc);
+  }
+  const parts: string[] = [];
+  const MAX_KB_CHARS = 3000;
+  for (const mc of moduleCodes) {
+    const relFile = MODULE_CODE_TO_KB_FILE[mc] ?? MODULE_CODE_TO_KB_FILE['GEN'];
+    const abs = path.join(KB_MODULES_DIR, relFile);
+    if (fs.existsSync(abs)) parts.push(`## Knowledge Base — modules/${relFile}\n${fs.readFileSync(abs, 'utf8').slice(0, MAX_KB_CHARS)}`);
+  }
+  const crossPath = path.join(KB_MODULES_DIR, 'cross-module.json');
+  if (fs.existsSync(crossPath)) parts.push(`## Knowledge Base — cross-module patterns\n${fs.readFileSync(crossPath, 'utf8').slice(0, MAX_KB_CHARS)}`);
+  return parts.join('\n\n');
+}
+
 async function runTestCaseGeneration(backend: AIBackend, reqFile: string, ts: number): Promise<string | null> {
   fs.mkdirSync(CASES_DIR, { recursive: true });
   const spin = p.spinner();
   spin.start('Generating test cases…');
   const systemPrompt = loadAgentPrompt('test-case-generator.agent.md');
   const reqJson = fs.readFileSync(reqFile, 'utf8');
+  const reqParsed: unknown = JSON.parse(reqJson);
+  const reqArray = Array.isArray(reqParsed) ? reqParsed as Record<string, unknown>[] : [reqParsed as Record<string, unknown>];
   let casesText: string;
   const accountCtx = loadAccountContext();
   const accountNote = accountCtx ? `\n\n<test-accounts>\n${accountCtx}\n</test-accounts>` : '';
-  const userMessage = `Generate test cases for these requirements. Return ONLY the JSON array — no prose, no file writes:\n\n${reqJson}${accountNote}`;
+  const kbContext = loadKbContextForTestCases(reqArray);
+  const kbBlock = kbContext
+    ? `\n\n<knowledge-base>\n${kbContext}\n</knowledge-base>\n\nWiden coverage using the knowledge base above: add any cross-module integration or regression test case visible here that is NOT already reflected in the requirements' own integrationScenarios[]/affectedModules[]/knownBugEdgeCases[]/businessRules[]. Tag these with requirementRef: "KB-direct: <short description>" so their provenance is traceable to this direct KB read. Do not duplicate a case already covered by the requirements JSON itself.`
+    : '';
+  const userMessage = `Generate test cases for these requirements. Return ONLY the JSON array — no prose, no file writes:\n\n${reqJson}${accountNote}${kbBlock}`;
   try {
     casesText = await aiChat(backend, systemPrompt, userMessage, s => spin.message(`Generating test cases… ${s}`), false, STAGE_MODELS.testCaseGeneration);
   } catch (e: unknown) {
@@ -1368,8 +1594,6 @@ async function runTestCaseGeneration(backend: AIBackend, reqFile: string, ts: nu
   // every case in a single-task run — both are pipeline-computed rather than trusted from the
   // model, so the agent prompt no longer needs to ask for them (cheaper output, no correctness
   // dependency on the model getting a purely mechanical value right).
-  const reqParsed: unknown = JSON.parse(reqJson);
-  const reqArray = Array.isArray(reqParsed) ? reqParsed : [reqParsed];
   const singleTaskId = reqArray.length === 1 ? (reqArray[0] as Record<string, unknown>)?.['taskId'] as string | null ?? null : null;
 
   const cases = (validated.data as unknown as Record<string, unknown>[]).map(c => {
@@ -1399,11 +1623,13 @@ async function runTestCaseGeneration(backend: AIBackend, reqFile: string, ts: nu
       ).join('\n\n') + (duplicates.length > 10 ? `\n…and ${duplicates.length - 10} more` : ''),
       `${duplicates.length} likely duplicate(s) of previously generated cases`,
     );
-    const proceed = await p.confirm({ message: 'Likely-duplicate test cases detected — generate automation for all of them anyway?', initialValue: false });
+    // Headless: keep every case (the duplicates are listed above for review) instead of stopping.
+    const proceed = HEADLESS ? true : await p.confirm({ message: 'Likely-duplicate test cases detected — generate automation for all of them anyway?', initialValue: false });
     if (p.isCancel(proceed) || !proceed) {
       const casesFile = path.join(CASES_DIR, `cases-${ts}.json`);
       fs.writeFileSync(casesFile, JSON.stringify(cases, null, 2));
       p.note(casesFile, 'cases JSON (saved — review/dedupe before generating automation)');
+      runBackground('Writing Markdown test cases…', `npm run report:md -- --input="${casesFile}" --index`);
       runCoverageAndReview(reqFile, casesFile);
       p.log.warn('Stopping before automation generation — re-run Option 4 once the cases file has been reviewed.');
       return null;
@@ -1418,6 +1644,11 @@ async function runTestCaseGeneration(backend: AIBackend, reqFile: string, ts: nu
   runBackground('Exporting test cases to Excel…', `npm run report:excel -- --mode=test-cases --input="${casesFile}"`);
   const latestXlsx = latestFile(EXCEL_DIR, 'test-cases', '.xlsx');
   if (latestXlsx) p.note(latestXlsx, 'Excel');
+
+  // Markdown copy → docs/test-cases/ (browsable/shareable; refreshes the library index).
+  // The document name is derived from the cases file, so it's known without waiting on the export.
+  runBackground('Writing Markdown test cases…', `npm run report:md -- --input="${casesFile}" --index`);
+  p.note(path.join(MD_DIR, `test-cases-${mdSlug(path.basename(casesFile, '.json').replace(/^cases-/, ''))}.md`), 'Markdown');
 
   runCoverageAndReview(reqFile, casesFile);
 
@@ -1436,26 +1667,35 @@ async function runAutomationGeneration(backend: AIBackend, casesFile: string): P
   const nonAutomatable = allCases.length - automatableCases.length;
   if (nonAutomatable) p.log.info(`${nonAutomatable} case(s) marked automatable:false — excluded from automation generation`);
   const casesJson = JSON.stringify(automatableCases, null, 2);
+  const { context: existingFilesContext, existingFiles } = gatherExistingAutomationContext(automatableCases);
   let automationFiles: AIFile[] = [];
   try {
-    automationFiles = await aiGenerateAutomation(backend, systemPrompt, casesJson, s => spin.message(`Generating Playwright automation… ${s}`), STAGE_MODELS.automationGeneration);
+    automationFiles = await aiGenerateAutomation(backend, systemPrompt, casesJson, s => spin.message(`Generating Playwright automation… ${s}`), STAGE_MODELS.automationGeneration, existingFilesContext);
   } catch (e: unknown) {
     spin.stop('Automation generation failed');
     p.log.error((e as Error).message);
     return [];
   }
 
-  let written = 0;
-  const skipped: string[] = [];
+  let created = 0, updated = 0;
+  const contentLossWarnings: string[] = [];
   for (const f of automationFiles) {
     const abs = path.join(ROOT, f.path);
-    if (fs.existsSync(abs)) { skipped.push(f.path); continue; }
+    const priorContent = existingFiles.get(f.path) ?? (fs.existsSync(abs) ? fs.readFileSync(abs, 'utf8') : undefined);
+    if (priorContent !== undefined && f.path.endsWith('.spec.ts')) {
+      const priorIds = [...priorContent.matchAll(/TC-[A-Z0-9]+-\d+/g)].map(m => m[0]);
+      const missingIds = [...new Set(priorIds)].filter(id => !f.content.includes(id));
+      if (missingIds.length) contentLossWarnings.push(`${f.path}: ${missingIds.join(', ')}`);
+    }
     fs.mkdirSync(path.dirname(abs), { recursive: true });
     fs.writeFileSync(abs, f.content);
-    written++;
+    if (priorContent !== undefined) updated++; else created++;
   }
-  spin.stop(`${written} file(s) written${skipped.length ? `, ${skipped.length} skipped (already exist)` : ''}`);
-  if (skipped.length) p.note(skipped.join('\n'), 'Skipped — already exist (review manually)');
+  spin.stop(`${created} file(s) created, ${updated} file(s) updated`);
+  if (contentLossWarnings.length) {
+    p.log.warn('Existing test IDs missing from the merged output — review before trusting this run:');
+    p.note(contentLossWarnings.join('\n'), 'Possible content loss during merge');
+  }
 
   const checkSpin = p.spinner();
   checkSpin.start('Running TypeScript check and lint…');
@@ -1468,7 +1708,7 @@ async function runAutomationGeneration(backend: AIBackend, casesFile: string): P
   if (!lintOk) p.log.error('qa-conventions lint violations:\n' + (lintOut || lintErr).split('\n').slice(0, 15).join('\n'));
 
   if (!tscOk || !lintOk) {
-    const proceedAnyway = await p.confirm({
+    const proceedAnyway = HEADLESS ? false : await p.confirm({
       message: 'TypeScript and/or lint issues found in generated automation — run tests anyway?',
       initialValue: false,
     });
@@ -1712,8 +1952,8 @@ async function main() {
         { value: '1', label: '1.  Run Full Pipeline',             hint: 'analysis → tests → automation → run → bugs' },
         { value: '2', label: '2.  Fetch & Analyze',               hint: 'tasks or issues → AI analysis' },
         { value: '3', label: '3.  Create Test Cases',             hint: 'cases + Excel + coverage + review' },
-        { value: '4', label: '4.  Generate Automation',           hint: 'Playwright specs (no execution)' },
-        { value: '5', label: '5.  Run Playwright Tests',          hint: 'run → results + HTML report' },
+        { value: '4', label: '4.  Generate Automation',           hint: 'specs, then choose: generate only / generate + run' },
+        { value: '5', label: '5.  Run Playwright Tests',          hint: 'run-only → results + HTML report' },
         { value: '6', label: '6.  Report Bugs to Zoho',           hint: 'results.json → file bugs in Zoho' },
         { value: '7', label: '7.  Exit' },
       ],
@@ -1743,8 +1983,8 @@ async function main() {
 async function askWhatNext(from: number): Promise<string> {
   const opts: Array<{ value: string; label: string; hint?: string }> = [];
   if (from === 2) opts.push({ value: '3', label: '3.  Create Test Cases',    hint: 'cases + Excel + coverage + review' });
-  if (from <= 3)  opts.push({ value: '4', label: '4.  Generate Automation',  hint: 'Playwright scripts' });
-  if (from <= 4)  opts.push({ value: '5', label: '5.  Run Playwright Tests', hint: 'run → results + HTML report' });
+  if (from <= 3)  opts.push({ value: '4', label: '4.  Generate Automation',  hint: 'generate only / generate + run' });
+  if (from <= 4)  opts.push({ value: '5', label: '5.  Run Playwright Tests', hint: 'run-only → results + HTML report' });
   if (from <= 5)  opts.push({ value: '6', label: '6.  Report Bugs to Zoho',  hint: 'confirm each → file in Zoho' });
   opts.push({ value: 'menu', label: '    ↩  Back to main menu' });
   opts.push({ value: 'exit', label: '    ✕  Exit' });
@@ -1754,4 +1994,13 @@ async function askWhatNext(from: number): Promise<string> {
   return next as string;
 }
 
-main().catch(err => { p.log.error(err?.message ?? String(err)); process.exit(1); });
+if (require.main === module) {
+  main().catch(err => { p.log.error(err?.message ?? String(err)); process.exit(1); });
+}
+
+// Reused by scripts/pipeline-headless.ts (QA Workspace UI) — same steps, no interactive menu.
+export {
+  readDocumentText, resolveAIBackend, findClaudeBin, isZohoConfigured, fetchTasksByIds,
+  runRequirementAnalysis, runTestCaseGeneration, runAutomationGeneration,
+};
+export type { AIBackend };

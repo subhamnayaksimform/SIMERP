@@ -1,0 +1,306 @@
+[
+  {
+    "id": "TC-EMPSKL-117", "module": "Skills",
+    "title": "Add New Skill drawer — selecting an existing skill from search results and assigning employees succeeds end-to-end",
+    "category": "smoke", "priority": "critical", "severity": "critical",
+    "tags": ["@smoke", "@functional"], "automatable": true,
+    "preconditions": "Logged in as ceo@simformsolutions.com (primaryPage fixture)",
+    "testData": {},
+    "steps": [
+      "Navigate to Employee → Skills",
+      "Open the Add New Skill drawer",
+      "Select a Department",
+      "Search for an existing skill name and select it from the results",
+      "Assign at least one employee",
+      "Save"
+    ],
+    "expected": "Drawer closes; the skill+department+employee assignment appears in the Skills Listing without reload",
+    "automationHint": "Reuse SkillsPage.searchOrCreateSkill()/selectSkillFromSearchResults() from skills.page.ts.",
+    "requirementRef": "Manual requirement (2026-08-19): using add skill we can create skills and select skills, add anything that is showing in that field, assign employee",
+    "provenance": "requirement-grounded", "confidence": "requirement-grounded"
+  },
+  {
+    "id": "TC-EMPSKL-118", "module": "Skills",
+    "title": "Add New Skill drawer — typing a name with no existing match offers 'Create new Skill' and any resulting option in the field is selectable",
+    "category": "functional", "priority": "high", "severity": "major",
+    "tags": ["@functional"], "automatable": true,
+    "preconditions": "Logged in as ceo@simformsolutions.com (primaryPage fixture)",
+    "testData": { "newSkillName": "unique per-run generated name" },
+    "steps": [
+      "Open the Add New Skill drawer",
+      "Type a skill name guaranteed not to already exist",
+      "Confirm 'No match found' and '+ Create new Skill' are shown",
+      "Select 'Create new Skill' and complete any required fields (e.g. Logo URL)",
+      "Assign employees and save"
+    ],
+    "expected": "New skill is created and appears in the Skills Listing with the assigned employees",
+    "automationHint": "New-skill Save silently no-ops unless Logo URL is filled — confirmed live per skills.page.ts comment; fill it to avoid a false negative.",
+    "requirementRef": "Manual requirement (2026-08-19): add skill we can create skills and select skills, add anything that is showing in that field",
+    "provenance": "requirement-grounded", "confidence": "requirement-grounded"
+  },
+  {
+    "id": "TC-EMPSKL-119", "module": "Skills",
+    "title": "Selecting a Department in Skills scopes the listing to that department's skills/employees only",
+    "category": "functional", "priority": "high", "severity": "major",
+    "tags": ["@functional"], "automatable": true,
+    "preconditions": "Logged in as ceo@simformsolutions.com (primaryPage fixture)",
+    "testData": {},
+    "steps": [
+      "Navigate to Employee → Skills",
+      "Select a specific Department",
+      "Observe the Skills Listing"
+    ],
+    "expected": "Only skills/employees relevant to the selected department are shown",
+    "automationHint": "",
+    "requirementRef": "Manual requirement (2026-08-19): later select department from selecting the department we can view all the employees",
+    "provenance": "requirement-grounded", "confidence": "requirement-grounded"
+  },
+  {
+    "id": "TC-EMPSKL-120", "module": "Skills",
+    "title": "Selecting one department and skill opens the Skill Detail Panel where assigned employees can be edited",
+    "category": "functional", "priority": "high", "severity": "major",
+    "tags": ["@functional"], "automatable": true,
+    "preconditions": "Logged in as ceo@simformsolutions.com (primaryPage fixture)",
+    "testData": {},
+    "steps": [
+      "Select a Department, then a skill in the Skills Listing",
+      "Open the Skill Detail Panel's edit control",
+      "Add or remove an employee from the assignment",
+      "Save"
+    ],
+    "expected": "Skill Detail Panel reflects the modified employee list immediately, without reload; combined count updates to match",
+    "automationHint": "",
+    "requirementRef": "Manual requirement (2026-08-19): by selecting one department and skill we can edit the skill too and modify the employees",
+    "provenance": "requirement-grounded", "confidence": "requirement-grounded"
+  },
+  {
+    "id": "TC-EMPSKL-121", "module": "Skills",
+    "title": "Tags on a skill can be used to search/filter the Skills Listing",
+    "category": "functional", "priority": "medium", "severity": "major",
+    "tags": ["@functional", "@needs-verification"], "automatable": true,
+    "preconditions": "Logged in as ceo@simformsolutions.com (primaryPage fixture)",
+    "testData": {},
+    "steps": [
+      "Identify a tag associated with an existing skill",
+      "Type that tag into the search field",
+      "Observe the Skills Listing"
+    ],
+    "expected": "Skills carrying the searched tag appear in the results, in addition to (or instead of) name-based matches",
+    "automationHint": "NOTE: underlying rule is speculative — verify with a human before treating a failure as a confirmed regression. Tag-based search behavior not previously captured in KB.",
+    "requirementRef": "Manual requirement (2026-08-19): also check the tags — they can be used to search the skill too",
+    "provenance": "requirement-grounded", "confidence": "inferred"
+  },
+  {
+    "id": "TC-EMPSKL-122", "module": "Skills",
+    "title": "Employees in the Skill Detail Panel are sorted by Availability % in descending order",
+    "category": "functional", "priority": "high", "severity": "major",
+    "tags": ["@functional", "@boundary"], "automatable": true,
+    "preconditions": "Logged in as ceo@simformsolutions.com (primaryPage fixture)",
+    "testData": {},
+    "steps": [
+      "Select a skill with multiple assigned employees",
+      "Read each employee's Availability % as displayed",
+      "Compare consecutive rows"
+    ],
+    "expected": "Availability % values are in strictly non-increasing (descending) order top to bottom",
+    "automationHint": "",
+    "requirementRef": "Manual requirement (2026-08-19): the employees visible will have availability percentage shown in decreasing order",
+    "provenance": "requirement-grounded", "confidence": "requirement-grounded"
+  },
+  {
+    "id": "TC-EMPSKL-123", "module": "Skills",
+    "title": "Employees with tied Availability % maintain a stable secondary sort order",
+    "category": "boundary", "priority": "low", "severity": "minor",
+    "tags": ["@boundary", "@needs-verification"], "automatable": true,
+    "preconditions": "Logged in as ceo@simformsolutions.com (primaryPage fixture)",
+    "testData": {},
+    "steps": [
+      "Select a skill where two or more employees share an identical Availability %",
+      "Record their relative order",
+      "Reload and re-check the order"
+    ],
+    "expected": "Tied employees keep a stable, repeatable relative order",
+    "automationHint": "NOTE: underlying rule is speculative — verify with a human before treating a failure as a confirmed regression.",
+    "requirementRef": "Regression: sorting (SIM ERP intelligent coverage)",
+    "provenance": "regression-derived", "confidence": "speculative"
+  },
+  {
+    "id": "TC-EMPSKL-124", "module": "Skills",
+    "title": "Selecting multiple skills together shows the combined (union) list of employees holding any of them",
+    "category": "smoke", "priority": "critical", "severity": "critical",
+    "tags": ["@smoke", "@functional"], "automatable": true,
+    "preconditions": "Logged in as ceo@simformsolutions.com (primaryPage fixture)",
+    "testData": {},
+    "steps": [
+      "In the Skills Listing, select two or more skills simultaneously (multi-select)",
+      "Observe the resulting employee list"
+    ],
+    "expected": "The employee list shows the union of employees who hold ANY of the selected skills",
+    "automationHint": "Multi-skill selection UI/control unconfirmed against live app — locate generically (checkbox/multi-select on skill rows).",
+    "requirementRef": "Manual requirement (2026-08-19): we can see multiple skills together to see employees with those selected skills",
+    "provenance": "requirement-grounded", "confidence": "requirement-grounded"
+  },
+  {
+    "id": "TC-EMPSKL-125", "module": "Skills",
+    "title": "Multi-skill selection — an employee holding more than one selected skill appears only once, with no duplicate row",
+    "category": "boundary", "priority": "medium", "severity": "major",
+    "tags": ["@boundary"], "automatable": true,
+    "preconditions": "Logged in as ceo@simformsolutions.com (primaryPage fixture)",
+    "testData": {},
+    "steps": [
+      "Select two skills known to share at least one common employee",
+      "Observe the combined employee list",
+      "Search for that employee's name in the result set"
+    ],
+    "expected": "The shared employee appears exactly once in the combined list, not once per matching skill",
+    "automationHint": "",
+    "requirementRef": "Manual requirement (2026-08-19): we can see multiple skills together to see employees with those selected skills",
+    "provenance": "requirement-grounded", "confidence": "requirement-grounded"
+  },
+  {
+    "id": "TC-EMPSKL-126", "module": "Skills",
+    "title": "Filtering the Skill Detail Panel by 'Primary' narrows the list to Primary holders only",
+    "category": "functional", "priority": "high", "severity": "major",
+    "tags": ["@functional"], "automatable": true,
+    "preconditions": "Logged in as ceo@simformsolutions.com (primaryPage fixture)",
+    "testData": {},
+    "steps": [
+      "Select a skill with both Primary and Secondary holders",
+      "Apply the Primary filter"
+    ],
+    "expected": "Only employees classified Primary for this skill remain visible; the panel's count matches the filtered row count",
+    "automationHint": "",
+    "requirementRef": "Manual requirement (2026-08-19): skills can also be filtered using primary and secondary",
+    "provenance": "requirement-grounded", "confidence": "requirement-grounded"
+  },
+  {
+    "id": "TC-EMPSKL-127", "module": "Skills",
+    "title": "Filtering the Skill Detail Panel by 'Secondary' narrows the list to Secondary holders only",
+    "category": "functional", "priority": "high", "severity": "major",
+    "tags": ["@functional"], "automatable": true,
+    "preconditions": "Logged in as ceo@simformsolutions.com (primaryPage fixture)",
+    "testData": {},
+    "steps": [
+      "Select a skill with both Primary and Secondary holders",
+      "Apply the Secondary filter"
+    ],
+    "expected": "Only employees classified Secondary for this skill remain visible",
+    "automationHint": "",
+    "requirementRef": "Manual requirement (2026-08-19): skills can also be filtered using primary and secondary",
+    "provenance": "requirement-grounded", "confidence": "requirement-grounded"
+  },
+  {
+    "id": "TC-EMPSKL-128", "module": "Skills",
+    "title": "Clearing the Primary/Secondary filter restores the full combined holder list",
+    "category": "functional", "priority": "medium", "severity": "major",
+    "tags": ["@functional", "@regression"], "automatable": true,
+    "preconditions": "Logged in as ceo@simformsolutions.com (primaryPage fixture)",
+    "testData": {},
+    "steps": [
+      "Apply the Primary or Secondary filter on the Skill Detail Panel",
+      "Clear the filter"
+    ],
+    "expected": "Full combined Primary + Secondary holder list is restored",
+    "automationHint": "",
+    "requirementRef": "Manual requirement (2026-08-19): skills can also be filtered using primary and secondary",
+    "provenance": "requirement-grounded", "confidence": "requirement-grounded"
+  },
+  {
+    "id": "TC-EMPSKL-129", "module": "Skills",
+    "title": "Deleting a skill that still has employees assigned in the selected department is blocked",
+    "category": "negative", "priority": "high", "severity": "major",
+    "tags": ["@negative", "@boundary"], "automatable": true,
+    "preconditions": "Logged in as ceo@simformsolutions.com (primaryPage fixture)",
+    "testData": {},
+    "steps": [
+      "Select a skill with one or more assigned employees in the current department",
+      "Attempt to delete/unlink the skill"
+    ],
+    "expected": "Delete/unlink is blocked; a message shows the Primary/Secondary breakdown of remaining holders",
+    "automationHint": "",
+    "requirementRef": "KB-direct: employee-details/skills.json edgeCases — delete blocked while holders remain",
+    "provenance": "requirement-grounded", "confidence": "requirement-grounded"
+  },
+  {
+    "id": "TC-EMPSKL-130", "module": "Skills",
+    "title": "Removing every assigned employee one-by-one, then deleting the skill, succeeds once the count reaches zero",
+    "category": "functional", "priority": "high", "severity": "major",
+    "tags": ["@functional"], "automatable": true,
+    "preconditions": "Logged in as ceo@simformsolutions.com (primaryPage fixture)",
+    "testData": {},
+    "steps": [
+      "Select a skill with a small number of assigned employees in the current department",
+      "Remove each assigned employee one at a time until the count is 0",
+      "Attempt to delete/unlink the skill"
+    ],
+    "expected": "Delete/unlink succeeds once — and only once — the department's assigned-employee count for this skill is 0",
+    "automationHint": "",
+    "requirementRef": "Manual requirement (2026-08-19): to delete any skills we need to make sure that all the employees are removed one by one",
+    "provenance": "requirement-grounded", "confidence": "requirement-grounded"
+  },
+  {
+    "id": "TC-EMPSKL-131", "module": "Skills",
+    "title": "A skill with zero employees in the current department but assigned elsewhere still requires delete confirmation",
+    "category": "negative", "priority": "medium", "severity": "major",
+    "tags": ["@negative", "@boundary"], "automatable": true,
+    "preconditions": "Logged in as ceo@simformsolutions.com (primaryPage fixture)",
+    "testData": {},
+    "steps": [
+      "Select a skill with 0 employees in the current department but known to have holders in at least one other department",
+      "Attempt to delete/unlink"
+    ],
+    "expected": "A delete/unlink confirmation pop-up is still shown (classification/other-department usage does not silently bypass the confirmation)",
+    "automationHint": "",
+    "requirementRef": "KB-direct: employee-details/skills.json edgeCases — cross-department skill usage confirmation",
+    "provenance": "requirement-grounded", "confidence": "requirement-grounded"
+  },
+  {
+    "id": "TC-EMPSKL-132", "module": "Skills",
+    "title": "Availability % shown in the Skill Detail Panel matches the value returned by the API for the same employee",
+    "category": "integration", "priority": "medium", "severity": "minor",
+    "tags": ["@regression", "@needs-verification"], "automatable": true,
+    "preconditions": "Logged in as ceo@simformsolutions.com (primaryPage fixture)",
+    "testData": {},
+    "steps": [
+      "Read the Availability % for the top-sorted employee in a Skill Detail Panel",
+      "Fetch the corresponding employee/availability API endpoint",
+      "Compare values"
+    ],
+    "expected": "UI-displayed Availability % exactly matches the API value",
+    "automationHint": "NOTE: underlying rule is speculative — verify with a human before treating a failure as a confirmed regression.",
+    "requirementRef": "Regression: data-integrity — API/UI value parity",
+    "provenance": "regression-derived", "confidence": "speculative"
+  },
+  {
+    "id": "TC-EMPSKL-133", "module": "Skills",
+    "title": "Double-clicking Save on the Add New Skill drawer does not create duplicate records",
+    "category": "boundary", "priority": "medium", "severity": "minor",
+    "tags": ["@boundary", "@needs-verification"], "automatable": true,
+    "preconditions": "Logged in as ceo@simformsolutions.com (primaryPage fixture)",
+    "testData": {},
+    "steps": [
+      "Fill in the Add New Skill drawer completely",
+      "Click Save twice in rapid succession"
+    ],
+    "expected": "Exactly one skill/employee-assignment record is created, not two",
+    "automationHint": "NOTE: underlying rule is speculative — verify with a human before treating a failure as a confirmed regression.",
+    "requirementRef": "Regression: data-integrity — rapid double-submit",
+    "provenance": "regression-derived", "confidence": "speculative"
+  },
+  {
+    "id": "TC-EMPSKL-134", "module": "Skills",
+    "title": "Multi-skill selection can be cleared, restoring the single-skill (or unselected) Skill Detail Panel view",
+    "category": "functional", "priority": "low", "severity": "minor",
+    "tags": ["@functional"], "automatable": true,
+    "preconditions": "Logged in as ceo@simformsolutions.com (primaryPage fixture)",
+    "testData": {},
+    "steps": [
+      "Select two or more skills to view the combined employee list",
+      "Deselect all but one (or all) skills"
+    ],
+    "expected": "Panel returns to showing the single selected skill's holders, or the default/no-selection state, with no leftover combined-list rows",
+    "automationHint": "",
+    "requirementRef": "Manual requirement (2026-08-19): we can see multiple skills together to see employees with those selected skills",
+    "provenance": "requirement-grounded", "confidence": "requirement-grounded"
+  }
+]

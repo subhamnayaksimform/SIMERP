@@ -1,0 +1,63 @@
+{
+  "T0": "2026-10-19T11:13:43.105Z",
+  "T1": "2026-10-19T11:13:44.168Z",
+  "req": {
+    "employeePublicId": "2c0a4d1e-4fe9-4adf-8675-8be9cfc56b92",
+    "projectPublicId": "3d138a89-4d06-4839-8091-436fba0a2dd6",
+    "allocationType": "FIXED",
+    "allocationPercentage": 10,
+    "allocationStartDate": "2026-10-19",
+    "allocationEndDate": "2026-11-30",
+    "status": "GREEN",
+    "typeOfWork": "DEVELOPMENT_WORK",
+    "note": "QA test SI4-T1527 retest 2026-10-19 (D1 + lifecycle). Will be removed same day."
+  },
+  "res": {
+    "status": 201,
+    "body": {
+      "code": "ALLOCATION_TICKET_070",
+      "message": "Direct allocation created successfully",
+      "data": {
+        "publicId": "c3b65d73-e16b-4e34-9cfd-9e15b6033826",
+        "allocationPercentage": 10,
+        "allocationType": "FIXED",
+        "typeOfWork": "DEVELOPMENT_WORK",
+        "allocationStartDate": "2026-10-19",
+        "allocationEndDate": "2026-11-30",
+        "status": "GREEN",
+        "note": "QA test SI4-T1527 retest 2026-10-19 (D1 + lifecycle). Will be removed same day.",
+        "allocationOrigin": "PMO",
+        "employee": {
+          "publicId": "2c0a4d1e-4fe9-4adf-8675-8be9cfc56b92",
+          "name": "Gaurav Dutta",
+          "email": "gaurav.dutta@simformsolutions.com",
+          "photoUrl": "https://i.pravatar.cc/150?u=gaurav.dutta@simformsolutions.com"
+        },
+        "shadowDeveloper": null,
+        "project": {
+          "publicId": "3d138a89-4d06-4839-8091-436fba0a2dd6",
+          "name": "HyperScale | Scalability Engine",
+          "alias": "",
+          "projectManager": {
+            "publicId": "5f1a4477-84fe-46aa-8360-ca4e0a16983c",
+            "name": "Hardik Trivedi",
+            "photoUrl": "https://i.pravatar.cc/150?u=hardik.trivedi@simformsolutions.com"
+          },
+          "customerSuccessManager": {
+            "publicId": "09d434e9-5346-4790-8ae7-f5105e5b4968",
+            "name": "Priya Chopra",
+            "photoUrl": "https://i.pravatar.cc/150?u=priya.chopra@simformsolutions.com"
+          }
+        },
+        "createdBy": {
+          "publicId": "e93f5377-1f74-42cb-9a40-255908e50310",
+          "name": "Bhumi Chauhan",
+          "email": "bhumi.chauhan@simformsolutions.com",
+          "photoUrl": "https://i.pravatar.cc/150?u=bhumi.chauhan@simformsolutions.com"
+        },
+        "ticketPublicId": "2c0e3f3d-be3a-49f6-9cb5-6bd72082f105",
+        "ticketNumber": "NA-0369"
+      }
+    }
+  }
+}

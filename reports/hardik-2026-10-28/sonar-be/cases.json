@@ -1,0 +1,2030 @@
+[
+  {
+    "id": "TC-SONBE-001",
+    "module": "Sonar Clean-up – Backend Regression",
+    "moduleCode": "SONBE",
+    "subModule": "Search escaping",
+    "taskId": "SI4-T1563",
+    "title": "Opening list search treats %, _, \\ as literals (no match-all)",
+    "category": "regression",
+    "priority": "P1",
+    "severity": "High",
+    "tags": [
+      "@regression",
+      "@api",
+      "@negative"
+    ],
+    "role": "PMO (nandini.langalia)",
+    "preconditions": "Logged in on DEV (6.5.x backend incl. PR #565/#566 merged 23/10) via /auth/dev-login; API called from the same browser context.",
+    "testData": {
+      "endpoint": "GET /opportunities/openings",
+      "terms": [
+        "%",
+        "_",
+        "\\",
+        "%%",
+        "a%b",
+        "%_%"
+      ]
+    },
+    "steps": [
+      "GET /opportunities/openings?page=1&limit=100 and note total",
+      "Repeat with search set to each wildcard term (URL-encoded)",
+      "Compare each total with the unfiltered total"
+    ],
+    "expected": "Every wildcard search returns 0 rows (no opening title/client contains those characters); none returns the full list.",
+    "requirementRef": "src/common/utils/common.util.ts:escapeLikePattern (87492acc replace→replaceAll); src/modules/opportunities/opportunity-filter.util.ts:84",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "automationHint": "API test: loop terms, assert total===0 && total<base",
+    "lastResult": "passed",
+    "actualResult": "[pmo/esc:openings:wildcards] base=491; {\"%\":0,\"_\":0,\"\\\\\":0,\"%%\":0,\"a%b\":0,\"%_%\":0}",
+    "notes": "",
+    "screenshot": ""
+  },
+  {
+    "id": "TC-SONBE-002",
+    "module": "Sonar Clean-up – Backend Regression",
+    "moduleCode": "SONBE",
+    "subModule": "Search escaping",
+    "taskId": "SI4-T1563",
+    "title": "Opening list search with quotes / SQL-ish text returns 200 and no rows",
+    "category": "negative",
+    "priority": "P2",
+    "severity": "Medium",
+    "tags": [
+      "@negative",
+      "@api",
+      "@security"
+    ],
+    "role": "PMO (nandini.langalia)",
+    "preconditions": "Logged in on DEV (6.5.x backend incl. PR #565/#566 merged 23/10) via /auth/dev-login; API called from the same browser context.",
+    "testData": {
+      "endpoint": "GET /opportunities/openings",
+      "terms": [
+        "'",
+        "\"",
+        "O'Brien",
+        "a\"b",
+        "--",
+        ";"
+      ]
+    },
+    "steps": [
+      "Call the openings list with each term as search",
+      "Record status and total"
+    ],
+    "expected": "Status 200 for every term, no 500, no unexpected matches.",
+    "requirementRef": "src/common/utils/common.util.ts:escapeLikePattern (87492acc replace→replaceAll)",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "automationHint": "API test",
+    "lastResult": "passed",
+    "actualResult": "[pmo/esc:openings:quotes] {\"'\":0,\"\\\"\":0,\"O'Brien\":0,\"a\\\"b\":0,\"--\":0,\";\":0}",
+    "notes": "",
+    "screenshot": ""
+  },
+  {
+    "id": "TC-SONBE-003",
+    "module": "Sonar Clean-up – Backend Regression",
+    "moduleCode": "SONBE",
+    "subModule": "Search escaping",
+    "taskId": "SI4-T1563",
+    "title": "Opening list normal search (\"java\") still matches",
+    "category": "regression",
+    "priority": "P1",
+    "severity": "High",
+    "tags": [
+      "@regression",
+      "@api",
+      "@smoke"
+    ],
+    "role": "PMO (nandini.langalia)",
+    "preconditions": "Logged in on DEV (6.5.x backend incl. PR #565/#566 merged 23/10) via /auth/dev-login; API called from the same browser context.",
+    "testData": {
+      "search": "java"
+    },
+    "steps": [
+      "GET /opportunities/openings?search=java",
+      "Check every returned row mentions java"
+    ],
+    "expected": "Rows returned (>0) and every row contains the term.",
+    "requirementRef": "src/common/utils/common.util.ts:escapeLikePattern (87492acc replace→replaceAll)",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "automationHint": "API test",
+    "lastResult": "passed",
+    "actualResult": "[pmo/esc:openings:normal] status=200 total=70 nonMatching=0",
+    "notes": "",
+    "screenshot": ""
+  },
+  {
+    "id": "TC-SONBE-004",
+    "module": "Sonar Clean-up – Backend Regression",
+    "moduleCode": "SONBE",
+    "subModule": "Search escaping",
+    "taskId": "SI4-T1563",
+    "title": "Opening positionTitle / opportunityTitle filters escape % and _",
+    "category": "regression",
+    "priority": "P2",
+    "severity": "Medium",
+    "tags": [
+      "@regression",
+      "@api"
+    ],
+    "role": "PMO (nandini.langalia)",
+    "preconditions": "Logged in on DEV (6.5.x backend incl. PR #565/#566 merged 23/10) via /auth/dev-login; API called from the same browser context.",
+    "testData": {
+      "params": [
+        "positionTitle",
+        "opportunityTitle"
+      ],
+      "values": [
+        "%",
+        "_",
+        "Java"
+      ]
+    },
+    "steps": [
+      "GET /opportunities/openings?positionTitle=% (and _ , Java)",
+      "Repeat for opportunityTitle"
+    ],
+    "expected": "% and _ return 0; \"Java\" returns matching rows.",
+    "requirementRef": "src/modules/opportunities/opportunity-filter.util.ts:112,143 (escapeLikePattern)",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "automationHint": "API test",
+    "lastResult": "passed",
+    "actualResult": "[pmo/esc:openings:titleFilters] base=491; {\"positionTitle=%\":0,\"positionTitle=_\":0,\"positionTitle=Java\":66,\"opportunityTitle=%\":0,\"opportunityTitle=_\":0,\"opportunityTitle=Java\":6}",
+    "notes": "",
+    "screenshot": ""
+  },
+  {
+    "id": "TC-SONBE-005",
+    "module": "Sonar Clean-up – Backend Regression",
+    "moduleCode": "SONBE",
+    "subModule": "Search escaping",
+    "taskId": "SI4-T1563",
+    "title": "Interview-requests search: wildcards literal, quotes safe",
+    "category": "regression",
+    "priority": "P1",
+    "severity": "High",
+    "tags": [
+      "@regression",
+      "@api",
+      "@negative"
+    ],
+    "role": "PMO (nandini.langalia)",
+    "preconditions": "Logged in on DEV (6.5.x backend incl. PR #565/#566 merged 23/10) via /auth/dev-login; API called from the same browser context.",
+    "testData": {
+      "endpoint": "GET /allocation-tickets/interview-requests"
+    },
+    "steps": [
+      "Search with %, _, \\, %%, a%b, %_%",
+      "Search with ', \", O'Brien, a\"b, --, ;"
+    ],
+    "expected": "All wildcard searches return 0 of 316; quote searches return 200.",
+    "requirementRef": "src/common/utils/common.util.ts:escapeLikePattern (87492acc replace→replaceAll); src/modules/allocation-tickets/interview-request-query.util.ts:66,148",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "automationHint": "API test",
+    "lastResult": "passed",
+    "actualResult": "[pmo/esc:interviewRequests:wildcards] base=316; {\"%\":0,\"_\":0,\"\\\\\":0,\"%%\":0,\"a%b\":0,\"%_%\":0} || [pmo/esc:interviewRequests:quotes] {\"'\":0,\"\\\"\":0,\"O'Brien\":0,\"a\\\"b\":0,\"--\":0,\";\":0}",
+    "notes": "",
+    "screenshot": ""
+  },
+  {
+    "id": "TC-SONBE-006",
+    "module": "Sonar Clean-up – Backend Regression",
+    "moduleCode": "SONBE",
+    "subModule": "Search escaping",
+    "taskId": "SI4-T1563",
+    "title": "Interview-requests normal search (\"AnalytixHub\") still matches",
+    "category": "functional",
+    "priority": "P2",
+    "severity": "Medium",
+    "tags": [
+      "@functional",
+      "@api"
+    ],
+    "role": "PMO (nandini.langalia)",
+    "preconditions": "Logged in on DEV (6.5.x backend incl. PR #565/#566 merged 23/10) via /auth/dev-login; API called from the same browser context.",
+    "testData": {
+      "search": "AnalytixHub"
+    },
+    "steps": [
+      "GET /allocation-tickets/interview-requests?search=AnalytixHub"
+    ],
+    "expected": "Rows returned and all mention AnalytixHub.",
+    "requirementRef": "src/common/utils/common.util.ts:escapeLikePattern (87492acc replace→replaceAll)",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "automationHint": "API test",
+    "lastResult": "passed",
+    "actualResult": "[pmo/esc:interviewRequests:normal] status=200 total=65 nonMatching=0",
+    "notes": "",
+    "screenshot": ""
+  },
+  {
+    "id": "TC-SONBE-007",
+    "module": "Sonar Clean-up – Backend Regression",
+    "moduleCode": "SONBE",
+    "subModule": "Search escaping",
+    "taskId": "SI4-T1563",
+    "title": "Candidate picker search: wildcards literal, names still found",
+    "category": "regression",
+    "priority": "P1",
+    "severity": "High",
+    "tags": [
+      "@regression",
+      "@api"
+    ],
+    "role": "PMO (nandini.langalia)",
+    "preconditions": "Logged in on DEV (6.5.x backend incl. PR #565/#566 merged 23/10) via /auth/dev-login; API called from the same browser context.",
+    "testData": {
+      "endpoint": "GET /opportunities/candidates",
+      "terms": [
+        "%",
+        "_",
+        "\\",
+        "tarun"
+      ]
+    },
+    "steps": [
+      "Search candidates with each wildcard",
+      "Search candidates with \"tarun\""
+    ],
+    "expected": "Wildcards → 0 of 3649; \"tarun\" → only Tarun* employees.",
+    "requirementRef": "src/common/utils/common.util.ts:escapeLikePattern (87492acc replace→replaceAll); src/modules/opportunities/candidates.service.ts:278",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "automationHint": "API test",
+    "lastResult": "passed",
+    "actualResult": "[pmo/esc:candidates:wildcards] base=3649; {\"%\":0,\"_\":0,\"\\\\\":0,\"%%\":0,\"a%b\":0,\"%_%\":0} || [pmo/esc:candidates:quotes] {\"'\":0,\"\\\"\":0,\"O'Brien\":0,\"a\\\"b\":0,\"--\":0,\";\":0} || [pmo/esc:candidates:normal] status=200 total=31 names=Tarun Mistry, Tarun Barot, Tarun Bhatt, Tarun Joshi, Tarun Thakkar nonMatching=0",
+    "notes": "",
+    "screenshot": ""
+  },
+  {
+    "id": "TC-SONBE-008",
+    "module": "Sonar Clean-up – Backend Regression",
+    "moduleCode": "SONBE",
+    "subModule": "Search escaping",
+    "taskId": "SI4-T1563",
+    "title": "Assignee picker and opportunity lookup: wildcards literal",
+    "category": "regression",
+    "priority": "P2",
+    "severity": "Medium",
+    "tags": [
+      "@regression",
+      "@api"
+    ],
+    "role": "PMO (nandini.langalia)",
+    "preconditions": "Logged in on DEV (6.5.x backend incl. PR #565/#566 merged 23/10) via /auth/dev-login; API called from the same browser context.",
+    "testData": {
+      "endpoints": [
+        "GET /opportunities/assignees?role=PM",
+        "GET /opportunities/lookup"
+      ]
+    },
+    "steps": [
+      "Search each endpoint with wildcard and quote terms"
+    ],
+    "expected": "Wildcards return 0 rows; quotes return 200.",
+    "requirementRef": "src/common/utils/common.util.ts:escapeLikePattern (87492acc replace→replaceAll); opportunity-assignees.service.ts:35; opportunities.service.ts:306",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "automationHint": "API test",
+    "lastResult": "passed",
+    "actualResult": "[pmo/esc:assignees:wildcards] base=91; {\"%\":0,\"_\":0,\"\\\\\":0,\"%%\":0,\"a%b\":0,\"%_%\":0} || [pmo/esc:assignees:quotes] {\"'\":0,\"\\\"\":0,\"O'Brien\":0,\"a\\\"b\":0,\"--\":0,\";\":0} || [pmo-rerun/esc:lookup:wildcards] base=50; {\"%\":0,\"_\":0,\"\\\\\":0,\"%%\":0,\"a%b\":0,\"%_%\":0} || [pmo-rerun/esc:lookup:quotes] {\"'\":0,\"\\\"\":0,\"O'Brien\":0,\"a\\\"b\":0,\"--\":0,\";\":0}",
+    "notes": "First run used an extra query param (?x=1) that the DTO rejects (400) — script error, fixed and re-run.",
+    "screenshot": ""
+  },
+  {
+    "id": "TC-SONBE-009",
+    "module": "Sonar Clean-up – Backend Regression",
+    "moduleCode": "SONBE",
+    "subModule": "Search escaping",
+    "taskId": "SI4-T1563",
+    "title": "Employee opportunity history search accepts wildcards without error",
+    "category": "boundary",
+    "priority": "P3",
+    "severity": "Low",
+    "tags": [
+      "@boundary",
+      "@api"
+    ],
+    "role": "PMO (nandini.langalia)",
+    "preconditions": "Logged in on DEV (6.5.x backend incl. PR #565/#566 merged 23/10) via /auth/dev-login; API called from the same browser context.",
+    "testData": {
+      "employee": "Tarun Sharma",
+      "terms": [
+        "%",
+        "_",
+        "\\"
+      ]
+    },
+    "steps": [
+      "GET /opportunities/employees/{tarun}/history?search=<term>"
+    ],
+    "expected": "200 and 0 rows for wildcards.",
+    "requirementRef": "src/common/utils/common.util.ts:escapeLikePattern (87492acc replace→replaceAll); employee-opportunity-history.service.ts:143",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "automationHint": "API test",
+    "lastResult": "passed",
+    "actualResult": "[pmo/esc:employeeOpportunityHistory] {\"none\":0,\"%\":0,\"_\":0,\"\\\\\":0}",
+    "notes": "Tarun has no history rows, so this only proves the endpoint does not error; it cannot prove % is not match-all here.",
+    "screenshot": ""
+  },
+  {
+    "id": "TC-SONBE-010",
+    "module": "Sonar Clean-up – Backend Regression",
+    "moduleCode": "SONBE",
+    "subModule": "Search escaping",
+    "taskId": "SI4-T1563",
+    "title": "UI: Opportunity Allocation search \"%\" shows no openings",
+    "category": "regression",
+    "priority": "P2",
+    "severity": "Medium",
+    "tags": [
+      "@regression",
+      "@ui"
+    ],
+    "role": "PMO (nandini.langalia)",
+    "preconditions": "Logged in on DEV (6.5.x backend incl. PR #565/#566 merged 23/10) via /auth/dev-login; API called from the same browser context.",
+    "testData": {
+      "page": "/pre-sales",
+      "search": "%"
+    },
+    "steps": [
+      "Open Requests Tracking → Opportunity Allocation",
+      "Type % in the search box",
+      "Watch the /opportunities/openings call"
+    ],
+    "expected": "Request sends search=%25 and the grid shows \"No openings found\".",
+    "requirementRef": "src/common/utils/common.util.ts:escapeLikePattern (87492acc replace→replaceAll)",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "automationHint": "Playwright UI: fill search, waitForResponse(search=), assert empty state",
+    "lastResult": "passed",
+    "actualResult": "GET /opportunities/openings?...&search=%25 → 200, total=0; grid shows \"No openings found\".",
+    "notes": "",
+    "screenshot": "reports/screenshots/2026-10-28/hardik/sonar-be/ui-02-presales-search-percent.png"
+  },
+  {
+    "id": "TC-SONBE-011",
+    "module": "Sonar Clean-up – Backend Regression",
+    "moduleCode": "SONBE",
+    "subModule": "Search escaping (no helper)",
+    "taskId": "SI4-T1563",
+    "title": "Employee list search \"%\" / \"_\" returns every employee",
+    "category": "negative",
+    "priority": "P2",
+    "severity": "Medium",
+    "tags": [
+      "@negative",
+      "@api",
+      "@ui"
+    ],
+    "role": "PMO (nandini.langalia)",
+    "preconditions": "Logged in on DEV (6.5.x backend incl. PR #565/#566 merged 23/10) via /auth/dev-login; API called from the same browser context.",
+    "testData": {
+      "endpoint": "GET /employees",
+      "terms": [
+        "%",
+        "_",
+        "a%b"
+      ]
+    },
+    "steps": [
+      "GET /employees?page=1&limit=100 (note total)",
+      "Search %, _ and a%b",
+      "UI: Employee → Employee Details, type % in \"Name, email, or project\""
+    ],
+    "expected": "% and _ are literals: 0 (or only names containing them) — not the full list.",
+    "requirementRef": "src/core/prisma-query-builder/QueryBuilder.ts:430 (contains without escaping; unchanged by T1563)",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "automationHint": "API test; assert total(%) < total(all)",
+    "lastResult": "failed",
+    "actualResult": "[pmo/raw:employees:wildcards] base=3648; {\"%\":3648,\"_\":3648,\"a%b\":1210,\"'\":0,\"zzzz-no-match\":0} || UI: search=%25 → 200, \"Showing 1-100 of 3648 results\".",
+    "notes": "BUG-SONBE-01 (pre-existing, not caused by T1563)",
+    "screenshot": "reports/screenshots/2026-10-28/hardik/sonar-be/ui-01-employees-search-percent.png"
+  },
+  {
+    "id": "TC-SONBE-012",
+    "module": "Sonar Clean-up – Backend Regression",
+    "moduleCode": "SONBE",
+    "subModule": "Search escaping (no helper)",
+    "taskId": "SI4-T1563",
+    "title": "Project list search \"%\" / \"_\" returns every project",
+    "category": "negative",
+    "priority": "P2",
+    "severity": "Medium",
+    "tags": [
+      "@negative",
+      "@api",
+      "@ui"
+    ],
+    "role": "PMO (nandini.langalia)",
+    "preconditions": "Logged in on DEV (6.5.x backend incl. PR #565/#566 merged 23/10) via /auth/dev-login; API called from the same browser context.",
+    "testData": {
+      "endpoint": "GET /projects",
+      "terms": [
+        "%",
+        "_",
+        "a%b"
+      ]
+    },
+    "steps": [
+      "GET /projects (note total)",
+      "Search %, _, a%b",
+      "UI: Projects → Project Details, type %"
+    ],
+    "expected": "Wildcards treated as literals.",
+    "requirementRef": "src/core/prisma-query-builder/QueryBuilder.ts:430 (contains without escaping; unchanged by T1563)",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "automationHint": "API test",
+    "lastResult": "failed",
+    "actualResult": "[pmo/raw:projects:wildcards] base=402; {\"%\":402,\"_\":402,\"a%b\":122,\"'\":0,\"zzzz-no-match\":0} || UI: search=%25 → 200, total 399 (billable filter on).",
+    "notes": "BUG-SONBE-01 (pre-existing)",
+    "screenshot": "reports/screenshots/2026-10-28/hardik/sonar-be/ui-06-projects-search-percent.png"
+  },
+  {
+    "id": "TC-SONBE-013",
+    "module": "Sonar Clean-up – Backend Regression",
+    "moduleCode": "SONBE",
+    "subModule": "Search escaping (no helper)",
+    "taskId": "SI4-T1563",
+    "title": "Allocation ticket list search \"%\" / \"_\" returns every ticket",
+    "category": "negative",
+    "priority": "P2",
+    "severity": "Medium",
+    "tags": [
+      "@negative",
+      "@api",
+      "@ui"
+    ],
+    "role": "PMO (nandini.langalia)",
+    "preconditions": "Logged in on DEV (6.5.x backend incl. PR #565/#566 merged 23/10) via /auth/dev-login; API called from the same browser context.",
+    "testData": {
+      "endpoint": "GET /allocation-tickets",
+      "terms": [
+        "%",
+        "_",
+        "a%b"
+      ]
+    },
+    "steps": [
+      "GET /allocation-tickets (note total)",
+      "Search %, _, a%b",
+      "UI: Requests Tracking → Project Allocation, type %"
+    ],
+    "expected": "Wildcards treated as literals.",
+    "requirementRef": "src/core/prisma-query-builder/QueryBuilder.ts:430 (contains without escaping; unchanged by T1563)",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "automationHint": "API test",
+    "lastResult": "failed",
+    "actualResult": "[pmo/raw:allocationTickets:wildcards] base=770; {\"%\":770,\"_\":770,\"a%b\":393,\"'\":0,\"zzzz-no-match\":0} || UI: search=%25&allocationMode=DIRECT → 200, total 726.",
+    "notes": "BUG-SONBE-01 (pre-existing)",
+    "screenshot": "reports/screenshots/2026-10-28/hardik/sonar-be/ui-05-tickets-search-percent.png"
+  },
+  {
+    "id": "TC-SONBE-014",
+    "module": "Sonar Clean-up – Backend Regression",
+    "moduleCode": "SONBE",
+    "subModule": "Search escaping (no helper)",
+    "taskId": "SI4-T1563",
+    "title": "Notifications, UP, Assign User Roles and dashboard activity search \"%\" match everything",
+    "category": "negative",
+    "priority": "P3",
+    "severity": "Low",
+    "tags": [
+      "@negative",
+      "@api"
+    ],
+    "role": "PMO (nandini.langalia)",
+    "preconditions": "Logged in on DEV (6.5.x backend incl. PR #565/#566 merged 23/10) via /auth/dev-login; API called from the same browser context.",
+    "testData": {
+      "endpoints": [
+        "/notifications",
+        "/utilization-priority",
+        "/employee-roles",
+        "/dashboard/activity"
+      ]
+    },
+    "steps": [
+      "For each endpoint compare total(no search) vs total(search=%) and total(search=_)"
+    ],
+    "expected": "Wildcards treated as literals.",
+    "requirementRef": "notifications.service.ts:48-49; dashboard.service.ts:548-550; QueryBuilder.ts:430",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "automationHint": "API test",
+    "lastResult": "failed",
+    "actualResult": "[pmo/raw:notifications:wildcards] base=1198; {\"%\":1198,\"_\":1198,\"a%b\":946,\"'\":93,\"zzzz-no-match\":0} || [pmo/raw:utilizationPriority:wildcards] base=3649; {\"%\":3649,\"_\":3649,\"a%b\":682,\"'\":0,\"zzzz-no-match\":0} || [pmo/raw:employeeRoles:wildcards] base=3632; {\"%\":3632,\"_\":3632,\"a%b\":348,\"'\":0,\"zzzz-no-match\":0} || [pmo/raw:dashboardActivity:wildcards] base=257; {\"%\":257,\"_\":257,\"a%b\":82,\"'\":0,\"zzzz-no-match\":0}",
+    "notes": "BUG-SONBE-01 (pre-existing)",
+    "screenshot": ""
+  },
+  {
+    "id": "TC-SONBE-015",
+    "module": "Sonar Clean-up – Backend Regression",
+    "moduleCode": "SONBE",
+    "subModule": "Allocation tickets",
+    "taskId": "SI4-T1563",
+    "title": "Ticket list sorting (ticketNumber, createdAt, project, start date) asc/desc",
+    "category": "regression",
+    "priority": "P2",
+    "severity": "Medium",
+    "tags": [
+      "@regression",
+      "@api"
+    ],
+    "role": "PMO (nandini.langalia)",
+    "preconditions": "Logged in on DEV (6.5.x backend incl. PR #565/#566 merged 23/10) via /auth/dev-login; API called from the same browser context.",
+    "testData": {
+      "sortBy": [
+        "ticketNumber",
+        "createdAt",
+        "project.name",
+        "allocationStartDate"
+      ]
+    },
+    "steps": [
+      "GET /allocation-tickets?sortBy=<k>&sortOrder=asc|desc",
+      "Check page 1 is ordered"
+    ],
+    "expected": "All 8 orderings correct.",
+    "requirementRef": "src/modules/allocation-tickets/allocation-tickets.controller.ts (TODO removed) / allocation-tickets.service.ts",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "automationHint": "API test",
+    "lastResult": "passed",
+    "actualResult": "[pmo/tickets:sort] {\"ticketNumber:asc\":\"ok\",\"ticketNumber:desc\":\"ok\",\"createdAt:asc\":\"ok\",\"createdAt:desc\":\"ok\",\"project.name:asc\":\"ok\",\"project.name:desc\":\"ok\",\"allocationStartDate:asc\":\"ok\",\"allocationStartDate:desc\":\"ok\"}",
+    "notes": "",
+    "screenshot": ""
+  },
+  {
+    "id": "TC-SONBE-016",
+    "module": "Sonar Clean-up – Backend Regression",
+    "moduleCode": "SONBE",
+    "subModule": "Allocation tickets",
+    "taskId": "SI4-T1563",
+    "title": "Status filter totals match list and stat tiles",
+    "category": "regression",
+    "priority": "P1",
+    "severity": "High",
+    "tags": [
+      "@regression",
+      "@api"
+    ],
+    "role": "PMO (nandini.langalia)",
+    "preconditions": "Logged in on DEV (6.5.x backend incl. PR #565/#566 merged 23/10) via /auth/dev-login; API called from the same browser context.",
+    "testData": {
+      "filters": "{\"status\":\"<S>\"}"
+    },
+    "steps": [
+      "Page through the whole list and count rows per status",
+      "Call filters={\"status\":S} for each status",
+      "Compare with stats tiles"
+    ],
+    "expected": "Paged rows = total; each status filter total = list count, no wrong rows; tiles = counts.",
+    "requirementRef": "src/modules/allocation-tickets/allocation-tickets.service.ts",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "automationHint": "API test",
+    "lastResult": "passed",
+    "actualResult": "[pmo/tickets:filterStatusAndCounts] {\"total\":770,\"paged\":770,\"byStatus\":{\"APPROVED\":454,\"CLOSED\":100,\"OPEN\":126,\"IN_REVIEW\":33,\"AWAITING_CONFIRMATION\":57},\"stats\":{\"open\":126,\"inReview\":33,\"awaiting\":57,\"approved\":454}}",
+    "notes": "",
+    "screenshot": ""
+  },
+  {
+    "id": "TC-SONBE-017",
+    "module": "Sonar Clean-up – Backend Regression",
+    "moduleCode": "SONBE",
+    "subModule": "Allocation tickets",
+    "taskId": "SI4-T1563",
+    "title": "CSM filter returns only that CSM's tickets",
+    "category": "functional",
+    "priority": "P2",
+    "severity": "Medium",
+    "tags": [
+      "@functional",
+      "@api"
+    ],
+    "role": "PMO (nandini.langalia)",
+    "preconditions": "Logged in on DEV (6.5.x backend incl. PR #565/#566 merged 23/10) via /auth/dev-login; API called from the same browser context.",
+    "testData": {
+      "filters": "{\"csmPublicId\":[\"<Tarun>\"]}"
+    },
+    "steps": [
+      "GET /allocation-tickets?filters={\"csmPublicId\":[tarun]}"
+    ],
+    "expected": "Every row has Tarun as CSM.",
+    "requirementRef": "allocation-tickets.filter-registry.ts",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "automationHint": "API test",
+    "lastResult": "passed",
+    "actualResult": "[pmo/tickets:filterProjectCsm] status=200 total=40 wrongRows=0",
+    "notes": "",
+    "screenshot": ""
+  },
+  {
+    "id": "TC-SONBE-018",
+    "module": "Sonar Clean-up – Backend Regression",
+    "moduleCode": "SONBE",
+    "subModule": "Allocation tickets",
+    "taskId": "SI4-T1563",
+    "title": "CSM sees only tickets of projects they own",
+    "category": "security",
+    "priority": "P1",
+    "severity": "High",
+    "tags": [
+      "@security",
+      "@api",
+      "@regression"
+    ],
+    "role": "CSM (tarun.sharma)",
+    "preconditions": "Logged in on DEV (6.5.x backend incl. PR #565/#566 merged 23/10) via /auth/dev-login; API called from the same browser context.",
+    "testData": {
+      "endpoint": "GET /allocation-tickets"
+    },
+    "steps": [
+      "Page through the CSM's ticket list",
+      "Classify each ticket by project PM/CSM/requester"
+    ],
+    "expected": "Every ticket belongs to a project Tarun owns.",
+    "requirementRef": "src/core/casl/strategies/allocation-ticket-scope.strategy.ts (unchanged)",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "automationHint": "API test",
+    "lastResult": "passed",
+    "actualResult": "[scope2-csm/tickets:ownership] tickets=40/40 {\"ownProjectCsmOrPm\":40,\"directReporteeProject\":0,\"requesterSelf\":0,\"other\":0} ",
+    "notes": "",
+    "screenshot": ""
+  },
+  {
+    "id": "TC-SONBE-019",
+    "module": "Sonar Clean-up – Backend Regression",
+    "moduleCode": "SONBE",
+    "subModule": "Team hierarchy (CASL)",
+    "taskId": "SI4-T1563",
+    "title": "Delivery Manager sees own and reportees' tickets only",
+    "category": "security",
+    "priority": "P1",
+    "severity": "High",
+    "tags": [
+      "@security",
+      "@api",
+      "@regression"
+    ],
+    "role": "RM/CSM/DM (nikhil.rathod)",
+    "preconditions": "Logged in on DEV (6.5.x backend incl. PR #565/#566 merged 23/10) via /auth/dev-login; API called from the same browser context. Org tree built from PMO /teams?departmentId=… for all 41 departments.",
+    "testData": {
+      "endpoint": "GET /allocation-tickets",
+      "reportees": 13
+    },
+    "steps": [
+      "Page through the DM's ticket list",
+      "For each ticket check PM/CSM/requester ∈ {self} ∪ team subtree"
+    ],
+    "expected": "No ticket outside self + reportees.",
+    "requirementRef": "src/core/casl/team-hierarchy.util.ts:expandToManagementSubtree (562bfefc for…of rewrite)",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "automationHint": "API test with org-tree fixture",
+    "lastResult": "passed",
+    "actualResult": "[scope2-dm/tickets:ownership] tickets=133/133 {\"ownProjectCsmOrPm\":9,\"directReporteeProject\":124,\"requesterSelf\":0,\"other\":0} ",
+    "notes": "",
+    "screenshot": ""
+  },
+  {
+    "id": "TC-SONBE-020",
+    "module": "Sonar Clean-up – Backend Regression",
+    "moduleCode": "SONBE",
+    "subModule": "Scheduled changes",
+    "taskId": "SI4-T1563",
+    "title": "Scheduled-change withdraw/cancel: unknown id 404, bad id 400, no permission 403",
+    "category": "negative",
+    "priority": "P2",
+    "severity": "Medium",
+    "tags": [
+      "@negative",
+      "@api",
+      "@security"
+    ],
+    "role": "CSM (tarun.sharma), DM (nikhil.rathod), RM (riddhi.patel), PMO",
+    "preconditions": "Logged in on DEV (6.5.x backend incl. PR #565/#566 merged 23/10) via /auth/dev-login; API called from the same browser context. No real scheduled change is touched (random UUID).",
+    "testData": {
+      "id": "00000000-0000-4000-8000-000000000000"
+    },
+    "steps": [
+      "DELETE /allocation-tickets/scheduled-changes/{unknown}/withdraw",
+      "DELETE …/not-a-uuid/withdraw",
+      "PMO: DELETE …/{unknown} (cancel)"
+    ],
+    "expected": "Owner roles: 404 / 400; roles without the action: 403; cancel unknown: 404.",
+    "requirementRef": "src/modules/allocation-tickets/allocation-scheduled-change.service.ts:assertWithdrawableByOwner/resolveWithdrawableStatuses (Set rewrite)",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "automationHint": "API test",
+    "lastResult": "passed",
+    "actualResult": "[scope2-csm/sched:withdrawNegative] withdraw(unknown uuid)=404 {\"code\":\"SYS_002\",\"message\":\"Scheduled allocation change not found\"}; withdraw(bad uuid)=400 {\"code\":\"SYS_004\",\"message\":\"Validation failed (uuid is expected)\"} || [scope2-dm/sched:withdrawNegative] withdraw(unknown uuid)=404 {\"code\":\"SYS_002\",\"message\":\"Scheduled allocation change not found\"}; withdraw(bad uuid)=400 {\"code\":\"SYS_004\",\"message\":\"Validation failed (uuid is expected)\"} || [scope2-rm/sched:withdrawNegative] withdraw(unknown uuid)=403 {\"code\":\"AUTH_004\",\"message\":\"Access forbidden\"}; withdraw(bad uuid)=403 {\"code\":\"AUTH_004\",\"message\":\"Access forbidden\"} || [pmo-extra/sched:negative] withdraw(unknown)=403 {\"code\":\"AUTH_004\",\"message\":\"Access forbidden\"}; cancel(unknown)=404 {\"code\":\"SYS_002\",\"message\":\"Scheduled allocation change not found\"}; withdraw(bad uuid)=403",
+    "notes": "PMO withdraw = 403 is by design (withdraw is the owning PM's action). The Set-based \"is override type\" branch itself needs a real APPLIED change to hit — not done (no writes on real allocations).",
+    "screenshot": ""
+  },
+  {
+    "id": "TC-SONBE-021",
+    "module": "Sonar Clean-up – Backend Regression",
+    "moduleCode": "SONBE",
+    "subModule": "Scheduled changes",
+    "taskId": "SI4-T1563",
+    "title": "Allocation timeline segments are ordered, non-overlapping, one current",
+    "category": "regression",
+    "priority": "P1",
+    "severity": "High",
+    "tags": [
+      "@regression",
+      "@api"
+    ],
+    "role": "PMO (nandini.langalia)",
+    "preconditions": "Logged in on DEV (6.5.x backend incl. PR #565/#566 merged 23/10) via /auth/dev-login; API called from the same browser context.",
+    "testData": {
+      "endpoint": "GET /employees (all 37 pages) → projects[].allocationTimeline"
+    },
+    "steps": [
+      "Read all employees",
+      "For each assignment check segment order, from≤to, no overlap, ≤1 current, FIXED has %"
+    ],
+    "expected": "No violations; SCHEDULED/REVERT segments present and pending flags set.",
+    "requirementRef": "src/modules/allocation-tickets/allocation-timeline.util.ts:buildLayers/buildChangeLayer (021aecba)",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "automationHint": "API data-integrity test",
+    "lastResult": "passed",
+    "actualResult": "[pmo-extra/timeline:invariants] employees=3648 assignmentsWithTimeline=5584 multiSegment=21 segments=5620 pendingSegments=35 segmentTypes={\"SCHEDULED\":38,\"STANDING\":5569,\"REVERT\":13} violations=0 ",
+    "notes": "",
+    "screenshot": ""
+  },
+  {
+    "id": "TC-SONBE-022",
+    "module": "Sonar Clean-up – Backend Regression",
+    "moduleCode": "SONBE",
+    "subModule": "Interview requests",
+    "taskId": "SI4-T1563",
+    "title": "priorities list param: comma, repeated and spaced forms agree; nested/invalid → 400",
+    "category": "regression",
+    "priority": "P1",
+    "severity": "High",
+    "tags": [
+      "@regression",
+      "@api",
+      "@negative"
+    ],
+    "role": "PMO (nandini.langalia)",
+    "preconditions": "Logged in on DEV (6.5.x backend incl. PR #565/#566 merged 23/10) via /auth/dev-login; API called from the same browser context.",
+    "testData": {
+      "variants": [
+        "HIGH,MEDIUM",
+        "HIGH&priorities=MEDIUM",
+        " HIGH , MEDIUM ",
+        "priorities[a]=HIGH",
+        "URGENT"
+      ]
+    },
+    "steps": [
+      "Call /allocation-tickets/interview-requests with each variant",
+      "Compare with HIGH-only + MEDIUM-only totals"
+    ],
+    "expected": "Same total for all valid forms = HIGH+MEDIUM; malformed → 400 (not 500).",
+    "requirementRef": "src/modules/allocation-tickets/dto/get-interview-requests.query.dto.ts:toListParam (1fa5ba15)",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "automationHint": "API test",
+    "lastResult": "passed",
+    "actualResult": "[pmo/ir:prioritiesParsing] comma=316 repeated=316 spaced=200/316 HIGH+MEDIUM=312+4 wrongRowsOnPage1=0 nested[a]=400 invalidEnum=400",
+    "notes": "",
+    "screenshot": ""
+  },
+  {
+    "id": "TC-SONBE-023",
+    "module": "Sonar Clean-up – Backend Regression",
+    "moduleCode": "SONBE",
+    "subModule": "Interview requests",
+    "taskId": "SI4-T1563",
+    "title": "Status tiles match status-filtered totals",
+    "category": "functional",
+    "priority": "P2",
+    "severity": "Medium",
+    "tags": [
+      "@functional",
+      "@api"
+    ],
+    "role": "PMO (nandini.langalia)",
+    "preconditions": "Logged in on DEV (6.5.x backend incl. PR #565/#566 merged 23/10) via /auth/dev-login; API called from the same browser context.",
+    "testData": {
+      "statuses": [
+        "OPEN",
+        "WON",
+        "LOST",
+        "ON_HOLD"
+      ]
+    },
+    "steps": [
+      "Read stats",
+      "Call status=<S> for each"
+    ],
+    "expected": "Each filtered total equals its tile; all = list total.",
+    "requirementRef": "interview-request-query.util.ts",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "automationHint": "API test",
+    "lastResult": "passed",
+    "actualResult": "[pmo/ir:statusTiles] {\"stats\":{\"all\":316,\"open\":287,\"won\":19,\"lost\":10,\"onHold\":0},\"OPEN\":287,\"WON\":19,\"LOST\":10,\"ON_HOLD\":0}",
+    "notes": "",
+    "screenshot": ""
+  },
+  {
+    "id": "TC-SONBE-024",
+    "module": "Sonar Clean-up – Backend Regression",
+    "moduleCode": "SONBE",
+    "subModule": "Opportunities",
+    "taskId": "SI4-T1563",
+    "title": "Candidate picker computed sorts (availability, remaining allocation) and name sort",
+    "category": "regression",
+    "priority": "P1",
+    "severity": "High",
+    "tags": [
+      "@regression",
+      "@api"
+    ],
+    "role": "PMO (nandini.langalia)",
+    "preconditions": "Logged in on DEV (6.5.x backend incl. PR #565/#566 merged 23/10) via /auth/dev-login; API called from the same browser context.",
+    "testData": {
+      "sortBy": [
+        "availabilityPercentage",
+        "remainingAllocationPercentage",
+        "name"
+      ]
+    },
+    "steps": [
+      "GET /opportunities/candidates?sortBy=<k>&sortOrder=asc|desc"
+    ],
+    "expected": "Each order correct.",
+    "requirementRef": "src/modules/opportunities/candidates.service.ts:COMPUTED_SORT_KEYS (array→Set)",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "automationHint": "API test",
+    "lastResult": "passed",
+    "actualResult": "[pmo/cand:sorts] {\"availabilityPercentage:asc\":\"ok\",\"availabilityPercentage:desc\":\"ok\",\"remainingAllocationPercentage:asc\":\"ok\",\"remainingAllocationPercentage:desc\":\"ok\",\"name:asc\":\"ok\",\"name:desc\":\"ok\"}",
+    "notes": "",
+    "screenshot": ""
+  },
+  {
+    "id": "TC-SONBE-025",
+    "module": "Sonar Clean-up – Backend Regression",
+    "moduleCode": "SONBE",
+    "subModule": "Opportunities",
+    "taskId": "SI4-T1563",
+    "title": "Candidate availability range and department list param forms",
+    "category": "regression",
+    "priority": "P2",
+    "severity": "Medium",
+    "tags": [
+      "@regression",
+      "@api",
+      "@boundary"
+    ],
+    "role": "PMO (nandini.langalia)",
+    "preconditions": "Logged in on DEV (6.5.x backend incl. PR #565/#566 merged 23/10) via /auth/dev-login; API called from the same browser context.",
+    "testData": {
+      "minAvailabilityPercentage": 50,
+      "maxAvailabilityPercentage": 80
+    },
+    "steps": [
+      "Range 50–80",
+      "departmentPublicIds comma vs repeated",
+      "departmentPublicIds[x]=… (nested)"
+    ],
+    "expected": "No row outside range; both list forms same total; nested → 400.",
+    "requirementRef": "src/modules/opportunities/dto/candidate-query.req.dto.ts:toListParam",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "automationHint": "API test",
+    "lastResult": "passed",
+    "actualResult": "[pmo/cand:rangesAndLists] range50-80 total=127 outOfRangeOnPage=0; deptComma=186 deptRepeated=186; nested[x]=400",
+    "notes": "",
+    "screenshot": ""
+  },
+  {
+    "id": "TC-SONBE-026",
+    "module": "Sonar Clean-up – Backend Regression",
+    "moduleCode": "SONBE",
+    "subModule": "Opportunities",
+    "taskId": "SI4-T1563",
+    "title": "Allocation-conflicts employeePublicIds: comma, repeated, trailing comma, nested, bad uuid",
+    "category": "negative",
+    "priority": "P2",
+    "severity": "Medium",
+    "tags": [
+      "@negative",
+      "@api"
+    ],
+    "role": "PMO (nandini.langalia)",
+    "preconditions": "Logged in on DEV (6.5.x backend incl. PR #565/#566 merged 23/10) via /auth/dev-login; API called from the same browser context.",
+    "testData": {
+      "employees": 3
+    },
+    "steps": [
+      "GET /opportunities/allocation-conflicts with each form"
+    ],
+    "expected": "Valid forms 200 with identical body; nested and bad uuid → 400.",
+    "requirementRef": "src/modules/opportunities/dto/allocation-conflicts-query.req.dto.ts:toListParam (filter entry !== '')",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "automationHint": "API test",
+    "lastResult": "passed",
+    "actualResult": "[pmo/opp:allocationConflicts] comma=200 repeated=200 trailingComma=200 sameBody=true nested=400 invalidUuid=400",
+    "notes": "",
+    "screenshot": ""
+  },
+  {
+    "id": "TC-SONBE-027",
+    "module": "Sonar Clean-up – Backend Regression",
+    "moduleCode": "SONBE",
+    "subModule": "Opportunities",
+    "taskId": "SI4-T1563",
+    "title": "Openings stages enum list: comma = repeated = sum; nested → 400",
+    "category": "regression",
+    "priority": "P2",
+    "severity": "Medium",
+    "tags": [
+      "@regression",
+      "@api"
+    ],
+    "role": "PMO (nandini.langalia)",
+    "preconditions": "Logged in on DEV (6.5.x backend incl. PR #565/#566 merged 23/10) via /auth/dev-login; API called from the same browser context.",
+    "testData": {
+      "stages": [
+        "PENDING_TO_SHORTLIST",
+        "SHORTLISTED"
+      ]
+    },
+    "steps": [
+      "GET /opportunities/openings?stages=A,B / stages=A&stages=B / single stages",
+      "stages[a]=…"
+    ],
+    "expected": "Equal totals, only those stages, nested 400.",
+    "requirementRef": "src/modules/opportunities/dto/opening-list-query.req.dto.ts:toEnumArray",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "automationHint": "API test",
+    "lastResult": "passed",
+    "actualResult": "[pmo/opp:openingsEnumLists] comma=407 repeated=407 sum=376+31 wrongRows=0 nested=400",
+    "notes": "",
+    "screenshot": ""
+  },
+  {
+    "id": "TC-SONBE-028",
+    "module": "Sonar Clean-up – Backend Regression",
+    "moduleCode": "SONBE",
+    "subModule": "Notifications",
+    "taskId": "SI4-T1563",
+    "title": "Notification list isRead filter (true / false / omitted) for PMO, CSM, Employee, TM",
+    "category": "regression",
+    "priority": "P1",
+    "severity": "High",
+    "tags": [
+      "@regression",
+      "@api"
+    ],
+    "role": "PMO, CSM (tarun.sharma), Employee (punit.patel), TM (maulik.joshi)",
+    "preconditions": "Logged in on DEV (6.5.x backend incl. PR #565/#566 merged 23/10) via /auth/dev-login; API called from the same browser context.",
+    "testData": {
+      "isRead": [
+        true,
+        false,
+        "omitted"
+      ]
+    },
+    "steps": [
+      "GET /notifications, ?isRead=true, ?isRead=false",
+      "Check rows and totals"
+    ],
+    "expected": "read + unread = all; no wrong-state rows.",
+    "requirementRef": "src/modules/notifications/notifications.service.ts:41 (isRead ternary flipped)",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "automationHint": "API test per role",
+    "lastResult": "passed",
+    "actualResult": "[pmo/notif:isRead] all=1198 read=0 unread=1198 wrongRead=0 wrongUnread=0 || [csm/notif:isRead] all=159 read=0 unread=159 wrongRows=0; newest: 2026-10-28T05:57 Manish Bose selected for Java Developer | 2026-10-28T05:43 Gunjan Rawat rejected for Java Developer | 2026-10-28T05:40 You've been assigned to OPP-0322 || [emp/notif:isRead] all=55 read=7 unread=48 wrongRows=0; newest: 2026-09-29T10:16 Allocation Period Withdrawn: UA-0107 | 2026-09-29T10:16 Allocation Period Withdrawn: UA-0105 | 2026-09-14T10:36 Team Member Assigned: Vishal Desai || [tm/notif:isRead] all=4 read=0 unread=4 wrongRows=0; newest: 2026-10-13T11:18 Allocation Revised: RA-0015 | 2026-10-13T11:18 Approval Bypassed: RA-0015 | 2026-10-13T11:17 New Ticket for Review: RA-0015",
+    "notes": "Employee (punit) has 7 read + 48 unread, so both branches were exercised with real data.",
+    "screenshot": ""
+  },
+  {
+    "id": "TC-SONBE-029",
+    "module": "Sonar Clean-up – Backend Regression",
+    "moduleCode": "SONBE",
+    "subModule": "Notifications",
+    "taskId": "SI4-T1563",
+    "title": "Ticket-created notifications still fire after the deploy (void removed from emitAsync)",
+    "category": "regression",
+    "priority": "P1",
+    "severity": "High",
+    "tags": [
+      "@regression",
+      "@api"
+    ],
+    "role": "PMO (nandini.langalia)",
+    "preconditions": "Logged in on DEV (6.5.x backend incl. PR #565/#566 merged 23/10) via /auth/dev-login; API called from the same browser context.",
+    "testData": {
+      "window": "tickets created 01/10–28/10, split at 23/10 05:30 UTC"
+    },
+    "steps": [
+      "List tickets created since 01/10 with requester",
+      "Match each to PMO notifications by ticket number",
+      "Compare coverage before vs after the deploy, split by requester role"
+    ],
+    "expected": "Same coverage pattern before and after: PM/CSM-raised tickets 100% notified.",
+    "requirementRef": "src/modules/allocation-tickets/allocation-ticket-notification.service.ts:emit* (021aecba)",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "automationHint": "API data comparison",
+    "lastResult": "passed",
+    "actualResult": "post-deploy PM/CSM-raised NEW_ALLOCATION 20/20, DEALLOCATE 22/22 notified; pre-deploy PM/CSM-raised 66/66; PMO-raised tickets 0% both before (54) and after (36) — unchanged pattern. [pmo-extra/notif:emitChainAfterDeploy] ticketsCreatedAfterDeploy=78 withoutAnyPmoNotification=36 NA-0473(NEW_ALLOCATION,2026-10-27T14:53), NA-0472(NEW_ALLOCATION,2026-10-27T14:41), NA-0471(NEW_ALLOCATION,2026-10-27T14:19), NA-0470(NEW_ALLOCATION,2026-10-27T14:10), NA-0468(NEW_ALLOCATION,2026-10-27T14:07), NA-0467(NEW_ALLOCATION,2026-10-27T14:07); notificationsAfterDeploy=497 byType={\"notification.opportunity.created\":261,\"notification.opportunity.status_changed\":53,\"notification.opportunity.candidate_selected\":18,\"notification.opportunity.candidate_rejected\":15,\"notification.opportunity.direct_cancelled\":5,\"notification.opportunity.round_result_recorded\":30,\"notification.opportunity.project_linked\":16,\"notification.opportunity.candidate_won_elsewhere\":8,\"notification.opportunity.project_unlinked\":4,\"notification.opportunity.approval_requested\":3,\"notification.allocation_ticket.approved\":7,\"notification.allocation_ticket.created\":42,\"notification.allocation_ticket.closed\":21,\"notification.allocation_ticket.allocation_cancelled\":6,\"notification.allocation_ticket.auto_apply_failed\":3,\"notification.opportunity.openings_remaining\":1,\"notification.allocation_ticket.period_cancelled\":2,\"notification.opportunity.prep_completed\":1,\"notification.allocation_ticket.rejected\":1}",
+    "notes": "The first raw check flagged 36 tickets with no PMO notification; all 36 were raised by PMO users, which never notified before the deploy either — not a regression. Data in json/notif-coverage.json.",
+    "screenshot": ""
+  },
+  {
+    "id": "TC-SONBE-030",
+    "module": "Sonar Clean-up – Backend Regression",
+    "moduleCode": "SONBE",
+    "subModule": "Notifications",
+    "taskId": "SI4-T1563",
+    "title": "Notification text has no raw enum tokens",
+    "category": "functional",
+    "priority": "P3",
+    "severity": "Low",
+    "tags": [
+      "@functional",
+      "@api"
+    ],
+    "role": "PMO, CSM (tarun.sharma)",
+    "preconditions": "Logged in on DEV (6.5.x backend incl. PR #565/#566 merged 23/10) via /auth/dev-login; API called from the same browser context.",
+    "testData": {
+      "window": "notifications created after 23/10"
+    },
+    "steps": [
+      "Read notifications created after the deploy",
+      "Look for ALL_CAPS_WITH_UNDERSCORE tokens"
+    ],
+    "expected": "All enum values humanised (e.g. \"In Review\").",
+    "requirementRef": "src/common/utils/common.util.ts:humanizeEnumValue (replace→replaceAll); notification-content.service.ts:1093",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "automationHint": "API test",
+    "lastResult": "failed",
+    "actualResult": "[final-pmo/notif:humanizedText] postDeployNotifications=497 withRawEnumToken=1 NA-0433 for project HyperScale | Scalability Engine was rejected and moved back to IN_REVIEW. sample=QA-AUTO OB bug-033 PM direct for AnalytixHub has been raised as OPP-0331. | QA-AUTO OB prep-draft 91182 for AnalytixHub has been raised as OPP-0330. || [final-csm/notif:humanizedText] postDeployNotifications=122 withRawEnumToken=0  sample=Manish Bose was selected for 'Java Developer' on OPP-0322 — proceed to Project Association. | Gunjan Rawat was rejected for 'Java Developer' on OPP-0322 — the slot is open again. Reason: Needed on a release this month",
+    "notes": "BUG-SONBE-02 (pre-existing hard-coded literal, not from T1563). humanizeEnumValue output itself is fine: 0 raw tokens elsewhere.",
+    "screenshot": ""
+  },
+  {
+    "id": "TC-SONBE-031",
+    "module": "Sonar Clean-up – Backend Regression",
+    "moduleCode": "SONBE",
+    "subModule": "Dashboard",
+    "taskId": "SI4-T1563",
+    "title": "Department filter shown only to ALL / DEPARTMENT scopes",
+    "category": "security",
+    "priority": "P1",
+    "severity": "High",
+    "tags": [
+      "@security",
+      "@api",
+      "@regression"
+    ],
+    "role": "PMO, TM (maulik.joshi), CSM, RM, DM, Employee",
+    "preconditions": "Logged in on DEV (6.5.x backend incl. PR #565/#566 merged 23/10) via /auth/dev-login; API called from the same browser context.",
+    "testData": {
+      "endpoint": "GET /dashboard/filter-options"
+    },
+    "steps": [
+      "Call filter-options as each role",
+      "Count departments"
+    ],
+    "expected": "PMO: all 41; TM: only own dept (IOT); CSM/RM/DM/Employee: none.",
+    "requirementRef": "src/modules/dashboard/dashboard.service.ts:DEPARTMENT_FILTER_SCOPES (array→Set)",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "automationHint": "API test per role",
+    "lastResult": "passed",
+    "actualResult": "[pmo/dash:filterOptionsPmo] status=200 departments=41 projects=399 || [tm/dash:filterOptions] departments=1 [IOT] projects=128 || [csm/dash:filterOptions] departments=0 [] projects=4 || [rm/dash:filterOptions] departments=0 [] projects=18 || [dm/dash:filterOptions] departments=0 [] projects=29 || [emp/dash:filterOptions] departments=0 [] projects=3",
+    "notes": "",
+    "screenshot": ""
+  },
+  {
+    "id": "TC-SONBE-032",
+    "module": "Sonar Clean-up – Backend Regression",
+    "moduleCode": "SONBE",
+    "subModule": "Dashboard",
+    "taskId": "SI4-T1563",
+    "title": "Dashboard list params: comma = repeated; nested object → 400; status filter",
+    "category": "regression",
+    "priority": "P1",
+    "severity": "High",
+    "tags": [
+      "@regression",
+      "@api",
+      "@negative"
+    ],
+    "role": "PMO (nandini.langalia)",
+    "preconditions": "Logged in on DEV (6.5.x backend incl. PR #565/#566 merged 23/10) via /auth/dev-login; API called from the same browser context.",
+    "testData": {
+      "departmentPublicIds": "2 departments",
+      "statuses": "upcoming_allocation"
+    },
+    "steps": [
+      "activity + overview with departmentPublicIds=A,B and A&B",
+      "departmentPublicIds[a]=A",
+      "statuses=upcoming_allocation"
+    ],
+    "expected": "Equal results; nested 400 (not 500); only matching statuses.",
+    "requirementRef": "src/modules/dashboard/dto/dashboard-filter.query.dto.ts / dashboard-activity.query.dto.ts / dashboard-export.query.dto.ts:toStringArray (JSON.stringify branch)",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "automationHint": "API test",
+    "lastResult": "passed",
+    "actualResult": "[pmo/dash:listParams] activity comma=11 repeated=11; overview summaries equal=true; nested activity=400 overview=400; statuses filter=200/31 wrong=0",
+    "notes": "",
+    "screenshot": ""
+  },
+  {
+    "id": "TC-SONBE-033",
+    "module": "Sonar Clean-up – Backend Regression",
+    "moduleCode": "SONBE",
+    "subModule": "Dashboard",
+    "taskId": "SI4-T1563",
+    "title": "CSV export: sections, quoting, formula neutralisation",
+    "category": "security",
+    "priority": "P2",
+    "severity": "Medium",
+    "tags": [
+      "@security",
+      "@api"
+    ],
+    "role": "PMO (nandini.langalia)",
+    "preconditions": "Logged in on DEV (6.5.x backend incl. PR #565/#566 merged 23/10) via /auth/dev-login; API called from the same browser context.",
+    "testData": {
+      "format": "csv"
+    },
+    "steps": [
+      "GET /dashboard/export?format=csv",
+      "Check content-type, \"# \" section lines, quoted cells starting with = + - @"
+    ],
+    "expected": "text/csv; 4 sections; no quoted cell starts with a formula character without the tab prefix.",
+    "requirementRef": "src/modules/dashboard/dashboard-export.service.ts:toCsv/escapeCsvValue/sanitiseText (Set + replaceAll + combined push)",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "automationHint": "API test; file saved json/dashboard-export.csv",
+    "lastResult": "passed",
+    "actualResult": "[pmo/dash:exportCsv] status=200 type=text/csv; charset=utf-8 bytes=52037 sections=# Trend / # Allocation Type / # Hours by Project / # All Activity quotedCells=2609 unneutralisedFormulaCells=0",
+    "notes": "",
+    "screenshot": ""
+  },
+  {
+    "id": "TC-SONBE-034",
+    "module": "Sonar Clean-up – Backend Regression",
+    "moduleCode": "SONBE",
+    "subModule": "Dashboard",
+    "taskId": "SI4-T1563",
+    "title": "Excel export downloads a valid workbook",
+    "category": "functional",
+    "priority": "P2",
+    "severity": "Medium",
+    "tags": [
+      "@functional",
+      "@api"
+    ],
+    "role": "PMO (nandini.langalia)",
+    "preconditions": "Logged in on DEV (6.5.x backend incl. PR #565/#566 merged 23/10) via /auth/dev-login; API called from the same browser context.",
+    "testData": {
+      "format": "excel"
+    },
+    "steps": [
+      "GET /dashboard/export?format=excel"
+    ],
+    "expected": "200, xlsx content type, zip magic \"PK\".",
+    "requirementRef": "dashboard-export.service.ts:toExcel (forEach→for…of over worksheet.columns)",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "automationHint": "API test",
+    "lastResult": "passed",
+    "actualResult": "[pmo/dash:exportXlsx] status=200 type=application/vnd.openxmlformats-officedocument.spreadsheetml.sheet bytes=39501 magic=PK ",
+    "notes": "",
+    "screenshot": ""
+  },
+  {
+    "id": "TC-SONBE-035",
+    "module": "Sonar Clean-up – Backend Regression",
+    "moduleCode": "SONBE",
+    "subModule": "Dashboard",
+    "taskId": "SI4-T1563",
+    "title": "Department icon URLs well formed (buildAssetUrl trailing-slash trim)",
+    "category": "regression",
+    "priority": "P3",
+    "severity": "Low",
+    "tags": [
+      "@regression",
+      "@api"
+    ],
+    "role": "PMO, TM (maulik.joshi)",
+    "preconditions": "Logged in on DEV (6.5.x backend incl. PR #565/#566 merged 23/10) via /auth/dev-login; API called from the same browser context.",
+    "testData": {
+      "endpoint": "GET /dashboard/filter-options"
+    },
+    "steps": [
+      "Read departments[].iconUrl",
+      "Check https://host/path with no \"//\" in the path"
+    ],
+    "expected": "All icons well formed.",
+    "requirementRef": "src/common/utils/common.util.ts:buildAssetUrl/trimTrailingSlashes (fbcf2da0)",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "automationHint": "API test",
+    "lastResult": "passed",
+    "actualResult": "[final-pmo/dash:iconUrls] departments=41 withIcon=41 malformed=0 sample=https://d3e6uquevgpr8q.cloudfront.net/department-icons/admin.svg || [final-tm/dash:iconUrls] departments=1 withIcon=1 malformed=0 sample=https://d3e6uquevgpr8q.cloudfront.net/department-icons/iot.svg",
+    "notes": "",
+    "screenshot": "reports/screenshots/2026-10-28/hardik/sonar-be/ui-04-dashboard-pmo.png"
+  },
+  {
+    "id": "TC-SONBE-036",
+    "module": "Sonar Clean-up – Backend Regression",
+    "moduleCode": "SONBE",
+    "subModule": "Working location",
+    "taskId": "SI4-T1563",
+    "title": "WL overview asOfDate and trend equal a recount of the employee rows",
+    "category": "regression",
+    "priority": "P1",
+    "severity": "High",
+    "tags": [
+      "@regression",
+      "@api",
+      "@ui"
+    ],
+    "role": "PMO (nandini.langalia)",
+    "preconditions": "Logged in on DEV (6.5.x backend incl. PR #565/#566 merged 23/10) via /auth/dev-login; API called from the same browser context.",
+    "testData": {
+      "endpoints": [
+        "GET /working-location/overview",
+        "GET /working-location/employees (all 37 pages)"
+      ]
+    },
+    "steps": [
+      "Read overview",
+      "Read every employee row",
+      "Recount WFO/WFH per date over the 7-day strips; compare; check asOfDate = newest row date"
+    ],
+    "expected": "Trend matches to 0.1 pt; asOfDate = max row date; trend sorted.",
+    "requirementRef": "src/modules/working-location/working-location-overview.builder.ts:resolveAsOfDate/buildTrend/countTrendDay (562bfefc)",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "automationHint": "API test",
+    "lastResult": "passed",
+    "actualResult": "[pmo-rerun/wl:overviewVsList] overview.asOfDate=2026-10-13 max(list.asOfDate)=2026-10-13 employeeRows=3649 trendDays=7 sorted=true diffs=none",
+    "notes": "First run recounted only /working-location/list (capped at 200 rows) — script error; re-run against all 3649 rows.",
+    "screenshot": "reports/screenshots/2026-10-28/hardik/sonar-be/ui-03-working-location-dashboard.png"
+  },
+  {
+    "id": "TC-SONBE-037",
+    "module": "Sonar Clean-up – Backend Regression",
+    "moduleCode": "SONBE",
+    "subModule": "Working location",
+    "taskId": "SI4-T1563",
+    "title": "WL percentages valid (0–100, WFO+WFH≈100, integer days) for all employees",
+    "category": "regression",
+    "priority": "P2",
+    "severity": "Medium",
+    "tags": [
+      "@regression",
+      "@api"
+    ],
+    "role": "PMO (nandini.langalia)",
+    "preconditions": "Logged in on DEV (6.5.x backend incl. PR #565/#566 merged 23/10) via /auth/dev-login; API called from the same browser context.",
+    "testData": {
+      "rows": 3649
+    },
+    "steps": [
+      "Read all WL employee rows",
+      "Validate every window"
+    ],
+    "expected": "No invalid windows.",
+    "requirementRef": "src/modules/working-location/working-location-sync.service.ts:toNumericText/ZOHO_NUMBER_SUFFIX (stored values)",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "automationHint": "API test",
+    "lastResult": "passed",
+    "actualResult": "[pmo/wl:percentages] employees=3649/3649 badWindows=0  nullWindows=0 distinctAsOfDates=2026-10-13",
+    "notes": "",
+    "screenshot": ""
+  },
+  {
+    "id": "TC-SONBE-038",
+    "module": "Sonar Clean-up – Backend Regression",
+    "moduleCode": "SONBE",
+    "subModule": "Zoho sync",
+    "taskId": "SI4-T1563",
+    "title": "Zoho number-suffix regex (\"80null\", \"55 %\") parsed the same after the change",
+    "category": "regression",
+    "priority": "P1",
+    "severity": "High",
+    "tags": [
+      "@regression",
+      "@api"
+    ],
+    "role": "PMO (nandini.langalia)",
+    "preconditions": "Logged in on DEV (6.5.x backend incl. PR #565/#566 merged 23/10) via /auth/dev-login; API called from the same browser context.",
+    "testData": {
+      "inputs": [
+        "80null",
+        "55 %",
+        "12.5%",
+        "null",
+        ""
+      ]
+    },
+    "steps": [
+      "Find WL snapshot rows written after 23/10",
+      "Compare stored percentages with Zoho values"
+    ],
+    "expected": "A sync after the deploy stores the same numbers as before.",
+    "requirementRef": "src/modules/working-location/working-location-sync.service.ts:90-98 (1b8429d6)",
+    "automatable": false,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "automationHint": "Needs a WL sync run on dev after the deploy",
+    "lastResult": "blocked",
+    "actualResult": "Every WL row has asOfDate 2026-10-13 (UI: \"Data as of 13 Oct 2026\"), i.e. no WL sync has written data since the change; employees/projects lastSyncedAt = null on DEV. Code review: old /\\s*(%|null)$/i vs new /(?:%|null)$/i + trimEnd() give the same output for any already-trimmed input.",
+    "notes": "Blocked by stale DEV data, not a defect. Re-check after the next 04:00 IST WL sync.",
+    "screenshot": "reports/screenshots/2026-10-28/hardik/sonar-be/ui-03-working-location-dashboard.png"
+  },
+  {
+    "id": "TC-SONBE-039",
+    "module": "Sonar Clean-up – Backend Regression",
+    "moduleCode": "SONBE",
+    "subModule": "Working location",
+    "taskId": "SI4-T1563",
+    "title": "Overall (all-time) window visible only to broad scopes",
+    "category": "security",
+    "priority": "P1",
+    "severity": "High",
+    "tags": [
+      "@security",
+      "@api",
+      "@regression"
+    ],
+    "role": "CSM (tarun.sharma), DM (nikhil.rathod), RM (riddhi.patel), TM",
+    "preconditions": "Logged in on DEV (6.5.x backend incl. PR #565/#566 merged 23/10) via /auth/dev-login; API called from the same browser context.",
+    "testData": {
+      "endpoint": "GET /working-location/list"
+    },
+    "steps": [
+      "As CSM read the list (own row + project staff)",
+      "Check windows.overall on own vs other rows",
+      "Repeat as DM, RM"
+    ],
+    "expected": "CSM: own row has overall, others none. RM/DM/TM (TEAM/DEPARTMENT): overall on all rows.",
+    "requirementRef": "src/modules/working-location/working-location.service.ts:canViewOverall/BROAD_SCOPES (array→Set)",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "automationHint": "API test per role",
+    "lastResult": "passed",
+    "actualResult": "[scope2-csm/wl:rowsWithinScope] rows=94 subtree=0 ownedProjects=4 projectStaff=87 rowsOutsideSubtreeAndStaff=8 khushi.jobanputra@simformsolutions.com,neel.solanki@simformsolutions.com,kavya.bose@simformsolutions.com otherRowsWithOverall=0/93 ownOverall={\"wfoPercentage\":50.2,\"wfhPercentage\":49.8,\"daysLogged\":402,\"daysInWindow\":null} || [scope2-dm/wl:rowsWithinScope] rows=96 subtree=13 ownedProjects=5 projectStaff=81 rowsOutsideSubtreeAndStaff=9 ekta.shetty@simformsolutions.com,urvi.patil@simformsolutions.com,yash.dave@simformsolutions.com otherRowsWithOverall=95/95 ownOverall={\"wfoPercentage\":79.8,\"wfhPercentage\":20.2,\"daysLogged\":485,\"daysInWindow\":null} || [scope2-rm/wl:rowsWithinScope] rows=11 subtree=10 ownedProjects=0 projectStaff=0 rowsOutsideSubtreeAndStaff=0  otherRowsWithOverall=10/10 ownOverall={\"wfoPercentage\":39.8,\"wfhPercentage\":60.2,\"daysLogged\":283,\"daysInWindow\":null}",
+    "notes": "",
+    "screenshot": ""
+  },
+  {
+    "id": "TC-SONBE-040",
+    "module": "Sonar Clean-up – Backend Regression",
+    "moduleCode": "SONBE",
+    "subModule": "Team hierarchy (CASL)",
+    "taskId": "SI4-T1563",
+    "title": "WL list rows stay within team subtree + own project staff",
+    "category": "security",
+    "priority": "P1",
+    "severity": "High",
+    "tags": [
+      "@security",
+      "@api"
+    ],
+    "role": "RM (riddhi.patel), DM (nikhil.rathod), CSM (tarun.sharma)",
+    "preconditions": "Logged in on DEV (6.5.x backend incl. PR #565/#566 merged 23/10) via /auth/dev-login; API called from the same browser context. Org tree + PMO project/staff map captured first.",
+    "testData": {
+      "riddhiTeam": 10,
+      "nikhilSubtree": 13
+    },
+    "steps": [
+      "Read /working-location/list as each user",
+      "Classify rows: self / subtree / staff of owned projects / other",
+      "Check the \"other\" rows in PMO employee detail"
+    ],
+    "expected": "No row outside self ∪ subtree ∪ owned-project staff.",
+    "requirementRef": "src/core/casl/team-hierarchy.util.ts:expandToManagementSubtree; working-location-scope.strategy.ts",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "automationHint": "API test",
+    "lastResult": "passed",
+    "actualResult": "[scope2-rm/wl:rowsWithinScope] rows=11 subtree=10 ownedProjects=0 projectStaff=0 rowsOutsideSubtreeAndStaff=0  otherRowsWithOverall=10/10 ownOverall={\"wfoPercentage\":39.8,\"wfhPercentage\":60.2,\"daysLogged\":283,\"daysInWindow\":null} || [scope2-dm/wl:rowsWithinScope] rows=96 subtree=13 ownedProjects=5 projectStaff=81 rowsOutsideSubtreeAndStaff=9 ekta.shetty@simformsolutions.com,urvi.patil@simformsolutions.com,yash.dave@simformsolutions.com otherRowsWithOverall=95/95 ownOverall={\"wfoPercentage\":79.8,\"wfhPercentage\":20.2,\"daysLogged\":485,\"daysInWindow\":null} || [scope2-csm/wl:rowsWithinScope] rows=94 subtree=0 ownedProjects=4 projectStaff=87 rowsOutsideSubtreeAndStaff=8 khushi.jobanputra@simformsolutions.com,neel.solanki@simformsolutions.com,kavya.bose@simformsolutions.com otherRowsWithOverall=0/93 ownOverall={\"wfoPercentage\":50.2,\"wfhPercentage\":49.8,\"daysLogged\":402,\"daysInWindow\":null} || The 8–9 rows not in my 15-day staff map were all past staff of owned projects (e.g. khushi.jobanputra on ElitePay 2024-12-30..2025-12-07; ekta.shetty on UniqID 2025-12-06..2026-03-07) — in scope by design.",
+    "notes": "",
+    "screenshot": ""
+  },
+  {
+    "id": "TC-SONBE-041",
+    "module": "Sonar Clean-up – Backend Regression",
+    "moduleCode": "SONBE",
+    "subModule": "Employees",
+    "taskId": "SI4-T1563",
+    "title": "Employee list sorting (name, joining date, availability) asc/desc",
+    "category": "regression",
+    "priority": "P2",
+    "severity": "Medium",
+    "tags": [
+      "@regression",
+      "@api"
+    ],
+    "role": "PMO (nandini.langalia)",
+    "preconditions": "Logged in on DEV (6.5.x backend incl. PR #565/#566 merged 23/10) via /auth/dev-login; API called from the same browser context.",
+    "testData": {
+      "sortBy": [
+        "name",
+        "dateOfJoining",
+        "availabilityPercentage"
+      ]
+    },
+    "steps": [
+      "GET /employees?sortBy=<k>&sortOrder=asc|desc"
+    ],
+    "expected": "All 6 orderings correct.",
+    "requirementRef": "src/modules/employees/employees.service.ts",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "automationHint": "API test",
+    "lastResult": "passed",
+    "actualResult": "[pmo/emp:sorts] {\"name:asc\":\"ok\",\"name:desc\":\"ok\",\"dateOfJoining:asc\":\"ok\",\"dateOfJoining:desc\":\"ok\",\"availabilityPercentage:asc\":\"ok\",\"availabilityPercentage:desc\":\"ok\"}",
+    "notes": "",
+    "screenshot": ""
+  },
+  {
+    "id": "TC-SONBE-042",
+    "module": "Sonar Clean-up – Backend Regression",
+    "moduleCode": "SONBE",
+    "subModule": "Employees",
+    "taskId": "SI4-T1563",
+    "title": "Visa country / status filters (flipped ternaries) narrow correctly",
+    "category": "regression",
+    "priority": "P1",
+    "severity": "High",
+    "tags": [
+      "@regression",
+      "@api",
+      "@negative"
+    ],
+    "role": "PMO (nandini.langalia)",
+    "preconditions": "Logged in on DEV (6.5.x backend incl. PR #565/#566 merged 23/10) via /auth/dev-login; API called from the same browser context.",
+    "testData": {
+      "filters": [
+        "visaStatus NOT_ADDED",
+        "VALID",
+        "VALID+EXPIRING_SOON+EXPIRED",
+        "visaCountry UNITED_STATES",
+        "both",
+        "empty array",
+        "BOGUS"
+      ]
+    },
+    "steps": [
+      "GET /employees?filters=<json> for each"
+    ],
+    "expected": "Subsets behave (VALID ≤ 3-status set, country+status ≤ each alone); empty/bogus → 400.",
+    "requirementRef": "src/modules/employees/employees.filter-registry.ts:parseActiveVisaFilters (8dd24c40)",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "automationHint": "API test",
+    "lastResult": "passed",
+    "actualResult": "[pmo/emp:visaFilters] all=3648 {\"{\\\"visaStatus\\\":[\\\"NOT_ADDED\\\"]}\":3634,\"{\\\"visaStatus\\\":[\\\"VALID\\\"]}\":3,\"{\\\"visaStatus\\\":[\\\"VALID\\\",\\\"EXPIRING_SOON\\\",\\\"EXPIRED\\\"]}\":8,\"{\\\"visaCountry\\\":[\\\"UNITED_STATES\\\"]}\":2,\"{\\\"visaCountry\\\":[\\\"UNITED_STATES\\\"],\\\"visaStatus\\\":[\\\"VALID\\\"]}\":0,\"{\\\"visaStatus\\\":[]}\":\"E400\",\"{\\\"visaStatus\\\":[\\\"BOGUS\\\"]}\":\"E400\"}",
+    "notes": "",
+    "screenshot": ""
+  },
+  {
+    "id": "TC-SONBE-043",
+    "module": "Sonar Clean-up – Backend Regression",
+    "moduleCode": "SONBE",
+    "subModule": "Employees",
+    "taskId": "SI4-T1563",
+    "title": "Employee ratings returned as numbers for RM/TM/DM, omitted for PMO",
+    "category": "regression",
+    "priority": "P1",
+    "severity": "High",
+    "tags": [
+      "@regression",
+      "@api",
+      "@security"
+    ],
+    "role": "RM (riddhi.patel), TM (maulik.joshi), DM (nikhil.rathod), PMO",
+    "preconditions": "Logged in on DEV (6.5.x backend incl. PR #565/#566 merged 23/10) via /auth/dev-login; API called from the same browser context.",
+    "testData": {
+      "endpoints": [
+        "GET /employees",
+        "GET /employees/{id}"
+      ]
+    },
+    "steps": [
+      "RM/TM/DM: read employee list, check ratings object",
+      "PMO: open 5 rated employees' details"
+    ],
+    "expected": "Roles with the rating field grant: numbers 0–10 or null (0 stays 0). PMO (grant only on departmentId): no ratings key.",
+    "requirementRef": "src/modules/employees/employees.service.ts:toReadableRating/buildRatingsEntry (nested ternary → helper)",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "automationHint": "API test per role",
+    "lastResult": "passed",
+    "actualResult": "[rm/emp:ratingsShape] rows=10 withRatingsKey=10 withNumericRating=10 zeroRatings=1 badValues=0 sample=[[\"Khushi Langalia\",{\"overallRating\":6.4,\"aiRating\":7.2,\"communicationRating\":null}],[\"Sneha Mistry\",{\"overallRating\":6,\"aiRating\":2.2,\"communicationRating\":6.3}]] selfRowRatings=n/a || [tm/emp:ratingsShape] rows=92 withRatingsKey=92 withNumericRating=92 zeroRatings=0 badValues=0 sample=[[\"Ira Kamath\",{\"overallRating\":7.7,\"aiRating\":6.3,\"communicationRating\":7}],[\"Kashyap Sharma\",{\"overallRating\":7,\"aiRating\":6.5,\"communicationRating\":7.3}]] selfRowRatings=n/a || [dm/emp:ratingsShape] rows=13 withRatingsKey=13 withNumericRating=13 zeroRatings=0 badValues=0 sample=[[\"Kabir Barot\",{\"overallRating\":3.5,\"aiRating\":7.5,\"communicationRating\":1.6}],[\"Kabir Verma\",{\"overallRating\":7.1,\"aiRating\":6.3,\"communicationRating\":2.6}]] selfRowRatings=n/a || [pmo-rerun/emp:detailRatings] Rachna Gupta:200:undefined; Vihaan Patil:200:undefined; Kriti Desai:200:undefined; Riddhi Verma:200:undefined; Vandana Mishra:200:undefined",
+    "notes": "Riddhi's team has 1 employee with a 0 rating, still returned as 0 (not null).",
+    "screenshot": ""
+  },
+  {
+    "id": "TC-SONBE-044",
+    "module": "Sonar Clean-up – Backend Regression",
+    "moduleCode": "SONBE",
+    "subModule": "Zoho sync",
+    "taskId": "SI4-T1563",
+    "title": "Zoho team lookup refactor: no duplicate/new default teams, one team per employee",
+    "category": "regression",
+    "priority": "P2",
+    "severity": "Medium",
+    "tags": [
+      "@regression",
+      "@api"
+    ],
+    "role": "PMO (nandini.langalia)",
+    "preconditions": "Logged in on DEV (6.5.x backend incl. PR #565/#566 merged 23/10) via /auth/dev-login; API called from the same browser context.",
+    "testData": {
+      "departments": 41,
+      "teams": 405
+    },
+    "steps": [
+      "Read /teams?departmentId=… for every department",
+      "Check one team per RM+department, no employee in two teams, teams created after 22/10"
+    ],
+    "expected": "No duplicates, no stray \"#ffffff\" default teams.",
+    "requirementRef": "src/modules/zoho-analytics/team-lookup.util.ts; employees-metadata.service.ts:collectMissingTeams/createMissingTeams (7165cfd4, 8dd24c40)",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "automationHint": "API data-integrity test",
+    "lastResult": "passed",
+    "actualResult": "[pmo/teams:noDuplicateOrNewDefaultTeams] teams=405 rm+deptDuplicates=0 teamsCreatedAfter22Oct=0 employeesInMultipleTeams=0 teamsWithoutRm=0",
+    "notes": "This only shows the current team data is consistent. The sync code path itself was not run.",
+    "screenshot": ""
+  },
+  {
+    "id": "TC-SONBE-045",
+    "module": "Sonar Clean-up – Backend Regression",
+    "moduleCode": "SONBE",
+    "subModule": "Zoho sync",
+    "taskId": "SI4-T1563",
+    "title": "Employee/project Zoho sync has run since the deploy",
+    "category": "smoke",
+    "priority": "P2",
+    "severity": "Medium",
+    "tags": [
+      "@smoke",
+      "@api"
+    ],
+    "role": "PMO (nandini.langalia)",
+    "preconditions": "Logged in on DEV (6.5.x backend incl. PR #565/#566 merged 23/10) via /auth/dev-login; API called from the same browser context.",
+    "testData": {
+      "field": "lastSyncedAt"
+    },
+    "steps": [
+      "Read lastSyncedAt from /employees and /projects"
+    ],
+    "expected": "A timestamp after 23/10.",
+    "requirementRef": "src/modules/zoho-analytics/employees-metadata.service.ts:syncTeamAssignments; project-metadata.service.ts:recordUpsertOutcome",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "automationHint": "API smoke",
+    "lastResult": "blocked",
+    "actualResult": "[pmo/emp:zohoSyncFresh] employees.lastSyncedAt=null projects.lastSyncedAt=null",
+    "notes": "DEV has no Zoho sync state; sync-queue/cron-run APIs return 403 to PMO. Cannot prove the refactored sync ran. Not a defect.",
+    "screenshot": ""
+  },
+  {
+    "id": "TC-SONBE-046",
+    "module": "Sonar Clean-up – Backend Regression",
+    "moduleCode": "SONBE",
+    "subModule": "Team hierarchy (CASL)",
+    "taskId": "SI4-T1563",
+    "title": "RM sees exactly their team subtree in the employee list",
+    "category": "security",
+    "priority": "P1",
+    "severity": "Critical",
+    "tags": [
+      "@security",
+      "@api",
+      "@regression"
+    ],
+    "role": "RM (riddhi.patel)",
+    "preconditions": "Logged in on DEV (6.5.x backend incl. PR #565/#566 merged 23/10) via /auth/dev-login; API called from the same browser context. Expected set from PMO /teams data (Riddhi's team + Laxmi Bansal's empty child team).",
+    "testData": {
+      "expectedMembers": 10
+    },
+    "steps": [
+      "Page through /employees as the RM",
+      "Compare emails with the computed subtree"
+    ],
+    "expected": "Visible = subtree; 0 missing, 0 extra.",
+    "requirementRef": "src/core/casl/team-hierarchy.util.ts:expandToManagementSubtree (index loop → for…of on a growing array)",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "automationHint": "API test with org-tree fixture",
+    "lastResult": "passed",
+    "actualResult": "[rm/hier:employeesList] visible=10 subtreeMembers=10 missingFromList=0  extraNotInSubtree=0  depts=DOT NET",
+    "notes": "",
+    "screenshot": ""
+  },
+  {
+    "id": "TC-SONBE-047",
+    "module": "Sonar Clean-up – Backend Regression",
+    "moduleCode": "SONBE",
+    "subModule": "Team hierarchy (CASL)",
+    "taskId": "SI4-T1563",
+    "title": "DM/RM (nikhil.rathod) sees exactly their reportees in the employee list",
+    "category": "security",
+    "priority": "P1",
+    "severity": "Critical",
+    "tags": [
+      "@security",
+      "@api",
+      "@regression"
+    ],
+    "role": "RM/CSM/DM (nikhil.rathod)",
+    "preconditions": "Logged in on DEV (6.5.x backend incl. PR #565/#566 merged 23/10) via /auth/dev-login; API called from the same browser context.",
+    "testData": {
+      "expectedMembers": 13
+    },
+    "steps": [
+      "Page through /employees",
+      "Compare with subtree"
+    ],
+    "expected": "Visible = subtree; 0 missing, 0 extra.",
+    "requirementRef": "src/core/casl/team-hierarchy.util.ts",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "automationHint": "API test",
+    "lastResult": "passed",
+    "actualResult": "[dm/hier:employeesList] visible=13 subtreeMembers=13 missingFromList=0  extraNotInSubtree=0  depts=CSM",
+    "notes": "",
+    "screenshot": ""
+  },
+  {
+    "id": "TC-SONBE-048",
+    "module": "Sonar Clean-up – Backend Regression",
+    "moduleCode": "SONBE",
+    "subModule": "Team hierarchy (CASL)",
+    "taskId": "SI4-T1563",
+    "title": "TM sees only their department (IOT)",
+    "category": "security",
+    "priority": "P1",
+    "severity": "High",
+    "tags": [
+      "@security",
+      "@api"
+    ],
+    "role": "TM (maulik.joshi)",
+    "preconditions": "Logged in on DEV (6.5.x backend incl. PR #565/#566 merged 23/10) via /auth/dev-login; API called from the same browser context.",
+    "testData": {
+      "department": "IOT"
+    },
+    "steps": [
+      "Page through /employees",
+      "Check departments and compare with team data"
+    ],
+    "expected": "Only IOT employees; all of his team subtree included.",
+    "requirementRef": "employee-scope.strategy.ts (DEPARTMENT)",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "automationHint": "API test",
+    "lastResult": "passed",
+    "actualResult": "[tm/hier:employeesList] visible=92 subtreeMembers=91 missingFromList=0  extraNotInSubtree=1 arnav.raval@simformsolutions.com depts=IOT",
+    "notes": "The 1 \"extra\" (arnav.raval) is an IOT employee outside Maulik's team — expected for DEPARTMENT scope.",
+    "screenshot": ""
+  },
+  {
+    "id": "TC-SONBE-049",
+    "module": "Sonar Clean-up – Backend Regression",
+    "moduleCode": "SONBE",
+    "subModule": "Employee ratings",
+    "taskId": "SI4-T1563",
+    "title": "rehireFlags filter (Set rewrite) — YES/NO/UNANSWERED and combinations",
+    "category": "regression",
+    "priority": "P2",
+    "severity": "Medium",
+    "tags": [
+      "@regression",
+      "@api"
+    ],
+    "role": "PMO (nandini.langalia)",
+    "preconditions": "Logged in on DEV (6.5.x backend incl. PR #565/#566 merged 23/10) via /auth/dev-login; API called from the same browser context.",
+    "testData": {
+      "rehireFlags": [
+        "YES",
+        "NO",
+        "UNANSWERED",
+        "YES,NO",
+        "YES&NO",
+        "nested"
+      ]
+    },
+    "steps": [
+      "Read all ratings rows; compute expected counts",
+      "Call each filter form"
+    ],
+    "expected": "Totals match computed counts; nested → 400.",
+    "requirementRef": "src/modules/employee-ratings/employee-ratings.service.ts:605/754 (includes→Set); dto toQueryString",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "automationHint": "API test",
+    "lastResult": "passed",
+    "actualResult": "[pmo/ratings:rehireFlags] rows=57 expected={\"YES\":40,\"NO\":21,\"UNANSWERED\":0} YES|NO=57 got={\"YES\":40,\"NO\":21,\"UNANSWERED\":0,\"YES,NO\":57,\"YES&NO\":57} nested=400",
+    "notes": "",
+    "screenshot": ""
+  },
+  {
+    "id": "TC-SONBE-050",
+    "module": "Sonar Clean-up – Backend Regression",
+    "moduleCode": "SONBE",
+    "subModule": "Utilization priority",
+    "taskId": "SI4-T1563",
+    "title": "UP availability range filter with open bounds (flipped ternaries)",
+    "category": "boundary",
+    "priority": "P1",
+    "severity": "High",
+    "tags": [
+      "@boundary",
+      "@api",
+      "@regression"
+    ],
+    "role": "PMO (nandini.langalia)",
+    "preconditions": "Logged in on DEV (6.5.x backend incl. PR #565/#566 merged 23/10) via /auth/dev-login; API called from the same browser context.",
+    "testData": {
+      "availability": [
+        "[30,80]",
+        "[null,50]",
+        "[50,null]",
+        "[null,null]",
+        "[30]"
+      ]
+    },
+    "steps": [
+      "GET /utilization-priority?filters={\"availability\":…}"
+    ],
+    "expected": "Rows inside bounds; [null,null] = no filter; [null,50]+[50,null] ≥ all; malformed → 400.",
+    "requirementRef": "src/modules/utilization-priority/utilization-priority.filter-registry.ts:buildRangeClause (562bfefc)",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "automationHint": "API test",
+    "lastResult": "passed",
+    "actualResult": "[pmo/up:rangeFilter] all=3649 {\"[30,80]\":148,\"[null,50]\":2065,\"[50,null]\":1586,\"[null,null]\":3649} violationsOnPage1=0  malformed=400",
+    "notes": "",
+    "screenshot": ""
+  },
+  {
+    "id": "TC-SONBE-051",
+    "module": "Sonar Clean-up – Backend Regression",
+    "moduleCode": "SONBE",
+    "subModule": "Projects",
+    "taskId": "SI4-T1563",
+    "title": "Project filters via new buildFilterConditions helper (CSM, PM, employee, grade, combined, unknown)",
+    "category": "regression",
+    "priority": "P1",
+    "severity": "High",
+    "tags": [
+      "@regression",
+      "@api"
+    ],
+    "role": "PMO (nandini.langalia)",
+    "preconditions": "Logged in on DEV (6.5.x backend incl. PR #565/#566 merged 23/10) via /auth/dev-login; API called from the same browser context.",
+    "testData": {
+      "filters": [
+        "customerSuccessManager",
+        "projectManager",
+        "employee",
+        "accountGrade [7,10]",
+        "CSM+grade",
+        "unknownKey"
+      ]
+    },
+    "steps": [
+      "GET /projects?filters=<json> for each",
+      "Check every row matches"
+    ],
+    "expected": "Rows match each filter; combined ≤ each alone; unknown key rejected.",
+    "requirementRef": "src/modules/projects/projects.filter-registry.ts:buildFilterConditions (021aecba)",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "automationHint": "API test",
+    "lastResult": "passed",
+    "actualResult": "[pmo/proj:filters] all=402 {\"csm\":4,\"pm\":7,\"grade7_10\":85,\"employeeTarun\":5,\"csmAndGrade\":2,\"unknownKey\":\"E400\"} wrongRows=0 ",
+    "notes": "",
+    "screenshot": ""
+  },
+  {
+    "id": "TC-SONBE-052",
+    "module": "Sonar Clean-up – Backend Regression",
+    "moduleCode": "SONBE",
+    "subModule": "Access control",
+    "taskId": "SI4-T1563",
+    "title": "Employee role: touched endpoints allowed/denied as per role grants",
+    "category": "security",
+    "priority": "P1",
+    "severity": "Critical",
+    "tags": [
+      "@security",
+      "@api"
+    ],
+    "role": "Employee (punit.patel)",
+    "preconditions": "Logged in on DEV (6.5.x backend incl. PR #565/#566 merged 23/10) via /auth/dev-login; API called from the same browser context.",
+    "testData": {
+      "endpoints": 20
+    },
+    "steps": [
+      "Call 20 GET endpoints on the touched controllers",
+      "Compare with EMPLOYEE role grants from /roles"
+    ],
+    "expected": "Only notifications, own dashboard, own WL row, own opportunities return 200; tickets, projects, employees, ratings, UP, roles, weekly updates, WL overview → 403.",
+    "requirementRef": "allocation-tickets.controller.ts, dashboard, working-location, opportunities controllers (CheckAbility unchanged)",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "automationHint": "API access-matrix test",
+    "lastResult": "passed",
+    "actualResult": "[emp/access:matrix] {\"GET /allocation-tickets\":\"403\",\"GET /allocation-tickets/filters\":\"403\",\"GET /allocation-tickets/interview-requests\":\"403\",\"GET /projects\":\"403\",\"GET /projects/filters\":\"403\",\"GET /employees\":\"403\",\"GET /employee-roles\":\"403\",\"GET /employee-ratings\":\"403\",\"GET /utilization-priority\":\"403\",\"GET /opportunities/openings\":\"200 (n=0)\",\"GET /opportunities/candidates\":\"403\",\"GET /dashboard/overview\":\"200 (n=-)\",\"GET /dashboard/activity\":\"200 (n=0)\",\"GET /dashboard/filter-options\":\"200 (n=-)\",\"GET /working-location/overview\":\"403\",\"GET /working-location/list\":\"200 (n=1)\",\"GET /working-location/employees\":\"403\",\"GET /weekly-update\":\"403\",\"GET /notifications\":\"200 (n=55)\",\"GET /teams (own dept)\":\"403\"}",
+    "notes": "Dashboard is now 200 for Employee (own data, 0 activity rows); earlier DEF-DASH-001 said Employee was blocked — that was fixed before this task.",
+    "screenshot": ""
+  },
+  {
+    "id": "TC-SONBE-053",
+    "module": "Sonar Clean-up – Backend Regression",
+    "moduleCode": "SONBE",
+    "subModule": "Access control",
+    "taskId": "SI4-T1563",
+    "title": "PMO vs CSM vs RM/TM/DM: access matrix matches role grants",
+    "category": "security",
+    "priority": "P1",
+    "severity": "High",
+    "tags": [
+      "@security",
+      "@api"
+    ],
+    "role": "PMO, CSM (tarun.sharma), RM (riddhi.patel), TM (maulik.joshi), DM (nikhil.rathod)",
+    "preconditions": "Logged in on DEV (6.5.x backend incl. PR #565/#566 merged 23/10) via /auth/dev-login; API called from the same browser context.",
+    "testData": {
+      "endpoints": 20
+    },
+    "steps": [
+      "Call the same 20 endpoints as each role",
+      "Compare with each role's grants"
+    ],
+    "expected": "Each 200/403 matches the grants (e.g. CSM: projects/employees 403; RM: tickets 403; TM: everything dept-scoped 200; PMO: weekly updates 403 — no grant).",
+    "requirementRef": "CASL scope strategies + touched controllers",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "automationHint": "API access-matrix test",
+    "lastResult": "passed",
+    "actualResult": "[csm/access:matrix] {\"GET /allocation-tickets\":\"200 (n=40)\",\"GET /allocation-tickets/filters\":\"200 (n=-)\",\"GET /allocation-tickets/interview-requests\":\"200 (n=81)\",\"GET /projects\":\"403\",\"GET /projects/filters\":\"403\",\"GET /employees\":\"403\",\"GET /employee-roles\":\"403\",\"GET /employee-ratings\":\"403\",\"GET /utilization-priority\":\"403\",\"GET /opportunities/openings\":\"200 (n=156)\",\"GET /opportunities/candidates\":\"200 (n=3649)\",\"GET /dashboard/overview\":\"200 (n=-)\",\"GET /dashboard/activity\":\"200 (n=9)\",\"GET /dashboard/filter-options\":\"200 (n=-)\",\"GET /working-location/overview\":\"403\",\"GET /working-location/list\":\"200 (n=94)\",\"GET /working-location/employees\":\"403\",\"GET /weekly-update\":\"403\",\"GET /notifications\":\"200 (n=159)\",\"GET /teams (own dept)\":\"403\"} || [rm/access:matrix] {\"GET /allocation-tickets\":\"403\",\"GET /allocation-tickets/filters\":\"403\",\"GET /allocation-tickets/interview-requests\":\"403\",\"GET /projects\":\"200 (n=18)\",\"GET /projects/filters\":\"200 (n=3)\",\"GET /employees\":\"200 (n=10)\",\"GET /employee-roles\":\"403\",\"GET /employee-ratings\":\"200 (n=0)\",\"GET /utilization-priority\":\"403\",\"GET /opportunities/openings\":\"200 (n=0)\",\"GET /opportunities/candidates\":\"403\",\"GET /dashboard/overview\":\"200 (n=-)\",\"GET /dashboard/activity\":\"200 (n=0)\",\"GET /dashboard/filter-options\":\"200 (n=-)\",\"GET /working-location/overview\":\"403\",\"GET /working-location/list\":\"200 (n=11)\",\"GET /working-location/employees\":\"403\",\"GET /weekly-update\":\"200 (n=0)\",\"GET /notifications\":\"200 (n=0)\",\"GET /teams (own dept)\":\"403\"} || [tm/access:matrix] {\"GET /allocation-tickets\":\"200 (n=2)\",\"GET /allocation-tickets/filters\":\"200 (n=-)\",\"GET /allocation-tickets/interview-requests\":\"200 (n=0)\",\"GET /projects\":\"200 (n=140)\",\"GET /projects/filters\":\"200 (n=4)\",\"GET /employees\":\"200 (n=92)\",\"GET /employee-roles\":\"403\",\"GET /employee-ratings\":\"200 (n=0)\",\"GET /utilization-priority\":\"200 (n=93)\",\"GET /opportunities/openings\":\"200 (n=0)\",\"GET /opportunities/candidates\":\"200 (n=3649)\",\"GET /dashboard/overview\":\"200 (n=-)\",\"GET /dashboard/activity\":\"200 (n=8)\",\"GET /dashboard/filter-options\":\"200 (n=-)\",\"GET /working-location/overview\":\"200 (n=-)\",\"GET /working-location/list\":\"200 (n=93)\",\"GET /working-location/employees\":\"200 (n=93)\",\"GET /weekly-update\":\"200 (n=0)\",\"GET /notifications\":\"200 (n=4)\",\"GET /teams (own dept)\":\"200 (n=10)\"} || [dm/access:matrix] {\"GET /allocation-tickets\":\"200 (n=133)\",\"GET /allocation-tickets/filters\":\"200 (n=-)\",\"GET /allocation-tickets/interview-requests\":\"200 (n=4)\",\"GET /projects\":\"200 (n=28)\",\"GET /projects/filters\":\"200 (n=3)\",\"GET /employees\":\"200 (n=13)\",\"GET /employee-roles\":\"403\",\"GET /employee-ratings\":\"200 (n=3)\",\"GET /utilization-priority\":\"403\",\"GET /opportunities/openings\":\"200 (n=0)\",\"GET /opportunities/candidates\":\"200 (n=3649)\",\"GET /dashboard/overview\":\"200 (n=-)\",\"GET /dashboard/activity\":\"200 (n=1)\",\"GET /dashboard/filter-options\":\"200 (n=-)\",\"GET /working-location/overview\":\"403\",\"GET /working-location/list\":\"200 (n=96)\",\"GET /working-location/employees\":\"403\",\"GET /weekly-update\":\"200 (n=0)\",\"GET /notifications\":\"200 (n=0)\",\"GET /teams (own dept)\":\"403\"}",
+    "notes": "",
+    "screenshot": ""
+  },
+  {
+    "id": "TC-SONBE-054",
+    "module": "Sonar Clean-up – Backend Regression",
+    "moduleCode": "SONBE",
+    "subModule": "Weekly updates",
+    "taskId": "SI4-T1563",
+    "title": "Weekly update reads for RM/TM/DM; denied for CSM/Employee",
+    "category": "smoke",
+    "priority": "P2",
+    "severity": "Medium",
+    "tags": [
+      "@smoke",
+      "@api"
+    ],
+    "role": "RM, TM, DM, CSM, Employee",
+    "preconditions": "Logged in on DEV (6.5.x backend incl. PR #565/#566 merged 23/10) via /auth/dev-login; API called from the same browser context.",
+    "testData": {
+      "endpoints": [
+        "/weekly-update",
+        "/weekly-update/filters",
+        "/weekly-update/sessions",
+        "/weekly-update/status"
+      ]
+    },
+    "steps": [
+      "Call the read endpoints as each role"
+    ],
+    "expected": "RM/TM/DM 200; CSM/Employee 403; status endpoint validates teamPublicId+meetingDate.",
+    "requirementRef": "src/modules/weekly-update/weekly-update-entry-sync.service.ts (only the write path changed)",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "automationHint": "API test",
+    "lastResult": "passed",
+    "actualResult": "[rm/weekly:reads] {\"/weekly-update\":\"200\",\"/weekly-update/filters\":\"200\",\"/weekly-update/sessions\":\"200\",\"/weekly-update/status\":\"400 {\\\"code\\\":\\\"VAL_001\\\",\\\"message\\\":\\\"Validation failed\\\",\\\"errors\\\":[{\\\"field\\\":\\\"teamPublicId\\\",\\\"message\\\":\\\"teamPublicId is required.\\\"},{\\\"field\\\":\\\"meetingDate\\\",\\\"message\\\":\\\"meeti\",\"/weekly-update/last-notes\":\"400 {\\\"code\\\":\\\"VAL_001\\\",\\\"message\\\":\\\"Validation failed\\\",\\\"errors\\\":[{\\\"field\\\":\\\"reportingManagerPublicId\\\",\\\"message\\\":\\\"reportingManagerPublicId is required.\\\"},{\\\"field\\\":\\\"asOfD\",\"sortDesc\":\"ok\",\"total\":0,\"first\":[]} || [csm/weekly:reads] {\"/weekly-update\":\"403 {\\\"code\\\":\\\"AUTH_004\\\",\\\"message\\\":\\\"Access forbidden\\\"}\",\"/weekly-update/filters\":\"403 {\\\"code\\\":\\\"AUTH_004\\\",\\\"message\\\":\\\"Access forbidden\\\"}\",\"/weekly-update/sessions\":\"403 {\\\"code\\\":\\\"AUTH_004\\\",\\\"message\\\":\\\"Access forbidden\\\"}\",\"/weekly-update/status\":\"403 {\\\"code\\\":\\\"AUTH_004\\\",\\\"message\\\":\\\"Access forbidden\\\"}\",\"/weekly-update/last-notes\":\"403 {\\\"code\\\":\\\"AUTH_004\\\",\\\"message\\\":\\\"Access forbidden\\\"}\",\"sortDesc\":403,\"first\":[]} || omkar.nair: list 200 total 0; status?teamPublicId=…&meetingDate=2026-10-27 → 200 data null.",
+    "notes": "None of the allowed accounts has any weekly updates on DEV.",
+    "screenshot": ""
+  },
+  {
+    "id": "TC-SONBE-055",
+    "module": "Sonar Clean-up – Backend Regression",
+    "moduleCode": "SONBE",
+    "subModule": "Weekly updates",
+    "taskId": "SI4-T1563",
+    "title": "Weekly update note sync rejects notes aimed at a soft-deleted snapshot",
+    "category": "negative",
+    "priority": "P2",
+    "severity": "Medium",
+    "tags": [
+      "@negative",
+      "@api"
+    ],
+    "role": "RM/TM with a weekly update",
+    "preconditions": "A weekly update with a removed project/goal snapshot.",
+    "testData": {},
+    "steps": [
+      "PATCH a weekly update entry with a note for a soft-deleted project snapshot"
+    ],
+    "expected": "400 INVALID_PROJECT_ASSIGNMENT_NOTE_TARGET (same as before).",
+    "requirementRef": "weekly-update-entry-sync.service.ts:selectCreatableMissingNoteUpdates (8dd24c40)",
+    "automatable": false,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "automationHint": "Needs seeded weekly-update data",
+    "lastResult": "blocked",
+    "actualResult": "Not run: no weekly updates exist for any allowed account on DEV, and creating one would write real team data. Code review: helper throws if ANY missing note hits a soft-deleted key — same result as the old loop (which threw on the first such note).",
+    "notes": "Blocked (no data / write path).",
+    "screenshot": ""
+  }
+]

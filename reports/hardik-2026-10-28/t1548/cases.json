@@ -1,0 +1,1310 @@
+[
+  {
+    "id": "TC-RELNTF-001",
+    "module": "Release Notifications",
+    "moduleCode": "RELNTF",
+    "subModule": "Release list API",
+    "taskId": "SI4-T1548",
+    "title": "Admin gets the full list of shipped release notes from GET /releases",
+    "category": "smoke",
+    "priority": "High",
+    "severity": "Major",
+    "tags": [
+      "@smoke",
+      "@api"
+    ],
+    "role": "Admin (ceo@simformsolutions.com)",
+    "preconditions": "Signed in as Admin. Frontend source has 40 released versions (3.0.0 baseline … 6.5.0) and 3 planned (6.4.1, 6.4.2, 6.6.0).",
+    "testData": {
+      "endpoint": "GET /api/v1/releases"
+    },
+    "steps": [
+      "Sign in as Admin",
+      "GET /api/v1/releases"
+    ],
+    "expected": "200, code REL_001, data holds every released version, newest first, with its changes (Admin has releases.view_all).",
+    "requirementRef": "BE 4835808f releases.controller.ts findAll",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "automationHint": "request.get /releases; expect data.length > 0 and data[0].version to be the newest released",
+    "lastResult": "failed",
+    "actualResult": "200 {\"code\":\"REL_001\",\"message\":\"Release notes fetched successfully.\",\"data\":[]} — 0 releases (expected 40). Same on 3 runs today.",
+    "notes": "BUG-T1548-01",
+    "screenshot": ""
+  },
+  {
+    "id": "TC-RELNTF-002",
+    "module": "Release Notifications",
+    "moduleCode": "RELNTF",
+    "subModule": "Release list API",
+    "taskId": "SI4-T1548",
+    "title": "Employee gets only the release notes for pages an Employee can open",
+    "category": "functional",
+    "priority": "High",
+    "severity": "Major",
+    "tags": [
+      "@functional",
+      "@api",
+      "@rbac"
+    ],
+    "role": "Employee (kashyap.patel)",
+    "preconditions": "Signed in as Employee (only the Employee/Profile pages in the sidebar).",
+    "testData": {
+      "endpoint": "GET /api/v1/releases"
+    },
+    "steps": [
+      "Sign in as Employee",
+      "GET /api/v1/releases"
+    ],
+    "expected": "200 with a non-empty list holding only changes for Employee-visible pages (e.g. profile changes), no admin-only pages.",
+    "requirementRef": "BE release-access.util.ts visibleReleasesFor",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "automationHint": "request.get /releases as employee; assert every change.modules is within the employee page set",
+    "lastResult": "failed",
+    "actualResult": "200, data: [] — nothing at all is returned, so role filtering cannot be checked.",
+    "notes": "BUG-T1548-01",
+    "screenshot": ""
+  },
+  {
+    "id": "TC-RELNTF-003",
+    "module": "Release Notifications",
+    "moduleCode": "RELNTF",
+    "subModule": "Release list API",
+    "taskId": "SI4-T1548",
+    "title": "EM gets the release notes for the pages an EM can open",
+    "category": "functional",
+    "priority": "High",
+    "severity": "Major",
+    "tags": [
+      "@functional",
+      "@api",
+      "@rbac"
+    ],
+    "role": "EM (kunal.jadeja)",
+    "preconditions": "Signed in as EM.",
+    "testData": {
+      "endpoint": "GET /api/v1/releases"
+    },
+    "steps": [
+      "Sign in as EM",
+      "GET /api/v1/releases"
+    ],
+    "expected": "200 with a non-empty, EM-filtered list.",
+    "requirementRef": "BE release-access.util.ts visibleReleasesFor",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "automationHint": "request.get /releases as EM; expect data.length > 0",
+    "lastResult": "failed",
+    "actualResult": "200, data: [].",
+    "notes": "BUG-T1548-01",
+    "screenshot": ""
+  },
+  {
+    "id": "TC-RELNTF-004",
+    "module": "Release Notifications",
+    "moduleCode": "RELNTF",
+    "subModule": "Release content source",
+    "taskId": "SI4-T1548",
+    "title": "Encrypted release content file is published by the frontend build",
+    "category": "functional",
+    "priority": "High",
+    "severity": "Critical",
+    "tags": [
+      "@functional",
+      "@config"
+    ],
+    "role": "Anonymous",
+    "preconditions": "Dev frontend deployed after 26/10 (T1548 code is live: the app calls GET /releases).",
+    "testData": {
+      "url": "https://simerp-dev.simform.solutions/releases.enc.json"
+    },
+    "steps": [
+      "GET https://simerp-dev.simform.solutions/releases.enc.json",
+      "Look at the content type and body"
+    ],
+    "expected": "A small JSON envelope {v:1, iv, tag, data} (encrypted, unreadable without the key) — the file the backend decrypts.",
+    "requirementRef": "FE vite.config.ts releaseContentPlugin; BE release-content.service.ts CONTENT_PATH",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "automationHint": "request.get; expect content-type json and keys v/iv/tag/data",
+    "lastResult": "failed",
+    "actualResult": "200 text/html, 1344 bytes — the SPA index.html fallback. The file was never built, which happens only when RELEASE_CONTENT_KEY is empty in the frontend build (vite.config.ts:48-50). This is the root cause of the empty What's New.",
+    "notes": "BUG-T1548-01",
+    "screenshot": ""
+  },
+  {
+    "id": "TC-RELNTF-005",
+    "module": "Release Notifications",
+    "moduleCode": "RELNTF",
+    "subModule": "Release list API",
+    "taskId": "SI4-T1548",
+    "title": "Admin can preview planned releases with includePlanned=true",
+    "category": "functional",
+    "priority": "Medium",
+    "severity": "Minor",
+    "tags": [
+      "@functional",
+      "@api"
+    ],
+    "role": "Admin (ceo@simformsolutions.com)",
+    "preconditions": "Signed in as Admin. 6.4.1, 6.4.2, 6.6.0 are planned in source.",
+    "testData": {
+      "endpoint": "GET /api/v1/releases?includePlanned=true"
+    },
+    "steps": [
+      "GET /api/v1/releases?includePlanned=true as Admin"
+    ],
+    "expected": "Planned releases are included for Admin.",
+    "requirementRef": "BE visibleReleasesFor includePlanned",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "automationHint": "expect some(data, status=planned)",
+    "lastResult": "blocked",
+    "actualResult": "200, data: [] — no content loaded at all.",
+    "notes": "Blocked by BUG-T1548-01",
+    "screenshot": ""
+  },
+  {
+    "id": "TC-RELNTF-006",
+    "module": "Release Notifications",
+    "moduleCode": "RELNTF",
+    "subModule": "Release list API",
+    "taskId": "SI4-T1548",
+    "title": "Non-admin cannot see planned releases even when asking with includePlanned=true",
+    "category": "security",
+    "priority": "Medium",
+    "severity": "Major",
+    "tags": [
+      "@security",
+      "@api",
+      "@rbac"
+    ],
+    "role": "Employee (kashyap.patel), EM (kunal.jadeja)",
+    "preconditions": "Signed in as Employee, then as EM.",
+    "testData": {
+      "endpoint": "GET /api/v1/releases?includePlanned=true"
+    },
+    "steps": [
+      "GET /releases?includePlanned=true as Employee",
+      "Repeat as EM"
+    ],
+    "expected": "200 with no release whose status is planned.",
+    "requirementRef": "BE visibleReleasesFor (includePlanned && viewer.canViewAll)",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "automationHint": "expect every(data, status=released)",
+    "lastResult": "blocked",
+    "actualResult": "Both 200 with data: []. No planned leak, but with an empty list the rule cannot really be proven.",
+    "notes": "Blocked by BUG-T1548-01",
+    "screenshot": ""
+  },
+  {
+    "id": "TC-RELNTF-007",
+    "module": "Release Notifications",
+    "moduleCode": "RELNTF",
+    "subModule": "Release list API",
+    "taskId": "SI4-T1548",
+    "title": "Admin-only changes are not sent to Employee (server-side filtering)",
+    "category": "security",
+    "priority": "High",
+    "severity": "Major",
+    "tags": [
+      "@security",
+      "@api",
+      "@rbac"
+    ],
+    "role": "Employee (kashyap.patel)",
+    "preconditions": "Release content loaded on the server.",
+    "testData": {
+      "compareWith": "Admin list"
+    },
+    "steps": [
+      "GET /releases as Admin and as Employee",
+      "Compare change counts per release"
+    ],
+    "expected": "Employee list is a strict subset of Admin list; no change for admin pages (scheduler, roles) reaches Employee.",
+    "requirementRef": "BE canSeeChange / canSeePage",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "automationHint": "diff the two lists",
+    "lastResult": "blocked",
+    "actualResult": "Both lists are empty.",
+    "notes": "Blocked by BUG-T1548-01",
+    "screenshot": ""
+  },
+  {
+    "id": "TC-RELNTF-008",
+    "module": "Release Notifications",
+    "moduleCode": "RELNTF",
+    "subModule": "Release list API",
+    "taskId": "SI4-T1548",
+    "title": "GET /releases without a session returns 401",
+    "category": "security",
+    "priority": "High",
+    "severity": "Major",
+    "tags": [
+      "@security",
+      "@api"
+    ],
+    "role": "Anonymous",
+    "preconditions": "No cookies.",
+    "testData": {
+      "endpoint": "GET /api/v1/releases",
+      "variants": [
+        "no cookie",
+        "includePlanned=true",
+        "accessToken=garbage.token.value"
+      ]
+    },
+    "steps": [
+      "GET /releases with no cookie",
+      "GET /releases?includePlanned=true with no cookie",
+      "GET /releases with a fake accessToken cookie"
+    ],
+    "expected": "401 AUTH_001 for all three.",
+    "requirementRef": "releases.controller.ts @ApiUnauthorizedResponse",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "automationHint": "request.get without storageState; expect 401",
+    "lastResult": "passed",
+    "actualResult": "All three: 401 {\"code\":\"AUTH_001\",\"message\":\"Unauthorized access\"}.",
+    "notes": "",
+    "screenshot": ""
+  },
+  {
+    "id": "TC-RELNTF-009",
+    "module": "Release Notifications",
+    "moduleCode": "RELNTF",
+    "subModule": "Release list API",
+    "taskId": "SI4-T1548",
+    "title": "GET /releases is refused after logout",
+    "category": "security",
+    "priority": "Medium",
+    "severity": "Major",
+    "tags": [
+      "@security",
+      "@api"
+    ],
+    "role": "Employee (kashyap.patel)",
+    "preconditions": "Employee signed in, then logged out from the avatar menu.",
+    "testData": {},
+    "steps": [
+      "Sign in as Employee",
+      "Log out",
+      "GET /releases in the same browser context"
+    ],
+    "expected": "401.",
+    "requirementRef": "FE AuthContext resetReleases on logout",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "automationHint": "logout then request.get",
+    "lastResult": "passed",
+    "actualResult": "401 after logout.",
+    "notes": "",
+    "screenshot": ""
+  },
+  {
+    "id": "TC-RELNTF-010",
+    "module": "Release Notifications",
+    "moduleCode": "RELNTF",
+    "subModule": "Release list API",
+    "taskId": "SI4-T1548",
+    "title": "includePlanned rejects values that are not true/false",
+    "category": "negative",
+    "priority": "Low",
+    "severity": "Minor",
+    "tags": [
+      "@negative",
+      "@api"
+    ],
+    "role": "Admin (ceo@simformsolutions.com), Employee (kashyap.patel), EM (kunal.jadeja)",
+    "preconditions": "Signed in.",
+    "testData": {
+      "values": [
+        "abc",
+        "1"
+      ]
+    },
+    "steps": [
+      "GET /releases?includePlanned=abc",
+      "GET /releases?includePlanned=1"
+    ],
+    "expected": "400 VAL_001 with field includePlanned and a readable message.",
+    "requirementRef": "list-releases.query.dto.ts @ToBoolean",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "automationHint": "expect 400 and errors[0].field=includePlanned",
+    "lastResult": "passed",
+    "actualResult": "Both 400 {\"code\":\"VAL_001\",\"message\":\"Validation failed\",\"errors\":[{\"field\":\"includePlanned\",\"message\":\"includePlanned must be a boolean value\"}]} for all 3 roles. includePlanned=false → 200.",
+    "notes": "\"1\" is also rejected; the app always sends \"true\", so no impact.",
+    "screenshot": ""
+  },
+  {
+    "id": "TC-RELNTF-011",
+    "module": "Release Notifications",
+    "moduleCode": "RELNTF",
+    "subModule": "Release list API",
+    "taskId": "SI4-T1548",
+    "title": "Release API is read-only (no detail, no create)",
+    "category": "negative",
+    "priority": "Low",
+    "severity": "Minor",
+    "tags": [
+      "@negative",
+      "@api"
+    ],
+    "role": "Admin (ceo@simformsolutions.com)",
+    "preconditions": "Signed in as Admin.",
+    "testData": {
+      "calls": [
+        "GET /releases/6.6.0",
+        "POST /releases {version:\"9.9.9\"}"
+      ]
+    },
+    "steps": [
+      "GET /releases/6.6.0",
+      "POST /releases"
+    ],
+    "expected": "404 for both; no way to create or change a release through the API.",
+    "requirementRef": "releases.controller.ts (only @Get())",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "automationHint": "expect 404",
+    "lastResult": "passed",
+    "actualResult": "GET /releases/6.6.0 → 404 \"Cannot GET /api/v1/releases/6.6.0\"; POST /releases → 404 \"Cannot POST /api/v1/releases\". Same for Employee and EM.",
+    "notes": "",
+    "screenshot": ""
+  },
+  {
+    "id": "TC-RELNTF-012",
+    "module": "Release Notifications",
+    "moduleCode": "RELNTF",
+    "subModule": "Permissions",
+    "taskId": "SI4-T1548",
+    "title": "releases.read for every role, releases.view_all for Admin only (ability pack)",
+    "category": "security",
+    "priority": "High",
+    "severity": "Major",
+    "tags": [
+      "@security",
+      "@api",
+      "@rbac"
+    ],
+    "role": "Admin (ceo@simformsolutions.com), Employee (kashyap.patel), EM (kunal.jadeja)",
+    "preconditions": "Migration 20261023150000_add_release_notifications applied.",
+    "testData": {
+      "endpoint": "GET /api/v1/employees/permissions"
+    },
+    "steps": [
+      "GET /employees/permissions as each role",
+      "Read the \"releases\" scope entry"
+    ],
+    "expected": "Admin: {read:[ALL], view_all:[ALL]}. Employee and EM: {read:[ALL]} only.",
+    "requirementRef": "migration.sql PART 3/4",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "automationHint": "parse scopeMap.releases",
+    "lastResult": "passed",
+    "actualResult": "Admin \"releases\":{\"read\":[\"ALL\"],\"view_all\":[\"ALL\"]}; Employee and EM \"releases\":{\"read\":[\"ALL\"]}.",
+    "notes": "",
+    "screenshot": ""
+  },
+  {
+    "id": "TC-RELNTF-013",
+    "module": "Release Notifications",
+    "moduleCode": "RELNTF",
+    "subModule": "Permissions",
+    "taskId": "SI4-T1548",
+    "title": "Roles & Permissions page shows the Releases module with View / View All",
+    "category": "functional",
+    "priority": "Medium",
+    "severity": "Minor",
+    "tags": [
+      "@functional",
+      "@ui",
+      "@rbac"
+    ],
+    "role": "Admin (ceo@simformsolutions.com)",
+    "preconditions": "Signed in as Admin.",
+    "testData": {
+      "page": "/admin/roles-and-permissions"
+    },
+    "steps": [
+      "Open Admin → Roles & Permissions",
+      "Click \"Releases\" in the module list"
+    ],
+    "expected": "Releases section with \"View\" ticked for every role and \"View All\" ticked for ADMIN only.",
+    "requirementRef": "migration.sql PART 4",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "automationHint": "getByText(\"Releases\") then read row cells",
+    "lastResult": "passed",
+    "actualResult": "Releases → View ticked for EMPLOYEE, RM, TM, EM, ADMIN, PM, PMO…; View All ticked only for ADMIN. Not edited.",
+    "notes": "",
+    "screenshot": "reports/screenshots/2026-10-28/hardik/t1548/admin-roles-releases-module.png"
+  },
+  {
+    "id": "TC-RELNTF-014",
+    "module": "Release Notifications",
+    "moduleCode": "RELNTF",
+    "subModule": "What's New page",
+    "taskId": "SI4-T1548",
+    "title": "What's New & History lists release notes for Admin",
+    "category": "smoke",
+    "priority": "High",
+    "severity": "Major",
+    "tags": [
+      "@smoke",
+      "@ui"
+    ],
+    "role": "Admin (ceo@simformsolutions.com)",
+    "preconditions": "Signed in as Admin.",
+    "testData": {
+      "page": "/whats-new"
+    },
+    "steps": [
+      "Click \"What's New & History\" in the sidebar",
+      "Wait for the list"
+    ],
+    "expected": "Release cards (current release open) with the changes for this role; count shows N releases.",
+    "requirementRef": "FE WhatsNewPage.tsx + releaseStore loads GET /releases",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "automationHint": "expect page.getByText(/\\d+ releases/) not \"0 releases\"",
+    "lastResult": "failed",
+    "actualResult": "Page loads, calls GET /releases?includePlanned=true (200, data []), and shows \"0 releases · select a version to see its changes\" + \"No release notes found\".",
+    "notes": "BUG-T1548-01",
+    "screenshot": "reports/screenshots/2026-10-28/hardik/t1548/admin-whats-new.png"
+  },
+  {
+    "id": "TC-RELNTF-015",
+    "module": "Release Notifications",
+    "moduleCode": "RELNTF",
+    "subModule": "What's New page",
+    "taskId": "SI4-T1548",
+    "title": "What's New & History lists release notes for Employee",
+    "category": "functional",
+    "priority": "High",
+    "severity": "Major",
+    "tags": [
+      "@functional",
+      "@ui"
+    ],
+    "role": "Employee (kashyap.patel)",
+    "preconditions": "Signed in as Employee.",
+    "testData": {
+      "page": "/whats-new"
+    },
+    "steps": [
+      "Click \"What's New & History\" in the sidebar",
+      "Wait for the list"
+    ],
+    "expected": "Release cards (current release open) with the changes for this role; count shows N releases.",
+    "requirementRef": "FE WhatsNewPage.tsx + releaseStore loads GET /releases",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "automationHint": "expect page.getByText(/\\d+ releases/) not \"0 releases\"",
+    "lastResult": "failed",
+    "actualResult": "Page loads, calls GET /releases?includePlanned=true (200, data []), and shows \"0 releases · select a version to see its changes\" + \"No release notes found\".",
+    "notes": "BUG-T1548-01",
+    "screenshot": "reports/screenshots/2026-10-28/hardik/t1548/employee-whats-new.png"
+  },
+  {
+    "id": "TC-RELNTF-016",
+    "module": "Release Notifications",
+    "moduleCode": "RELNTF",
+    "subModule": "What's New page",
+    "taskId": "SI4-T1548",
+    "title": "What's New & History lists release notes for EM",
+    "category": "functional",
+    "priority": "High",
+    "severity": "Major",
+    "tags": [
+      "@functional",
+      "@ui"
+    ],
+    "role": "EM (kunal.jadeja)",
+    "preconditions": "Signed in as EM.",
+    "testData": {
+      "page": "/whats-new"
+    },
+    "steps": [
+      "Click \"What's New & History\" in the sidebar",
+      "Wait for the list"
+    ],
+    "expected": "Release cards (current release open) with the changes for this role; count shows N releases.",
+    "requirementRef": "FE WhatsNewPage.tsx + releaseStore loads GET /releases",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "automationHint": "expect page.getByText(/\\d+ releases/) not \"0 releases\"",
+    "lastResult": "failed",
+    "actualResult": "Page loads, calls GET /releases?includePlanned=true (200, data []), and shows \"0 releases · select a version to see its changes\" + \"No release notes found\".",
+    "notes": "BUG-T1548-01",
+    "screenshot": "reports/screenshots/2026-10-28/hardik/t1548/em-whats-new.png"
+  },
+  {
+    "id": "TC-RELNTF-017",
+    "module": "Release Notifications",
+    "moduleCode": "RELNTF",
+    "subModule": "What's New page",
+    "taskId": "SI4-T1548",
+    "title": "Admin sees the \"Preview planned release\" toggle",
+    "category": "functional",
+    "priority": "Low",
+    "severity": "Minor",
+    "tags": [
+      "@functional",
+      "@ui"
+    ],
+    "role": "Admin (ceo@simformsolutions.com)",
+    "preconditions": "Planned releases exist in content.",
+    "testData": {},
+    "steps": [
+      "Open What's New as Admin",
+      "Look for \"Preview planned release\""
+    ],
+    "expected": "Toggle visible; turning it on shows 6.6.0 etc. marked Planned.",
+    "requirementRef": "WhatsNewPage.tsx hasPlanned",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "automationHint": "getByText(\"Preview planned release\")",
+    "lastResult": "blocked",
+    "actualResult": "Toggle not shown (0 matches) because the API returned no releases.",
+    "notes": "Blocked by BUG-T1548-01",
+    "screenshot": "reports/screenshots/2026-10-28/hardik/t1548/admin-whats-new.png"
+  },
+  {
+    "id": "TC-RELNTF-018",
+    "module": "Release Notifications",
+    "moduleCode": "RELNTF",
+    "subModule": "What's New page",
+    "taskId": "SI4-T1548",
+    "title": "Empty What's New shows a clear \"no releases yet\" message",
+    "category": "functional",
+    "priority": "Low",
+    "severity": "Minor",
+    "tags": [
+      "@functional",
+      "@ui",
+      "@empty-state"
+    ],
+    "role": "Admin (ceo@simformsolutions.com), Employee (kashyap.patel), EM (kunal.jadeja)",
+    "preconditions": "GET /releases returns [] (current dev state). No search or filter applied.",
+    "testData": {},
+    "steps": [
+      "Open What's New with no filter or search",
+      "Read the empty state"
+    ],
+    "expected": "A message that says there are no releases yet (the app already has the label \"No releases yet – Release notes will appear here after the next release.\").",
+    "requirementRef": "FE labels.ts:78-79 NO_RELEASES_*",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "automationHint": "expect getByText(\"No releases yet\")",
+    "lastResult": "failed",
+    "actualResult": "Shows \"No release notes found – Try a different search, page or type of change.\" and \"0 releases · select a version to see its changes\" although no search/filter is set. Users are told to change filters that are not the problem.",
+    "notes": "BUG-T1548-02",
+    "screenshot": "reports/screenshots/2026-10-28/hardik/t1548/employee-whats-new.png"
+  },
+  {
+    "id": "TC-RELNTF-019",
+    "module": "Release Notifications",
+    "moduleCode": "RELNTF",
+    "subModule": "What's New page",
+    "taskId": "SI4-T1548",
+    "title": "Filters and search behave safely when there is no data",
+    "category": "boundary",
+    "priority": "Low",
+    "severity": "Minor",
+    "tags": [
+      "@boundary",
+      "@ui"
+    ],
+    "role": "EM (kunal.jadeja)",
+    "preconditions": "GET /releases returns [].",
+    "testData": {
+      "search": "zzz"
+    },
+    "steps": [
+      "Type \"zzz\" in Search release notes",
+      "Open the \"All pages\" filter"
+    ],
+    "expected": "No crash; count stays 0; page filter lists only \"All pages\".",
+    "requirementRef": "WhatsNewFilters.tsx",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "automationHint": "fill search; expect no error boundary",
+    "lastResult": "passed",
+    "actualResult": "No error; \"0 releases\" + \"No release notes found\"; page filter options: [\"All pages\"].",
+    "notes": "",
+    "screenshot": "reports/screenshots/2026-10-28/hardik/t1548/em-whats-new-page-filter-empty.png"
+  },
+  {
+    "id": "TC-RELNTF-020",
+    "module": "Release Notifications",
+    "moduleCode": "RELNTF",
+    "subModule": "What's New page",
+    "taskId": "SI4-T1548",
+    "title": "Sidebar \"What's New & History\" entry is present for every role and opens the page",
+    "category": "smoke",
+    "priority": "Medium",
+    "severity": "Minor",
+    "tags": [
+      "@smoke",
+      "@ui"
+    ],
+    "role": "Admin (ceo@simformsolutions.com), Employee (kashyap.patel), EM (kunal.jadeja)",
+    "preconditions": "Signed in.",
+    "testData": {},
+    "steps": [
+      "Look at the bottom of the sidebar",
+      "Open the link"
+    ],
+    "expected": "Link visible for all roles; page opens at /whats-new and loads from GET /releases (not from the bundle).",
+    "requirementRef": "FE releaseStore.ts / releasesApi.ts",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "automationHint": "getByRole link name /what.?s new/",
+    "lastResult": "passed",
+    "actualResult": "Link present for Admin, Employee, EM (1 each). Page opens at /whats-new and fires GET /api/v1/releases?includePlanned=true → 200.",
+    "notes": "",
+    "screenshot": "reports/screenshots/2026-10-28/hardik/t1548/admin-whats-new.png"
+  },
+  {
+    "id": "TC-RELNTF-021",
+    "module": "Release Notifications",
+    "moduleCode": "RELNTF",
+    "subModule": "Release content source",
+    "taskId": "SI4-T1548",
+    "title": "Release note text is no longer shipped in the JavaScript bundle",
+    "category": "security",
+    "priority": "Medium",
+    "severity": "Major",
+    "tags": [
+      "@security"
+    ],
+    "role": "Anonymous",
+    "preconditions": "Dev frontend deployed with T1548.",
+    "testData": {
+      "probe": "Working Location column in employee lists (6.5.0 change title)"
+    },
+    "steps": [
+      "Download index.html, the main bundle and all 295 lazy chunks it references",
+      "Search them for a release-note title and for ticket ids such as SI4-T1375"
+    ],
+    "expected": "No release-note text in any JS file; the bundle only references the /releases endpoint.",
+    "requirementRef": "FE commit 0d86f73c (no notes in the bundle)",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "automationHint": "curl assets; grep",
+    "lastResult": "passed",
+    "actualResult": "296 JS files scanned: 0 hits for the note title or ticket ids; main bundle contains the \"/releases\" endpoint.",
+    "notes": "",
+    "screenshot": ""
+  },
+  {
+    "id": "TC-RELNTF-022",
+    "module": "Release Notifications",
+    "moduleCode": "RELNTF",
+    "subModule": "Help & Support",
+    "taskId": "SI4-T1548",
+    "title": "Help & Support shows role-scoped guides for each role",
+    "category": "regression",
+    "priority": "Medium",
+    "severity": "Minor",
+    "tags": [
+      "@regression",
+      "@ui",
+      "@rbac"
+    ],
+    "role": "Admin (ceo@simformsolutions.com), Employee (kashyap.patel), EM (kunal.jadeja)",
+    "preconditions": "Signed in.",
+    "testData": {
+      "page": "/help"
+    },
+    "steps": [
+      "Open Help & Support as each role",
+      "Read the \"guides for you\" and \"pages covered\" counters"
+    ],
+    "expected": "Page loads and counts follow the role (Admin > EM > Employee); not affected by the empty release API.",
+    "requirementRef": "FE useHelpAccess.ts (view_all instead of role name)",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "automationHint": "read stat tiles",
+    "lastResult": "passed",
+    "actualResult": "Admin 74 guides / 22 pages; EM 49 / 16; Employee 14 / 3. All pages load fully.",
+    "notes": "",
+    "screenshot": "reports/screenshots/2026-10-28/hardik/t1548/employee-help.png"
+  },
+  {
+    "id": "TC-RELNTF-023",
+    "module": "Release Notifications",
+    "moduleCode": "RELNTF",
+    "subModule": "Help & Support",
+    "taskId": "SI4-T1548",
+    "title": "No bare dash / N-A / null on What's New, Help and the bell for any role",
+    "category": "regression",
+    "priority": "Low",
+    "severity": "Minor",
+    "tags": [
+      "@regression",
+      "@ui",
+      "@empty-state"
+    ],
+    "role": "Admin (ceo@simformsolutions.com), Employee (kashyap.patel), EM (kunal.jadeja)",
+    "preconditions": "Release API returns [].",
+    "testData": {
+      "forbidden": [
+        "-",
+        "—",
+        "N/A",
+        "null",
+        "undefined",
+        "NaN"
+      ]
+    },
+    "steps": [
+      "Read every text line on /whats-new, /help and the bell What's New tab",
+      "Look for lines that are only a dash or N/A/null"
+    ],
+    "expected": "Missing values are readable words.",
+    "requirementRef": "Project empty-data convention",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "automationHint": "innerText split lines; regex",
+    "lastResult": "passed",
+    "actualResult": "0 bare tokens on all three screens for all three roles. Empty states use words (\"You're up to date\", \"No release notes found\").",
+    "notes": "",
+    "screenshot": "reports/screenshots/2026-10-28/hardik/t1548/em-whats-new-search-no-match.png"
+  },
+  {
+    "id": "TC-RELNTF-024",
+    "module": "Release Notifications",
+    "moduleCode": "RELNTF",
+    "subModule": "Notification bell",
+    "taskId": "SI4-T1548",
+    "title": "Bell \"What's New\" tab falls back to a readable message when no notes load",
+    "category": "functional",
+    "priority": "Low",
+    "severity": "Minor",
+    "tags": [
+      "@functional",
+      "@ui",
+      "@empty-state"
+    ],
+    "role": "Admin (ceo@simformsolutions.com), Employee (kashyap.patel), EM (kunal.jadeja)",
+    "preconditions": "GET /releases returns [].",
+    "testData": {},
+    "steps": [
+      "Click the bell",
+      "Open the \"What's New\" tab"
+    ],
+    "expected": "Readable empty message and a link to the full page; no error, no badge.",
+    "requirementRef": "FE WhatsNewPanel.tsx",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "automationHint": "getByRole tab What's New",
+    "lastResult": "passed",
+    "actualResult": "\"You're up to date – New features and fixes for your pages will appear here.\" + \"View What's New & History\". No unseen badge.",
+    "notes": "While content is missing this message is technically misleading, but it is readable; covered by BUG-T1548-01.",
+    "screenshot": "reports/screenshots/2026-10-28/hardik/t1548/admin-bell-whats-new-tab.png"
+  },
+  {
+    "id": "TC-RELNTF-025",
+    "module": "Release Notifications",
+    "moduleCode": "RELNTF",
+    "subModule": "Notification bell",
+    "taskId": "SI4-T1548",
+    "title": "Existing notifications still show title, body, time and link icon",
+    "category": "regression",
+    "priority": "Medium",
+    "severity": "Major",
+    "tags": [
+      "@regression",
+      "@ui"
+    ],
+    "role": "EM (kunal.jadeja)",
+    "preconditions": "EM has many unread notifications (298).",
+    "testData": {},
+    "steps": [
+      "Click the bell",
+      "Look at the Notifications tab"
+    ],
+    "expected": "Items with a body still show the body line (only empty bodies are hidden); unread dot and redirect arrow present.",
+    "requirementRef": "FE NotificationItem.tsx {body && …}",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "automationHint": "count body paragraphs",
+    "lastResult": "passed",
+    "actualResult": "Opportunity \"New position …\" items show title, 2-line body, time, red unread dot and ↗ link. API: 0 items with empty body for all three users.",
+    "notes": "",
+    "screenshot": "reports/screenshots/2026-10-28/hardik/t1548/em-bell.png"
+  },
+  {
+    "id": "TC-RELNTF-026",
+    "module": "Release Notifications",
+    "moduleCode": "RELNTF",
+    "subModule": "Notification bell",
+    "taskId": "SI4-T1548",
+    "title": "Bell and tabs have accessible names",
+    "category": "accessibility",
+    "priority": "Low",
+    "severity": "Minor",
+    "tags": [
+      "@a11y"
+    ],
+    "role": "EM (kunal.jadeja)",
+    "preconditions": "Signed in.",
+    "testData": {},
+    "steps": [
+      "Read the bell button aria-label",
+      "Open it and list role=tab items",
+      "On /whats-new, read the filter and search names"
+    ],
+    "expected": "Bell names the unread count; tabs have names; filters are named comboboxes; page has one h1.",
+    "requirementRef": "FE labels MODULE_FILTER_ARIA / TYPE_FILTER_ARIA / SEARCH_ARIA",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "automationHint": "getByRole queries",
+    "lastResult": "passed",
+    "actualResult": "Bell aria-label \"298 unread notifications\"; tabs \"Notifications 99+\", \"What's New\"; combobox \"Filter by page\" and \"Filter by type of change\", searchbox \"Search release notes\"; h1 \"What's New\".",
+    "notes": "",
+    "screenshot": ""
+  },
+  {
+    "id": "TC-RELNTF-027",
+    "module": "Release Notifications",
+    "moduleCode": "RELNTF",
+    "subModule": "Release announcement job",
+    "taskId": "SI4-T1548",
+    "title": "Release announcement job is registered and labelled in the Job Scheduler",
+    "category": "functional",
+    "priority": "Medium",
+    "severity": "Minor",
+    "tags": [
+      "@functional",
+      "@ui",
+      "@api"
+    ],
+    "role": "Admin (ceo@simformsolutions.com)",
+    "preconditions": "Signed in as Admin.",
+    "testData": {
+      "endpoint": "GET /sync-queue/cron-runs/summary",
+      "page": "/admin/job-queue-scheduler"
+    },
+    "steps": [
+      "GET cron-runs/summary",
+      "Open Job Scheduler → Scheduled Jobs → \"All Jobs\" dropdown"
+    ],
+    "expected": "release-announcement listed every 15 minutes; dropdown shows \"New Release Notifications\".",
+    "requirementRef": "BE cron.constants.ts; FE job-queue-scheduler/labels.ts",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "automationHint": "find jobName in summary",
+    "lastResult": "passed",
+    "actualResult": "Summary: {\"jobName\":\"release-announcement\",\"cronExpression\":\"*/15 * * * *\",\"lastRun\":null}. Dropdown option \"New Release Notifications\" present.",
+    "notes": "lastRun is null: it has never run (see next case).",
+    "screenshot": "reports/screenshots/2026-10-28/hardik/t1548/admin-scheduler-jobs-dropdown.png"
+  },
+  {
+    "id": "TC-RELNTF-028",
+    "module": "Release Notifications",
+    "moduleCode": "RELNTF",
+    "subModule": "Release announcement job",
+    "taskId": "SI4-T1548",
+    "title": "Manual \"run now\" honours the cron switches and sends nothing while they are off",
+    "category": "functional",
+    "priority": "Medium",
+    "severity": "Major",
+    "tags": [
+      "@functional",
+      "@api"
+    ],
+    "role": "Admin (ceo@simformsolutions.com)",
+    "preconditions": "feature.cron.enabled = false (global), feature.cron.releaseAnnouncement.enabled = true on dev.",
+    "testData": {
+      "endpoint": "POST /sync-queue/cron-runs/release-announcement/run"
+    },
+    "steps": [
+      "POST run as Admin",
+      "Wait 20 s",
+      "GET cron-runs?jobName=release-announcement",
+      "GET /notifications"
+    ],
+    "expected": "202 accepted; job is skipped by the global switch, so no run row and no notification are created.",
+    "requirementRef": "BE abstract-cron-job.ts:225 (global flag)",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "automationHint": "post then poll runs",
+    "lastResult": "passed",
+    "actualResult": "202 \"Cron job triggered; poll the run list for its outcome\". After 20 s: 0 runs, no release notification. Unknown job name → 404 \"No scheduled job exists with that name\".",
+    "notes": "No cron job has ever run on dev (all 15 have lastRun null) because feature.cron.enabled is false.",
+    "screenshot": "reports/screenshots/2026-10-28/hardik/t1548/admin-scheduler.png"
+  },
+  {
+    "id": "TC-RELNTF-029",
+    "module": "Release Notifications",
+    "moduleCode": "RELNTF",
+    "subModule": "Release announcement job",
+    "taskId": "SI4-T1548",
+    "title": "Only Admin can see or trigger scheduled jobs",
+    "category": "security",
+    "priority": "High",
+    "severity": "Major",
+    "tags": [
+      "@security",
+      "@api",
+      "@rbac"
+    ],
+    "role": "Employee (kashyap.patel), EM (kunal.jadeja)",
+    "preconditions": "Signed in as Employee, then EM.",
+    "testData": {
+      "calls": [
+        "GET /sync-queue/cron-runs/summary",
+        "POST /sync-queue/cron-runs/release-announcement/run"
+      ]
+    },
+    "steps": [
+      "Call both as Employee",
+      "Call both as EM"
+    ],
+    "expected": "403 for both roles; nobody but Admin can fire a company-wide announcement.",
+    "requirementRef": "cron.controller.ts @CheckAbility(READ, SCHEDULER)",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "automationHint": "expect 403",
+    "lastResult": "passed",
+    "actualResult": "All four calls: 403 {\"code\":\"AUTH_004\",\"message\":\"Access forbidden\"}.",
+    "notes": "",
+    "screenshot": ""
+  },
+  {
+    "id": "TC-RELNTF-030",
+    "module": "Release Notifications",
+    "moduleCode": "RELNTF",
+    "subModule": "Release notification",
+    "taskId": "SI4-T1548",
+    "title": "In-app notification text is \"New release is live – see what’s new\" with no body line",
+    "category": "functional",
+    "priority": "High",
+    "severity": "Major",
+    "tags": [
+      "@functional",
+      "@notification"
+    ],
+    "role": "Admin (ceo@simformsolutions.com), Employee (kashyap.patel), EM (kunal.jadeja)",
+    "preconditions": "A new released version exists after the baseline run; release-announcement job has run.",
+    "testData": {},
+    "steps": [
+      "Open the bell after a release is announced"
+    ],
+    "expected": "Title exactly \"New release is live – see what’s new\", empty body, body line not rendered in the bell.",
+    "requirementRef": "BE release-announcement.service.ts / notification-content.service.ts buildReleasePublishedContent",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "automationHint": "GET /notifications; filter eventType=notification.release.published",
+    "lastResult": "blocked",
+    "actualResult": "No release notification exists for any of the 3 users (eventTypes seen: allocation_ticket.period_cancelled, employee.roles_updated, opportunity.position_added). Job never ran.",
+    "notes": "Blocked: the job cannot produce a notification on dev. (1) feature.cron.enabled is false, so every run is skipped; (2) even if it ran, it would fail because releases.enc.json is missing (BUG-T1548-01). Turning on the global cron flag would also start 14 other jobs (Zoho sync, allocation changes, etc.), so it was not done.",
+    "screenshot": ""
+  },
+  {
+    "id": "TC-RELNTF-031",
+    "module": "Release Notifications",
+    "moduleCode": "RELNTF",
+    "subModule": "Release notification",
+    "taskId": "SI4-T1548",
+    "title": "Clicking the release notification opens What's New",
+    "category": "functional",
+    "priority": "High",
+    "severity": "Major",
+    "tags": [
+      "@functional",
+      "@notification"
+    ],
+    "role": "Admin (ceo@simformsolutions.com), Employee (kashyap.patel), EM (kunal.jadeja)",
+    "preconditions": "A new released version exists after the baseline run; release-announcement job has run.",
+    "testData": {},
+    "steps": [
+      "Click the release notification in the bell"
+    ],
+    "expected": "Click navigates to /whats-new for every role.",
+    "requirementRef": "BE release-announcement.service.ts / notification-content.service.ts buildReleasePublishedContent",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "automationHint": "GET /notifications; filter eventType=notification.release.published",
+    "lastResult": "blocked",
+    "actualResult": "No release notification exists for any of the 3 users (eventTypes seen: allocation_ticket.period_cancelled, employee.roles_updated, opportunity.position_added). Job never ran.",
+    "notes": "Blocked: the job cannot produce a notification on dev. (1) feature.cron.enabled is false, so every run is skipped; (2) even if it ran, it would fail because releases.enc.json is missing (BUG-T1548-01). Turning on the global cron flag would also start 14 other jobs (Zoho sync, allocation changes, etc.), so it was not done.",
+    "screenshot": ""
+  },
+  {
+    "id": "TC-RELNTF-032",
+    "module": "Release Notifications",
+    "moduleCode": "RELNTF",
+    "subModule": "Release notification",
+    "taskId": "SI4-T1548",
+    "title": "Release notification read / unread state",
+    "category": "functional",
+    "priority": "High",
+    "severity": "Major",
+    "tags": [
+      "@functional",
+      "@notification"
+    ],
+    "role": "Admin (ceo@simformsolutions.com), Employee (kashyap.patel), EM (kunal.jadeja)",
+    "preconditions": "A new released version exists after the baseline run; release-announcement job has run.",
+    "testData": {},
+    "steps": [
+      "Note unread count",
+      "Click the release notification",
+      "Check count and dot"
+    ],
+    "expected": "Shows unread dot; clicking or \"mark all read\" marks it read and lowers the count by 1.",
+    "requirementRef": "BE release-announcement.service.ts / notification-content.service.ts buildReleasePublishedContent",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "automationHint": "GET /notifications; filter eventType=notification.release.published",
+    "lastResult": "blocked",
+    "actualResult": "No release notification exists for any of the 3 users (eventTypes seen: allocation_ticket.period_cancelled, employee.roles_updated, opportunity.position_added). Job never ran.",
+    "notes": "Blocked: the job cannot produce a notification on dev. (1) feature.cron.enabled is false, so every run is skipped; (2) even if it ran, it would fail because releases.enc.json is missing (BUG-T1548-01). Turning on the global cron flag would also start 14 other jobs (Zoho sync, allocation changes, etc.), so it was not done.",
+    "screenshot": ""
+  },
+  {
+    "id": "TC-RELNTF-033",
+    "module": "Release Notifications",
+    "moduleCode": "RELNTF",
+    "subModule": "Release notification",
+    "taskId": "SI4-T1548",
+    "title": "Release email: subject \"SimERP – New release is live\" from \"SimERP\" with a \"See what's new\" button",
+    "category": "functional",
+    "priority": "High",
+    "severity": "Major",
+    "tags": [
+      "@functional",
+      "@notification"
+    ],
+    "role": "Admin (ceo@simformsolutions.com), Employee (kashyap.patel), EM (kunal.jadeja)",
+    "preconditions": "A new released version exists after the baseline run; release-announcement job has run.",
+    "testData": {
+      "channel": "email"
+    },
+    "steps": [
+      "Check the inbox of a recipient"
+    ],
+    "expected": "Email subject and sender as coded; button links to <frontend>/whats-new.",
+    "requirementRef": "BE release-announcement.service.ts / notification-content.service.ts buildReleasePublishedContent",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "automationHint": "GET /notifications; filter eventType=notification.release.published",
+    "lastResult": "blocked",
+    "actualResult": "No release notification exists for any of the 3 users (eventTypes seen: allocation_ticket.period_cancelled, employee.roles_updated, opportunity.position_added). Job never ran.",
+    "notes": "Blocked: the job cannot produce a notification on dev. (1) feature.cron.enabled is false, so every run is skipped; (2) even if it ran, it would fail because releases.enc.json is missing (BUG-T1548-01). Turning on the global cron flag would also start 14 other jobs (Zoho sync, allocation changes, etc.), so it was not done.",
+    "screenshot": ""
+  },
+  {
+    "id": "TC-RELNTF-034",
+    "module": "Release Notifications",
+    "moduleCode": "RELNTF",
+    "subModule": "Release notification",
+    "taskId": "SI4-T1548",
+    "title": "Only people with content in the release are notified, once each",
+    "category": "regression",
+    "priority": "High",
+    "severity": "Major",
+    "tags": [
+      "@regression",
+      "@notification"
+    ],
+    "role": "Admin (ceo@simformsolutions.com), Employee (kashyap.patel), EM (kunal.jadeja)",
+    "preconditions": "A new released version exists after the baseline run; release-announcement job has run.",
+    "testData": {},
+    "steps": [
+      "Compare notification counts across roles after a run"
+    ],
+    "expected": "One notification per user even with several roles or several new versions in one tick; nobody notified for a release with no changes for their pages.",
+    "requirementRef": "BE release-announcement.service.ts / notification-content.service.ts buildReleasePublishedContent",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "automationHint": "GET /notifications; filter eventType=notification.release.published",
+    "lastResult": "blocked",
+    "actualResult": "No release notification exists for any of the 3 users (eventTypes seen: allocation_ticket.period_cancelled, employee.roles_updated, opportunity.position_added). Job never ran.",
+    "notes": "Blocked: the job cannot produce a notification on dev. (1) feature.cron.enabled is false, so every run is skipped; (2) even if it ran, it would fail because releases.enc.json is missing (BUG-T1548-01). Turning on the global cron flag would also start 14 other jobs (Zoho sync, allocation changes, etc.), so it was not done.",
+    "screenshot": ""
+  },
+  {
+    "id": "TC-RELNTF-035",
+    "module": "Release Notifications",
+    "moduleCode": "RELNTF",
+    "subModule": "Release notification",
+    "taskId": "SI4-T1548",
+    "title": "First run records a baseline and notifies nobody",
+    "category": "boundary",
+    "priority": "High",
+    "severity": "Major",
+    "tags": [
+      "@boundary",
+      "@notification"
+    ],
+    "role": "Admin (ceo@simformsolutions.com), Employee (kashyap.patel), EM (kunal.jadeja)",
+    "preconditions": "A new released version exists after the baseline run; release-announcement job has run.",
+    "testData": {},
+    "steps": [
+      "Enable job",
+      "Check runs details.baselinedCount"
+    ],
+    "expected": "First run writes __baseline__ + all live versions and sends nothing; the next new version is announced.",
+    "requirementRef": "BE release-announcement.service.ts / notification-content.service.ts buildReleasePublishedContent",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "automationHint": "GET /notifications; filter eventType=notification.release.published",
+    "lastResult": "blocked",
+    "actualResult": "No release notification exists for any of the 3 users (eventTypes seen: allocation_ticket.period_cancelled, employee.roles_updated, opportunity.position_added). Job never ran.",
+    "notes": "Blocked: the job cannot produce a notification on dev. (1) feature.cron.enabled is false, so every run is skipped; (2) even if it ran, it would fail because releases.enc.json is missing (BUG-T1548-01). Turning on the global cron flag would also start 14 other jobs (Zoho sync, allocation changes, etc.), so it was not done.",
+    "screenshot": ""
+  },
+  {
+    "id": "TC-RELNTF-036",
+    "module": "Release Notifications",
+    "moduleCode": "RELNTF",
+    "subModule": "Login return-to",
+    "taskId": "SI4-T1548",
+    "title": "Signed-out user opening /whats-new is sent to login and the page is remembered",
+    "category": "functional",
+    "priority": "Medium",
+    "severity": "Minor",
+    "tags": [
+      "@functional",
+      "@ui"
+    ],
+    "role": "Anonymous → Employee (kashyap.patel)",
+    "preconditions": "Fresh browser, signed out.",
+    "testData": {
+      "url": "/whats-new"
+    },
+    "steps": [
+      "Open https://simerp-dev.simform.solutions/whats-new signed out"
+    ],
+    "expected": "Redirect to /login; sessionStorage login_return_to = \"/whats-new\".",
+    "requirementRef": "FE LoginPage.tsx rememberLoginReturnTo",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "automationHint": "sessionStorage.getItem(\"login_return_to\")",
+    "lastResult": "passed",
+    "actualResult": "URL /login; login_return_to = \"/whats-new\".",
+    "notes": "",
+    "screenshot": "reports/screenshots/2026-10-28/hardik/t1548/employee-signed-out-whats-new.png"
+  },
+  {
+    "id": "TC-RELNTF-037",
+    "module": "Release Notifications",
+    "moduleCode": "RELNTF",
+    "subModule": "Login return-to",
+    "taskId": "SI4-T1548",
+    "title": "After sign-in the user lands on the remembered page (release email link flow)",
+    "category": "functional",
+    "priority": "Medium",
+    "severity": "Minor",
+    "tags": [
+      "@functional",
+      "@ui"
+    ],
+    "role": "Employee (kashyap.patel)",
+    "preconditions": "Return-to stored. Microsoft SSO cannot be used with test accounts, so the LoginPage hand-over was exercised by opening /login while the session is active (same code path).",
+    "testData": {
+      "values": [
+        "/whats-new",
+        "/help?module=profile"
+      ]
+    },
+    "steps": [
+      "Set login_return_to",
+      "Open /login",
+      "Note final URL and storage"
+    ],
+    "expected": "Lands on the remembered page (query kept); key removed after use.",
+    "requirementRef": "FE LoginPage.tsx consumeLoginReturnTo",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "automationHint": "expect URL",
+    "lastResult": "passed",
+    "actualResult": "/whats-new → landed /whats-new; /help?module=profile → landed /help?module=profile; key null afterwards both times.",
+    "notes": "The dev-only \"Login with Credentials\" page (DevLoginPage.tsx:55) does not use the return-to key: after a credentials login the user lands on /profile and the key stays in storage. Dev-only tooling, not reported as a bug.",
+    "screenshot": "reports/screenshots/2026-10-28/hardik/t1548/employee-login-return-to-whats-new.png"
+  },
+  {
+    "id": "TC-RELNTF-038",
+    "module": "Release Notifications",
+    "moduleCode": "RELNTF",
+    "subModule": "Login return-to",
+    "taskId": "SI4-T1548",
+    "title": "Off-site or loop return-to values are ignored",
+    "category": "security",
+    "priority": "High",
+    "severity": "Major",
+    "tags": [
+      "@security",
+      "@ui"
+    ],
+    "role": "Employee (kashyap.patel)",
+    "preconditions": "Signed in.",
+    "testData": {
+      "values": [
+        "//evil.example.com/phish",
+        "/\\evil.example.com",
+        "https://evil.example.com/",
+        "/login"
+      ]
+    },
+    "steps": [
+      "For each value: set login_return_to, open /login, read final URL"
+    ],
+    "expected": "Never leaves simerp-dev; lands on the default page (/profile); key cleared.",
+    "requirementRef": "FE route-utils.ts isReturnablePath",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "automationHint": "expect URL host unchanged",
+    "lastResult": "passed",
+    "actualResult": "All four values → https://simerp-dev.simform.solutions/profile; key cleared each time. No open redirect.",
+    "notes": "",
+    "screenshot": "reports/screenshots/2026-10-28/hardik/t1548/employee-login-return-to-offsite-blocked.png"
+  }
+]

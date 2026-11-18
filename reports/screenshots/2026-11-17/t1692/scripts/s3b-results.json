@@ -1,0 +1,38 @@
+[
+ {
+  "area": "3.teams-trigger",
+  "name": "CANDIDATE WITHDRAWN: Rushil Thakor (ANDROID)",
+  "pass": true,
+  "detail": "[200,\"SUCCESS\",\"Nomination removed successfully\",\"\\\"\\\"\"]"
+ },
+ {
+  "area": "3.teams-trigger",
+  "name": "INTERVIEW SCHEDULED: Neel Rathod round (yesterday 14:30 IST, back-dated)",
+  "pass": true,
+  "detail": "[201,\"OPP_051\",\"Interview Round added successfully\",\"\\\"\\\"\"]"
+ },
+ {
+  "area": "3.teams-trigger",
+  "name": "ROUND RESULT: Neel Rathod back-dated round Cleared (feedback text must not appear on card)",
+  "pass": true,
+  "detail": "[200,\"SUCCESS\",\"Interview Round updated successfully\",\"\\\"\\\"\"]"
+ },
+ {
+  "area": "3.teams-trigger",
+  "name": "CANDIDATE SELECTED: Neel Rathod",
+  "pass": true,
+  "detail": "[200,\"SUCCESS\",\"Candidate selected successfully\",\"\\\"\\\"\"]"
+ },
+ {
+  "area": "3.teams-trigger",
+  "name": "OPPORTUNITY STATUS CHANGED: OPP-0378 (QA+ANDROID → now QA only) -> On Hold",
+  "pass": true,
+  "detail": "[200,\"SUCCESS\",\"Opportunity status changed successfully\",\"\\\"\\\"\"]"
+ },
+ {
+  "area": "3.teams-trigger",
+  "name": "OPPORTUNITY STATUS CHANGED: OPP-0378 -> Open",
+  "pass": true,
+  "detail": "[200,\"SUCCESS\",\"Opportunity status changed successfully\",\"\\\"\\\"\"]"
+ }
+]

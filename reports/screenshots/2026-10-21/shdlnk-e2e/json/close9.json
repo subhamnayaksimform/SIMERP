@@ -1,0 +1,26 @@
+{
+  "023": {
+    "status": 200,
+    "body": {
+      "code": "SUCCESS",
+      "message": "Ticket closed successfully",
+      "data": {
+        "publicId": "c7fc4ffc-ae90-40b1-bd2d-1e12db51e982",
+        "ticketNumber": "NA-0408",
+        "status": "CLOSED"
+      }
+    }
+  },
+  "021": {
+    "status": 200,
+    "body": {
+      "code": "SUCCESS",
+      "message": "Ticket closed successfully",
+      "data": {
+        "publicId": "a63994ba-52d1-4488-b42a-465f224be297",
+        "ticketNumber": "DA-0134",
+        "status": "CLOSED"
+      }
+    }
+  }
+}

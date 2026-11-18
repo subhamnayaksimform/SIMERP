@@ -1,0 +1,70 @@
+{
+  "cancel Urvashi Saxena": {
+    "status": 201,
+    "body": {
+      "code": "ALLOCATION_TICKET_169",
+      "message": "Upcoming allocation cancelled successfully",
+      "data": {
+        "ticket": {
+          "publicId": "c926b247-f59a-481f-81ce-b4540dac046b",
+          "ticketNumber": "DA-0170",
+          "ticketType": "DEALLOCATE_ALLOCATION",
+          "status": "APPROVED"
+        },
+        "isAllocationCancelled": true
+      }
+    }
+  },
+  "cancel Vihaan Patil": {
+    "status": 201,
+    "body": {
+      "code": "ALLOCATION_TICKET_169",
+      "message": "Upcoming allocation cancelled successfully",
+      "data": {
+        "ticket": {
+          "publicId": "f9ce5858-e9dd-47ba-8dc3-f792b6f75ed4",
+          "ticketNumber": "DA-0171",
+          "ticketType": "DEALLOCATE_ALLOCATION",
+          "status": "APPROVED"
+        },
+        "isAllocationCancelled": true
+      }
+    }
+  },
+  "close NA-0442": {
+    "status": 200,
+    "body": {
+      "code": "SUCCESS",
+      "message": "Ticket closed successfully",
+      "data": {
+        "publicId": "0513a0c0-d525-40bb-964c-ace767eca552",
+        "ticketNumber": "NA-0442",
+        "status": "CLOSED"
+      }
+    }
+  },
+  "close NA-0444": {
+    "status": 200,
+    "body": {
+      "code": "SUCCESS",
+      "message": "Ticket closed successfully",
+      "data": {
+        "publicId": "7d6cadd9-63c9-471a-95b9-9bee00ca61ab",
+        "ticketNumber": "NA-0444",
+        "status": "CLOSED"
+      }
+    }
+  },
+  "close DA-0169": {
+    "status": 200,
+    "body": {
+      "code": "SUCCESS",
+      "message": "Ticket closed successfully",
+      "data": {
+        "publicId": "26b3bee6-b520-4333-8fbd-17cecaf2d692",
+        "ticketNumber": "DA-0169",
+        "status": "CLOSED"
+      }
+    }
+  }
+}

@@ -1,0 +1,114 @@
+{
+  "results": [
+    {
+      "id": "board-read-roles",
+      "ok": true,
+      "vihaan.chatterjee": [
+        200,
+        200
+      ],
+      "ceo": [
+        200,
+        200
+      ],
+      "tarun.sharma": [
+        200,
+        404
+      ],
+      "kunal.jadeja": [
+        200,
+        404
+      ],
+      "sudhansu.patel": [
+        200,
+        404
+      ],
+      "kashyap.patel": [
+        200,
+        404
+      ],
+      "hardik.trivedi": [
+        200,
+        404
+      ],
+      "errs": []
+    },
+    {
+      "id": "ui-board-list",
+      "ok": true,
+      "bad": [],
+      "rows": 8,
+      "errs": []
+    },
+    {
+      "id": "ui-board-kanban",
+      "ok": true,
+      "errs": []
+    },
+    {
+      "id": "ui-detail",
+      "ok": true,
+      "bad": [
+        {
+          "t": "-",
+          "ctx": "Gunjan Rawat20%Sr. Software EngineerJAVA100%100% Remaining of 100%Released-"
+        },
+        {
+          "t": "-",
+          "ctx": "Mehul Pandya20%Team ManagerJAVA100%100% Remaining of 100%Rejected by Clienton 04/11/2026-"
+        },
+        {
+          "t": "-",
+          "ctx": "Kashyap Rao20%Sr. Software EngineerJAVA93%100% Remaining of 100%Released-"
+        },
+        {
+          "t": "-",
+          "ctx": "Karan Modi20%Sr. Software EngineerJAVA100%35% Remaining of 100%Rejected by PMOon 04/11/2026-"
+        },
+        {
+          "t": "-",
+          "ctx": "Gunjan Rawat20%Sr. Software EngineerJAVA100%100% Remaining of 100%Released-"
+        },
+        {
+          "t": "-",
+          "ctx": "Varsha Limbachiya20%Sr. Software EngineerJAVA100%75% Remaining of 100%Released-"
+        },
+        {
+          "t": "-",
+          "ctx": "Sachin Mistry20%Sr. Software EngineerJAVA100%100% Remaining of 100%Released-"
+        },
+        {
+          "t": "-",
+          "ctx": "Kabir Reddy20%Sr. Software EngineerJAVA50%50% Remaining of 100%Released-"
+        }
+      ],
+      "hasRejected": true,
+      "hasReleased": true,
+      "seatsText": [
+        "0 / 3 filled",
+        "0 / 1 filled"
+      ],
+      "errs": []
+    },
+    {
+      "id": "ui-picker",
+      "ok": true,
+      "t": "Candidate Shortlist | Pick up to 100 employees. Picks beyond the empty openings get a new opening each on this position. | Position Title: | FR Java A | Tech Stack: | Java | Search candidates | Department | JAVA | Select | \t | Employee | \t | Employee details | \t | UP System | \t | Department | \t | Designation | \t | Skills | \t | Availability % | \t | Remaining Allocation | \tActive Opportunities\tCurrent Projects | Rejected for this position earlier, so they can't be shortlisted for it again. | \t | M",
+      "errs": []
+    },
+    {
+      "id": "ui-employee-profile-history",
+      "ok": true,
+      "cell": "-",
+      "errs": []
+    },
+    {
+      "id": "ui-whats-new",
+      "ok": true,
+      "hasInterview": false,
+      "snippet": [],
+      "errs": []
+    }
+  ],
+  "errs": []
+}

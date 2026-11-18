@@ -1,0 +1,18 @@
+{
+  "actor": "bhumi.chauhan",
+  "T0": "2026-10-20T12:51:43.715Z",
+  "T1": "2026-10-20T12:51:44.593Z",
+  "method": "PATCH",
+  "path": "/allocation-tickets/14bab8ce-94de-4116-a6ec-926ce8c2c618/approve",
+  "req": {
+    "remarks": "QA SI4-T1527 retest: PMO approval"
+  },
+  "res": {
+    "status": 409,
+    "body": {
+      "message": "This approval has already been recorded for the ticket",
+      "error": "Conflict",
+      "statusCode": 409
+    }
+  }
+}

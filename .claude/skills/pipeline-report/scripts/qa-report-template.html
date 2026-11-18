@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>QA Report — SIM ERP Employee Module</title>
+<meta name="description" content="Playwright test execution report for SIM ERP Employee Details module — 69 tests, Chromium">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#EDF1F7;--surface:#fff;--surface-2:#F3F6FB;--border:#D4DCE8;--border-2:#E8EDF5;
+  --text:#0D1829;--text-2:#5A6478;--text-3:#8A94A6;
+  --accent:#0B7285;--accent-tint:#D4EFF5;
+  --pass:#15803D;--pass-bg:#DCFCE7;
+  --flaky:#B45309;--flaky-bg:#FEF3C7;
+  --fail:#B91C1C;--fail-bg:#FEE2E2;
+  --skip:#6B7280;--skip-bg:#F3F4F6;
+  --font-ui:system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;
+  --font-mono:'JetBrains Mono','Cascadia Code','Fira Code','Consolas',ui-monospace,monospace;
+  --r:6px;--sh:0 1px 3px rgba(13,24,41,.08),0 1px 2px rgba(13,24,41,.05);
+  --sh-md:0 4px 12px rgba(13,24,41,.12),0 2px 4px rgba(13,24,41,.06);
+}
+html{font-size:14px}
+body{font-family:var(--font-ui);background:var(--bg);color:var(--text);line-height:1.5;min-height:100vh}
+
+/* header */
+.hdr{background:var(--text);color:#E8EDF5;padding:0 24px}
+.hdr-inner{max-width:1280px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:18px 0 16px;border-bottom:1px solid rgba(255,255,255,.1)}
+.hdr-brand{display:flex;flex-direction:column;gap:2px}
+.brand-eye{font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#56CCE2}
+.brand-ttl{font-size:20px;font-weight:800;letter-spacing:-.02em;color:#EDF1F7}
+.hdr-meta{display:flex;gap:24px;align-items:center;font-size:12px;color:#8A9EBB}
+.hdr-meta span{display:flex;gap:6px;align-items:center}
+.meta-dot{width:6px;height:6px;border-radius:50%;background:#56CCE2;flex-shrink:0}
+
+/* summary */
+.sum-wrap{max-width:1280px;margin:0 auto;padding:20px 24px}
+.sum-row{display:grid;grid-template-columns:auto 1fr;gap:24px;align-items:center}
+.donut-wrap{display:flex;align-items:center;gap:20px}
+.donut-labels{display:flex;flex-direction:column;gap:7px}
+.dl{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--text-2)}
+.dl .sw{width:8px;height:8px;border-radius:2px;flex-shrink:0}
+.dl strong{font-weight:700;color:var(--text);font-variant-numeric:tabular-nums}
+.stat-cards{display:flex;gap:12px;flex-wrap:wrap}
+.stat-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:14px 20px;display:flex;flex-direction:column;gap:2px;box-shadow:var(--sh);min-width:120px}
+.sc-lbl{font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--text-3)}
+.sc-val{font-size:26px;font-weight:800;letter-spacing:-.02em;font-variant-numeric:tabular-nums;line-height:1.1}
+.sc-val.vp{color:var(--pass)}.sc-val.vf{color:var(--flaky)}.sc-val.vx{color:var(--fail)}.sc-val.vt{color:var(--text)}
+.sc-sub{font-size:11px;color:var(--text-3)}
+
+/* filter bar */
+.fbar-wrap{background:var(--surface);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:20;box-shadow:var(--sh)}
+.fbar{max-width:1280px;margin:0 auto;padding:10px 24px;display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.sbox{display:flex;align-items:center;gap:8px;background:var(--surface-2);border:1px solid var(--border);border-radius:var(--r);padding:6px 10px;flex:0 0 280px}
+.sbox input{border:none;background:transparent;outline:none;font:inherit;font-size:13px;color:var(--text);width:100%}
+.sbox input::placeholder{color:var(--text-3)}
+.sico{color:var(--text-3);flex-shrink:0;width:14px;height:14px}
+.flbl{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--text-3);white-space:nowrap}
+.pgrp{display:flex;gap:6px;flex-wrap:wrap}
+.pill{border:1px solid var(--border);border-radius:100px;padding:3px 10px;font-size:12px;font-weight:500;color:var(--text-2);background:var(--surface-2);cursor:pointer;transition:all .12s;user-select:none;white-space:nowrap}
+.pill:hover{border-color:var(--accent);color:var(--accent)}
+.pill.active{background:var(--accent);border-color:var(--accent);color:#fff;font-weight:600}
+.pill .pc{margin-left:4px;opacity:.75;font-size:11px}
+.fdiv{width:1px;height:24px;background:var(--border);flex-shrink:0}
+
+/* table */
+.main{max-width:1280px;margin:0 auto;padding:20px 24px 48px}
+.tbl-hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
+.tbl-cnt{font-size:12px;color:var(--text-2)}
+.tbl-cnt strong{color:var(--text)}
+table.rt{width:100%;border-collapse:collapse;background:var(--surface);border-radius:8px;overflow:hidden;box-shadow:var(--sh);border:1px solid var(--border)}
+table.rt thead th{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text-3);background:var(--surface-2);padding:10px 12px;text-align:left;border-bottom:1px solid var(--border);white-space:nowrap;cursor:pointer;user-select:none}
+table.rt thead th:hover{color:var(--text)}
+.sa{opacity:.35;margin-left:4px}
+th.sorted .sa{opacity:1;color:var(--accent)}
+table.rt tbody tr.tr{border-bottom:1px solid var(--border-2);cursor:pointer;transition:background .1s}
+table.rt tbody tr.tr:hover{background:#F7FAFB}
+table.rt tbody tr.tr.exp{background:#EFF5F8}
+table.rt tbody tr.dr{border-bottom:1px solid var(--border);display:none}
+table.rt tbody tr.dr.open{display:table-row}
+td{padding:11px 12px;vertical-align:middle}
+.td-id{font-family:var(--font-mono);font-size:12px;font-weight:600;color:var(--accent);white-space:nowrap}
+.td-ttl{font-size:13px;color:var(--text);max-width:420px}
+.ttl-txt{display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden}
+.cat-b{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;padding:2px 7px;border-radius:3px}
+.cat-smoke{background:#E0E7FF;color:#3730A3}
+.cat-functional{background:#DBEAFE;color:#1D4ED8}
+.cat-negative{background:#FCE7F3;color:#9D174D}
+.cat-boundary{background:#FEF3C7;color:#92400E}
+.cat-security{background:#FEE2E2;color:#991B1B}
+.cat-regression{background:#F3E8FF;color:#6B21A8}
+.cat-a11y{background:#DCFCE7;color:#166534}
+.cat-performance{background:#FFF7ED;color:#9A3412}
+.cat-other{background:#F3F4F6;color:#374151}
+.pd{width:8px;height:8px;border-radius:50%;display:inline-block}
+.pc{background:#EF4444}.ph{background:#F97316}.pm{background:#EAB308}.pl{background:#22C55E}
+.sb{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;padding:3px 8px;border-radius:100px;white-space:nowrap}
+.s-passed{background:var(--pass-bg);color:var(--pass)}
+.s-flaky{background:var(--flaky-bg);color:var(--flaky)}
+.s-failed{background:var(--fail-bg);color:var(--fail)}
+.s-skipped{background:var(--skip-bg);color:var(--skip)}
+.sdot{width:6px;height:6px;border-radius:50%;background:currentColor}
+.rb{display:inline-flex;align-items:center;gap:4px;font-size:10px;font-weight:600;padding:2px 7px;border-radius:3px;background:var(--flaky-bg);color:var(--flaky)}
+.dur-v{font-family:var(--font-mono);font-size:12px;color:var(--text-2)}
+.dur-bw{margin-top:3px;height:3px;background:var(--border-2);border-radius:2px;overflow:hidden}
+.dur-b{height:100%;border-radius:2px;background:var(--accent);opacity:.45}
+.exp-btn{background:none;border:none;cursor:pointer;padding:4px;color:var(--text-3);border-radius:4px;display:flex;align-items:center;justify-content:center;transition:all .12s}
+.exp-btn:hover{background:var(--border-2);color:var(--accent)}
+.exp-btn svg{transition:transform .2s}
+.exp .exp-btn svg{transform:rotate(180deg)}
+
+/* detail */
+.dpanel{background:var(--surface-2);padding:20px 24px 24px;border-top:2px solid var(--accent-tint)}
+.dgrid{display:grid;grid-template-columns:1fr 1fr;gap:20px 32px}
+.dfull{grid-column:1/-1}
+.dsec{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text-3);margin-bottom:8px}
+.dsec.err{color:var(--fail)}
+.slist{list-style:none;display:flex;flex-direction:column;gap:5px}
+.slist li{display:grid;grid-template-columns:22px 1fr;gap:8px;font-size:12.5px;color:var(--text-2)}
+.snum{font-family:var(--font-mono);font-size:10px;font-weight:700;color:var(--accent);background:var(--accent-tint);border-radius:3px;display:flex;align-items:center;justify-content:center;height:18px;margin-top:2px;flex-shrink:0}
+.plist{list-style:none;display:flex;flex-direction:column;gap:4px}
+.plist li{font-size:12.5px;color:var(--text-2);display:flex;align-items:baseline;gap:6px}
+.plist li::before{content:'•';color:var(--text-3);flex-shrink:0}
+.etxt{font-size:12.5px;color:var(--text-2);line-height:1.55}
+.tags-r{display:flex;gap:6px;flex-wrap:wrap;margin-top:4px}
+.tag{font-family:var(--font-mono);font-size:10px;color:var(--accent);background:var(--accent-tint);padding:1px 6px;border-radius:3px}
+.ebox{background:#FFF1F1;border:1px solid #FECACA;border-radius:var(--r);padding:12px;font-family:var(--font-mono);font-size:11px;color:var(--fail);line-height:1.55;white-space:pre-wrap;word-break:break-word;max-height:160px;overflow-y:auto}
+.sswrap{margin-top:12px}
+.sswrap img{max-width:100%;border-radius:var(--r);border:1px solid var(--border);box-shadow:var(--sh-md);display:block;max-height:380px;object-fit:cover;object-position:top}
+.nores{padding:48px;text-align:center;color:var(--text-3);font-size:14px}
+.nores strong{display:block;font-size:16px;margin-bottom:4px;color:var(--text-2)}
+.footer{text-align:center;padding:24px;font-size:11px;color:var(--text-3)}
+@media(max-width:900px){
+  .sum-row{grid-template-columns:1fr}
+  .dgrid{grid-template-columns:1fr}
+  .hdr-meta{display:none}
+}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+
+<div class="hdr">
+  <div class="hdr-inner">
+    <div class="hdr-brand">
+      <span class="brand-eye">Playwright Test Report</span>
+      <span class="brand-ttl">SIM ERP — Employee Module</span>
+    </div>
+    <div class="hdr-meta">
+      <span><span class="meta-dot"></span>Chromium</span>
+      <span id="hdr-date"></span>
+      <span id="hdr-dur"></span>
+    </div>
+  </div>
+  <div class="sum-wrap">
+    <div class="sum-row">
+      <div class="donut-wrap">
+        <svg id="donut" width="84" height="84" viewBox="0 0 84 84" aria-hidden="true"></svg>
+        <div class="donut-labels" id="dlabels"></div>
+      </div>
+      <div class="stat-cards" id="scards"></div>
+    </div>
+  </div>
+</div>
+
+<div class="fbar-wrap">
+  <div class="fbar">
+    <div class="sbox">
+      <svg class="sico" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
+        <circle cx="6.5" cy="6.5" r="4.5"/><path d="M11 11l3 3"/>
+      </svg>
+      <input type="text" id="search" placeholder="Search test ID or title…" autocomplete="off" spellcheck="false">
+    </div>
+    <div class="fdiv"></div>
+    <span class="flbl">Status</span>
+    <div class="pgrp" id="spills"></div>
+    <div class="fdiv"></div>
+    <span class="flbl">Category</span>
+    <div class="pgrp" id="cpills"></div>
+  </div>
+</div>
+
+<div class="main">
+  <div class="tbl-hdr">
+    <span class="tbl-cnt" id="tcnt"></span>
+  </div>
+  <div style="overflow-x:auto">
+    <table class="rt" id="rt">
+      <thead>
+        <tr>
+          <th data-sort="id">ID <span class="sa">↕</span></th>
+          <th data-sort="title">Title <span class="sa">↕</span></th>
+          <th data-sort="category">Category <span class="sa">↕</span></th>
+          <th data-sort="priority" title="Priority">P <span class="sa">↕</span></th>
+          <th data-sort="status">Status <span class="sa">↕</span></th>
+          <th data-sort="duration">Duration <span class="sa">↕</span></th>
+          <th style="width:32px"></th>
+        </tr>
+      </thead>
+      <tbody id="tbody"></tbody>
+    </table>
+  </div>
+  <div class="nores" id="nores" style="display:none"><strong>No tests match</strong>Clear filters to see all results</div>
+</div>
+
+<div class="footer" id="footer"></div>
+
+<script>
+const REPORT_DATA = __REPORT_DATA_JSON__;
+
+function esc(s){return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;')}
+function fmtDur(ms){return ms<1000?ms+'ms':(ms/1000).toFixed(1)+'s'}
+function fmtDate(iso){const d=new Date(iso);return d.toLocaleDateString('en-IN',{day:'2-digit',month:'short',year:'numeric'})+' '+d.toLocaleTimeString('en-IN',{hour:'2-digit',minute:'2-digit'})}
+
+const {stats,tests}=REPORT_DATA;
+const maxDur=Math.max(...tests.map(t=>t.duration));
+
+document.getElementById('hdr-date').textContent=fmtDate(stats.startTime);
+document.getElementById('hdr-dur').textContent='Duration: '+fmtDur(stats.duration);
+document.getElementById('footer').textContent='Generated from Playwright run Â· '+fmtDate(stats.startTime)+' Â· SIM ERP QA Pipeline';
+
+// donut
+const STATUS_COL={passed:'#15803D',flaky:'#D97706',failed:'#DC2626',skipped:'#9CA3AF'};
+const STATUS_LBL={passed:'Passed',flaky:'Flaky',failed:'Failed',skipped:'Skipped'};
+const counts=tests.reduce((a,t)=>{a[t.status]=(a[t.status]||0)+1;return a},{});
+const total=tests.length;
+const svg=document.getElementById('donut');
+const R=33,cx=42,cy=42,sw=11,circ=2*Math.PI*R;
+let off=-circ*0.25;
+const segs=Object.entries(counts).filter(([,v])=>v>0);
+segs.forEach(([s,c])=>{
+  const dash=(c/total)*circ,gap=circ-dash;
+  const el=document.createElementNS('http://www.w3.org/2000/svg','circle');
+  el.setAttribute('cx',cx);el.setAttribute('cy',cy);el.setAttribute('r',R);
+  el.setAttribute('fill','none');el.setAttribute('stroke',STATUS_COL[s]||'#999');
+  el.setAttribute('stroke-width',sw);el.setAttribute('stroke-dasharray',dash+' '+gap);
+  el.setAttribute('stroke-dashoffset',-off);el.setAttribute('stroke-linecap','round');
+  svg.appendChild(el);off+=dash;
+});
+const ct=document.createElementNS('http://www.w3.org/2000/svg','text');
+ct.setAttribute('x',cx);ct.setAttribute('y',cy+5);ct.setAttribute('text-anchor','middle');
+ct.setAttribute('font-family','system-ui');ct.setAttribute('font-size','15');ct.setAttribute('font-weight','800');
+ct.setAttribute('fill','#E8EDF5');ct.textContent=total;svg.appendChild(ct);
+const cl=document.createElementNS('http://www.w3.org/2000/svg','text');
+cl.setAttribute('x',cx);cl.setAttribute('y',cy+18);cl.setAttribute('text-anchor','middle');
+cl.setAttribute('font-family','system-ui');cl.setAttribute('font-size','7');
+cl.setAttribute('fill','#8A9EBB');cl.textContent='TESTS';svg.appendChild(cl);
+
+const dlabels=document.getElementById('dlabels');
+segs.forEach(([s,c])=>{
+  const pct=Math.round(c/total*100);
+  dlabels.innerHTML+=`<div class="dl"><span class="sw" style="background:${STATUS_COL[s]}"></span><strong>${c}</strong>${STATUS_LBL[s]}<span style="color:var(--text-3)">(${pct}%)</span></div>`;
+});
+
+const catCounts=tests.reduce((a,t)=>{a[t.category]=(a[t.category]||0)+1;return a},{});
+const avgDur=Math.round(tests.reduce((a,t)=>a+t.duration,0)/tests.length);
+const scards=document.getElementById('scards');
+[
+  {l:'Passed',v:counts.passed||0,c:'vp'},{l:'Flaky',v:counts.flaky||0,c:'vf'},
+  {l:'Failed',v:counts.failed||0,c:'vx'},
+  {l:'Total',v:total,c:'vt',sub:Object.keys(catCounts).length+' categories'},
+  {l:'Avg Duration',v:fmtDur(avgDur),c:'vt',sub:'per test'},
+].forEach(({l,v,c,sub})=>{
+  scards.innerHTML+=`<div class="stat-card"><span class="sc-lbl">${esc(l)}</span><span class="sc-val ${c}">${esc(v)}</span>${sub?'<span class="sc-sub">'+esc(sub)+'</span>':''}</div>`;
+});
+
+let fStatus='all',fCat='all',fSearch='',sortKey='id',sortDir=1;
+
+const spills=document.getElementById('spills');
+[['all','All'],['passed','Passed'],['flaky','Flaky'],['failed','Failed']].forEach(([v,l])=>{
+  const cnt=v==='all'?total:(counts[v]||0);
+  const p=document.createElement('span');
+  p.className='pill'+(v==='all'?' active':'');p.dataset.val=v;
+  p.innerHTML=l+(cnt?'<span class="pc">'+cnt+'</span>':'');
+  p.addEventListener('click',()=>{fStatus=v;document.querySelectorAll('#spills .pill').forEach(x=>x.classList.toggle('active',x.dataset.val===v));render()});
+  spills.appendChild(p);
+});
+
+const cats=['all',...Object.keys(catCounts).sort()];
+const cpills=document.getElementById('cpills');
+cats.forEach(v=>{
+  const cnt=v==='all'?total:(catCounts[v]||0);
+  const label=v==='a11y'?'A11y':v==='all'?'All':v.charAt(0).toUpperCase()+v.slice(1);
+  const p=document.createElement('span');
+  p.className='pill'+(v==='all'?' active':'');p.dataset.val=v;
+  p.innerHTML=label+(v!=='all'?'<span class="pc">'+cnt+'</span>':'');
+  p.addEventListener('click',()=>{fCat=v;document.querySelectorAll('#cpills .pill').forEach(x=>x.classList.toggle('active',x.dataset.val===v));render()});
+  cpills.appendChild(p);
+});
+
+document.getElementById('search').addEventListener('input',e=>{fSearch=e.target.value.toLowerCase();render()});
+
+document.querySelectorAll('[data-sort]').forEach(th=>{
+  th.addEventListener('click',()=>{
+    const k=th.dataset.sort;
+    if(sortKey===k)sortDir*=-1;else{sortKey=k;sortDir=1}
+    document.querySelectorAll('[data-sort]').forEach(h=>h.classList.toggle('sorted',h.dataset.sort===k));
+    render();
+  });
+});
+
+const PRIO_ORD={critical:0,high:1,medium:2,low:3};
+const STAT_ORD={failed:0,flaky:1,skipped:2,passed:3};
+
+function render(){
+  let filtered=tests.filter(t=>{
+    if(fStatus!=='all'&&t.status!==fStatus)return false;
+    if(fCat!=='all'&&t.category!==fCat)return false;
+    if(fSearch){const h=(t.id+' '+t.title).toLowerCase();if(!h.includes(fSearch))return false}
+    return true;
+  });
+  filtered.sort((a,b)=>{
+    if(sortKey==='status')return sortDir*((STAT_ORD[a.status]??9)-(STAT_ORD[b.status]??9));
+    if(sortKey==='priority')return sortDir*((PRIO_ORD[a.priority]??9)-(PRIO_ORD[b.priority]??9));
+    if(sortKey==='duration')return sortDir*(a.duration-b.duration);
+    return sortDir*String(a[sortKey]||'').localeCompare(String(b[sortKey]||''));
+  });
+  const tbody=document.getElementById('tbody');
+  tbody.innerHTML='';
+  document.getElementById('nores').style.display=filtered.length?'none':'block';
+  document.getElementById('tcnt').innerHTML='<strong>'+filtered.length+'</strong> of '+total+' tests';
+
+  filtered.forEach(t=>{
+    const bw=Math.round(t.duration/maxDur*100);
+    const bad=t.status==='flaky'||t.status==='failed';
+    const catLbl=t.category==='a11y'?'A11y':t.category.charAt(0).toUpperCase()+t.category.slice(1);
+    const prioC=t.priority==='critical'?'pc':t.priority==='high'?'ph':t.priority==='medium'?'pm':'pl';
+
+    const tr=document.createElement('tr');tr.className='tr';tr.dataset.id=t.id;
+    tr.innerHTML=`
+      <td class="td-id">${esc(t.id)}</td>
+      <td class="td-ttl"><span class="ttl-txt" title="${esc(t.title)}">${esc(t.title)}</span></td>
+      <td><span class="cat-b cat-${esc(t.category)}">${esc(catLbl)}</span></td>
+      <td style="text-align:center" title="${esc(t.priority)}"><span class="pd ${prioC}"></span></td>
+      <td>
+        <span class="sb s-${esc(t.status)}"><span class="sdot"></span>${esc(t.status.charAt(0).toUpperCase()+t.status.slice(1))}</span>
+        ${t.retries>0?'<span class="rb" style="margin-left:6px">↻ '+t.retries+' retry</span>':''}
+      </td>
+      <td>
+        <span class="dur-v">${esc(fmtDur(t.duration))}</span>
+        <div class="dur-bw"><div class="dur-b" style="width:${bw}%${bad?';opacity:.7;background:var(--flaky)':''}"></div></div>
+      </td>
+      <td style="text-align:center;width:32px">
+        <button class="exp-btn" aria-expanded="false" aria-label="Expand ${esc(t.id)}">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 5l5 5 5-5"/></svg>
+        </button>
+      </td>
+    `;
+
+    const td=document.createElement('tr');td.className='dr';
+    const steps=t.steps.length?t.steps.map((s,i)=>`<li><span class="snum">${i+1}</span><span>${esc(s)}</span></li>`).join(''):'<li><span class="snum">—</span><span style="color:var(--text-3)">No steps documented</span></li>';
+    const preconds=t.preconditions.length?t.preconditions.map(p=>`<li>${esc(p)}</li>`).join(''):'<li>None specified</li>';
+    const tagsHtml=t.tags?t.tags.split(',').map(g=>`<span class="tag">${esc(g.trim())}</span>`).join(''):'';
+    const errHtml=t.errorMsg?`<div class="dfull"><div class="dsec err">Error (attempt 1)</div><div class="ebox">${esc(t.errorMsg)}</div></div>`:'';
+    const ssHtml=t.screenshot?`<div class="dfull sswrap"><div class="dsec err">Screenshot at failure</div><img src="${t.screenshot}" alt="Screenshot at failure" loading="lazy"></div>`:'';
+
+    td.innerHTML=`<td colspan="7" style="padding:0">
+      <div class="dpanel">
+        <div class="dgrid">
+          <div>
+            <div class="dsec">Test Steps</div>
+            <ol class="slist">${steps}</ol>
+          </div>
+          <div>
+            <div class="dsec">Preconditions</div>
+            <ul class="plist">${preconds}</ul>
+            ${tagsHtml?'<div style="margin-top:12px"><div class="dsec">Tags</div><div class="tags-r">'+tagsHtml+'</div></div>':''}
+          </div>
+          <div class="dfull">
+            <div class="dsec">Expected Result</div>
+            <p class="etxt">${esc(t.expectedResult||'—')}</p>
+          </div>
+          ${errHtml}${ssHtml}
+        </div>
+      </div>
+    </td>`;
+
+    tr.addEventListener('click',()=>{
+      const open=td.classList.contains('open');
+      tr.classList.toggle('exp',!open);
+      td.classList.toggle('open',!open);
+      tr.querySelector('.exp-btn').setAttribute('aria-expanded',String(!open));
+    });
+    tbody.appendChild(tr);tbody.appendChild(td);
+    if(bad)tr.click();
+  });
+}
+
+render();
+</script>
+</body>
+</html>

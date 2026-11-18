@@ -1,0 +1,22 @@
+{
+  "actor": "bhumi.chauhan",
+  "T0": "2026-10-19T11:31:24.236Z",
+  "T1": "2026-10-19T11:31:25.245Z",
+  "method": "PATCH",
+  "path": "/allocation-tickets/c57310e3-4873-4c8d-a8ca-7196eb43c838/acknowledge",
+  "req": {
+    "remarks": "QA test SI4-T1527 cancel ack"
+  },
+  "res": {
+    "status": 200,
+    "body": {
+      "code": "SUCCESS",
+      "message": "De-allocation acknowledged; allocation change applied",
+      "data": {
+        "publicId": "c57310e3-4873-4c8d-a8ca-7196eb43c838",
+        "ticketNumber": "DA-0107",
+        "status": "APPROVED"
+      }
+    }
+  }
+}

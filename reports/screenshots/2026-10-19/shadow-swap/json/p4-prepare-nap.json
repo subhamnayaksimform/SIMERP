@@ -1,0 +1,52 @@
+{
+  "shortlist": {
+    "status": 200,
+    "body": {
+      "code": "SUCCESS",
+      "message": "Allocation ticket updated successfully",
+      "data": {
+        "publicId": "9c022c4a-9928-4e31-b196-fb89a80c7123",
+        "ticketNumber": "NA-0365",
+        "status": "IN_REVIEW",
+        "warnings": [],
+        "employeeAvailability": [
+          {
+            "employeePublicId": "da3c4542-13bb-452b-b619-42095c913d94",
+            "availabilityPercentage": 90,
+            "isAvailable": true,
+            "allocationCapPercentage": 100,
+            "consumedPercentage": 10,
+            "remainingPercentage": 90,
+            "overlappingAllocations": [
+              {
+                "projectAssignmentPublicId": "4186a764-485d-4b1c-89c0-4d3e4604ef06",
+                "projectPublicId": "c20430eb-7e7e-44e6-b769-3c7756e6a9e2",
+                "allocationType": "FIXED",
+                "allocationPercentage": 10,
+                "allocationStartDate": "2026-10-19T00:00:00.000Z",
+                "allocationEndDate": "2026-12-31T00:00:00.000Z",
+                "shadowDeveloperId": null,
+                "conflictingFrom": "2026-11-01T00:00:00.000Z",
+                "conflictingTo": "2026-12-31T00:00:00.000Z"
+              }
+            ],
+            "reasons": []
+          }
+        ]
+      }
+    }
+  },
+  "send": {
+    "status": 200,
+    "body": {
+      "code": "SUCCESS",
+      "message": "Allocation ticket updated successfully",
+      "data": {
+        "publicId": "9c022c4a-9928-4e31-b196-fb89a80c7123",
+        "ticketNumber": "NA-0365",
+        "status": "AWAITING_CONFIRMATION",
+        "warnings": []
+      }
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "na": {
+    "status": 201,
+    "body": {
+      "code": "ALLOCATION_TICKET_006",
+      "message": "New allocation ticket(s) created successfully",
+      "data": [
+        {
+          "publicId": "f988d386-0a4f-4826-a8e5-394a9a875b9e",
+          "ticketNumber": "NA-0440",
+          "status": "OPEN"
+        },
+        {
+          "publicId": "77bafd96-e630-41e8-b8a6-d9969381ec42",
+          "ticketNumber": "NA-0441",
+          "status": "OPEN"
+        }
+      ]
+    }
+  },
+  "da-main": {
+    "status": 201,
+    "body": {
+      "code": "ALLOCATION_TICKET_097",
+      "message": "Deallocation ticket created successfully",
+      "data": {
+        "outcome": "TICKET_CREATED",
+        "publicId": "6083f39b-b3d3-4c64-9eaa-d18ca2a2b045",
+        "ticketNumber": "DA-0166",
+        "ticketType": "DEALLOCATE_ALLOCATION",
+        "status": "AWAITING_CONFIRMATION"
+      }
+    }
+  }
+}

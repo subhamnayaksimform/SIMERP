@@ -1,0 +1,30 @@
+{
+  "actor": "bhumi.chauhan",
+  "T0": "2026-10-19T11:28:17.848Z",
+  "T1": "2026-10-19T11:28:18.855Z",
+  "method": "PATCH",
+  "path": "/allocation-tickets/0bf76174-342a-4cd6-9942-bf36975b518e/bypass-approval",
+  "req": {
+    "departmentPublicId": "7db5553f-94cd-45ee-a7d5-eb62e14d446a",
+    "addEmployees": [
+      {
+        "employeePublicId": "ddedc1ce-e502-4fbd-9b07-0c33a0807982",
+        "sequence": 0
+      }
+    ],
+    "activeEmployeePublicId": "ddedc1ce-e502-4fbd-9b07-0c33a0807982"
+  },
+  "res": {
+    "status": 200,
+    "body": {
+      "code": "SUCCESS",
+      "message": "TM/EM approval bypassed; ticket approved and applied",
+      "data": {
+        "publicId": "0bf76174-342a-4cd6-9942-bf36975b518e",
+        "ticketNumber": "NA-0370",
+        "status": "APPROVED",
+        "warnings": []
+      }
+    }
+  }
+}

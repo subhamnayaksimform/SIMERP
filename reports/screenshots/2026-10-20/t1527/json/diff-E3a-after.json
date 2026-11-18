@@ -1,0 +1,28 @@
+{
+  "before": "E2c-after",
+  "after": "E3a-after",
+  "beforeAt": "2026-10-20T12:54:26.457Z",
+  "afterAt": "2026-10-20T12:56:26.774Z",
+  "newByUser": {
+    "gaurav.dutta": [],
+    "kartik.hegde": [],
+    "hardik.trivedi": [],
+    "amit.patel": [],
+    "jinal.patel": [],
+    "cto": [],
+    "ceo": [],
+    "ravi.vyas": [],
+    "bhumi.chauhan": [
+      {
+        "eventType": "allocation_ticket.created",
+        "title": "New Ticket: DA-0117",
+        "body": "Ravi Vyas created a new DEALLOCATE ALLOCATION ticket DA-0117 for project KubeDash | Kubernetes Dashboard.",
+        "createdAt": "2026-10-20T12:56:22.677Z",
+        "ctx": {
+          "ticketPublicId": "6b29258b-3470-4061-bd44-e867a62e4f4a"
+        }
+      }
+    ],
+    "foram.malhotra": []
+  }
+}

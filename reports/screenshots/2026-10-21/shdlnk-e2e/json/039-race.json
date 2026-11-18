@@ -1,0 +1,64 @@
+{
+  "sw": {
+    "status": 201,
+    "body": {
+      "code": "ALLOCATION_TICKET_173",
+      "message": "Shadow swap tickets created successfully",
+      "data": {
+        "groupPublicId": "406642f2-40bb-471d-8859-8444212f8a18",
+        "groupNumber": 12,
+        "tickets": [
+          {
+            "publicId": "1395fa71-fbc5-4736-aec0-232baf22b21b",
+            "ticketNumber": "DA-0141",
+            "ticketType": "DEALLOCATE_ALLOCATION",
+            "step": 1
+          },
+          {
+            "publicId": "4d2c21b4-1d61-4443-8432-1aee99c8a270",
+            "ticketNumber": "DA-0142",
+            "ticketType": "DEALLOCATE_ALLOCATION",
+            "step": 1
+          },
+          {
+            "publicId": "3c83d6ea-59ea-4fdc-bccc-f97eb6a74e8e",
+            "ticketNumber": "NA-0411",
+            "ticketType": "NEW_ALLOCATION",
+            "step": 2
+          }
+        ]
+      }
+    }
+  },
+  "cl": {
+    "status": 200,
+    "body": {
+      "code": "SUCCESS",
+      "message": "Ticket closed successfully",
+      "data": {
+        "publicId": "1395fa71-fbc5-4736-aec0-232baf22b21b",
+        "ticketNumber": "DA-0141",
+        "status": "CLOSED"
+      }
+    }
+  },
+  "ak": {
+    "status": 409,
+    "body": {
+      "code": "SYS_004",
+      "message": "This ticket is already APPROVED or CLOSED and cannot be actioned again"
+    }
+  },
+  "bp": {
+    "status": 409,
+    "body": {
+      "code": "SYS_004",
+      "message": "This ticket is already APPROVED or CLOSED and cannot be actioned again"
+    }
+  },
+  "ids": {
+    "DAM": "1395fa71-fbc5-4736-aec0-232baf22b21b",
+    "DAS": "4d2c21b4-1d61-4443-8432-1aee99c8a270",
+    "NAP": "3c83d6ea-59ea-4fdc-bccc-f97eb6a74e8e"
+  }
+}

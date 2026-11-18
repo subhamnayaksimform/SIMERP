@@ -1,0 +1,261 @@
+{
+ "opp": {
+  "publicId": "14d59ba8-77e1-4a00-bf7b-8eb987840d30",
+  "ticketNumber": "OPP-0346",
+  "title": "QA-AUTO E2E full 04-11",
+  "clientType": "PROSPECT",
+  "requestType": "INTERVIEW",
+  "clientName": "QA-AUTO E2E Client",
+  "websiteUrl": null,
+  "linkedinUrl": null,
+  "prospectContact": "QA",
+  "prospectNotes": "n",
+  "jobDescription": "<p>jd</p>",
+  "interviewerLinkedinUrl": null,
+  "specialInstructions": null,
+  "createdAt": "2026-11-04T06:05:36.436Z",
+  "updatedAt": "2026-11-04T06:05:36.436Z",
+  "assignedPm": null,
+  "assignedCsm": null,
+  "raisedBy": {
+   "publicId": "ed40fe03-4ede-45be-878a-4e02edf24851",
+   "name": "Vihaan Chatterjee",
+   "photoUrl": "https://i.pravatar.cc/150?u=vihaan.chatterjee@simformsolutions.com"
+  },
+  "updatedBy": null,
+  "status": "OPEN",
+  "project": null,
+  "viewerCanEdit": true,
+  "viewerCanCancel": false,
+  "viewerCanConfirmAllocation": false,
+  "priority": "MEDIUM",
+  "positions": [
+   {
+    "publicId": "847f0a9c-f62e-4ce4-85d1-dc6094f83f8c",
+    "displayId": "QA-EE-464",
+    "title": "E2E B",
+    "requiredCount": 1,
+    "techStacks": [
+     "Java"
+    ],
+    "preferredSeniority": "MID",
+    "allocationType": "FIXED",
+    "allocationPercentage": 10,
+    "tentativeAllocationDate": "2027-01-11T00:00:00.000Z",
+    "tentativeAllocationEndDate": null,
+    "priority": "MEDIUM",
+    "isAllocationConfirmed": true,
+    "tentativeInterviewDate": null,
+    "roundTitles": [
+     "R1: Tech",
+     "R2: Practical"
+    ],
+    "note": null,
+    "reinitiatedAt": null,
+    "reinitiationCount": 0,
+    "reinitiatedBy": null,
+    "closedAt": null,
+    "closedReason": null,
+    "closedBy": null,
+    "departments": [
+     {
+      "publicId": "50d6a999-05dd-455f-8264-8e2d9308bb7d",
+      "name": "JAVA"
+     }
+    ],
+    "preferredEmployees": [],
+    "prepMaterials": [],
+    "checklistItems": [
+     {
+      "code": "JD_CLIENT_CONTEXT_REVIEWED",
+      "title": "JD & Client Context reviewed",
+      "description": "Read the attached JD and client website link"
+     },
+     {
+      "code": "SPECIAL_INSTRUCTIONS_ACKNOWLEDGED",
+      "title": "Special Instructions acknowledged",
+      "description": "Read the opportunity-level special instructions"
+     },
+     {
+      "code": "AI_MOCK_COMPLETED",
+      "title": "AI Mock completed",
+      "description": "Self-paced — no fixed date required"
+     },
+     {
+      "code": "MANUAL_MOCK_COMPLETED",
+      "title": "Manual Mock",
+      "description": "Mock interview with PMO or a peer"
+     },
+     {
+      "code": "OBS_SYSTEM_CHECK",
+      "title": "OBS & System check",
+      "description": "OBS set up; camera, mic, screen share and internet checked"
+     }
+    ],
+    "openings": [
+     {
+      "publicId": "f5a741fb-2071-4d8d-a565-5a6ae1c87e89",
+      "ordinal": 3,
+      "seatId": "OPP-0346 #3",
+      "stage": "PENDING_TO_SHORTLIST",
+      "directStage": null,
+      "stageEnteredAt": "2026-11-04T06:05:36.436Z",
+      "createdAt": "2026-11-04T06:05:36.436Z",
+      "nominations": [],
+      "cancellation": null
+     }
+    ],
+    "allowedActions": [
+     "CLOSE"
+    ],
+    "openingCount": 1,
+    "filledCount": 0,
+    "shortlistedCount": 0
+   },
+   {
+    "publicId": "91045de3-dcbf-44cc-bbd4-206a00ee21b2",
+    "displayId": "QA-EE-463",
+    "title": "E2E A",
+    "requiredCount": 2,
+    "techStacks": [
+     "Java"
+    ],
+    "preferredSeniority": "MID",
+    "allocationType": "FIXED",
+    "allocationPercentage": 10,
+    "tentativeAllocationDate": "2027-01-11T00:00:00.000Z",
+    "tentativeAllocationEndDate": null,
+    "priority": "MEDIUM",
+    "isAllocationConfirmed": true,
+    "tentativeInterviewDate": null,
+    "roundTitles": [
+     "R1: Tech",
+     "R2: Practical"
+    ],
+    "note": null,
+    "reinitiatedAt": null,
+    "reinitiationCount": 0,
+    "reinitiatedBy": null,
+    "closedAt": null,
+    "closedReason": null,
+    "closedBy": null,
+    "departments": [
+     {
+      "publicId": "50d6a999-05dd-455f-8264-8e2d9308bb7d",
+      "name": "JAVA"
+     }
+    ],
+    "preferredEmployees": [],
+    "prepMaterials": [],
+    "checklistItems": [
+     {
+      "code": "JD_CLIENT_CONTEXT_REVIEWED",
+      "title": "JD & Client Context reviewed",
+      "description": "Read the attached JD and client website link"
+     },
+     {
+      "code": "SPECIAL_INSTRUCTIONS_ACKNOWLEDGED",
+      "title": "Special Instructions acknowledged",
+      "description": "Read the opportunity-level special instructions"
+     },
+     {
+      "code": "AI_MOCK_COMPLETED",
+      "title": "AI Mock completed",
+      "description": "Self-paced — no fixed date required"
+     },
+     {
+      "code": "MANUAL_MOCK_COMPLETED",
+      "title": "Manual Mock",
+      "description": "Mock interview with PMO or a peer"
+     },
+     {
+      "code": "OBS_SYSTEM_CHECK",
+      "title": "OBS & System check",
+      "description": "OBS set up; camera, mic, screen share and internet checked"
+     }
+    ],
+    "openings": [
+     {
+      "publicId": "30ee5b09-e019-42ac-8b45-e1fdf1fef587",
+      "ordinal": 1,
+      "seatId": "OPP-0346 #1",
+      "stage": "PENDING_TO_SHORTLIST",
+      "directStage": null,
+      "stageEnteredAt": "2026-11-04T06:05:36.436Z",
+      "createdAt": "2026-11-04T06:05:36.436Z",
+      "nominations": [],
+      "cancellation": null
+     },
+     {
+      "publicId": "17bdde5f-0b27-4be5-9b50-ccef7e049bfa",
+      "ordinal": 2,
+      "seatId": "OPP-0346 #2",
+      "stage": "PENDING_TO_SHORTLIST",
+      "directStage": null,
+      "stageEnteredAt": "2026-11-04T06:05:36.436Z",
+      "createdAt": "2026-11-04T06:05:36.436Z",
+      "nominations": [],
+      "cancellation": null
+     }
+    ],
+    "allowedActions": [
+     "CLOSE"
+    ],
+    "openingCount": 2,
+    "filledCount": 0,
+    "shortlistedCount": 0
+   }
+  ]
+ },
+ "PA": "847f0a9c-f62e-4ce4-85d1-dc6094f83f8c",
+ "PB": "91045de3-dcbf-44cc-bbd4-206a00ee21b2",
+ "T": "OPP-0346",
+ "c": [
+  {
+   "id": "4368500c-b034-41f5-b11d-6ea3091ac75f",
+   "name": "Smriti Ghosh",
+   "dept": "JAVA"
+  },
+  {
+   "id": "dd62b1d5-1c36-4b08-8e96-e88e7b1457e2",
+   "name": "Mihir Dabhi",
+   "dept": "JAVA"
+  },
+  {
+   "id": "63b1ff16-2cff-40fb-a71f-96b8806a6d04",
+   "name": "Ira Ghosh",
+   "dept": "JAVA"
+  },
+  {
+   "id": "08fa42f6-7ace-4b68-9594-d91f5e539f5e",
+   "name": "Karan Mukherjee",
+   "dept": "JAVA"
+  },
+  {
+   "id": "fa46cee8-fd25-4ed4-8ed5-cfe1376c6edd",
+   "name": "Fenil Gajjar",
+   "dept": "JAVA"
+  },
+  {
+   "id": "1b1b1985-26b1-4c17-97d0-5114af15c770",
+   "name": "Fenil Nair",
+   "dept": "JAVA"
+  },
+  {
+   "id": "959131fe-b64c-4a49-a75c-57139ceeb837",
+   "name": "Tejas Contractor",
+   "dept": "JAVA"
+  },
+  {
+   "id": "da6e8690-8e8b-4505-a2e0-9be1e74e5b20",
+   "name": "Bhumi Desai",
+   "dept": "JAVA"
+  }
+ ],
+ "n": [
+  "9ef10ec9-efa7-4f0d-8b01-74b19581a064",
+  "7144db8a-dc32-4384-9e19-877a8e248ce1",
+  "9b9ecc2b-44b1-4ad7-b363-00b65f534685"
+ ],
+ "approved": true
+}

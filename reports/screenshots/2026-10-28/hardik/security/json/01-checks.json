@@ -1,0 +1,156 @@
+{
+  "account": "hardik.trivedi@simformsolutions.com",
+  "ranAt": "2026-10-28T06:16:58.696Z",
+  "landing": "https://simerp-dev.simform.solutions/employee?sortBy=availabilityPercentage&sortOrder=desc",
+  "swagger": [
+    {
+      "path": "/docs",
+      "status": 401,
+      "wwwAuth": "Basic",
+      "ctype": "text/html; charset=utf-8",
+      "snippet": ""
+    },
+    {
+      "path": "/docs/",
+      "status": 401,
+      "wwwAuth": "Basic",
+      "ctype": "text/html; charset=utf-8",
+      "snippet": ""
+    },
+    {
+      "path": "/docs-json",
+      "status": 401,
+      "wwwAuth": "Basic",
+      "ctype": "text/html; charset=utf-8",
+      "snippet": ""
+    },
+    {
+      "path": "/docs-yaml",
+      "status": 401,
+      "wwwAuth": "Basic",
+      "ctype": "text/html; charset=utf-8",
+      "snippet": ""
+    },
+    {
+      "path": "/api/docs",
+      "status": 404,
+      "wwwAuth": null,
+      "ctype": "application/json; charset=utf-8",
+      "snippet": "{\"code\":\"SYS_002\",\"message\":\"Cannot GET /api/docs\"}"
+    },
+    {
+      "path": "/api/v1/docs",
+      "status": 404,
+      "wwwAuth": null,
+      "ctype": "application/json; charset=utf-8",
+      "snippet": "{\"code\":\"SYS_002\",\"message\":\"Cannot GET /api/v1/docs\"}"
+    },
+    {
+      "path": "/swagger",
+      "status": 404,
+      "wwwAuth": null,
+      "ctype": "application/json; charset=utf-8",
+      "snippet": "{\"code\":\"SYS_002\",\"message\":\"Cannot GET /swagger\"}"
+    },
+    {
+      "path": "/api-json",
+      "status": 404,
+      "wwwAuth": null,
+      "ctype": "application/json; charset=utf-8",
+      "snippet": "{\"code\":\"SYS_002\",\"message\":\"Cannot GET /api-json\"}"
+    }
+  ],
+  "headers": {
+    "https://simerp-dev-api.simform.solutions/api/v1/health-check": {
+      "status": 200,
+      "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+      "strict-transport-security": "max-age=31536000; includeSubDomains",
+      "x-frame-options": "SAMEORIGIN",
+      "x-content-type-options": "nosniff",
+      "x-powered-by": null,
+      "cross-origin-opener-policy": "same-origin",
+      "cross-origin-resource-policy": "same-origin",
+      "referrer-policy": "no-referrer",
+      "x-dns-prefetch-control": "off",
+      "server": null
+    },
+    "https://simerp-dev-api.simform.solutions/api/v1/notifications?page=1&limit=1": {
+      "status": 400,
+      "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+      "strict-transport-security": "max-age=31536000; includeSubDomains",
+      "x-frame-options": "SAMEORIGIN",
+      "x-content-type-options": "nosniff",
+      "x-powered-by": null,
+      "cross-origin-opener-policy": "same-origin",
+      "cross-origin-resource-policy": "same-origin",
+      "referrer-policy": "no-referrer",
+      "x-dns-prefetch-control": "off",
+      "server": null
+    },
+    "https://simerp-dev.simform.solutions/": {
+      "status": 200,
+      "content-security-policy": null,
+      "strict-transport-security": null,
+      "x-frame-options": null,
+      "x-content-type-options": null,
+      "x-powered-by": null,
+      "cross-origin-opener-policy": null,
+      "cross-origin-resource-policy": null,
+      "referrer-policy": null,
+      "x-dns-prefetch-control": null,
+      "server": "AmazonS3"
+    }
+  },
+  "cors": [
+    {
+      "label": "allowed-frontend",
+      "origin": "https://simerp-dev.simform.solutions",
+      "preStatus": 204,
+      "preACAO": "https://simerp-dev.simform.solutions",
+      "preACAC": "true",
+      "getStatus": 400,
+      "getACAO": "https://simerp-dev.simform.solutions",
+      "getACAC": "true"
+    },
+    {
+      "label": "foreign",
+      "origin": "https://evil.example.com",
+      "preStatus": 403,
+      "preACAO": null,
+      "preACAC": null,
+      "getStatus": 403,
+      "getACAO": null,
+      "getACAC": null
+    },
+    {
+      "label": "local-dev",
+      "origin": "http://localhost:5173",
+      "preStatus": 204,
+      "preACAO": "http://localhost:5173",
+      "preACAC": "true",
+      "getStatus": 400,
+      "getACAO": "http://localhost:5173",
+      "getACAC": "true"
+    }
+  ],
+  "errors": [
+    {
+      "probe": "GET /this-route-does-not-exist-xyz",
+      "status": 404,
+      "hasStack": false,
+      "body": "{\"code\":\"SYS_002\",\"message\":\"Cannot GET /api/v1/this-route-does-not-exist-xyz\"}"
+    },
+    {
+      "probe": "GET /employees/not-a-uuid",
+      "status": 400,
+      "hasStack": false,
+      "body": "{\"code\":\"SYS_004\",\"message\":\"Validation failed (uuid is expected)\"}"
+    },
+    {
+      "probe": "POST /auth/login",
+      "status": 404,
+      "hasStack": false,
+      "body": "{\"code\":\"SYS_002\",\"message\":\"Cannot POST /api/v1/auth/login\"}"
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+[
+  "PATCH /allocation-tickets/b6ab139c-e4bd-4d28-98be-8140721ea8cf 200 req={\"departmentPublicId\":\"c868f1aa-6bc1-430c-b26a-11222919627f\",\"addEmployees\":[]} res={\"code\":\"SUCCESS\",\"message\":\"Allocation ticket updated successfully\",\"data\":{\"publicId\":\"b6ab139c-e4bd-4d28-98be-8140721ea8cf\",\"ticketNumber\":\"NA-0405\",\"status\":\"IN_REVIEW\",\"warnings\":[]}}",
+  "PATCH /allocation-tickets/b6ab139c-e4bd-4d28-98be-8140721ea8cf 200 req={\"addEmployees\":[{\"employeePublicId\":\"30aad891-ceca-4644-a4e2-afecd6948086\",\"sequence\":0}],\"shortlistOrder\":[\"30aad891-ceca-4644-a4e2-afecd6948086\"]} res={\"code\":\"SUCCESS\",\"message\":\"Allocation ticket updated successfully\",\"data\":{\"publicId\":\"b6ab139c-e4bd-4d28-98be-8140721ea8cf\",\"ticketNumber\":\"NA-0405\",\"status\":\"IN_REVIEW\",\"warnings\":[],\"employeeAvailability\":[{\"employeePublicId\":\"30aad891-ceca-4644-a4e2-afecd6948086\",\"availabilityPercentage\":90,\"i"
+]

@@ -1,0 +1,208 @@
+{
+  "results": [
+    {
+      "id": "reject-client",
+      "ok": true,
+      "s": 200,
+      "c": "SUCCESS",
+      "tag": "after client reject",
+      "shortlistedCount": 5,
+      "rejectedCount": 1,
+      "filledCount": 0,
+      "requiredCount": 4,
+      "invariantOK": true,
+      "errs": []
+    },
+    {
+      "id": "reject-pmo",
+      "ok": true,
+      "s": 200,
+      "c": "SUCCESS",
+      "tag": "after pmo reject",
+      "shortlistedCount": 4,
+      "rejectedCount": 2,
+      "filledCount": 0,
+      "requiredCount": 4,
+      "invariantOK": true,
+      "errs": []
+    },
+    {
+      "id": "reject-no-reason",
+      "ok": true,
+      "s": 400,
+      "c": "VAL_001",
+      "errs": []
+    },
+    {
+      "id": "release-validation",
+      "ok": true,
+      "empty": {
+        "s": 400,
+        "c": "VAL_001"
+      },
+      "spaces": {
+        "s": 400,
+        "c": "VAL_001"
+      },
+      "long": {
+        "s": 400,
+        "c": "VAL_001"
+      },
+      "errs": []
+    },
+    {
+      "id": "release-ok",
+      "ok": true,
+      "first": {
+        "s": 200,
+        "c": "SUCCESS"
+      },
+      "again": {
+        "s": 404,
+        "c": "OPP_040"
+      },
+      "tag": "after release",
+      "shortlistedCount": 3,
+      "rejectedCount": 2,
+      "filledCount": 0,
+      "requiredCount": 4,
+      "invariantOK": true,
+      "errs": []
+    },
+    {
+      "id": "detail-shows-released",
+      "ok": true,
+      "keys": [],
+      "positions": [
+        {
+          "t": "FR Java A",
+          "req": 3
+        },
+        {
+          "t": "FR Java B",
+          "req": 1
+        }
+      ],
+      "errs": []
+    },
+    {
+      "0": [
+        "Karan Modi",
+        "REJECTED",
+        "PMO"
+      ],
+      "1": [
+        "Mehul Pandya",
+        "REJECTED",
+        "CLIENT"
+      ],
+      "id": "rejected-list",
+      "ok": true,
+      "errs": []
+    },
+    {
+      "id": "close-B-empty",
+      "ok": true,
+      "empty": {
+        "s": 400,
+        "c": "VAL_001"
+      },
+      "close": {
+        "s": 200,
+        "c": "SUCCESS"
+      },
+      "again": {
+        "s": 409,
+        "c": "OPP_188"
+      },
+      "shortlistOnClosed": {
+        "s": 409,
+        "c": "OPP_187"
+      },
+      "tag": "after close B",
+      "shortlistedCount": 3,
+      "rejectedCount": 2,
+      "filledCount": 0,
+      "requiredCount": 3,
+      "invariantOK": true,
+      "errs": []
+    },
+    {
+      "id": "reopen-B",
+      "ok": true,
+      "r": {
+        "s": 200,
+        "c": "SUCCESS"
+      },
+      "again": {
+        "s": 409,
+        "c": "OPP_189"
+      },
+      "tag": "after reopen B",
+      "shortlistedCount": 3,
+      "rejectedCount": 2,
+      "filledCount": 0,
+      "requiredCount": 4,
+      "invariantOK": true,
+      "errs": []
+    },
+    {
+      "id": "close-A-with-live",
+      "ok": true,
+      "r": {
+        "s": 200,
+        "c": "SUCCESS"
+      },
+      "x": [],
+      "tag": "after close A",
+      "shortlistedCount": 0,
+      "rejectedCount": 2,
+      "filledCount": 0,
+      "requiredCount": 1,
+      "invariantOK": true,
+      "errs": []
+    },
+    {
+      "id": "reopen-A",
+      "ok": true,
+      "r": {
+        "s": 200,
+        "c": "SUCCESS"
+      },
+      "x": [
+        [
+          "OPP-0345 #5",
+          "PENDING_TO_SHORTLIST"
+        ],
+        [
+          "OPP-0345 #6",
+          "PENDING_TO_SHORTLIST"
+        ],
+        [
+          "OPP-0345 #7",
+          "PENDING_TO_SHORTLIST"
+        ],
+        [
+          "OPP-0345 #1",
+          "PENDING_TO_SHORTLIST"
+        ],
+        [
+          "OPP-0345 #2",
+          "PENDING_TO_SHORTLIST"
+        ],
+        [
+          "OPP-0345 #3",
+          "PENDING_TO_SHORTLIST"
+        ]
+      ],
+      "tag": "after reopen A",
+      "shortlistedCount": 0,
+      "rejectedCount": 2,
+      "filledCount": 0,
+      "requiredCount": 4,
+      "invariantOK": true,
+      "errs": []
+    }
+  ],
+  "errs": []
+}

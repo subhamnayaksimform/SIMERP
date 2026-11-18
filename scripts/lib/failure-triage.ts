@@ -17,6 +17,7 @@ export interface TestResult {
   duration: number;
   file?: string;
   error?: string;
+  errorLocation?: { file: string; line: number };
   screenshotPath?: string;
   videoPath?: string;
   tracePath?: string;
@@ -75,7 +76,12 @@ export function parsePlaywrightResults(data: any): {
         const lastResult = attempts[attempts.length - 1] || {};
         const isFlaky = t.status === 'flaky' || (attempts.length > 1 && lastResult.status === 'passed');
 
-        let finalStatus: string = t.status || lastResult.status || 'unknown';
+        // Playwright's test-level `t.status` uses 'expected'/'unexpected'/'flaky'/'skipped',
+        // but every consumer of TestResult.status (excel-reporter, pipeline-report dashboard,
+        // isReportable below) expects the attempt-level vocabulary ('passed'/'failed'/'timedOut'/
+        // 'skipped') — prefer lastResult.status, only falling back to t.status if an attempt
+        // result is unavailable.
+        let finalStatus: string = lastResult.status || t.status || 'unknown';
         if (isFlaky) finalStatus = 'flaky';
 
         const attachments: Array<{ name: string; path?: string }> = lastResult.attachments || [];
@@ -96,6 +102,9 @@ export function parsePlaywrightResults(data: any): {
           duration: lastResult.duration || 0,
           file: spec.file,
           error: lastResult.error?.message,
+          errorLocation: lastResult.error?.location
+            ? { file: lastResult.error.location.file, line: lastResult.error.location.line }
+            : undefined,
           screenshotPath,
           videoPath,
           tracePath,

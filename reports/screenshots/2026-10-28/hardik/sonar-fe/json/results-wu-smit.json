@@ -1,0 +1,110 @@
+{
+  "results": [
+    {
+      "id": "wu-list-admin",
+      "ok": true,
+      "rows": [
+        "\t29/09/2026\tVidhi Shah\tHardik Kulkarni\tSubmitted"
+      ],
+      "n": 1,
+      "outs": [
+        "Showing 1 - 1 of 1 results"
+      ],
+      "bad": [],
+      "shot": "reports/screenshots/2026-10-28/hardik/sonar-fe/w01-weekly-updates-admin.png",
+      "errs": []
+    },
+    {
+      "id": "wu-open-submitted",
+      "ok": true,
+      "btns": [
+        "View",
+        "Delete"
+      ],
+      "url": "https://simerp-dev.simform.solutions/weekly-updates?departmentId=cc5a1d6b-9fbe-48a2-a711-84ec81b529ab",
+      "ths": [
+        "Action",
+        "Meeting Date",
+        "Reporting Manager",
+        "Meeting Lead",
+        "Status"
+      ],
+      "txt": "Weekly Updates\nTraining Sessions\nPOST-SALES BA\nPick a date\nAction\n\t\nMeeting Date\n\t\nReporting Manager\n\t\nMeeting Lead\n\tStatus\n\n\t29/09/2026\tVidhi Shah\tHardik Kulkarni\tSubmitted\nShowing 1 - 1 of 1 results\nPrevious\n1\nNext",
+      "bad": [
+        {
+          "t": "N/A",
+          "ctx": "N/A"
+        },
+        {
+          "t": "N/A",
+          "ctx": "N/A"
+        },
+        {
+          "t": "N/A",
+          "ctx": "N/A"
+        },
+        {
+          "t": "N/A",
+          "ctx": "N/A"
+        },
+        {
+          "t": "N/A",
+          "ctx": "N/A"
+        },
+        {
+          "t": "N/A",
+          "ctx": "N/A"
+        },
+        {
+          "t": "N/A",
+          "ctx": "N/A"
+        },
+        {
+          "t": "N/A",
+          "ctx": "N/A"
+        },
+        {
+          "t": "N/A",
+          "ctx": "N/A"
+        },
+        {
+          "t": "N/A",
+          "ctx": "N/A"
+        },
+        {
+          "t": "N/A",
+          "ctx": "N/A"
+        },
+        {
+          "t": "N/A",
+          "ctx": "N/A"
+        },
+        {
+          "t": "N/A",
+          "ctx": "N/A"
+        },
+        {
+          "t": "N/A",
+          "ctx": "N/A"
+        },
+        {
+          "t": "N/A",
+          "ctx": "N/A"
+        }
+      ],
+      "shot": "reports/screenshots/2026-10-28/hardik/sonar-fe/w02-weekly-update-view.png",
+      "errs": []
+    },
+    {
+      "id": "wu-view-sections",
+      "ok": true,
+      "mains": 2,
+      "tabs": [],
+      "tables": [
+        "Action / Meeting Date / Reporting Manager / Meeting Lead / Status"
+      ],
+      "errs": []
+    }
+  ],
+  "errs": []
+}

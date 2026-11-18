@@ -34,9 +34,7 @@ The requirement-analyzer produces these fields — use ALL of them:
 | `validationRules` | One negative/boundary test per rule (wrong format, missing required, over-limit) |
 | `testDataHints` | Populate `testData` field for each test case |
 | `negativeScenarios` | One negative test case per item |
-| `nfrRequirements.performance` | Performance test cases (category: `performance`) |
 | `nfrRequirements.security` | Security/role test cases (category: `security`) |
-| `nfrRequirements.accessibility` | Accessibility test cases (category: `a11y`) |
 | `securityScenarios` | One `security` category test case per entry; assert both UI-level hiding (button/route not visible) and direct API 403 for non-privileged roles |
 | `affectedModules` | Add regression test cases for each affected module |
 | `unclear` | Add a test case with `automationHint: "MANUAL — requirement unclear: <note>"` |
@@ -58,7 +56,7 @@ Carry provenance metadata through every test case — don't discard it:
 - When referencing a specific UI element by name, check the source `uiElements[].source`: if `"inferred"`, phrase the step generically by role/label ("the search input", "the department filter") — do not assume a concrete testid/selector exists just because the requirements doc named one.
 
 ## Categories You MUST Cover
-For every requirement set, generate test cases in these categories:
+For every requirement set, generate test cases in these categories. `a11y` and `performance` are **out of scope** — do not generate cases for either, even if `nfrRequirements.accessibility[]`/`nfrRequirements.performance[]` are present in the input; ignore those fields entirely.
 
 | Category | Minimum | What to include |
 |---|---|---|
@@ -66,8 +64,6 @@ For every requirement set, generate test cases in these categories:
 | `functional` | AC count × 1–2 | Full acceptance criteria coverage, all positive flows |
 | `negative` | negativeScenarios count | Invalid inputs, unauthorized access, broken preconditions |
 | `boundary` | edgeCases + validationRules count | Min/max values, empty, oversized, off-by-one, format violations |
-| `a11y` | 1–3 if UI-relevant | Keyboard nav, ARIA roles, screen-reader labels, color contrast |
-| `performance` | 1 per perf NFR | Load time, record volume, concurrent user scenarios |
 | `security` | 1 per roleMatrix[].cannot[] + 1 per securityScenario + 1 per businessRule[testPattern=role-scope-assertion] | Role enforcement at both UI (element hidden) and API (403); data visibility per role; unauthorized action attempts |
 | `regression` | 1 per affectedModule + 1 per KB regressionTrigger | Verify existing functionality in affected areas still works; also cover every trigger from the knowledge base |
 | `integration` | 1 per integrationScenario + 1 per affectedModule with integrationNote | Cross-module data flow, role-scope consistency across modules, API contract validation between modules |
@@ -77,6 +73,12 @@ For every requirement set, generate test cases in these categories:
 2. Map each requirement field to the correct category using the table above.
 2.5. **Inject Known Regression Scenarios.** From `knownBugEdgeCases[]` (already populated by requirement-analyzer from the KB — no file read needed here), synthesize one test case per entry not already covered by an existing case whose `requirementRef` starts with `"Known bug:"`: `category: "regression"`, `priority: "high"`, `severity: "major"`, `tags: ["@regression"]`, `title: "Known bug regression — <entry.description>"`, `requirementRef: "Known bug: <entry.id>"`, `automationHint: entry.testHint`. Skip if `knownBugEdgeCases` is absent or empty.
 2.6. **Inject Integration Test Cases.** If `integrationScenarios[]` is present (populated by requirement-analyzer from the KB), generate one test case per scenario: `category: "integration"`, `priority: "high"`, `severity: "major"`, `tags: ["@regression", "@functional"]`, `title: "Integration — <scenario.title>"`; `steps` expand each `scenario.flow[]` item into a numbered, observable UI/API action; `expected` lists all items from `scenario.criticalAssertions[]` as bullet assertions; `requirementRef: "INT-<id> — <title>"`; `automationHint: "Multi-module flow — requires separate storageState fixtures for each role involved. Verify both via UI navigation and direct API response."`; `testData` includes both source and target module, specifying entity IDs and roles used. Also generate one `integration` test case per `affectedModules[]` entry with a non-null `integrationNote`, using that text as the basis for `expected`. Skip if `integrationScenarios` is absent or empty.
+
+2.65. **Direct Knowledge Base Verification (widen scope beyond what requirement-analyzer surfaced).** Steps 2.5/2.6 trust `knownBugEdgeCases[]`/`integrationScenarios[]` as already-complete — but that trust is only as good as when the source requirements JSON was generated. Before finalizing categories, directly read the KB yourself as a safety net:
+   - Read this requirement's own module file (same `moduleCode` → file mapping as requirement-analyzer's Step 3.5) plus `reports/knowledge-base/modules/cross-module.json`.
+   - For any `edgeCases[]`/`businessRules[]`/`regressionTriggers[]` entry in the module file, or any `integrationScenarios[]` entry in `cross-module.json` naming this module, that is **not** already represented in the input's `knownBugEdgeCases[]`, `integrationScenarios[]`, `businessRules[]`, or `affectedModules[]` — generate the corresponding test case using the same category/field rules as step 2.5 (regression) or step 2.6 (integration).
+   - Tag every case generated this way `requirementRef: "KB-direct: <id-or-pattern>"` (distinct from `"Known bug: <id>"`/`"INT-<id>"` used in 2.5/2.6) so it's traceable as a direct-read supplement, not something the requirements JSON itself carried.
+   - This exists specifically to catch cross-module regressions and integration scenarios a stale or narrowly-scoped requirement analysis would otherwise miss — do not skip it just because 2.5/2.6 already produced cases. Skip only if the module's KB file and `cross-module.json` are both absent.
 
 2.7. **SIM ERP Intelligent Regression Coverage (proactive — do not wait for explicit mention).**
 
@@ -180,10 +182,10 @@ For every requirement set, generate test cases in these categories:
 **Step 9 — Deduplication.** Before appending any case generated in steps 2–8, check whether a case with the same observable assertion already exists (compare `expected` text and `steps` intent). If a near-duplicate exists: merge by adding the new `requirementRef` as a second bullet in the existing case's `requirementRef` field; do NOT create a second test case; count the merged case only once in coverage totals.
 
 3. For each test case:
-   - Assign ID: `TC-<moduleCode>-<NNN>` (sequential, zero-padded, e.g. `TC-EMPDET-001`). The counter is **global per run** — do not reset to 001 when moving to the next task. If a prior run produced `reports/test-cases/cases-*.json`, read the highest existing NNN per module code and continue from there to avoid duplicate IDs.
-   - Set `priority`: inherit from `testScenarios[].priority` or use `critical` → smoke, `high` → functional, `medium` → boundary/negative, `low` → a11y/performance.
+   - Assign ID: `TC-<moduleCode>-<NNN>` (sequential, zero-padded, e.g. `TC-EMPDET-001`). The counter is **global per run** — do not reset to 001 when moving to the next task. **Get IDs from `npm run cases:next-id -- <moduleCode> --count=<n>`** (it reads every case file, the committed snapshot and the Markdown library, so an ID is never reused — 154 IDs were once reused for different cases by reading only the latest file). An ID is permanent: never renumber, reuse or overwrite one. If a case replaces an older one, give it a new ID and set `supersedes: ["<old ID>"]`; retiring the old case is done with `npm run cases:retire`, never by deleting it.
+   - Set `priority`: inherit from `testScenarios[].priority` or use `critical` → smoke, `high` → functional, `medium` → boundary/negative.
    - Set `tags`: inherit from `testScenarios[].tags`; derive from category if not present.
-   - Set `severity`: `critical` for smoke/security, `major` for functional/negative, `minor` for boundary/a11y/performance.
+   - Set `severity`: `critical` for smoke/security, `major` for functional/negative, `minor` for boundary.
    - Set `automatable`: `false` if `automationFeasibility.level === "manual-only"`; add `automationHint: "PARTIAL — <reason from automationFeasibility>"` if `"partial"`.
    - Populate `testData` from `testDataHints`; add specific values (not just descriptions).
    - Write `steps` as numbered, observable UI actions with exact data values.
@@ -192,7 +194,10 @@ For every requirement set, generate test cases in these categories:
 4. Write the array to `reports/test-cases/cases-<YYYY-MM-DD>-<moduleCode>[-<taskId>].json`
    Example: `cases-2026-06-23-EMPDET-12345.json`. If multiple module codes are present, use the primary one. Use the date the cases were generated (today's date from context).
 5. Invoke the `/excel-reporter` skill with `mode=test-cases input=<that-path> label=<sub-feature-kebab>[-<taskId>]` to produce the Excel file — e.g. `--label=employee-details-12345`. The Excel file will be named `test-cases-<YYYY-MM-DD_HH-MM>-<label>.xlsx`.
-6. Report back: counts per category, total, output paths.
+5.5. Produce the Markdown copy — every test case set must exist in Markdown so it can be browsed and shown to stakeholders without opening a spreadsheet:
+   `npm run report:md -- --input=<that-path> --index`
+   Writes `docs/test-cases/test-cases-<label>.md` and refreshes `docs/test-cases/README.md`. The script derives everything (modules, categories, summary tables, per-case fields) from the JSON — never hand-write or hand-edit a Markdown test case file, and never hardcode case content into the script. If a run adds a new field to a test case, it appears in the Markdown automatically.
+6. Report back: counts per category, total, output paths (JSON, Excel, Markdown).
 
 ## Output Format (per test case)
 `moduleCode` and `taskId` are deliberately omitted from this example — they're mechanically derived downstream (`moduleCode` from the `id` prefix, `taskId` from the source task), so do not spend output tokens generating them.
@@ -227,3 +232,4 @@ For every requirement set, generate test cases in these categories:
 - Modules with `integrationPoints[]` always get at least 2–3 `integration` cases.
 - Every `unclear` item → at least one test case with `automationHint` note.
 - **Step 2.7 regression coverage is mandatory** for every detected operation — never skip. Count merged/deduplicated cases once; never report zero regression cases for any CRUD, Assignment, Archive, or Status Transition feature.
+- **Step 2.65 direct KB verification is mandatory whenever the module's KB file or `cross-module.json` exists** — never rely solely on what requirement-analyzer already passed through; cross-module/regression coverage must reflect the KB's current state, not just its state at the time the requirements JSON was generated.

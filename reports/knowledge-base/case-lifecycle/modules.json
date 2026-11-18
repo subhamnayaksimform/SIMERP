@@ -1,0 +1,858 @@
+{
+  "schemaVersion": 1,
+  "modules": {
+    "ADMCTR": {
+      "module": "Admin",
+      "name": "Contractors",
+      "folder": "admin",
+      "aliases": [],
+      "status": "live",
+      "appPaths": {
+        "frontend": [
+          "src/components/contractors"
+        ],
+        "backend": [
+          "src/modules/contractors"
+        ]
+      },
+      "needsReview": true,
+      "notes": "Seeded by registry-sync; confirm name, route and appPaths, then set needsReview to false.",
+      "observed": {}
+    },
+    "ADMLGA": {
+      "module": "Admin",
+      "name": "PMO/Admin Login as + Employee slider button",
+      "aliases": [],
+      "status": "live",
+      "needsReview": true,
+      "notes": "Added from observed cases; fill in route and appPaths.",
+      "observed": {
+        "Admin": 41,
+        "Profile header": 1,
+        "Employee side panel": 2,
+        "Confirm dialog": 2,
+        "Start impersonation": 4,
+        "Impersonation banner": 2,
+        "Exit impersonation": 2,
+        "Start / exit impersonation": 1,
+        "Project side panel": 1,
+        "Impersonated session": 1,
+        "Help / What's New": 1,
+        "Admin protection": 1,
+        "Visibility rules": 4,
+        "Chaining": 1,
+        "API: start": 3,
+        "API: admin protection": 1,
+        "API: exit": 2,
+        "Session handling": 7,
+        "API: metadata": 1,
+        "CORS / CSRF": 1,
+        "Audit": 1,
+        "Keyboard": 1,
+        "Header avatar": 1,
+        "Admin — Login as User": 10,
+        "PMO/Admin Login as + Employee slider button": 10
+      }
+    },
+    "ADMROL": {
+      "module": "Admin",
+      "name": "Roles & Permissions",
+      "folder": "admin",
+      "aliases": [],
+      "status": "live",
+      "appPaths": {
+        "frontend": [
+          "src/components/roles-and-permissions"
+        ],
+        "backend": [
+          "src/modules/roles"
+        ]
+      },
+      "needsReview": true,
+      "notes": "Seeded by registry-sync; confirm name, route and appPaths, then set needsReview to false.",
+      "observed": {}
+    },
+    "ADMUSR": {
+      "module": "Admin",
+      "name": "Assign User Roles",
+      "folder": "admin",
+      "route": "/admin/assign-user-roles",
+      "aliases": [],
+      "status": "live",
+      "appPaths": {
+        "frontend": [
+          "src/components/roles-and-permissions"
+        ],
+        "backend": [
+          "src/modules/employee-roles"
+        ]
+      },
+      "needsReview": true,
+      "notes": "Seeded by registry-sync; confirm name, route and appPaths, then set needsReview to false.",
+      "observed": {}
+    },
+    "ALCTKT": {
+      "module": "PM & PMO",
+      "name": "Allocation Requests",
+      "folder": "pm-pmo",
+      "route": "/my-tickets",
+      "aliases": [],
+      "status": "live",
+      "appPaths": {
+        "frontend": [
+          "src/components/tickets"
+        ],
+        "backend": [
+          "src/modules/allocation-tickets"
+        ]
+      },
+      "needsReview": true,
+      "notes": "Seeded by registry-sync; confirm name, route and appPaths, then set needsReview to false.",
+      "observed": {
+        "Allocation Requests": 191,
+        "Allocation Tickets — RM and DM visibility": 7,
+        "Reportees' ticket visibility": 7
+      }
+    },
+    "AUTH": {
+      "module": "Authentication",
+      "name": "Login",
+      "folder": "auth",
+      "route": "/dev-login",
+      "aliases": [],
+      "status": "live",
+      "appPaths": {
+        "frontend": [],
+        "backend": [
+          "src/modules/auth"
+        ]
+      },
+      "needsReview": true,
+      "notes": "Seeded by registry-sync; confirm name, route and appPaths, then set needsReview to false.",
+      "observed": {}
+    },
+    "DASH": {
+      "module": "Dashboard",
+      "name": "Dashboard",
+      "folder": "dashboard",
+      "aliases": [],
+      "status": "live",
+      "appPaths": {
+        "frontend": [
+          "src/components/dashboard"
+        ],
+        "backend": [
+          "src/modules/dashboard"
+        ]
+      },
+      "needsReview": true,
+      "notes": "Seeded by registry-sync; confirm name, route and appPaths, then set needsReview to false.",
+      "observed": {
+        "Dashboard": 140
+      }
+    },
+    "DEPTCMP": {
+      "module": "Department",
+      "name": "Competencies",
+      "folder": "department",
+      "aliases": [],
+      "status": "live",
+      "appPaths": {
+        "frontend": [
+          "src/components/competencies"
+        ],
+        "backend": [
+          "src/modules/competencies"
+        ]
+      },
+      "needsReview": true,
+      "notes": "Seeded by registry-sync; confirm name, route and appPaths, then set needsReview to false.",
+      "observed": {
+        "Competencies": 83
+      }
+    },
+    "DEPTSET": {
+      "module": "Department",
+      "name": "Department Settings",
+      "folder": "department",
+      "aliases": [],
+      "status": "live",
+      "appPaths": {
+        "frontend": [
+          "src/components/department"
+        ],
+        "backend": [
+          "src/modules/departments",
+          "src/modules/department-stacks"
+        ]
+      },
+      "needsReview": true,
+      "notes": "Seeded by registry-sync; confirm name, route and appPaths, then set needsReview to false.",
+      "observed": {}
+    },
+    "EMPALC": {
+      "module": "Employee",
+      "name": "Allocation Correction",
+      "folder": "employee",
+      "aliases": [],
+      "status": "live",
+      "appPaths": {
+        "frontend": [
+          "src/components/allocation-correction"
+        ],
+        "backend": [
+          "src/modules/allocation-verification"
+        ]
+      },
+      "needsReview": true,
+      "notes": "Seeded by registry-sync; confirm name, route and appPaths, then set needsReview to false.",
+      "observed": {
+        "Allocation Correction (module inferred — unconfirmed, see TC-EMPALC-010)": 1,
+        "Allocation Correction (module inferred — unconfirmed)": 10
+      }
+    },
+    "EMPCRT": {
+      "module": "Employee",
+      "name": "Certifications",
+      "folder": "employee",
+      "route": "/employee/certifications",
+      "aliases": [],
+      "status": "live",
+      "appPaths": {
+        "frontend": [
+          "src/components/certifications"
+        ],
+        "backend": [
+          "src/modules/certifications"
+        ]
+      },
+      "needsReview": true,
+      "notes": "Seeded by registry-sync; confirm name, route and appPaths, then set needsReview to false.",
+      "observed": {
+        "Certifications": 107,
+        "My Certificate": 13,
+        "Organisation Level": 14,
+        "New Joiners List": 3,
+        "Add Certification": 29,
+        "Certificate Holders": 1,
+        "API": 7,
+        "Add Partnership": 8,
+        "Profile edit (EMPDET)": 2,
+        "Scope": 1,
+        "Add on Behalf": 6,
+        "Notifications": 1,
+        "Employee Profile": 1,
+        "Edit Certification": 12,
+        "Certificate Types": 5,
+        "Recently Resigned": 4
+      }
+    },
+    "EMPDET": {
+      "module": "Employee",
+      "name": "Employee Details",
+      "folder": "employee",
+      "route": "/employee",
+      "aliases": [],
+      "status": "live",
+      "appPaths": {
+        "frontend": [
+          "src/components/employee"
+        ],
+        "backend": [
+          "src/modules/employees"
+        ]
+      },
+      "needsReview": true,
+      "notes": "Seeded by registry-sync; confirm name, route and appPaths, then set needsReview to false.",
+      "observed": {
+        "Employee Details": 463,
+        "EMPDET — Employee Location Preference & Visa Information": 112,
+        "Employee": 22,
+        "Day Start & Close — Columns": 2,
+        "Day Start & Close — Role access": 3,
+        "Day Start & Close — Cell display": 3,
+        "Day Start & Close — Work Pattern": 2,
+        "Day Start & Close — No data": 3,
+        "Day Start & Close — Period filter": 3,
+        "Day Start & Close — API": 1,
+        "Day Start & Close — Sorting": 2,
+        "Day Start & Close — Accessibility": 1,
+        "Day Start & Close — Requirement gaps": 2
+      }
+    },
+    "EMPGOL": {
+      "module": "Employee",
+      "name": "Goals",
+      "folder": "employee",
+      "route": "/employee/goals",
+      "aliases": [],
+      "status": "live",
+      "appPaths": {
+        "frontend": [
+          "src/components/goal"
+        ],
+        "backend": [
+          "src/modules/goals",
+          "src/modules/employee-goals"
+        ]
+      },
+      "needsReview": true,
+      "notes": "Seeded by registry-sync; confirm name, route and appPaths, then set needsReview to false.",
+      "observed": {
+        "Goals": 406,
+        "Dashboard": 35,
+        "Goals - By Employee": 27,
+        "Goals - By Goal": 42,
+        "Access & Security": 18,
+        "Cross-cutting": 25
+      }
+    },
+    "EMPLEV": {
+      "module": "Leave & Compliance Details",
+      "name": "Leave & Compliance Details",
+      "aliases": [],
+      "status": "live",
+      "needsReview": true,
+      "notes": "Added from observed cases; fill in route and appPaths.",
+      "observed": {
+        "Leave & Compliance Details": 28
+      }
+    },
+    "EMPRAT": {
+      "module": "Ratings",
+      "name": "Ratings",
+      "aliases": [],
+      "status": "live",
+      "needsReview": true,
+      "notes": "Added from observed cases; fill in route and appPaths.",
+      "observed": {
+        "Ratings": 28
+      }
+    },
+    "EMPRTF": {
+      "module": "Employee",
+      "name": "Ratings & Feedback",
+      "folder": "employee",
+      "route": "/employee-ratings",
+      "aliases": [],
+      "status": "live",
+      "appPaths": {
+        "frontend": [
+          "src/components/employee-ratings"
+        ],
+        "backend": [
+          "src/modules/employee-ratings"
+        ]
+      },
+      "needsReview": true,
+      "notes": "Seeded by registry-sync; confirm name, route and appPaths, then set needsReview to false.",
+      "observed": {
+        "Ratings & Feedback": 61,
+        "Employee — Ratings & Project Feedback": 9,
+        "Project feedback per user (table + profile)": 9
+      }
+    },
+    "EMPSKL": {
+      "module": "Employee",
+      "name": "Skills",
+      "folder": "employee",
+      "route": "/employee/skills",
+      "aliases": [],
+      "status": "live",
+      "appPaths": {
+        "frontend": [
+          "src/components/skills"
+        ],
+        "backend": [
+          "src/modules/skills"
+        ]
+      },
+      "needsReview": true,
+      "notes": "Seeded by registry-sync; confirm name, route and appPaths, then set needsReview to false.",
+      "observed": {
+        "Skills": 159
+      }
+    },
+    "EMPWLC": {
+      "module": "Employee",
+      "name": "Working Location (WFO/WFH)",
+      "folder": "employee",
+      "route": "/working-location",
+      "aliases": [],
+      "status": "live",
+      "appPaths": {
+        "frontend": [
+          "src/components/working-location"
+        ],
+        "backend": [
+          "src/modules/working-location"
+        ]
+      },
+      "needsReview": true,
+      "notes": "Seeded by registry-sync; confirm name, route and appPaths, then set needsReview to false.",
+      "observed": {
+        "Working Location": 183,
+        "Login As scope": 4,
+        "Dashboard filters": 2,
+        "Role scope": 1,
+        "Project WL column": 2,
+        "Employee — Working Location": 9,
+        "Overview dashboard + profile card (retest)": 9
+      }
+    },
+    "HELP": {
+      "module": "Help & Support",
+      "name": "Help & Support",
+      "folder": "help-support",
+      "route": "/help",
+      "aliases": [],
+      "status": "live",
+      "appPaths": {
+        "frontend": [
+          "src/components/help"
+        ],
+        "backend": [
+          "src/modules/releases"
+        ]
+      },
+      "needsReview": true,
+      "notes": "Seeded by registry-sync; confirm name, route and appPaths, then set needsReview to false.",
+      "observed": {
+        "Help & Support": 38,
+        "Sidebar footer": 2,
+        "What's New": 13,
+        "Help": 12,
+        "Sidebar badges": 4,
+        "Bell (What's New tab)": 4,
+        "What's New / Help": 3,
+        "Help — User Guide & Releases": 6,
+        "What's New + Help & Support (POC)": 6
+      }
+    },
+    "NOTLDR": {
+      "module": "Notifications",
+      "name": "Reporting-line resolution",
+      "aliases": [],
+      "status": "live",
+      "needsReview": true,
+      "notes": "Added from observed cases; fill in route and appPaths.",
+      "observed": {
+        "Notifications": 32,
+        "Reporting-line resolution": 13,
+        "Event coverage": 10,
+        "Channels": 2,
+        "Duplicate removal": 5,
+        "Notification link": 1,
+        "Ticket types": 1
+      }
+    },
+    "OPPM": {
+      "module": "Pre-sales",
+      "name": "Opportunity Allocation (manual)",
+      "folder": "presales",
+      "route": "/pre-sales",
+      "aliases": [],
+      "status": "live",
+      "appPaths": {
+        "frontend": [
+          "src/components/opportunities"
+        ],
+        "backend": [
+          "src/modules/opportunities"
+        ]
+      },
+      "needsReview": true,
+      "notes": "Seeded by registry-sync; confirm name, route and appPaths, then set needsReview to false.",
+      "observed": {
+        "Pre-sales Opportunities": 141,
+        "M01 Access & Navigation": 15,
+        "M02 Create Opportunity — Client & Opportunity details": 13,
+        "M03 Create Opportunity — Position fields": 14,
+        "M04 Create Opportunity — Direct": 6,
+        "M05 Board — list, Kanban, filters, tiles": 10,
+        "M06 Opportunity detail & editing": 9,
+        "M07 Shortlisting": 10,
+        "M08 TM approval & bypass": 7,
+        "M09 Reject, stage moves & interview rounds": 8,
+        "M10 Preparation checklist & material": 8,
+        "M11 Won, allocation & cross-module integration": 10,
+        "M12 Opportunity status lifecycle": 7,
+        "M13 Direct ticket lifecycle & cancellation": 8,
+        "M14 Notifications": 4,
+        "M15 Security": 2,
+        "M16 Retest additions (26 Oct 2026)": 10
+      }
+    },
+    "OPPRT": {
+      "module": "Pre-sales",
+      "name": "Opportunity Allocation (interview re-test)",
+      "folder": "presales",
+      "route": "/pre-sales",
+      "aliases": [],
+      "status": "live",
+      "appPaths": {
+        "frontend": [
+          "src/components/opportunities"
+        ],
+        "backend": [
+          "src/modules/opportunities"
+        ]
+      },
+      "needsReview": true,
+      "notes": "Seeded by registry-sync; confirm name, route and appPaths, then set needsReview to false.",
+      "observed": {
+        "Pre-sales Opportunities": 61,
+        "§1 pills": 11,
+        "§2 header": 3,
+        "§3 project-panel": 1,
+        "§4 shortlist": 3,
+        "§5 release": 7,
+        "§6 close": 6,
+        "§7 stats": 1,
+        "§8 direct": 2,
+        "§9 overalloc": 1,
+        "§10 rounds": 1,
+        "§11 checklist": 1,
+        "§12 ui": 1,
+        "§13 regression": 2,
+        "§14 permissions": 4,
+        "§E edge": 17
+      }
+    },
+    "OPPTY": {
+      "module": "Pre-sales",
+      "name": "Opportunity Allocation",
+      "folder": "presales",
+      "route": "/pre-sales",
+      "aliases": [],
+      "status": "live",
+      "appPaths": {
+        "frontend": [
+          "src/components/opportunities"
+        ],
+        "backend": [
+          "src/modules/opportunities"
+        ]
+      },
+      "needsReview": true,
+      "notes": "Seeded by registry-sync; confirm name, route and appPaths, then set needsReview to false.",
+      "observed": {
+        "Allocation & Deallocation": 168,
+        "Opportunity Creation": 16,
+        "Position Setup": 12,
+        "Candidate & Shortlisting": 18,
+        "Interview Pipeline": 17,
+        "Kanban & List Views": 12,
+        "Board Permissions": 6,
+        "Cancellation & Archive": 11,
+        "Assignment & Access": 9,
+        "Preparation Material": 9,
+        "Project Association": 4,
+        "Deallocation": 5,
+        "Notifications": 8,
+        "Employee View": 4,
+        "Accessibility": 3,
+        "Integration": 11,
+        "Approval, Backup & Ticket States": 23,
+        "Pre-sales Opportunities": 1660,
+        "Create Opportunity — field validation": 106,
+        "Roles, assignment & visibility": 58,
+        "Interview pipeline (end to end)": 129,
+        "Won → Project Allocation (integration)": 28,
+        "Direct allocation flow": 59,
+        "Prep material, edits, positions, checklist, security": 31,
+        "UI — Navigation": 3,
+        "UI — Create form": 5,
+        "UI — Board": 6,
+        "UI — Kanban": 2,
+        "UI — Board list": 2,
+        "UI — Opportunity detail": 3,
+        "UI — Shortlist dialog": 1,
+        "UI — Shortlisting drawer": 1,
+        "UI — Employee list": 1,
+        "UI — Profile": 1,
+        "Targeted bug retests (26 Oct 2026)": 23,
+        "Demo rehearsal — live demo path (3 runs)": 22,
+        "Demo data — prepared ticket per stage": 7,
+        "Demo environment": 5,
+        "D1 Prepared demo tickets — presenter actions (on copies)": 14,
+        "D2 Board — search, filters, views, drag-and-drop": 13,
+        "D3 Edit ticket & positions": 4,
+        "D4 Direct opportunity flow": 8,
+        "D5 Close as Client Won + misc screens": 4,
+        "D6 Projector resolution 1280×720": 6,
+        "D6 Projector resolution 1366×768": 6,
+        "Interview flow — J1 Interview happy path": 32,
+        "Interview flow — J2 Did the interview happen?": 8,
+        "Interview flow — J3 Reject, remove, re-initiate": 7,
+        "Interview flow — J4 Ticket outcome (On Hold / Lost / No Longer Required)": 6,
+        "Interview flow — J5 CSM raises and manages an Interview ticket": 5,
+        "Interview flow — J6 Role visibility on the interview flow": 7,
+        "Interview flow — J7 Round management + Link Project + Allocate (Prospect)": 9,
+        "Interview flow — J8 Board stage moves (guard rails)": 4,
+        "Interview flow — J9 Prospect, two departments": 3,
+        "Interview flow — J10 Notifications along the interview flow": 4,
+        "API regression — Create Opportunity — field validation": 106,
+        "API regression — Roles, assignment & visibility": 58,
+        "API regression — Interview pipeline (end to end)": 129,
+        "API regression — Won → Project Allocation (integration)": 28,
+        "API regression — Direct allocation flow": 59,
+        "API regression — Prep material, edits, positions, checklist, security": 31,
+        "Retest 27 Oct — Main path on a JAVA position (create → allocate → did-it-happen → reject → candidate & PM views)": 22,
+        "Retest 27 Oct — Did the interview happen? (retest, JAVA)": 6,
+        "Retest 27 Oct — Reject, remove, re-initiate (retest, JAVA)": 6,
+        "Retest 27 Oct — Ticket outcomes (retest)": 5,
+        "Retest 27 Oct — Rounds + Link Project + Allocate on a Prospect (retest)": 9,
+        "Retest 27 Oct — Board guard rails (retest)": 4,
+        "Retest 27 Oct — New test cases (27 Oct retest)": 14,
+        "Retest 27 Oct — Bug retests (27 Oct)": 13,
+        "Retest 27 Oct — CSM raises and manages an Interview ticket": 5,
+        "Retest 27 Oct — Role visibility on the interview flow": 6,
+        "Retest 27 Oct — Prepared demo tickets — presenter actions (on copies)": 14,
+        "Retest 27 Oct — Board — search, filters, views, drag-and-drop": 13,
+        "Retest 27 Oct — Edit ticket & positions": 4,
+        "Retest 27 Oct — Close as Client Won + misc screens": 4,
+        "Retest 27 Oct — Direct opportunity flow": 8,
+        "Retest 27 Oct — Projector resolution 1280×720": 6,
+        "Retest 27 Oct — Projector resolution 1366×768": 6,
+        "Retest 27 Oct — API Create Opportunity — field validation": 106,
+        "Retest 27 Oct — API Roles, assignment & visibility": 58,
+        "Retest 27 Oct — API Interview pipeline (end to end)": 129,
+        "Retest 27 Oct — API Won → Project Allocation (integration)": 28,
+        "Retest 27 Oct — API Direct allocation flow": 59,
+        "Retest 27 Oct — API Prep material, edits, positions, checklist, security": 31,
+        "Open bugs — High": 1,
+        "Open bugs — Medium": 4,
+        "Open bugs — Low": 7,
+        "Stakeholder (role-wise) — PMO": 8,
+        "Stakeholder (role-wise) — TM (JAVA)": 9,
+        "Stakeholder (role-wise) — EM (JAVA)": 5,
+        "Stakeholder (role-wise) — PM": 7,
+        "Stakeholder (role-wise) — PM (other project)": 1,
+        "Stakeholder (role-wise) — CSM": 5,
+        "Stakeholder (role-wise) — CSM (not on the project)": 1,
+        "Stakeholder (role-wise) — Employee (candidate)": 6,
+        "Stakeholder (role-wise) — Admin": 6
+      }
+    },
+    "PASTAL": {
+      "module": "My Projects",
+      "name": "Dormant unallocated loggers → Past",
+      "aliases": [],
+      "status": "live",
+      "needsReview": true,
+      "notes": "Added from observed cases; fill in route and appPaths.",
+      "observed": {
+        "My Projects": 25,
+        "Past Allocations tab": 6,
+        "Active Allocations tab": 3,
+        "Timeframe filter": 2,
+        "Project list": 2,
+        "Active/Past split": 1,
+        "Cross-screen": 1,
+        "Move back": 3,
+        "3-month window": 2,
+        "API": 4,
+        "Sync dependency": 1,
+        "Projects — Past Allocation": 7,
+        "Dormant unallocated loggers → Past": 7
+      }
+    },
+    "PMPROJ": {
+      "module": "PM & PMO",
+      "name": "PM Projects",
+      "folder": "pm-pmo",
+      "route": "/my-projects",
+      "aliases": [],
+      "status": "live",
+      "appPaths": {
+        "frontend": [
+          "src/components/pm-projects"
+        ],
+        "backend": [
+          "src/modules/pm-projects"
+        ]
+      },
+      "needsReview": true,
+      "notes": "Seeded by registry-sync; confirm name, route and appPaths, then set needsReview to false.",
+      "observed": {
+        "PM Projects": 141,
+        "My Projects": 33,
+        "Employee Details": 106,
+        "Project Detail": 12
+      }
+    },
+    "PROJDET": {
+      "module": "Projects",
+      "name": "Project Details",
+      "folder": "projects",
+      "route": "/projects",
+      "aliases": [],
+      "status": "live",
+      "appPaths": {
+        "frontend": [
+          "src/components/project"
+        ],
+        "backend": [
+          "src/modules/projects"
+        ]
+      },
+      "needsReview": true,
+      "notes": "Seeded by registry-sync; confirm name, route and appPaths, then set needsReview to false.",
+      "observed": {
+        "Project Details": 4
+      }
+    },
+    "PROJTCH": {
+      "module": "Projects",
+      "name": "Tech Stack",
+      "folder": "projects",
+      "route": "/projects/tech-stack",
+      "aliases": [],
+      "status": "live",
+      "appPaths": {
+        "frontend": [
+          "src/components/project"
+        ],
+        "backend": [
+          "src/modules/tech-stack"
+        ]
+      },
+      "needsReview": true,
+      "notes": "Seeded by registry-sync; confirm name, route and appPaths, then set needsReview to false.",
+      "observed": {}
+    },
+    "PRSKL": {
+      "module": "Frontend PR Review Skills",
+      "name": "simerp-code-review skill accuracy",
+      "aliases": [],
+      "status": "live",
+      "needsReview": true,
+      "notes": "Added from observed cases; fill in route and appPaths.",
+      "observed": {
+        "Frontend PR Review Skills": 18,
+        "Skill/agent loading": 1,
+        "task-review / simerp-code-review": 5,
+        "pr-review-fixer": 1,
+        "qa-code-review": 1,
+        "sonar-rules": 1,
+        "pagination / fix-bug": 1,
+        "Documented commands": 1,
+        "References": 1,
+        "simerp-code-review skill accuracy": 6
+      }
+    },
+    "SHDLNK": {
+      "module": "Allocation Tickets",
+      "name": "Raise swap",
+      "aliases": [],
+      "status": "live",
+      "needsReview": true,
+      "notes": "Added from observed cases; fill in route and appPaths.",
+      "observed": {
+        "Allocation Tickets": 58,
+        "Swap picker": 6,
+        "Raise swap": 14,
+        "Ticket list": 2,
+        "Ticket detail": 7,
+        "Approval order": 9,
+        "Apply swap": 1,
+        "Close cascade": 6,
+        "Withdraw / edit": 3,
+        "Ungrouped tickets": 2,
+        "Separate tickets": 3,
+        "Linked swap order rule": 4,
+        "Scheduled changes": 1
+      }
+    },
+    "TEAMDET": {
+      "module": "Team",
+      "name": "Team Details",
+      "folder": "team",
+      "aliases": [],
+      "status": "live",
+      "appPaths": {
+        "frontend": [
+          "src/components/team",
+          "src/components/teams"
+        ],
+        "backend": [
+          "src/modules/teams"
+        ]
+      },
+      "needsReview": true,
+      "notes": "Seeded by registry-sync; confirm name, route and appPaths, then set needsReview to false.",
+      "observed": {}
+    },
+    "TEAMWKU": {
+      "module": "Team",
+      "name": "Weekly Updates",
+      "folder": "team",
+      "aliases": [],
+      "status": "live",
+      "appPaths": {
+        "frontend": [
+          "src/components/weekly-updates"
+        ],
+        "backend": [
+          "src/modules/weekly-update",
+          "src/modules/weekly-update-config"
+        ]
+      },
+      "needsReview": true,
+      "notes": "Seeded by registry-sync; confirm name, route and appPaths, then set needsReview to false.",
+      "observed": {}
+    },
+    "UTLPRI": {
+      "module": "Utilization Priority",
+      "name": "Utilization Priority",
+      "folder": "utilization-priority",
+      "aliases": [],
+      "status": "live",
+      "appPaths": {
+        "frontend": [
+          "src/components/utilization-priority"
+        ],
+        "backend": [
+          "src/modules/utilization-priority"
+        ]
+      },
+      "needsReview": true,
+      "notes": "Seeded by registry-sync; confirm name, route and appPaths, then set needsReview to false.",
+      "observed": {
+        "Utilization Priority": 76,
+        "Page shell": 2,
+        "KPI tiles": 3,
+        "Tier display": 2,
+        "UP (Manual)": 4,
+        "Pagination": 3,
+        "Navigation": 1,
+        "Search": 4,
+        "Filters": 6,
+        "Under-utilized": 2,
+        "Sorting": 2,
+        "Scoring model": 4,
+        "Tier thresholds": 4,
+        "Seniority": 1,
+        "Missing inputs": 1,
+        "Rating fallback": 1,
+        "Cross-module": 6,
+        "Role enforcement": 8,
+        "Value ranges": 2,
+        "Tier boundary": 2,
+        "Under-utilized boundary": 1,
+        "Filter ranges": 2,
+        "Empty states": 3,
+        "Input handling": 1,
+        "Deep links": 1,
+        "UP (Manual) independence": 1,
+        "Filter persistence": 1,
+        "Coverage": 1,
+        "Screen spec": 4,
+        "Audit trail": 1,
+        "Scheduled job": 1,
+        "Effective Availability": 1
+      }
+    }
+  }
+}

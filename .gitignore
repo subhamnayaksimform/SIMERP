@@ -2,6 +2,7 @@ node_modules/
 dist/
 .env
 .env.local
+.env.bak
 
 # Playwright
 playwright-report/
@@ -19,6 +20,18 @@ reports/test-cases/
 reports/results/
 reports/excel/
 reports/html/
+reports/coverage/
+reports/test-cases-review/
+reports/ui-history/
+reports/ui-attachments/
+reports/ops/
+
+# knowledge-base/ persists, but these subtrees carry PII (real employee names,
+# live-ERP screenshots) and must never be committed
+reports/knowledge-base/dom-snapshots/
+
+# Machine-local Claude Code settings (absolute paths, local grants) — never share
+.claude/settings.local.json
 
 # OS / IDE
 .DS_Store

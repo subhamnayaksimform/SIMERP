@@ -26,6 +26,9 @@ export default defineConfig({
     screenshot:   'only-on-failure',
     video:        'retain-on-failure',
     actionTimeout: 15_000,
+    // Local dev servers (e.g. Vite's HTTPS mode) commonly use a self-signed certificate — only
+    // relax cert validation when actually pointed at localhost, so staging behavior is unchanged.
+    ignoreHTTPSErrors: /^https?:\/\/localhost/i.test(process.env.BASE_URL || ''),
   },
   projects: [
     { name: 'chromium', use: { ...devices['Desktop Chrome'] } },

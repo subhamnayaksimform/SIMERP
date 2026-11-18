@@ -1,0 +1,31 @@
+[
+  {
+    "key": "wl:rowsWithinScope",
+    "pass": "calc",
+    "actual": "rows=11 subtree=10 ownedProjects=0 projectStaff=0 rowsOutsideSubtreeAndStaff=0  otherRowsWithOverall=10/10 ownOverall={\"wfoPercentage\":39.8,\"wfhPercentage\":60.2,\"daysLogged\":283,\"daysInWindow\":null}",
+    "data": {
+      "rows": 11,
+      "out": 0,
+      "others": 10,
+      "othersWithOverall": 10,
+      "ownHasOverall": true
+    },
+    "ms": 365
+  },
+  {
+    "key": "tickets:ownership",
+    "pass": "info",
+    "actual": "status 403",
+    "ms": 324
+  },
+  {
+    "key": "sched:withdrawNegative",
+    "pass": "calc",
+    "actual": "withdraw(unknown uuid)=403 {\"code\":\"AUTH_004\",\"message\":\"Access forbidden\"}; withdraw(bad uuid)=403 {\"code\":\"AUTH_004\",\"message\":\"Access forbidden\"}",
+    "data": {
+      "a": 403,
+      "d": 403
+    },
+    "ms": 671
+  }
+]

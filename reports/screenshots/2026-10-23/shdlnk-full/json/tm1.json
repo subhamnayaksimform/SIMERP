@@ -1,0 +1,16 @@
+{
+  "015": {
+    "status": 409,
+    "body": {
+      "code": "SYS_004",
+      "message": "This action is not allowed in the ticket's current status"
+    }
+  },
+  "017": {
+    "status": 409,
+    "body": {
+      "code": "SYS_004",
+      "message": "This action is not allowed in the ticket's current status"
+    }
+  }
+}

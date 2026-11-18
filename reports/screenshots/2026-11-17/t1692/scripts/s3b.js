@@ -1,0 +1,15 @@
+const {H,fs,chk,as,save}=require('./lib3'); const S=JSON.parse(fs.readFileSync('s2-state.json')); const S1=JSON.parse(fs.readFileSync('s1-state.json'));
+(async()=>{ const b=await H.chromium.launch(); const P=await as(b,'vihaan.chatterjee'); const code=r=>r.body?.code; const log=JSON.parse(fs.readFileSync('teams-trigger-log.json'));
+ const ist=()=>new Date().toLocaleString('en-GB',{timeZone:'Asia/Kolkata'});
+ const ev=async(name,fn,ok=[200,201])=>{ const r=await fn(); log.push({at:ist(),event:name,status:r.status,code:code(r),msg:r.body.message}); chk('3.teams-trigger',name,ok.includes(r.status),[r.status,code(r),r.body.message,JSON.stringify(r.body.errors||'')]); await new Promise(z=>setTimeout(z,1500)); return r; };
+ const seats=async()=>(await P('GET','/opportunities/openings?limit=100&search='+S.T)).body.data.items;
+ const nomOf=async n=>(await seats()).find(s=>s.activeNomination?.employee?.name===n);
+ let s=await nomOf('Rushil Thakor'); await ev('CANDIDATE WITHDRAWN: Rushil Thakor (ANDROID)',()=>P('DELETE','/opportunities/nominations/'+s.activeNomination.publicId,{reason:'QA T1692 withdraw'}));
+ s=await nomOf('Neel Rathod'); const n=s.activeNomination.publicId;
+ const y=new Date(Date.now()-26*3600e3); y.setUTCHours(9,0,0,0);
+ const r3=await ev('INTERVIEW SCHEDULED: Neel Rathod round (yesterday 14:30 IST, back-dated)',()=>P('POST','/opportunities/nominations/'+n+'/rounds',{title:'T1692 R3',interviewer:'QA Bot',scheduledAt:y.toISOString()}));
+ await ev('ROUND RESULT: Neel Rathod back-dated round Cleared (feedback text must not appear on card)',()=>P('PATCH','/opportunities/rounds/'+r3.body.data?.publicId,{isInterviewHappened:true,outcome:'PASSED',feedback:'secret QA feedback should not be on card'}));
+ await ev('CANDIDATE SELECTED: Neel Rathod',()=>P('POST','/opportunities/nominations/'+n+'/select',{isConfirmed:true}));
+ await ev('OPPORTUNITY STATUS CHANGED: '+S1.T+' (QA+ANDROID → now QA only) -> On Hold',()=>P('PATCH','/opportunities/'+S1.opp+'/status',{status:'ON_HOLD',isConfirmed:true}));
+ await ev('OPPORTUNITY STATUS CHANGED: '+S1.T+' -> Open',()=>P('PATCH','/opportunities/'+S1.opp+'/status',{status:'OPEN',isConfirmed:true}));
+ fs.writeFileSync('teams-trigger-log.json',JSON.stringify(log,null,1)); save('s3b-results'); await b.close(); })().catch(e=>console.error('CRASH',e));

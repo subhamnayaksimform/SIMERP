@@ -1,0 +1,62 @@
+{
+  "results": [
+    {
+      "id": "fill",
+      "ok": false,
+      "error": "locator.click: Timeout 8000ms exceeded.\nCall log:\n  - waiting for getByRole('option').first()\n",
+      "errs": [
+        {
+          "type": "requestfailed",
+          "url": "https://simerp-dev.simform.solutions/pre-sales/new",
+          "text": "net::ERR_NAME_NOT_RESOLVED https://cdn.example.com/icon.svg"
+        },
+        {
+          "type": "error",
+          "url": "https://simerp-dev.simform.solutions/pre-sales/new",
+          "text": "Failed to load resource: net::ERR_NAME_NOT_RESOLVED"
+        },
+        {
+          "type": "requestfailed",
+          "url": "https://simerp-dev.simform.solutions/pre-sales/new",
+          "text": "net::ERR_CERT_COMMON_NAME_INVALID https://stack.com/"
+        },
+        {
+          "type": "error",
+          "url": "https://simerp-dev.simform.solutions/pre-sales/new",
+          "text": "Failed to load resource: net::ERR_CERT_COMMON_NAME_INVALID"
+        }
+      ]
+    },
+    {
+      "id": "submit",
+      "ok": true,
+      "url": "https://simerp-dev.simform.solutions/pre-sales/new",
+      "toast": [
+        "4 required fields left"
+      ],
+      "errs": []
+    }
+  ],
+  "errs": [
+    {
+      "type": "requestfailed",
+      "url": "https://simerp-dev.simform.solutions/pre-sales/new",
+      "text": "net::ERR_NAME_NOT_RESOLVED https://cdn.example.com/icon.svg"
+    },
+    {
+      "type": "error",
+      "url": "https://simerp-dev.simform.solutions/pre-sales/new",
+      "text": "Failed to load resource: net::ERR_NAME_NOT_RESOLVED"
+    },
+    {
+      "type": "requestfailed",
+      "url": "https://simerp-dev.simform.solutions/pre-sales/new",
+      "text": "net::ERR_CERT_COMMON_NAME_INVALID https://stack.com/"
+    },
+    {
+      "type": "error",
+      "url": "https://simerp-dev.simform.solutions/pre-sales/new",
+      "text": "Failed to load resource: net::ERR_CERT_COMMON_NAME_INVALID"
+    }
+  ]
+}

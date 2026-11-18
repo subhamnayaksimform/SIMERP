@@ -1,0 +1,56 @@
+[
+ {
+  "area": "1.preferred",
+  "name": "picker with no department + includeContractors works (lists dept-less contractors only)",
+  "pass": true,
+  "detail": "[200,0]"
+ },
+ {
+  "area": "1.preferred",
+  "name": "picker with no department and no contractors flag (record)",
+  "pass": true,
+  "detail": "[200,3649]"
+ },
+ {
+  "area": "1.preferred",
+  "name": "QA + includeContractors = QA employees + dept-less contractors",
+  "pass": true,
+  "detail": "{\"withC\":94,\"without\":94,\"deptless\":0}"
+ },
+ {
+  "area": "1.preferred",
+  "name": "contractors WITH a QA department come back flagged isContractor and with their department",
+  "pass": true,
+  "detail": "[[\"Uday Dave\",\"QA\"],[\"Manan Kapoor\",\"QA\"],[\"Tanmay Parekh\",\"QA\"],[\"Shaurya Menon\",\"QA\"],[\"Reyansh Kotak\",\"QA\"],[\"Gunjan Modi\",\"QA\"],[\"Amit Sen\",\"QA\"],[\"Arjun Yadav\",\"QA\"],[\"Maitri Iyer\",\"QA\"],[\"Suresh Roy\",\"QA\"],[\"Yash Chauhan\",\"QA\"]]"
+ },
+ {
+  "area": "1.preferred",
+  "name": "every row carries isContractor boolean",
+  "pass": true,
+  "detail": "0"
+ },
+ {
+  "area": "1.preferred",
+  "name": "includeContractors=garbage refused or treated false (record)",
+  "pass": true,
+  "detail": "[400,\"VAL_001\"]"
+ },
+ {
+  "area": "1.preferred",
+  "name": "create with QA employee + ANDROID employee + contractor as preferred",
+  "pass": true,
+  "detail": "[201,\"OPP_002\",\"Opportunity created successfully\"]"
+ },
+ {
+  "area": "1.preferred",
+  "name": "saved: all 3 preferred employees returned on detail",
+  "pass": true,
+  "detail": "[{\"publicId\":\"8027a601-1f42-4233-b8e9-ece8a4e0b842\",\"name\":\"Tanvi Parekh\",\"photoUrl\":\"https://i.pravatar.cc/150?u=tanvi.parekh@simformsolutions.com\",\"isContractor\":false,\"departmentPublicId\":\"c868f1aa-6bc1-430c-b26a-11222919627f\"},{\"publicId\":\"ef433491-af40-4be2-b940-8649173dcb8b\",\"name\":\"Feni Kotak\",\"photoUrl\":\"https://i.pravatar.cc/150?u=feni.kotak@simformsolutions.com\",\"isContractor\":false,\"dep"
+ },
+ {
+  "area": "1.preferred",
+  "name": "detail preferred employee rows carry isContractor",
+  "pass": true,
+  "detail": "{\"publicId\":\"8027a601-1f42-4233-b8e9-ece8a4e0b842\",\"name\":\"Tanvi Parekh\",\"photoUrl\":\"https://i.pravatar.cc/150?u=tanvi.parekh@simformsolutions.com\",\"isContractor\":false,\"departmentPublicId\":\"c868f1aa-6bc1-430c-b26a-11222919627f\"}"
+ }
+]

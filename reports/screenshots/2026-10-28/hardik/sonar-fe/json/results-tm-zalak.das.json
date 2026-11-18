@@ -1,0 +1,87 @@
+{
+  "results": [
+    {
+      "id": "wu-list",
+      "ok": true,
+      "url": "https://simerp-dev.simform.solutions/weekly-updates",
+      "h": [
+        "Weekly Updates"
+      ],
+      "tabs": [
+        "Weekly Updates",
+        "Training Sessions"
+      ],
+      "rows": 0,
+      "outs": [],
+      "btns": [
+        "6 unread notifications",
+        "zalak.das@simformsolutions.com - User me",
+        "Weekly Updates",
+        "Training Sessions",
+        "Add Weekly Update",
+        "Pick a date",
+        "Sort ascending"
+      ],
+      "bad": [],
+      "shot": "reports/screenshots/2026-10-28/hardik/sonar-fe/t01-weekly-updates.png",
+      "errs": []
+    },
+    {
+      "id": "wu-row-sample",
+      "ok": true,
+      "rows": [],
+      "links": [],
+      "errs": []
+    },
+    {
+      "id": "team-page",
+      "ok": true,
+      "copy": 0,
+      "btns": [
+        "6 unread notifications",
+        "zalak.das@simformsolutions.com",
+        "Select Department",
+        "Show All Details",
+        "Edit team"
+      ],
+      "shot": "reports/screenshots/2026-10-28/hardik/sonar-fe/t02-team.png",
+      "errs": []
+    },
+    {
+      "id": "team-member-profile",
+      "ok": true,
+      "t": "Select Department",
+      "asides": [],
+      "bad": [],
+      "shot": "reports/screenshots/2026-10-28/hardik/sonar-fe/t03-team-member-profile.png",
+      "errs": []
+    },
+    {
+      "id": "team-show-all-details",
+      "ok": true,
+      "note": "none",
+      "errs": []
+    },
+    {
+      "id": "department",
+      "ok": true,
+      "url": "https://simerp-dev.simform.solutions/department",
+      "h": [
+        "404 – Page Not Found"
+      ],
+      "tabs": [],
+      "rows": 0,
+      "bad": [],
+      "shot": "reports/screenshots/2026-10-28/hardik/sonar-fe/t05-department.png",
+      "errs": []
+    },
+    {
+      "id": "dept-weekly-settings-tab",
+      "ok": true,
+      "note": "no weekly tab",
+      "tabs": [],
+      "errs": []
+    }
+  ],
+  "errs": []
+}

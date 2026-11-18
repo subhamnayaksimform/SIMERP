@@ -1,0 +1,38 @@
+[
+ {
+  "area": "2.ui",
+  "name": "pending: ticket not shown on candidate's board (UI)",
+  "pass": true,
+  "detail": "https://simerp-dev.simform.solutions/unauthorized"
+ },
+ {
+  "area": "2.ui",
+  "name": "cleared: ticket now on candidate's board (UI)",
+  "pass": false,
+  "detail": "SimERP\n6.9.0\nToggle Sidebar\nEmployee\nWhat's New & History\nHelp & Support\nUnauthorized\nUnauthorized\n16\nAccess Denied\n\nYou don't have permission to view this page.\n\nGo to Profile"
+ },
+ {
+  "area": "2.ui",
+  "name": "cleared: candidate opens detail page in UI",
+  "pass": true,
+  "detail": "https://simerp-dev.simform.solutions/pre-sales/3136119f-37c5-4079-a7d6-5c95c3abd3ac"
+ },
+ {
+  "area": "2.ui",
+  "name": "cleared detail: no other candidates / prospect notes / position note visible",
+  "pass": true,
+  "detail": "null"
+ },
+ {
+  "area": "2.ui",
+  "name": "cleared Ticket Info: no prospect notes / notes / preferred employees",
+  "pass": true,
+  "detail": "[\"Preferred employees\\n\\nNo preference\",\"Note\\n\\nNot provided\"]"
+ },
+ {
+  "area": "2.ui",
+  "name": "Direct AWAITING: candidate sees ticket on Direct board (UI)",
+  "pass": false,
+  "detail": "SimERP\n6.9.0\nToggle Sidebar\nEmployee\nWhat's New & History\nHelp & Support\nUnauthorized\nUnauthorized\n3\nAccess Denied\n\nYou don't have permission to view this page.\n\nGo to Profile"
+ }
+]

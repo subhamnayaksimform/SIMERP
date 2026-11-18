@@ -1,0 +1,8 @@
+[
+ {
+  "area": "1.ui",
+  "name": "pre-selected rows at top of dropdown show email + department badge on first open",
+  "pass": false,
+  "detail": "see first load list"
+ }
+]

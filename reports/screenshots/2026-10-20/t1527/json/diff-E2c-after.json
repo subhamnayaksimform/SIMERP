@@ -1,0 +1,656 @@
+{
+  "before": "E2c-pre",
+  "after": "E2c-after",
+  "beforeAt": "2026-10-20T12:54:04.586Z",
+  "afterAt": "2026-10-20T12:54:26.457Z",
+  "newByUser": {
+    "gaurav.dutta": [
+      {
+        "eventType": "allocation_ticket.developer_updated",
+        "title": "Allocation Updated: KubeDash | Kubernetes Dashboard",
+        "body": "Your allocation for KubeDash | Kubernetes Dashboard has been updated.",
+        "createdAt": "2026-10-20T12:54:22.486Z",
+        "ctx": {
+          "ticketPublicId": "14bab8ce-94de-4116-a6ec-926ce8c2c618"
+        }
+      },
+      {
+        "eventType": "allocation.direct_employee_assigned",
+        "title": "You've Been allocated to KubeDash | Kubernetes Dashboard",
+        "body": "You've been allocated to KubeDash | Kubernetes Dashboard starting 2026-10-20.",
+        "createdAt": "2026-10-20T12:46:18.544Z",
+        "ctx": {
+          "assignmentPublicId": "3870e221-a711-4c9d-ad3f-a65b02111cb2"
+        }
+      },
+      {
+        "eventType": "allocation_ticket.developer_deallocated",
+        "title": "Allocation Ended: HyperScale | Scalability Engine",
+        "body": "Your allocation to HyperScale | Scalability Engine has ended, effective 2026-10-20.",
+        "createdAt": "2026-10-20T08:51:08.071Z",
+        "ctx": {
+          "ticketPublicId": "b2166221-d164-4b29-820f-975fd1579c20"
+        }
+      },
+      {
+        "eventType": "allocation_ticket.developer_updated",
+        "title": "Allocation Updated: HyperScale | Scalability Engine",
+        "body": "Your allocation for HyperScale | Scalability Engine has been updated.",
+        "createdAt": "2026-10-20T08:49:44.650Z",
+        "ctx": {
+          "ticketPublicId": "4c9c0a7d-640b-473f-9313-03508cdfe745"
+        }
+      },
+      {
+        "eventType": "allocation.direct_employee_assigned",
+        "title": "You've Been allocated to HyperScale | Scalability Engine",
+        "body": "You've been allocated to HyperScale | Scalability Engine starting 2026-10-20.",
+        "createdAt": "2026-10-20T08:48:43.932Z",
+        "ctx": {
+          "assignmentPublicId": "763b606e-3076-438b-8604-b5b800e18e09"
+        }
+      }
+    ],
+    "kartik.hegde": [
+      {
+        "eventType": "allocation_ticket.developer_rm_updated",
+        "title": "Assignment Updated: Gaurav Dutta",
+        "body": "Gaurav Dutta's allocation for KubeDash | Kubernetes Dashboard has been updated.",
+        "createdAt": "2026-10-20T12:54:22.462Z",
+        "ctx": {
+          "ticketPublicId": "14bab8ce-94de-4116-a6ec-926ce8c2c618"
+        }
+      },
+      {
+        "eventType": "allocation.direct_employee_rm_assigned",
+        "title": "Team Member Assigned: Gaurav Dutta",
+        "body": "Gaurav Dutta has been assigned to KubeDash | Kubernetes Dashboard starting 2026-10-20.",
+        "createdAt": "2026-10-20T12:46:18.584Z",
+        "ctx": {
+          "assignmentPublicId": "3870e221-a711-4c9d-ad3f-a65b02111cb2"
+        }
+      },
+      {
+        "eventType": "allocation_ticket.developer_rm_deallocated",
+        "title": "Team Member Deallocated: Gaurav Dutta",
+        "body": "Gaurav Dutta has been deallocated from HyperScale | Scalability Engine, effective 2026-10-20.",
+        "createdAt": "2026-10-20T08:51:08.375Z",
+        "ctx": {
+          "ticketPublicId": "b2166221-d164-4b29-820f-975fd1579c20"
+        }
+      },
+      {
+        "eventType": "allocation_ticket.developer_rm_updated",
+        "title": "Assignment Updated: Gaurav Dutta",
+        "body": "Gaurav Dutta's allocation for HyperScale | Scalability Engine has been updated.",
+        "createdAt": "2026-10-20T08:49:44.828Z",
+        "ctx": {
+          "ticketPublicId": "4c9c0a7d-640b-473f-9313-03508cdfe745"
+        }
+      },
+      {
+        "eventType": "allocation.direct_employee_rm_assigned",
+        "title": "Team Member Assigned: Gaurav Dutta",
+        "body": "Gaurav Dutta has been assigned to HyperScale | Scalability Engine starting 2026-10-20.",
+        "createdAt": "2026-10-20T08:48:44.213Z",
+        "ctx": {
+          "assignmentPublicId": "763b606e-3076-438b-8604-b5b800e18e09"
+        }
+      }
+    ],
+    "hardik.trivedi": [
+      {
+        "eventType": "allocation_ticket.developer_rm_updated",
+        "title": "Assignment Updated: Gaurav Dutta",
+        "body": "Gaurav Dutta's allocation for KubeDash | Kubernetes Dashboard has been updated.",
+        "createdAt": "2026-10-20T12:54:22.462Z",
+        "ctx": {
+          "ticketPublicId": "14bab8ce-94de-4116-a6ec-926ce8c2c618"
+        }
+      },
+      {
+        "eventType": "allocation.direct_pm_notified",
+        "title": "Allocation Confirmed: KubeDash | Kubernetes Dashboard",
+        "body": "Gaurav Dutta has been allocated to KubeDash | Kubernetes Dashboard, effective 2026-10-20.",
+        "createdAt": "2026-10-20T12:46:18.569Z",
+        "ctx": {
+          "assignmentPublicId": "3870e221-a711-4c9d-ad3f-a65b02111cb2"
+        }
+      },
+      {
+        "eventType": "allocation_ticket.pm_deallocated",
+        "title": "Assignment Ended: HyperScale | Scalability Engine",
+        "body": "Kunal Menon has been successfully deallocated from HyperScale | Scalability Engine.",
+        "createdAt": "2026-10-20T12:22:54.252Z",
+        "ctx": {
+          "ticketPublicId": "eb64a58d-7909-47bf-8341-0104168ef1d3"
+        }
+      },
+      {
+        "eventType": "allocation.direct_pm_notified",
+        "title": "Allocation Confirmed: HyperScale | Scalability Engine",
+        "body": "Kunal Menon has been allocated to HyperScale | Scalability Engine, effective 2026-10-20.",
+        "createdAt": "2026-10-20T12:17:39.949Z",
+        "ctx": {
+          "assignmentPublicId": "f954cf8a-1cd9-485d-9d17-3479bb1cfb4a"
+        }
+      },
+      {
+        "eventType": "allocation_ticket.allocation_cancelled",
+        "title": "Allocation Cancelled: ConfigHub | Configuration Management",
+        "body": "The upcoming allocation for Iti Chatterjee to ConfigHub | Configuration Management, due to start 2026-10-22, has been cancelled.",
+        "createdAt": "2026-10-20T08:56:05.820Z",
+        "ctx": {
+          "ticketPublicId": "ff8c0646-015a-4572-981b-a47c88d7d56e"
+        }
+      },
+      {
+        "eventType": "allocation_ticket.developer_rm_assigned",
+        "title": "Team Member Assigned: Iti Chatterjee",
+        "body": "Iti Chatterjee has been assigned to ConfigHub | Configuration Management starting 2026-10-22.",
+        "createdAt": "2026-10-20T08:53:31.638Z",
+        "ctx": {
+          "ticketPublicId": "2ca97f57-49b6-4131-ac65-721f657ffbf0"
+        }
+      },
+      {
+        "eventType": "allocation_ticket.pm_deallocated",
+        "title": "Assignment Ended: HyperScale | Scalability Engine",
+        "body": "Gaurav Dutta has been successfully deallocated from HyperScale | Scalability Engine.",
+        "createdAt": "2026-10-20T08:51:08.069Z",
+        "ctx": {
+          "ticketPublicId": "b2166221-d164-4b29-820f-975fd1579c20"
+        }
+      },
+      {
+        "eventType": "allocation_ticket.pm_updated",
+        "title": "Assignment Updated: HyperScale | Scalability Engine",
+        "body": "The project assignment for Gaurav Dutta has been successfully updated.",
+        "createdAt": "2026-10-20T08:49:44.892Z",
+        "ctx": {
+          "ticketPublicId": "4c9c0a7d-640b-473f-9313-03508cdfe745"
+        }
+      },
+      {
+        "eventType": "allocation.direct_pm_notified",
+        "title": "Allocation Confirmed: HyperScale | Scalability Engine",
+        "body": "Gaurav Dutta has been allocated to HyperScale | Scalability Engine, effective 2026-10-20.",
+        "createdAt": "2026-10-20T08:48:43.958Z",
+        "ctx": {
+          "assignmentPublicId": "763b606e-3076-438b-8604-b5b800e18e09"
+        }
+      }
+    ],
+    "amit.patel": [
+      {
+        "eventType": "allocation_ticket.developer_rm_updated",
+        "title": "Assignment Updated: Gaurav Dutta",
+        "body": "Gaurav Dutta's allocation for KubeDash | Kubernetes Dashboard has been updated.",
+        "createdAt": "2026-10-20T12:54:22.462Z",
+        "ctx": {
+          "ticketPublicId": "14bab8ce-94de-4116-a6ec-926ce8c2c618"
+        }
+      },
+      {
+        "eventType": "allocation.direct_employee_rm_assigned",
+        "title": "Team Member Assigned: Gaurav Dutta",
+        "body": "Gaurav Dutta has been assigned to KubeDash | Kubernetes Dashboard starting 2026-10-20.",
+        "createdAt": "2026-10-20T12:46:18.584Z",
+        "ctx": {
+          "assignmentPublicId": "3870e221-a711-4c9d-ad3f-a65b02111cb2"
+        }
+      },
+      {
+        "eventType": "allocation_ticket.allocation_cancelled",
+        "title": "Allocation Cancelled: ConfigHub | Configuration Management",
+        "body": "The upcoming allocation for Iti Chatterjee to ConfigHub | Configuration Management, due to start 2026-10-22, has been cancelled.",
+        "createdAt": "2026-10-20T08:56:05.820Z",
+        "ctx": {
+          "ticketPublicId": "ff8c0646-015a-4572-981b-a47c88d7d56e"
+        }
+      },
+      {
+        "eventType": "allocation_ticket.developer_rm_assigned",
+        "title": "Team Member Assigned: Iti Chatterjee",
+        "body": "Iti Chatterjee has been assigned to ConfigHub | Configuration Management starting 2026-10-22.",
+        "createdAt": "2026-10-20T08:53:31.638Z",
+        "ctx": {
+          "ticketPublicId": "2ca97f57-49b6-4131-ac65-721f657ffbf0"
+        }
+      },
+      {
+        "eventType": "allocation_ticket.developer_rm_deallocated",
+        "title": "Team Member Deallocated: Gaurav Dutta",
+        "body": "Gaurav Dutta has been deallocated from HyperScale | Scalability Engine, effective 2026-10-20.",
+        "createdAt": "2026-10-20T08:51:08.375Z",
+        "ctx": {
+          "ticketPublicId": "b2166221-d164-4b29-820f-975fd1579c20"
+        }
+      },
+      {
+        "eventType": "allocation_ticket.developer_rm_updated",
+        "title": "Assignment Updated: Gaurav Dutta",
+        "body": "Gaurav Dutta's allocation for HyperScale | Scalability Engine has been updated.",
+        "createdAt": "2026-10-20T08:49:44.829Z",
+        "ctx": {
+          "ticketPublicId": "4c9c0a7d-640b-473f-9313-03508cdfe745"
+        }
+      },
+      {
+        "eventType": "allocation.direct_employee_rm_assigned",
+        "title": "Team Member Assigned: Gaurav Dutta",
+        "body": "Gaurav Dutta has been assigned to HyperScale | Scalability Engine starting 2026-10-20.",
+        "createdAt": "2026-10-20T08:48:44.213Z",
+        "ctx": {
+          "assignmentPublicId": "763b606e-3076-438b-8604-b5b800e18e09"
+        }
+      }
+    ],
+    "jinal.patel": [
+      {
+        "eventType": "allocation_ticket.developer_rm_updated",
+        "title": "Assignment Updated: Gaurav Dutta",
+        "body": "Gaurav Dutta's allocation for KubeDash | Kubernetes Dashboard has been updated.",
+        "createdAt": "2026-10-20T12:54:22.462Z",
+        "ctx": {
+          "ticketPublicId": "14bab8ce-94de-4116-a6ec-926ce8c2c618"
+        }
+      },
+      {
+        "eventType": "allocation.direct_employee_rm_assigned",
+        "title": "Team Member Assigned: Gaurav Dutta",
+        "body": "Gaurav Dutta has been assigned to KubeDash | Kubernetes Dashboard starting 2026-10-20.",
+        "createdAt": "2026-10-20T12:46:18.584Z",
+        "ctx": {
+          "assignmentPublicId": "3870e221-a711-4c9d-ad3f-a65b02111cb2"
+        }
+      },
+      {
+        "eventType": "allocation_ticket.allocation_cancelled",
+        "title": "Allocation Cancelled: XCrypt | Blockchain Wallet",
+        "body": "The upcoming allocation for Falgun Solanki to XCrypt | Blockchain Wallet, due to start 2026-10-22, has been cancelled.",
+        "createdAt": "2026-10-20T11:28:39.693Z",
+        "ctx": {
+          "ticketPublicId": "dbee06a1-35ee-4adc-9d29-6f2e6cb32ed2"
+        }
+      },
+      {
+        "eventType": "allocation.direct_employee_rm_assigned",
+        "title": "Team Member Assigned: Falgun Solanki",
+        "body": "Falgun Solanki has been assigned to XCrypt | Blockchain Wallet starting 2026-10-22.",
+        "createdAt": "2026-10-20T11:27:34.804Z",
+        "ctx": {
+          "assignmentPublicId": "c97ed882-4fe2-4a03-a6b1-f9851a34b12b"
+        }
+      },
+      {
+        "eventType": "allocation_ticket.allocation_cancelled",
+        "title": "Allocation Cancelled: ConfigHub | Configuration Management",
+        "body": "The upcoming allocation for Iti Chatterjee to ConfigHub | Configuration Management, due to start 2026-10-22, has been cancelled.",
+        "createdAt": "2026-10-20T08:56:05.820Z",
+        "ctx": {
+          "ticketPublicId": "ff8c0646-015a-4572-981b-a47c88d7d56e"
+        }
+      },
+      {
+        "eventType": "allocation_ticket.developer_rm_assigned",
+        "title": "Team Member Assigned: Iti Chatterjee",
+        "body": "Iti Chatterjee has been assigned to ConfigHub | Configuration Management starting 2026-10-22.",
+        "createdAt": "2026-10-20T08:53:31.638Z",
+        "ctx": {
+          "ticketPublicId": "2ca97f57-49b6-4131-ac65-721f657ffbf0"
+        }
+      },
+      {
+        "eventType": "allocation_ticket.developer_rm_deallocated",
+        "title": "Team Member Deallocated: Gaurav Dutta",
+        "body": "Gaurav Dutta has been deallocated from HyperScale | Scalability Engine, effective 2026-10-20.",
+        "createdAt": "2026-10-20T08:51:08.375Z",
+        "ctx": {
+          "ticketPublicId": "b2166221-d164-4b29-820f-975fd1579c20"
+        }
+      },
+      {
+        "eventType": "allocation_ticket.developer_rm_updated",
+        "title": "Assignment Updated: Gaurav Dutta",
+        "body": "Gaurav Dutta's allocation for HyperScale | Scalability Engine has been updated.",
+        "createdAt": "2026-10-20T08:49:44.829Z",
+        "ctx": {
+          "ticketPublicId": "4c9c0a7d-640b-473f-9313-03508cdfe745"
+        }
+      },
+      {
+        "eventType": "allocation.direct_employee_rm_assigned",
+        "title": "Team Member Assigned: Gaurav Dutta",
+        "body": "Gaurav Dutta has been assigned to HyperScale | Scalability Engine starting 2026-10-20.",
+        "createdAt": "2026-10-20T08:48:44.213Z",
+        "ctx": {
+          "assignmentPublicId": "763b606e-3076-438b-8604-b5b800e18e09"
+        }
+      }
+    ],
+    "cto": [
+      {
+        "eventType": "allocation_ticket.developer_rm_updated",
+        "title": "Assignment Updated: Gaurav Dutta",
+        "body": "Gaurav Dutta's allocation for KubeDash | Kubernetes Dashboard has been updated.",
+        "createdAt": "2026-10-20T12:54:22.462Z",
+        "ctx": {
+          "ticketPublicId": "14bab8ce-94de-4116-a6ec-926ce8c2c618"
+        }
+      },
+      {
+        "eventType": "allocation_ticket.approved",
+        "title": "Ticket Approved: UA-0135",
+        "body": "UA-0135 (UPDATE ALLOCATION) for project KubeDash | Kubernetes Dashboard has been fully approved and applied for the requested developer.",
+        "createdAt": "2026-10-20T12:54:22.444Z",
+        "ctx": {
+          "ticketPublicId": "14bab8ce-94de-4116-a6ec-926ce8c2c618"
+        }
+      },
+      {
+        "eventType": "allocation_ticket.assigned_to_department",
+        "title": "New Ticket for Review: UA-0135",
+        "body": "UA-0135 (UPDATE ALLOCATION) for project KubeDash | Kubernetes Dashboard has been assigned to PROJECT MANAGEMENT department and is awaiting your review.",
+        "createdAt": "2026-10-20T12:49:58.955Z",
+        "ctx": {
+          "ticketPublicId": "14bab8ce-94de-4116-a6ec-926ce8c2c618"
+        }
+      },
+      {
+        "eventType": "allocation.direct_employee_rm_assigned",
+        "title": "Direct Allocation: KubeDash | Kubernetes Dashboard",
+        "body": "Bhumi Chauhan directly allocated Gaurav Dutta to KubeDash | Kubernetes Dashboard, bypassing the ticket workflow.",
+        "createdAt": "2026-10-20T12:46:18.584Z",
+        "ctx": {
+          "assignmentPublicId": "3870e221-a711-4c9d-ad3f-a65b02111cb2"
+        }
+      },
+      {
+        "eventType": "allocation_ticket.developer_rm_deallocated",
+        "title": "Team Member Deallocated: Kunal Menon",
+        "body": "Kunal Menon has been deallocated from HyperScale | Scalability Engine, effective 2026-10-20.",
+        "createdAt": "2026-10-20T12:22:54.271Z",
+        "ctx": {
+          "ticketPublicId": "eb64a58d-7909-47bf-8341-0104168ef1d3"
+        }
+      },
+      {
+        "eventType": "allocation.direct_employee_rm_assigned",
+        "title": "Direct Allocation: HyperScale | Scalability Engine",
+        "body": "Bhumi Chauhan directly allocated Kunal Menon to HyperScale | Scalability Engine, bypassing the ticket workflow.",
+        "createdAt": "2026-10-20T12:17:39.970Z",
+        "ctx": {
+          "assignmentPublicId": "f954cf8a-1cd9-485d-9d17-3479bb1cfb4a"
+        }
+      },
+      {
+        "eventType": "allocation_ticket.allocation_cancelled",
+        "title": "Allocation Cancelled: XCrypt | Blockchain Wallet",
+        "body": "The upcoming allocation for Falgun Solanki to XCrypt | Blockchain Wallet, due to start 2026-10-22, has been cancelled.",
+        "createdAt": "2026-10-20T11:28:39.693Z",
+        "ctx": {
+          "ticketPublicId": "dbee06a1-35ee-4adc-9d29-6f2e6cb32ed2"
+        }
+      },
+      {
+        "eventType": "allocation.direct_employee_rm_assigned",
+        "title": "Direct Allocation: XCrypt | Blockchain Wallet",
+        "body": "Palak Saxena directly allocated Falgun Solanki to XCrypt | Blockchain Wallet, bypassing the ticket workflow.",
+        "createdAt": "2026-10-20T11:27:34.804Z",
+        "ctx": {
+          "assignmentPublicId": "c97ed882-4fe2-4a03-a6b1-f9851a34b12b"
+        }
+      },
+      {
+        "eventType": "allocation_ticket.allocation_cancelled",
+        "title": "Allocation Cancelled: ConfigHub | Configuration Management",
+        "body": "The upcoming allocation for Iti Chatterjee to ConfigHub | Configuration Management, due to start 2026-10-22, has been cancelled.",
+        "createdAt": "2026-10-20T08:56:05.820Z",
+        "ctx": {
+          "ticketPublicId": "ff8c0646-015a-4572-981b-a47c88d7d56e"
+        }
+      },
+      {
+        "eventType": "allocation_ticket.developer_rm_assigned",
+        "title": "Approval Bypassed: NA-0373",
+        "body": "PMO bypassed your department's approval for NA-0373.",
+        "createdAt": "2026-10-20T08:53:31.638Z",
+        "ctx": {
+          "ticketPublicId": "2ca97f57-49b6-4131-ac65-721f657ffbf0"
+        }
+      },
+      {
+        "eventType": "allocation_ticket.developer_rm_deallocated",
+        "title": "Team Member Deallocated: Gaurav Dutta",
+        "body": "Gaurav Dutta has been deallocated from HyperScale | Scalability Engine, effective 2026-10-20.",
+        "createdAt": "2026-10-20T08:51:08.375Z",
+        "ctx": {
+          "ticketPublicId": "b2166221-d164-4b29-820f-975fd1579c20"
+        }
+      },
+      {
+        "eventType": "allocation_ticket.developer_rm_updated",
+        "title": "Assignment Updated: Gaurav Dutta",
+        "body": "Gaurav Dutta's allocation for HyperScale | Scalability Engine has been updated.",
+        "createdAt": "2026-10-20T08:49:44.829Z",
+        "ctx": {
+          "ticketPublicId": "4c9c0a7d-640b-473f-9313-03508cdfe745"
+        }
+      },
+      {
+        "eventType": "allocation.direct_employee_rm_assigned",
+        "title": "Direct Allocation: HyperScale | Scalability Engine",
+        "body": "Bhumi Chauhan directly allocated Gaurav Dutta to HyperScale | Scalability Engine, bypassing the ticket workflow.",
+        "createdAt": "2026-10-20T08:48:44.213Z",
+        "ctx": {
+          "assignmentPublicId": "763b606e-3076-438b-8604-b5b800e18e09"
+        }
+      }
+    ],
+    "ceo": [],
+    "ravi.vyas": [
+      {
+        "eventType": "allocation_ticket.pm_updated",
+        "title": "Assignment Updated: KubeDash | Kubernetes Dashboard",
+        "body": "The project assignment for Gaurav Dutta has been successfully updated.",
+        "createdAt": "2026-10-20T12:54:22.417Z",
+        "ctx": {
+          "ticketPublicId": "14bab8ce-94de-4116-a6ec-926ce8c2c618"
+        }
+      }
+    ],
+    "bhumi.chauhan": [
+      {
+        "eventType": "allocation_ticket.approved",
+        "title": "Ticket Approved: UA-0135",
+        "body": "UA-0135 (UPDATE ALLOCATION) for project KubeDash | Kubernetes Dashboard has been fully approved and applied for the requested developer.",
+        "createdAt": "2026-10-20T12:54:22.444Z",
+        "ctx": {
+          "ticketPublicId": "14bab8ce-94de-4116-a6ec-926ce8c2c618"
+        }
+      },
+      {
+        "eventType": "allocation_ticket.created",
+        "title": "New Ticket: UA-0135",
+        "body": "Ravi Vyas created a new UPDATE ALLOCATION ticket UA-0135 for project KubeDash | Kubernetes Dashboard.",
+        "createdAt": "2026-10-20T12:47:59.367Z",
+        "ctx": {
+          "ticketPublicId": "14bab8ce-94de-4116-a6ec-926ce8c2c618"
+        }
+      },
+      {
+        "eventType": "allocation_ticket.closed",
+        "title": "Ticket Closed: DA-0114",
+        "body": "DA-0114 for project HyperScale | Scalability Engine has been closed.",
+        "createdAt": "2026-10-20T12:22:13.863Z",
+        "ctx": {
+          "ticketPublicId": "4152253e-809b-4141-be18-c8bb501e3ca9"
+        }
+      },
+      {
+        "eventType": "allocation_ticket.closed",
+        "title": "Ticket Closed: NA-0378",
+        "body": "NA-0378 for project HyperScale | Scalability Engine has been closed.",
+        "createdAt": "2026-10-20T12:22:13.786Z",
+        "ctx": {
+          "ticketPublicId": "8dfc760e-0f3f-415b-9950-d4ded71400da"
+        }
+      },
+      {
+        "eventType": "allocation_ticket.closed",
+        "title": "Ticket Closed: DA-0115",
+        "body": "DA-0115 for project HyperScale | Scalability Engine has been closed.",
+        "createdAt": "2026-10-20T12:22:13.771Z",
+        "ctx": {
+          "ticketPublicId": "cf06ddcb-bc4c-4da0-a08f-928a054c15c4"
+        }
+      },
+      {
+        "eventType": "allocation_ticket.created",
+        "title": "New Ticket: DA-0115",
+        "body": "Priya Chopra created a new DEALLOCATE ALLOCATION ticket DA-0115 for project HyperScale | Scalability Engine.",
+        "createdAt": "2026-10-20T12:21:38.389Z",
+        "ctx": {
+          "ticketPublicId": "cf06ddcb-bc4c-4da0-a08f-928a054c15c4"
+        }
+      },
+      {
+        "eventType": "allocation_ticket.created",
+        "title": "New Ticket: NA-0378",
+        "body": "Priya Chopra created a new NEW ALLOCATION ticket NA-0378 for project HyperScale | Scalability Engine.",
+        "createdAt": "2026-10-20T12:21:38.321Z",
+        "ctx": {
+          "ticketPublicId": "8dfc760e-0f3f-415b-9950-d4ded71400da"
+        }
+      },
+      {
+        "eventType": "allocation_ticket.created",
+        "title": "New Ticket: DA-0114",
+        "body": "Priya Chopra created a new DEALLOCATE ALLOCATION ticket DA-0114 for project HyperScale | Scalability Engine.",
+        "createdAt": "2026-10-20T12:21:38.315Z",
+        "ctx": {
+          "ticketPublicId": "4152253e-809b-4141-be18-c8bb501e3ca9"
+        }
+      },
+      {
+        "eventType": "allocation_ticket.closed",
+        "title": "Ticket Closed: DA-0113",
+        "body": "DA-0113 for project HyperScale | Scalability Engine has been closed.",
+        "createdAt": "2026-10-20T12:20:55.636Z",
+        "ctx": {
+          "ticketPublicId": "0b8679e5-6d74-470b-a420-34c01ba4fb7e"
+        }
+      },
+      {
+        "eventType": "allocation_ticket.closed",
+        "title": "Ticket Closed: DA-0112",
+        "body": "DA-0112 for project HyperScale | Scalability Engine has been closed.",
+        "createdAt": "2026-10-20T12:20:55.544Z",
+        "ctx": {
+          "ticketPublicId": "0ac7c6a2-fd9e-4eb4-bf5a-af06e212ba6b"
+        }
+      },
+      {
+        "eventType": "allocation_ticket.closed",
+        "title": "Ticket Closed: NA-0377",
+        "body": "NA-0377 for project HyperScale | Scalability Engine has been closed.",
+        "createdAt": "2026-10-20T12:19:23.616Z",
+        "ctx": {
+          "ticketPublicId": "b51c9a19-b334-4c15-982e-3d340c2769fc"
+        }
+      },
+      {
+        "eventType": "allocation_ticket.closed",
+        "title": "Ticket Closed: NA-0376",
+        "body": "NA-0376 for project HyperScale | Scalability Engine has been closed.",
+        "createdAt": "2026-10-20T12:19:23.544Z",
+        "ctx": {
+          "ticketPublicId": "5840dc4b-9493-45df-86cf-d9ef40ecf680"
+        }
+      },
+      {
+        "eventType": "allocation_ticket.created",
+        "title": "New Ticket: DA-0113",
+        "body": "Priya Chopra created a new DEALLOCATE ALLOCATION ticket DA-0113 for project HyperScale | Scalability Engine.",
+        "createdAt": "2026-10-20T12:18:26.202Z",
+        "ctx": {
+          "ticketPublicId": "0b8679e5-6d74-470b-a420-34c01ba4fb7e"
+        }
+      },
+      {
+        "eventType": "allocation_ticket.created",
+        "title": "New Ticket: NA-0377",
+        "body": "Priya Chopra created a new NEW ALLOCATION ticket NA-0377 for project HyperScale | Scalability Engine.",
+        "createdAt": "2026-10-20T12:18:26.159Z",
+        "ctx": {
+          "ticketPublicId": "b51c9a19-b334-4c15-982e-3d340c2769fc"
+        }
+      },
+      {
+        "eventType": "allocation_ticket.created",
+        "title": "New Ticket: NA-0376",
+        "body": "Priya Chopra created a new NEW ALLOCATION ticket NA-0376 for project HyperScale | Scalability Engine.",
+        "createdAt": "2026-10-20T12:18:26.140Z",
+        "ctx": {
+          "ticketPublicId": "5840dc4b-9493-45df-86cf-d9ef40ecf680"
+        }
+      },
+      {
+        "eventType": "allocation_ticket.created",
+        "title": "New Ticket: DA-0112",
+        "body": "Priya Chopra created a new DEALLOCATE ALLOCATION ticket DA-0112 for project HyperScale | Scalability Engine.",
+        "createdAt": "2026-10-20T12:18:26.137Z",
+        "ctx": {
+          "ticketPublicId": "0ac7c6a2-fd9e-4eb4-bf5a-af06e212ba6b"
+        }
+      },
+      {
+        "eventType": "allocation_ticket.allocation_cancelled",
+        "title": "Allocation Cancelled: XCrypt | Blockchain Wallet",
+        "body": "The upcoming allocation for Falgun Solanki to XCrypt | Blockchain Wallet, due to start 2026-10-22, has been cancelled.",
+        "createdAt": "2026-10-20T11:28:39.693Z",
+        "ctx": {
+          "ticketPublicId": "dbee06a1-35ee-4adc-9d29-6f2e6cb32ed2"
+        }
+      },
+      {
+        "eventType": "allocation.direct_employee_rm_assigned",
+        "title": "Team Member Assigned: Falgun Solanki",
+        "body": "Falgun Solanki has been assigned to XCrypt | Blockchain Wallet starting 2026-10-22.",
+        "createdAt": "2026-10-20T11:27:34.804Z",
+        "ctx": {
+          "assignmentPublicId": "c97ed882-4fe2-4a03-a6b1-f9851a34b12b"
+        }
+      },
+      {
+        "eventType": "allocation_ticket.allocation_cancelled",
+        "title": "Allocation Cancelled: ConfigHub | Configuration Management",
+        "body": "The upcoming allocation for Iti Chatterjee to ConfigHub | Configuration Management, due to start 2026-10-22, has been cancelled.",
+        "createdAt": "2026-10-20T08:56:05.820Z",
+        "ctx": {
+          "ticketPublicId": "ff8c0646-015a-4572-981b-a47c88d7d56e"
+        }
+      },
+      {
+        "eventType": "allocation_ticket.created",
+        "title": "New Ticket: DA-0110",
+        "body": "Jignesh Raval created a new DEALLOCATE ALLOCATION ticket DA-0110 for project ConfigHub | Configuration Management.",
+        "createdAt": "2026-10-20T08:55:21.933Z",
+        "ctx": {
+          "ticketPublicId": "ff8c0646-015a-4572-981b-a47c88d7d56e"
+        }
+      },
+      {
+        "eventType": "allocation_ticket.created",
+        "title": "New Ticket: NA-0373",
+        "body": "Jignesh Raval created a new NEW ALLOCATION ticket NA-0373 for project ConfigHub | Configuration Management.",
+        "createdAt": "2026-10-20T08:52:39.572Z",
+        "ctx": {
+          "ticketPublicId": "2ca97f57-49b6-4131-ac65-721f657ffbf0"
+        }
+      }
+    ],
+    "foram.malhotra": []
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "actor": "jignesh.raval",
+  "T0": "2026-10-20T08:52:37.737Z",
+  "T1": "2026-10-20T08:52:39.491Z",
+  "method": "POST",
+  "path": "/allocation-tickets/new-allocation",
+  "req": {
+    "projectPublicId": "99ac60dc-5c74-4e18-8cf1-253fc622a270",
+    "description": "QA retest SI4-I580 2026-10-20 (PM requester is RM). Will be cancelled same day.",
+    "resourceRequests": [
+      {
+        "requestType": "FRESH_ALLOCATION",
+        "deptStackPublicId": "ad70af37-bace-47f8-819f-4951bc7a013e",
+        "departmentPublicId": "7db5553f-94cd-45ee-a7d5-eb62e14d446a",
+        "requestedAllocationStartDate": "2026-10-22",
+        "requestedAllocationEndDate": "2026-11-30",
+        "requestedAllocationType": "FIXED",
+        "requestedAllocationPercentage": 10,
+        "developerPreferencePublicIds": [
+          "ddedc1ce-e502-4fbd-9b07-0c33a0807982"
+        ],
+        "isInterviewRequired": false,
+        "isClientFacing": false,
+        "note": "QA test - will be cancelled"
+      }
+    ]
+  },
+  "res": {
+    "status": 201,
+    "body": {
+      "code": "ALLOCATION_TICKET_006",
+      "message": "New allocation ticket(s) created successfully",
+      "data": [
+        {
+          "publicId": "2ca97f57-49b6-4131-ac65-721f657ffbf0",
+          "ticketNumber": "NA-0373",
+          "status": "OPEN"
+        }
+      ]
+    }
+  }
+}

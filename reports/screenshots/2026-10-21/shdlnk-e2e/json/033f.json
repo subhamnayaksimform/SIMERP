@@ -1,0 +1,7 @@
+{
+  "status": 400,
+  "body": {
+    "code": "SYS_004",
+    "message": "The promotion must be a FRESH_ALLOCATION request"
+  }
+}

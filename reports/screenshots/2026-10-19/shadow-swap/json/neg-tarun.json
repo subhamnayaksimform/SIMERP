@@ -1,0 +1,330 @@
+{
+  "start_eq_D": {
+    "req": {
+      "projectId": "c20430eb-7e7e-44e6-b769-3c7756e6a9e2",
+      "flowType": "SHADOW_TO_MAIN",
+      "mainDeallocation": {
+        "projectAssignmentPublicId": "b10689fa-2edb-4f79-99d1-3c7c7371b540",
+        "allocationEndDate": "2026-10-31",
+        "deallocationReason": "ROLE_MISALIGNMENT",
+        "coreSkillRating": 7,
+        "communicationRating": 7,
+        "behavioralRating": 7,
+        "overallRating": 7,
+        "developerFeedback": "QA probe",
+        "isOpenToWorkWithAgain": true
+      },
+      "shadowDeallocation": {
+        "projectAssignmentPublicId": "4186a764-485d-4b1c-89c0-4d3e4604ef06",
+        "allocationEndDate": "2026-10-31",
+        "deallocationReason": "ROLE_MISALIGNMENT"
+      },
+      "promotion": {
+        "deptStackPublicId": "2f46cbf6-894b-4d87-8580-4e525da41760",
+        "requestedAllocationStartDate": "2026-10-31",
+        "requestedAllocationEndDate": "2027-05-31",
+        "requestType": "FRESH_ALLOCATION",
+        "shadowForPublicId": null,
+        "allocationRequestCreationType": null,
+        "requestedAllocationType": "FIXED",
+        "requestedAllocationPercentage": 55,
+        "developerPreferencePublicIds": [
+          "da3c4542-13bb-452b-b619-42095c913d94"
+        ],
+        "isInterviewRequired": false,
+        "isClientFacing": false
+      }
+    },
+    "res": {
+      "status": 400,
+      "body": {
+        "message": "The promotion and new-shadow start dates must be after both deallocation dates",
+        "error": "Bad Request",
+        "statusCode": 400
+      }
+    }
+  },
+  "both_released_with_promotion": {
+    "req": {
+      "projectId": "c20430eb-7e7e-44e6-b769-3c7756e6a9e2",
+      "flowType": "BOTH_RELEASED",
+      "mainDeallocation": {
+        "projectAssignmentPublicId": "b10689fa-2edb-4f79-99d1-3c7c7371b540",
+        "allocationEndDate": "2026-10-31",
+        "deallocationReason": "ROLE_MISALIGNMENT",
+        "coreSkillRating": 7,
+        "communicationRating": 7,
+        "behavioralRating": 7,
+        "overallRating": 7,
+        "developerFeedback": "QA probe",
+        "isOpenToWorkWithAgain": true
+      },
+      "shadowDeallocation": {
+        "projectAssignmentPublicId": "4186a764-485d-4b1c-89c0-4d3e4604ef06",
+        "allocationEndDate": "2026-10-31",
+        "deallocationReason": "ROLE_MISALIGNMENT"
+      },
+      "promotion": {
+        "deptStackPublicId": "2f46cbf6-894b-4d87-8580-4e525da41760",
+        "requestedAllocationStartDate": "2026-11-01",
+        "requestedAllocationEndDate": "2027-05-31",
+        "requestType": "FRESH_ALLOCATION",
+        "shadowForPublicId": null,
+        "allocationRequestCreationType": null,
+        "requestedAllocationType": "FIXED",
+        "requestedAllocationPercentage": 55,
+        "developerPreferencePublicIds": [
+          "da3c4542-13bb-452b-b619-42095c913d94"
+        ],
+        "isInterviewRequired": false,
+        "isClientFacing": false
+      }
+    },
+    "res": {
+      "status": 400,
+      "body": {
+        "message": "promotion and newShadow are not allowed for the BOTH_RELEASED flow",
+        "error": "Bad Request",
+        "statusCode": 400
+      }
+    }
+  },
+  "pref_not_shadow": {
+    "req": {
+      "projectId": "c20430eb-7e7e-44e6-b769-3c7756e6a9e2",
+      "flowType": "SHADOW_TO_MAIN",
+      "mainDeallocation": {
+        "projectAssignmentPublicId": "b10689fa-2edb-4f79-99d1-3c7c7371b540",
+        "allocationEndDate": "2026-10-31",
+        "deallocationReason": "ROLE_MISALIGNMENT",
+        "coreSkillRating": 7,
+        "communicationRating": 7,
+        "behavioralRating": 7,
+        "overallRating": 7,
+        "developerFeedback": "QA probe",
+        "isOpenToWorkWithAgain": true
+      },
+      "shadowDeallocation": {
+        "projectAssignmentPublicId": "4186a764-485d-4b1c-89c0-4d3e4604ef06",
+        "allocationEndDate": "2026-10-31",
+        "deallocationReason": "ROLE_MISALIGNMENT"
+      },
+      "promotion": {
+        "deptStackPublicId": "2f46cbf6-894b-4d87-8580-4e525da41760",
+        "requestedAllocationStartDate": "2026-11-01",
+        "requestedAllocationEndDate": "2027-05-31",
+        "requestType": "FRESH_ALLOCATION",
+        "shadowForPublicId": null,
+        "allocationRequestCreationType": null,
+        "requestedAllocationType": "FIXED",
+        "requestedAllocationPercentage": 55,
+        "developerPreferencePublicIds": [
+          "58891c8e-f56a-4fc3-bad4-a0bc5c12fceb"
+        ],
+        "isInterviewRequired": false,
+        "isClientFacing": false
+      }
+    },
+    "res": {
+      "status": 400,
+      "body": {
+        "message": "The promotion must list exactly the outgoing shadow developer as its only developer preference",
+        "error": "Bad Request",
+        "statusCode": 400
+      }
+    }
+  },
+  "same_assignment": {
+    "req": {
+      "projectId": "c20430eb-7e7e-44e6-b769-3c7756e6a9e2",
+      "flowType": "SHADOW_TO_MAIN",
+      "mainDeallocation": {
+        "projectAssignmentPublicId": "b10689fa-2edb-4f79-99d1-3c7c7371b540",
+        "allocationEndDate": "2026-10-31",
+        "deallocationReason": "ROLE_MISALIGNMENT",
+        "coreSkillRating": 7,
+        "communicationRating": 7,
+        "behavioralRating": 7,
+        "overallRating": 7,
+        "developerFeedback": "QA probe",
+        "isOpenToWorkWithAgain": true
+      },
+      "shadowDeallocation": {
+        "projectAssignmentPublicId": "b10689fa-2edb-4f79-99d1-3c7c7371b540",
+        "allocationEndDate": "2026-10-31",
+        "deallocationReason": "ROLE_MISALIGNMENT"
+      },
+      "promotion": {
+        "deptStackPublicId": "2f46cbf6-894b-4d87-8580-4e525da41760",
+        "requestedAllocationStartDate": "2026-11-01",
+        "requestedAllocationEndDate": "2027-05-31",
+        "requestType": "FRESH_ALLOCATION",
+        "shadowForPublicId": null,
+        "allocationRequestCreationType": null,
+        "requestedAllocationType": "FIXED",
+        "requestedAllocationPercentage": 55,
+        "developerPreferencePublicIds": [
+          "da3c4542-13bb-452b-b619-42095c913d94"
+        ],
+        "isInterviewRequired": false,
+        "isClientFacing": false
+      }
+    },
+    "res": {
+      "status": 400,
+      "body": {
+        "message": "mainDeallocation and shadowDeallocation must target two different assignments",
+        "error": "Bad Request",
+        "statusCode": 400
+      }
+    }
+  },
+  "promotion_not_fresh": {
+    "req": {
+      "projectId": "c20430eb-7e7e-44e6-b769-3c7756e6a9e2",
+      "flowType": "SHADOW_TO_MAIN",
+      "mainDeallocation": {
+        "projectAssignmentPublicId": "b10689fa-2edb-4f79-99d1-3c7c7371b540",
+        "allocationEndDate": "2026-10-31",
+        "deallocationReason": "ROLE_MISALIGNMENT",
+        "coreSkillRating": 7,
+        "communicationRating": 7,
+        "behavioralRating": 7,
+        "overallRating": 7,
+        "developerFeedback": "QA probe",
+        "isOpenToWorkWithAgain": true
+      },
+      "shadowDeallocation": {
+        "projectAssignmentPublicId": "4186a764-485d-4b1c-89c0-4d3e4604ef06",
+        "allocationEndDate": "2026-10-31",
+        "deallocationReason": "ROLE_MISALIGNMENT"
+      },
+      "promotion": {
+        "deptStackPublicId": "2f46cbf6-894b-4d87-8580-4e525da41760",
+        "requestedAllocationStartDate": "2026-11-01",
+        "requestedAllocationEndDate": "2027-05-31",
+        "requestType": "SHADOW_DEVELOPER",
+        "shadowForPublicId": "5492755c-16a4-407e-8571-0db979628d17",
+        "allocationRequestCreationType": null,
+        "requestedAllocationType": "FIXED",
+        "requestedAllocationPercentage": 55,
+        "developerPreferencePublicIds": [
+          "da3c4542-13bb-452b-b619-42095c913d94"
+        ],
+        "isInterviewRequired": false,
+        "isClientFacing": false
+      }
+    },
+    "res": {
+      "status": 400,
+      "body": {
+        "message": "The promotion must be a FRESH_ALLOCATION request",
+        "error": "Bad Request",
+        "statusCode": 400
+      }
+    }
+  },
+  "newshadow_wrong_target": {
+    "req": {
+      "projectId": "c20430eb-7e7e-44e6-b769-3c7756e6a9e2",
+      "flowType": "SHADOW_TO_MAIN_NEW_SHADOW",
+      "mainDeallocation": {
+        "projectAssignmentPublicId": "b10689fa-2edb-4f79-99d1-3c7c7371b540",
+        "allocationEndDate": "2026-10-31",
+        "deallocationReason": "ROLE_MISALIGNMENT",
+        "coreSkillRating": 7,
+        "communicationRating": 7,
+        "behavioralRating": 7,
+        "overallRating": 7,
+        "developerFeedback": "QA probe",
+        "isOpenToWorkWithAgain": true
+      },
+      "shadowDeallocation": {
+        "projectAssignmentPublicId": "4186a764-485d-4b1c-89c0-4d3e4604ef06",
+        "allocationEndDate": "2026-10-31",
+        "deallocationReason": "ROLE_MISALIGNMENT"
+      },
+      "promotion": {
+        "deptStackPublicId": "2f46cbf6-894b-4d87-8580-4e525da41760",
+        "requestedAllocationStartDate": "2026-11-01",
+        "requestedAllocationEndDate": "2027-05-31",
+        "requestType": "FRESH_ALLOCATION",
+        "shadowForPublicId": null,
+        "allocationRequestCreationType": null,
+        "requestedAllocationType": "FIXED",
+        "requestedAllocationPercentage": 55,
+        "developerPreferencePublicIds": [
+          "da3c4542-13bb-452b-b619-42095c913d94"
+        ],
+        "isInterviewRequired": false,
+        "isClientFacing": false
+      },
+      "newShadow": {
+        "deptStackPublicId": "2f46cbf6-894b-4d87-8580-4e525da41760",
+        "requestedAllocationStartDate": "2026-11-01",
+        "requestedAllocationEndDate": "2027-05-31",
+        "requestType": "SHADOW_DEVELOPER",
+        "shadowForPublicId": "5492755c-16a4-407e-8571-0db979628d17",
+        "allocationRequestCreationType": null,
+        "requestedAllocationType": "FIXED",
+        "requestedAllocationPercentage": 55,
+        "developerPreferencePublicIds": [],
+        "isInterviewRequired": false,
+        "isClientFacing": false
+      }
+    },
+    "res": {
+      "status": 400,
+      "body": {
+        "message": "newShadow must be a SHADOW_DEVELOPER request shadowing the promoted shadow developer",
+        "error": "Bad Request",
+        "statusCode": 400
+      }
+    }
+  },
+  "newshadow_missing": {
+    "req": {
+      "projectId": "c20430eb-7e7e-44e6-b769-3c7756e6a9e2",
+      "flowType": "SHADOW_TO_MAIN_NEW_SHADOW",
+      "mainDeallocation": {
+        "projectAssignmentPublicId": "b10689fa-2edb-4f79-99d1-3c7c7371b540",
+        "allocationEndDate": "2026-10-31",
+        "deallocationReason": "ROLE_MISALIGNMENT",
+        "coreSkillRating": 7,
+        "communicationRating": 7,
+        "behavioralRating": 7,
+        "overallRating": 7,
+        "developerFeedback": "QA probe",
+        "isOpenToWorkWithAgain": true
+      },
+      "shadowDeallocation": {
+        "projectAssignmentPublicId": "4186a764-485d-4b1c-89c0-4d3e4604ef06",
+        "allocationEndDate": "2026-10-31",
+        "deallocationReason": "ROLE_MISALIGNMENT"
+      },
+      "promotion": {
+        "deptStackPublicId": "2f46cbf6-894b-4d87-8580-4e525da41760",
+        "requestedAllocationStartDate": "2026-11-01",
+        "requestedAllocationEndDate": "2027-05-31",
+        "requestType": "FRESH_ALLOCATION",
+        "shadowForPublicId": null,
+        "allocationRequestCreationType": null,
+        "requestedAllocationType": "FIXED",
+        "requestedAllocationPercentage": 55,
+        "developerPreferencePublicIds": [
+          "da3c4542-13bb-452b-b619-42095c913d94"
+        ],
+        "isInterviewRequired": false,
+        "isClientFacing": false
+      }
+    },
+    "res": {
+      "status": 400,
+      "body": {
+        "message": "newShadow is required for the SHADOW_TO_MAIN_NEW_SHADOW flow and not allowed for SHADOW_TO_MAIN",
+        "error": "Bad Request",
+        "statusCode": 400
+      }
+    }
+  }
+}

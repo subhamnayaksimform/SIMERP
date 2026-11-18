@@ -1,0 +1,20 @@
+{
+  "actor": "bhumi.chauhan",
+  "T0": "2026-10-20T12:49:49.066Z",
+  "T1": "2026-10-20T12:49:50.199Z",
+  "method": "PATCH",
+  "path": "/allocation-tickets/14bab8ce-94de-4116-a6ec-926ce8c2c618/advance",
+  "req": {},
+  "res": {
+    "status": 200,
+    "body": {
+      "code": "SUCCESS",
+      "message": "Ticket advanced to the next review stage",
+      "data": {
+        "publicId": "14bab8ce-94de-4116-a6ec-926ce8c2c618",
+        "ticketNumber": "UA-0135",
+        "status": "PMO_REVIEWED"
+      }
+    }
+  }
+}

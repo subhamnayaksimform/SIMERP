@@ -1,0 +1,32 @@
+{
+  "T0": "2026-10-15T10:22:52.738Z",
+  "req": {
+    "projectPublicId": "3d138a89-4d06-4839-8091-436fba0a2dd6",
+    "description": "QA test SI4-T1527 (PM-who-is-Lead dedup check). Will be removed.",
+    "resourceRequests": [
+      {
+        "requestType": "FRESH_ALLOCATION",
+        "deptStackPublicId": "ad70af37-bace-47f8-819f-4951bc7a013e",
+        "departmentPublicId": "7db5553f-94cd-45ee-a7d5-eb62e14d446a",
+        "requestedAllocationStartDate": "2026-10-16",
+        "requestedAllocationEndDate": "2026-10-31",
+        "requestedAllocationType": "FIXED",
+        "requestedAllocationPercentage": 10,
+        "developerPreferencePublicIds": [
+          "9e022354-91e9-4046-b120-57626ad9c5a6"
+        ],
+        "isInterviewRequired": false,
+        "isClientFacing": false,
+        "note": "QA test - dedup check"
+      }
+    ]
+  },
+  "res": {
+    "status": 403,
+    "body": {
+      "message": "Access forbidden",
+      "error": "Forbidden",
+      "statusCode": 403
+    }
+  }
+}

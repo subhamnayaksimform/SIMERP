@@ -1,0 +1,139 @@
+{
+  "sahil.dave": {
+    "url": "https://simerp-dev.simform.solutions/profile",
+    "n": 54,
+    "rbac": false,
+    "rbacUpd": false,
+    "emp": false,
+    "proj": false,
+    "team": false,
+    "alloc_corr": [],
+    "wu": [],
+    "dept": false,
+    "keys": [
+      "rules",
+      "scopeMap"
+    ]
+  },
+  "yash.kotak": {
+    "url": "https://simerp-dev.simform.solutions/profile",
+    "n": 51,
+    "rbac": false,
+    "rbacUpd": false,
+    "emp": false,
+    "proj": false,
+    "team": false,
+    "alloc_corr": [],
+    "wu": [],
+    "dept": false,
+    "keys": [
+      "rules",
+      "scopeMap"
+    ]
+  },
+  "sagar.khanpara": {
+    "url": "https://simerp-dev.simform.solutions/employee?sortBy=availabilityPercentage&sortOrder=desc",
+    "n": 58,
+    "rbac": false,
+    "rbacUpd": false,
+    "emp": true,
+    "proj": true,
+    "team": false,
+    "alloc_corr": [],
+    "wu": [
+      "create:weekly_updates",
+      "read:weekly_updates",
+      "update:weekly_updates"
+    ],
+    "dept": true,
+    "keys": [
+      "rules",
+      "scopeMap"
+    ]
+  },
+  "smit.shah": {
+    "url": "https://simerp-dev.simform.solutions/employee?sortBy=availabilityPercentage&sortOrder=desc",
+    "n": 133,
+    "rbac": false,
+    "rbacUpd": false,
+    "emp": true,
+    "proj": true,
+    "team": true,
+    "alloc_corr": [],
+    "wu": [
+      "read:weekly_updates",
+      "delete:weekly_updates"
+    ],
+    "dept": true,
+    "keys": [
+      "rules",
+      "scopeMap"
+    ]
+  },
+  "vandana.trivedi": {
+    "url": "https://simerp-dev.simform.solutions/profile",
+    "n": 54,
+    "rbac": false,
+    "rbacUpd": false,
+    "emp": false,
+    "proj": false,
+    "team": false,
+    "alloc_corr": [],
+    "wu": [],
+    "dept": false,
+    "keys": [
+      "rules",
+      "scopeMap"
+    ]
+  },
+  "sai.thakor": {
+    "url": "https://simerp-dev.simform.solutions/employee?sortBy=availabilityPercentage&sortOrder=desc",
+    "n": 101,
+    "rbac": false,
+    "rbacUpd": false,
+    "emp": true,
+    "proj": true,
+    "team": true,
+    "alloc_corr": [],
+    "wu": [
+      "read:weekly_updates"
+    ],
+    "dept": true,
+    "keys": [
+      "rules",
+      "scopeMap"
+    ]
+  },
+  "shruti.chauhan": {
+    "url": "https://simerp-dev.simform.solutions/profile",
+    "n": 51,
+    "rbac": false,
+    "rbacUpd": false,
+    "emp": false,
+    "proj": false,
+    "team": false,
+    "alloc_corr": [],
+    "wu": [],
+    "dept": false,
+    "keys": [
+      "rules",
+      "scopeMap"
+    ]
+  },
+  "sai.jain": {
+    "url": "https://simerp-dev.simform.solutions/profile",
+    "n": 54,
+    "rbac": false,
+    "rbacUpd": false,
+    "emp": false,
+    "proj": false,
+    "team": false,
+    "alloc_corr": [],
+    "wu": [],
+    "dept": false,
+    "keys": [
+      "rules",
+      "scopeMap"
+    ]
+  }
+}

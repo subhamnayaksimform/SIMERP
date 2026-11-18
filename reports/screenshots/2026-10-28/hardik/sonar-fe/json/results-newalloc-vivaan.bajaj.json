@@ -1,0 +1,118 @@
+{
+  "results": [
+    {
+      "id": "request-type-switch",
+      "ok": true,
+      "opts": [
+        "Fresh Allocation",
+        "Shadow Developer",
+        "PR Reviewer"
+      ],
+      "pr": "PR Reviewer",
+      "other": "Fresh Allocation",
+      "l1": [
+        "Project*",
+        "Project Description",
+        "Request Type*",
+        "External Reviewer",
+        "PR Reviewer Frequency*",
+        "Department*",
+        "Primary Tech Stack*",
+        "Additional Tech Stacks",
+        "Start Date*",
+        "End Date",
+        "Note for allocation"
+      ],
+      "freqSet": "Frequently",
+      "l2": [
+        "Project*",
+        "Project Description",
+        "Request Type*",
+        "Primary Tech Stack*",
+        "Additional Tech Stacks",
+        "Interview Required",
+        "Client Facing",
+        "Start Date*",
+        "End Date",
+        "Allocation Type*",
+        "Fixed",
+        "Dynamic",
+        "Allocation %*",
+        "Preferred Seniority*",
+        "Preferred Employee (up to 3)",
+        "Night Shift Preference",
+        "Location Preference",
+        "Note for allocation"
+      ],
+      "freqResetToPlaceholder": true,
+      "shot1": "reports/screenshots/2026-10-28/hardik/sonar-fe/c11-new-alloc-pr-reviewer.png",
+      "shot2": "reports/screenshots/2026-10-28/hardik/sonar-fe/c12-new-alloc-switched-back.png",
+      "shot3": "reports/screenshots/2026-10-28/hardik/sonar-fe/c13-new-alloc-pr-again.png",
+      "errs": []
+    },
+    {
+      "id": "tech-stack-field-separator",
+      "ok": true,
+      "names": [
+        "Select Project|radix-_r_2b_|false",
+        "Select frequency|radix-_r_5u_|false",
+        "Select department|radix-_r_60_|false",
+        "Select tech stack|radix-_r_2i_|false"
+      ],
+      "popExists": 1,
+      "hrs": 0,
+      "shot": "reports/screenshots/2026-10-28/hardik/sonar-fe/c14-additional-tech-stack.png",
+      "errs": [
+        {
+          "type": "requestfailed",
+          "url": "https://simerp-dev.simform.solutions/my-projects/new-allocation",
+          "text": "net::ERR_NAME_NOT_RESOLVED https://cdn.example.com/icon.svg"
+        },
+        {
+          "type": "error",
+          "url": "https://simerp-dev.simform.solutions/my-projects/new-allocation",
+          "text": "Failed to load resource: net::ERR_NAME_NOT_RESOLVED"
+        },
+        {
+          "type": "requestfailed",
+          "url": "https://simerp-dev.simform.solutions/my-projects/new-allocation",
+          "text": "net::ERR_CERT_COMMON_NAME_INVALID https://stack.com/"
+        },
+        {
+          "type": "error",
+          "url": "https://simerp-dev.simform.solutions/my-projects/new-allocation",
+          "text": "Failed to load resource: net::ERR_CERT_COMMON_NAME_INVALID"
+        }
+      ]
+    },
+    {
+      "id": "submit-empty-validation",
+      "ok": true,
+      "sname": "Submit Request",
+      "enabled": false,
+      "errs": []
+    }
+  ],
+  "errs": [
+    {
+      "type": "requestfailed",
+      "url": "https://simerp-dev.simform.solutions/my-projects/new-allocation",
+      "text": "net::ERR_NAME_NOT_RESOLVED https://cdn.example.com/icon.svg"
+    },
+    {
+      "type": "error",
+      "url": "https://simerp-dev.simform.solutions/my-projects/new-allocation",
+      "text": "Failed to load resource: net::ERR_NAME_NOT_RESOLVED"
+    },
+    {
+      "type": "requestfailed",
+      "url": "https://simerp-dev.simform.solutions/my-projects/new-allocation",
+      "text": "net::ERR_CERT_COMMON_NAME_INVALID https://stack.com/"
+    },
+    {
+      "type": "error",
+      "url": "https://simerp-dev.simform.solutions/my-projects/new-allocation",
+      "text": "Failed to load resource: net::ERR_CERT_COMMON_NAME_INVALID"
+    }
+  ]
+}

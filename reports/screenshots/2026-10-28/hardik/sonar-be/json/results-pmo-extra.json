@@ -1,0 +1,84 @@
+[
+  {
+    "key": "notif:emitChainAfterDeploy",
+    "pass": false,
+    "actual": "ticketsCreatedAfterDeploy=78 withoutAnyPmoNotification=36 NA-0473(NEW_ALLOCATION,2026-10-27T14:53), NA-0472(NEW_ALLOCATION,2026-10-27T14:41), NA-0471(NEW_ALLOCATION,2026-10-27T14:19), NA-0470(NEW_ALLOCATION,2026-10-27T14:10), NA-0468(NEW_ALLOCATION,2026-10-27T14:07), NA-0467(NEW_ALLOCATION,2026-10-27T14:07); notificationsAfterDeploy=497 byType={\"notification.opportunity.created\":261,\"notification.opportunity.status_changed\":53,\"notification.opportunity.candidate_selected\":18,\"notification.opportunity.candidate_rejected\":15,\"notification.opportunity.direct_cancelled\":5,\"notification.opportunity.round_result_recorded\":30,\"notification.opportunity.project_linked\":16,\"notification.opportunity.candidate_won_elsewhere\":8,\"notification.opportunity.project_unlinked\":4,\"notification.opportunity.approval_requested\":3,\"notification.allocation_ticket.approved\":7,\"notification.allocation_ticket.created\":42,\"notification.allocation_ticket.closed\":21,\"notification.allocation_ticket.allocation_cancelled\":6,\"notification.allocation_ticket.auto_apply_failed\":3,\"notification.opportunity.openings_remaining\":1,\"notification.allocation_ticket.period_cancelled\":2,\"notification.opportunity.prep_completed\":1,\"notification.allocation_ticket.rejected\":1}",
+    "data": {
+      "missing": [
+        "NA-0473(NEW_ALLOCATION,2026-10-27T14:53)",
+        "NA-0472(NEW_ALLOCATION,2026-10-27T14:41)",
+        "NA-0471(NEW_ALLOCATION,2026-10-27T14:19)",
+        "NA-0470(NEW_ALLOCATION,2026-10-27T14:10)",
+        "NA-0468(NEW_ALLOCATION,2026-10-27T14:07)",
+        "NA-0467(NEW_ALLOCATION,2026-10-27T14:07)",
+        "NA-0466(NEW_ALLOCATION,2026-10-27T14:06)",
+        "NA-0463(NEW_ALLOCATION,2026-10-27T12:35)",
+        "NA-0462(NEW_ALLOCATION,2026-10-27T12:02)",
+        "DA-0177(DEALLOCATE_ALLOCATION,2026-10-27T08:55)",
+        "NA-0459(NEW_ALLOCATION,2026-10-27T08:28)",
+        "NA-0458(NEW_ALLOCATION,2026-10-27T07:46)",
+        "NA-0457(NEW_ALLOCATION,2026-10-27T07:43)",
+        "NA-0456(NEW_ALLOCATION,2026-10-27T06:50)",
+        "NA-0454(NEW_ALLOCATION,2026-10-27T06:48)",
+        "NA-0453(NEW_ALLOCATION,2026-10-27T06:48)",
+        "NA-0451(NEW_ALLOCATION,2026-10-27T06:42)",
+        "NA-0450(NEW_ALLOCATION,2026-10-27T06:09)",
+        "DA-0176(DEALLOCATE_ALLOCATION,2026-10-27T05:39)",
+        "NA-0449(NEW_ALLOCATION,2026-10-27T05:38)",
+        "DA-0174(DEALLOCATE_ALLOCATION,2026-10-26T11:21)",
+        "DA-0171(DEALLOCATE_ALLOCATION,2026-10-23T13:07)",
+        "DA-0170(DEALLOCATE_ALLOCATION,2026-10-23T13:07)",
+        "DA-0168(DEALLOCATE_ALLOCATION,2026-10-23T12:53)",
+        "NA-0434(NEW_ALLOCATION,2026-10-23T12:35)",
+        "NA-0432(NEW_ALLOCATION,2026-10-23T12:32)",
+        "NA-0431(NEW_ALLOCATION,2026-10-23T12:32)",
+        "NA-0430(NEW_ALLOCATION,2026-10-23T12:32)",
+        "NA-0429(NEW_ALLOCATION,2026-10-23T12:32)",
+        "NA-0428(NEW_ALLOCATION,2026-10-23T12:32)",
+        "NA-0427(NEW_ALLOCATION,2026-10-23T12:32)",
+        "NA-0426(NEW_ALLOCATION,2026-10-23T12:32)",
+        "NA-0425(NEW_ALLOCATION,2026-10-23T12:32)",
+        "NA-0424(NEW_ALLOCATION,2026-10-23T12:32)",
+        "NA-0421(NEW_ALLOCATION,2026-10-23T09:44)",
+        "NA-0420(NEW_ALLOCATION,2026-10-23T09:44)"
+      ],
+      "types": {
+        "notification.opportunity.created": 261,
+        "notification.opportunity.status_changed": 53,
+        "notification.opportunity.candidate_selected": 18,
+        "notification.opportunity.candidate_rejected": 15,
+        "notification.opportunity.direct_cancelled": 5,
+        "notification.opportunity.round_result_recorded": 30,
+        "notification.opportunity.project_linked": 16,
+        "notification.opportunity.candidate_won_elsewhere": 8,
+        "notification.opportunity.project_unlinked": 4,
+        "notification.opportunity.approval_requested": 3,
+        "notification.allocation_ticket.approved": 7,
+        "notification.allocation_ticket.created": 42,
+        "notification.allocation_ticket.closed": 21,
+        "notification.allocation_ticket.allocation_cancelled": 6,
+        "notification.allocation_ticket.auto_apply_failed": 3,
+        "notification.opportunity.openings_remaining": 1,
+        "notification.allocation_ticket.period_cancelled": 2,
+        "notification.opportunity.prep_completed": 1,
+        "notification.allocation_ticket.rejected": 1
+      }
+    },
+    "ms": 6724
+  },
+  {
+    "key": "timeline:invariants",
+    "pass": true,
+    "actual": "employees=3648 assignmentsWithTimeline=5584 multiSegment=21 segments=5620 pendingSegments=35 segmentTypes={\"SCHEDULED\":38,\"STANDING\":5569,\"REVERT\":13} violations=0 ",
+    "data": {
+      "bad": []
+    },
+    "ms": 55816
+  },
+  {
+    "key": "sched:negative",
+    "pass": false,
+    "actual": "withdraw(unknown)=403 {\"code\":\"AUTH_004\",\"message\":\"Access forbidden\"}; cancel(unknown)=404 {\"code\":\"SYS_002\",\"message\":\"Scheduled allocation change not found\"}; withdraw(bad uuid)=403",
+    "ms": 999
+  }
+]

@@ -1,0 +1,40 @@
+[
+  {
+    "key": "wl:rowsWithinScope",
+    "pass": "calc",
+    "actual": "rows=96 subtree=13 ownedProjects=5 projectStaff=81 rowsOutsideSubtreeAndStaff=9 ekta.shetty@simformsolutions.com,urvi.patil@simformsolutions.com,yash.dave@simformsolutions.com otherRowsWithOverall=95/95 ownOverall={\"wfoPercentage\":79.8,\"wfhPercentage\":20.2,\"daysLogged\":485,\"daysInWindow\":null}",
+    "data": {
+      "rows": 96,
+      "out": 9,
+      "others": 95,
+      "othersWithOverall": 95,
+      "ownHasOverall": true
+    },
+    "ms": 348
+  },
+  {
+    "key": "tickets:ownership",
+    "pass": "calc",
+    "actual": "tickets=133/133 {\"ownProjectCsmOrPm\":9,\"directReporteeProject\":124,\"requesterSelf\":0,\"other\":0} ",
+    "data": {
+      "reasons": {
+        "ownProjectCsmOrPm": 9,
+        "directReporteeProject": 124,
+        "requesterSelf": 0,
+        "other": 0
+      },
+      "others": []
+    },
+    "ms": 1062
+  },
+  {
+    "key": "sched:withdrawNegative",
+    "pass": "calc",
+    "actual": "withdraw(unknown uuid)=404 {\"code\":\"SYS_002\",\"message\":\"Scheduled allocation change not found\"}; withdraw(bad uuid)=400 {\"code\":\"SYS_004\",\"message\":\"Validation failed (uuid is expected)\"}",
+    "data": {
+      "a": 404,
+      "d": 400
+    },
+    "ms": 926
+  }
+]

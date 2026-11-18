@@ -1,0 +1,27 @@
+{
+  "results": [
+    {
+      "id": "combos",
+      "ok": true,
+      "names": [
+        "e.g. Acme financial",
+        "Select project",
+        "e.g. Platform Enhancement",
+        "Choose PM",
+        "Choose CSM",
+        "Select tech stack",
+        "Select one or more departments",
+        "Select priority",
+        "Select seniority",
+        "Select a department first",
+        "No Preference",
+        "Select location preference"
+      ],
+      "opts": [
+        "Create new: \"QA-AUTO UI Client\""
+      ],
+      "errs": []
+    }
+  ],
+  "errs": []
+}

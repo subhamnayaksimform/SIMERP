@@ -1,0 +1,32 @@
+[
+ {
+  "area": "1.ui",
+  "name": "create page: Preferred Employee field usable before any department",
+  "pass": true,
+  "detail": "{\"vis\":true,\"dis\":false}"
+ },
+ {
+  "area": "1.ui",
+  "name": "create page: before department the list holds only dept-less contractors (0 on dev) — record",
+  "pass": true,
+  "detail": "{\"options\":0,\"text\":\"\"}"
+ },
+ {
+  "area": "2.ui",
+  "name": "pending candidate opens opportunity URL -> Unauthorized page",
+  "pass": false,
+  "detail": "{\"url\":\"https://simerp-dev.simform.solutions/pre-sales/06f09618-9d2a-409a-adb6-6597e1f9b67d\",\"t\":\"SimERP\\n6.9.0\\nToggle Sidebar\\nEmployee\\nWhat's New & History\\nHelp & Support\\nTicket Details\\nRequests Tracking\\nTicket Details\\n4\\nOpportunity not found\\n\\nThis opportunity does not exist or you no longer have \"}"
+ },
+ {
+  "area": "2.ui",
+  "name": "never-shortlisted employee opens URL -> Not Found, not Unauthorized",
+  "pass": true,
+  "detail": "{\"url\":\"https://simerp-dev.simform.solutions/pre-sales/06f09618-9d2a-409a-adb6-6597e1f9b67d\",\"t\":\"SimERP\\n6.9.0\\nToggle Sidebar\\nEmployee\\nWhat's New & History\\nHelp & Support\\nTicket Details\\nRequests Tracking\\nTicket Details\\n3\\nOpportunity not found\\n\\nThis opportunity does not exist or you no longer have access to it.\\n\\nOpportunity not found\"}"
+ },
+ {
+  "area": "2.ui",
+  "name": "employee opens invalid opportunity id -> Not Found",
+  "pass": true,
+  "detail": "{\"url\":\"https://simerp-dev.simform.solutions/pre-sales/00000000-0000-4000-8000-000000000000\",\"t\":\"SimERP\\n6.9.0\\nToggle Sidebar\\nEmployee\\nWhat's New & History\\nHelp & Support\\nTicket Details\\nRequests Tracking\\nTicket Details\\n3\\nOpportunity not found\\n\\nThis opportunity does not exist or you no longer have access to it.\\n\\nOpportunity not found\"}"
+ }
+]

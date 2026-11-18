@@ -1,0 +1,84 @@
+{
+  "account": "hardik.trivedi@simformsolutions.com",
+  "ranAt": "2026-10-28T06:19:44.569Z",
+  "regression": {
+    "employeeList": {
+      "url": "https://simerp-dev.simform.solutions/employee?sortBy=availabilityPercentage&sortOrder=desc",
+      "shot": "reports/screenshots/2026-10-28/hardik/security/10-employee-list.png"
+    },
+    "employeeListApi": {
+      "status": 400,
+      "count": 0,
+      "firstKeys": null
+    },
+    "goals": {
+      "url": "https://simerp-dev.simform.solutions/goals",
+      "shot": "reports/screenshots/2026-10-28/hardik/security/11-goals.png"
+    }
+  },
+  "allio": {
+    "/projects?search=Allio": {
+      "status": 200,
+      "total": 0,
+      "bodyKeys": [
+        "code",
+        "message",
+        "data"
+      ],
+      "allioCount": 0,
+      "allioRows": []
+    },
+    "/projects?page=1&limit=300": {
+      "status": 200,
+      "total": 139,
+      "bodyKeys": [
+        "code",
+        "message",
+        "data"
+      ],
+      "allioCount": 0,
+      "allioRows": []
+    },
+    "/projects?search=Allio%20Capital": {
+      "status": 200,
+      "total": 0,
+      "bodyKeys": [
+        "code",
+        "message",
+        "data"
+      ],
+      "allioCount": 0,
+      "allioRows": []
+    }
+  },
+  "roleLookup": {
+    "/user-roles": {
+      "status": 404,
+      "snippet": "{\"code\":\"SYS_002\",\"message\":\"Cannot GET /api/v1/user-roles\"}"
+    },
+    "/users/roles": {
+      "status": 404,
+      "snippet": "{\"code\":\"SYS_002\",\"message\":\"Cannot GET /api/v1/users/roles\"}"
+    },
+    "/roles": {
+      "status": 403,
+      "snippet": "{\"code\":\"AUTH_004\",\"message\":\"Access forbidden\"}"
+    },
+    "/employees/roles": {
+      "status": 400,
+      "snippet": "{\"code\":\"SYS_004\",\"message\":\"Validation failed (uuid is expected)\"}"
+    },
+    "/admin/user-roles": {
+      "status": 404,
+      "snippet": "{\"code\":\"SYS_002\",\"message\":\"Cannot GET /api/v1/admin/user-roles\"}"
+    },
+    "/user-role-assignments": {
+      "status": 404,
+      "snippet": "{\"code\":\"SYS_002\",\"message\":\"Cannot GET /api/v1/user-role-assignments\"}"
+    },
+    "/user-roles?page=1&limit=300": {
+      "status": 404,
+      "snippet": "{\"code\":\"SYS_002\",\"message\":\"Cannot GET /api/v1/user-roles?page=1&limit=300\"}"
+    }
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "T0": "2026-10-15T10:21:06.000Z",
+  "res": {
+    "ankita.das": {
+      "email": "ankita.das@simformsolutions.com",
+      "count": 1,
+      "items": [
+        {
+          "id": "5a98ca4f-8883-4e16-b6ce-65365b679a16",
+          "eventType": "notification.allocation.direct_employee_assigned",
+          "title": "You've Been allocated to ViewForge | BI Dashboard",
+          "body": "You've been allocated to ViewForge | BI Dashboard starting 2026-10-15.",
+          "createdAt": "2026-10-15T10:21:07.768Z",
+          "isRead": false,
+          "ctx": {
+            "assignmentPublicId": "0e9f02fe-3e0d-4c6c-b91e-306745063e92"
+          }
+        }
+      ]
+    },
+    "ekta.mistry": {
+      "email": "ekta.mistry@simformsolutions.com",
+      "count": 1,
+      "items": [
+        {
+          "id": "e25863a1-7320-4d48-9c3b-1070128006a0",
+          "eventType": "notification.allocation.direct_employee_rm_assigned",
+          "title": "Team Member Assigned: Ankita Das",
+          "body": "Ankita Das has been assigned to ViewForge | BI Dashboard starting 2026-10-15.",
+          "createdAt": "2026-10-15T10:21:07.809Z",
+          "isRead": false,
+          "ctx": {
+            "assignmentPublicId": "0e9f02fe-3e0d-4c6c-b91e-306745063e92"
+          }
+        }
+      ]
+    },
+    "sudhansu.patel": {
+      "email": "sudhansu.patel@simformsolutions.com",
+      "count": 1,
+      "items": [
+        {
+          "id": "c8ab7c26-4c4e-4862-935b-e0c7b78dd48f",
+          "eventType": "notification.allocation.direct_employee_rm_assigned",
+          "title": "Direct Allocation: ViewForge | BI Dashboard",
+          "body": "Bhumi Chauhan directly allocated Ankita Das to ViewForge | BI Dashboard, bypassing the ticket workflow.",
+          "createdAt": "2026-10-15T10:21:07.809Z",
+          "isRead": false,
+          "ctx": {
+            "assignmentPublicId": "0e9f02fe-3e0d-4c6c-b91e-306745063e92"
+          }
+        }
+      ]
+    },
+    "amit.patel": {
+      "email": "amit.patel@simformsolutions.com",
+      "count": 0,
+      "items": []
+    },
+    "tirth.chopra": {
+      "email": "tirth.chopra@simformsolutions.com",
+      "count": 1,
+      "items": [
+        {
+          "id": "d0e42ae7-4105-45d7-bb4d-881dd079cf23",
+          "eventType": "notification.allocation.direct_pm_notified",
+          "title": "Allocation Confirmed: ViewForge | BI Dashboard",
+          "body": "Ankita Das has been allocated to ViewForge | BI Dashboard, effective 2026-10-15.",
+          "createdAt": "2026-10-15T10:21:07.793Z",
+          "isRead": false,
+          "ctx": {
+            "assignmentPublicId": "0e9f02fe-3e0d-4c6c-b91e-306745063e92"
+          }
+        }
+      ]
+    },
+    "kunal.jadeja": {
+      "email": "kunal.jadeja@simformsolutions.com",
+      "count": 0,
+      "items": []
+    },
+    "jinal.patel": {
+      "email": "jinal.patel@simformsolutions.com",
+      "count": 0,
+      "items": []
+    }
+  }
+}

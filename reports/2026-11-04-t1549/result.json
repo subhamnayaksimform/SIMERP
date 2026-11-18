@@ -1,0 +1,87 @@
+{
+ "p30": {
+  "rows": 3648,
+  "withActivity": 3648,
+  "n1Mismatch": [],
+  "n3Rows": [],
+  "sampleKeys": [
+   "status",
+   "startHours",
+   "closeHoursAdjusted",
+   "density",
+   "workPattern",
+   "coverageNote"
+  ],
+  "lastSyncedAt": null
+ },
+ "p60": {
+  "rows": 3648,
+  "withActivity": 3648,
+  "n1Mismatch": [],
+  "n3Rows": [],
+  "sampleKeys": [
+   "status",
+   "startHours",
+   "closeHoursAdjusted",
+   "density",
+   "workPattern",
+   "coverageNote"
+  ],
+  "lastSyncedAt": null
+ },
+ "p90": {
+  "rows": 3648,
+  "withActivity": 3648,
+  "n1Mismatch": [],
+  "n3Rows": [],
+  "sampleKeys": [
+   "status",
+   "startHours",
+   "closeHoursAdjusted",
+   "density",
+   "workPattern",
+   "coverageNote"
+  ],
+  "lastSyncedAt": null
+ },
+ "infoButtons": 2,
+ "n2": [
+  {
+   "label": "About Start → End Hours",
+   "hover": [
+    "Average start to close, shown as one range in IST. From daily time logs; a close after midnight shows +1.\nAverage start to close, shown as one range in IST. From daily time logs; a close after midnight shows +1.",
+    "Average start to close, shown as one range in IST. From daily time logs; a close after midnight shows +1."
+   ],
+   "click": []
+  },
+  {
+   "label": "How Work Pattern is calculated",
+   "hover": [
+    "Calculation: Logged minutes ÷ elapsed hours.\n\nLow: ≤40 min/hr\nHigh: >55 min/hr\nSparse logging\n\nCalculation: Logged minutes ÷ elapsed hours.\n\nLow: ≤40 min/hr\nHigh: >55 min/hr\nSparse logging",
+    "Calculation: Logged minutes ÷ elapsed hours.\n\nLow: ≤40 min/hr\nHigh: >55 min/hr\nSparse logging"
+   ],
+   "click": []
+  }
+ ],
+ "headerTexts": [
+  "Action",
+  "Name",
+  "Department",
+  "RM",
+  "UP (System)",
+  "UP (Manual)",
+  "Projects",
+  "Log Hours",
+  "Availability %",
+  "Remaining Allocation",
+  "Start → End Hours",
+  "Work Pattern",
+  "Night Shift Preference",
+  "Skills",
+  "Visa",
+  "Active Opportunities"
+ ],
+ "g1DataAsOf": false,
+ "g3IstInBody": false,
+ "firstRowText": " Sagar Khanpara TM 10y 3m FRONT END Rajesh Kumar - Leadership P1 · Red P3 · Green 7 AdaptiveX | Adaptive Platform AbsoluteUI | Design System +1 0h 10 100% 100% Remaining of 100% 9:30 AM – 7:15 PM High · 58 min/hr NS1 NS1_1 CSS3 Angular +3 Not specified -"
+}

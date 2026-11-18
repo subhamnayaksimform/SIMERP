@@ -1,0 +1,142 @@
+[
+ {
+  "at": "17/11/2026, 11:43:18",
+  "event": "POSITION ADDED (QA) on OPP-0374",
+  "status": 201,
+  "code": "OPP_021",
+  "msg": "Position created successfully"
+ },
+ {
+  "at": "17/11/2026, 11:43:21",
+  "event": "CANDIDATE SHORTLISTED: ANDROID employee Rushil Thakor on QA position A (card should go to ANDROID channel)",
+  "status": 201,
+  "code": "OPP_074",
+  "msg": "Candidates nominated successfully"
+ },
+ {
+  "at": "17/11/2026, 11:43:24",
+  "event": "APPROVAL REQUESTED for Rushil Thakor",
+  "status": 200,
+  "code": "SUCCESS",
+  "msg": "Candidate sent for TM approval successfully"
+ },
+ {
+  "at": "17/11/2026, 11:43:26",
+  "event": "APPROVAL REQUEST WITHDRAWN for Rushil Thakor",
+  "status": 200,
+  "code": "SUCCESS",
+  "msg": "Approval request withdrawn successfully"
+ },
+ {
+  "at": "17/11/2026, 11:43:27",
+  "event": "CANDIDATE WITHDRAWN: Rushil Thakor",
+  "status": 400,
+  "code": "VAL_001",
+  "msg": "Validation failed"
+ },
+ {
+  "at": "17/11/2026, 11:43:30",
+  "event": "PREPARATION COMPLETED: Neel Rathod",
+  "status": 200,
+  "code": "SUCCESS",
+  "msg": "Preparation Checklist updated successfully"
+ },
+ {
+  "at": "17/11/2026, 11:43:32",
+  "event": "INTERVIEW SCHEDULED: Neel Rathod round 1 at 15:30 IST 20/11/2026",
+  "status": 201,
+  "code": "OPP_051",
+  "msg": "Interview Round added successfully"
+ },
+ {
+  "at": "17/11/2026, 11:43:34",
+  "event": "INTERVIEW SCHEDULED: Neel Rathod round 2 at 11:00 IST 23/11/2026 (to be cancelled)",
+  "status": 201,
+  "code": "OPP_051",
+  "msg": "Interview Round added successfully"
+ },
+ {
+  "at": "17/11/2026, 11:43:38",
+  "event": "INTERVIEW CANCELLED: Neel Rathod round 2",
+  "status": 200,
+  "code": "SUCCESS",
+  "msg": "Interview Round removed successfully"
+ },
+ {
+  "at": "17/11/2026, 11:43:40",
+  "event": "ROUND RESULT: Neel Rathod round 1 Cleared",
+  "status": 400,
+  "code": "OPP_138",
+  "msg": "A round can be marked Cleared or Not Cleared only once it has an interview date of today or earlier"
+ },
+ {
+  "at": "17/11/2026, 11:43:42",
+  "event": "CANDIDATE SELECTED: Neel Rathod",
+  "status": 400,
+  "code": "OPP_015",
+  "msg": "This change skips a step and needs a confirmation"
+ },
+ {
+  "at": "17/11/2026, 11:43:44",
+  "event": "OPPORTUNITY STATUS CHANGED: OPP-0374 -> On Hold",
+  "status": 400,
+  "code": "VAL_001",
+  "msg": "Validation failed"
+ },
+ {
+  "at": "17/11/2026, 11:43:46",
+  "event": "OPPORTUNITY STATUS CHANGED: OPP-0374 -> Open",
+  "status": 400,
+  "code": "OPP_014",
+  "msg": "This change is not allowed from the current stage"
+ },
+ {
+  "at": "17/11/2026, 11:43:48",
+  "event": "DIRECT CANCELLED: OPP-0377 (Swati Malhotra)",
+  "status": 200,
+  "code": "SUCCESS",
+  "msg": "Direct ticket marked as cancelled"
+ },
+ {
+  "at": "17/11/2026, 11:44:42",
+  "event": "CANDIDATE WITHDRAWN: Rushil Thakor (ANDROID)",
+  "status": 200,
+  "code": "SUCCESS",
+  "msg": "Nomination removed successfully"
+ },
+ {
+  "at": "17/11/2026, 11:44:44",
+  "event": "INTERVIEW SCHEDULED: Neel Rathod round (yesterday 14:30 IST, back-dated)",
+  "status": 201,
+  "code": "OPP_051",
+  "msg": "Interview Round added successfully"
+ },
+ {
+  "at": "17/11/2026, 11:44:46",
+  "event": "ROUND RESULT: Neel Rathod back-dated round Cleared (feedback text must not appear on card)",
+  "status": 200,
+  "code": "SUCCESS",
+  "msg": "Interview Round updated successfully"
+ },
+ {
+  "at": "17/11/2026, 11:44:48",
+  "event": "CANDIDATE SELECTED: Neel Rathod",
+  "status": 200,
+  "code": "SUCCESS",
+  "msg": "Candidate selected successfully"
+ },
+ {
+  "at": "17/11/2026, 11:44:50",
+  "event": "OPPORTUNITY STATUS CHANGED: OPP-0378 (QA+ANDROID → now QA only) -> On Hold",
+  "status": 200,
+  "code": "SUCCESS",
+  "msg": "Opportunity status changed successfully"
+ },
+ {
+  "at": "17/11/2026, 11:44:52",
+  "event": "OPPORTUNITY STATUS CHANGED: OPP-0378 -> Open",
+  "status": 200,
+  "code": "SUCCESS",
+  "msg": "Opportunity status changed successfully"
+ }
+]

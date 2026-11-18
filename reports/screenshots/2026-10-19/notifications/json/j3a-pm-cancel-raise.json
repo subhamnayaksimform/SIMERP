@@ -1,0 +1,28 @@
+{
+  "actor": "jignesh.raval",
+  "T0": "2026-10-19T11:29:59.329Z",
+  "T1": "2026-10-19T11:30:00.702Z",
+  "method": "POST",
+  "path": "/allocation-tickets/cancel-allocation",
+  "req": {
+    "projectAssignmentPublicId": "691b9f09-e963-4606-b039-e96926c6647c",
+    "deallocationReason": "OTHERS",
+    "deallocationReasonNote": "QA test cleanup (SI4-T1527 retest 2026-10-19)"
+  },
+  "res": {
+    "status": 201,
+    "body": {
+      "code": "ALLOCATION_TICKET_168",
+      "message": "Allocation cancellation request raised successfully",
+      "data": {
+        "ticket": {
+          "publicId": "c57310e3-4873-4c8d-a8ca-7196eb43c838",
+          "ticketNumber": "DA-0107",
+          "ticketType": "DEALLOCATE_ALLOCATION",
+          "status": "AWAITING_CONFIRMATION"
+        },
+        "isAllocationCancelled": false
+      }
+    }
+  }
+}

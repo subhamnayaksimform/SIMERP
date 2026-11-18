@@ -1,0 +1,27 @@
+{
+  "before": "E2a-after",
+  "after": "E2b-pre",
+  "beforeAt": "2026-10-20T12:48:09.837Z",
+  "afterAt": "2026-10-20T12:49:59.502Z",
+  "newByUser": {
+    "gaurav.dutta": [],
+    "kartik.hegde": [],
+    "hardik.trivedi": [],
+    "amit.patel": [],
+    "jinal.patel": [],
+    "cto": [
+      {
+        "eventType": "allocation_ticket.assigned_to_department",
+        "title": "New Ticket for Review: UA-0135",
+        "body": "UA-0135 (UPDATE ALLOCATION) for project KubeDash | Kubernetes Dashboard has been assigned to PROJECT MANAGEMENT department and is awaiting your review.",
+        "createdAt": "2026-10-20T12:49:58.955Z",
+        "ctx": {
+          "ticketPublicId": "14bab8ce-94de-4116-a6ec-926ce8c2c618"
+        }
+      }
+    ],
+    "ceo": [],
+    "ravi.vyas": [],
+    "bhumi.chauhan": []
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "before": [
+    [
+      "NA-0367",
+      "APPROVED",
+      "2026-10-19T10:59:08.781Z"
+    ],
+    [
+      "DA-0103",
+      "APPROVED",
+      "2026-10-19T10:58:38.904Z"
+    ],
+    [
+      "NA-0366",
+      "CLOSED",
+      "2026-10-19T10:51:50.167Z"
+    ],
+    [
+      "NA-0365",
+      "CLOSED",
+      "2026-10-19T10:51:50.146Z"
+    ],
+    [
+      "DA-0102",
+      "CLOSED",
+      "2026-10-19T10:51:50.116Z"
+    ],
+    [
+      "DA-0101",
+      "CLOSED",
+      "2026-10-19T10:51:50.051Z"
+    ],
+    [
+      "NA-0364",
+      "APPROVED",
+      "2026-10-19T10:48:27.528Z"
+    ],
+    [
+      "UA-0130",
+      "APPROVED",
+      "2026-10-16T09:35:11.029Z"
+    ],
+    [
+      "NA-0363",
+      "APPROVED",
+      "2026-10-15T12:33:40.894Z"
+    ],
+    [
+      "NA-0362",
+      "APPROVED",
+      "2026-10-15T10:29:13.951Z"
+    ]
+  ],
+  "req": {
+    "projectAssignmentPublicId": "89c7a281-488e-414f-a610-0c6bbbacaa10",
+    "allocationEndDate": "2026-10-19",
+    "deallocationReason": "OTHERS",
+    "deallocationReasonNote": "QA test cleanup (SI4-T1464 >20h check 2026-10-19)"
+  },
+  "res": {
+    "status": 201,
+    "body": {
+      "code": "ALLOCATION_TICKET_072",
+      "message": "Allocation removed successfully",
+      "data": {
+        "publicId": "a4fffb39-876d-4a87-a28a-6b0e43d9750d",
+        "ticketNumber": "DA-0104",
+        "ticketType": "DEALLOCATE_ALLOCATION",
+        "status": "APPROVED",
+        "assignment": {
+          "publicId": "89c7a281-488e-414f-a610-0c6bbbacaa10",
+          "allocationEndDate": "2026-10-19",
+          "employee": {
+            "publicId": "f94d6cb2-e5b5-4c14-99d2-3fbd28a1cde9",
+            "name": "Kunal Menon",
+            "email": "kunal.menon@simformsolutions.com",
+            "photoUrl": "https://i.pravatar.cc/150?u=kunal.menon@simformsolutions.com"
+          },
+          "project": {
+            "publicId": "3d138a89-4d06-4839-8091-436fba0a2dd6",
+            "name": "HyperScale | Scalability Engine",
+            "alias": ""
+          }
+        },
+        "effectiveState": {
+          "isEffectiveImmediately": false,
+          "effectiveFrom": "2026-10-20",
+          "scheduledChange": {
+            "publicId": "ef161168-2771-44d4-a7d7-dc621c61d92c",
+            "changeType": "ASSIGNMENT_DEALLOCATE",
+            "status": "PENDING",
+            "effectiveDate": "2026-10-20",
+            "overrideEndDate": null,
+            "allocationType": null,
+            "allocationPercentage": null,
+            "effectiveStartDate": null,
+            "effectiveEndDate": "2026-10-19",
+            "previousAllocationPercentage": 10
+          }
+        },
+        "feedbackPublicId": "9b220b1c-dbf1-4572-8664-cb5e68a25217"
+      }
+    }
+  }
+}

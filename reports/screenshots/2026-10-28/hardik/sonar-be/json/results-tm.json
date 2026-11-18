@@ -1,0 +1,210 @@
+[
+  {
+    "key": "access:matrix",
+    "pass": "info",
+    "actual": "{\"GET /allocation-tickets\":\"200 (n=2)\",\"GET /allocation-tickets/filters\":\"200 (n=-)\",\"GET /allocation-tickets/interview-requests\":\"200 (n=0)\",\"GET /projects\":\"200 (n=140)\",\"GET /projects/filters\":\"200 (n=4)\",\"GET /employees\":\"200 (n=92)\",\"GET /employee-roles\":\"403\",\"GET /employee-ratings\":\"200 (n=0)\",\"GET /utilization-priority\":\"200 (n=93)\",\"GET /opportunities/openings\":\"200 (n=0)\",\"GET /opportunities/candidates\":\"200 (n=3649)\",\"GET /dashboard/overview\":\"200 (n=-)\",\"GET /dashboard/activity\":\"200 (n=8)\",\"GET /dashboard/filter-options\":\"200 (n=-)\",\"GET /working-location/overview\":\"200 (n=-)\",\"GET /working-location/list\":\"200 (n=93)\",\"GET /working-location/employees\":\"200 (n=93)\",\"GET /weekly-update\":\"200 (n=0)\",\"GET /notifications\":\"200 (n=4)\",\"GET /teams (own dept)\":\"200 (n=10)\"}",
+    "data": {
+      "GET /allocation-tickets": "200 (n=2)",
+      "GET /allocation-tickets/filters": "200 (n=-)",
+      "GET /allocation-tickets/interview-requests": "200 (n=0)",
+      "GET /projects": "200 (n=140)",
+      "GET /projects/filters": "200 (n=4)",
+      "GET /employees": "200 (n=92)",
+      "GET /employee-roles": "403",
+      "GET /employee-ratings": "200 (n=0)",
+      "GET /utilization-priority": "200 (n=93)",
+      "GET /opportunities/openings": "200 (n=0)",
+      "GET /opportunities/candidates": "200 (n=3649)",
+      "GET /dashboard/overview": "200 (n=-)",
+      "GET /dashboard/activity": "200 (n=8)",
+      "GET /dashboard/filter-options": "200 (n=-)",
+      "GET /working-location/overview": "200 (n=-)",
+      "GET /working-location/list": "200 (n=93)",
+      "GET /working-location/employees": "200 (n=93)",
+      "GET /weekly-update": "200 (n=0)",
+      "GET /notifications": "200 (n=4)",
+      "GET /teams (own dept)": "200 (n=10)"
+    },
+    "ms": 1
+  },
+  {
+    "key": "notif:isRead",
+    "pass": true,
+    "actual": "all=4 read=0 unread=4 wrongRows=0; newest: 2026-10-13T11:18 Allocation Revised: RA-0015 | 2026-10-13T11:18 Approval Bypassed: RA-0015 | 2026-10-13T11:17 New Ticket for Review: RA-0015",
+    "ms": 1151
+  },
+  {
+    "key": "hier:employeesList",
+    "pass": "calc",
+    "actual": "visible=92 subtreeMembers=91 missingFromList=0  extraNotInSubtree=1 arnav.raval@simformsolutions.com depts=IOT",
+    "data": {
+      "visible": 92,
+      "sub": 91,
+      "missing": [],
+      "extra": [
+        "arnav.raval@simformsolutions.com"
+      ],
+      "depts": [
+        "IOT"
+      ]
+    },
+    "ms": 1141
+  },
+  {
+    "key": "hier:workingLocationList",
+    "pass": "calc",
+    "actual": "list rows=93 employees-table total=93 rowsWithoutOverall=0",
+    "data": {
+      "rows": 93,
+      "table": 93,
+      "overallNull": 0,
+      "tableEmails": [
+        "Neha Goyal",
+        "Yamini Gandhi",
+        "Reyansh Desai",
+        "Yatharth Modi",
+        "Prachi Iyer",
+        "Deepak Limbachiya",
+        "Kashyap Nagar",
+        "Ananya Naik",
+        "Dimple Solanki",
+        "Hemal Dave",
+        "Siddhi Hegde",
+        "Swati Reddy",
+        "Kriti Patel",
+        "Meera Makwana",
+        "Nimisha Kapoor",
+        "Shaurya Gandhi",
+        "Arnav Raval",
+        "Sai Shetty",
+        "Yatharth Gupta",
+        "Nilesh Pandya",
+        "Simran Limbachiya",
+        "Vandana Verma",
+        "Foram Reddy",
+        "Sahil Parekh",
+        "Tirth Yadav",
+        "Varun Shetty",
+        "Sahil Vyas",
+        "Jay Patil",
+        "Vikram Mishra",
+        "Iti Joshi",
+        "Nayan Dutta",
+        "Kartik Solanki",
+        "Kabir Rathod",
+        "Siddhi Saxena",
+        "Aarav Garg",
+        "Meera Yadav",
+        "Vishal Menon",
+        "Kavya Jobanputra",
+        "Hardik Arora",
+        "Smriti Jadeja",
+        "Jagruti Patil",
+        "Jignesh Goyal",
+        "Jagruti Thakor",
+        "Akash Sen",
+        "Prachi Agarwal",
+        "Bhumi Trivedi",
+        "Manish Saxena",
+        "Dhrumil Ghosh",
+        "Jay Bose",
+        "Sneha Singh",
+        "Neha Kulkarni",
+        "Nilesh Verma",
+        "Arnav Kamath",
+        "Ira Kamath",
+        "Rohan Nair",
+        "Hemal Contractor",
+        "Siddharth Hegde",
+        "Vivaan Rawat",
+        "Dhruv Patil",
+        "Mihir Joshi",
+        "Aditi Garg",
+        "Khushi Bajaj",
+        "Hetvi Trivedi",
+        "Ojas Patel",
+        "Nayan Roy",
+        "Yatharth Dodia",
+        "Kavya Bansal",
+        "Ira Jobanputra",
+        "Vikram Jain",
+        "Hemal Mukherjee",
+        "Vandana Agarwal",
+        "Gargi Gupta",
+        "Maulik Joshi",
+        "Lalit Panchal",
+        "Gaurav Goyal",
+        "Tirth Arora",
+        "Khushi Shetty",
+        "Sunil Sen",
+        "Trisha Bhatia",
+        "Sai Joshi",
+        "Nisha Mehta",
+        "Priya Kulkarni",
+        "Kashyap Sharma",
+        "Kashyap Mishra",
+        "Jigar Chatterjee",
+        "Jagruti Ghosh",
+        "Bhumi Bhatia",
+        "Sai Chatterjee",
+        "Rutu Menon",
+        "Simran Sharma",
+        "Dhrumil Sharma",
+        "Tejas Doshi",
+        "Gunjan Kapoor"
+      ]
+    },
+    "ms": 701
+  },
+  {
+    "key": "emp:ratingsShape",
+    "pass": "calc",
+    "actual": "rows=92 withRatingsKey=92 withNumericRating=92 zeroRatings=0 badValues=0 sample=[[\"Ira Kamath\",{\"overallRating\":7.7,\"aiRating\":6.3,\"communicationRating\":7}],[\"Kashyap Sharma\",{\"overallRating\":7,\"aiRating\":6.5,\"communicationRating\":7.3}]] selfRowRatings=n/a",
+    "data": {
+      "rows": 92,
+      "withKey": 92,
+      "nonNull": 92,
+      "bad": 0
+    },
+    "ms": 1114
+  },
+  {
+    "key": "dash:filterOptions",
+    "pass": "calc",
+    "actual": "departments=1 [IOT] projects=128",
+    "data": {
+      "departments": [
+        "IOT"
+      ],
+      "projects": 128
+    },
+    "ms": 378
+  },
+  {
+    "key": "weekly:reads",
+    "pass": "calc",
+    "actual": "{\"/weekly-update\":\"200\",\"/weekly-update/filters\":\"200\",\"/weekly-update/sessions\":\"200\",\"/weekly-update/status\":\"400 {\\\"code\\\":\\\"VAL_001\\\",\\\"message\\\":\\\"Validation failed\\\",\\\"errors\\\":[{\\\"field\\\":\\\"teamPublicId\\\",\\\"message\\\":\\\"teamPublicId is required.\\\"},{\\\"field\\\":\\\"meetingDate\\\",\\\"message\\\":\\\"meeti\",\"/weekly-update/last-notes\":\"400 {\\\"code\\\":\\\"VAL_001\\\",\\\"message\\\":\\\"Validation failed\\\",\\\"errors\\\":[{\\\"field\\\":\\\"reportingManagerPublicId\\\",\\\"message\\\":\\\"reportingManagerPublicId is required.\\\"},{\\\"field\\\":\\\"asOfD\",\"sortDesc\":\"ok\",\"total\":0,\"first\":[]}",
+    "data": {
+      "/weekly-update": "200",
+      "/weekly-update/filters": "200",
+      "/weekly-update/sessions": "200",
+      "/weekly-update/status": "400 {\"code\":\"VAL_001\",\"message\":\"Validation failed\",\"errors\":[{\"field\":\"teamPublicId\",\"message\":\"teamPublicId is required.\"},{\"field\":\"meetingDate\",\"message\":\"meeti",
+      "/weekly-update/last-notes": "400 {\"code\":\"VAL_001\",\"message\":\"Validation failed\",\"errors\":[{\"field\":\"reportingManagerPublicId\",\"message\":\"reportingManagerPublicId is required.\"},{\"field\":\"asOfD",
+      "sortDesc": "ok",
+      "total": 0,
+      "first": []
+    },
+    "ms": 2031
+  },
+  {
+    "key": "wl:selfAndOthers",
+    "pass": "calc",
+    "actual": "own=200 ownOverall={\"wfoPercentage\":75.6,\"wfhPercentage\":24.4,\"daysLogged\":232,\"daysInWindow\":null} ceoRecord=404",
+    "data": {
+      "own": 200,
+      "ownOverall": "{\"wfoPercentage\":75.6,\"wfhPercentage\":24.4,\"daysLogged\":232,\"daysInWindow\":null}",
+      "other": 404
+    },
+    "ms": 661
+  }
+]

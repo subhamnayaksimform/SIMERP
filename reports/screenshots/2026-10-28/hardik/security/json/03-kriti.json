@@ -1,0 +1,92 @@
+{
+  "account": "kriti.desai@simformsolutions.com",
+  "ranAt": "2026-10-28T06:20:59.001Z",
+  "landing": "https://simerp-dev.simform.solutions/profile",
+  "allio": {
+    "/projects?search=Allio": {
+      "status": 403,
+      "total": 0,
+      "allioCount": 0,
+      "allioRows": []
+    },
+    "/projects?page=1&limit=400": {
+      "status": 403,
+      "total": 0,
+      "allioCount": 0,
+      "allioRows": []
+    },
+    "/projects?search=Allio%20Capital": {
+      "status": 403,
+      "total": 0,
+      "allioCount": 0,
+      "allioRows": []
+    }
+  },
+  "roleLookup": {
+    "/roles": {
+      "status": 403,
+      "snippet": "{\"code\":\"AUTH_004\",\"message\":\"Access forbidden\"}"
+    },
+    "/user-roles": {
+      "status": 404,
+      "snippet": "{\"code\":\"SYS_002\",\"message\":\"Cannot GET /api/v1/user-roles\"}"
+    },
+    "/users?page=1&limit=5": {
+      "status": 404,
+      "snippet": "{\"code\":\"SYS_002\",\"message\":\"Cannot GET /api/v1/users?page=1&limit=5\"}"
+    },
+    "/employees/user-roles": {
+      "status": 403,
+      "snippet": "{\"code\":\"AUTH_004\",\"message\":\"Access forbidden\"}"
+    },
+    "/role-assignments": {
+      "status": 404,
+      "snippet": "{\"code\":\"SYS_002\",\"message\":\"Cannot GET /api/v1/role-assignments\"}"
+    },
+    "/admin/roles": {
+      "status": 404,
+      "snippet": "{\"code\":\"SYS_002\",\"message\":\"Cannot GET /api/v1/admin/roles\"}"
+    }
+  },
+  "bundle": {
+    "srcs": [
+      "/assets/index-hiu0zx3i.js",
+      "/assets/vendor-query-D80Mjq7z.js",
+      "/assets/vendor-react-DGtoyjS1.js",
+      "/assets/vendor-sentry-C8VymGl9.js",
+      "/assets/vendor-casl-BWwpFKVB.js",
+      "/assets/vendor-dates-Su58-Zyo.js",
+      "/assets/vendor-radix-BNRo3peG.js"
+    ],
+    "saved": [
+      {
+        "src": "/assets/index-hiu0zx3i.js",
+        "bytes": 649008
+      },
+      {
+        "src": "/assets/vendor-query-D80Mjq7z.js",
+        "bytes": 49194
+      },
+      {
+        "src": "/assets/vendor-react-DGtoyjS1.js",
+        "bytes": 97060
+      },
+      {
+        "src": "/assets/vendor-sentry-C8VymGl9.js",
+        "bytes": 274799
+      },
+      {
+        "src": "/assets/vendor-casl-BWwpFKVB.js",
+        "bytes": 14481
+      },
+      {
+        "src": "/assets/vendor-dates-Su58-Zyo.js",
+        "bytes": 29032
+      },
+      {
+        "src": "/assets/vendor-radix-BNRo3peG.js",
+        "bytes": 156197
+      }
+    ]
+  }
+}

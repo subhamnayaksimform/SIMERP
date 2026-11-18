@@ -1,0 +1,66 @@
+{
+  "actor": "bhumi.chauhan",
+  "T0": "2026-10-20T12:59:43.737Z",
+  "T1": "2026-10-20T12:59:44.890Z",
+  "method": "POST",
+  "path": "/allocation-tickets/direct-allocation",
+  "req": {
+    "employeePublicId": "9ab2f946-7e5f-4e28-adb6-29a2457ea744",
+    "projectPublicId": "a912a7d7-c99c-4a9c-9958-ed94797fd5a6",
+    "allocationType": "FIXED",
+    "allocationPercentage": 10,
+    "allocationStartDate": "2026-10-22",
+    "allocationEndDate": "2026-11-30",
+    "status": "GREEN",
+    "typeOfWork": "DEVELOPMENT_WORK",
+    "note": "QA retest SI4-T1527 TC-017 (RM is TM) 2026-10-20. Will be cancelled same day."
+  },
+  "res": {
+    "status": 201,
+    "body": {
+      "code": "ALLOCATION_TICKET_070",
+      "message": "Direct allocation created successfully",
+      "data": {
+        "publicId": "40cc4d86-af0f-4080-bfd9-c29ef16cf230",
+        "allocationPercentage": 10,
+        "allocationType": "FIXED",
+        "typeOfWork": "DEVELOPMENT_WORK",
+        "allocationStartDate": "2026-10-22",
+        "allocationEndDate": "2026-11-30",
+        "status": "GREEN",
+        "note": "QA retest SI4-T1527 TC-017 (RM is TM) 2026-10-20. Will be cancelled same day.",
+        "allocationOrigin": "PMO",
+        "employee": {
+          "publicId": "9ab2f946-7e5f-4e28-adb6-29a2457ea744",
+          "name": "Tanmay Arora",
+          "email": "tanmay.arora@simformsolutions.com",
+          "photoUrl": "https://i.pravatar.cc/150?u=tanmay.arora@simformsolutions.com"
+        },
+        "shadowDeveloper": null,
+        "project": {
+          "publicId": "a912a7d7-c99c-4a9c-9958-ed94797fd5a6",
+          "name": "KubeDash | Kubernetes Dashboard",
+          "alias": "",
+          "projectManager": {
+            "publicId": "5f1a4477-84fe-46aa-8360-ca4e0a16983c",
+            "name": "Hardik Trivedi",
+            "photoUrl": "https://i.pravatar.cc/150?u=hardik.trivedi@simformsolutions.com"
+          },
+          "customerSuccessManager": {
+            "publicId": "bc81933e-5a52-4dc6-aa05-e99e6252e437",
+            "name": "Ravi Vyas",
+            "photoUrl": "https://i.pravatar.cc/150?u=ravi.vyas@simformsolutions.com"
+          }
+        },
+        "createdBy": {
+          "publicId": "e93f5377-1f74-42cb-9a40-255908e50310",
+          "name": "Bhumi Chauhan",
+          "email": "bhumi.chauhan@simformsolutions.com",
+          "photoUrl": "https://i.pravatar.cc/150?u=bhumi.chauhan@simformsolutions.com"
+        },
+        "ticketPublicId": "1228364a-6012-4722-ac4d-fb1d92efd577",
+        "ticketNumber": "NA-0381"
+      }
+    }
+  }
+}

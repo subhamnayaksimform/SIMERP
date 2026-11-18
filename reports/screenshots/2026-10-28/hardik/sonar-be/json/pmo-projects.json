@@ -1,0 +1,2414 @@
+[
+  {
+    "id": "5eda6081-ca13-4829-9ff6-1550df11c6f8",
+    "name": "AbsoluteUI | Design System",
+    "csm": "c9a12f3b-8482-4579-9a0a-07753f1da3e0",
+    "pm": "197d0341-efa3-4b84-81bb-8a4203ffd146"
+  },
+  {
+    "id": "d00f8e27-9d3a-44d1-adc9-b738c1ab103b",
+    "name": "AdaptiveX | Adaptive Platform",
+    "csm": "00fba46e-d8ab-4cf4-8d28-a35115261640",
+    "pm": "d31677e3-93d7-4dfc-92cb-282c08e4eece"
+  },
+  {
+    "id": "1538891f-f2d9-4b4f-b11f-81305c753d4e",
+    "name": "AgilePulse | Sprint Tracker",
+    "csm": "3aea8011-cf6c-453a-9a54-ba5d721c907a",
+    "pm": "0336ce78-eaeb-4cf5-a6c4-9cfea99ee986"
+  },
+  {
+    "id": "7eb10602-c7fb-43f2-891f-8acfa5722638",
+    "name": "AlertBridge | Notification Platform",
+    "csm": "09d434e9-5346-4790-8ae7-f5105e5b4968",
+    "pm": "40f3235e-4809-4fe8-821f-8a5bce0811b8"
+  },
+  {
+    "id": "a5d719f2-df9d-4e84-83b6-87c12ee58361",
+    "name": "AlphaFlow | Pipeline Automation",
+    "csm": "3bb0fd4a-7aa5-4b47-a4a6-a4e230d85c88",
+    "pm": "21b7ac58-3b2c-4a20-8811-eb424a307f26"
+  },
+  {
+    "id": "f410eb07-9778-46a7-852a-3c7b2a30cd48",
+    "name": "AlphaTest | QA Orchestration",
+    "csm": "1089acbc-366d-4262-af9c-d6906283701b",
+    "pm": "49670820-7826-4e95-b651-152db9d1ec02"
+  },
+  {
+    "id": "a8869918-6732-4886-9153-8dfa5b06c79a",
+    "name": "AnalytixHub | Advanced Analytics",
+    "csm": "4174b8c1-9d89-4b61-bfd7-075924620091",
+    "pm": "1faf1ece-9c6d-4b77-b05f-44db6d3ebf73"
+  },
+  {
+    "id": "cee084cc-d574-44e4-a244-31afdbf2662d",
+    "name": "Apollo CRM | React & Node",
+    "csm": "5c5e7f68-45fd-4557-92e1-165a2db99d2f",
+    "pm": "66e46ba9-7607-407e-a82c-6005660f9409"
+  },
+  {
+    "id": "cee084cc-d574-44e4-a244-31afdbf2662e",
+    "name": "Apollo CRM Test",
+    "csm": "5c5e7f68-45fd-4557-92e1-165a2db99d2f",
+    "pm": "66e46ba9-7607-407e-a82c-6005660f9409"
+  },
+  {
+    "id": "fd44acc3-69e0-4b50-a71e-1ee44d7ec569",
+    "name": "AppMesh | Service Mesh",
+    "csm": "3bac295e-eba6-4260-828a-afd8ed0cb6d8",
+    "pm": "c760395a-597f-455d-b791-28161d3cf331"
+  },
+  {
+    "id": "4c46978c-773a-4374-9e22-c674a1ba8235",
+    "name": "AppShield | Runtime Protection",
+    "csm": "26466546-d829-4b52-ad57-580972c39590",
+    "pm": "ec10ddc0-3e1c-4d22-8455-aa4c09d52bc8"
+  },
+  {
+    "id": "f420c065-ce31-4b52-a752-7e99b45c938a",
+    "name": "ArcReactor | Energy Monitor",
+    "csm": "d7072a64-e497-4ddb-b284-4b8b7fda9081",
+    "pm": "60a0fb1e-d01c-4acc-83b4-d8a316ac451e"
+  },
+  {
+    "id": "3d1f24c2-2417-498f-b252-58ec0a0ecad5",
+    "name": "AuditBox | Compliance Logger",
+    "csm": "0cc6cefb-5a58-4f66-9b75-068543fb4aef",
+    "pm": "5e71b68d-b6c0-4dcc-b2b1-2520b3d314dd"
+  },
+  {
+    "id": "ba268db9-8dfa-452c-ac11-a7a966c97f4f",
+    "name": "AutoScale2 | Cloud Optimizer",
+    "csm": "f73b3b88-e0e0-4123-bbac-47e21b5bf2f3",
+    "pm": "0a354443-d782-4a0f-a53e-27cc7214ee36"
+  },
+  {
+    "id": "0c96c39c-7ca3-4004-b160-bcac643dd669",
+    "name": "AutoScale | Cloud Optimizer",
+    "csm": "3bb0fd4a-7aa5-4b47-a4a6-a4e230d85c88",
+    "pm": "2c0a4d1e-4fe9-4adf-8675-8be9cfc56b92"
+  },
+  {
+    "id": "ddaa6e8e-a58f-4eb6-8d4d-e3e1a33fb3ed",
+    "name": "BasicAuth | Auth Simplifier",
+    "csm": "bedf574e-22a8-4121-8f6d-3c0c9ab2d517",
+    "pm": "0579e263-0fc9-4e93-8a44-1d6f0e7d8f26"
+  },
+  {
+    "id": "36b4ac9f-6490-467c-89a8-a0009bccd86b",
+    "name": "BatchSync | Bulk Data Processor",
+    "csm": "384930e9-0ace-41fb-9341-d09dfc5f5877",
+    "pm": "0579e263-0fc9-4e93-8a44-1d6f0e7d8f26"
+  },
+  {
+    "id": "22c4e25e-ec2d-4781-9099-62279a5355ad",
+    "name": "Beacon Analytics | Dashboard",
+    "csm": "78d46da1-997c-435f-80f6-4767ede60bd4",
+    "pm": "6d95f4d0-c606-45cf-b982-5f6f35898888"
+  },
+  {
+    "id": "1d36ff90-e9fa-442c-837f-a496c5bdc7c8",
+    "name": "BenchMark | Performance Testing",
+    "csm": "0025c842-ecf0-4f5d-944b-0e45d922ccf4",
+    "pm": "67797d74-cf8c-48f4-a1da-74d12509f979"
+  },
+  {
+    "id": "697de2e3-337c-4e29-b02f-7315dfeac86c",
+    "name": "BetaLaunch | Feature Flags",
+    "csm": "21497eb9-c185-48be-a2b8-7cac3a9fe686",
+    "pm": "d31677e3-93d7-4dfc-92cb-282c08e4eece"
+  },
+  {
+    "id": "25aab9dd-0996-478a-a231-d3af1c64ae84",
+    "name": "BizFlow | Business Automation",
+    "csm": "a9134958-101e-43c3-b809-f27bd6da55c8",
+    "pm": "5144d8e9-fde3-4592-a5ab-c3aaeb199bb3"
+  },
+  {
+    "id": "3195f243-ac0d-4d32-9e0a-c837a693e994",
+    "name": "BlockChainX | Distributed Ledger",
+    "csm": "d2645e6a-7992-4aae-a69f-d43f08cbf0ba",
+    "pm": "d0b03113-740a-4123-8268-03577fe1c34c"
+  },
+  {
+    "id": "12913ba7-baa1-4a0b-96c1-1d74ce4d35c0",
+    "name": "BluePrint | Architecture Designer",
+    "csm": "bc81933e-5a52-4dc6-aa05-e99e6252e437",
+    "pm": "5e71b68d-b6c0-4dcc-b2b1-2520b3d314dd"
+  },
+  {
+    "id": "85c31291-9bba-46d5-bde3-556049c0605d",
+    "name": "BlueShift | Data Warehouse",
+    "csm": "04c66f0b-630a-4e87-8acd-9ba8f6e50f58",
+    "pm": "582ce8e2-27d1-4da7-a240-e80fee5ea19e"
+  },
+  {
+    "id": "22f90581-fe71-46cb-bd6b-0eea81664d4d",
+    "name": "BoundaryX | Boundary Management",
+    "csm": "f3d3bca0-4997-43aa-9ae6-be9e8bc0d478",
+    "pm": "181caef5-fa8d-44ae-8188-1c706bd12b98"
+  },
+  {
+    "id": "d3c12028-a988-4c32-aa27-8a64ab05ca0f",
+    "name": "BrandKit2 | Marketing Platform",
+    "csm": "d7072a64-e497-4ddb-b284-4b8b7fda9081",
+    "pm": "0b9029a1-90ae-4f68-95fb-3f149aed4d7f"
+  },
+  {
+    "id": "cd1ac157-494e-4b31-b2bb-ba2190b5e31c",
+    "name": "BrandKit | Marketing Platform",
+    "csm": "5e563e32-9b82-464e-a94e-1c78e78be7d4",
+    "pm": "0b9029a1-90ae-4f68-95fb-3f149aed4d7f"
+  },
+  {
+    "id": "fe3b5979-5132-41f7-9dfe-40379ef86423",
+    "name": "BuildBot | Build Automation",
+    "csm": "0cc6cefb-5a58-4f66-9b75-068543fb4aef",
+    "pm": "3112f16c-d1f8-4c47-8b9a-4e9e90187004"
+  },
+  {
+    "id": "b126abc7-bae7-4c11-af84-785d48aac608",
+    "name": "ByteCode | Code Compiler",
+    "csm": "c217fda0-0bad-4489-ac00-87cbad6febab",
+    "pm": "166b05ea-940c-462a-80fd-0043037173a0"
+  },
+  {
+    "id": "d79ac928-401d-4f53-b980-6dbbbad3b92a",
+    "name": "CacheGrid | Distributed Caching",
+    "csm": "37f64d6a-d3c9-45ed-b15c-e3043b59a612",
+    "pm": "b24e5008-9a4f-420b-a05b-ac2699c1bc4f"
+  },
+  {
+    "id": "7d8cd09e-66fb-43d5-9863-5e65893d077f",
+    "name": "CacheLayer | Redis Toolkit",
+    "csm": "5c5e7f68-45fd-4557-92e1-165a2db99d2f",
+    "pm": "1faf1ece-9c6d-4b77-b05f-44db6d3ebf73"
+  },
+  {
+    "id": "9f9797e1-c789-4a1f-a2ba-656c9022c3ef",
+    "name": "CapacityX | Capacity Planning",
+    "csm": "c9a12f3b-8482-4579-9a0a-07753f1da3e0",
+    "pm": "67c518c0-251b-45a0-a7b8-46b6151a2cfd"
+  },
+  {
+    "id": "e3361776-0ac2-4141-9b31-a74940d3e0d7",
+    "name": "ChainLink | Workflow Engine",
+    "csm": "15667a0b-0b16-4d5c-8fbc-d57bcd1e136d",
+    "pm": "40f3235e-4809-4fe8-821f-8a5bce0811b8"
+  },
+  {
+    "id": "fe682867-a1dd-4264-b73b-6c110115ea80",
+    "name": "CipherLock2 | Encryption Service",
+    "csm": "0adf59f0-8728-4c0f-93a5-259aeabc2e7d",
+    "pm": "ba9e2b37-e608-49fe-9ab3-a251944fa2c9"
+  },
+  {
+    "id": "121327e7-f758-48ae-b588-b7bffe5a73ee",
+    "name": "CipherLock | Encryption Service",
+    "csm": "f97ce38a-d919-4391-a215-f39a964dab56",
+    "pm": "920a0096-2cb8-4fad-afc2-922c8634f510"
+  },
+  {
+    "id": "08ec1af1-e99a-4ef5-bf9d-7ea18f9dd87d",
+    "name": "ClearDeploy | Zero-Downtime Deploy",
+    "csm": "f97ce38a-d919-4391-a215-f39a964dab56",
+    "pm": "a68fd910-018f-416c-9e01-bdfe9492b143"
+  },
+  {
+    "id": "94c49c6e-c88d-40d3-a19f-9ca32dff7a6e",
+    "name": "ClearPath | Mobile App",
+    "csm": "bc81933e-5a52-4dc6-aa05-e99e6252e437",
+    "pm": "5af106b0-af84-4198-8e71-80e138a5a9a8"
+  },
+  {
+    "id": "94c49c6e-c88d-40d3-a19f-9ca32dff7a6f",
+    "name": "ClearPath test",
+    "csm": "bc81933e-5a52-4dc6-aa05-e99e6252e437",
+    "pm": "5af106b0-af84-4198-8e71-80e138a5a9a8"
+  },
+  {
+    "id": "fa443a4f-e140-4ec9-86de-79a005fb854f",
+    "name": "CloudGuard | Cloud Security",
+    "csm": "9fc24152-d29c-40a1-b1f1-c66bfff2e073",
+    "pm": "d4300ae8-0695-4fb9-9a96-63a24b4038f2"
+  },
+  {
+    "id": "4d20d5b0-e614-4ff7-952b-f3058978fac2",
+    "name": "CloudNative | Cloud Native Platform",
+    "csm": "a69e02b1-4b64-458c-8f61-77f3c62fa05a",
+    "pm": "7025e23d-f399-41ed-b3be-0f845dd76a22"
+  },
+  {
+    "id": "e6b90cec-be30-4c51-97fe-793ad5dd55f7",
+    "name": "CloudNest | Multi-tenant SaaS",
+    "csm": "f13a7fae-6ae4-4576-b37f-f2ba4811787b",
+    "pm": "228083a7-9c06-4e54-9dc6-fb31495a32ef"
+  },
+  {
+    "id": "a5498727-e0e7-48d3-b0b0-386774d3d809",
+    "name": "CodeReview | PR Automation",
+    "csm": "b71182d2-8d59-47eb-87d1-d84b5e2ced57",
+    "pm": "b24e5008-9a4f-420b-a05b-ac2699c1bc4f"
+  },
+  {
+    "id": "99ac60dc-5c74-4e18-8cf1-253fc622a270",
+    "name": "ConfigHub | Configuration Management",
+    "csm": "09d434e9-5346-4790-8ae7-f5105e5b4968",
+    "pm": "3f3fc6d7-9771-43fd-949a-26d948408350"
+  },
+  {
+    "id": "77b6877c-e8c3-44fe-b148-3c9895052cf8",
+    "name": "CorePlatform | PaaS Framework",
+    "csm": "d2645e6a-7992-4aae-a69f-d43f08cbf0ba",
+    "pm": "3f3fc6d7-9771-43fd-949a-26d948408350"
+  },
+  {
+    "id": "b8774f57-c671-4176-9686-e26894cf565f",
+    "name": "CoreSync | File Sync Service",
+    "csm": "bedf574e-22a8-4121-8f6d-3c0c9ab2d517",
+    "pm": "67797d74-cf8c-48f4-a1da-74d12509f979"
+  },
+  {
+    "id": "aa4eb807-ce16-45a2-8c50-47cf3ccf0861",
+    "name": "CyberGuard | Threat Detection",
+    "csm": "d2645e6a-7992-4aae-a69f-d43f08cbf0ba",
+    "pm": "67797d74-cf8c-48f4-a1da-74d12509f979"
+  },
+  {
+    "id": "cd3778e8-24fa-4dac-a4ad-e3682503e2b8",
+    "name": "DataBricks | Analytics Platform",
+    "csm": "58a19ab9-6c95-444f-b894-46d3b5fd63c9",
+    "pm": "c5740f52-ab1a-4499-a156-db41411b7bbe"
+  },
+  {
+    "id": "59b66b96-19b8-45cd-adf5-5cf7ad0e0646",
+    "name": "DataForge | ETL Pipeline",
+    "csm": "abde2530-f577-48fd-986e-cf1677f08d59",
+    "pm": "1cf5b19d-a36b-4ad3-bfe1-ba6ae95ccb99"
+  },
+  {
+    "id": "f4fedc12-5e94-414a-afbf-2f61164e448d",
+    "name": "DatalakeX | Data Lake Platform",
+    "csm": "03f3d87a-025a-4945-a786-dc07c084338a",
+    "pm": "60a0fb1e-d01c-4acc-83b4-d8a316ac451e"
+  },
+  {
+    "id": "8c9375c9-33ee-4ac3-90af-3314d3b0d35a",
+    "name": "DataPivot | ETL Orchestrator",
+    "csm": "d50c5257-8de6-447d-b33d-d450f70c079c",
+    "pm": "fcedd5cc-e9b8-48b9-ad6f-92728bc2b2e0"
+  },
+  {
+    "id": "00586609-8982-428e-97ca-0eb222f89120",
+    "name": "DataShield | Privacy Compliance",
+    "csm": "1fce77ea-0584-443a-81d5-829da339e0b0",
+    "pm": "482d6bc1-ccba-44a5-b56b-f99a78d5085f"
+  },
+  {
+    "id": "2e5872b1-b380-4b05-856d-1226de4b89d9",
+    "name": "DataSync | CDC Pipeline",
+    "csm": "d2645e6a-7992-4aae-a69f-d43f08cbf0ba",
+    "pm": "3112f16c-d1f8-4c47-8b9a-4e9e90187004"
+  },
+  {
+    "id": "26d895d9-a3a9-43cb-a77d-57f126ef4d90",
+    "name": "DataVault2 | Backup Platform",
+    "csm": "dcfc1e15-8444-480e-900a-4970a58266df",
+    "pm": "1faf1ece-9c6d-4b77-b05f-44db6d3ebf73"
+  },
+  {
+    "id": "e68b4d7d-41fe-4148-b2a4-bec89a5b7147",
+    "name": "DataVault | Backup Platform",
+    "csm": "37f50bbf-00a8-4454-900f-a56c8dc6debf",
+    "pm": "5e71b68d-b6c0-4dcc-b2b1-2520b3d314dd"
+  },
+  {
+    "id": "2e21a40e-4486-4721-8e9f-d9f9c8f810cb",
+    "name": "DeepScan | Vulnerability Scanner",
+    "csm": "f3fb3b51-8984-4a7a-9dd8-01e7f59601d8",
+    "pm": "b141c57f-5208-4c40-b69e-410c43921467"
+  },
+  {
+    "id": "45ccb961-cc1e-4271-b086-4e4984fbcb8a",
+    "name": "DeltaSync | Incremental Sync",
+    "csm": "5f0a1733-7a42-4e17-8a54-bb2a41498ebb",
+    "pm": "1c2f51ca-5d24-4883-a5b4-7f51a3e73ecd"
+  },
+  {
+    "id": "117f2f5b-8bf3-4327-88ec-0eb838f82977",
+    "name": "DeployTrack | Deployment Analytics",
+    "csm": "8f667424-1654-4da0-a927-6ea17fafb6ef",
+    "pm": "a6b940bf-dbe1-4dc4-9123-b47e2cca9cb4"
+  },
+  {
+    "id": "b94ffa92-f009-4e20-842b-adb1d4befa48",
+    "name": "Dev360 | Developer Experience",
+    "csm": "ddb1d706-2ec8-430e-b653-ceb3694846a6",
+    "pm": "fcedd5cc-e9b8-48b9-ad6f-92728bc2b2e0"
+  },
+  {
+    "id": "6dc22ca8-1017-48db-b9d7-0baab57c52c4",
+    "name": "DevOpsX | DevOps Toolchain",
+    "csm": "3971b938-0558-4242-9f5d-3120dad4d431",
+    "pm": "1cf5b19d-a36b-4ad3-bfe1-ba6ae95ccb99"
+  },
+  {
+    "id": "b40419b0-3cfa-46fb-bfdc-42803167caea",
+    "name": "DiskSync | Backup Automation",
+    "csm": "0cc6cefb-5a58-4f66-9b75-068543fb4aef",
+    "pm": "24e354ab-537b-430b-bbd9-879d449eaffc"
+  },
+  {
+    "id": "a0464e0e-8055-47e6-b26a-18d7647d88bd",
+    "name": "DriftNet | Network Monitor",
+    "csm": "755d5aa0-49c2-4edb-ae0f-b38632d886c2",
+    "pm": "33d5ba2d-4422-49ee-9219-362f497e06e3"
+  },
+  {
+    "id": "2f3fddf8-aef7-442f-8a9a-a03829f4fd7c",
+    "name": "DynamicX | Dynamic Platform",
+    "csm": "90eb23c2-eec2-48a7-9b96-5b9d5842cf0c",
+    "pm": "60a0fb1e-d01c-4acc-83b4-d8a316ac451e"
+  },
+  {
+    "id": "e8267e5c-c599-402a-b734-12a3fefa8de9",
+    "name": "EagleEye | Surveillance Platform",
+    "csm": "984edea5-c5c7-4fd3-80c1-5b4de4058045",
+    "pm": "5144d8e9-fde3-4592-a5ab-c3aaeb199bb3"
+  },
+  {
+    "id": "9d8e6462-3396-4531-a846-de011f1dfc60",
+    "name": "EchoBase | Voice Assistant",
+    "csm": "15a1951d-7200-433c-9b5a-ed81e3c2880b",
+    "pm": "1faf1ece-9c6d-4b77-b05f-44db6d3ebf73"
+  },
+  {
+    "id": "1f14ca14-8860-4853-b8aa-f002b47b0165",
+    "name": "EcoSystem | Platform Engineering",
+    "csm": "c1d71dcf-97d3-4189-abed-5d0798926b48",
+    "pm": "a6b940bf-dbe1-4dc4-9123-b47e2cca9cb4"
+  },
+  {
+    "id": "05a16dd7-22d8-48b8-a64b-d80c2b346bfe",
+    "name": "EcoTrack | Sustainability Platform",
+    "csm": "8f3ce91b-2537-4c89-b6f6-d2bb97cb497e",
+    "pm": "66e46ba9-7607-407e-a82c-6005660f9409"
+  },
+  {
+    "id": "f3977042-e648-415e-830f-ddec0da7e6bd",
+    "name": "EdgeAI | Inference at Edge",
+    "csm": "dcfc1e15-8444-480e-900a-4970a58266df",
+    "pm": "d31677e3-93d7-4dfc-92cb-282c08e4eece"
+  },
+  {
+    "id": "6cc0c74e-23b1-4c0f-9942-a345bac555ed",
+    "name": "EdgeFlow2 | CDN Management",
+    "csm": "d7072a64-e497-4ddb-b284-4b8b7fda9081",
+    "pm": "c760395a-597f-455d-b791-28161d3cf331"
+  },
+  {
+    "id": "e421b32f-2bd1-4f33-bfaf-c9afe8d62255",
+    "name": "EdgeFlow | CDN Management",
+    "csm": "21ef5d33-5ec0-4a58-bf22-aef725bd8952",
+    "pm": "38ef8ef2-6d6c-448c-8670-30023a018b55"
+  },
+  {
+    "id": "df7c4589-e21d-436f-a12a-bba5649da2a7",
+    "name": "EfficiencyX | Efficiency Engine",
+    "csm": "82e463cb-7010-4956-a3bd-3d2e3daa55b0",
+    "pm": "3112f16c-d1f8-4c47-8b9a-4e9e90187004"
+  },
+  {
+    "id": "630f8c52-977f-49be-841f-d909e29e4ac9",
+    "name": "ElasticMesh | Distributed System",
+    "csm": "58a19ab9-6c95-444f-b894-46d3b5fd63c9",
+    "pm": "12724f9a-8906-46f8-888d-418c15a1ae11"
+  },
+  {
+    "id": "cc091428-4a4b-410e-9f32-f282b374d8e6",
+    "name": "ElitePay | Payroll System",
+    "csm": "4174b8c1-9d89-4b61-bfd7-075924620091",
+    "pm": "819bd11f-95ae-48a4-89b7-fe4d66da494b"
+  },
+  {
+    "id": "a08e0499-e4e2-4742-bf3c-3734c7f8ec85",
+    "name": "EncryptStream | TLS Manager",
+    "csm": "d2645e6a-7992-4aae-a69f-d43f08cbf0ba",
+    "pm": "d8bf8357-824d-4549-b46a-30d21c031493"
+  },
+  {
+    "id": "f45471da-1638-4881-b7d7-9d9028278da5",
+    "name": "EnergyX | Energy Management",
+    "csm": "7d15b5eb-e06f-4c9d-ba05-1c8b52f4307d",
+    "pm": "197d0341-efa3-4b84-81bb-8a4203ffd146"
+  },
+  {
+    "id": "c809e6ec-1f8d-47e5-ab17-2759fc4720e4",
+    "name": "EntityGraph | Knowledge Graph",
+    "csm": "90eb23c2-eec2-48a7-9b96-5b9d5842cf0c",
+    "pm": "197d0341-efa3-4b84-81bb-8a4203ffd146"
+  },
+  {
+    "id": "690db96a-b42c-419c-be7a-0a74818f81ae",
+    "name": "EvalAI | Model Evaluation",
+    "csm": "3bb0fd4a-7aa5-4b47-a4a6-a4e230d85c88",
+    "pm": "920a0096-2cb8-4fad-afc2-922c8634f510"
+  },
+  {
+    "id": "caf6ce70-e715-46e3-8cee-bdaf6604675f",
+    "name": "EventBus | Message Broker",
+    "csm": "1089acbc-366d-4262-af9c-d6906283701b",
+    "pm": "1b7686cf-53a7-47ca-83e8-bc154dc1424f"
+  },
+  {
+    "id": "1e53c5c1-ed9c-49e0-84c6-484266824379",
+    "name": "EventDriven | CQRS Framework",
+    "csm": "45d63a8e-c639-4df9-aa05-bfef80ea0c5b",
+    "pm": "1c7fa5c2-7070-49ac-ab60-ed74e52f5083"
+  },
+  {
+    "id": "58a4a352-e70b-4bea-b363-136e2c843243",
+    "name": "FabricAI2 | ML Pipeline",
+    "csm": "c9a12f3b-8482-4579-9a0a-07753f1da3e0",
+    "pm": "3f3fc6d7-9771-43fd-949a-26d948408350"
+  },
+  {
+    "id": "6c764f47-fee3-4a76-86ac-01226ec1175d",
+    "name": "FabricAI | ML Pipeline",
+    "csm": "984edea5-c5c7-4fd3-80c1-5b4de4058045",
+    "pm": "f8f78c22-4fc0-4780-bd99-83f0f9383bbf"
+  },
+  {
+    "id": "3faf8b4e-7731-4767-b521-d7d26d12433b",
+    "name": "FastCache | In-Memory Cache",
+    "csm": "0c92753e-e079-4310-a1c7-53a989738a4c",
+    "pm": "d4300ae8-0695-4fb9-9a96-63a24b4038f2"
+  },
+  {
+    "id": "e25c90cc-148f-44bb-8141-6f4bd6db4dff",
+    "name": "FaultTolerant | Resilience Platform",
+    "csm": "0025c842-ecf0-4f5d-944b-0e45d922ccf4",
+    "pm": "ddedc1ce-e502-4fbd-9b07-0c33a0807982"
+  },
+  {
+    "id": "5d5e30ed-9427-4ec1-9d84-bc533be18458",
+    "name": "FieldOps | Field Service App",
+    "csm": "00fba46e-d8ab-4cf4-8d28-a35115261640",
+    "pm": "c5740f52-ab1a-4499-a156-db41411b7bbe"
+  },
+  {
+    "id": "f61bec87-9382-4651-8d63-0e1b8f192621",
+    "name": "FieldSync | Remote Data Collection",
+    "csm": "bedf574e-22a8-4121-8f6d-3c0c9ab2d517",
+    "pm": "ddedc1ce-e502-4fbd-9b07-0c33a0807982"
+  },
+  {
+    "id": "59dbf016-bf36-4d02-ab13-f57ac65acbfa",
+    "name": "FinanceX | Financial Systems",
+    "csm": "66882a6f-d1b1-4936-b17f-072a653d0efa",
+    "pm": "cf65956e-39c8-4d84-86cf-90ad76a09a0f"
+  },
+  {
+    "id": "bef6bc92-4929-46ae-850f-96d52eaad4e2",
+    "name": "FinOps | Cloud Cost Manager",
+    "csm": "09d434e9-5346-4790-8ae7-f5105e5b4968",
+    "pm": "c5dc4d62-c413-4368-9e8d-9d0ec49c63e5"
+  },
+  {
+    "id": "082f82b7-0eb5-42e4-8bd0-5ee8b3c20aed",
+    "name": "FinVault | Payment Gateway",
+    "csm": "3bb0fd4a-7aa5-4b47-a4a6-a4e230d85c88",
+    "pm": "12724f9a-8906-46f8-888d-418c15a1ae11"
+  },
+  {
+    "id": "62bd3be4-6c7a-4975-b913-c2798d2763fd",
+    "name": "FlexX | Flexible Platform",
+    "csm": "957c7b58-92f5-4f16-b0c9-1115adb350e7",
+    "pm": "482d6bc1-ccba-44a5-b56b-f99a78d5085f"
+  },
+  {
+    "id": "86dfaea9-e7aa-4546-83a8-cf347fb9f1b8",
+    "name": "FlowDash | Workflow Dashboard",
+    "csm": "dcfc1e15-8444-480e-900a-4970a58266df",
+    "pm": "0a354443-d782-4a0f-a53e-27cc7214ee36"
+  },
+  {
+    "id": "a5de9ef4-e8a8-4539-a945-fcd0c5d436a7",
+    "name": "FlowState | Process Automation",
+    "csm": "d2974700-f5f9-4524-a561-a100ed376049",
+    "pm": "67a660d5-7691-4f01-8307-064b6936ca0d"
+  },
+  {
+    "id": "6be6a816-fa0b-488f-9b1e-d05435f9e517",
+    "name": "FluxDB | Time-series DB Tool",
+    "csm": "60a09ff6-b779-42d6-9873-5217d6a8cb8f",
+    "pm": "5e71b68d-b6c0-4dcc-b2b1-2520b3d314dd"
+  },
+  {
+    "id": "120b4afd-7148-4d5f-8275-892b195b2efc",
+    "name": "ForecastAI | Demand Planning",
+    "csm": "f97ce38a-d919-4391-a215-f39a964dab56",
+    "pm": "1404b0d3-70a4-4f9e-b8f9-b5c24161c97d"
+  },
+  {
+    "id": "c932a30c-af1d-484f-8ad8-15cef9b18d5b",
+    "name": "FormBuilder | Dynamic Forms",
+    "csm": "d9cfac29-f735-498e-b693-36ff6e42919a",
+    "pm": "1c2f51ca-5d24-4883-a5b4-7f51a3e73ecd"
+  },
+  {
+    "id": "f899033e-e791-4ef1-ad03-a2f3adbb4df9",
+    "name": "FrostByte | Cold Storage Mgmt",
+    "csm": "984edea5-c5c7-4fd3-80c1-5b4de4058045",
+    "pm": "6bc26687-d4a2-4e1b-8f54-ceb3dca8adf6"
+  },
+  {
+    "id": "f362e2ec-5687-498a-8626-0e9eb847e9b6",
+    "name": "GatewayPro | Enterprise Gateway",
+    "csm": "1fce77ea-0584-443a-81d5-829da339e0b0",
+    "pm": "67a660d5-7691-4f01-8307-064b6936ca0d"
+  },
+  {
+    "id": "7dab1ff3-ede7-4aaa-a019-f8102ca9c184",
+    "name": "GenAI | Generative AI Platform",
+    "csm": "6ecf70ac-651d-4671-8f1e-0fa4683a192f",
+    "pm": "cf65956e-39c8-4d84-86cf-90ad76a09a0f"
+  },
+  {
+    "id": "29ebacc1-2374-4059-af43-82a4adb0e179",
+    "name": "GeoFence | Location Services",
+    "csm": "6ecf70ac-651d-4671-8f1e-0fa4683a192f",
+    "pm": "582ce8e2-27d1-4da7-a240-e80fee5ea19e"
+  },
+  {
+    "id": "8a780d85-6e6e-40a4-9bde-044c12bd08d4",
+    "name": "GeoOps | Geospatial Analytics",
+    "csm": "dcfc1e15-8444-480e-900a-4970a58266df",
+    "pm": "1c20e53e-ee6c-40ba-a659-c5e1d5b76455"
+  },
+  {
+    "id": "2fe1b641-c672-445b-be36-ef705df6ebd5",
+    "name": "GlobeSight | Global Analytics",
+    "csm": "3bb0fd4a-7aa5-4b47-a4a6-a4e230d85c88",
+    "pm": "6d95f4d0-c606-45cf-b982-5f6f35898888"
+  },
+  {
+    "id": "02ec2493-50d7-4e65-9de2-36b8aa5ff407",
+    "name": "GlowUp | Beauty Marketplace",
+    "csm": "d2645e6a-7992-4aae-a69f-d43f08cbf0ba",
+    "pm": "7025e23d-f399-41ed-b3be-0f845dd76a22"
+  },
+  {
+    "id": "ea1ae934-f786-4a8f-bbd6-1f3ef8330202",
+    "name": "GoLive | Streaming Dashboard",
+    "csm": "f719fdf0-015e-42f2-9e33-b14b31fb00df",
+    "pm": "582ce8e2-27d1-4da7-a240-e80fee5ea19e"
+  },
+  {
+    "id": "27682671-5550-437c-9c0c-e3070dba31ca",
+    "name": "GraphCache | GQL Caching Layer",
+    "csm": "ddb1d706-2ec8-430e-b653-ceb3694846a6",
+    "pm": "0579e263-0fc9-4e93-8a44-1d6f0e7d8f26"
+  },
+  {
+    "id": "99472513-570f-42e9-a8e6-2f2b367c05da",
+    "name": "GreenLeaf | Carbon Footprint",
+    "csm": "f719fdf0-015e-42f2-9e33-b14b31fb00df",
+    "pm": "fcedd5cc-e9b8-48b9-ad6f-92728bc2b2e0"
+  },
+  {
+    "id": "c37089b8-0010-454d-92cc-cbaaddeb9ee2",
+    "name": "GreenOps | Sustainability Tracker",
+    "csm": "37f50bbf-00a8-4454-900f-a56c8dc6debf",
+    "pm": "f77d42d1-3d03-425d-8674-c2a06a464e11"
+  },
+  {
+    "id": "55e4ae59-c792-4da0-93ee-c34a33d54dd7",
+    "name": "GridCompute | Distributed Computing",
+    "csm": "66882a6f-d1b1-4936-b17f-072a653d0efa",
+    "pm": "4f70a3f8-516c-4917-b107-f03e70ca8682"
+  },
+  {
+    "id": "f08fe501-8c55-4c4d-841d-77168626fa1a",
+    "name": "GridLock | Inventory System",
+    "csm": "a9134958-101e-43c3-b809-f27bd6da55c8",
+    "pm": "8759f91e-8317-49a8-9483-0cde4a7d571b"
+  },
+  {
+    "id": "713818c9-e395-4e6d-8774-c3fd8e700e2d",
+    "name": "GridSync | Data Reconciliation",
+    "csm": "15a1951d-7200-433c-9b5a-ed81e3c2880b",
+    "pm": "f8f78c22-4fc0-4780-bd99-83f0f9383bbf"
+  },
+  {
+    "id": "01fac4a5-b034-47ca-b18c-bc7861344b26",
+    "name": "GrowthMap2 | CRM Analytics",
+    "csm": "82e463cb-7010-4956-a3bd-3d2e3daa55b0",
+    "pm": "f77d42d1-3d03-425d-8674-c2a06a464e11"
+  },
+  {
+    "id": "941a055d-79e1-47e8-8525-6639ec071fe2",
+    "name": "GrowthMap | CRM Analytics",
+    "csm": "dcfc1e15-8444-480e-900a-4970a58266df",
+    "pm": "60a0fb1e-d01c-4acc-83b4-d8a316ac451e"
+  },
+  {
+    "id": "25680eb4-ddf8-4fb3-88bc-6fceb1bd9ed3",
+    "name": "GrowthX | Growth Platform",
+    "csm": "15667a0b-0b16-4d5c-8fbc-d57bcd1e136d",
+    "pm": "c760395a-597f-455d-b791-28161d3cf331"
+  },
+  {
+    "id": "86b93df8-7494-4031-bc28-a95cefd2ac3d",
+    "name": "HaloFit | Wearable Platform",
+    "csm": "957c7b58-92f5-4f16-b0c9-1115adb350e7",
+    "pm": "166b05ea-940c-462a-80fd-0043037173a0"
+  },
+  {
+    "id": "99884313-c1ef-4a02-96a2-e70426b5a977",
+    "name": "HarmonizeX | Harmonization Engine",
+    "csm": "1089acbc-366d-4262-af9c-d6906283701b",
+    "pm": "f77d42d1-3d03-425d-8674-c2a06a464e11"
+  },
+  {
+    "id": "6ea718c9-11be-4b2b-87be-ec68604725ff",
+    "name": "HashProof | Audit Trail",
+    "csm": "21ef5d33-5ec0-4a58-bf22-aef725bd8952",
+    "pm": "6acbb73d-52bd-4108-89d0-4382da11d60f"
+  },
+  {
+    "id": "dfb0aef5-f550-4b78-8ea1-ba255a0b9ecf",
+    "name": "HealthSync | Medical Records",
+    "csm": "10d15fea-d851-4422-be60-51b9ff4f6b4f",
+    "pm": "b9ad5065-4428-4213-81d5-a46784a842ea"
+  },
+  {
+    "id": "ac209bff-bed4-4b4b-b2bb-de47d6158eff",
+    "name": "HealthX | Health Systems",
+    "csm": "da5fb5e1-9ba1-4fc1-af52-ca3148b4f592",
+    "pm": "486431f5-9536-470d-8342-40a4248c6f00"
+  },
+  {
+    "id": "218f248f-f918-462c-a4a4-be78ba3193f5",
+    "name": "HeatMap | User Behavior Analytics",
+    "csm": "8cbada1d-bb53-4b23-863c-096ed47522d7",
+    "pm": "1f5c1243-5b7f-4c24-9ddf-4d42c0bf2e3f"
+  },
+  {
+    "id": "877a2805-c494-4498-a95d-6f55e3674c89",
+    "name": "HelpBot | Support Automation",
+    "csm": "791656f5-78a7-4d92-acff-2314d74f32b8",
+    "pm": "78efdc9d-6f76-4574-84b9-0632b8efe736"
+  },
+  {
+    "id": "f9c4303c-72c8-4547-918f-a3ad154c2263",
+    "name": "HiveDB | Document Store",
+    "csm": "9ec1d11d-e98a-4575-9a80-c08a9fcc3a6c",
+    "pm": "0336ce78-eaeb-4cf5-a6c4-9cfea99ee986"
+  },
+  {
+    "id": "566f4c7a-1f0a-4fc3-81b8-ff8844409637",
+    "name": "HiveSync | Collaboration Tool",
+    "csm": "6c687f8e-f246-47f0-8845-83161a667380",
+    "pm": "4f70a3f8-516c-4917-b107-f03e70ca8682"
+  },
+  {
+    "id": "25d2a4d7-13fc-4b34-9420-46e1317bc37e",
+    "name": "HorizonDB2 | Distributed Database",
+    "csm": "fc44d30c-af10-4861-9b44-72994f7ceb50",
+    "pm": "486431f5-9536-470d-8342-40a4248c6f00"
+  },
+  {
+    "id": "a39314f0-f79b-4682-9d0a-ea265f8f05dc",
+    "name": "HorizonDB | Distributed Database",
+    "csm": "da5fb5e1-9ba1-4fc1-af52-ca3148b4f592",
+    "pm": "2c0a4d1e-4fe9-4adf-8675-8be9cfc56b92"
+  },
+  {
+    "id": "575ce9c9-b1f4-44ac-b2bc-f4ddd507fed8",
+    "name": "HybridCloud | Multi-Cloud Manager",
+    "csm": "3971b938-0558-4242-9f5d-3120dad4d431",
+    "pm": "d31677e3-93d7-4dfc-92cb-282c08e4eece"
+  },
+  {
+    "id": "0d93c124-bc92-4621-b976-bb79ebf774ed",
+    "name": "HyperCache | Distributed Cache",
+    "csm": "791656f5-78a7-4d92-acff-2314d74f32b8",
+    "pm": "f8f78c22-4fc0-4780-bd99-83f0f9383bbf"
+  },
+  {
+    "id": "03ae6f56-1a38-4f51-92a1-44b01544140b",
+    "name": "HyperLink | URL Shortener API",
+    "csm": "20f09c71-4f63-49b5-8e48-b2223d89ecb5",
+    "pm": "2963dd96-0f7c-42a6-9ffa-ba8686c06dc3"
+  },
+  {
+    "id": "3d138a89-4d06-4839-8091-436fba0a2dd6",
+    "name": "HyperScale | Scalability Engine",
+    "csm": "09d434e9-5346-4790-8ae7-f5105e5b4968",
+    "pm": "5f1a4477-84fe-46aa-8360-ca4e0a16983c"
+  },
+  {
+    "id": "37b8f4df-8d44-440b-84da-7c28e6907099",
+    "name": "HyperTest | E2E Test Platform",
+    "csm": "dcfc1e15-8444-480e-900a-4970a58266df",
+    "pm": "eabf628a-aa5d-445c-a519-c7dfe6e6ced2"
+  },
+  {
+    "id": "4dc5ef00-f60b-4710-afea-f172d788bb51",
+    "name": "IconBase | Icon Management",
+    "csm": "da5fb5e1-9ba1-4fc1-af52-ca3148b4f592",
+    "pm": "67797d74-cf8c-48f4-a1da-74d12509f979"
+  },
+  {
+    "id": "b64b5e9c-45ae-49ce-9a58-12bb2a1516b5",
+    "name": "ImageAI | Image Recognition",
+    "csm": "03f3d87a-025a-4945-a786-dc07c084338a",
+    "pm": "920a0096-2cb8-4fad-afc2-922c8634f510"
+  },
+  {
+    "id": "11bc5078-a4b7-45d9-b9de-7a08498def8a",
+    "name": "ImmutableDB | Append-Only Database",
+    "csm": "8cbada1d-bb53-4b23-863c-096ed47522d7",
+    "pm": "c5740f52-ab1a-4499-a156-db41411b7bbe"
+  },
+  {
+    "id": "529379d4-8ad2-4b17-b9bc-69780af090ef",
+    "name": "ImpactScore2 | ESG Platform",
+    "csm": "1bdbd947-528b-41bd-9fe7-dc28cf663e93",
+    "pm": "819bd11f-95ae-48a4-89b7-fe4d66da494b"
+  },
+  {
+    "id": "ddc6a83c-650e-4d90-8ac1-e60e1c18267e",
+    "name": "ImpactScore | ESG Platform",
+    "csm": "1089acbc-366d-4262-af9c-d6906283701b",
+    "pm": "1f5c1243-5b7f-4c24-9ddf-4d42c0bf2e3f"
+  },
+  {
+    "id": "5a4cc51a-1432-4f33-8395-dbabbbbcdb3a",
+    "name": "IndexDB | Search Engine",
+    "csm": "0c92753e-e079-4310-a1c7-53a989738a4c",
+    "pm": "5144d8e9-fde3-4592-a5ab-c3aaeb199bb3"
+  },
+  {
+    "id": "d8898bd1-4bab-4da3-b7b4-ce9e2b0efd25",
+    "name": "InferAI | Inference Engine",
+    "csm": "37cd939c-1de4-4fb2-b104-f05f68294ab9",
+    "pm": "f8f78c22-4fc0-4780-bd99-83f0f9383bbf"
+  },
+  {
+    "id": "c14761c7-6f58-40ec-89ff-a496c26193de",
+    "name": "InfoSec | Security Dashboard",
+    "csm": "bedf574e-22a8-4121-8f6d-3c0c9ab2d517",
+    "pm": "d0b03113-740a-4123-8268-03577fe1c34c"
+  },
+  {
+    "id": "597dde21-e218-44dd-9e99-b9aaac384db6",
+    "name": "InkDrop | Note Taking App",
+    "csm": "6c687f8e-f246-47f0-8845-83161a667380",
+    "pm": "b20585a2-8722-41ab-a4c6-61c7a1647e2a"
+  },
+  {
+    "id": "c359a58d-72bd-4f61-9b82-109060e990de",
+    "name": "InnoVate | AI Chatbot",
+    "csm": "45d63a8e-c639-4df9-aa05-bfef80ea0c5b",
+    "pm": "228083a7-9c06-4e54-9dc6-fb31495a32ef"
+  },
+  {
+    "id": "15f8c1ce-b353-49fa-bc6f-e2957a20034d",
+    "name": "InnovationX | Innovation Platform",
+    "csm": "165d0d63-1b4c-4607-97c4-8b7a356c9b8f",
+    "pm": "67c518c0-251b-45a0-a7b8-46b6151a2cfd"
+  },
+  {
+    "id": "9610e7ea-b7e0-4632-80a1-7ff711f2543f",
+    "name": "InsightHub | Analytics Suite",
+    "csm": "3aae14e0-1374-4577-8cb4-25d9874effff",
+    "pm": "1c7fa5c2-7070-49ac-ab60-ed74e52f5083"
+  },
+  {
+    "id": "b940dcac-7852-4b7f-9151-8e21021f291a",
+    "name": "InsightStream | Real-time Insights",
+    "csm": "10d15fea-d851-4422-be60-51b9ff4f6b4f",
+    "pm": "453f7097-ad67-42d0-9f48-78cd30954c16"
+  },
+  {
+    "id": "f46e526d-eb21-4dcd-9d0a-ab0918a9425d",
+    "name": "IntelligentX | Intelligent Systems",
+    "csm": "f3fb3b51-8984-4a7a-9dd8-01e7f59601d8",
+    "pm": "d068a969-80d9-452f-a2cd-9eb680518057"
+  },
+  {
+    "id": "bdcb204a-53ce-4465-8e05-0e5d145407d4",
+    "name": "IQ Analytics | Intelligent Reporting",
+    "csm": "3aae14e0-1374-4577-8cb4-25d9874effff",
+    "pm": "67c518c0-251b-45a0-a7b8-46b6151a2cfd"
+  },
+  {
+    "id": "34675618-b3b7-404f-92ea-179a03dc6550",
+    "name": "IronClad | Compliance Engine",
+    "csm": "82e463cb-7010-4956-a3bd-3d2e3daa55b0",
+    "pm": "c760395a-597f-455d-b791-28161d3cf331"
+  },
+  {
+    "id": "82a7503f-a0e7-4f17-80da-fe30102a5733",
+    "name": "JabberNet | Chat Platform",
+    "csm": "d2974700-f5f9-4524-a561-a100ed376049",
+    "pm": "57a8a2a5-f306-4d23-a299-57f0c6710fa6"
+  },
+  {
+    "id": "4ef86993-6856-485b-a5e7-3c48214c1450",
+    "name": "JadeTree | Family Tree App",
+    "csm": "21ef5d33-5ec0-4a58-bf22-aef725bd8952",
+    "pm": "fcedd5cc-e9b8-48b9-ad6f-92728bc2b2e0"
+  },
+  {
+    "id": "c5e61d7c-c921-4666-ab95-a61552e01890",
+    "name": "JetDB | In-Process Database",
+    "csm": "5e563e32-9b82-464e-a94e-1c78e78be7d4",
+    "pm": "cbe2e619-309f-4a1f-b80a-374a631734ef"
+  },
+  {
+    "id": "b557b6cf-b79d-474e-bfac-9367300869a1",
+    "name": "JetPack | Deployment Automation",
+    "csm": "abde2530-f577-48fd-986e-cf1677f08d59",
+    "pm": "5144d8e9-fde3-4592-a5ab-c3aaeb199bb3"
+  },
+  {
+    "id": "4933ce18-a5a9-49a0-ab07-90161f4cce7a",
+    "name": "JetQueue | Priority Queue Engine",
+    "csm": "66882a6f-d1b1-4936-b17f-072a653d0efa",
+    "pm": "b20585a2-8722-41ab-a4c6-61c7a1647e2a"
+  },
+  {
+    "id": "55b60196-44f0-4ff6-bb0a-065df127d14c",
+    "name": "JetStream | Streaming Service",
+    "csm": "03f3d87a-025a-4945-a786-dc07c084338a",
+    "pm": "cf65956e-39c8-4d84-86cf-90ad76a09a0f"
+  },
+  {
+    "id": "b1017def-784f-4fd9-a162-9336b8b8f490",
+    "name": "JetTest | Rapid Test Generator",
+    "csm": "4e996aca-e030-40d9-9309-14cc8ecde4f7",
+    "pm": "1404b0d3-70a4-4f9e-b8f9-b5c24161c97d"
+  },
+  {
+    "id": "a68d4e71-c0d1-4615-8289-b3a1ce4265bd",
+    "name": "JiraSync | Project Sync Engine",
+    "csm": "a9134958-101e-43c3-b809-f27bd6da55c8",
+    "pm": "0a354443-d782-4a0f-a53e-27cc7214ee36"
+  },
+  {
+    "id": "a2afce38-9425-429a-b6ff-d0aebac7235c",
+    "name": "JobQueue | Task Scheduler",
+    "csm": "5a9e96cc-573f-45ad-ab64-565a411b5516",
+    "pm": "57a8a2a5-f306-4d23-a299-57f0c6710fa6"
+  },
+  {
+    "id": "5d066a89-0235-4c3a-b795-aa650650efd8",
+    "name": "JobTrack | Recruitment Platform",
+    "csm": "abde2530-f577-48fd-986e-cf1677f08d59",
+    "pm": "c105b5f3-c33e-4eeb-98db-91210865c548"
+  },
+  {
+    "id": "b8a99e7c-87c5-4b20-aff1-49a231aaffc8",
+    "name": "JournalX | Audit Logging",
+    "csm": "00fba46e-d8ab-4cf4-8d28-a35115261640",
+    "pm": "60a0fb1e-d01c-4acc-83b4-d8a316ac451e"
+  },
+  {
+    "id": "10be6863-bd4e-4beb-afcb-91ceecc88556",
+    "name": "JourneyQ2 | Customer Journey",
+    "csm": "1bdbd947-528b-41bd-9fe7-dc28cf663e93",
+    "pm": "cbe2e619-309f-4a1f-b80a-374a631734ef"
+  },
+  {
+    "id": "4c04e2f1-a887-494e-b0a3-72a3ab5016b9",
+    "name": "JourneyQ | Customer Journey",
+    "csm": "b535029c-449a-4c9f-9696-6ea31bd09c56",
+    "pm": "67a660d5-7691-4f01-8307-064b6936ca0d"
+  },
+  {
+    "id": "a5518de1-71b0-4079-b10c-c689d0c1caa6",
+    "name": "JourneyX | Customer Journey",
+    "csm": "85ae86ae-5f54-48b6-ac0f-b13a0df18310",
+    "pm": "c5740f52-ab1a-4499-a156-db41411b7bbe"
+  },
+  {
+    "id": "f7e6ad28-a87d-4cf8-a38a-584eb89155cc",
+    "name": "JumpStart | Startup Platform",
+    "csm": "6ecf70ac-651d-4671-8f1e-0fa4683a192f",
+    "pm": "ddedc1ce-e502-4fbd-9b07-0c33a0807982"
+  },
+  {
+    "id": "62a9d8ec-06a4-4094-96e0-f2e38f62bf89",
+    "name": "JustifyX | Justification Engine",
+    "csm": "c1d71dcf-97d3-4189-abed-5d0798926b48",
+    "pm": "453f7097-ad67-42d0-9f48-78cd30954c16"
+  },
+  {
+    "id": "cc6e7fd7-b61d-4f80-a06a-4d6039ed8b76",
+    "name": "KaleidoscopeX | Kaleidoscope Analytics",
+    "csm": "8f3ce91b-2537-4c89-b6f6-d2bb97cb497e",
+    "pm": "3112f16c-d1f8-4c47-8b9a-4e9e90187004"
+  },
+  {
+    "id": "0e678a69-8288-4744-b9dd-fd552fbbc87d",
+    "name": "KarmaLoop | Charity Platform",
+    "csm": "f83df9e8-3d29-48e7-8f37-fd1d89654fd9",
+    "pm": "49670820-7826-4e95-b651-152db9d1ec02"
+  },
+  {
+    "id": "4cbb72c3-3779-4a91-a7f4-3510a82ba707",
+    "name": "KernelOS2 | OS Monitoring",
+    "csm": "20f09c71-4f63-49b5-8e48-b2223d89ecb5",
+    "pm": "6acbb73d-52bd-4108-89d0-4382da11d60f"
+  },
+  {
+    "id": "d4640087-7fbf-4ed3-b0c6-2f41546a9292",
+    "name": "KernelOS | OS Monitoring",
+    "csm": "d7072a64-e497-4ddb-b284-4b8b7fda9081",
+    "pm": "ba9e2b37-e608-49fe-9ab3-a251944fa2c9"
+  },
+  {
+    "id": "b8eeb729-1669-4f40-9036-d5caacf0ddd4",
+    "name": "KernelTrace | System Profiler",
+    "csm": "fc44d30c-af10-4861-9b44-72994f7ceb50",
+    "pm": "486431f5-9536-470d-8342-40a4248c6f00"
+  },
+  {
+    "id": "5d6f52fb-887e-4fdf-80e0-1233159e51f6",
+    "name": "KernelX | System Core",
+    "csm": "8dde4b45-afa9-4711-8aa3-f565b4dfd6f1",
+    "pm": "372ba961-ca06-481b-9a72-ba01e20422d9"
+  },
+  {
+    "id": "dfe4c532-0e53-48b4-ba03-bc5972d1f32b",
+    "name": "KeyRotate | Secrets Rotation",
+    "csm": "85ae86ae-5f54-48b6-ac0f-b13a0df18310",
+    "pm": "166b05ea-940c-462a-80fd-0043037173a0"
+  },
+  {
+    "id": "12559022-fa83-480a-8ce9-3c645364ffdb",
+    "name": "KeyVault | Secrets Manager",
+    "csm": "bedf574e-22a8-4121-8f6d-3c0c9ab2d517",
+    "pm": "1c2f51ca-5d24-4883-a5b4-7f51a3e73ecd"
+  },
+  {
+    "id": "cda00037-9a53-463a-8139-b572b805cb00",
+    "name": "KiteBoard | Agile Tool",
+    "csm": "3aae14e0-1374-4577-8cb4-25d9874effff",
+    "pm": "453f7097-ad67-42d0-9f48-78cd30954c16"
+  },
+  {
+    "id": "76b93880-6cf1-41ed-a040-f66fe139959a",
+    "name": "KloudKit | Multi-Cloud Toolkit",
+    "csm": "efc58eb1-f6c9-4204-a613-d87cc40ce936",
+    "pm": "197d0341-efa3-4b84-81bb-8a4203ffd146"
+  },
+  {
+    "id": "b08e6811-6819-4382-aeaa-e4cbe762090a",
+    "name": "KnightShield | Security Audit",
+    "csm": "03f3d87a-025a-4945-a786-dc07c084338a",
+    "pm": "18bb8cf1-36ff-4bec-8035-627bab7bc04f"
+  },
+  {
+    "id": "3dfef8b0-fbfb-4958-907e-012c04e1c9f3",
+    "name": "KnowledgeBase | Internal Wiki",
+    "csm": "21ef5d33-5ec0-4a58-bf22-aef725bd8952",
+    "pm": "2c0a4d1e-4fe9-4adf-8675-8be9cfc56b92"
+  },
+  {
+    "id": "c38cc7c1-f118-439f-a510-e01d3441a552",
+    "name": "KnowledgeX | Knowledge Management",
+    "csm": "00fba46e-d8ab-4cf4-8d28-a35115261640",
+    "pm": "cf65956e-39c8-4d84-86cf-90ad76a09a0f"
+  },
+  {
+    "id": "4ed484e4-0b0b-4e89-86e1-a77c7714e2bf",
+    "name": "KPIBoard | Metrics Dashboard",
+    "csm": "90eb23c2-eec2-48a7-9b96-5b9d5842cf0c",
+    "pm": "f77d42d1-3d03-425d-8674-c2a06a464e11"
+  },
+  {
+    "id": "a912a7d7-c99c-4a9c-9958-ed94797fd5a6",
+    "name": "KubeDash | Kubernetes Dashboard",
+    "csm": "bc81933e-5a52-4dc6-aa05-e99e6252e437",
+    "pm": "5f1a4477-84fe-46aa-8360-ca4e0a16983c"
+  },
+  {
+    "id": "5bddf7c6-534c-4782-8c22-0ab30b251f58",
+    "name": "KubeMesh | Service Discovery",
+    "csm": "d50c5257-8de6-447d-b33d-d450f70c079c",
+    "pm": "7025e23d-f399-41ed-b3be-0f845dd76a22"
+  },
+  {
+    "id": "3b9b7b24-78f5-4f2e-9657-23d0476dc498",
+    "name": "LambdaStack | Serverless Platform",
+    "csm": "b71182d2-8d59-47eb-87d1-d84b5e2ced57",
+    "pm": "6d95f4d0-c606-45cf-b982-5f6f35898888"
+  },
+  {
+    "id": "5a3d856a-b100-4c03-b430-99d0c9446863",
+    "name": "LaunchPad | Startup Incubator",
+    "csm": "c9a12f3b-8482-4579-9a0a-07753f1da3e0",
+    "pm": "0579e263-0fc9-4e93-8a44-1d6f0e7d8f26"
+  },
+  {
+    "id": "568b493a-71a5-4987-bda4-59d78ff7e475",
+    "name": "LazyLoad | Performance Optimizer",
+    "csm": "ddb1d706-2ec8-430e-b653-ceb3694846a6",
+    "pm": "78efdc9d-6f76-4574-84b9-0632b8efe736"
+  },
+  {
+    "id": "699d7ccb-b84c-41d8-b150-5a9034925826",
+    "name": "L&D",
+    "csm": "f73b3b88-e0e0-4123-bbac-47e21b5bf2f3",
+    "pm": "181caef5-fa8d-44ae-8188-1c706bd12b98"
+  },
+  {
+    "id": "ab5ab202-e6a4-44f1-9eb2-17b33d90a33e",
+    "name": "LearningPath | Skill Assessment",
+    "csm": "f3d3bca0-4997-43aa-9ae6-be9e8bc0d478",
+    "pm": "a6b940bf-dbe1-4dc4-9123-b47e2cca9cb4"
+  },
+  {
+    "id": "e9d1321c-8ad6-40f0-bb18-a9a3fabc1916",
+    "name": "LedgerSync2 | Accounting SaaS",
+    "csm": "0adf59f0-8728-4c0f-93a5-259aeabc2e7d",
+    "pm": "486431f5-9536-470d-8342-40a4248c6f00"
+  },
+  {
+    "id": "1bbfe904-ec74-44ef-8df1-50ea2bf8956a",
+    "name": "LedgerSync | Accounting SaaS",
+    "csm": "21ef5d33-5ec0-4a58-bf22-aef725bd8952",
+    "pm": "1c7fa5c2-7070-49ac-ab60-ed74e52f5083"
+  },
+  {
+    "id": "ef5ce20a-cff3-429d-9b3b-3a9870e7564f",
+    "name": "Legacy CRM Migration | 2023",
+    "csm": "984edea5-c5c7-4fd3-80c1-5b4de4058045",
+    "pm": "5af106b0-af84-4198-8e71-80e138a5a9a8"
+  },
+  {
+    "id": "2b39c72c-9877-496c-b9f9-7db8949aef7a",
+    "name": "LeverageX | Leverage Platform",
+    "csm": "ddb1d706-2ec8-430e-b653-ceb3694846a6",
+    "pm": "743cc34f-c33d-46ac-b487-8f964729213a"
+  },
+  {
+    "id": "8a0d1109-5bfb-4af4-ab15-364796fa22b2",
+    "name": "LightHouse | SEO Analyzer",
+    "csm": "8f3ce91b-2537-4c89-b6f6-d2bb97cb497e",
+    "pm": "57a8a2a5-f306-4d23-a299-57f0c6710fa6"
+  },
+  {
+    "id": "6057704f-6500-4e67-8321-b66d88d43aed",
+    "name": "LinkTrack | URL Analytics",
+    "csm": "90eb23c2-eec2-48a7-9b96-5b9d5842cf0c",
+    "pm": "67a660d5-7691-4f01-8307-064b6936ca0d"
+  },
+  {
+    "id": "1916928f-b4b1-4751-97cc-b2e5bc17f582",
+    "name": "LiteLLM | LLM Proxy",
+    "csm": "f97ce38a-d919-4391-a215-f39a964dab56",
+    "pm": "40f3235e-4809-4fe8-821f-8a5bce0811b8"
+  },
+  {
+    "id": "5adbf39c-b5dc-4a3c-a7fd-8118fcb622de",
+    "name": "LiveOps | Game Backend Platform",
+    "csm": "33c27527-e5ce-4732-8b55-84c3643879c8",
+    "pm": "38ef8ef2-6d6c-448c-8670-30023a018b55"
+  },
+  {
+    "id": "30200704-01db-4a22-a62b-d61025abbb91",
+    "name": "LoadMate | Load Balancer Config",
+    "csm": "1fce77ea-0584-443a-81d5-829da339e0b0",
+    "pm": "5144d8e9-fde3-4592-a5ab-c3aaeb199bb3"
+  },
+  {
+    "id": "fb1f156d-412a-4b0a-b515-80c3829a7608",
+    "name": "LocalFirst | Offline-First Platform",
+    "csm": "5e563e32-9b82-464e-a94e-1c78e78be7d4",
+    "pm": "b9ad5065-4428-4213-81d5-a46784a842ea"
+  },
+  {
+    "id": "772b5c31-e66f-4efa-a067-e33b37850ebe",
+    "name": "LogisticsX | Logistics Platform",
+    "csm": "384930e9-0ace-41fb-9341-d09dfc5f5877",
+    "pm": "b20585a2-8722-41ab-a4c6-61c7a1647e2a"
+  },
+  {
+    "id": "d9bdf928-4e2a-47ef-b671-3247dd596ea2",
+    "name": "LogStream | Centralized Logging",
+    "csm": "6a80b877-bbd4-4015-88a1-433c20646c41",
+    "pm": "4f33f274-f6e3-42a3-80c8-598e8a6b8eeb"
+  },
+  {
+    "id": "eb3b0702-a5ed-43c5-a221-7f640d26ac1d",
+    "name": "LunarBase | Cloud Migration",
+    "csm": "da5fb5e1-9ba1-4fc1-af52-ca3148b4f592",
+    "pm": "4f70a3f8-516c-4917-b107-f03e70ca8682"
+  },
+  {
+    "id": "265f79fa-d2e8-4916-a9e4-ccb21bb3692d",
+    "name": "MailForge | Email Automation",
+    "csm": "76ffa750-3617-476f-9e18-146ea9493a5a",
+    "pm": "482d6bc1-ccba-44a5-b56b-f99a78d5085f"
+  },
+  {
+    "id": "6f0e47fc-334c-41d0-ad94-1f9a88163274",
+    "name": "MapStream | Real-time Geo SaaS",
+    "csm": "fc44d30c-af10-4861-9b44-72994f7ceb50",
+    "pm": "21b7ac58-3b2c-4a20-8811-eb424a307f26"
+  },
+  {
+    "id": "648a8ad7-7667-49f9-84e0-05cf09a53c8e",
+    "name": "MaxX | Maximization Engine",
+    "csm": "8cbada1d-bb53-4b23-863c-096ed47522d7",
+    "pm": "e5a8d4f5-fb6f-49ff-9de1-87d0daa7d3d2"
+  },
+  {
+    "id": "202f7f1d-915d-4ca7-957b-a2a867468f89",
+    "name": "MediaX | Media Platform",
+    "csm": "d50c5257-8de6-447d-b33d-d450f70c079c",
+    "pm": "197d0341-efa3-4b84-81bb-8a4203ffd146"
+  },
+  {
+    "id": "3c4685d6-6015-439c-988e-ba283591d62c",
+    "name": "MedPortal | Healthcare App",
+    "csm": "d2974700-f5f9-4524-a561-a100ed376049",
+    "pm": "ec10ddc0-3e1c-4d22-8455-aa4c09d52bc8"
+  },
+  {
+    "id": "80f40652-7ebb-4161-816f-b38d37b8075c",
+    "name": "MeetSync | Calendar Integration",
+    "csm": "791656f5-78a7-4d92-acff-2314d74f32b8",
+    "pm": "819bd11f-95ae-48a4-89b7-fe4d66da494b"
+  },
+  {
+    "id": "dbc571bf-7df4-4ae1-bffe-af37315608d8",
+    "name": "MeshNet | Service Communications",
+    "csm": "98f46445-3671-4363-bfa2-9696dec16a51",
+    "pm": "d8bf8357-824d-4549-b46a-30d21c031493"
+  },
+  {
+    "id": "7673f7db-76e6-48c0-a26e-d5b1b7b50758",
+    "name": "MetaSync | Metadata Management",
+    "csm": "a69e02b1-4b64-458c-8f61-77f3c62fa05a",
+    "pm": "60a0fb1e-d01c-4acc-83b4-d8a316ac451e"
+  },
+  {
+    "id": "33b4dbe8-250d-4b14-9a87-1584f719444a",
+    "name": "MetricHub | Monitoring Platform",
+    "csm": "abde2530-f577-48fd-986e-cf1677f08d59",
+    "pm": "33d5ba2d-4422-49ee-9219-362f497e06e3"
+  },
+  {
+    "id": "33ec2f71-5562-450a-b1fe-2ef3a3dd55a3",
+    "name": "MicroFront | Micro-Frontend Builder",
+    "csm": "0b42a626-6637-4ac8-bc26-9fa91ffadcc3",
+    "pm": "0247e35c-d041-4bad-b21f-e9816504fbd5"
+  },
+  {
+    "id": "598368bd-d3e4-4e7a-a0ff-218cf1c22ed2",
+    "name": "MindMap2 | Knowledge Graph",
+    "csm": "f83df9e8-3d29-48e7-8f37-fd1d89654fd9",
+    "pm": "a4c6e5be-c5a5-44d0-9112-6b8a72d16db3"
+  },
+  {
+    "id": "e92b5242-74c2-488b-b005-d83291d084f3",
+    "name": "MindMap | Knowledge Graph",
+    "csm": "0adf59f0-8728-4c0f-93a5-259aeabc2e7d",
+    "pm": "537d44b5-ed48-461c-a386-9d061935a112"
+  },
+  {
+    "id": "cc40f800-3932-4f54-ae4d-9d2f35ed9d18",
+    "name": "MobileFirst | Mobile Development",
+    "csm": "00fba46e-d8ab-4cf4-8d28-a35115261640",
+    "pm": "482d6bc1-ccba-44a5-b56b-f99a78d5085f"
+  },
+  {
+    "id": "0d88dd15-e110-4268-9a46-94567d6137d4",
+    "name": "MobileOps | Mobile DevOps",
+    "csm": "a69e02b1-4b64-458c-8f61-77f3c62fa05a",
+    "pm": "0247e35c-d041-4bad-b21f-e9816504fbd5"
+  },
+  {
+    "id": "69711810-55ac-45a9-bb73-a1f17ffcf330",
+    "name": "ModelOps | ML Model Lifecycle",
+    "csm": "8dde4b45-afa9-4711-8aa3-f565b4dfd6f1",
+    "pm": "ffad8592-0864-49f4-babb-2d3f7e9cbba2"
+  },
+  {
+    "id": "5dba0cfb-0691-479b-bd0d-6c0c1f2b5389",
+    "name": "NanoBot | Robotic Automation",
+    "csm": "3aea8011-cf6c-453a-9a54-ba5d721c907a",
+    "pm": "60a0fb1e-d01c-4acc-83b4-d8a316ac451e"
+  },
+  {
+    "id": "117df140-6448-4d79-808b-e30aec79618d",
+    "name": "NanoScale2 | IoT Data Platform",
+    "csm": "ddb1d706-2ec8-430e-b653-ceb3694846a6",
+    "pm": "0b9029a1-90ae-4f68-95fb-3f149aed4d7f"
+  },
+  {
+    "id": "4e0a7225-7601-45a3-b287-1c91bc2d4f03",
+    "name": "NanoScale | IoT Data Platform",
+    "csm": "60a09ff6-b779-42d6-9873-5217d6a8cb8f",
+    "pm": "a4c6e5be-c5a5-44d0-9112-6b8a72d16db3"
+  },
+  {
+    "id": "232868c8-0701-4495-bea3-86ba96458c0e",
+    "name": "NativeX | Native Development",
+    "csm": "790b036d-f255-4dfd-8227-358661d39d7c",
+    "pm": "38eef54c-d199-42fb-a7f4-c6b3d267cd20"
+  },
+  {
+    "id": "255124e0-5f75-4da2-8407-d8d1915c7eab",
+    "name": "NaturalQ | NLP Query Engine",
+    "csm": "10d15fea-d851-4422-be60-51b9ff4f6b4f",
+    "pm": "582ce8e2-27d1-4da7-a240-e80fee5ea19e"
+  },
+  {
+    "id": "cd037ba8-1fde-4067-ba0a-9bf336cf7c28",
+    "name": "NetOps | Network Automation",
+    "csm": "f3d3bca0-4997-43aa-9ae6-be9e8bc0d478",
+    "pm": "d0b03113-740a-4123-8268-03577fe1c34c"
+  },
+  {
+    "id": "04c7c004-83ae-44ce-aa41-82f2e3b93f8e",
+    "name": "NetWatch | Network Analytics",
+    "csm": "d2974700-f5f9-4524-a561-a100ed376049",
+    "pm": "1f5c1243-5b7f-4c24-9ddf-4d42c0bf2e3f"
+  },
+  {
+    "id": "dfabca99-f087-45bc-94a2-fb9a8de21c51",
+    "name": "NeuroDB | Neural Database",
+    "csm": "21497eb9-c185-48be-a2b8-7cac3a9fe686",
+    "pm": "1f5c1243-5b7f-4c24-9ddf-4d42c0bf2e3f"
+  },
+  {
+    "id": "17046b65-6fa3-4cb9-8733-ab99f958288e",
+    "name": "NexGen | E-Commerce Platform",
+    "csm": "3bb0fd4a-7aa5-4b47-a4a6-a4e230d85c88",
+    "pm": "6d95f4d0-c606-45cf-b982-5f6f35898888"
+  },
+  {
+    "id": "637d3a2e-28fc-4cbe-a8d9-0b135b2dd004",
+    "name": "NodeX | Graph Database",
+    "csm": "1089acbc-366d-4262-af9c-d6906283701b",
+    "pm": "7025e23d-f399-41ed-b3be-0f845dd76a22"
+  },
+  {
+    "id": "ea579367-af91-4108-8154-88962d12295c",
+    "name": "NoiseFilter | Data Cleaning",
+    "csm": "66882a6f-d1b1-4936-b17f-072a653d0efa",
+    "pm": "d31677e3-93d7-4dfc-92cb-282c08e4eece"
+  },
+  {
+    "id": "70366e90-73e1-4225-a713-eeb793f7edfb",
+    "name": "NormalizeX | Normalization Engine",
+    "csm": "5c5e7f68-45fd-4557-92e1-165a2db99d2f",
+    "pm": "e5a8d4f5-fb6f-49ff-9de1-87d0daa7d3d2"
+  },
+  {
+    "id": "2ff58b96-35ac-4f72-8e1f-efe30c9399ce",
+    "name": "NovaPulse | Fitness Tracker",
+    "csm": "66882a6f-d1b1-4936-b17f-072a653d0efa",
+    "pm": "c5dc4d62-c413-4368-9e8d-9d0ec49c63e5"
+  },
+  {
+    "id": "86bd0c2b-61ff-4ea0-93d7-7add7290f4fe",
+    "name": "NowCast | Live Streaming",
+    "csm": "33c27527-e5ce-4732-8b55-84c3643879c8",
+    "pm": "197d0341-efa3-4b84-81bb-8a4203ffd146"
+  },
+  {
+    "id": "117e23e0-bc19-4ca1-87bc-c168942d3bbe",
+    "name": "NumberCrunch | Financial Analytics",
+    "csm": "7d15b5eb-e06f-4c9d-ba05-1c8b52f4307d",
+    "pm": "372ba961-ca06-481b-9a72-ba01e20422d9"
+  },
+  {
+    "id": "81437e72-d266-4e87-b422-83474d997d82",
+    "name": "OmniAuth2 | SSO Gateway",
+    "csm": "f13a7fae-6ae4-4576-b37f-f2ba4811787b",
+    "pm": "12724f9a-8906-46f8-888d-418c15a1ae11"
+  },
+  {
+    "id": "9274e218-8c80-469c-9842-c40d4cf7851d",
+    "name": "OmniAuth | SSO Gateway",
+    "csm": "bc81933e-5a52-4dc6-aa05-e99e6252e437",
+    "pm": "12724f9a-8906-46f8-888d-418c15a1ae11"
+  },
+  {
+    "id": "d68abd0e-fc4a-4835-b177-398c188808a4",
+    "name": "OmniChannel | Multi-Channel Platform",
+    "csm": "d7072a64-e497-4ddb-b284-4b8b7fda9081",
+    "pm": "60a0fb1e-d01c-4acc-83b4-d8a316ac451e"
+  },
+  {
+    "id": "29cbf2c9-a107-4ef5-b435-89dd94ca2176",
+    "name": "OmniDesk | Unified Inbox",
+    "csm": "d2974700-f5f9-4524-a561-a100ed376049",
+    "pm": "8759f91e-8317-49a8-9483-0cde4a7d571b"
+  },
+  {
+    "id": "c978cc5f-386f-4e86-bead-4f663b214232",
+    "name": "OnBoard | Employee Onboarding",
+    "csm": "790b036d-f255-4dfd-8227-358661d39d7c",
+    "pm": "1404b0d3-70a4-4f9e-b8f9-b5c24161c97d"
+  },
+  {
+    "id": "c01583dd-6e20-4120-8364-4861a4d3824e",
+    "name": "OneClick | Low-Code Builder",
+    "csm": "755d5aa0-49c2-4edb-ae0f-b38632d886c2",
+    "pm": "e5a8d4f5-fb6f-49ff-9de1-87d0daa7d3d2"
+  },
+  {
+    "id": "dcfc7d74-07bc-4de9-a5fe-82841b52da44",
+    "name": "Ontime",
+    "csm": "37f50bbf-00a8-4454-900f-a56c8dc6debf",
+    "pm": "cbe2e619-309f-4a1f-b80a-374a631734ef"
+  },
+  {
+    "id": "f1b7ece6-8b17-4906-b7d2-0410811f2b45",
+    "name": "OpenRoute | API Gateway",
+    "csm": "0b42a626-6637-4ac8-bc26-9fa91ffadcc3",
+    "pm": "f77d42d1-3d03-425d-8674-c2a06a464e11"
+  },
+  {
+    "id": "008c181a-ba55-417a-9c8f-b8608a58b775",
+    "name": "OpenSearch | Enterprise Search",
+    "csm": "26466546-d829-4b52-ad57-580972c39590",
+    "pm": "b141c57f-5208-4c40-b69e-410c43921467"
+  },
+  {
+    "id": "d737a0bb-bcab-420e-b8a1-dd4038044eb1",
+    "name": "OpsBoard | DevOps Dashboard",
+    "csm": "8cbada1d-bb53-4b23-863c-096ed47522d7",
+    "pm": "d8bf8357-824d-4549-b46a-30d21c031493"
+  },
+  {
+    "id": "aa14a33f-36fc-4f80-81da-6b5608a30c51",
+    "name": "OpsGenie | Incident Response",
+    "csm": "30b71d73-f57a-4242-814c-7e050c3ff220",
+    "pm": "f8f78c22-4fc0-4780-bd99-83f0f9383bbf"
+  },
+  {
+    "id": "0a4a3ce6-e4eb-4e3f-8368-dd267d96ad9c",
+    "name": "OptimAI | AI Resource Planner",
+    "csm": "58a19ab9-6c95-444f-b894-46d3b5fd63c9",
+    "pm": "49670820-7826-4e95-b651-152db9d1ec02"
+  },
+  {
+    "id": "67392c44-1edf-4cf7-bca7-502790f439a7",
+    "name": "OptimizeX | Optimization Platform",
+    "csm": "5a9e96cc-573f-45ad-ab64-565a411b5516",
+    "pm": "d4300ae8-0695-4fb9-9a96-63a24b4038f2"
+  },
+  {
+    "id": "5b5f7c2c-6514-411e-9d76-f73cda3ce926",
+    "name": "OptiRoute | Logistics Planner",
+    "csm": "66882a6f-d1b1-4936-b17f-072a653d0efa",
+    "pm": "1cf5b19d-a36b-4ad3-bfe1-ba6ae95ccb99"
+  },
+  {
+    "id": "b522ca7a-3958-496b-81a1-6cf9369bf191",
+    "name": "OrchestrAI | AI Workflows",
+    "csm": "984edea5-c5c7-4fd3-80c1-5b4de4058045",
+    "pm": "cf65956e-39c8-4d84-86cf-90ad76a09a0f"
+  },
+  {
+    "id": "0d67b1b5-1e8d-4718-8ec1-62d7df71cfec",
+    "name": "OrchestrationX | Orchestration Engine",
+    "csm": "21ef5d33-5ec0-4a58-bf22-aef725bd8952",
+    "pm": "3112f16c-d1f8-4c47-8b9a-4e9e90187004"
+  },
+  {
+    "id": "9b784ee6-e359-427b-9c74-12f24ccf5a19",
+    "name": "PackageHub | Artifact Registry",
+    "csm": "abde2530-f577-48fd-986e-cf1677f08d59",
+    "pm": "e5a8d4f5-fb6f-49ff-9de1-87d0daa7d3d2"
+  },
+  {
+    "id": "10ba54b1-beba-49fc-b0ff-30e74923debd",
+    "name": "PatchBot | Vulnerability Manager",
+    "csm": "15667a0b-0b16-4d5c-8fbc-d57bcd1e136d",
+    "pm": "cbe2e619-309f-4a1f-b80a-374a631734ef"
+  },
+  {
+    "id": "2220337d-d348-466b-980b-3c754f59748b",
+    "name": "PayLink | Payment Integration",
+    "csm": "10d15fea-d851-4422-be60-51b9ff4f6b4f",
+    "pm": "ddedc1ce-e502-4fbd-9b07-0c33a0807982"
+  },
+  {
+    "id": "248e2ad8-b293-4c95-8eab-24c1c4c51727",
+    "name": "PeakView | Mountain Tourism App",
+    "csm": "8cbada1d-bb53-4b23-863c-096ed47522d7",
+    "pm": "4f70a3f8-516c-4917-b107-f03e70ca8682"
+  },
+  {
+    "id": "b84d8d90-ec8a-4eac-9756-dee66aeb62b8",
+    "name": "PerformanceMaxX | Performance Maximizer",
+    "csm": "60a09ff6-b779-42d6-9873-5217d6a8cb8f",
+    "pm": "4f33f274-f6e3-42a3-80c8-598e8a6b8eeb"
+  },
+  {
+    "id": "e5a9cb7f-6677-45dd-a01b-e8b3aef456f7",
+    "name": "PerformanceX | Speed Optimizer",
+    "csm": "dcfc1e15-8444-480e-900a-4970a58266df",
+    "pm": "920a0096-2cb8-4fad-afc2-922c8634f510"
+  },
+  {
+    "id": "483642c8-d8a4-4bb8-b27f-38b69a3d8af3",
+    "name": "PinPoint | Location Analytics",
+    "csm": "98f46445-3671-4363-bfa2-9696dec16a51",
+    "pm": "4f33f274-f6e3-42a3-80c8-598e8a6b8eeb"
+  },
+  {
+    "id": "b542c646-44fa-4058-9eb7-b68affe52f9f",
+    "name": "PipelinePro | CI/CD Platform",
+    "csm": "0c92753e-e079-4310-a1c7-53a989738a4c",
+    "pm": "5144d8e9-fde3-4592-a5ab-c3aaeb199bb3"
+  },
+  {
+    "id": "d503483e-5a7c-4e42-a44f-c71a1c154969",
+    "name": "PivotTable | Data Pivot Engine",
+    "csm": "d9cfac29-f735-498e-b693-36ff6e42919a",
+    "pm": "f77d42d1-3d03-425d-8674-c2a06a464e11"
+  },
+  {
+    "id": "b8835c04-764d-4206-ada8-565401cfc221",
+    "name": "PlatformX | Platform Framework",
+    "csm": "ddb1d706-2ec8-430e-b653-ceb3694846a6",
+    "pm": "1cf5b19d-a36b-4ad3-bfe1-ba6ae95ccb99"
+  },
+  {
+    "id": "c9714f09-34af-4b71-a74f-c8d827e4f123",
+    "name": "PolicyBot | Compliance Automation",
+    "csm": "37f64d6a-d3c9-45ed-b15c-e3043b59a612",
+    "pm": "3f3fc6d7-9771-43fd-949a-26d948408350"
+  },
+  {
+    "id": "c1c02c08-63d1-4ce2-9627-256fceaf4442",
+    "name": "PrimeDesk | Help Desk SaaS",
+    "csm": "165d0d63-1b4c-4607-97c4-8b7a356c9b8f",
+    "pm": "cf65956e-39c8-4d84-86cf-90ad76a09a0f"
+  },
+  {
+    "id": "52253f7b-39a0-4a21-a29c-640937af826f",
+    "name": "PrivacyVault | Data Privacy",
+    "csm": "21497eb9-c185-48be-a2b8-7cac3a9fe686",
+    "pm": "582ce8e2-27d1-4da7-a240-e80fee5ea19e"
+  },
+  {
+    "id": "7d2de07d-1218-489f-9fe5-b9444c823429",
+    "name": "ProxyShield2 | API Security",
+    "csm": "1bdbd947-528b-41bd-9fe7-dc28cf663e93",
+    "pm": "2c0a4d1e-4fe9-4adf-8675-8be9cfc56b92"
+  },
+  {
+    "id": "14eec05c-9992-45fd-a87c-612881fcfeac",
+    "name": "ProxyShield | API Security",
+    "csm": "f3fb3b51-8984-4a7a-9dd8-01e7f59601d8",
+    "pm": "c760395a-597f-455d-b791-28161d3cf331"
+  },
+  {
+    "id": "d3623978-72cb-44de-88b5-5b5ad3bbd1f4",
+    "name": "PulseCheck | Health Monitor",
+    "csm": "f3fb3b51-8984-4a7a-9dd8-01e7f59601d8",
+    "pm": "12724f9a-8906-46f8-888d-418c15a1ae11"
+  },
+  {
+    "id": "d793f948-cde0-4dc5-a6de-987ccce2bb25",
+    "name": "QualiTest | Test Management",
+    "csm": "78d46da1-997c-435f-80f6-4767ede60bd4",
+    "pm": "4f33f274-f6e3-42a3-80c8-598e8a6b8eeb"
+  },
+  {
+    "id": "e1a5111d-1755-4c36-ba0a-b956b9abc673",
+    "name": "QualityGate | Code Quality",
+    "csm": "5c5e7f68-45fd-4557-92e1-165a2db99d2f",
+    "pm": "743cc34f-c33d-46ac-b487-8f964729213a"
+  },
+  {
+    "id": "e02a6446-049b-4dcb-86fb-3e82eda241e9",
+    "name": "QualityX | Quality Platform",
+    "csm": "ddb1d706-2ec8-430e-b653-ceb3694846a6",
+    "pm": "1c2f51ca-5d24-4883-a5b4-7f51a3e73ecd"
+  },
+  {
+    "id": "2777bb5f-4043-4ac1-a2f7-5fd4e231e707",
+    "name": "QuantEdge | Trading Platform",
+    "csm": "5ac2ec2a-73f1-4deb-9478-dcb2f8f5e0c9",
+    "pm": "537d44b5-ed48-461c-a386-9d061935a112"
+  },
+  {
+    "id": "93065c65-6a0f-4547-a030-bdcee0aecd84",
+    "name": "QuantTest | Benchmark Suite",
+    "csm": "09d434e9-5346-4790-8ae7-f5105e5b4968",
+    "pm": "cf65956e-39c8-4d84-86cf-90ad76a09a0f"
+  },
+  {
+    "id": "55a0cd99-a196-4931-83fe-28b63fcd7c92",
+    "name": "QuantumDB | Quantum-Ready DB",
+    "csm": "d9cfac29-f735-498e-b693-36ff6e42919a",
+    "pm": "0247e35c-d041-4bad-b21f-e9816504fbd5"
+  },
+  {
+    "id": "138d8b86-4744-4a90-bbdf-1ff8fadb4f6b",
+    "name": "QueryBridge | SQL-to-NoSQL Bridge",
+    "csm": "a9134958-101e-43c3-b809-f27bd6da55c8",
+    "pm": "920a0096-2cb8-4fad-afc2-922c8634f510"
+  },
+  {
+    "id": "745067de-94c2-4aa8-8da0-52b0f9a18102",
+    "name": "QueryOptix | DB Performance",
+    "csm": "3aae14e0-1374-4577-8cb4-25d9874effff",
+    "pm": "ffad8592-0864-49f4-babb-2d3f7e9cbba2"
+  },
+  {
+    "id": "2128960b-af9f-4213-8bcb-17876d496dc9",
+    "name": "QueryX | Query Engine",
+    "csm": "44523846-93e0-41d8-b303-3a76b3322908",
+    "pm": "d31677e3-93d7-4dfc-92cb-282c08e4eece"
+  },
+  {
+    "id": "eea35d02-a59a-4b72-85bd-3d14a3e0e507",
+    "name": "QueueMaster | Async Processing",
+    "csm": "04c66f0b-630a-4e87-8acd-9ba8f6e50f58",
+    "pm": "12724f9a-8906-46f8-888d-418c15a1ae11"
+  },
+  {
+    "id": "8b24dcca-3a85-4b26-8186-f8e68001962f",
+    "name": "QuickBite | Food Delivery App",
+    "csm": "f97ce38a-d919-4391-a215-f39a964dab56",
+    "pm": "e5a8d4f5-fb6f-49ff-9de1-87d0daa7d3d2"
+  },
+  {
+    "id": "6e7a835c-60e8-4beb-ae02-8c8d35cdee06",
+    "name": "QuickFix | Issue Resolution",
+    "csm": "76ffa750-3617-476f-9e18-146ea9493a5a",
+    "pm": "0a354443-d782-4a0f-a53e-27cc7214ee36"
+  },
+  {
+    "id": "b735c658-e48c-4835-8717-22d8bae26a28",
+    "name": "QuickSetup | Infra Provisioner",
+    "csm": "bedf574e-22a8-4121-8f6d-3c0c9ab2d517",
+    "pm": "a4c6e5be-c5a5-44d0-9112-6b8a72d16db3"
+  },
+  {
+    "id": "4938e8cd-984a-4d7c-ae67-b305fa7e6dc2",
+    "name": "Quorum | Distributed Consensus",
+    "csm": "0adf59f0-8728-4c0f-93a5-259aeabc2e7d",
+    "pm": "67c518c0-251b-45a0-a7b8-46b6151a2cfd"
+  },
+  {
+    "id": "0450886d-63dd-4a17-aa74-1fccb7e5f2f4",
+    "name": "RadarView | Business Intelligence",
+    "csm": "5e563e32-9b82-464e-a94e-1c78e78be7d4",
+    "pm": "77451174-689f-4cc0-b387-eab14615b4e6"
+  },
+  {
+    "id": "520d481c-4ab3-4786-b591-975c533ceda1",
+    "name": "RapidForms | Form Builder",
+    "csm": "5ac2ec2a-73f1-4deb-9478-dcb2f8f5e0c9",
+    "pm": "4f70a3f8-516c-4917-b107-f03e70ca8682"
+  },
+  {
+    "id": "5e12c555-8600-4e09-b07a-3f4c189a7caa",
+    "name": "ReachOut | Marketing Automation",
+    "csm": "1089acbc-366d-4262-af9c-d6906283701b",
+    "pm": "b20585a2-8722-41ab-a4c6-61c7a1647e2a"
+  },
+  {
+    "id": "856c74e7-5bde-4563-88f7-28b9ee9a82db",
+    "name": "RealSync | Live Data Platform",
+    "csm": "0c92753e-e079-4310-a1c7-53a989738a4c",
+    "pm": "1b7686cf-53a7-47ca-83e8-bc154dc1424f"
+  },
+  {
+    "id": "724ef2ec-bd71-452a-82ad-7df8419630cd",
+    "name": "RealTimeX | Real-Time Platform",
+    "csm": "0cc6cefb-5a58-4f66-9b75-068543fb4aef",
+    "pm": "60a0fb1e-d01c-4acc-83b4-d8a316ac451e"
+  },
+  {
+    "id": "e71dee6c-9d82-454e-862d-12fe32c69dbf",
+    "name": "RecordPro | Audit Records",
+    "csm": "66882a6f-d1b1-4936-b17f-072a653d0efa",
+    "pm": "b46ebc80-5f10-4a31-bff8-93cc862c6be8"
+  },
+  {
+    "id": "b90f504f-d02b-4949-b70e-531cb6f11361",
+    "name": "RefineryX | Data Refinery",
+    "csm": "04c66f0b-630a-4e87-8acd-9ba8f6e50f58",
+    "pm": "66e46ba9-7607-407e-a82c-6005660f9409"
+  },
+  {
+    "id": "66404274-3b8a-402f-ad05-9dc408cb95e4",
+    "name": "RelayPipe | Event Streaming",
+    "csm": "c9a12f3b-8482-4579-9a0a-07753f1da3e0",
+    "pm": "b24e5008-9a4f-420b-a05b-ac2699c1bc4f"
+  },
+  {
+    "id": "2a860469-9394-4d02-8262-073c1c0346df",
+    "name": "RepoBot | Git Automation",
+    "csm": "fc44d30c-af10-4861-9b44-72994f7ceb50",
+    "pm": "8759f91e-8317-49a8-9483-0cde4a7d571b"
+  },
+  {
+    "id": "4d3a6d0b-4303-475b-8f55-de2ce669261b",
+    "name": "ResilienceHub | Fault Injection",
+    "csm": "15a1951d-7200-433c-9b5a-ed81e3c2880b",
+    "pm": "2c0a4d1e-4fe9-4adf-8675-8be9cfc56b92"
+  },
+  {
+    "id": "748719ce-c435-4c8e-86d0-871db9dc6e78",
+    "name": "ResilientX | Fault Tolerance",
+    "csm": "abde2530-f577-48fd-986e-cf1677f08d59",
+    "pm": "1c20e53e-ee6c-40ba-a659-c5e1d5b76455"
+  },
+  {
+    "id": "7754f773-78f0-48bd-8ea1-395aaa61f047",
+    "name": "Ridgeline | Construction Mgmt",
+    "csm": "66882a6f-d1b1-4936-b17f-072a653d0efa",
+    "pm": "18bb8cf1-36ff-4bec-8035-627bab7bc04f"
+  },
+  {
+    "id": "c4a9f46f-2490-4f3d-b796-20c957415ddc",
+    "name": "RouteOptimizer | Fleet Management",
+    "csm": "791656f5-78a7-4d92-acff-2314d74f32b8",
+    "pm": "1faf1ece-9c6d-4b77-b05f-44db6d3ebf73"
+  },
+  {
+    "id": "ca5627f7-ef64-47c5-8577-7b88454af23d",
+    "name": "RunnerX | Test Runner",
+    "csm": "3bb0fd4a-7aa5-4b47-a4a6-a4e230d85c88",
+    "pm": "18bb8cf1-36ff-4bec-8035-627bab7bc04f"
+  },
+  {
+    "id": "af5d8351-5c1a-413d-ab14-6ab3a1f8020c",
+    "name": "SafeBox | Data Masking",
+    "csm": "bedf574e-22a8-4121-8f6d-3c0c9ab2d517",
+    "pm": "67a660d5-7691-4f01-8307-064b6936ca0d"
+  },
+  {
+    "id": "bbfdab67-bb7e-4c08-bac9-e91799eebfc6",
+    "name": "ScaleUp | Microservices Platform",
+    "csm": "0c92753e-e079-4310-a1c7-53a989738a4c",
+    "pm": "5e71b68d-b6c0-4dcc-b2b1-2520b3d314dd"
+  },
+  {
+    "id": "bdff0d28-0711-42e4-959b-a8e4edc8bb4e",
+    "name": "ScaleX | Scaling Platform",
+    "csm": "33c27527-e5ce-4732-8b55-84c3643879c8",
+    "pm": "67797d74-cf8c-48f4-a1da-74d12509f979"
+  },
+  {
+    "id": "9071ea78-3d0f-4cd0-87ca-2226a32243b8",
+    "name": "SecureDoc | Document Security",
+    "csm": "f719fdf0-015e-42f2-9e33-b14b31fb00df",
+    "pm": "4f70a3f8-516c-4917-b107-f03e70ca8682"
+  },
+  {
+    "id": "7dd752a7-ae94-487d-8b9a-e0450d792d13",
+    "name": "SecureGate | Zero-Trust Gateway",
+    "csm": "21ef5d33-5ec0-4a58-bf22-aef725bd8952",
+    "pm": "d4300ae8-0695-4fb9-9a96-63a24b4038f2"
+  },
+  {
+    "id": "5057fd6d-e3a4-4393-8ac2-6a14598fc047",
+    "name": "SecurePass | MFA Platform",
+    "csm": "45d63a8e-c639-4df9-aa05-bfef80ea0c5b",
+    "pm": "e5a8d4f5-fb6f-49ff-9de1-87d0daa7d3d2"
+  },
+  {
+    "id": "de50496a-8800-4cde-b161-10b9548d122d",
+    "name": "SecurityX | Security Framework",
+    "csm": "60a09ff6-b779-42d6-9873-5217d6a8cb8f",
+    "pm": "920a0096-2cb8-4fad-afc2-922c8634f510"
+  },
+  {
+    "id": "b0dacc8c-24d0-439f-85e6-6c13d7e18a7b",
+    "name": "ServiceMesh | Microservice Gov",
+    "csm": "8f3ce91b-2537-4c89-b6f6-d2bb97cb497e",
+    "pm": "5e71b68d-b6c0-4dcc-b2b1-2520b3d314dd"
+  },
+  {
+    "id": "9a0cdaa9-0604-4a0e-bd30-04f38e129313",
+    "name": "ShiftyHQ | Workforce Scheduler",
+    "csm": "1089acbc-366d-4262-af9c-d6906283701b",
+    "pm": "49670820-7826-4e95-b651-152db9d1ec02"
+  },
+  {
+    "id": "3906bef3-b36a-4c63-82c7-087ee4ccdeef",
+    "name": "SkillBridge | LMS Platform",
+    "csm": "5ac2ec2a-73f1-4deb-9478-dcb2f8f5e0c9",
+    "pm": "66e46ba9-7607-407e-a82c-6005660f9409"
+  },
+  {
+    "id": "553f15a3-517b-41a5-adb6-b642ec4c0074",
+    "name": "SnapDeploy | Blue-Green Deployments",
+    "csm": "d9cfac29-f735-498e-b693-36ff6e42919a",
+    "pm": "582ce8e2-27d1-4da7-a240-e80fee5ea19e"
+  },
+  {
+    "id": "4e73e4b5-3734-4a6e-8373-63112fae794e",
+    "name": "SolarGrid | Renewable Dashboard",
+    "csm": "1fce77ea-0584-443a-81d5-829da339e0b0",
+    "pm": "6acbb73d-52bd-4108-89d0-4382da11d60f"
+  },
+  {
+    "id": "1b0de9f7-f538-4ccf-9c08-05cdb11512a5",
+    "name": "StoreFront | E-Commerce Engine",
+    "csm": "957c7b58-92f5-4f16-b0c9-1115adb350e7",
+    "pm": "5144d8e9-fde3-4592-a5ab-c3aaeb199bb3"
+  },
+  {
+    "id": "3e30f56b-1795-40bc-a9d5-526b05fe9e34",
+    "name": "StreamHub | Data Streaming",
+    "csm": "0cc6cefb-5a58-4f66-9b75-068543fb4aef",
+    "pm": "b1bb45da-cbd6-4df7-9365-809f897b0b2b"
+  },
+  {
+    "id": "932e8c7b-3cc3-47b1-9de2-8f54b8c4c55d",
+    "name": "StreamX | Streaming Platform",
+    "csm": "b71182d2-8d59-47eb-87d1-d84b5e2ced57",
+    "pm": "67a660d5-7691-4f01-8307-064b6936ca0d"
+  },
+  {
+    "id": "909aef62-8bf0-4eff-8aba-047764a5c03d",
+    "name": "SyncMate | Data Synchronization",
+    "csm": "7d15b5eb-e06f-4c9d-ba05-1c8b52f4307d",
+    "pm": "77451174-689f-4cc0-b387-eab14615b4e6"
+  },
+  {
+    "id": "67067401-1443-4b65-84a6-8d7234f42ea2",
+    "name": "TableSync | Database Migration",
+    "csm": "d50c5257-8de6-447d-b33d-d450f70c079c",
+    "pm": "ba9e2b37-e608-49fe-9ab3-a251944fa2c9"
+  },
+  {
+    "id": "474418c7-9835-4363-be58-bef8dfda7257",
+    "name": "TargetView | Campaign Analytics",
+    "csm": "5ac2ec2a-73f1-4deb-9478-dcb2f8f5e0c9",
+    "pm": "f77d42d1-3d03-425d-8674-c2a06a464e11"
+  },
+  {
+    "id": "b5a8b060-b2d4-4b1a-a91a-8dbf3fe2a9b4",
+    "name": "TechRadar | Tech Trend Tracker",
+    "csm": "d2974700-f5f9-4524-a561-a100ed376049",
+    "pm": "197d0341-efa3-4b84-81bb-8a4203ffd146"
+  },
+  {
+    "id": "dd80037a-906b-46d1-87ca-d9361e1e45ab",
+    "name": "TechStack | Technology Platform",
+    "csm": "d9cfac29-f735-498e-b693-36ff6e42919a",
+    "pm": "537d44b5-ed48-461c-a386-9d061935a112"
+  },
+  {
+    "id": "08e1ddc3-88b4-4463-9ce8-81ec7c1c7ff2",
+    "name": "TelePulse | Telecom Analytics",
+    "csm": "0adf59f0-8728-4c0f-93a5-259aeabc2e7d",
+    "pm": "d8bf8357-824d-4549-b46a-30d21c031493"
+  },
+  {
+    "id": "ae7168b7-e30c-4153-80a7-8964a55fb735",
+    "name": "TestBench | Load Testing",
+    "csm": "3aea8011-cf6c-453a-9a54-ba5d721c907a",
+    "pm": "1c2f51ca-5d24-4883-a5b4-7f51a3e73ecd"
+  },
+  {
+    "id": "1a38f21c-e76e-4012-9e24-1e66a12c31a7",
+    "name": "ThinkBoard | Idea Management",
+    "csm": "5ac2ec2a-73f1-4deb-9478-dcb2f8f5e0c9",
+    "pm": "197d0341-efa3-4b84-81bb-8a4203ffd146"
+  },
+  {
+    "id": "6e101e50-c8e4-401a-bc11-7507a2383daa",
+    "name": "TicketDesk | Issue Tracker",
+    "csm": "98f46445-3671-4363-bfa2-9696dec16a51",
+    "pm": "67a660d5-7691-4f01-8307-064b6936ca0d"
+  },
+  {
+    "id": "6a460bcc-50aa-413c-8768-4f385499f191",
+    "name": "TidePool | Marine Research",
+    "csm": "5c5e7f68-45fd-4557-92e1-165a2db99d2f",
+    "pm": "67797d74-cf8c-48f4-a1da-74d12509f979"
+  },
+  {
+    "id": "3e0cd1b6-97bb-47d4-90f9-e40ec9000658",
+    "name": "TimeTrack | Time Management",
+    "csm": "4e996aca-e030-40d9-9309-14cc8ecde4f7",
+    "pm": "1faf1ece-9c6d-4b77-b05f-44db6d3ebf73"
+  },
+  {
+    "id": "9b6c0029-7d43-498c-8224-044dd21eb85f",
+    "name": "TokenBridge | Auth Gateway",
+    "csm": "3971b938-0558-4242-9f5d-3120dad4d431",
+    "pm": "c105b5f3-c33e-4eeb-98db-91210865c548"
+  },
+  {
+    "id": "28e877b8-38ad-4730-a58d-a97622e29e4a",
+    "name": "TrackPro | Asset Tracking",
+    "csm": "15667a0b-0b16-4d5c-8fbc-d57bcd1e136d",
+    "pm": "0336ce78-eaeb-4cf5-a6c4-9cfea99ee986"
+  },
+  {
+    "id": "69800ad6-3fab-4dd3-b94e-9ab5c10a71b2",
+    "name": "TransformX | Transformation Engine",
+    "csm": "d9cfac29-f735-498e-b693-36ff6e42919a",
+    "pm": "486431f5-9536-470d-8342-40a4248c6f00"
+  },
+  {
+    "id": "4446efd1-adc7-4bf5-80c2-d8655ea4d113",
+    "name": "TrustVault | Identity Management",
+    "csm": "791656f5-78a7-4d92-acff-2314d74f32b8",
+    "pm": "24e354ab-537b-430b-bbd9-879d449eaffc"
+  },
+  {
+    "id": "a7c5258d-601e-4a53-b88a-394a9b18fbe1",
+    "name": "TuneX | Performance Tuning",
+    "csm": "1bdbd947-528b-41bd-9fe7-dc28cf663e93",
+    "pm": "a4c6e5be-c5a5-44d0-9112-6b8a72d16db3"
+  },
+  {
+    "id": "f29c81c9-0835-4211-894a-88657b365dbc",
+    "name": "UILabs | Component Library",
+    "csm": "9ec1d11d-e98a-4575-9a80-c08a9fcc3a6c",
+    "pm": "40f3235e-4809-4fe8-821f-8a5bce0811b8"
+  },
+  {
+    "id": "0245581e-b7d3-4e03-81c7-486c1d8f417e",
+    "name": "UltraAPI | HyperScale API",
+    "csm": "98f46445-3671-4363-bfa2-9696dec16a51",
+    "pm": "77451174-689f-4cc0-b387-eab14615b4e6"
+  },
+  {
+    "id": "54abbc30-3886-425b-a029-f0fe9af587a8",
+    "name": "Unassigned",
+    "csm": "c1d71dcf-97d3-4189-abed-5d0798926b48",
+    "pm": "453f7097-ad67-42d0-9f48-78cd30954c16"
+  },
+  {
+    "id": "937ccd82-bcba-4d13-8305-dae0120337b0",
+    "name": "UnifiedAPI | API Aggregator",
+    "csm": "15667a0b-0b16-4d5c-8fbc-d57bcd1e136d",
+    "pm": "c5740f52-ab1a-4499-a156-db41411b7bbe"
+  },
+  {
+    "id": "7363d0ce-bee8-440f-9389-89e2ee944933",
+    "name": "UnifyX | Unification Platform",
+    "csm": "7ea20430-aead-4cdd-8160-03ba79c1a385",
+    "pm": "5144d8e9-fde3-4592-a5ab-c3aaeb199bb3"
+  },
+  {
+    "id": "0538c38c-0af9-4891-91c6-1af0b0fddd55",
+    "name": "UniqID | Identity Verification",
+    "csm": "a69e02b1-4b64-458c-8f61-77f3c62fa05a",
+    "pm": "181caef5-fa8d-44ae-8188-1c706bd12b98"
+  },
+  {
+    "id": "8ba2e016-8722-48ba-86ad-a494b130e0a1",
+    "name": "UniSync | University ERP",
+    "csm": "85ae86ae-5f54-48b6-ac0f-b13a0df18310",
+    "pm": "d8bf8357-824d-4549-b46a-30d21c031493"
+  },
+  {
+    "id": "57265ec8-c3e0-44fb-84c2-bb14cb5f9a81",
+    "name": "UniversalAPI | Universal Interface",
+    "csm": "3aea8011-cf6c-453a-9a54-ba5d721c907a",
+    "pm": "40f3235e-4809-4fe8-821f-8a5bce0811b8"
+  },
+  {
+    "id": "8fc04bcf-da41-4d72-8f59-f79135540711",
+    "name": "UpStream | Video CDN",
+    "csm": "33c27527-e5ce-4732-8b55-84c3643879c8",
+    "pm": "0b9029a1-90ae-4f68-95fb-3f149aed4d7f"
+  },
+  {
+    "id": "3f9ced93-fddd-41bb-b1c6-0acdf2e5c2d5",
+    "name": "UptimeBot | SLA Monitor",
+    "csm": "1089acbc-366d-4262-af9c-d6906283701b",
+    "pm": "f8f78c22-4fc0-4780-bd99-83f0f9383bbf"
+  },
+  {
+    "id": "582ad74e-ccb7-415e-b415-a325e26684b2",
+    "name": "UptimeTrack | Availability Monitor",
+    "csm": "f719fdf0-015e-42f2-9e33-b14b31fb00df",
+    "pm": "482d6bc1-ccba-44a5-b56b-f99a78d5085f"
+  },
+  {
+    "id": "fcc1da2e-9c07-4d55-ab9d-3c204fa3ab2f",
+    "name": "UrbanPulse | Smart City IoT",
+    "csm": "1089acbc-366d-4262-af9c-d6906283701b",
+    "pm": "486431f5-9536-470d-8342-40a4248c6f00"
+  },
+  {
+    "id": "d1d16d2a-9d38-4f65-adf4-e07de1676fce",
+    "name": "UserFlows | UX Analytics",
+    "csm": "15a1951d-7200-433c-9b5a-ed81e3c2880b",
+    "pm": "67797d74-cf8c-48f4-a1da-74d12509f979"
+  },
+  {
+    "id": "f18d051a-cd42-4a43-8442-fe69bd71635e",
+    "name": "UserOS | User Management",
+    "csm": "f719fdf0-015e-42f2-9e33-b14b31fb00df",
+    "pm": "4f70a3f8-516c-4917-b107-f03e70ca8682"
+  },
+  {
+    "id": "48840882-723b-4bbf-9dee-917762db626e",
+    "name": "UtilityBelt | Developer Tools",
+    "csm": "85ae86ae-5f54-48b6-ac0f-b13a0df18310",
+    "pm": "d068a969-80d9-452f-a2cd-9eb680518057"
+  },
+  {
+    "id": "1151a973-f0d5-4a2b-b9ca-ed8219cc3f0e",
+    "name": "UtilityX | Utility Platform",
+    "csm": "9fc24152-d29c-40a1-b1f1-c66bfff2e073",
+    "pm": "f910843f-6fb7-4433-a30e-b7758166feac"
+  },
+  {
+    "id": "588dc6d8-b393-452d-86d1-12a17663bc78",
+    "name": "VaultKey | Password Manager",
+    "csm": "9ec1d11d-e98a-4575-9a80-c08a9fcc3a6c",
+    "pm": "b1bb45da-cbd6-4df7-9365-809f897b0b2b"
+  },
+  {
+    "id": "65c8fac0-3e61-44b8-9ff2-8e6c4feb33fc",
+    "name": "VaultManager | Credential Store",
+    "csm": "bedf574e-22a8-4121-8f6d-3c0c9ab2d517",
+    "pm": "166b05ea-940c-462a-80fd-0043037173a0"
+  },
+  {
+    "id": "0f91a2c6-e006-439b-abd5-cb9c70270f1d",
+    "name": "VectorDB | Vector Database",
+    "csm": "384930e9-0ace-41fb-9341-d09dfc5f5877",
+    "pm": "a68fd910-018f-416c-9e01-bdfe9492b143"
+  },
+  {
+    "id": "b81ded01-0817-4c88-8afb-661d7202e56d",
+    "name": "VectorStore | Embedding DB",
+    "csm": "384930e9-0ace-41fb-9341-d09dfc5f5877",
+    "pm": "57a8a2a5-f306-4d23-a299-57f0c6710fa6"
+  },
+  {
+    "id": "425f36c0-fc34-410f-99ef-16d01f4d5c0c",
+    "name": "VeloCity | CI/CD Toolkit",
+    "csm": "21ef5d33-5ec0-4a58-bf22-aef725bd8952",
+    "pm": "cf65956e-39c8-4d84-86cf-90ad76a09a0f"
+  },
+  {
+    "id": "aa5b8b96-2542-4c93-9c5b-e39070a6201f",
+    "name": "VelocityX | Velocity Engine",
+    "csm": "21497eb9-c185-48be-a2b8-7cac3a9fe686",
+    "pm": "1b7686cf-53a7-47ca-83e8-bc154dc1424f"
+  },
+  {
+    "id": "15f596df-7cf3-47d2-8efe-2381731e32d9",
+    "name": "VerifyIt | Document Verification",
+    "csm": "790b036d-f255-4dfd-8227-358661d39d7c",
+    "pm": "5e71b68d-b6c0-4dcc-b2b1-2520b3d314dd"
+  },
+  {
+    "id": "0d865928-3889-4a48-bb91-933dc444d19e",
+    "name": "VersionVault | Release Manager",
+    "csm": "5e563e32-9b82-464e-a94e-1c78e78be7d4",
+    "pm": "1faf1ece-9c6d-4b77-b05f-44db6d3ebf73"
+  },
+  {
+    "id": "ab848bbb-abf8-4222-b593-50d19c2cebe6",
+    "name": "VibeCheck | Social Sentiment",
+    "csm": "58a19ab9-6c95-444f-b894-46d3b5fd63c9",
+    "pm": "21b7ac58-3b2c-4a20-8811-eb424a307f26"
+  },
+  {
+    "id": "e951ecc3-bbb5-4825-b509-b2f4e24e4be3",
+    "name": "VideoSync | Media Processing",
+    "csm": "f97ce38a-d919-4391-a215-f39a964dab56",
+    "pm": "1c7fa5c2-7070-49ac-ab60-ed74e52f5083"
+  },
+  {
+    "id": "fd79a71e-c3c3-4c75-8a06-38509a14c7a3",
+    "name": "ViewForge | BI Dashboard",
+    "csm": "4174b8c1-9d89-4b61-bfd7-075924620091",
+    "pm": "6acbb73d-52bd-4108-89d0-4382da11d60f"
+  },
+  {
+    "id": "bb77e95d-e610-491c-ad1e-3cb569b70919",
+    "name": "VirtualX | Virtualization Platform",
+    "csm": "5e563e32-9b82-464e-a94e-1c78e78be7d4",
+    "pm": "94b63a4e-1522-431c-a0e5-363379e93425"
+  },
+  {
+    "id": "31f9740b-5f5c-4a6e-ac8b-ee2fc3d5d976",
+    "name": "VisualOps | Infrastructure Visualizer",
+    "csm": "4e996aca-e030-40d9-9309-14cc8ecde4f7",
+    "pm": "388a3340-b78c-4efc-93df-4631ecb10206"
+  },
+  {
+    "id": "338f38ce-6bb6-41fb-831f-c8d7179ab6ce",
+    "name": "VizBoard | Data Visualization",
+    "csm": "8f3ce91b-2537-4c89-b6f6-d2bb97cb497e",
+    "pm": "77451174-689f-4cc0-b387-eab14615b4e6"
+  },
+  {
+    "id": "0e1709b6-6479-4213-9320-a3cce952b578",
+    "name": "VoiceOps | Voice Automation",
+    "csm": "8dde4b45-afa9-4711-8aa3-f565b4dfd6f1",
+    "pm": "482d6bc1-ccba-44a5-b56b-f99a78d5085f"
+  },
+  {
+    "id": "d49e5fad-03a9-4156-811c-7216eee0f1c3",
+    "name": "WarehouseX | Data Warehouse",
+    "csm": "a69e02b1-4b64-458c-8f61-77f3c62fa05a",
+    "pm": "0247e35c-d041-4bad-b21f-e9816504fbd5"
+  },
+  {
+    "id": "3d5512b9-7a68-4a7e-9cc0-5af3ecb1c09f",
+    "name": "WarpSpeed | Performance Testing",
+    "csm": "44523846-93e0-41d8-b303-3a76b3322908",
+    "pm": "1404b0d3-70a4-4f9e-b8f9-b5c24161c97d"
+  },
+  {
+    "id": "14dde4c5-af57-4822-aa85-8f148257ae58",
+    "name": "WatchDog | System Guardian",
+    "csm": "bedf574e-22a8-4121-8f6d-3c0c9ab2d517",
+    "pm": "537d44b5-ed48-461c-a386-9d061935a112"
+  },
+  {
+    "id": "7cd0ab58-b476-4bd9-abd4-b2dbc251d4bd",
+    "name": "WatchTower | Observability Platform",
+    "csm": "78d46da1-997c-435f-80f6-4767ede60bd4",
+    "pm": "166b05ea-940c-462a-80fd-0043037173a0"
+  },
+  {
+    "id": "024f9bcd-f091-4ef0-aaa6-0638d3a9a0d0",
+    "name": "WavePoint | Audio Processing",
+    "csm": "30b71d73-f57a-4242-814c-7e050c3ff220",
+    "pm": "537d44b5-ed48-461c-a386-9d061935a112"
+  },
+  {
+    "id": "a97e544e-3c0e-442e-ae52-813eaf7eacde",
+    "name": "WaveX | Wave Platform",
+    "csm": "0025c842-ecf0-4f5d-944b-0e45d922ccf4",
+    "pm": "b46ebc80-5f10-4a31-bff8-93cc862c6be8"
+  },
+  {
+    "id": "1aebd51c-e227-40e8-a306-975b8c198578",
+    "name": "WebCrawl | SEO Spider",
+    "csm": "bedf574e-22a8-4121-8f6d-3c0c9ab2d517",
+    "pm": "a68fd910-018f-416c-9e01-bdfe9492b143"
+  },
+  {
+    "id": "0e4cf0a2-e3e8-4cea-91ff-f5faae70261a",
+    "name": "WebGateway | API Gateway",
+    "csm": "5f0a1733-7a42-4e17-8a54-bb2a41498ebb",
+    "pm": "9edb4ef0-b7f7-4909-87aa-b23129e6e588"
+  },
+  {
+    "id": "42f61de1-dc8a-4b92-9d93-b2e5748fd5dd",
+    "name": "WebhookHub | Event Dispatcher",
+    "csm": "3bb0fd4a-7aa5-4b47-a4a6-a4e230d85c88",
+    "pm": "21b7ac58-3b2c-4a20-8811-eb424a307f26"
+  },
+  {
+    "id": "8e747c8b-8fd9-42e0-ae1b-4ffccb178c28",
+    "name": "WebSocket | Real-time Notifications",
+    "csm": "d9cfac29-f735-498e-b693-36ff6e42919a",
+    "pm": "819bd11f-95ae-48a4-89b7-fe4d66da494b"
+  },
+  {
+    "id": "c1a03202-a33a-4720-8236-789d51267899",
+    "name": "WindMill | Renewable Energy",
+    "csm": "60a09ff6-b779-42d6-9873-5217d6a8cb8f",
+    "pm": "0a354443-d782-4a0f-a53e-27cc7214ee36"
+  },
+  {
+    "id": "b3319399-fb94-4250-8bb4-341a86b4685a",
+    "name": "WorkBench | Developer Portal",
+    "csm": "0c92753e-e079-4310-a1c7-53a989738a4c",
+    "pm": "67a660d5-7691-4f01-8307-064b6936ca0d"
+  },
+  {
+    "id": "69b7f2d8-2f73-4a8f-9ba7-6c7404949709",
+    "name": "WorkflowHub | Process Management",
+    "csm": "165d0d63-1b4c-4607-97c4-8b7a356c9b8f",
+    "pm": "4f33f274-f6e3-42a3-80c8-598e8a6b8eeb"
+  },
+  {
+    "id": "847402e8-40b6-4a3d-8012-a42dc71d3bd8",
+    "name": "WorkflowX | BPM Engine",
+    "csm": "755d5aa0-49c2-4edb-ae0f-b38632d886c2",
+    "pm": "67a660d5-7691-4f01-8307-064b6936ca0d"
+  },
+  {
+    "id": "32f1f0da-eabd-471f-95c3-dfdd2ebf60db",
+    "name": "WorkOS | Workforce Platform",
+    "csm": "37cd939c-1de4-4fb2-b104-f05f68294ab9",
+    "pm": "ba9e2b37-e608-49fe-9ab3-a251944fa2c9"
+  },
+  {
+    "id": "ce93e58c-326f-4bf3-ac06-4a9d65956a34",
+    "name": "XcelAPI | High-Performance API",
+    "csm": "66882a6f-d1b1-4936-b17f-072a653d0efa",
+    "pm": "5af106b0-af84-4198-8e71-80e138a5a9a8"
+  },
+  {
+    "id": "6be07822-80af-4fb8-bda9-de5fbd2d65d0",
+    "name": "XcelDB | High-Performance DB",
+    "csm": "44523846-93e0-41d8-b303-3a76b3322908",
+    "pm": "60a0fb1e-d01c-4acc-83b4-d8a316ac451e"
+  },
+  {
+    "id": "69d05d7f-f023-4f28-b17b-7311fb6488b3",
+    "name": "XcelERPM | Enterprise Resource",
+    "csm": "60a09ff6-b779-42d6-9873-5217d6a8cb8f",
+    "pm": "cbe2e619-309f-4a1f-b80a-374a631734ef"
+  },
+  {
+    "id": "849f84bd-154a-4663-9aba-652006124829",
+    "name": "XcloudX | Extended Cloud",
+    "csm": "21497eb9-c185-48be-a2b8-7cac3a9fe686",
+    "pm": "486431f5-9536-470d-8342-40a4248c6f00"
+  },
+  {
+    "id": "c20430eb-7e7e-44e6-b769-3c7756e6a9e2",
+    "name": "XCrypt | Blockchain Wallet",
+    "csm": "4174b8c1-9d89-4b61-bfd7-075924620091",
+    "pm": "49670820-7826-4e95-b651-152db9d1ec02"
+  },
+  {
+    "id": "a7484d0c-7e26-4184-8c5b-968d89c68011",
+    "name": "XDataMesh | Data Mesh Framework",
+    "csm": "44523846-93e0-41d8-b303-3a76b3322908",
+    "pm": "228083a7-9c06-4e54-9dc6-fb31495a32ef"
+  },
+  {
+    "id": "b2be2fb2-88b1-4240-9ca9-2308aa1947c9",
+    "name": "XenoBridge | Protocol Adapter",
+    "csm": "1fce77ea-0584-443a-81d5-829da339e0b0",
+    "pm": "ba9e2b37-e608-49fe-9ab3-a251944fa2c9"
+  },
+  {
+    "id": "19d79afb-c9ad-401c-9356-0c9cb4378d8c",
+    "name": "XenoLab | Biotech Dashboard",
+    "csm": "c217fda0-0bad-4489-ac00-87cbad6febab",
+    "pm": "f77d42d1-3d03-425d-8674-c2a06a464e11"
+  },
+  {
+    "id": "9949ee09-34fc-46d1-9d03-ca79cf0fbdbc",
+    "name": "XFlux | Reactive Framework",
+    "csm": "790b036d-f255-4dfd-8227-358661d39d7c",
+    "pm": "819bd11f-95ae-48a4-89b7-fe4d66da494b"
+  },
+  {
+    "id": "cbe21270-0d57-405b-9424-aabb386793f5",
+    "name": "XmlToJson | Data Transformer",
+    "csm": "10d15fea-d851-4422-be60-51b9ff4f6b4f",
+    "pm": "0a354443-d782-4a0f-a53e-27cc7214ee36"
+  },
+  {
+    "id": "879de20e-fb0c-490c-9fd0-eaf847840dfb",
+    "name": "XPlatform | Cross-Platform SDK",
+    "csm": "c1d71dcf-97d3-4189-abed-5d0798926b48",
+    "pm": "819bd11f-95ae-48a4-89b7-fe4d66da494b"
+  },
+  {
+    "id": "47414a68-513e-4634-b0a4-40d0428f9bb1",
+    "name": "XRealtime | Real-Time Engine",
+    "csm": "bedf574e-22a8-4121-8f6d-3c0c9ab2d517",
+    "pm": "388a3340-b78c-4efc-93df-4631ecb10206"
+  },
+  {
+    "id": "13dfcbec-c3bb-4d3e-a5dc-1058600e2873",
+    "name": "XrossWalk | Pedestrian Safety",
+    "csm": "98f46445-3671-4363-bfa2-9696dec16a51",
+    "pm": "ba9e2b37-e608-49fe-9ab3-a251944fa2c9"
+  },
+  {
+    "id": "250f2e1f-953e-44b3-95ab-46317657cdb6",
+    "name": "XtendX | Extension Framework",
+    "csm": "f719fdf0-015e-42f2-9e33-b14b31fb00df",
+    "pm": "21b7ac58-3b2c-4a20-8811-eb424a307f26"
+  },
+  {
+    "id": "ce9f197d-69fe-4363-97d2-4dd5f769e3d6",
+    "name": "XtraSpace | Cloud Storage",
+    "csm": "9fc24152-d29c-40a1-b1f1-c66bfff2e073",
+    "pm": "a4c6e5be-c5a5-44d0-9112-6b8a72d16db3"
+  },
+  {
+    "id": "2c3d90db-7c94-4b0a-a0b5-7b6b1a0816d7",
+    "name": "YardOps | Warehouse Management",
+    "csm": "c217fda0-0bad-4489-ac00-87cbad6febab",
+    "pm": "66e46ba9-7607-407e-a82c-6005660f9409"
+  },
+  {
+    "id": "b1598653-5446-4fab-8598-27d89672f6cd",
+    "name": "YarnFlow | Dependency Manager",
+    "csm": "bedf574e-22a8-4121-8f6d-3c0c9ab2d517",
+    "pm": "6acbb73d-52bd-4108-89d0-4382da11d60f"
+  },
+  {
+    "id": "9c1c3e93-eb73-434e-9af5-9408142c0ea5",
+    "name": "YarnHub | Package Registry",
+    "csm": "3bb0fd4a-7aa5-4b47-a4a6-a4e230d85c88",
+    "pm": "f8f78c22-4fc0-4780-bd99-83f0f9383bbf"
+  },
+  {
+    "id": "a38b382e-405b-4d73-9481-ffd42fdfc007",
+    "name": "YarnManager | Package Manager",
+    "csm": "00fba46e-d8ab-4cf4-8d28-a35115261640",
+    "pm": "a68fd910-018f-416c-9e01-bdfe9492b143"
+  },
+  {
+    "id": "1944614c-e2e7-4cb2-a117-830c59754a7d",
+    "name": "YieldBot | Agri AI Platform",
+    "csm": "b535029c-449a-4c9f-9696-6ea31bd09c56",
+    "pm": "77451174-689f-4cc0-b387-eab14615b4e6"
+  },
+  {
+    "id": "b8a21b51-b2a3-49ee-824a-884336a585d9",
+    "name": "YieldGuard | Budget Tracker",
+    "csm": "f719fdf0-015e-42f2-9e33-b14b31fb00df",
+    "pm": "a4c6e5be-c5a5-44d0-9112-6b8a72d16db3"
+  },
+  {
+    "id": "c98f6d45-8877-4383-80b1-64f66890e8da",
+    "name": "YieldMax | Agri Analytics",
+    "csm": "ddb1d706-2ec8-430e-b653-ceb3694846a6",
+    "pm": "60a0fb1e-d01c-4acc-83b4-d8a316ac451e"
+  },
+  {
+    "id": "ab47c8e8-e8c2-44b1-b2c2-1c86c08704f7",
+    "name": "YieldMaxX | Yield Maximization",
+    "csm": "0b42a626-6637-4ac8-bc26-9fa91ffadcc3",
+    "pm": "fcedd5cc-e9b8-48b9-ad6f-92728bc2b2e0"
+  },
+  {
+    "id": "d90f9cda-a417-4672-afa3-b53f8033dabf",
+    "name": "YieldOps | Crop Management",
+    "csm": "6ecf70ac-651d-4671-8f1e-0fa4683a192f",
+    "pm": "eabf628a-aa5d-445c-a519-c7dfe6e6ced2"
+  },
+  {
+    "id": "a14fcb31-b53d-4c6c-a070-ad8132eb93c5",
+    "name": "YieldPlusX | Yield Plus",
+    "csm": "5e563e32-9b82-464e-a94e-1c78e78be7d4",
+    "pm": "94b63a4e-1522-431c-a0e5-363379e93425"
+  },
+  {
+    "id": "b0fc5106-baa6-47cc-8708-a92490e72015",
+    "name": "YieldPoint | Revenue Management",
+    "csm": "efc58eb1-f6c9-4204-a613-d87cc40ce936",
+    "pm": "67a660d5-7691-4f01-8307-064b6936ca0d"
+  },
+  {
+    "id": "8a1b71bf-6726-4bd5-8675-4a1d0e4f7e37",
+    "name": "YieldTrack | Revenue Analytics",
+    "csm": "8dde4b45-afa9-4711-8aa3-f565b4dfd6f1",
+    "pm": "ba9e2b37-e608-49fe-9ab3-a251944fa2c9"
+  },
+  {
+    "id": "f5fe1c1d-0c11-4aaf-8175-575b6d3cc198",
+    "name": "YieldX | Revenue Optimization",
+    "csm": "8dde4b45-afa9-4711-8aa3-f565b4dfd6f1",
+    "pm": "743cc34f-c33d-46ac-b487-8f964729213a"
+  },
+  {
+    "id": "68042e46-5aaa-4f8e-a2f8-2d79225803af",
+    "name": "YoloCV | Computer Vision",
+    "csm": "5e563e32-9b82-464e-a94e-1c78e78be7d4",
+    "pm": "77451174-689f-4cc0-b387-eab14615b4e6"
+  },
+  {
+    "id": "3c209c27-d7f2-4506-b64d-a21708461f67",
+    "name": "ZenDB | Zen Database",
+    "csm": "03f3d87a-025a-4945-a786-dc07c084338a",
+    "pm": "d8bf8357-824d-4549-b46a-30d21c031493"
+  },
+  {
+    "id": "8b9b75ae-c20a-48ff-b781-13291f141a76",
+    "name": "ZenDesk | IT Help Desk",
+    "csm": "f97ce38a-d919-4391-a215-f39a964dab56",
+    "pm": "cf65956e-39c8-4d84-86cf-90ad76a09a0f"
+  },
+  {
+    "id": "cc68bf84-7714-4893-88e4-a12f2b40ae45",
+    "name": "ZenithOS | Internal Tooling",
+    "csm": "5e563e32-9b82-464e-a94e-1c78e78be7d4",
+    "pm": "5144d8e9-fde3-4592-a5ab-c3aaeb199bb3"
+  },
+  {
+    "id": "d1bfa9c4-8e69-45e1-adb1-26b1f104060a",
+    "name": "ZenithX | Zenith Platform",
+    "csm": "dcfc1e15-8444-480e-900a-4970a58266df",
+    "pm": "8759f91e-8317-49a8-9483-0cde4a7d571b"
+  },
+  {
+    "id": "cc9334ea-d29c-450b-b72a-2616aad3dd81",
+    "name": "ZenMonitor | APM Platform",
+    "csm": "78d46da1-997c-435f-80f6-4767ede60bd4",
+    "pm": "f910843f-6fb7-4433-a30e-b7758166feac"
+  },
+  {
+    "id": "5da5714b-a134-4cd1-b1a8-a16064e8469b",
+    "name": "ZenPatch | Patch Management",
+    "csm": "0b42a626-6637-4ac8-bc26-9fa91ffadcc3",
+    "pm": "ec10ddc0-3e1c-4d22-8455-aa4c09d52bc8"
+  },
+  {
+    "id": "7dbd1574-f4fd-4f3a-a7f1-2989f7a84f2a",
+    "name": "ZenRouter | Smart API Router",
+    "csm": "9159e880-2ad2-448e-ba47-9d3c8badd5fc",
+    "pm": "5af106b0-af84-4198-8e71-80e138a5a9a8"
+  },
+  {
+    "id": "6f93f513-6c61-473d-aeed-97ddb17a0dee",
+    "name": "ZenStack | Full-Stack Framework",
+    "csm": "15a1951d-7200-433c-9b5a-ed81e3c2880b",
+    "pm": "d4300ae8-0695-4fb9-9a96-63a24b4038f2"
+  },
+  {
+    "id": "7aef4e14-c74d-45e6-af13-7c339791db51",
+    "name": "ZeoScale | Auto Scaling",
+    "csm": "26466546-d829-4b52-ad57-580972c39590",
+    "pm": "d31677e3-93d7-4dfc-92cb-282c08e4eece"
+  },
+  {
+    "id": "c2759871-d31b-4c32-86d4-f94185d078a8",
+    "name": "ZeroDown | Deployment Orchestrator",
+    "csm": "790b036d-f255-4dfd-8227-358661d39d7c",
+    "pm": "2963dd96-0f7c-42a6-9ffa-ba8686c06dc3"
+  },
+  {
+    "id": "1120172e-d652-41c9-b48b-e62c0df25d83",
+    "name": "ZeroDowntimeX | Zero Downtime Platform",
+    "csm": "90eb23c2-eec2-48a7-9b96-5b9d5842cf0c",
+    "pm": "1c20e53e-ee6c-40ba-a659-c5e1d5b76455"
+  },
+  {
+    "id": "013d4588-f1de-4bb6-b4af-b6e1a2f8e405",
+    "name": "ZoneControl | Region Manager",
+    "csm": "3971b938-0558-4242-9f5d-3120dad4d431",
+    "pm": "4f33f274-f6e3-42a3-80c8-598e8a6b8eeb"
+  },
+  {
+    "id": "9c857979-1bf6-4984-997a-5a7b3e95de5c",
+    "name": "ZoneGuard | Network Segmentation",
+    "csm": "755d5aa0-49c2-4edb-ae0f-b38632d886c2",
+    "pm": "f910843f-6fb7-4433-a30e-b7758166feac"
+  },
+  {
+    "id": "9c4c3aa7-58da-4068-a872-bad35df5dc9a",
+    "name": "ZoneMap | Geographic Analytics",
+    "csm": "0c92753e-e079-4310-a1c7-53a989738a4c",
+    "pm": "c5740f52-ab1a-4499-a156-db41411b7bbe"
+  }
+]

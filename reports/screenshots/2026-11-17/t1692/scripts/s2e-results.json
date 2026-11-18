@@ -1,0 +1,38 @@
+[
+ {
+  "area": "2.direct",
+  "name": "reject from Awaiting: employee gets rejection notification",
+  "pass": true,
+  "detail": "[[\"notification.opportunity.direct_stage_changed\",\"Update on OPP-0376\",\"The direct allocation request OPP-0376 for you is now rejected.\"],[\"notification.opportunity.direct_stage_changed\",\"Update on OPP-0376\",\"The direct allocation request OPP-0376 for you is now awaiting.\"]]"
+ },
+ {
+  "area": "2.direct",
+  "name": "rejection notification carries no link to the ticket",
+  "pass": true,
+  "detail": "{\"linkish\":null,\"keys\":[\"publicId\",\"eventType\",\"title\",\"body\",\"isRead\",\"readAt\",\"createdAt\",\"context\"],\"ctx\":\"{\\\"directStage\\\":\\\"REJECTED\\\",\\\"isCandidateCopy\\\":\\\"true\\\",\\\"employeePublicId\\\":\\\"ec1537ce-7627-4334-9720-607a921f0172\\\",\\\"positionPublicId\\\":\\\"64808b57-a674-490b-b941-efb7e98710b8\\\"}\"}"
+ },
+ {
+  "area": "2.direct",
+  "name": "rejection notification hides the reason",
+  "pass": true,
+  "detail": "The direct allocation request OPP-0376 for you is now rejected."
+ },
+ {
+  "area": "2.direct",
+  "name": "d3 -> AWAITING",
+  "pass": true,
+  "detail": "[200,\"SUCCESS\"]"
+ },
+ {
+  "area": "2.direct",
+  "name": "AWAITING (cleared): employee opens Direct ticket detail",
+  "pass": true,
+  "detail": "[200,\"SUCCESS\"]"
+ },
+ {
+  "area": "2.direct",
+  "name": "AWAITING (cleared): Direct ticket appears in employee board (any query)",
+  "pass": true,
+  "detail": "{\"view=MINE\":[200,[]],\"view=MINE&requestType=DIRECT\":[200,[\"OPP-0377\"]],\"requestType=DIRECT\":[200,[\"OPP-0377\"]],\"(none)\":[200,[]],\"counts\":[200,\"{\\\"total\\\":1,\\\"OPEN\\\":0,\\\"IN_REVIEW\\\":0,\\\"AWAITING\\\":1,\\\"APPROVED\\\":0,\\\"REJECTED\\\":0}\"]}"
+ }
+]

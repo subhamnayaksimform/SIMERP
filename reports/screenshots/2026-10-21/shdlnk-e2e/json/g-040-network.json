@@ -1,0 +1,9 @@
+[
+  {
+    "url": "https://simerp-dev-api.simform.solutions/api/v1/allocation-tickets/shadow-swap",
+    "method": "POST",
+    "req": "{\"projectId\":\"3d138a89-4d06-4839-8091-436fba0a2dd6\",\"flowType\":\"SHADOW_TO_MAIN\",\"mainDeallocation\":{\"projectAssignmentPublicId\":\"0c829387-d285-4975-bd2b-c29c6e20e6ea\",\"allocationEndDate\":\"2026-11-14\",\"deallocationReason\":\"ROLE_MISALIGNMENT\",\"coreSkillRating\":7,\"communicationRating\":7,\"behavioralRating\":7,\"overallRating\":7,\"developerFeedback\":\"QA E2E SHDLNK 2026-10-21 (g-040)\",\"isOpenToWorkWithAgain\":true},\"shadowDeallocation\":{\"projectAssignmentPublicId\":\"b58b3a73-31af-4c73-b0e6-4f797af19f36\",\"allocationEndDate\":\"2026-11-14\",\"deallocationReason\":\"ROLE_MISALIGNMENT\"},\"promotion\":{\"deptStackPublicId\":\"263f7e26-2bc6-415f-97ec-01c914c13276\",\"requestedAllocationStartDate\":\"2026-11-15\",\"requestedAllocationEndDate\":\"2026-11-14\",\"requestType\":\"FRESH_ALLOCATION\",\"shadowForPublicId\":null,\"allocationRequestCreationType\":null,\"requestedAllocationType\":\"FIXED\",\"requestedAllocationPercentage\":20,\"developerPreferencePublicIds\":[\"58891c8e-f56a-4fc3-bad4-a0bc5c12fceb\"],\"isInterviewRequired\":false,\"isClientFacing\":false}}",
+    "status": 400,
+    "body": "{\"code\":\"SYS_004\",\"message\":\"End date must be after start date\"}"
+  }
+]

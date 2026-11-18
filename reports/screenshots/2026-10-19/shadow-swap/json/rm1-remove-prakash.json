@@ -1,0 +1,53 @@
+{
+  "req": {
+    "projectAssignmentPublicId": "4186a764-485d-4b1c-89c0-4d3e4604ef06",
+    "allocationEndDate": "2026-10-19",
+    "deallocationReason": "OTHERS",
+    "deallocationReasonNote": "QA test cleanup (SI4-T1464 retest 2026-10-19)"
+  },
+  "res": {
+    "status": 201,
+    "body": {
+      "code": "ALLOCATION_TICKET_072",
+      "message": "Allocation removed successfully",
+      "data": {
+        "publicId": "4b1711be-f239-449c-9e87-19c669cd5e69",
+        "ticketNumber": "DA-0103",
+        "ticketType": "DEALLOCATE_ALLOCATION",
+        "status": "APPROVED",
+        "assignment": {
+          "publicId": "4186a764-485d-4b1c-89c0-4d3e4604ef06",
+          "allocationEndDate": "2026-10-19",
+          "employee": {
+            "publicId": "da3c4542-13bb-452b-b619-42095c913d94",
+            "name": "Prakash Pillai",
+            "email": "prakash.pillai@simformsolutions.com",
+            "photoUrl": "https://i.pravatar.cc/150?u=prakash.pillai@simformsolutions.com"
+          },
+          "project": {
+            "publicId": "c20430eb-7e7e-44e6-b769-3c7756e6a9e2",
+            "name": "XCrypt | Blockchain Wallet",
+            "alias": ""
+          }
+        },
+        "effectiveState": {
+          "isEffectiveImmediately": false,
+          "effectiveFrom": "2026-10-20",
+          "scheduledChange": {
+            "publicId": "d3a2ef43-7b23-4910-9622-e348ea365e1b",
+            "changeType": "ASSIGNMENT_DEALLOCATE",
+            "status": "PENDING",
+            "effectiveDate": "2026-10-20",
+            "overrideEndDate": null,
+            "allocationType": null,
+            "allocationPercentage": null,
+            "effectiveStartDate": null,
+            "effectiveEndDate": "2026-10-19",
+            "previousAllocationPercentage": 10
+          }
+        },
+        "feedbackPublicId": "31275f80-c755-40e1-ab3f-e2b5f8afaa2b"
+      }
+    }
+  }
+}

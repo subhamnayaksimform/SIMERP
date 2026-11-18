@@ -1,0 +1,10 @@
+const {H}=require('./lib2');
+(async()=>{ const b=await H.chromium.launch(); const v=await H.login(b,'vihaan.chatterjee'); const page=v.page; const R=H.runner('u3'); H.attach(page,R.errs);
+ await R.step('create-ui',async()=>{ await H.go(page,'/pre-sales/new'); await page.getByText('Interview Opportunity').first().click(); await page.getByText('Prospect',{exact:true}).first().click(); await page.waitForTimeout(500);
+  const client=page.getByPlaceholder(/Acme/i).first(); await client.click(); await page.keyboard.type('QA-AUTO UI Client'); await page.waitForTimeout(500); await page.keyboard.press('Enter'); await page.waitForTimeout(500);
+  await page.getByPlaceholder(/Platform Enhancement/i).fill('QA-AUTO UI create 04-11');
+  await page.getByPlaceholder(/Platform Enhancement/i).press('Enter').catch(()=>{});
+  await page.getByPlaceholder(/e\.g\.[^"]*(Senior|Developer|Engineer)/i).first().fill('UI Java Dev').catch(()=>{});
+  await H.shot(page,'U-create-filled-1',true);
+  return {inputs:(await page.locator('input:visible').evaluateAll(a=>a.map(x=>x.placeholder||x.name||x.type))).slice(0,30)}; });
+ R.done(); await b.close(); })();

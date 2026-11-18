@@ -1,0 +1,85 @@
+{
+  "before": "H0-before",
+  "after": "H1-after",
+  "beforeAt": "2026-10-19T11:12:08.103Z",
+  "afterAt": "2026-10-19T11:13:48.182Z",
+  "newByUser": {
+    "gaurav.dutta": [
+      {
+        "eventType": "allocation.direct_employee_assigned",
+        "title": "You've Been allocated to HyperScale | Scalability Engine",
+        "body": "You've been allocated to HyperScale | Scalability Engine starting 2026-10-19.",
+        "createdAt": "2026-10-19T11:13:44.049Z",
+        "ctx": {
+          "assignmentPublicId": "c3b65d73-e16b-4e34-9cfd-9e15b6033826"
+        }
+      }
+    ],
+    "kartik.hegde": [
+      {
+        "eventType": "allocation.direct_employee_rm_assigned",
+        "title": "Team Member Assigned: Gaurav Dutta",
+        "body": "Gaurav Dutta has been assigned to HyperScale | Scalability Engine starting 2026-10-19.",
+        "createdAt": "2026-10-19T11:13:44.096Z",
+        "ctx": {
+          "assignmentPublicId": "c3b65d73-e16b-4e34-9cfd-9e15b6033826"
+        }
+      }
+    ],
+    "hardik.trivedi": [
+      {
+        "eventType": "allocation.direct_employee_rm_assigned",
+        "title": "Team Member Assigned: Gaurav Dutta",
+        "body": "Gaurav Dutta has been assigned to HyperScale | Scalability Engine starting 2026-10-19.",
+        "createdAt": "2026-10-19T11:13:44.096Z",
+        "ctx": {
+          "assignmentPublicId": "c3b65d73-e16b-4e34-9cfd-9e15b6033826"
+        }
+      },
+      {
+        "eventType": "allocation.direct_pm_notified",
+        "title": "Allocation Confirmed: HyperScale | Scalability Engine",
+        "body": "Gaurav Dutta has been allocated to HyperScale | Scalability Engine, effective 2026-10-19.",
+        "createdAt": "2026-10-19T11:13:44.081Z",
+        "ctx": {
+          "assignmentPublicId": "c3b65d73-e16b-4e34-9cfd-9e15b6033826"
+        }
+      }
+    ],
+    "amit.patel": [
+      {
+        "eventType": "allocation.direct_employee_rm_assigned",
+        "title": "Team Member Assigned: Gaurav Dutta",
+        "body": "Gaurav Dutta has been assigned to HyperScale | Scalability Engine starting 2026-10-19.",
+        "createdAt": "2026-10-19T11:13:44.096Z",
+        "ctx": {
+          "assignmentPublicId": "c3b65d73-e16b-4e34-9cfd-9e15b6033826"
+        }
+      }
+    ],
+    "jinal.patel": [
+      {
+        "eventType": "allocation.direct_employee_rm_assigned",
+        "title": "Team Member Assigned: Gaurav Dutta",
+        "body": "Gaurav Dutta has been assigned to HyperScale | Scalability Engine starting 2026-10-19.",
+        "createdAt": "2026-10-19T11:13:44.096Z",
+        "ctx": {
+          "assignmentPublicId": "c3b65d73-e16b-4e34-9cfd-9e15b6033826"
+        }
+      }
+    ],
+    "cto": [
+      {
+        "eventType": "allocation.direct_employee_rm_assigned",
+        "title": "Direct Allocation: HyperScale | Scalability Engine",
+        "body": "Bhumi Chauhan directly allocated Gaurav Dutta to HyperScale | Scalability Engine, bypassing the ticket workflow.",
+        "createdAt": "2026-10-19T11:13:44.096Z",
+        "ctx": {
+          "assignmentPublicId": "c3b65d73-e16b-4e34-9cfd-9e15b6033826"
+        }
+      }
+    ],
+    "ceo": [],
+    "priya.chopra": []
+  }
+}

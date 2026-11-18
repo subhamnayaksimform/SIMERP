@@ -1,0 +1,92 @@
+[
+ {
+  "area": "I632",
+  "name": "seat is Won",
+  "pass": true,
+  "detail": "[200,\"SUCCESS\"]"
+ },
+ {
+  "area": "I632",
+  "name": "close position with Won seat + live candidate",
+  "pass": true,
+  "detail": "[200,\"SUCCESS\"]"
+ },
+ {
+  "area": "I632",
+  "name": "Won seat counted in Won column (WON=1, NLR=1)",
+  "pass": true,
+  "detail": "{\"PENDING_TO_SHORTLIST\":0,\"SHORTLISTED\":0,\"WAITING_FOR_APPROVAL\":0,\"BEING_PREPARED\":0,\"INTERVIEW_SCHEDULED\":0,\"DID_INTERVIEW_HAPPEN\":0,\"WAITING_FOR_FEEDBACK\":0,\"WON\":1,\"PROJECT_ALLOCATED\":0,\"REJECTED\":0,\"LOST\":0,\"ON_HOLD\":0,\"NO_LONGER_REQUIRED\":1}"
+ },
+ {
+  "area": "I632",
+  "name": "Won candidate still Won and blocked; other released",
+  "pass": true,
+  "detail": "[[\"WON\",\"SELECTED\"],[\"SHORTLISTED\",\"RELEASED\"]]"
+ },
+ {
+  "area": "I632",
+  "name": "header stats filled<=required",
+  "pass": true,
+  "detail": "{\"shortlistedCount\":1,\"rejectedCount\":0,\"filledCount\":1,\"requiredCount\":1}"
+ },
+ {
+  "area": "I632",
+  "name": "after reopen WON=1 and seats return to Pending",
+  "pass": true,
+  "detail": "[200,{\"PENDING_TO_SHORTLIST\":1,\"SHORTLISTED\":0,\"WAITING_FOR_APPROVAL\":0,\"BEING_PREPARED\":0,\"INTERVIEW_SCHEDULED\":0,\"DID_INTERVIEW_HAPPEN\":0,\"WAITING_FOR_FEEDBACK\":0,\"WON\":1,\"PROJECT_ALLOCATED\":0,\"REJECTED\":0,\"LOST\":0,\"ON_HOLD\":0,\"NO_LONGER_REQUIRED\":0}]"
+ },
+ {
+  "area": "I632",
+  "name": "UI Kanban: Won column has the card",
+  "pass": true,
+  "detail": "[\"Won column, 1 card\",\"Project Allocated column, 0 cards\",\"No Longer Required column, 1 card\"]"
+ },
+ {
+  "area": "I632",
+  "name": "regression I628: OPP-0334 Project Allocated stays in its column",
+  "pass": true,
+  "detail": "{\"PENDING_TO_SHORTLIST\":0,\"SHORTLISTED\":0,\"WAITING_FOR_APPROVAL\":0,\"BEING_PREPARED\":0,\"INTERVIEW_SCHEDULED\":0,\"DID_INTERVIEW_HAPPEN\":0,\"WAITING_FOR_FEEDBACK\":0,\"WON\":0,\"PROJECT_ALLOCATED\":1,\"REJECTED\":0,\"LOST\":0,\"ON_HOLD\":0,\"NO_LONGER_REQUIRED\":1}"
+ },
+ {
+  "area": "I632",
+  "name": "fully filled position cannot be closed (409)",
+  "pass": true,
+  "detail": "[409,\"OPP_188\"]"
+ },
+ {
+  "area": "I633",
+  "name": "Direct + Prospect + no project refused",
+  "pass": false,
+  "detail": "[201,\"OPP_002\",\"Opportunity created successfully\"]"
+ },
+ {
+  "area": "I633",
+  "name": "Direct + Prospect + project given refused (or record)",
+  "pass": true,
+  "detail": "[201,\"OPP_002\",\"Opportunity created successfully\"]"
+ },
+ {
+  "area": "I633",
+  "name": "Direct + Existing + no project refused",
+  "pass": false,
+  "detail": "[201,\"OPP_002\",\"Opportunity created successfully\"]"
+ },
+ {
+  "area": "I633",
+  "name": "valid Direct (Existing client + project) still created",
+  "pass": true,
+  "detail": "[201,\"OPP_002\",\"Opportunity created successfully\"]"
+ },
+ {
+  "area": "I633",
+  "name": "cleanup cancel of the valid Direct ticket",
+  "pass": true,
+  "detail": "[200,\"SUCCESS\"]"
+ },
+ {
+  "area": "I633",
+  "name": "regression: Interview + Prospect + no project still created",
+  "pass": true,
+  "detail": "[201,\"OPP_002\",\"Opportunity created successfully\"]"
+ }
+]

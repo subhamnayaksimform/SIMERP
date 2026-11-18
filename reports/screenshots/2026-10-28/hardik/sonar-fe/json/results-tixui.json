@@ -1,0 +1,183 @@
+{
+  "results": [
+    {
+      "id": "ua-ticket-0",
+      "ok": true,
+      "h": [
+        "Ticket Details",
+        "UA-0127"
+      ],
+      "labels": [
+        "Start Date = 24/08/2026",
+        "End Date = Not specified"
+      ],
+      "dates": {
+        "prevStart": [
+          "\"previousAllocationStartDate\":\"2026-08-24T00:00:00.000Z",
+          "\"previousAllocationStartDate\":\"2026-08-24T00:00:00.000Z",
+          "\"previousAllocationStartDate\":\"2026-08-24T00:00:00.000Z",
+          "\"previousEffectiveStartDate\":\"2026-08-24T00:00:00.000Z"
+        ],
+        "prevEnd": null,
+        "req": [
+          "\"effectiveStartDate\":\"2026-08-24T00:00:00.000Z",
+          "\"effectiveEndDate\":\"2026-09-30T00:00:00.000Z",
+          "\"effectiveStartDate\":\"2026-08-24",
+          "\"effectiveEndDate\":null"
+        ]
+      },
+      "banner": [],
+      "bad": [],
+      "shot": "reports/screenshots/2026-10-28/hardik/sonar-fe/r00-ua-ticket.png",
+      "errs": []
+    },
+    {
+      "id": "ua-ticket-1",
+      "ok": true,
+      "h": [
+        "Ticket Details",
+        "UA-0128"
+      ],
+      "labels": [
+        "Start Date = 25/12/2025",
+        "End Date = 23/05/2027"
+      ],
+      "dates": {
+        "prevStart": [
+          "\"previousAllocationStartDate\":\"2025-12-25T00:00:00.000Z",
+          "\"previousAllocationStartDate\":\"2025-12-25T00:00:00.000Z",
+          "\"previousAllocationStartDate\":\"2025-12-25T00:00:00.000Z",
+          "\"previousEffectiveStartDate\":\"2026-10-18T00:00:00.000Z"
+        ],
+        "prevEnd": [
+          "\"previousAllocationEndDate\":\"2027-05-23T00:00:00.000Z",
+          "\"previousAllocationEndDate\":\"2027-05-23T00:00:00.000Z",
+          "\"previousAllocationEndDate\":\"2027-05-23T00:00:00.000Z",
+          "\"previousEffectiveEndDate\":\"2026-10-23T00:00:00.000Z"
+        ],
+        "req": [
+          "\"effectiveStartDate\":\"2026-10-18T00:00:00.000Z",
+          "\"effectiveEndDate\":\"2026-10-23T00:00:00.000Z",
+          "\"effectiveStartDate\":\"2025-12-25",
+          "\"effectiveEndDate\":\"2027-05-23"
+        ]
+      },
+      "banner": [],
+      "bad": [],
+      "shot": "reports/screenshots/2026-10-28/hardik/sonar-fe/r01-ua-ticket.png",
+      "errs": []
+    },
+    {
+      "id": "ua-ticket-2",
+      "ok": true,
+      "h": [
+        "Ticket Details",
+        "UA-0126"
+      ],
+      "labels": [
+        "Start Date = 22/10/2025",
+        "End Date = 19/11/2026"
+      ],
+      "dates": {
+        "prevStart": [
+          "\"previousAllocationStartDate\":\"2025-10-22T00:00:00.000Z",
+          "\"previousAllocationStartDate\":\"2025-10-22T00:00:00.000Z"
+        ],
+        "prevEnd": [
+          "\"previousAllocationEndDate\":\"2026-11-19T00:00:00.000Z",
+          "\"previousAllocationEndDate\":\"2026-11-19T00:00:00.000Z"
+        ],
+        "req": [
+          "\"effectiveStartDate\":\"2026-09-30T00:00:00.000Z",
+          "\"effectiveEndDate\":\"2026-10-07T00:00:00.000Z"
+        ]
+      },
+      "banner": [],
+      "bad": [],
+      "shot": "reports/screenshots/2026-10-28/hardik/sonar-fe/r02-ua-ticket.png",
+      "errs": []
+    },
+    {
+      "id": "ua-ticket-3",
+      "ok": true,
+      "h": [
+        "Ticket Details",
+        "UA-0135"
+      ],
+      "labels": [
+        "Start Date = 20/10/2026",
+        "End Date = 30/11/2026"
+      ],
+      "dates": {
+        "prevStart": [
+          "\"previousAllocationStartDate\":\"2026-10-20T00:00:00.000Z",
+          "\"previousAllocationStartDate\":\"2026-10-20T00:00:00.000Z"
+        ],
+        "prevEnd": [
+          "\"previousAllocationEndDate\":\"2026-11-30T00:00:00.000Z",
+          "\"previousAllocationEndDate\":\"2026-11-30T00:00:00.000Z"
+        ],
+        "req": [
+          "\"effectiveStartDate\":null",
+          "\"effectiveEndDate\":null",
+          "\"effectiveStartDate\":\"2026-10-20",
+          "\"effectiveEndDate\":\"2026-11-30"
+        ]
+      },
+      "banner": [],
+      "bad": [],
+      "shot": "reports/screenshots/2026-10-28/hardik/sonar-fe/r03-ua-ticket.png",
+      "errs": []
+    },
+    {
+      "id": "ua-ticket-4",
+      "ok": true,
+      "h": [
+        "Ticket Details",
+        "UA-0119"
+      ],
+      "labels": [
+        "Start Date = 16/01/2025",
+        "Current End Date = 15/09/2026",
+        "Requested End Date = 18/09/2026(Extended)"
+      ],
+      "dates": {
+        "prevStart": [
+          "\"previousAllocationStartDate\":\"2025-01-16T00:00:00.000Z",
+          "\"previousAllocationStartDate\":\"2025-01-16T00:00:00.000Z"
+        ],
+        "prevEnd": [
+          "\"previousAllocationEndDate\":\"2026-09-15T00:00:00.000Z",
+          "\"previousAllocationEndDate\":\"2026-09-15T00:00:00.000Z"
+        ],
+        "req": [
+          "\"effectiveStartDate\":\"2025-01-16T00:00:00.000Z",
+          "\"effectiveEndDate\":null"
+        ]
+      },
+      "banner": [],
+      "bad": [],
+      "shot": "reports/screenshots/2026-10-28/hardik/sonar-fe/r04-ua-ticket.png",
+      "errs": []
+    },
+    {
+      "id": "ua-edit-history",
+      "ok": true,
+      "tabs": [
+        "Status Timeline",
+        "Edit History"
+      ],
+      "txt": "Chief Executive Officer\n30/09/26, 03:54 PM\nchanged Allocation %, Effective Till · 2 fields\nAllocation %\n50%\n10%\n(Decrease)\nEffective Till\nNo value\n30/09/2026\n(Added)",
+      "objectLeak": false,
+      "shot": "reports/screenshots/2026-10-28/hardik/sonar-fe/r10-edit-history.png",
+      "errs": []
+    },
+    {
+      "id": "ticket-employee-name-tooltip",
+      "ok": true,
+      "note": "no employee name hover button",
+      "errs": []
+    }
+  ],
+  "errs": []
+}

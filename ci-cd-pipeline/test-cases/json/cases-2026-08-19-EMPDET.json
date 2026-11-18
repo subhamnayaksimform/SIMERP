@@ -1,0 +1,908 @@
+[
+  {
+    "id": "TC-EMPDET-322", "module": "Employee Details",
+    "title": "Editable-field inventory — Edit Drawer exposes every currently-editable field and no more",
+    "category": "boundary", "priority": "high", "severity": "major",
+    "tags": ["@boundary", "@functional"], "automatable": true,
+    "preconditions": "Logged in as ceo@simformsolutions.com (primaryPage fixture)",
+    "testData": { "note": "Enumerate every field rendered in the Edit Drawer and its enabled/disabled state" },
+    "steps": [
+      "Navigate to Employee → Employee Details (Current Employee tab)",
+      "Open the Edit Drawer for the first employee row",
+      "List every field visible in the drawer and record whether each is enabled (editable) or disabled (read-only)"
+    ],
+    "expected": "Field-by-field editable/read-only state is captured; Designation is confirmed disabled (locked); Overall Rating is confirmed editable — matches the live-confirmed behaviour already recorded in employee-details.page.ts",
+    "automationHint": "Reuse getDrawerOverallRatingValue()/setDrawerOverallRating() patterns from employee-details.page.ts; assert Designation field's disabled attribute explicitly rather than skipping it.",
+    "requirementRef": "Manual requirement (2026-08-19): check edit functionality for employee, check for different fields that are editable",
+    "provenance": "requirement-grounded", "confidence": "requirement-grounded"
+  },
+  {
+    "id": "TC-EMPDET-323", "module": "Employee Details",
+    "title": "Editing a locked field (Designation) is not possible via the Edit Drawer",
+    "category": "negative", "priority": "medium", "severity": "major",
+    "tags": ["@negative", "@regression"], "automatable": true,
+    "preconditions": "Logged in as ceo@simformsolutions.com (primaryPage fixture)",
+    "testData": {},
+    "steps": [
+      "Open the Edit Drawer for any employee",
+      "Attempt to interact with the Designation field"
+    ],
+    "expected": "Designation field is disabled and cannot be modified through the UI; no write attempt reaches the API for this field",
+    "automationHint": "Confirmed live 2026-08-19 per employee-details.page.ts header comment — assert `disabled` attribute rather than attempting a fill and expecting a rejection.",
+    "requirementRef": "KB-direct: employee-details.json historicalBugs — confirmed locked field",
+    "provenance": "requirement-grounded", "confidence": "requirement-grounded"
+  },
+  {
+    "id": "TC-EMPDET-324", "module": "Employee Details",
+    "title": "Sorting each sortable column toggles ascending/descending with a visible indicator",
+    "category": "functional", "priority": "medium", "severity": "major",
+    "tags": ["@functional", "@regression"], "automatable": true,
+    "preconditions": "Logged in as ceo@simformsolutions.com (primaryPage fixture)",
+    "testData": { "columns": ["Name", "Department", "Designation", "Experience"] },
+    "steps": [
+      "Navigate to Employee → Employee Details",
+      "Click each sortable column header once — assert ascending order and a visible sort-direction indicator",
+      "Click the same header again — assert descending order and the indicator flips"
+    ],
+    "expected": "Each sortable column toggles order on repeat click; sort indicator icon always matches current direction",
+    "automationHint": "",
+    "requirementRef": "Manual requirement (2026-08-19): check filters and sorting from the table",
+    "provenance": "requirement-grounded", "confidence": "requirement-grounded"
+  },
+  {
+    "id": "TC-EMPDET-325", "module": "Employee Details",
+    "title": "Sort stability when multiple rows share the same value in the sorted column",
+    "category": "boundary", "priority": "low", "severity": "minor",
+    "tags": ["@boundary", "@needs-verification"], "automatable": true,
+    "preconditions": "Logged in as ceo@simformsolutions.com (primaryPage fixture)",
+    "testData": {},
+    "steps": [
+      "Sort by a column where multiple rows share an identical value (e.g. Department)",
+      "Record the relative order of the tied rows",
+      "Re-apply the same sort and compare"
+    ],
+    "expected": "Tied rows keep a stable, repeatable relative order across repeated sorts of the same direction",
+    "automationHint": "NOTE: underlying rule is speculative — verify with a human before treating a failure as a confirmed regression. Secondary sort key not documented in requirements.",
+    "requirementRef": "Regression: sorting (SIM ERP intelligent coverage)",
+    "provenance": "regression-derived", "confidence": "speculative"
+  },
+  {
+    "id": "TC-EMPDET-326", "module": "Employee Details",
+    "title": "Advanced Filter panel — apply a field filter and Save persists the applied criteria",
+    "category": "functional", "priority": "high", "severity": "major",
+    "tags": ["@functional"], "automatable": true,
+    "preconditions": "Logged in as ceo@simformsolutions.com (primaryPage fixture)",
+    "testData": { "field": "Department", "value": "Engineering" },
+    "steps": [
+      "Open the Advanced Filter panel",
+      "Set a value for one field (e.g. Department = Engineering)",
+      "Click Save",
+      "Observe the grid and the result-count badge"
+    ],
+    "expected": "Grid shows only rows matching the applied criteria; result-count badge matches the filtered row count; filter panel reflects the applied state when reopened",
+    "automationHint": "",
+    "requirementRef": "Manual requirement (2026-08-19): check filters from the advanced filter button for some fields randomly (check the save button)",
+    "provenance": "requirement-grounded", "confidence": "requirement-grounded"
+  },
+  {
+    "id": "TC-EMPDET-327", "module": "Employee Details",
+    "title": "Advanced Filter panel — Clear All resets every applied criterion and restores the unfiltered list",
+    "category": "functional", "priority": "high", "severity": "major",
+    "tags": ["@functional", "@regression"], "automatable": true,
+    "preconditions": "Logged in as ceo@simformsolutions.com (primaryPage fixture)",
+    "testData": {},
+    "steps": [
+      "Apply two or more Advanced Filter criteria and Save",
+      "Reopen the Advanced Filter panel and click Clear All",
+      "Observe the panel fields and the grid"
+    ],
+    "expected": "All filter fields in the panel reset to empty/default; grid returns to the full unfiltered list for the current tab; result-count badge equals the total row count",
+    "automationHint": "",
+    "requirementRef": "Manual requirement (2026-08-19): check filters from the advanced filter button (check the clear all button)",
+    "provenance": "requirement-grounded", "confidence": "requirement-grounded"
+  },
+  {
+    "id": "TC-EMPDET-328", "module": "Employee Details",
+    "title": "Advanced Filter — combining multiple fields narrows results to the intersection of all criteria",
+    "category": "functional", "priority": "medium", "severity": "major",
+    "tags": ["@functional"], "automatable": true,
+    "preconditions": "Logged in as ceo@simformsolutions.com (primaryPage fixture)",
+    "testData": { "fields": ["Department", "Experience range"] },
+    "steps": [
+      "Open Advanced Filter and set values on two different fields simultaneously",
+      "Click Save",
+      "Verify every visible row satisfies BOTH criteria"
+    ],
+    "expected": "Grid shows only rows matching the AND-combination of all applied Advanced Filter criteria, not the union",
+    "automationHint": "",
+    "requirementRef": "Manual requirement (2026-08-19): check filters from the advanced filter button for some fields randomly",
+    "provenance": "requirement-grounded", "confidence": "requirement-grounded"
+  },
+  {
+    "id": "TC-EMPDET-329", "module": "Employee Details",
+    "title": "Advanced Filter — Save with no criteria changed is a no-op and leaves the current list untouched",
+    "category": "boundary", "priority": "low", "severity": "minor",
+    "tags": ["@boundary", "@needs-verification"], "automatable": true,
+    "preconditions": "Logged in as ceo@simformsolutions.com (primaryPage fixture)",
+    "testData": {},
+    "steps": [
+      "Open Advanced Filter without changing any field",
+      "Click Save"
+    ],
+    "expected": "Grid and result-count remain unchanged; no error is thrown",
+    "automationHint": "NOTE: underlying rule is speculative — verify with a human before treating a failure as a confirmed regression.",
+    "requirementRef": "Regression: ui-state (SIM ERP intelligent coverage)",
+    "provenance": "regression-derived", "confidence": "speculative"
+  },
+  {
+    "id": "TC-EMPDET-330", "module": "Employee Details",
+    "title": "Column Preference control — hiding a column removes it from the grid immediately",
+    "category": "functional", "priority": "medium", "severity": "major",
+    "tags": ["@functional"], "automatable": true,
+    "preconditions": "Logged in as ceo@simformsolutions.com (primaryPage fixture)",
+    "testData": {},
+    "steps": [
+      "Open the Column Preference control above the Employee grid",
+      "Deselect one currently-visible column",
+      "Close the control and observe the grid header"
+    ],
+    "expected": "The deselected column's header and cells are no longer rendered in the grid",
+    "automationHint": "Exact dropdown item labels are unconfirmed against the live app (see employee-details.json edgeCases) — describe the control generically by role/position rather than a guessed label.",
+    "requirementRef": "Manual requirement (2026-08-19): check for user column preference button too",
+    "provenance": "requirement-grounded", "confidence": "requirement-grounded"
+  },
+  {
+    "id": "TC-EMPDET-331", "module": "Employee Details",
+    "title": "Column Preference control — re-enabling a hidden column restores it to the grid",
+    "category": "functional", "priority": "medium", "severity": "minor",
+    "tags": ["@functional"], "automatable": true,
+    "preconditions": "Logged in as ceo@simformsolutions.com (primaryPage fixture)",
+    "testData": {},
+    "steps": [
+      "Hide a column via Column Preference",
+      "Reopen Column Preference and re-select the same column"
+    ],
+    "expected": "The column reappears in the grid at its previous position with correct data",
+    "automationHint": "",
+    "requirementRef": "Manual requirement (2026-08-19): check for user column preference button too",
+    "provenance": "requirement-grounded", "confidence": "requirement-grounded"
+  },
+  {
+    "id": "TC-EMPDET-332", "module": "Employee Details",
+    "title": "Column Preference selection persists across a page refresh (F5)",
+    "category": "boundary", "priority": "low", "severity": "minor",
+    "tags": ["@boundary", "@needs-verification"], "automatable": true,
+    "preconditions": "Logged in as ceo@simformsolutions.com (primaryPage fixture)",
+    "testData": {},
+    "steps": [
+      "Hide a column via Column Preference",
+      "Refresh the page (F5)",
+      "Observe whether the column remains hidden"
+    ],
+    "expected": "Behaviour is either: preference persists per-user across reload, OR resets to default — whichever is the intended design; test documents actual behaviour for human confirmation",
+    "automationHint": "NOTE: underlying rule is speculative — verify with a human before treating a failure as a confirmed regression. Persistence mechanism (localStorage/API/session) not specified in requirements.",
+    "requirementRef": "Regression: ui-state (SIM ERP intelligent coverage)",
+    "provenance": "regression-derived", "confidence": "speculative"
+  },
+  {
+    "id": "TC-EMPDET-333", "module": "Employee Details",
+    "title": "Search by employee name filters the grid to matching rows",
+    "category": "functional", "priority": "high", "severity": "major",
+    "tags": ["@functional"], "automatable": true,
+    "preconditions": "Logged in as ceo@simformsolutions.com (primaryPage fixture)",
+    "testData": {},
+    "steps": [
+      "Read a real employee name from the first grid row",
+      "Type it into the search field",
+      "Observe filtered results"
+    ],
+    "expected": "Only rows whose name matches the search term remain visible; result-count badge reflects the filtered count",
+    "automationHint": "",
+    "requirementRef": "Manual requirement (2026-08-19): use search button for name, email or project",
+    "provenance": "requirement-grounded", "confidence": "requirement-grounded"
+  },
+  {
+    "id": "TC-EMPDET-334", "module": "Employee Details",
+    "title": "Search by employee email filters the grid to matching rows",
+    "category": "functional", "priority": "high", "severity": "major",
+    "tags": ["@functional"], "automatable": true,
+    "preconditions": "Logged in as ceo@simformsolutions.com (primaryPage fixture)",
+    "testData": {},
+    "steps": [
+      "Read a real employee email from the grid/drawer",
+      "Type it into the search field",
+      "Observe filtered results"
+    ],
+    "expected": "Only the row(s) matching that email remain visible",
+    "automationHint": "",
+    "requirementRef": "Manual requirement (2026-08-19): use search button for name, email or project",
+    "provenance": "requirement-grounded", "confidence": "requirement-grounded"
+  },
+  {
+    "id": "TC-EMPDET-335", "module": "Employee Details",
+    "title": "Search by project name returns only employees allocated to that project",
+    "category": "functional", "priority": "high", "severity": "major",
+    "tags": ["@functional"], "automatable": true,
+    "preconditions": "Logged in as ceo@simformsolutions.com (primaryPage fixture)",
+    "testData": {},
+    "steps": [
+      "Read a real project name from an employee's allocated-projects list",
+      "Type it into the search field",
+      "Observe filtered results"
+    ],
+    "expected": "Only employees allocated to that project remain visible in the grid",
+    "automationHint": "",
+    "requirementRef": "Manual requirement (2026-08-19): use search button for name, email or project",
+    "provenance": "requirement-grounded", "confidence": "requirement-grounded"
+  },
+  {
+    "id": "TC-EMPDET-336", "module": "Employee Details",
+    "title": "Search with no matches shows the empty state and a zero count",
+    "category": "boundary", "priority": "medium", "severity": "minor",
+    "tags": ["@boundary"], "automatable": true,
+    "preconditions": "Logged in as ceo@simformsolutions.com (primaryPage fixture)",
+    "testData": { "searchTerm": "zzzznonexistentqqq" },
+    "steps": [
+      "Type a search term guaranteed not to match any employee/email/project",
+      "Observe the grid"
+    ],
+    "expected": "Empty-state message is shown; result-count badge shows 0; no JS error",
+    "automationHint": "",
+    "requirementRef": "Manual requirement (2026-08-19): use search button for name, email or project",
+    "provenance": "requirement-grounded", "confidence": "requirement-grounded"
+  },
+  {
+    "id": "TC-EMPDET-337", "module": "Employee Details",
+    "title": "Clearing the search field restores the full unfiltered list",
+    "category": "functional", "priority": "medium", "severity": "major",
+    "tags": ["@functional", "@regression"], "automatable": true,
+    "preconditions": "Logged in as ceo@simformsolutions.com (primaryPage fixture)",
+    "testData": {},
+    "steps": [
+      "Search by name, project, or email",
+      "Clear the search field",
+      "Observe the grid"
+    ],
+    "expected": "Full employee list is restored; result-count badge equals the total row count",
+    "automationHint": "",
+    "requirementRef": "Manual requirement (2026-08-19): use search button for name, email or project",
+    "provenance": "requirement-grounded", "confidence": "requirement-grounded"
+  },
+  {
+    "id": "TC-EMPDET-338", "module": "Employee Details",
+    "title": "Clicking a project in the employee's details opens a popup with project info, an Edit section, and a Deallocate button",
+    "category": "smoke", "priority": "critical", "severity": "critical",
+    "tags": ["@smoke", "@functional"], "automatable": true,
+    "preconditions": "Logged in as ceo@simformsolutions.com (primaryPage fixture)",
+    "testData": {},
+    "steps": [
+      "Open an employee row with at least one allocated project",
+      "Click on that project entry",
+      "Observe the resulting popup/drawer"
+    ],
+    "expected": "A popup opens showing the project's allocation details, an Edit section for editable fields, and a Deallocate button",
+    "automationHint": "",
+    "requirementRef": "Manual requirement (2026-08-19): check for any project in the employee detail — there should be a pop up opened and an edit section should be there and deallocate button should also be there",
+    "provenance": "requirement-grounded", "confidence": "requirement-grounded"
+  },
+  {
+    "id": "TC-EMPDET-339", "module": "Employee Details",
+    "title": "Editing the allocation end date in the project popup persists and reflects immediately",
+    "category": "functional", "priority": "high", "severity": "major",
+    "tags": ["@functional"], "automatable": true,
+    "preconditions": "Logged in as ceo@simformsolutions.com (primaryPage fixture)",
+    "testData": { "newEndDate": "+30 days from current allocation end date" },
+    "steps": [
+      "Open the project popup for an allocated project",
+      "In the Edit section, change the Allocation End Date to a new valid date",
+      "Save"
+    ],
+    "expected": "Popup closes or shows success; reopening the same project popup shows the updated end date without a page reload",
+    "automationHint": "",
+    "requirementRef": "Manual requirement (2026-08-19): try editing and change allocation end date too and any other field that is editable",
+    "provenance": "requirement-grounded", "confidence": "requirement-grounded"
+  },
+  {
+    "id": "TC-EMPDET-340", "module": "Employee Details",
+    "title": "Editing other editable fields in the project popup (e.g. allocation %) persists correctly",
+    "category": "functional", "priority": "medium", "severity": "major",
+    "tags": ["@functional"], "automatable": true,
+    "preconditions": "Logged in as ceo@simformsolutions.com (primaryPage fixture)",
+    "testData": {},
+    "steps": [
+      "Open the project popup Edit section",
+      "Enumerate which fields besides Allocation End Date are editable",
+      "Modify one such field and save"
+    ],
+    "expected": "Saved value reflects immediately in the popup and in the employee's project list, without page reload",
+    "automationHint": "",
+    "requirementRef": "Manual requirement (2026-08-19): try editing and change allocation end date too and any other field that is editable",
+    "provenance": "requirement-grounded", "confidence": "requirement-grounded"
+  },
+  {
+    "id": "TC-EMPDET-341", "module": "Employee Details",
+    "title": "Setting allocation end date before the allocation start date is rejected",
+    "category": "negative", "priority": "medium", "severity": "major",
+    "tags": ["@negative", "@boundary"], "automatable": true,
+    "preconditions": "Logged in as ceo@simformsolutions.com (primaryPage fixture)",
+    "testData": { "endDate": "before startDate" },
+    "steps": [
+      "Open the project popup Edit section",
+      "Set Allocation End Date to a date earlier than the Allocation Start Date",
+      "Attempt to save"
+    ],
+    "expected": "A validation error is shown; the invalid date is not persisted",
+    "automationHint": "",
+    "requirementRef": "Regression: validation (cross-field date rule, implicit from allocation end-date editability)",
+    "provenance": "regression-derived", "confidence": "speculative"
+  },
+  {
+    "id": "TC-EMPDET-342", "module": "Employee Details",
+    "title": "Clicking Deallocate opens a popup requiring details before confirming",
+    "category": "functional", "priority": "high", "severity": "major",
+    "tags": ["@functional"], "automatable": true,
+    "preconditions": "Logged in as ceo@simformsolutions.com (primaryPage fixture)",
+    "testData": {},
+    "steps": [
+      "Open the project popup for an allocated project",
+      "Click Deallocate",
+      "Observe the resulting popup"
+    ],
+    "expected": "A dedicated Deallocate popup opens with fields to fill in before the action can be confirmed",
+    "automationHint": "Deallocation flow is already documented as stacked 3 dialog layers deep in employee-details.json edgeCases — verify the confirmation layer is reachable without breaking the underlying drawer stack.",
+    "requirementRef": "Manual requirement (2026-08-19): when selecting deallocate employee there should be a pop up opened and try to fill these details",
+    "provenance": "requirement-grounded", "confidence": "requirement-grounded"
+  },
+  {
+    "id": "TC-EMPDET-343", "module": "Employee Details",
+    "title": "Completing the Deallocate popup removes the allocation and triggers an in-app notification",
+    "category": "functional", "priority": "high", "severity": "major",
+    "tags": ["@functional"], "automatable": true,
+    "preconditions": "Logged in as ceo@simformsolutions.com (primaryPage fixture)",
+    "testData": {},
+    "steps": [
+      "Open the Deallocate popup for an allocated project",
+      "Fill in the required deallocation details (e.g. reason/date)",
+      "Confirm the deallocation",
+      "Check the in-app notification center/bell icon"
+    ],
+    "expected": "Employee is deallocated from the project; the project no longer appears in their allocated-projects list; a new in-app notification referencing this deallocation (employee/project) appears",
+    "automationHint": "Exact notification UI location is unconfirmed against the live app — describe generically (notification bell/center) rather than a specific selector.",
+    "requirementRef": "Manual requirement (2026-08-19): when selecting deallocate employee ... check if notification is received in app",
+    "provenance": "requirement-grounded", "confidence": "requirement-grounded"
+  },
+  {
+    "id": "TC-EMPDET-344", "module": "Employee Details",
+    "title": "Cancelling the Deallocate confirmation makes no change to the allocation",
+    "category": "negative", "priority": "high", "severity": "major",
+    "tags": ["@negative", "@regression"], "automatable": true,
+    "preconditions": "Logged in as ceo@simformsolutions.com (primaryPage fixture)",
+    "testData": {},
+    "steps": [
+      "Open the Deallocate popup",
+      "Fill in some/all fields",
+      "Cancel/dismiss instead of confirming"
+    ],
+    "expected": "Employee remains allocated to the project exactly as before; no partial deallocation occurs",
+    "automationHint": "Ties to the existing confirmed business rule: destructive actions require confirmation and cancel must make no change.",
+    "requirementRef": "KB-direct: employee-details.json businessRules — confirmation-before-destructive-action",
+    "provenance": "requirement-grounded", "confidence": "requirement-grounded"
+  },
+  {
+    "id": "TC-EMPDET-345", "module": "Employee Details",
+    "title": "Submitting the Deallocate popup with a required field missing is blocked with a validation message",
+    "category": "negative", "priority": "medium", "severity": "major",
+    "tags": ["@negative", "@boundary"], "automatable": true,
+    "preconditions": "Logged in as ceo@simformsolutions.com (primaryPage fixture)",
+    "testData": {},
+    "steps": [
+      "Open the Deallocate popup",
+      "Leave a required field empty",
+      "Attempt to confirm"
+    ],
+    "expected": "Deallocation is blocked; an inline validation message identifies the missing field; no partial deallocation occurs",
+    "automationHint": "",
+    "requirementRef": "Manual requirement (2026-08-19): when selecting deallocate employee there should be a pop up opened and try to fill these details",
+    "provenance": "requirement-grounded", "confidence": "requirement-grounded"
+  },
+  {
+    "id": "TC-EMPDET-346", "module": "Employee Details",
+    "title": "Clicking an employee row (not a project) opens a popup showing projects and other details correctly",
+    "category": "smoke", "priority": "critical", "severity": "critical",
+    "tags": ["@smoke", "@functional"], "automatable": true,
+    "preconditions": "Logged in as ceo@simformsolutions.com (primaryPage fixture)",
+    "testData": {},
+    "steps": [
+      "Click on an employee row (outside of a specific project entry)",
+      "Observe the resulting popup"
+    ],
+    "expected": "A popup opens showing the employee's projects and other summary details, all correctly rendered (no blank/broken sections)",
+    "automationHint": "",
+    "requirementRef": "Manual requirement (2026-08-19): when clicked on any employee there is a pop up opened from there check if projects and other details are visible properly",
+    "provenance": "requirement-grounded", "confidence": "requirement-grounded"
+  },
+  {
+    "id": "TC-EMPDET-347", "module": "Employee Details",
+    "title": "From the employee popup, 'View Employee Profile' opens the full profile view",
+    "category": "smoke", "priority": "critical", "severity": "critical",
+    "tags": ["@smoke", "@functional"], "automatable": true,
+    "preconditions": "Logged in as ceo@simformsolutions.com (primaryPage fixture)",
+    "testData": {},
+    "steps": [
+      "Open the employee popup for any employee",
+      "Click the option to view the employee's profile",
+      "Observe the resulting profile view"
+    ],
+    "expected": "Full employee profile opens with all detail sections (personal info, skills, projects, goals, etc.) visible",
+    "automationHint": "Exact control label ('View Profile'/'View Employee Profile') unconfirmed against live app — locate generically by role/text near the popup's action area.",
+    "requirementRef": "Manual requirement (2026-08-19): in the same popup there is an option to view the employee profile where all the details will be visible",
+    "provenance": "requirement-grounded", "confidence": "requirement-grounded"
+  },
+  {
+    "id": "TC-EMPDET-348", "module": "Employee Details",
+    "title": "Employee Profile — Personal Information section displays all confirmed fields",
+    "category": "functional", "priority": "high", "severity": "major",
+    "tags": ["@functional"], "automatable": true,
+    "preconditions": "Logged in as ceo@simformsolutions.com (primaryPage fixture)",
+    "testData": {},
+    "steps": [
+      "Open an employee's full profile",
+      "Locate the Personal Information section",
+      "Verify each displayed field has a value or an explicit empty-state (not blank/undefined)"
+    ],
+    "expected": "Personal Information renders correctly for every field, with no 'undefined'/blank leaks",
+    "automationHint": "",
+    "requirementRef": "Manual requirement (2026-08-19): a employee can see personal information and edit data using edit button",
+    "provenance": "requirement-grounded", "confidence": "requirement-grounded"
+  },
+  {
+    "id": "TC-EMPDET-349", "module": "Employee Details",
+    "title": "Employee Profile — Edit button makes Personal Information fields editable and Save persists changes",
+    "category": "functional", "priority": "high", "severity": "major",
+    "tags": ["@functional"], "automatable": true,
+    "preconditions": "Logged in as ceo@simformsolutions.com (primaryPage fixture)",
+    "testData": {},
+    "steps": [
+      "Open an employee's full profile",
+      "Click Edit on the Personal Information section",
+      "Modify one editable field",
+      "Save"
+    ],
+    "expected": "Field becomes editable only after clicking Edit; Save persists the new value and the profile reflects it immediately without reload",
+    "automationHint": "",
+    "requirementRef": "Manual requirement (2026-08-19): an employee can see personal information and edit data using edit button",
+    "provenance": "requirement-grounded", "confidence": "requirement-grounded"
+  },
+  {
+    "id": "TC-EMPDET-350", "module": "Employee Details",
+    "title": "Employee Profile — Skills section shows the employee's skills segregated into Primary and Secondary",
+    "category": "functional", "priority": "high", "severity": "major",
+    "tags": ["@functional", "@regression"], "automatable": true,
+    "preconditions": "Logged in as ceo@simformsolutions.com (primaryPage fixture)",
+    "testData": {},
+    "steps": [
+      "Open an employee's full profile",
+      "Locate the Skills section"
+    ],
+    "expected": "Skills are shown grouped/labelled by Primary and Secondary classification, consistent with the Skills module's own classification for this employee",
+    "automationHint": "Cross-check against the Skills module's Skill Detail Panel for the same employee for consistency (integration).",
+    "requirementRef": "Manual requirement (2026-08-19): they can modify skills too and segregate them with primary or secondary",
+    "provenance": "requirement-grounded", "confidence": "requirement-grounded"
+  },
+  {
+    "id": "TC-EMPDET-351", "module": "Employee Details",
+    "title": "Employee Profile — modifying a skill's classification from the profile reflects in the Skills module",
+    "category": "integration", "priority": "high", "severity": "major",
+    "tags": ["@regression", "@functional"], "automatable": true,
+    "preconditions": "Logged in as ceo@simformsolutions.com (primaryPage fixture)",
+    "testData": {},
+    "steps": [
+      "From the employee profile's Skills section, change one skill from Secondary to Primary (or vice versa)",
+      "Save",
+      "Navigate to Employee → Skills and open the Skill Detail Panel for the same skill/department"
+    ],
+    "expected": "The employee appears under the newly-set classification (Primary/Secondary) in the Skills module without any further action",
+    "automationHint": "Multi-module flow — verify both surfaces reconcile to the same underlying data.",
+    "requirementRef": "Manual requirement (2026-08-19): they can modify skills too and segregate them with primary or secondary",
+    "provenance": "requirement-grounded", "confidence": "requirement-grounded"
+  },
+  {
+    "id": "TC-EMPDET-352", "module": "Employee Details",
+    "title": "Employee Profile — a LinkedIn profile URL can be added and is saved/displayed correctly",
+    "category": "functional", "priority": "medium", "severity": "major",
+    "tags": ["@functional", "@needs-verification"], "automatable": true,
+    "preconditions": "Logged in as ceo@simformsolutions.com (primaryPage fixture)",
+    "testData": { "linkedInUrl": "https://www.linkedin.com/in/sample-profile" },
+    "steps": [
+      "Open an employee's full profile in edit mode",
+      "Enter a valid LinkedIn profile URL",
+      "Save",
+      "Reopen the profile"
+    ],
+    "expected": "LinkedIn URL is saved and displayed, ideally as a clickable link opening the correct profile",
+    "automationHint": "NOTE: underlying rule is speculative — verify with a human before treating a failure as a confirmed regression. Field location/label not present in any prior KB/design-brief capture — this is a newly reported feature (2026-08-19).",
+    "requirementRef": "Manual requirement (2026-08-19): linkedin profile can be added to the profile as well",
+    "provenance": "requirement-grounded", "confidence": "inferred"
+  },
+  {
+    "id": "TC-EMPDET-353", "module": "Employee Details",
+    "title": "Employee Profile — an invalid (non-URL) value in the LinkedIn field is rejected",
+    "category": "negative", "priority": "low", "severity": "minor",
+    "tags": ["@negative", "@boundary", "@needs-verification"], "automatable": true,
+    "preconditions": "Logged in as ceo@simformsolutions.com (primaryPage fixture)",
+    "testData": { "invalidValue": "not-a-url" },
+    "steps": [
+      "Open the LinkedIn field in edit mode",
+      "Enter a value that is not a valid URL",
+      "Attempt to save"
+    ],
+    "expected": "A validation error is shown; the invalid value is not persisted",
+    "automationHint": "NOTE: underlying rule is speculative — verify with a human before treating a failure as a confirmed regression.",
+    "requirementRef": "Regression: validation (implicit from LinkedIn URL field)",
+    "provenance": "regression-derived", "confidence": "speculative"
+  },
+  {
+    "id": "TC-EMPDET-354", "module": "Employee Details",
+    "title": "Employee Profile — Visa Information: a new visa record can be added",
+    "category": "functional", "priority": "high", "severity": "major",
+    "tags": ["@functional", "@needs-verification"], "automatable": true,
+    "preconditions": "Logged in as ceo@simformsolutions.com (primaryPage fixture)",
+    "testData": { "note": "Exact required fields (country, visa type, number, expiry date) unconfirmed against live app" },
+    "steps": [
+      "Open an employee's full profile",
+      "Locate the Visa Information section and choose to add a new record",
+      "Fill in the required fields",
+      "Save"
+    ],
+    "expected": "New visa record appears in the Visa Information list with the entered values, without page reload",
+    "automationHint": "NOTE: underlying rule is speculative — verify with a human before treating a failure as a confirmed regression. Newly reported feature (2026-08-19) — field set unconfirmed.",
+    "requirementRef": "Manual requirement (2026-08-19): visa information can be edited, deleted or a new one can be added",
+    "provenance": "requirement-grounded", "confidence": "inferred"
+  },
+  {
+    "id": "TC-EMPDET-355", "module": "Employee Details",
+    "title": "Employee Profile — Visa Information: an existing visa record can be edited",
+    "category": "functional", "priority": "high", "severity": "major",
+    "tags": ["@functional", "@needs-verification"], "automatable": true,
+    "preconditions": "Logged in as ceo@simformsolutions.com (primaryPage fixture)",
+    "testData": {},
+    "steps": [
+      "Open the Visa Information section for an employee with an existing visa record",
+      "Edit the record (e.g. change expiry date)",
+      "Save"
+    ],
+    "expected": "Updated values are reflected in the Visa Information list immediately, without page reload",
+    "automationHint": "NOTE: underlying rule is speculative — verify with a human before treating a failure as a confirmed regression.",
+    "requirementRef": "Manual requirement (2026-08-19): visa information can be edited, deleted or a new one can be added",
+    "provenance": "requirement-grounded", "confidence": "inferred"
+  },
+  {
+    "id": "TC-EMPDET-356", "module": "Employee Details",
+    "title": "Employee Profile — Visa Information: deleting a record requires confirmation and removes it once confirmed",
+    "category": "functional", "priority": "high", "severity": "major",
+    "tags": ["@functional", "@regression", "@needs-verification"], "automatable": true,
+    "preconditions": "Logged in as ceo@simformsolutions.com (primaryPage fixture)",
+    "testData": {},
+    "steps": [
+      "Open the Visa Information section for an employee with an existing visa record",
+      "Click Delete on that record",
+      "Confirm the resulting confirmation dialog"
+    ],
+    "expected": "A confirmation dialog appears before deletion; once confirmed, the record is removed from the list immediately",
+    "automationHint": "NOTE: underlying rule is speculative — verify with a human before treating a failure as a confirmed regression. Confirmation-before-destructive-action is an established SIM ERP pattern elsewhere in this module.",
+    "requirementRef": "Manual requirement (2026-08-19): visa information can be edited, deleted or a new one can be added",
+    "provenance": "requirement-grounded", "confidence": "inferred"
+  },
+  {
+    "id": "TC-EMPDET-357", "module": "Employee Details",
+    "title": "Employee Profile — Visa Information: cancelling the delete confirmation leaves the record unchanged",
+    "category": "negative", "priority": "medium", "severity": "major",
+    "tags": ["@negative", "@regression", "@needs-verification"], "automatable": true,
+    "preconditions": "Logged in as ceo@simformsolutions.com (primaryPage fixture)",
+    "testData": {},
+    "steps": [
+      "Click Delete on a visa record",
+      "Cancel/dismiss the confirmation dialog instead of confirming"
+    ],
+    "expected": "The visa record remains present and unchanged in the list",
+    "automationHint": "NOTE: underlying rule is speculative — verify with a human before treating a failure as a confirmed regression.",
+    "requirementRef": "Regression: confirmation dialog cancel-makes-no-change pattern",
+    "provenance": "regression-derived", "confidence": "speculative"
+  },
+  {
+    "id": "TC-EMPDET-358", "module": "Employee Details",
+    "title": "Employee Profile — Projects section lists every project the employee is currently allocated to (read-only)",
+    "category": "functional", "priority": "high", "severity": "major",
+    "tags": ["@functional"], "automatable": true,
+    "preconditions": "Logged in as ceo@simformsolutions.com (primaryPage fixture)",
+    "testData": {},
+    "steps": [
+      "Open the full profile for an employee allocated to one or more projects",
+      "Locate the Projects section"
+    ],
+    "expected": "All currently-allocated projects are listed; count matches the employee's allocation count shown elsewhere (grid/popup); no edit controls are exposed here (read-only view)",
+    "automationHint": "",
+    "requirementRef": "Manual requirement (2026-08-19): employee can see all the projects and pr reviewer where they are already allocated",
+    "provenance": "requirement-grounded", "confidence": "requirement-grounded"
+  },
+  {
+    "id": "TC-EMPDET-359", "module": "Employee Details",
+    "title": "Employee Profile — PR Reviewer section shows the confirmed Project/Frequency table",
+    "category": "functional", "priority": "medium", "severity": "major",
+    "tags": ["@functional"], "automatable": true,
+    "preconditions": "Logged in as ceo@simformsolutions.com (primaryPage fixture)",
+    "testData": { "columns": ["Project", "Frequency"], "confirmedFrequencyValues": ["Occasionally", "Very Rarely", "Not at all", "Frequently"] },
+    "steps": [
+      "Open the full profile for an employee registered as a PR Reviewer on at least one project",
+      "Open the 'PR Reviewer' popup/section"
+    ],
+    "expected": "A dialog titled 'PR Reviewer' shows a table with Project and Frequency columns; frequency values are one of the confirmed set (Occasionally/Very Rarely/Not at all/Frequently/etc.)",
+    "automationHint": "Verbatim title and column layout confirmed via figma-employee-module-design-brief.md node 26709:253255 — safe to assert the literal title text.",
+    "requirementRef": "Manual requirement (2026-08-19): employee can see all the projects and pr reviewer where they are already allocated",
+    "provenance": "requirement-grounded", "confidence": "requirement-grounded"
+  },
+  {
+    "id": "TC-EMPDET-360", "module": "Employee Details",
+    "title": "Employee Profile — Goals section shows the goals assigned to this employee",
+    "category": "integration", "priority": "high", "severity": "major",
+    "tags": ["@functional", "@regression"], "automatable": true,
+    "preconditions": "Logged in as ceo@simformsolutions.com (primaryPage fixture)",
+    "testData": {},
+    "steps": [
+      "Open the full profile for an employee with at least one assigned Goal",
+      "Locate the Goals section",
+      "Cross-check against Employee → Goals listing for the same employee"
+    ],
+    "expected": "Goals assigned to the employee are listed and match what the Goals module shows for that employee (same names, no missing/extra entries)",
+    "automationHint": "Multi-module flow — cross-reference GoalsPage assignment data for the same employee.",
+    "requirementRef": "Manual requirement (2026-08-19): employee can see goals too",
+    "provenance": "requirement-grounded", "confidence": "requirement-grounded"
+  },
+  {
+    "id": "TC-EMPDET-361", "module": "Employee Details",
+    "title": "'Login as Employee' from the profile switches the session into that employee's view",
+    "category": "smoke", "priority": "critical", "severity": "critical",
+    "tags": ["@smoke", "@functional", "@needs-verification"], "automatable": true,
+    "preconditions": "Logged in as ceo@simformsolutions.com (primaryPage fixture)",
+    "testData": {},
+    "steps": [
+      "Open the full profile for an active employee",
+      "Click the option to log in / view as that employee",
+      "Observe the resulting session/view"
+    ],
+    "expected": "The app now presents the impersonated employee's own view (their nav, permissions, and data scope) rather than the Admin's",
+    "automationHint": "NOTE: underlying rule is speculative — verify with a human before treating a failure as a confirmed regression. Control label/mechanism unconfirmed against live app; describe generically ('login as employee' action) rather than a guessed selector.",
+    "requirementRef": "Manual requirement (2026-08-19): there will be an option to login as employee and then we can imitate as the employee in the system",
+    "provenance": "requirement-grounded", "confidence": "inferred"
+  },
+  {
+    "id": "TC-EMPDET-362", "module": "Employee Details",
+    "title": "While impersonating, the employee's project view matches what they would see logged in themselves",
+    "category": "functional", "priority": "high", "severity": "major",
+    "tags": ["@functional", "@needs-verification"], "automatable": true,
+    "preconditions": "Logged in as ceo@simformsolutions.com (primaryPage fixture), then impersonating a target employee",
+    "testData": {},
+    "steps": [
+      "Start impersonating an employee via 'Login as Employee'",
+      "Navigate to their Projects view",
+      "Compare against that employee's actual allocation data (as seen from the Admin's Employee Details view)"
+    ],
+    "expected": "Impersonated view shows exactly the projects that employee is allocated to — nothing more, nothing less",
+    "automationHint": "NOTE: underlying rule is speculative — verify with a human before treating a failure as a confirmed regression.",
+    "requirementRef": "Manual requirement (2026-08-19): how the project will be visible to them where we can perform all the action that a employee can perform",
+    "provenance": "requirement-grounded", "confidence": "inferred"
+  },
+  {
+    "id": "TC-EMPDET-363", "module": "Employee Details",
+    "title": "While impersonating, adding/self-assigning a skill succeeds and reflects on the real employee's record",
+    "category": "integration", "priority": "high", "severity": "major",
+    "tags": ["@functional", "@needs-verification"], "automatable": true,
+    "preconditions": "Impersonating a target employee via 'Login as Employee'",
+    "testData": {},
+    "steps": [
+      "While impersonating, add/self-assign a new skill exactly as that employee would",
+      "Exit impersonation back to Admin",
+      "Open the real employee's profile/Skills section"
+    ],
+    "expected": "The skill added while impersonating is present on the employee's actual record — no data is lost or attributed to the wrong account",
+    "automationHint": "NOTE: underlying rule is speculative — verify with a human before treating a failure as a confirmed regression. Multi-module flow.",
+    "requirementRef": "Manual requirement (2026-08-19): we can perform all the action that a employee can perform according to the permission it have like for example add skill",
+    "provenance": "requirement-grounded", "confidence": "inferred"
+  },
+  {
+    "id": "TC-EMPDET-364", "module": "Employee Details",
+    "title": "While impersonating, editing Visa Information (if permitted for that employee) succeeds",
+    "category": "functional", "priority": "medium", "severity": "major",
+    "tags": ["@functional", "@needs-verification"], "automatable": true,
+    "preconditions": "Impersonating a target employee via 'Login as Employee'",
+    "testData": {},
+    "steps": [
+      "While impersonating, open Visa Information",
+      "Add or edit a visa record as that employee",
+      "Exit impersonation and verify from the Admin view"
+    ],
+    "expected": "The visa change made while impersonating is present on the employee's actual record",
+    "automationHint": "NOTE: underlying rule is speculative — verify with a human before treating a failure as a confirmed regression.",
+    "requirementRef": "Manual requirement (2026-08-19): add skill and visa information or whatever is editable for the employee",
+    "provenance": "requirement-grounded", "confidence": "inferred"
+  },
+  {
+    "id": "TC-EMPDET-365", "module": "Employee Details",
+    "title": "While impersonating, an action not permitted for the employee's actual role is blocked or hidden",
+    "category": "security", "priority": "high", "severity": "minor",
+    "tags": ["@security", "@needs-verification"], "automatable": true,
+    "preconditions": "Impersonating a target employee whose role lacks a specific permission (e.g. cannot delete Goals)",
+    "testData": {},
+    "steps": [
+      "While impersonating, attempt an action the impersonated employee's role does not permit (e.g. delete a Goal)",
+      "Observe the UI and, if possible, the API response"
+    ],
+    "expected": "The action's control is hidden/disabled in the UI; a direct API attempt (if exercised) returns 403 — impersonation never grants MORE access than the real employee has",
+    "automationHint": "NOTE: underlying rule is speculative — verify with a human before treating a failure as a confirmed regression. Severity capped per low-confidence provenance rule despite being a security case.",
+    "requirementRef": "Regression: rbac (impersonation must respect the impersonated employee's own permission scope)",
+    "provenance": "regression-derived", "confidence": "speculative"
+  },
+  {
+    "id": "TC-EMPDET-366", "module": "Employee Details",
+    "title": "Exiting impersonation returns cleanly to the original Admin session with no residual employee-scoped state",
+    "category": "functional", "priority": "high", "severity": "major",
+    "tags": ["@functional", "@security", "@needs-verification"], "automatable": true,
+    "preconditions": "Impersonating a target employee via 'Login as Employee'",
+    "testData": {},
+    "steps": [
+      "While impersonating, note the current nav/permissions",
+      "Use the exit-impersonation control to return to the Admin session",
+      "Verify the Admin's own nav/permissions and data scope are restored"
+    ],
+    "expected": "Admin session is fully restored (own permissions, own data scope); no leftover employee-scoped UI state remains",
+    "automationHint": "NOTE: underlying rule is speculative — verify with a human before treating a failure as a confirmed regression. Exit mechanism unconfirmed against live app.",
+    "requirementRef": "Manual requirement (2026-08-19): we can imitate as the employee in the system (implies a return path exists)",
+    "provenance": "requirement-grounded", "confidence": "inferred"
+  },
+  {
+    "id": "TC-EMPDET-367", "module": "Employee Details",
+    "title": "Impersonation never allows escalation beyond the impersonated employee's own data scope (IDOR-style check)",
+    "category": "security", "priority": "high", "severity": "minor",
+    "tags": ["@security", "@needs-verification"], "automatable": true,
+    "preconditions": "Impersonating a target employee",
+    "testData": {},
+    "steps": [
+      "While impersonating employee A, attempt to access employee B's private data by changing an ID in the URL or a request payload"
+    ],
+    "expected": "Access is denied (403/404); impersonation is scoped strictly to the one employee it was started for",
+    "automationHint": "NOTE: underlying rule is speculative — verify with a human before treating a failure as a confirmed regression. Severity capped per low-confidence provenance rule despite being a security case.",
+    "requirementRef": "Regression: rbac — IDOR",
+    "provenance": "regression-derived", "confidence": "speculative"
+  },
+  {
+    "id": "TC-EMPDET-368", "module": "Employee Details",
+    "title": "Past Employees tab — viewing a past employee's profile shows their historical information",
+    "category": "functional", "priority": "high", "severity": "major",
+    "tags": ["@functional"], "automatable": true,
+    "preconditions": "Logged in as ceo@simformsolutions.com (primaryPage fixture)",
+    "testData": {},
+    "steps": [
+      "Switch to the Past Employees tab",
+      "Open the full profile for a past employee"
+    ],
+    "expected": "Profile opens showing that employee's historical information (personal info, prior projects, skills, etc.)",
+    "automationHint": "",
+    "requirementRef": "Manual requirement (2026-08-19): for the past employee section we can see their information",
+    "provenance": "requirement-grounded", "confidence": "requirement-grounded"
+  },
+  {
+    "id": "TC-EMPDET-369", "module": "Employee Details",
+    "title": "Past Employees — 'Login as Employee' / impersonation is available from the past employee's profile",
+    "category": "functional", "priority": "medium", "severity": "major",
+    "tags": ["@functional", "@needs-verification"], "automatable": true,
+    "preconditions": "Logged in as ceo@simformsolutions.com (primaryPage fixture)",
+    "testData": {},
+    "steps": [
+      "Open a past employee's full profile",
+      "Locate and use the impersonation control"
+    ],
+    "expected": "Impersonation is available and behaves consistently with the active-employee flow",
+    "automationHint": "NOTE: underlying rule is speculative — verify with a human before treating a failure as a confirmed regression.",
+    "requirementRef": "Manual requirement (2026-08-19): similarly we can imitate using their profile [for past employees]",
+    "provenance": "requirement-grounded", "confidence": "inferred"
+  },
+  {
+    "id": "TC-EMPDET-370", "module": "Employee Details",
+    "title": "Past Employee profile remains read-only apart from the impersonation entry point",
+    "category": "regression", "priority": "high", "severity": "major",
+    "tags": ["@regression"], "automatable": true,
+    "preconditions": "Logged in as ceo@simformsolutions.com (primaryPage fixture)",
+    "testData": {},
+    "steps": [
+      "Open a past employee's full profile",
+      "Enumerate every control on the page (excluding the impersonation entry point)"
+    ],
+    "expected": "No edit affordance is present anywhere on a past employee's profile besides the ability to log in / view as them",
+    "automationHint": "Ties to existing confirmed KB rule: 'Archived/Past-employee side drawer must remain read-only (no edit affordance beyond the close icon)'.",
+    "requirementRef": "KB-direct: employee-details.json edgeCases — archived/past-employee read-only rule",
+    "provenance": "requirement-grounded", "confidence": "requirement-grounded"
+  },
+  {
+    "id": "TC-EMPDET-371", "module": "Employee Details",
+    "title": "Allocation End Date shown in the project popup matches the value returned by the corresponding API endpoint after save",
+    "category": "integration", "priority": "medium", "severity": "minor",
+    "tags": ["@regression", "@needs-verification"], "automatable": true,
+    "preconditions": "Logged in as ceo@simformsolutions.com (primaryPage fixture)",
+    "testData": {},
+    "steps": [
+      "Edit and save the Allocation End Date via the project popup",
+      "Capture the PUT/PATCH response or the subsequent GET for that allocation",
+      "Compare the API value with the UI-displayed value"
+    ],
+    "expected": "UI-displayed Allocation End Date exactly matches the API's stored value",
+    "automationHint": "NOTE: underlying rule is speculative — verify with a human before treating a failure as a confirmed regression.",
+    "requirementRef": "Regression: data-integrity — API/UI value parity after write",
+    "provenance": "regression-derived", "confidence": "speculative"
+  },
+  {
+    "id": "TC-EMPDET-372", "module": "Employee Details",
+    "title": "After deallocation, the project's allocation count decrements everywhere without a page refresh",
+    "category": "regression", "priority": "medium", "severity": "minor",
+    "tags": ["@regression", "@needs-verification"], "automatable": true,
+    "preconditions": "Logged in as ceo@simformsolutions.com (primaryPage fixture)",
+    "testData": {},
+    "steps": [
+      "Note the allocation/employee count for a project before deallocating one employee",
+      "Complete the Deallocate flow for that employee",
+      "Without reloading, re-check the count on the employee list, the project popup, and (if reachable) the API"
+    ],
+    "expected": "All three sources (list, popup, API) show the decremented count immediately, with no page refresh required",
+    "automationHint": "NOTE: underlying rule is speculative — verify with a human before treating a failure as a confirmed regression.",
+    "requirementRef": "Regression: data-integrity — count consistency after Deallocation",
+    "provenance": "regression-derived", "confidence": "speculative"
+  },
+  {
+    "id": "TC-EMPDET-373", "module": "Employee Details",
+    "title": "Double-clicking Save on the Employee Profile edit form does not create a duplicate write or corrupt data",
+    "category": "boundary", "priority": "medium", "severity": "minor",
+    "tags": ["@boundary", "@needs-verification"], "automatable": true,
+    "preconditions": "Logged in as ceo@simformsolutions.com (primaryPage fixture)",
+    "testData": {},
+    "steps": [
+      "Open the Employee Profile edit form",
+      "Change a field",
+      "Click Save twice in rapid succession"
+    ],
+    "expected": "Exactly one update is applied; no duplicate record or corrupted field value results",
+    "automationHint": "NOTE: underlying rule is speculative — verify with a human before treating a failure as a confirmed regression.",
+    "requirementRef": "Regression: data-integrity — rapid double-submit",
+    "provenance": "regression-derived", "confidence": "speculative"
+  },
+  {
+    "id": "TC-EMPDET-374", "module": "Employee Details",
+    "title": "The in-app deallocation notification content correctly identifies the employee and project",
+    "category": "functional", "priority": "medium", "severity": "minor",
+    "tags": ["@functional"], "automatable": true,
+    "preconditions": "Logged in as ceo@simformsolutions.com (primaryPage fixture)",
+    "testData": {},
+    "steps": [
+      "Complete a Deallocate flow for a known employee/project pair",
+      "Open the resulting in-app notification",
+      "Read its content"
+    ],
+    "expected": "Notification text correctly names the deallocated employee and the project, not a generic/blank message",
+    "automationHint": "Depends on TC-EMPDET-343 confirming the notification exists — this case verifies content correctness specifically.",
+    "requirementRef": "Manual requirement (2026-08-19): check if notification is received in app",
+    "provenance": "requirement-grounded", "confidence": "requirement-grounded"
+  },
+  {
+    "id": "TC-EMPDET-375", "module": "Employee Details",
+    "title": "Restricted-role session cannot use 'Login as Employee' to impersonate a higher-privilege user",
+    "category": "security", "priority": "high", "severity": "minor",
+    "tags": ["@security", "@needs-verification"], "automatable": true,
+    "preconditions": "Logged in as punit.patel@simformsolutions.com (testUserPage fixture)",
+    "testData": {},
+    "steps": [
+      "As a non-Admin (TM/Employee) session, attempt to locate or invoke a 'Login as Employee' control for any employee, especially one with higher privilege"
+    ],
+    "expected": "The impersonation control is absent for non-privileged roles, or — at minimum — cannot target a higher-privilege account; a direct API attempt (if exercised) returns 403",
+    "automationHint": "NOTE: underlying rule is speculative — verify with a human before treating a failure as a confirmed regression. Severity capped per low-confidence provenance rule despite being a security case.",
+    "requirementRef": "Regression: rbac — impersonation privilege-escalation guard",
+    "provenance": "regression-derived", "confidence": "speculative"
+  }
+]

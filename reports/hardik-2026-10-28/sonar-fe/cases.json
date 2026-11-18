@@ -1,0 +1,2119 @@
+[
+  {
+    "id": "TC-SONFE-001",
+    "module": "Sonar Clean-up – Frontend Regression",
+    "moduleCode": "SONFE",
+    "subModule": "Roles & Permissions",
+    "taskId": "SI4-T1564",
+    "title": "Permission matrix loads all modules with header backgrounds",
+    "category": "regression",
+    "priority": "P2",
+    "severity": "Medium",
+    "tags": [
+      "@regression",
+      "@ui"
+    ],
+    "role": "Admin (smit.shah)",
+    "preconditions": "Logged in on DEV frontend 6.5.0 (T1564 merged 23/10, PR #517). Read-only: dialogs opened and cancelled, nothing saved.",
+    "steps": [
+      "See title; run scripts/admin.js"
+    ],
+    "expected": "31 module header rows render; parent/child/active backgrounds unchanged",
+    "requirementRef": "dc4ed458 PermissionTable.tsx; 26d9f277 PermissionMatrix/PermissionCell",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "lastResult": "passed",
+    "actualResult": "{\"id\":\"rbac-load\",\"ok\":true,\"count\":31}",
+    "notes": "",
+    "screenshot": "reports/screenshots/2026-10-28/hardik/sonar-fe/a01-rbac-matrix.png"
+  },
+  {
+    "id": "TC-SONFE-002",
+    "module": "Sonar Clean-up – Frontend Regression",
+    "moduleCode": "SONFE",
+    "subModule": "Roles & Permissions",
+    "taskId": "SI4-T1564",
+    "title": "Active module row keeps highlighted background",
+    "category": "regression",
+    "priority": "P2",
+    "severity": "Medium",
+    "tags": [
+      "@regression",
+      "@ui"
+    ],
+    "role": "Admin (smit.shah)",
+    "preconditions": "Logged in on DEV frontend 6.5.0 (T1564 merged 23/10, PR #517). Read-only: dialogs opened and cancelled, nothing saved.",
+    "steps": [
+      "See title; run scripts/admin.js"
+    ],
+    "expected": "Active module header keeps bg-muted",
+    "requirementRef": "dc4ed458 PermissionTable.tsx:53",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "lastResult": "passed",
+    "actualResult": "{\"id\":\"rbac-active-module\",\"ok\":true,\"clicked\":null,\"active\":[{\"id\":\"allocations\",\"cell\":[\"font-semibold\",\"bg-muted\"],\"cell2\":[\"bg-muted\"],\"bg\":[\"oklch(0.968 0.004 264)\",\"oklch(0.968 0.004 264)\",\"oklch(0.968 0.004 264)\"]}]}",
+    "notes": "",
+    "screenshot": "reports/screenshots/2026-10-28/hardik/sonar-fe/a02-rbac-active-module.png"
+  },
+  {
+    "id": "TC-SONFE-003",
+    "module": "Sonar Clean-up – Frontend Regression",
+    "moduleCode": "SONFE",
+    "subModule": "Roles & Permissions",
+    "taskId": "SI4-T1564",
+    "title": "Module search filters matrix and clears back",
+    "category": "regression",
+    "priority": "P2",
+    "severity": "Medium",
+    "tags": [
+      "@regression",
+      "@ui"
+    ],
+    "role": "Admin (smit.shah)",
+    "preconditions": "Logged in on DEV frontend 6.5.0 (T1564 merged 23/10, PR #517). Read-only: dialogs opened and cancelled, nothing saved.",
+    "steps": [
+      "See title; run scripts/admin.js"
+    ],
+    "expected": "\"goal\" shows only matching modules; clearing restores 31",
+    "requirementRef": "26d9f277 PermissionMatrix.tsx",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "lastResult": "passed",
+    "actualResult": "{\"id\":\"rbac-search\",\"ok\":true,\"labels\":[\"Assign Goals\",\"Employees\",\"Dashboard\",\"Goals\",\"Skills\"],\"none\":true,\"after\":31}",
+    "notes": "",
+    "screenshot": "reports/screenshots/2026-10-28/hardik/sonar-fe/a03-rbac-search-goal.png"
+  },
+  {
+    "id": "TC-SONFE-004",
+    "module": "Sonar Clean-up – Frontend Regression",
+    "moduleCode": "SONFE",
+    "subModule": "Roles & Permissions",
+    "taskId": "SI4-T1564",
+    "title": "Collapse/expand a module accordion",
+    "category": "regression",
+    "priority": "P2",
+    "severity": "Medium",
+    "tags": [
+      "@regression",
+      "@ui"
+    ],
+    "role": "Admin (smit.shah)",
+    "preconditions": "Logged in on DEV frontend 6.5.0 (T1564 merged 23/10, PR #517). Read-only: dialogs opened and cancelled, nothing saved.",
+    "steps": [
+      "See title; run scripts/admin.js"
+    ],
+    "expected": "Row count drops on collapse and returns on expand",
+    "requirementRef": "26d9f277 ModuleAccordion.tsx",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "lastResult": "passed",
+    "actualResult": "{\"id\":\"rbac-collapse-expand\",\"ok\":true,\"before\":151,\"mid\":143,\"after\":151}",
+    "notes": "",
+    "screenshot": ""
+  },
+  {
+    "id": "TC-SONFE-005",
+    "module": "Sonar Clean-up – Frontend Regression",
+    "moduleCode": "SONFE",
+    "subModule": "Roles & Permissions",
+    "taskId": "SI4-T1564",
+    "title": "Role columns render in header",
+    "category": "regression",
+    "priority": "P2",
+    "severity": "Medium",
+    "tags": [
+      "@regression",
+      "@ui"
+    ],
+    "role": "Admin (smit.shah)",
+    "preconditions": "Logged in on DEV frontend 6.5.0 (T1564 merged 23/10, PR #517). Read-only: dialogs opened and cancelled, nothing saved.",
+    "steps": [
+      "See title; run scripts/admin.js"
+    ],
+    "expected": "All 11 roles shown as columns",
+    "requirementRef": "26d9f277 PermissionTableHeader.tsx",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "lastResult": "passed",
+    "actualResult": "{\"id\":\"rbac-header-roles\",\"ok\":true,\"ths\":[\"Action Permission\",\"EMPLOYEE\",\"RM\",\"TM\",\"EM\",\"ADMIN\",\"PM\",\"PMO\",\"CSM\",\"DM\",\"GOAL MANAGER\",\"PROGRAM OWNER\",\"\"]}",
+    "notes": "",
+    "screenshot": ""
+  },
+  {
+    "id": "TC-SONFE-006",
+    "module": "Sonar Clean-up – Frontend Regression",
+    "moduleCode": "SONFE",
+    "subModule": "Roles & Permissions",
+    "taskId": "SI4-T1564",
+    "title": "Scope cells show Self/Team/Department/All",
+    "category": "regression",
+    "priority": "P2",
+    "severity": "Medium",
+    "tags": [
+      "@regression",
+      "@ui"
+    ],
+    "role": "Admin (smit.shah)",
+    "preconditions": "Logged in on DEV frontend 6.5.0 (T1564 merged 23/10, PR #517). Read-only: dialogs opened and cancelled, nothing saved.",
+    "steps": [
+      "See title; run scripts/admin.js"
+    ],
+    "expected": "Scope labels render; no blank or raw values",
+    "requirementRef": "26d9f277 PermissionCell.tsx; usePermissionDiff.ts",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "lastResult": "passed",
+    "actualResult": "{\"id\":\"rbac-scope-cell\",\"ok\":true,\"n\":814,\"texts\":[\"Self\",\"Team\",\"Department\",\"All\",\"—\"],\"items\":[]}",
+    "notes": "",
+    "screenshot": "reports/screenshots/2026-10-28/hardik/sonar-fe/a05-rbac-scope-menu.png"
+  },
+  {
+    "id": "TC-SONFE-007",
+    "module": "Sonar Clean-up – Frontend Regression",
+    "moduleCode": "SONFE",
+    "subModule": "Roles & Permissions",
+    "taskId": "SI4-T1564",
+    "title": "Add New Role dialog opens, validates, cancels",
+    "category": "regression",
+    "priority": "P2",
+    "severity": "Medium",
+    "tags": [
+      "@regression",
+      "@ui"
+    ],
+    "role": "Admin (smit.shah)",
+    "preconditions": "Logged in on DEV frontend 6.5.0 (T1564 merged 23/10, PR #517). Read-only: dialogs opened and cancelled, nothing saved.",
+    "steps": [
+      "See title; run scripts/gap*.js"
+    ],
+    "expected": "Dialog opens; empty submit blocked; Cancel closes",
+    "requirementRef": "26d9f277 AddNewRoleDialog.tsx",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "lastResult": "blocked",
+    "actualResult": "{\"id\":\"rbac-add-role-dialog\",\"ok\":false,\"error\":\"locator.click: Timeout 8000ms exceeded.\\nCall log:\\n  - waiting for getByRole('button', { name: /add.*role|new role|create role/i }).first()\\n\"}",
+    "notes": "Button hidden by design: ADMIN has only read:roles (no update:roles). No dev account with update:roles available.",
+    "screenshot": ""
+  },
+  {
+    "id": "TC-SONFE-008",
+    "module": "Sonar Clean-up – Frontend Regression",
+    "moduleCode": "SONFE",
+    "subModule": "Roles & Permissions",
+    "taskId": "SI4-T1564",
+    "title": "Duplicate role dialog pre-fills name",
+    "category": "regression",
+    "priority": "P2",
+    "severity": "Medium",
+    "tags": [
+      "@regression",
+      "@ui"
+    ],
+    "role": "Admin (smit.shah)",
+    "preconditions": "Logged in on DEV frontend 6.5.0 (T1564 merged 23/10, PR #517). Read-only: dialogs opened and cancelled, nothing saved.",
+    "steps": [
+      "See title; run scripts/gap*.js"
+    ],
+    "expected": "Dialog opens with copied name; Cancel closes",
+    "requirementRef": "26d9f277 DuplicateRoleDialog.tsx",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "lastResult": "blocked",
+    "actualResult": "{\"id\":\"rbac-duplicate-dialog\",\"ok\":true,\"note\":\"no role-column menu\",\"n\":0}",
+    "notes": "Role-column menu hidden for ADMIN (needs update:roles).",
+    "screenshot": ""
+  },
+  {
+    "id": "TC-SONFE-009",
+    "module": "Sonar Clean-up – Frontend Regression",
+    "moduleCode": "SONFE",
+    "subModule": "Assign User Roles",
+    "taskId": "SI4-T1564",
+    "title": "Assign User Roles list loads with disabled role picker",
+    "category": "regression",
+    "priority": "P2",
+    "severity": "Medium",
+    "tags": [
+      "@regression",
+      "@ui"
+    ],
+    "role": "Admin (smit.shah)",
+    "preconditions": "Logged in on DEV frontend 6.5.0 (T1564 merged 23/10, PR #517). Read-only: dialogs opened and cancelled, nothing saved.",
+    "steps": [
+      "See title; run scripts/admin.js"
+    ],
+    "expected": "\"Select employee(s) first\" disabled until a row is picked; 3632 rows",
+    "requirementRef": "26d9f277 AddUserForm.tsx",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "lastResult": "passed",
+    "actualResult": "{\"id\":\"aur-load\",\"ok\":true,\"rolePh\":{\"text\":\"Select employee(s) first\",\"disabled\":true},\"pager\":[\"Showing 1 - 100 of 3632 results\"],\"bad\":[]}",
+    "notes": "",
+    "screenshot": "reports/screenshots/2026-10-28/hardik/sonar-fe/a08-assign-user-roles.png"
+  },
+  {
+    "id": "TC-SONFE-010",
+    "module": "Sonar Clean-up – Frontend Regression",
+    "moduleCode": "SONFE",
+    "subModule": "Assign User Roles",
+    "taskId": "SI4-T1564",
+    "title": "Edit Employee dialog opens and cancels",
+    "category": "regression",
+    "priority": "P2",
+    "severity": "Medium",
+    "tags": [
+      "@regression",
+      "@ui"
+    ],
+    "role": "Admin (smit.shah)",
+    "preconditions": "Logged in on DEV frontend 6.5.0 (T1564 merged 23/10, PR #517). Read-only: dialogs opened and cancelled, nothing saved.",
+    "steps": [
+      "See title; run scripts/admin.js"
+    ],
+    "expected": "Dialog titled \"Edit Employee\"; Cancel closes without saving",
+    "requirementRef": "26d9f277 EditEmployeeDialog.tsx",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "lastResult": "passed",
+    "actualResult": "{\"id\":\"aur-edit-dialog-cancel\",\"ok\":true,\"names\":[\"Edit Chief Executive Officer\",\"Show 37 more departments\"],\"title\":\"Edit Employee\",\"closed\":true}",
+    "notes": "",
+    "screenshot": "reports/screenshots/2026-10-28/hardik/sonar-fe/a09-aur-edit-dialog.png"
+  },
+  {
+    "id": "TC-SONFE-011",
+    "module": "Sonar Clean-up – Frontend Regression",
+    "moduleCode": "SONFE",
+    "subModule": "Assign User Roles",
+    "taskId": "SI4-T1564",
+    "title": "Delete role assignment dialog opens and cancels",
+    "category": "regression",
+    "priority": "P2",
+    "severity": "Medium",
+    "tags": [
+      "@regression",
+      "@ui"
+    ],
+    "role": "Admin (smit.shah)",
+    "preconditions": "Logged in on DEV frontend 6.5.0 (T1564 merged 23/10, PR #517). Read-only: dialogs opened and cancelled, nothing saved.",
+    "steps": [
+      "See title; run scripts/gap*.js"
+    ],
+    "expected": "Confirm dialog opens; Cancel closes",
+    "requirementRef": "26d9f277 DeleteEmployeeRoleDialog.tsx",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "lastResult": "blocked",
+    "actualResult": "{\"id\":\"aur-delete-dialog-cancel\",\"ok\":true,\"rowBtns\":[\"Edit Chief Executive Officer\",\"Show 37 more departments\"],\"note\":\"no delete control in first row\"}",
+    "notes": "No delete control: ADMIN lacks delete:assign_roles.",
+    "screenshot": ""
+  },
+  {
+    "id": "TC-SONFE-012",
+    "module": "Sonar Clean-up – Frontend Regression",
+    "moduleCode": "SONFE",
+    "subModule": "Admin",
+    "taskId": "SI4-T1564",
+    "title": "Job queue scheduler loads both tabs",
+    "category": "regression",
+    "priority": "P2",
+    "severity": "Medium",
+    "tags": [
+      "@regression",
+      "@ui"
+    ],
+    "role": "Admin (smit.shah)",
+    "preconditions": "Logged in on DEV frontend 6.5.0 (T1564 merged 23/10, PR #517). Read-only: dialogs opened and cancelled, nothing saved.",
+    "steps": [
+      "See title; run scripts/admin.js"
+    ],
+    "expected": "Sync Jobs / Scheduled Jobs tabs render",
+    "requirementRef": "26d9f277 jobQueueColumns.tsx, cronRunColumns.tsx",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "lastResult": "passed",
+    "actualResult": "{\"id\":\"jobq\",\"ok\":true,\"url\":\"https://simerp-dev.simform.solutions/admin/job-queue-scheduler\",\"h\":[\"Job Scheduler\",\"No Jobs Found\"],\"tabs\":[\"Sync Jobs\",\"Scheduled Jobs\"],\"outputs\":[],\"bad\":[]}",
+    "notes": "",
+    "screenshot": "reports/screenshots/2026-10-28/hardik/sonar-fe/a11-job-queue.png"
+  },
+  {
+    "id": "TC-SONFE-013",
+    "module": "Sonar Clean-up – Frontend Regression",
+    "moduleCode": "SONFE",
+    "subModule": "Admin",
+    "taskId": "SI4-T1564",
+    "title": "Cron run cells: tooltip buttons align",
+    "category": "regression",
+    "priority": "P2",
+    "severity": "Medium",
+    "tags": [
+      "@regression",
+      "@ui"
+    ],
+    "role": "Admin (smit.shah)",
+    "preconditions": "Logged in on DEV frontend 6.5.0 (T1564 merged 23/10, PR #517). Read-only: dialogs opened and cancelled, nothing saved.",
+    "steps": [
+      "See title; run scripts/admin.js"
+    ],
+    "expected": "Job name/schedule/count buttons left-aligned with tooltips",
+    "requirementRef": "26d9f277 cronRunColumns.tsx:98,161,229",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "lastResult": "blocked",
+    "actualResult": "{\"id\":\"jobq-cron-tab\",\"ok\":true,\"tab0\":{\"name\":\"Sync Jobs\",\"cellBtns\":[],\"sample\":[],\"tip\":null,\"bad\":[]},\"tab1\":{\"name\":\"Scheduled Jobs\",\"cellBtns\":[],\"sample\":[],\"tip\":null,\"bad\":[]}}",
+    "notes": "\"No Jobs Found\" on dev — no cron rows to check the span→button alignment.",
+    "screenshot": ""
+  },
+  {
+    "id": "TC-SONFE-014",
+    "module": "Sonar Clean-up – Frontend Regression",
+    "moduleCode": "SONFE",
+    "subModule": "Admin",
+    "taskId": "SI4-T1564",
+    "title": "Contractors list loads",
+    "category": "regression",
+    "priority": "P2",
+    "severity": "Medium",
+    "tags": [
+      "@regression",
+      "@ui"
+    ],
+    "role": "Admin (smit.shah)",
+    "preconditions": "Logged in on DEV frontend 6.5.0 (T1564 merged 23/10, PR #517). Read-only: dialogs opened and cancelled, nothing saved.",
+    "steps": [
+      "See title; run scripts/admin.js"
+    ],
+    "expected": "Active/Past tabs; 272 rows",
+    "requirementRef": "26d9f277 ContractorTable.tsx",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "lastResult": "passed",
+    "actualResult": "{\"id\":\"contractors\",\"ok\":true,\"url\":\"https://simerp-dev.simform.solutions/admin/contractors\",\"h\":[\"Contractors\",\"Contractors\",\"1\"],\"tabs\":[\"Active Contractors\",\"Past Contractors\"],\"outputs\":[\"Showing 1 - 100 of 272 results\"],\"bad\":[]}",
+    "notes": "",
+    "screenshot": "reports/screenshots/2026-10-28/hardik/sonar-fe/a13-contractors.png"
+  },
+  {
+    "id": "TC-SONFE-015",
+    "module": "Sonar Clean-up – Frontend Regression",
+    "moduleCode": "SONFE",
+    "subModule": "Admin",
+    "taskId": "SI4-T1564",
+    "title": "Teams Notifications tabs load",
+    "category": "regression",
+    "priority": "P2",
+    "severity": "Medium",
+    "tags": [
+      "@regression",
+      "@ui"
+    ],
+    "role": "Admin (smit.shah)",
+    "preconditions": "Logged in on DEV frontend 6.5.0 (T1564 merged 23/10, PR #517). Read-only: dialogs opened and cancelled, nothing saved.",
+    "steps": [
+      "See title; run scripts/admin.js"
+    ],
+    "expected": "4 tabs render",
+    "requirementRef": "26d9f277 schemas/teams-notifications",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "lastResult": "passed",
+    "actualResult": "{\"id\":\"teams-notif\",\"ok\":true,\"url\":\"https://simerp-dev.simform.solutions/admin/teams-notifications\",\"h\":[\"Teams Notifications\"],\"tabs\":[\"Project Manager\",\"CSM\",\"Department\",\"PMO\"],\"outputs\":[],\"bad\":[]}",
+    "notes": "",
+    "screenshot": "reports/screenshots/2026-10-28/hardik/sonar-fe/a14-teams-notifications.png"
+  },
+  {
+    "id": "TC-SONFE-016",
+    "module": "Sonar Clean-up – Frontend Regression",
+    "moduleCode": "SONFE",
+    "subModule": "Department",
+    "taskId": "SI4-T1564",
+    "title": "Department settings tabs load",
+    "category": "regression",
+    "priority": "P2",
+    "severity": "Medium",
+    "tags": [
+      "@regression",
+      "@ui"
+    ],
+    "role": "Admin (smit.shah)",
+    "preconditions": "Logged in on DEV frontend 6.5.0 (T1564 merged 23/10, PR #517). Read-only: dialogs opened and cancelled, nothing saved.",
+    "steps": [
+      "See title; run scripts/admin.js"
+    ],
+    "expected": "Departmental / Weekly Updates Settings tabs",
+    "requirementRef": "26d9f277 DepartmentalSettingsTab.tsx",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "lastResult": "passed",
+    "actualResult": "{\"id\":\"dept-settings\",\"ok\":true,\"url\":\"https://simerp-dev.simform.solutions/department-settings\",\"h\":[\"Department Settings\",\"Departments Settings\"],\"tabs\":[\"Departmental Settings\",\"Weekly Updates Settings\"],\"outputs\":[],\"bad\":[]}",
+    "notes": "",
+    "screenshot": "reports/screenshots/2026-10-28/hardik/sonar-fe/a15-department-settings.png"
+  },
+  {
+    "id": "TC-SONFE-017",
+    "module": "Sonar Clean-up – Frontend Regression",
+    "moduleCode": "SONFE",
+    "subModule": "Department",
+    "taskId": "SI4-T1564",
+    "title": "Weekly update settings switches render",
+    "category": "regression",
+    "priority": "P2",
+    "severity": "Medium",
+    "tags": [
+      "@regression",
+      "@ui"
+    ],
+    "role": "Admin (smit.shah)",
+    "preconditions": "Logged in on DEV frontend 6.5.0 (T1564 merged 23/10, PR #517). Read-only: dialogs opened and cancelled, nothing saved.",
+    "steps": [
+      "See title; run scripts/admin.js"
+    ],
+    "expected": "4 switches; loading state uses <output>",
+    "requirementRef": "26d9f277 + 1b1d0e66 WeeklyUpdateSettingTab.tsx",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "lastResult": "passed",
+    "actualResult": "{\"id\":\"weekly-update-settings\",\"ok\":true,\"tabFound\":1,\"switches\":4,\"liveDivs\":[\"SECTION:\"],\"outputs\":0}",
+    "notes": "",
+    "screenshot": "reports/screenshots/2026-10-28/hardik/sonar-fe/a18-dept-weekly-update-settings.png"
+  },
+  {
+    "id": "TC-SONFE-018",
+    "module": "Sonar Clean-up – Frontend Regression",
+    "moduleCode": "SONFE",
+    "subModule": "Department",
+    "taskId": "SI4-T1564",
+    "title": "Competencies list loads",
+    "category": "regression",
+    "priority": "P2",
+    "severity": "Medium",
+    "tags": [
+      "@regression",
+      "@ui"
+    ],
+    "role": "Admin (smit.shah)",
+    "preconditions": "Logged in on DEV frontend 6.5.0 (T1564 merged 23/10, PR #517). Read-only: dialogs opened and cancelled, nothing saved.",
+    "steps": [
+      "See title; run scripts/admin.js"
+    ],
+    "expected": "Rows and pager render",
+    "requirementRef": "26d9f277 CompetencyTable.tsx",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "lastResult": "passed",
+    "actualResult": "{\"id\":\"competencies\",\"ok\":true,\"url\":\"https://simerp-dev.simform.solutions/competencies?year=2026&departmentIds=d1baf5b2-8213-4925-bb77-f9934094d092\",\"h\":[\"Competencies\",\"Competencies\",\"1\"],\"tabs\":[],\"outputs\":[\"Showing 1 - 2 of 2 results\"],\"bad\":[]}",
+    "notes": "",
+    "screenshot": "reports/screenshots/2026-10-28/hardik/sonar-fe/a16-competencies.png"
+  },
+  {
+    "id": "TC-SONFE-019",
+    "module": "Sonar Clean-up – Frontend Regression",
+    "moduleCode": "SONFE",
+    "subModule": "Employee list",
+    "taskId": "SI4-T1564",
+    "title": "Employee Details list loads with pager",
+    "category": "regression",
+    "priority": "P2",
+    "severity": "Medium",
+    "tags": [
+      "@regression",
+      "@ui"
+    ],
+    "role": "PMO (vihaan.chatterjee)",
+    "preconditions": "Logged in on DEV frontend 6.5.0 (T1564 merged 23/10, PR #517). Read-only: dialogs opened and cancelled, nothing saved.",
+    "steps": [
+      "See title; run scripts/pmo1.js"
+    ],
+    "expected": "\"Showing 1 - 100 of 3648\"",
+    "requirementRef": "26d9f277 EmployeePage.tsx, DataTablePagination",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "lastResult": "passed",
+    "actualResult": "{\"id\":\"emp-list-load\",\"ok\":true,\"out\":[\"Showing 1 - 100 of 3648 results\",\"Showing 3648 results\"],\"url\":\"https://simerp-dev.simform.solutions/employee?sortBy=availabilityPercentage&sortOrder=desc\",\"bad\":[]}",
+    "notes": "",
+    "screenshot": "reports/screenshots/2026-10-28/hardik/sonar-fe/p01-employee-list.png"
+  },
+  {
+    "id": "TC-SONFE-020",
+    "module": "Sonar Clean-up – Frontend Regression",
+    "moduleCode": "SONFE",
+    "subModule": "Employee list",
+    "taskId": "SI4-T1564",
+    "title": "Column sort cycles asc → desc → clear and syncs URL",
+    "category": "regression",
+    "priority": "P2",
+    "severity": "Medium",
+    "tags": [
+      "@regression",
+      "@ui"
+    ],
+    "role": "PMO (vihaan.chatterjee)",
+    "preconditions": "Logged in on DEV frontend 6.5.0 (T1564 merged 23/10, PR #517). Read-only: dialogs opened and cancelled, nothing saved.",
+    "steps": [
+      "See title; run scripts/pmo1.js"
+    ],
+    "expected": "sortBy/sortOrder in URL follow the header state",
+    "requirementRef": "26d9f277 lib/search-params.ts, useEmployeeFilters.ts",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "lastResult": "passed",
+    "actualResult": "{\"id\":\"emp-sort-cycle\",\"ok\":true,\"labels\":[\"Sort ascending@Name\",\"Sort ascending@Department\",\"Sort ascending@UP (System)\",\"Sort ascending@UP (Manual)\",\"Clear sort@Availability %\",\"Sort ascending@Remaining Allocation\"],\"th\":\"Name\",\"seq\":[{\"sortBy\":\"name\",\"sortOrder\":\"asc\",\"aria\":\"Sort descending\"},{\"sortBy\":\"name\",\"sortOrder\":\"desc\",\"aria\":\"Clear sort\"},{\"sortBy\":null,\"sortOrder\":null,\"aria\":\"Sort ",
+    "notes": "",
+    "screenshot": "reports/screenshots/2026-10-28/hardik/sonar-fe/p02-employee-sort.png"
+  },
+  {
+    "id": "TC-SONFE-021",
+    "module": "Sonar Clean-up – Frontend Regression",
+    "moduleCode": "SONFE",
+    "subModule": "Employee list",
+    "taskId": "SI4-T1564",
+    "title": "Page 2 then search resets page",
+    "category": "regression",
+    "priority": "P2",
+    "severity": "Medium",
+    "tags": [
+      "@regression",
+      "@ui"
+    ],
+    "role": "PMO (vihaan.chatterjee)",
+    "preconditions": "Logged in on DEV frontend 6.5.0 (T1564 merged 23/10, PR #517). Read-only: dialogs opened and cancelled, nothing saved.",
+    "steps": [
+      "See title; run scripts/pmo1.js"
+    ],
+    "expected": "search resets page to 1",
+    "requirementRef": "26d9f277 setOrDeleteParam",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "lastResult": "passed",
+    "actualResult": "{\"id\":\"emp-search-page\",\"ok\":true,\"u1\":\"https://simerp-dev.simform.solutions/employee\",\"out1\":[\"Showing 1 - 100 of 3648 results\",\"Showing 3648 results\"],\"u2\":\"https://simerp-dev.simform.solutions/employee?page=2\",\"out2\":[\"Showing 101 - 200 of 3648 results\",\"Showing 3648 results\"],\"u3\":\"https://simerp-dev.simform.solutions/employee?page=2\"}",
+    "notes": "",
+    "screenshot": "reports/screenshots/2026-10-28/hardik/sonar-fe/p03-employee-search-page.png"
+  },
+  {
+    "id": "TC-SONFE-022",
+    "module": "Sonar Clean-up – Frontend Regression",
+    "moduleCode": "SONFE",
+    "subModule": "Employee list",
+    "taskId": "SI4-T1564",
+    "title": "Search \"sagar\" from page 2",
+    "category": "regression",
+    "priority": "P2",
+    "severity": "Medium",
+    "tags": [
+      "@regression",
+      "@ui"
+    ],
+    "role": "PMO (vihaan.chatterjee)",
+    "preconditions": "Logged in on DEV frontend 6.5.0 (T1564 merged 23/10, PR #517). Read-only: dialogs opened and cancelled, nothing saved.",
+    "steps": [
+      "See title; run scripts/pmo2.js"
+    ],
+    "expected": "2 results; page param dropped",
+    "requirementRef": "26d9f277 useEmployeeFilters.ts:127",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "lastResult": "passed",
+    "actualResult": "{\"id\":\"emp-page2-then-search\",\"ok\":true,\"u1\":\"https://simerp-dev.simform.solutions/employee?sortBy=availabilityPercentage&sortOrder=desc&page=2\",\"u2\":\"https://simerp-dev.simform.solutions/employee?sortBy=availabilityPercentage&sortOrder=desc&search=sagar\",\"out2\":[\"Showing 1 - 2 of 2 results\",\"Showing 2 results\"],\"names\":[\"Sagar KhanparaTM10y 2m\",\"Nihar SagarTM2y 1m\"],\"u3\":\"https://simerp-dev.simfo",
+    "notes": "",
+    "screenshot": "reports/screenshots/2026-10-28/hardik/sonar-fe/p06-employee-search-sagar.png"
+  },
+  {
+    "id": "TC-SONFE-023",
+    "module": "Sonar Clean-up – Frontend Regression",
+    "moduleCode": "SONFE",
+    "subModule": "Employee list",
+    "taskId": "SI4-T1564",
+    "title": "Advanced filter panel opens and clears",
+    "category": "regression",
+    "priority": "P2",
+    "severity": "Medium",
+    "tags": [
+      "@regression",
+      "@ui"
+    ],
+    "role": "PMO (vihaan.chatterjee)",
+    "preconditions": "Logged in on DEV frontend 6.5.0 (T1564 merged 23/10, PR #517). Read-only: dialogs opened and cancelled, nothing saved.",
+    "steps": [
+      "See title; run scripts/pmo1.js"
+    ],
+    "expected": "Department list shown; clear removes adv_ params",
+    "requirementRef": "26d9f277 AdvancedFilterPanel.tsx, FilterSection.tsx",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "lastResult": "passed",
+    "actualResult": "{\"id\":\"emp-adv-filter\",\"ok\":true,\"vis\":true,\"txt\":\"DepartmentADMINANDROIDBIBLOCKCHAINCMSCSMDATA ENGINEERINGDELIVERYDESIGNDEVOPSDOT NETENGINEERING MANAGEMENTFLUTTERFRONT ENDGOLANGIOSIOTJAVAL1 SUPPORTLAB & INNOVATIONSMACHINE LEARNINGMANAGEMENTMARKETINGMEAN STACKMERNMS AI BUSINESS SOLUTIONSOPEN SOURCEPOST-SALES BAPRE-SALES BAPROJECT MANAGEMENTPROJECT M\",\"res\":[],\"u\":\"https://simerp-dev.simform.soluti",
+    "notes": "",
+    "screenshot": "reports/screenshots/2026-10-28/hardik/sonar-fe/p04-employee-adv-filter.png"
+  },
+  {
+    "id": "TC-SONFE-024",
+    "module": "Sonar Clean-up – Frontend Regression",
+    "moduleCode": "SONFE",
+    "subModule": "Employee list",
+    "taskId": "SI4-T1564",
+    "title": "Column department filter persists across reload",
+    "category": "regression",
+    "priority": "P2",
+    "severity": "Medium",
+    "tags": [
+      "@regression",
+      "@ui"
+    ],
+    "role": "PMO (vihaan.chatterjee)",
+    "preconditions": "Logged in on DEV frontend 6.5.0 (T1564 merged 23/10, PR #517). Read-only: dialogs opened and cancelled, nothing saved.",
+    "steps": [
+      "See title; run scripts/pmo2.js"
+    ],
+    "expected": "186 rows before and after reload; clear restores",
+    "requirementRef": "26d9f277 replaceAdvancedFilterParams",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "lastResult": "passed",
+    "actualResult": "{\"id\":\"emp-column-filter\",\"ok\":true,\"adv\":[[\"adv_department\",\"a3f54254-b77d-4e15-9be8-1de2d16f4636,69304b79-7ea7-4969-adb3-312bc4682d8e\"]],\"out\":[\"Showing 1 - 100 of 186 results\",\"Showing 186 results\"],\"depts\":[\"ADMIN\"],\"afterReload\":[\"Showing 1 - 100 of 186 results\",\"Showing 186 results\"],\"advAfterClear\":[\"sortBy\",\"sortOrder\",\"adv_department\"]}",
+    "notes": "",
+    "screenshot": "reports/screenshots/2026-10-28/hardik/sonar-fe/p07-employee-dept-filter.png"
+  },
+  {
+    "id": "TC-SONFE-025",
+    "module": "Sonar Clean-up – Frontend Regression",
+    "moduleCode": "SONFE",
+    "subModule": "Employee list",
+    "taskId": "SI4-T1564",
+    "title": "Time range selector options and default",
+    "category": "regression",
+    "priority": "P2",
+    "severity": "Medium",
+    "tags": [
+      "@regression",
+      "@ui"
+    ],
+    "role": "PMO (vihaan.chatterjee)",
+    "preconditions": "Logged in on DEV frontend 6.5.0 (T1564 merged 23/10, PR #517). Read-only: dialogs opened and cancelled, nothing saved.",
+    "steps": [
+      "See title; run scripts/pmo2.js"
+    ],
+    "expected": "Default \"Last 15 days\" not written to URL",
+    "requirementRef": "26d9f277 TimeRangeSelector.tsx",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "lastResult": "passed",
+    "actualResult": "{\"id\":\"emp-timeframe\",\"ok\":true,\"aria\":\"Select time range\",\"items\":[\"Last 5 days\",\"Last 15 days\",\"Last 30 days\",\"Last 3 months\",\"Last 6 months\",\"All time\"],\"cur\":[\"Last 15 days\"],\"timeFrame\":null,\"label\":\"Last 15 days\",\"hdr\":[\"Log Hours\",\"Availability %\"],\"reset\":\"5d\"}",
+    "notes": "",
+    "screenshot": "reports/screenshots/2026-10-28/hardik/sonar-fe/p08-employee-timeframe.png"
+  },
+  {
+    "id": "TC-SONFE-026",
+    "module": "Sonar Clean-up – Frontend Regression",
+    "moduleCode": "SONFE",
+    "subModule": "Employee list",
+    "taskId": "SI4-T1564",
+    "title": "Log hours cell values and badges",
+    "category": "regression",
+    "priority": "P2",
+    "severity": "Medium",
+    "tags": [
+      "@regression",
+      "@ui"
+    ],
+    "role": "PMO (vihaan.chatterjee)",
+    "preconditions": "Logged in on DEV frontend 6.5.0 (T1564 merged 23/10, PR #517). Read-only: dialogs opened and cancelled, nothing saved.",
+    "steps": [
+      "See title; run scripts/pmo2.js"
+    ],
+    "expected": "Hours render; no NaN/blank",
+    "requirementRef": "26d9f277 LogHoursCell.tsx:43, LogHoursIndicatorBadge",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "lastResult": "passed",
+    "actualResult": "{\"id\":\"emp-log-hours-indicators\",\"ok\":true,\"idx\":6,\"cells\":[\"40h\",\"40h\",\"40h\",\"40h\",\"40h\",\"40h\",\"40h\",\"44h\",\"40h\",\"0h 4\",\"30h 1\",\"40h\",\"40h\",\"40h\",\"39h\",\"40h\",\"40h\",\"28h 1\",\"40h\",\"0h 4\",null]}",
+    "notes": "",
+    "screenshot": ""
+  },
+  {
+    "id": "TC-SONFE-027",
+    "module": "Sonar Clean-up – Frontend Regression",
+    "moduleCode": "SONFE",
+    "subModule": "Employee list",
+    "taskId": "SI4-T1564",
+    "title": "UP pill is a focusable button with value-score tooltip",
+    "category": "regression",
+    "priority": "P2",
+    "severity": "Medium",
+    "tags": [
+      "@regression",
+      "@ui"
+    ],
+    "role": "PMO (vihaan.chatterjee)",
+    "preconditions": "Logged in on DEV frontend 6.5.0 (T1564 merged 23/10, PR #517). Read-only: dialogs opened and cancelled, nothing saved.",
+    "steps": [
+      "See title; run scripts/pmo1.js"
+    ],
+    "expected": "Tab focuses pill; tooltip shows score breakdown",
+    "requirementRef": "26d9f277 UpSystemCell.tsx (span→button)",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "lastResult": "passed",
+    "actualResult": "{\"id\":\"emp-up-pill-keyboard\",\"ok\":true,\"focused\":\"BUTTON:P1 · Red\",\"tip\":[\"How Value Score is CalculatedEffective Availability: 100 × 50% = 50Rating: 78 × 30% = 23.4Seniority: 0 × 20% = 0Final Value Score = 73.4 → P1\"]}",
+    "notes": "",
+    "screenshot": "reports/screenshots/2026-10-28/hardik/sonar-fe/p05-up-pill-tooltip.png"
+  },
+  {
+    "id": "TC-SONFE-028",
+    "module": "Sonar Clean-up – Frontend Regression",
+    "moduleCode": "SONFE",
+    "subModule": "Employee list",
+    "taskId": "SI4-T1564",
+    "title": "Guardrail flag is a named button with tooltip",
+    "category": "regression",
+    "priority": "P2",
+    "severity": "Medium",
+    "tags": [
+      "@regression",
+      "@ui"
+    ],
+    "role": "PMO (vihaan.chatterjee)",
+    "preconditions": "Logged in on DEV frontend 6.5.0 (T1564 merged 23/10, PR #517). Read-only: dialogs opened and cancelled, nothing saved.",
+    "steps": [
+      "See title; run scripts/gap*.js"
+    ],
+    "expected": "Native button with aria-label; tooltip on focus; aligned with name",
+    "requirementRef": "26d9f277 UtilizationFlags.tsx:71 (span role=img→button)",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "lastResult": "passed",
+    "actualResult": "{\"id\":\"guardrail-flag-button\",\"ok\":true,\"info\":[{\"al\":null,\"txt\":\"Sagar Khanpara\",\"w\":107,\"h\":20,\"y\":182},{\"al\":\"Seniority guardrail. Senior with spare capacity, while a more junior colleague in this department is booked almost solid.\",\"txt\":\"\",\"w\":14,\"h\":14,\"y\":185},{\"al\":\"Frontend\",\"txt\":\"\",\"w\":14,\"h\":14,\"y\":209}],\"focused\":\"BUTTON:Frontend\",\"tip\":[\"Tech stack: Frontend\"]}",
+    "notes": "",
+    "screenshot": "reports/screenshots/2026-10-28/hardik/sonar-fe/g08-guardrail-flag-focus.png"
+  },
+  {
+    "id": "TC-SONFE-029",
+    "module": "Sonar Clean-up – Frontend Regression",
+    "moduleCode": "SONFE",
+    "subModule": "Employee list",
+    "taskId": "SI4-T1564",
+    "title": "Project badge hover card and Enter opens project",
+    "category": "regression",
+    "priority": "P2",
+    "severity": "Medium",
+    "tags": [
+      "@regression",
+      "@ui"
+    ],
+    "role": "PMO (vihaan.chatterjee)",
+    "preconditions": "Logged in on DEV frontend 6.5.0 (T1564 merged 23/10, PR #517). Read-only: dialogs opened and cancelled, nothing saved.",
+    "steps": [
+      "See title; run scripts/pmo2.js"
+    ],
+    "expected": "Hover card shows allocation/logged hours; Enter works",
+    "requirementRef": "26d9f277 ProjectAllocationBadge.tsx:108,120",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "lastResult": "passed",
+    "actualResult": "{\"id\":\"emp-project-badge-hover\",\"ok\":true,\"tag\":\"BUTTON type=button cls=inline-flex h-[var(--size-badge-height)] items-center gap-1 rounded-md border px\",\"card\":[\"OntimeActiveAllocation%0% (0 hrs/day)Logged Hours %33%Allocation SinceNot specifiedTotal Logged Hours707 Hours\"],\"afterEnter\":{\"url\":\"https://simerp-dev.simform.solutions/employee?sortBy=availabilityPercentage&sortOrder=desc&timeFrame=5d",
+    "notes": "",
+    "screenshot": "reports/screenshots/2026-10-28/hardik/sonar-fe/p09-project-badge-hover.png"
+  },
+  {
+    "id": "TC-SONFE-030",
+    "module": "Sonar Clean-up – Frontend Regression",
+    "moduleCode": "SONFE",
+    "subModule": "Employee list",
+    "taskId": "SI4-T1564",
+    "title": "Project badge click",
+    "category": "regression",
+    "priority": "P2",
+    "severity": "Medium",
+    "tags": [
+      "@regression",
+      "@ui"
+    ],
+    "role": "PMO (vihaan.chatterjee)",
+    "preconditions": "Logged in on DEV frontend 6.5.0 (T1564 merged 23/10, PR #517). Read-only: dialogs opened and cancelled, nothing saved.",
+    "steps": [
+      "See title; run scripts/pmo1.js"
+    ],
+    "expected": "Badge click works on native button",
+    "requirementRef": "26d9f277 ProjectAllocationBadge.tsx",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "lastResult": "passed",
+    "actualResult": "{\"id\":\"emp-project-badge-click\",\"ok\":true,\"idx\":5,\"cells\":[{\"t\":\"Ontime[29]Unassigned[29]L&D[29]Ontime[29]Unassigne\",\"btns\":[\"Ontime\",\"Unassigned\",\"L&D\",\"Ontime\",\"Unassigned\",\"L&D\",\"Project actions\"]},{\"t\":\"1L&D[30]Ontime[29]Unassigned[29]L&D[30]Ontime[29]U\",\"btns\":[\"Developers shadowing this empl\",\"L&D\",\"Ontime\",\"Unassigned\",\"L&D\",\"Ontime\",\"Unassigned\",\"Project actions\"]},{\"t\":\"Ontime[29]Unassign",
+    "notes": "",
+    "screenshot": ""
+  },
+  {
+    "id": "TC-SONFE-031",
+    "module": "Sonar Clean-up – Frontend Regression",
+    "moduleCode": "SONFE",
+    "subModule": "Employee list",
+    "taskId": "SI4-T1564",
+    "title": "\"+N\" projects popover opens by click and keyboard",
+    "category": "regression",
+    "priority": "P2",
+    "severity": "Medium",
+    "tags": [
+      "@regression",
+      "@ui"
+    ],
+    "role": "PMO (vihaan.chatterjee)",
+    "preconditions": "Logged in on DEV frontend 6.5.0 (T1564 merged 23/10, PR #517). Read-only: dialogs opened and cancelled, nothing saved.",
+    "steps": [
+      "See title; run scripts/gap*.js"
+    ],
+    "expected": "Popover with project details opens; Escape closes",
+    "requirementRef": "26d9f277 ProjectsPopover/ProjectsPopoverRow.tsx",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "lastResult": "passed",
+    "actualResult": "{\"id\":\"emp-projects-overflow-popover\",\"ok\":true,\"n\":10,\"label\":\"+1\",\"aria\":{\"al\":null,\"hp\":\"dialog\",\"ex\":\"false\",\"row\":\"\\t\\nPunit Patel\\nLE\\n13y 1m\\n\\tFRONT END\\tP1 · Red\\t\\nP3 · Green\\n\\t\\n22\\nAgilePulse | Sprint Tracker\\nAgilePulse | Sprint Tracker\\n+1\\n\"},\"after\":{\"ex\":\"true\",\"ctrl\":\"radix-_r_45_\"},\"popTxt\":null,\"kbOpen\":\"true\",\"focusBack\":\"Inactive (\"}",
+    "notes": "28/10 failure was a script issue (clicked a clipped edge button). Re-run 29/10: opens on click and Enter (g07-projects-popover-2.png).",
+    "screenshot": ""
+  },
+  {
+    "id": "TC-SONFE-032",
+    "module": "Sonar Clean-up – Frontend Regression",
+    "moduleCode": "SONFE",
+    "subModule": "Employee list",
+    "taskId": "SI4-T1564",
+    "title": "Employee side panel opens with aside landmark",
+    "category": "regression",
+    "priority": "P2",
+    "severity": "Medium",
+    "tags": [
+      "@regression",
+      "@ui"
+    ],
+    "role": "PMO (vihaan.chatterjee)",
+    "preconditions": "Logged in on DEV frontend 6.5.0 (T1564 merged 23/10, PR #517). Read-only: dialogs opened and cancelled, nothing saved.",
+    "steps": [
+      "See title; run scripts/pmo2.js"
+    ],
+    "expected": "aside labelled with employee name",
+    "requirementRef": "26d9f277 SidePanelRoot.tsx (role attr removed, implicit role kept)",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "lastResult": "passed",
+    "actualResult": "{\"id\":\"emp-side-panel\",\"ok\":true,\"nmText\":\"\",\"aside\":[{\"role\":null,\"label\":\"Prachi Dave\",\"hidden\":\"false\"},{\"role\":null,\"label\":\"Advanced filter\",\"hidden\":\"true\"}],\"landmarks\":1,\"iconBtns\":[\"ADMIN\"],\"truncBtns\":[],\"bad\":[],\"txt\":\"Prachi Dave\\nLE\\n\\nprachi.dave@simformsolutions.com\\n\\n5y 1m\\nNo data available\\nLogin as Prachi\\nProjects (4)\\nPROJECT NAME\\tSINCE\\n\\nOntime\\n[13]\\n\\tNo data available\\n",
+    "notes": "",
+    "screenshot": "reports/screenshots/2026-10-28/hardik/sonar-fe/p11-employee-side-panel.png"
+  },
+  {
+    "id": "TC-SONFE-033",
+    "module": "Sonar Clean-up – Frontend Regression",
+    "moduleCode": "SONFE",
+    "subModule": "Employee list",
+    "taskId": "SI4-T1564",
+    "title": "Side panel department icon tooltip",
+    "category": "regression",
+    "priority": "P2",
+    "severity": "Medium",
+    "tags": [
+      "@regression",
+      "@ui"
+    ],
+    "role": "PMO (vihaan.chatterjee)",
+    "preconditions": "Logged in on DEV frontend 6.5.0 (T1564 merged 23/10, PR #517). Read-only: dialogs opened and cancelled, nothing saved.",
+    "steps": [
+      "See title; run scripts/pmo2.js"
+    ],
+    "expected": "Tooltip shows department",
+    "requirementRef": "26d9f277 SidePanelItem.tsx:51",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "lastResult": "passed",
+    "actualResult": "{\"id\":\"emp-side-panel-icon-tooltip\",\"ok\":true,\"label\":\"ADMIN\",\"tip\":[\"ADMIN\"]}",
+    "notes": "",
+    "screenshot": "reports/screenshots/2026-10-28/hardik/sonar-fe/p12-side-panel-icon-tooltip.png"
+  },
+  {
+    "id": "TC-SONFE-034",
+    "module": "Sonar Clean-up – Frontend Regression",
+    "moduleCode": "SONFE",
+    "subModule": "Employee list",
+    "taskId": "SI4-T1564",
+    "title": "Side panel closes",
+    "category": "regression",
+    "priority": "P2",
+    "severity": "Medium",
+    "tags": [
+      "@regression",
+      "@ui"
+    ],
+    "role": "PMO (vihaan.chatterjee)",
+    "preconditions": "Logged in on DEV frontend 6.5.0 (T1564 merged 23/10, PR #517). Read-only: dialogs opened and cancelled, nothing saved.",
+    "steps": [
+      "See title; run scripts/pmo2.js"
+    ],
+    "expected": "Panel closes",
+    "requirementRef": "26d9f277 SidePanelRoot.tsx",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "lastResult": "passed",
+    "actualResult": "{\"id\":\"emp-side-panel-close\",\"ok\":true,\"open\":0}",
+    "notes": "",
+    "screenshot": ""
+  },
+  {
+    "id": "TC-SONFE-035",
+    "module": "Sonar Clean-up – Frontend Regression",
+    "moduleCode": "SONFE",
+    "subModule": "Employee list",
+    "taskId": "SI4-T1564",
+    "title": "Past Employee tab columns",
+    "category": "regression",
+    "priority": "P2",
+    "severity": "Medium",
+    "tags": [
+      "@regression",
+      "@ui"
+    ],
+    "role": "PMO (vihaan.chatterjee)",
+    "preconditions": "Logged in on DEV frontend 6.5.0 (T1564 merged 23/10, PR #517). Read-only: dialogs opened and cancelled, nothing saved.",
+    "steps": [
+      "See title; run scripts/pmo2.js"
+    ],
+    "expected": "Name/Projects/Project Name/Since",
+    "requirementRef": "26d9f277 pastEmployeeColumns.tsx",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "lastResult": "passed",
+    "actualResult": "{\"id\":\"past-employee-tab\",\"ok\":true,\"ths\":[\"Name\",\"Projects\",\"Project Name\",\"Since\"],\"actionBtns\":0,\"bad\":[],\"url\":\"https://simerp-dev.simform.solutions/employee?tab=past&sortBy=name&sortOrder=asc\"}",
+    "notes": "",
+    "screenshot": "reports/screenshots/2026-10-28/hardik/sonar-fe/p13-past-employees.png"
+  },
+  {
+    "id": "TC-SONFE-036",
+    "module": "Sonar Clean-up – Frontend Regression",
+    "moduleCode": "SONFE",
+    "subModule": "Projects",
+    "taskId": "SI4-T1564",
+    "title": "Project Details list loads",
+    "category": "regression",
+    "priority": "P2",
+    "severity": "Medium",
+    "tags": [
+      "@regression",
+      "@ui"
+    ],
+    "role": "PMO (vihaan.chatterjee)",
+    "preconditions": "Logged in on DEV frontend 6.5.0 (T1564 merged 23/10, PR #517). Read-only: dialogs opened and cancelled, nothing saved.",
+    "steps": [
+      "See title; run scripts/pmo3.js"
+    ],
+    "expected": "399 rows; Billable/Non-Billable tabs",
+    "requirementRef": "26d9f277 projectApi.ts, EmployeesCell.tsx",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "lastResult": "passed",
+    "actualResult": "{\"id\":\"projects-list\",\"ok\":true,\"url\":\"https://simerp-dev.simform.solutions/projects\",\"h\":[\"Project Details\"],\"tabs\":[\"Billable\",\"Non-Billable\"],\"outputs\":[\"Showing 1 - 100 of 399 results\"],\"bad\":[{\"t\":\"NA\",\"ctx\":\"SBSneha Bhatia[150]SRShaurya Rao[150]BBBhavin Barot[22]ABAnil Bansal[22]LRHBHemal Bose[22]PAPrakash Arora[22]SMSwati Mis\"}]}",
+    "notes": "",
+    "screenshot": "reports/screenshots/2026-10-28/hardik/sonar-fe/q01-projects.png"
+  },
+  {
+    "id": "TC-SONFE-037",
+    "module": "Sonar Clean-up – Frontend Regression",
+    "moduleCode": "SONFE",
+    "subModule": "Projects",
+    "taskId": "SI4-T1564",
+    "title": "Projects sort + search in URL",
+    "category": "regression",
+    "priority": "P2",
+    "severity": "Medium",
+    "tags": [
+      "@regression",
+      "@ui"
+    ],
+    "role": "PMO (vihaan.chatterjee)",
+    "preconditions": "Logged in on DEV frontend 6.5.0 (T1564 merged 23/10, PR #517). Read-only: dialogs opened and cancelled, nothing saved.",
+    "steps": [
+      "See title; run scripts/pmo3.js"
+    ],
+    "expected": "search \"pulse\" → 5 rows",
+    "requirementRef": "26d9f277 useProjectFilters.ts",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "lastResult": "passed",
+    "actualResult": "{\"id\":\"projects-sort-search\",\"ok\":true,\"u1\":\"https://simerp-dev.simform.solutions/projects?sortBy=name&sortOrder=asc\",\"ph\":\"Search by name\",\"u2\":\"https://simerp-dev.simform.solutions/projects?sortBy=name&sortOrder=asc&search=pulse\",\"out\":[\"Showing 1 - 5 of 5 results\"]}",
+    "notes": "",
+    "screenshot": "reports/screenshots/2026-10-28/hardik/sonar-fe/q02-projects-search.png"
+  },
+  {
+    "id": "TC-SONFE-038",
+    "module": "Sonar Clean-up – Frontend Regression",
+    "moduleCode": "SONFE",
+    "subModule": "Projects",
+    "taskId": "SI4-T1564",
+    "title": "Project side panel opens",
+    "category": "regression",
+    "priority": "P2",
+    "severity": "Medium",
+    "tags": [
+      "@regression",
+      "@ui"
+    ],
+    "role": "PMO (vihaan.chatterjee)",
+    "preconditions": "Logged in on DEV frontend 6.5.0 (T1564 merged 23/10, PR #517). Read-only: dialogs opened and cancelled, nothing saved.",
+    "steps": [
+      "See title; run scripts/pmo3.js"
+    ],
+    "expected": "PM/CSM/Employees render",
+    "requirementRef": "26d9f277 projectDetailPanelHelpers.tsx",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "lastResult": "passed",
+    "actualResult": "{\"id\":\"projects-panel\",\"ok\":true,\"clicked\":\"AbsoluteUI | Design System\",\"txt\":\"AbsoluteUI | Design System\\n\\nAG\\nNot specified\\n\\nProject Manager\\n\\nRutu Ghosh\\n\\nCSM\\n\\nPranav Patel\\n\\nDescription\\nEmployees (28)\\nSort by\\nLog. Hrs\\nNAME\\tLOG. HRS\\tSINCE\\n\\nReyansh Vyas\\nSr. SE\\n8y\\n\\t74h\\t1m ago\\n\\nNeel Menon\\nLE\\n7y 11m\\nLR\\n\\t72h\\t9m ago\\n\\nYatharth Thakor\\nCSM\\n8y 5m\\nCRM Tools\\n\\t39h\\t1y ago",
+    "notes": "",
+    "screenshot": "reports/screenshots/2026-10-28/hardik/sonar-fe/q03-project-side-panel.png"
+  },
+  {
+    "id": "TC-SONFE-039",
+    "module": "Sonar Clean-up – Frontend Regression",
+    "moduleCode": "SONFE",
+    "subModule": "Projects",
+    "taskId": "SI4-T1564",
+    "title": "Project panel department icon tooltip",
+    "category": "regression",
+    "priority": "P2",
+    "severity": "Medium",
+    "tags": [
+      "@regression",
+      "@ui"
+    ],
+    "role": "PMO (vihaan.chatterjee)",
+    "preconditions": "Logged in on DEV frontend 6.5.0 (T1564 merged 23/10, PR #517). Read-only: dialogs opened and cancelled, nothing saved.",
+    "steps": [
+      "See title; run scripts/pmo3.js"
+    ],
+    "expected": "Tooltip shows department",
+    "requirementRef": "26d9f277 employeesTableParts.tsx:108,124",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "lastResult": "passed",
+    "actualResult": "{\"id\":\"projects-panel-dept-icon-tooltip\",\"ok\":true,\"tip\":[\"L1 SUPPORT\"]}",
+    "notes": "",
+    "screenshot": "reports/screenshots/2026-10-28/hardik/sonar-fe/q04-project-panel-dept-tooltip.png"
+  },
+  {
+    "id": "TC-SONFE-040",
+    "module": "Sonar Clean-up – Frontend Regression",
+    "moduleCode": "SONFE",
+    "subModule": "Team",
+    "taskId": "SI4-T1564",
+    "title": "Team page loads; no Copy button",
+    "category": "regression",
+    "priority": "P2",
+    "severity": "Medium",
+    "tags": [
+      "@regression",
+      "@ui"
+    ],
+    "role": "PMO (vihaan.chatterjee)",
+    "preconditions": "Logged in on DEV frontend 6.5.0 (T1564 merged 23/10, PR #517). Read-only: dialogs opened and cancelled, nothing saved.",
+    "steps": [
+      "See title; run scripts/pmo3.js"
+    ],
+    "expected": "Team details render; Copy feature absent",
+    "requirementRef": "397282fe team copy removed",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "lastResult": "passed",
+    "actualResult": "{\"id\":\"team\",\"ok\":true,\"url\":\"https://simerp-dev.simform.solutions/team?departmentId=ea92f58c-c1d7-4abe-aca4-8d07d31712c6\",\"h\":[\"Team Details\"],\"tabs\":[],\"outputs\":[],\"bad\":[],\"btns\":[\"1145 unread notifications\",\"vihaan.chatterjee@simformsolutions.com - User menu\",\"PROJECT MANAGEMENT OFFICE\",\"Add Team\",\"Show All Details\",\"Edit team\"],\"copy\":0,\"copyLabel\":0}",
+    "notes": "",
+    "screenshot": "reports/screenshots/2026-10-28/hardik/sonar-fe/q06-team.png"
+  },
+  {
+    "id": "TC-SONFE-041",
+    "module": "Sonar Clean-up – Frontend Regression",
+    "moduleCode": "SONFE",
+    "subModule": "Dashboard",
+    "taskId": "SI4-T1564",
+    "title": "Dashboard donut and activity list load",
+    "category": "regression",
+    "priority": "P2",
+    "severity": "Medium",
+    "tags": [
+      "@regression",
+      "@ui"
+    ],
+    "role": "PMO (vihaan.chatterjee)",
+    "preconditions": "Logged in on DEV frontend 6.5.0 (T1564 merged 23/10, PR #517). Read-only: dialogs opened and cancelled, nothing saved.",
+    "steps": [
+      "See title; run scripts/pmo3.js"
+    ],
+    "expected": "Donut fills use theme colours; 6034 activity rows",
+    "requirementRef": "26d9f277 AllocationTypeDonutChart.tsx:89",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "lastResult": "passed",
+    "actualResult": "{\"id\":\"dashboard\",\"ok\":true,\"url\":\"https://simerp-dev.simform.solutions/dashboard\",\"h\":[\"Dashboard\",\"All Activity\"],\"tabs\":[],\"outputs\":[\"Showing 1 - 100 of 6034 results\"],\"bad\":[],\"fills\":[\"var(--dashboard-fixed)\",\"var(--dashboard-dynamic)\"]}",
+    "notes": "",
+    "screenshot": "reports/screenshots/2026-10-28/hardik/sonar-fe/q08-dashboard.png"
+  },
+  {
+    "id": "TC-SONFE-042",
+    "module": "Sonar Clean-up – Frontend Regression",
+    "moduleCode": "SONFE",
+    "subModule": "Dashboard",
+    "taskId": "SI4-T1564",
+    "title": "Donut slice hover pops out + tooltip",
+    "category": "regression",
+    "priority": "P2",
+    "severity": "Medium",
+    "tags": [
+      "@regression",
+      "@ui"
+    ],
+    "role": "PMO (vihaan.chatterjee)",
+    "preconditions": "Logged in on DEV frontend 6.5.0 (T1564 merged 23/10, PR #517). Read-only: dialogs opened and cancelled, nothing saved.",
+    "steps": [
+      "See title; run scripts/pmo4.js"
+    ],
+    "expected": "Hovered slice changes; tooltip \"Fixed 3,495.04\"",
+    "requirementRef": "26d9f277 Cell removed; activeShape→shape",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "lastResult": "passed",
+    "actualResult": "{\"id\":\"dashboard-donut-hover2\",\"ok\":true,\"n\":2,\"res\":[{\"dx\":-80,\"changed\":[true,false],\"tip\":[\"Fixed3,495.04\"]},{\"dx\":80,\"changed\":[true,false],\"tip\":[\"Fixed3,495.04\"]}]}",
+    "notes": "",
+    "screenshot": ""
+  },
+  {
+    "id": "TC-SONFE-043",
+    "module": "Sonar Clean-up – Frontend Regression",
+    "moduleCode": "SONFE",
+    "subModule": "Goals",
+    "taskId": "SI4-T1564",
+    "title": "Goals dashboard donut colours",
+    "category": "regression",
+    "priority": "P2",
+    "severity": "Medium",
+    "tags": [
+      "@regression",
+      "@ui"
+    ],
+    "role": "PMO (vihaan.chatterjee)",
+    "preconditions": "Logged in on DEV frontend 6.5.0 (T1564 merged 23/10, PR #517). Read-only: dialogs opened and cancelled, nothing saved.",
+    "steps": [
+      "See title; run scripts/pmo3.js"
+    ],
+    "expected": "Slice fills from data",
+    "requirementRef": "26d9f277 GoalsDashboardDonut.tsx:74",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "lastResult": "passed",
+    "actualResult": "{\"id\":\"goals\",\"ok\":true,\"url\":\"https://simerp-dev.simform.solutions/employee/goals\",\"h\":[\"Goals\"],\"tabs\":[\"Dashboard\",\"Goals\"],\"outputs\":[\"Showing 1–5 of 49 goals\",\"Showing 1–5 of 49 goals\"],\"bad\":[],\"fills\":[\"var(--badge-green-text)\",\"var(--sidebar-gradient-to)\",\"var(--badge-rose-text)\",\"var(--color-violet-200)\",\"var(--badge-green-text)\",\"var(--badge-blue-text)\"],\"center\":[],\"fieldsets\":[\"Goal fi",
+    "notes": "",
+    "screenshot": "reports/screenshots/2026-10-28/hardik/sonar-fe/q10-goals.png"
+  },
+  {
+    "id": "TC-SONFE-044",
+    "module": "Sonar Clean-up – Frontend Regression",
+    "moduleCode": "SONFE",
+    "subModule": "Goals",
+    "taskId": "SI4-T1564",
+    "title": "L&D hours chart tooltip",
+    "category": "regression",
+    "priority": "P2",
+    "severity": "Medium",
+    "tags": [
+      "@regression",
+      "@ui"
+    ],
+    "role": "PMO (vihaan.chatterjee)",
+    "preconditions": "Logged in on DEV frontend 6.5.0 (T1564 merged 23/10, PR #517). Read-only: dialogs opened and cancelled, nothing saved.",
+    "steps": [
+      "See title; run scripts/pmo3.js"
+    ],
+    "expected": "Tooltip shows member hours",
+    "requirementRef": "26d9f277 GoalsDashboardLdHoursChart.tsx:132",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "lastResult": "passed",
+    "actualResult": "{\"id\":\"goals-ld-chart-tooltip\",\"ok\":true,\"tip\":[\"\",\"\",\"Aarav ChopraCompleted1In Progress2L&D Hours by Team Member12h\"]}",
+    "notes": "",
+    "screenshot": "reports/screenshots/2026-10-28/hardik/sonar-fe/q11-goals-ld-tooltip.png"
+  },
+  {
+    "id": "TC-SONFE-045",
+    "module": "Sonar Clean-up – Frontend Regression",
+    "moduleCode": "SONFE",
+    "subModule": "Goals",
+    "taskId": "SI4-T1564",
+    "title": "Ranked goals pagination text",
+    "category": "regression",
+    "priority": "P2",
+    "severity": "Medium",
+    "tags": [
+      "@regression",
+      "@ui"
+    ],
+    "role": "PMO (vihaan.chatterjee)",
+    "preconditions": "Logged in on DEV frontend 6.5.0 (T1564 merged 23/10, PR #517). Read-only: dialogs opened and cancelled, nothing saved.",
+    "steps": [
+      "See title; run scripts/pmo3.js"
+    ],
+    "expected": "\"Showing 1–5 of 49 goals\"",
+    "requirementRef": "26d9f277 RankedGoalPagination.tsx:22, rankedGoalList.ts",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "lastResult": "passed",
+    "actualResult": "{\"id\":\"goals-ranked-pagination\",\"ok\":true,\"outs\":[\"Showing 1–5 of 49 goals\",\"Showing 1–5 of 49 goals\"],\"nCombos\":3}",
+    "notes": "",
+    "screenshot": ""
+  },
+  {
+    "id": "TC-SONFE-046",
+    "module": "Sonar Clean-up – Frontend Regression",
+    "moduleCode": "SONFE",
+    "subModule": "Goals",
+    "taskId": "SI4-T1564",
+    "title": "Goals tabs and columns",
+    "category": "regression",
+    "priority": "P2",
+    "severity": "Medium",
+    "tags": [
+      "@regression",
+      "@ui"
+    ],
+    "role": "PMO (vihaan.chatterjee)",
+    "preconditions": "Logged in on DEV frontend 6.5.0 (T1564 merged 23/10, PR #517). Read-only: dialogs opened and cancelled, nothing saved.",
+    "steps": [
+      "See title; run scripts/pmo3.js"
+    ],
+    "expected": "Goals tab columns render",
+    "requirementRef": "26d9f277 goalColumns.tsx",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "lastResult": "passed",
+    "actualResult": "{\"id\":\"goals-tabs\",\"ok\":true,\"Dashboard\":{\"rows\":0,\"ths\":[],\"bad\":[]},\"Goals\":{\"rows\":200,\"ths\":[\"Show goals\",\"Employee\",\"Reporting Manager\",\"Goals\",\"Overdue Goals\",\"Certificates\",\"L&D Hours\"],\"bad\":[]}}",
+    "notes": "",
+    "screenshot": ""
+  },
+  {
+    "id": "TC-SONFE-047",
+    "module": "Sonar Clean-up – Frontend Regression",
+    "moduleCode": "SONFE",
+    "subModule": "Projects",
+    "taskId": "SI4-T1564",
+    "title": "Tech stack list loads",
+    "category": "regression",
+    "priority": "P2",
+    "severity": "Medium",
+    "tags": [
+      "@regression",
+      "@ui"
+    ],
+    "role": "PMO (vihaan.chatterjee)",
+    "preconditions": "Logged in on DEV frontend 6.5.0 (T1564 merged 23/10, PR #517). Read-only: dialogs opened and cancelled, nothing saved.",
+    "steps": [
+      "See title; run scripts/pmo3.js"
+    ],
+    "expected": "399 rows",
+    "requirementRef": "26d9f277 TechStackContent.tsx",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "lastResult": "passed",
+    "actualResult": "{\"id\":\"tech-stack\",\"ok\":true,\"url\":\"https://simerp-dev.simform.solutions/tech-stack?sortBy=name&sortOrder=asc\",\"h\":[\"Tech Stack\",\"Tech Stack\"],\"tabs\":[],\"outputs\":[\"Showing 1 - 100 of 399 results\"],\"bad\":[]}",
+    "notes": "",
+    "screenshot": "reports/screenshots/2026-10-28/hardik/sonar-fe/q13-tech-stack.png"
+  },
+  {
+    "id": "TC-SONFE-048",
+    "module": "Sonar Clean-up – Frontend Regression",
+    "moduleCode": "SONFE",
+    "subModule": "Working Location",
+    "taskId": "SI4-T1564",
+    "title": "Working location dashboard loads",
+    "category": "regression",
+    "priority": "P2",
+    "severity": "Medium",
+    "tags": [
+      "@regression",
+      "@ui"
+    ],
+    "role": "PMO (vihaan.chatterjee)",
+    "preconditions": "Logged in on DEV frontend 6.5.0 (T1564 merged 23/10, PR #517). Read-only: dialogs opened and cancelled, nothing saved.",
+    "steps": [
+      "See title; run scripts/pmo3.js"
+    ],
+    "expected": "Departments + Employees tables",
+    "requirementRef": "26d9f277 workingLocation.utils.ts",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "lastResult": "passed",
+    "actualResult": "{\"id\":\"working-location\",\"ok\":true,\"url\":\"https://simerp-dev.simform.solutions/working-location\",\"h\":[\"Working Location\",\"Departments\",\"Employees\"],\"tabs\":[],\"outputs\":[\"Showing 1 - 10 of 41 results\",\"Showing 1 - 10 of 3649 results\"],\"bad\":[]}",
+    "notes": "",
+    "screenshot": "reports/screenshots/2026-10-28/hardik/sonar-fe/q14-working-location.png"
+  },
+  {
+    "id": "TC-SONFE-049",
+    "module": "Sonar Clean-up – Frontend Regression",
+    "moduleCode": "SONFE",
+    "subModule": "Working Location",
+    "taskId": "SI4-T1564",
+    "title": "Trend chart tooltip",
+    "category": "regression",
+    "priority": "P2",
+    "severity": "Medium",
+    "tags": [
+      "@regression",
+      "@ui"
+    ],
+    "role": "PMO (vihaan.chatterjee)",
+    "preconditions": "Logged in on DEV frontend 6.5.0 (T1564 merged 23/10, PR #517). Read-only: dialogs opened and cancelled, nothing saved.",
+    "steps": [
+      "See title; run scripts/pmo3.js"
+    ],
+    "expected": "\"Fri 9 Oct WFO 56.3% WFH 43.7%\"",
+    "requirementRef": "26d9f277 WorkingLocationTrendChart.tsx",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "lastResult": "passed",
+    "actualResult": "{\"id\":\"wl-trend-tooltip\",\"ok\":true,\"tip\":[\"Fri 9 OctWFO56.3%WFH43.7%\"]}",
+    "notes": "",
+    "screenshot": "reports/screenshots/2026-10-28/hardik/sonar-fe/q15-wl-trend-tooltip.png"
+  },
+  {
+    "id": "TC-SONFE-050",
+    "module": "Sonar Clean-up – Frontend Regression",
+    "moduleCode": "SONFE",
+    "subModule": "Skills",
+    "taskId": "SI4-T1564",
+    "title": "Skills overview loads",
+    "category": "regression",
+    "priority": "P2",
+    "severity": "Medium",
+    "tags": [
+      "@regression",
+      "@ui"
+    ],
+    "role": "PMO (vihaan.chatterjee)",
+    "preconditions": "Logged in on DEV frontend 6.5.0 (T1564 merged 23/10, PR #517). Read-only: dialogs opened and cancelled, nothing saved.",
+    "steps": [
+      "See title; run scripts/pmo4.js"
+    ],
+    "expected": "Page renders; status text in <output>",
+    "requirementRef": "26d9f277 SkillsOverviewSidebarLists.tsx:154",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "lastResult": "passed",
+    "actualResult": "{\"id\":\"skills\",\"ok\":true,\"url\":\"https://simerp-dev.simform.solutions/employee/skills\",\"h\":[\"Skills\"],\"outputs\":[],\"bad\":[{\"t\":\"-\",\"ctx\":\"Skills:-\"}]}",
+    "notes": "Bare \"-\" for empty selected skills — pre-existing since a91e5111b (15/05), not T1564. Observation only.",
+    "screenshot": "reports/screenshots/2026-10-28/hardik/sonar-fe/q16-skills.png"
+  },
+  {
+    "id": "TC-SONFE-051",
+    "module": "Sonar Clean-up – Frontend Regression",
+    "moduleCode": "SONFE",
+    "subModule": "Certifications",
+    "taskId": "SI4-T1564",
+    "title": "Certifications page loads",
+    "category": "regression",
+    "priority": "P2",
+    "severity": "Medium",
+    "tags": [
+      "@regression",
+      "@ui"
+    ],
+    "role": "PMO (vihaan.chatterjee)",
+    "preconditions": "Logged in on DEV frontend 6.5.0 (T1564 merged 23/10, PR #517). Read-only: dialogs opened and cancelled, nothing saved.",
+    "steps": [
+      "See title; run scripts/pmo4.js"
+    ],
+    "expected": "Page renders",
+    "requirementRef": "smoke",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "lastResult": "passed",
+    "actualResult": "{\"id\":\"certifications\",\"ok\":true,\"url\":\"https://simerp-dev.simform.solutions/employee/certifications\",\"h\":[\"Certifications\"],\"outputs\":[],\"bad\":[]}",
+    "notes": "",
+    "screenshot": "reports/screenshots/2026-10-28/hardik/sonar-fe/q17-certifications.png"
+  },
+  {
+    "id": "TC-SONFE-052",
+    "module": "Sonar Clean-up – Frontend Regression",
+    "moduleCode": "SONFE",
+    "subModule": "Notifications",
+    "taskId": "SI4-T1564",
+    "title": "Notification search highlight, no duplicate keys",
+    "category": "regression",
+    "priority": "P2",
+    "severity": "Medium",
+    "tags": [
+      "@regression",
+      "@ui"
+    ],
+    "role": "PMO (vihaan.chatterjee)",
+    "preconditions": "Logged in on DEV frontend 6.5.0 (T1564 merged 23/10, PR #517). Read-only: dialogs opened and cancelled, nothing saved.",
+    "steps": [
+      "See title; run scripts/pmo4.js"
+    ],
+    "expected": "Matches highlighted; 0 duplicate React keys; regex chars safe",
+    "requirementRef": "26d9f277 HighlightedText.tsx:21, highlight-utils.tsx",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "lastResult": "passed",
+    "actualResult": "{\"id\":\"notifications-search-highlight\",\"ok\":true,\"ph\":\"Search notifications\",\"marks\":[\"ALLOCATION\",\"ALLOCATION\",\"ALLOCATION\",\"ALLOCATION\",\"ALLOCATION\",\"ALLOCATION\"],\"dupKeys\":0,\"marks2\":0}",
+    "notes": "",
+    "screenshot": "reports/screenshots/2026-10-28/hardik/sonar-fe/q18-notifications-highlight.png"
+  },
+  {
+    "id": "TC-SONFE-053",
+    "module": "Sonar Clean-up – Frontend Regression",
+    "moduleCode": "SONFE",
+    "subModule": "Tickets",
+    "taskId": "SI4-T1564",
+    "title": "Update-allocation ticket date labels",
+    "category": "regression",
+    "priority": "P2",
+    "severity": "Medium",
+    "tags": [
+      "@regression",
+      "@ui"
+    ],
+    "role": "PMO (vihaan.chatterjee)",
+    "preconditions": "Logged in on DEV frontend 6.5.0 (T1564 merged 23/10, PR #517). Read-only: dialogs opened and cancelled, nothing saved.",
+    "steps": [
+      "See title; run scripts/tixui.js"
+    ],
+    "expected": "Current/Requested end date + \"(Extended)\"",
+    "requirementRef": "26d9f277 UpdateAllocationDetail.tsx",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "lastResult": "passed",
+    "actualResult": "{\"id\":\"ua-ticket-4\",\"ok\":true,\"h\":[\"Ticket Details\",\"UA-0119\"],\"labels\":[\"Start Date = 16/01/2025\",\"Current End Date = 15/09/2026\",\"Requested End Date = 18/09/2026(Extended)\"],\"dates\":{\"prevStart\":[\"\\\"previousAllocationStartDate\\\":\\\"2025-01-16T00:00:00.000Z\",\"\\\"previousAllocationStartDate\\\":\\\"2025-01-16T00:00:00.000Z\"],\"prevEnd\":[\"\\\"previousAllocationEndDate\\\":\\\"2026-09-15T00:00:00.000Z\",\"\\\"previo",
+    "notes": "",
+    "screenshot": "reports/screenshots/2026-10-28/hardik/sonar-fe/r04-ua-ticket.png"
+  },
+  {
+    "id": "TC-SONFE-054",
+    "module": "Sonar Clean-up – Frontend Regression",
+    "moduleCode": "SONFE",
+    "subModule": "Tickets",
+    "taskId": "SI4-T1564",
+    "title": "Ticket edit history shows readable values",
+    "category": "regression",
+    "priority": "P2",
+    "severity": "Medium",
+    "tags": [
+      "@regression",
+      "@ui"
+    ],
+    "role": "PMO (vihaan.chatterjee)",
+    "preconditions": "Logged in on DEV frontend 6.5.0 (T1564 merged 23/10, PR #517). Read-only: dialogs opened and cancelled, nothing saved.",
+    "steps": [
+      "See title; run scripts/tixui.js"
+    ],
+    "expected": "No \"[object Object]\"; changes listed",
+    "requirementRef": "26d9f277 ticketsApi.editHistoryFields.ts:49",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "lastResult": "passed",
+    "actualResult": "{\"id\":\"ua-edit-history\",\"ok\":true,\"tabs\":[\"Status Timeline\",\"Edit History\"],\"txt\":\"Chief Executive Officer\\n30/09/26, 03:54 PM\\nchanged Allocation %, Effective Till · 2 fields\\nAllocation %\\n50%\\n10%\\n(Decrease)\\nEffective Till\\nNo value\\n30/09/2026\\n(Added)\",\"objectLeak\":false}",
+    "notes": "",
+    "screenshot": "reports/screenshots/2026-10-28/hardik/sonar-fe/r10-edit-history.png"
+  },
+  {
+    "id": "TC-SONFE-055",
+    "module": "Sonar Clean-up – Frontend Regression",
+    "moduleCode": "SONFE",
+    "subModule": "My Projects (CSM)",
+    "taskId": "SI4-T1564",
+    "title": "My Projects KPI cards and list",
+    "category": "regression",
+    "priority": "P2",
+    "severity": "Medium",
+    "tags": [
+      "@regression",
+      "@ui"
+    ],
+    "role": "CSM (vivaan.bajaj)",
+    "preconditions": "Logged in on DEV frontend 6.5.0 (T1564 merged 23/10, PR #517). Read-only: dialogs opened and cancelled, nothing saved.",
+    "steps": [
+      "See title; run scripts/csm.js"
+    ],
+    "expected": "KPI cards + 4 projects",
+    "requirementRef": "26d9f277 PmProjectStats.tsx:42",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "lastResult": "passed",
+    "actualResult": "{\"id\":\"mp-load\",\"ok\":true,\"url\":\"https://simerp-dev.simform.solutions/my-projects\",\"kpi\":{\"tag\":\"DIV\",\"role\":null,\"busy\":\"false\",\"text\":\"Total Active Projects | 4 | Total Allocation | 56 | Fixed Allocation | 44 | Dynamic Allocation | 12 | Long-Running Allocations | 18\",\"outputDivChildren\":0},\"outs\":[\"Showing 1 - 4 of 4 results\"],\"bad\":[]}",
+    "notes": "",
+    "screenshot": "reports/screenshots/2026-10-28/hardik/sonar-fe/c01-my-projects.png"
+  },
+  {
+    "id": "TC-SONFE-056",
+    "module": "Sonar Clean-up – Frontend Regression",
+    "moduleCode": "SONFE",
+    "subModule": "My Projects (CSM)",
+    "taskId": "SI4-T1564",
+    "title": "KPI tile toggles filter in URL",
+    "category": "regression",
+    "priority": "P2",
+    "severity": "Medium",
+    "tags": [
+      "@regression",
+      "@ui"
+    ],
+    "role": "CSM (vivaan.bajaj)",
+    "preconditions": "Logged in on DEV frontend 6.5.0 (T1564 merged 23/10, PR #517). Read-only: dialogs opened and cancelled, nothing saved.",
+    "steps": [
+      "See title; run scripts/csm.js"
+    ],
+    "expected": "adv_allocationStage set then cleared",
+    "requirementRef": "26d9f277 usePmProjectFilters.ts",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "lastResult": "passed",
+    "actualResult": "{\"id\":\"mp-long-running-tile\",\"ok\":true,\"names\":[\"Long-Running Allocations18|false\"],\"before\":[\"Showing 1 - 4 of 4 results\"],\"after\":[\"Showing 1 - 4 of 4 results\"],\"u\":\"https://simerp-dev.simform.solutions/my-projects?adv_allocationStage=LONG_RUNNING\",\"pressed\":\"true\",\"uAfter\":\"https://simerp-dev.simform.solutions/my-projects\"}",
+    "notes": "",
+    "screenshot": "reports/screenshots/2026-10-28/hardik/sonar-fe/c02-my-projects-long-running.png"
+  },
+  {
+    "id": "TC-SONFE-057",
+    "module": "Sonar Clean-up – Frontend Regression",
+    "moduleCode": "SONFE",
+    "subModule": "My Projects (CSM)",
+    "taskId": "SI4-T1564",
+    "title": "Project detail tabs/columns",
+    "category": "regression",
+    "priority": "P2",
+    "severity": "Medium",
+    "tags": [
+      "@regression",
+      "@ui"
+    ],
+    "role": "CSM (vivaan.bajaj)",
+    "preconditions": "Logged in on DEV frontend 6.5.0 (T1564 merged 23/10, PR #517). Read-only: dialogs opened and cancelled, nothing saved.",
+    "steps": [
+      "See title; run scripts/csm.js"
+    ],
+    "expected": "Active/Past allocations",
+    "requirementRef": "26d9f277 pmProjectsApi.roleMerge.ts",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "lastResult": "passed",
+    "actualResult": "{\"id\":\"mp-detail\",\"ok\":true,\"t\":\"\",\"url\":\"https://simerp-dev.simform.solutions/my-projects/5adbf39c-b5dc-4a3c-a7fd-8118fcb622de\",\"tabs\":[\"Active Allocations19\",\"Past Allocations7\"],\"ths\":[\"Action\",\"Employee Name\",\"Department\",\"Allocation %\",\"Start Date\",\"End Date\",\"Logged hours\",\"Working Location\"],\"bad\":[]}",
+    "notes": "",
+    "screenshot": "reports/screenshots/2026-10-28/hardik/sonar-fe/c03-project-detail.png"
+  },
+  {
+    "id": "TC-SONFE-058",
+    "module": "Sonar Clean-up – Frontend Regression",
+    "moduleCode": "SONFE",
+    "subModule": "My Projects (CSM)",
+    "taskId": "SI4-T1564",
+    "title": "Deallocate dialog blocks empty submit",
+    "category": "regression",
+    "priority": "P2",
+    "severity": "Medium",
+    "tags": [
+      "@regression",
+      "@ui"
+    ],
+    "role": "CSM (vivaan.bajaj)",
+    "preconditions": "Logged in on DEV frontend 6.5.0 (T1564 merged 23/10, PR #517). Read-only: dialogs opened and cancelled, nothing saved.",
+    "steps": [
+      "See title; run scripts/dealloc.js"
+    ],
+    "expected": "Submit disabled until required fields; Cancel closes",
+    "requirementRef": "26d9f277 DeallocationConfirmDialog.tsx",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "lastResult": "passed",
+    "actualResult": "{\"id\":\"deallocate-validation\",\"ok\":true,\"btns\":[\"Pick a date\",\"\",\"\",\"\",\"\",\"Cancel\",\"Submit Deallocation\",\"Close\"],\"sname\":\"Submit Deallocation\",\"enabled\":false,\"confirm\":0}",
+    "notes": "",
+    "screenshot": "reports/screenshots/2026-10-28/hardik/sonar-fe/c05b-deallocate-validation.png"
+  },
+  {
+    "id": "TC-SONFE-059",
+    "module": "Sonar Clean-up – Frontend Regression",
+    "moduleCode": "SONFE",
+    "subModule": "My Projects (CSM)",
+    "taskId": "SI4-T1564",
+    "title": "Update allocation dialog opens/cancels",
+    "category": "regression",
+    "priority": "P2",
+    "severity": "Medium",
+    "tags": [
+      "@regression",
+      "@ui"
+    ],
+    "role": "CSM (vivaan.bajaj)",
+    "preconditions": "Logged in on DEV frontend 6.5.0 (T1564 merged 23/10, PR #517). Read-only: dialogs opened and cancelled, nothing saved.",
+    "steps": [
+      "See title; run scripts/dealloc.js"
+    ],
+    "expected": "Dialog closes without saving",
+    "requirementRef": "26d9f277 EditAllocationForm.tsx",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "lastResult": "passed",
+    "actualResult": "{\"id\":\"update-allocation-open-cancel\",\"ok\":true,\"text\":\"Update allocation\\n\\nUpdate Allocation ticket details\\n\\nProject:\\nLiveOps | Game Backend Platform\\n\\nEmployee:\\nPranav Kumar\\n\\nDepartment:\\nL1 SUPPORT\\n\\nCurrent Allocation:\\nFixed · 25% (2 hrs/day)\\n\\nStart Date\\n*\\n25/02/2026\\nEnd Date\\n24/05/2027\\nAllocation Timeline\\n1 period\\nRequest timeline\\n25%\\n25 Feb 2026 – 24 May 2027\\nCurrent\\n\\",
+    "notes": "",
+    "screenshot": "reports/screenshots/2026-10-28/hardik/sonar-fe/c08-update-allocation-dialog.png"
+  },
+  {
+    "id": "TC-SONFE-060",
+    "module": "Sonar Clean-up – Frontend Regression",
+    "moduleCode": "SONFE",
+    "subModule": "New Allocation",
+    "taskId": "SI4-T1564",
+    "title": "Request type switch swaps fields",
+    "category": "regression",
+    "priority": "P2",
+    "severity": "Medium",
+    "tags": [
+      "@regression",
+      "@ui"
+    ],
+    "role": "CSM (vivaan.bajaj)",
+    "preconditions": "Logged in on DEV frontend 6.5.0 (T1564 merged 23/10, PR #517). Read-only: dialogs opened and cancelled, nothing saved.",
+    "steps": [
+      "See title; run scripts/newalloc.js"
+    ],
+    "expected": "PR Reviewer shows frequency; back to Fresh hides it",
+    "requirementRef": "26d9f277 ResourceScopeFields.tsx",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "lastResult": "passed",
+    "actualResult": "{\"id\":\"request-type-switch\",\"ok\":true,\"opts\":[\"Fresh Allocation\",\"Shadow Developer\",\"PR Reviewer\"],\"pr\":\"PR Reviewer\",\"other\":\"Fresh Allocation\",\"l1\":[\"Project*\",\"Project Description\",\"Request Type*\",\"External Reviewer\",\"PR Reviewer Frequency*\",\"Department*\",\"Primary Tech Stack*\",\"Additional Tech Stacks\",\"Start Date*\",\"End Date\",\"Note for allocation\"],\"freqSet\":\"Frequently\",\"l2\":[\"Project*\",\"Proje",
+    "notes": "",
+    "screenshot": ""
+  },
+  {
+    "id": "TC-SONFE-061",
+    "module": "Sonar Clean-up – Frontend Regression",
+    "moduleCode": "SONFE",
+    "subModule": "New Allocation",
+    "taskId": "SI4-T1564",
+    "title": "Additional tech stack separator",
+    "category": "regression",
+    "priority": "P2",
+    "severity": "Medium",
+    "tags": [
+      "@regression",
+      "@ui"
+    ],
+    "role": "CSM (vivaan.bajaj)",
+    "preconditions": "Logged in on DEV frontend 6.5.0 (T1564 merged 23/10, PR #517). Read-only: dialogs opened and cancelled, nothing saved.",
+    "steps": [
+      "See title; run scripts/newalloc.js"
+    ],
+    "expected": "div role=separator → <hr>; field works",
+    "requirementRef": "26d9f277 AdditionalTechStackField.tsx:159",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "lastResult": "passed",
+    "actualResult": "{\"id\":\"tech-stack-field-separator\",\"ok\":true,\"names\":[\"Select Project|radix-_r_2b_|false\",\"Select frequency|radix-_r_5u_|false\",\"Select department|radix-_r_60_|false\",\"Select tech stack|radix-_r_2i_|false\"],\"popExists\":1,\"hrs\":0}",
+    "notes": "",
+    "screenshot": "reports/screenshots/2026-10-28/hardik/sonar-fe/c14-additional-tech-stack.png"
+  },
+  {
+    "id": "TC-SONFE-062",
+    "module": "Sonar Clean-up – Frontend Regression",
+    "moduleCode": "SONFE",
+    "subModule": "New Allocation",
+    "taskId": "SI4-T1564",
+    "title": "Empty request cannot submit",
+    "category": "regression",
+    "priority": "P2",
+    "severity": "Medium",
+    "tags": [
+      "@regression",
+      "@ui"
+    ],
+    "role": "CSM (vivaan.bajaj)",
+    "preconditions": "Logged in on DEV frontend 6.5.0 (T1564 merged 23/10, PR #517). Read-only: dialogs opened and cancelled, nothing saved.",
+    "steps": [
+      "See title; run scripts/newalloc.js"
+    ],
+    "expected": "Submit disabled",
+    "requirementRef": "schemas/tickets",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "lastResult": "passed",
+    "actualResult": "{\"id\":\"submit-empty-validation\",\"ok\":true,\"sname\":\"Submit Request\",\"enabled\":false}",
+    "notes": "",
+    "screenshot": ""
+  },
+  {
+    "id": "TC-SONFE-063",
+    "module": "Sonar Clean-up – Frontend Regression",
+    "moduleCode": "SONFE",
+    "subModule": "Tickets",
+    "taskId": "SI4-T1564",
+    "title": "Ticket KPI filter in URL",
+    "category": "regression",
+    "priority": "P2",
+    "severity": "Medium",
+    "tags": [
+      "@regression",
+      "@ui"
+    ],
+    "role": "CSM (vivaan.bajaj)",
+    "preconditions": "Logged in on DEV frontend 6.5.0 (T1564 merged 23/10, PR #517). Read-only: dialogs opened and cancelled, nothing saved.",
+    "steps": [
+      "See title; run scripts/csm.js"
+    ],
+    "expected": "adv_status set and cleared",
+    "requirementRef": "26d9f277 useTicketFilters.ts:103, TicketStats.tsx",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "lastResult": "passed",
+    "actualResult": "{\"id\":\"tickets-kpi-filter\",\"ok\":true,\"names\":[\"Open01\",\"In Review00\",\"Awaiting00\",\"Approved00\"],\"u\":\"https://simerp-dev.simform.solutions/my-tickets?adv_status=IN_REVIEW\",\"outs\":[],\"uAfter\":\"https://simerp-dev.simform.solutions/my-tickets\"}",
+    "notes": "",
+    "screenshot": "reports/screenshots/2026-10-28/hardik/sonar-fe/c07-tickets-kpi-filter.png"
+  },
+  {
+    "id": "TC-SONFE-064",
+    "module": "Sonar Clean-up – Frontend Regression",
+    "moduleCode": "SONFE",
+    "subModule": "Employee self",
+    "taskId": "SI4-T1564",
+    "title": "Profile allocation table",
+    "category": "regression",
+    "priority": "P2",
+    "severity": "Medium",
+    "tags": [
+      "@regression",
+      "@ui"
+    ],
+    "role": "Employee (vishal.desai)",
+    "preconditions": "Logged in on DEV frontend 6.5.0 (T1564 merged 23/10, PR #517). Read-only: dialogs opened and cancelled, nothing saved.",
+    "steps": [
+      "See title; run scripts/emp.js"
+    ],
+    "expected": "Columns render",
+    "requirementRef": "26d9f277 ProfileAllocationTable.tsx",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "lastResult": "passed",
+    "actualResult": "{\"id\":\"profile\",\"ok\":true,\"url\":\"https://simerp-dev.simform.solutions/profile\",\"sb\":[\"SimERP6.5.0\",\"Employee\",\"What's New & History\",\"Help & Support\"],\"ths\":[\"Action\",\"Project Name - Allocation\",\"Start Date\",\"End Date\",\"Total Logged Hours\",\"Status\",\"Project Manager\",\"Tech Stack\",\"Skill\",\"Is Primary\"],\"cards\":[\"Skills\",\"Primary\",\"Secondary\",\"Working Location\",\"Last 7 Days (Attendance)\",\"Visa Inform",
+    "notes": "",
+    "screenshot": "reports/screenshots/2026-10-28/hardik/sonar-fe/e01-profile.png"
+  },
+  {
+    "id": "TC-SONFE-065",
+    "module": "Sonar Clean-up – Frontend Regression",
+    "moduleCode": "SONFE",
+    "subModule": "Employee self",
+    "taskId": "SI4-T1564",
+    "title": "Add Visa form opens and cancels",
+    "category": "regression",
+    "priority": "P2",
+    "severity": "Medium",
+    "tags": [
+      "@regression",
+      "@ui"
+    ],
+    "role": "Employee (vishal.desai)",
+    "preconditions": "Logged in on DEV frontend 6.5.0 (T1564 merged 23/10, PR #517). Read-only: dialogs opened and cancelled, nothing saved.",
+    "steps": [
+      "See title; run scripts/emp3.js"
+    ],
+    "expected": "Country-dependent type field; nothing saved",
+    "requirementRef": "26d9f277 VisaTypeFields.tsx, schemas/visa",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "lastResult": "passed",
+    "actualResult": "{\"id\":\"visa-add-open-cancel\",\"ok\":true,\"dialogs\":[\"FORM::I do not currently hold any visa\\nVisa of Country\\n*\\nSelect country\\nVisa Type\\nSelect a country first.\\nIssue Date\\nPick a da\",\"FORM::Skill\\t\\nIs Primary\\n\\n\\nAgile\\n\\t\\n\\n\\nAngular\\n\\t\\n\\n\\nCSS3\\n\\t\\n\\n\\nHTML5\\n\\t\\n\\n\\nJavaScript\\n\\t\\n\\n\\nReact\\n\\t\\n\\n\\nRedux\\n\\t\\n\\n\\nSASS\\n\\t\\n\\n\\nTypeScript\\n\\t\\n\\n\\n\"],\"blocked\":[]}",
+    "notes": "",
+    "screenshot": "reports/screenshots/2026-10-28/hardik/sonar-fe/e03a-visa-after-click.png"
+  },
+  {
+    "id": "TC-SONFE-066",
+    "module": "Sonar Clean-up – Frontend Regression",
+    "moduleCode": "SONFE",
+    "subModule": "Help",
+    "taskId": "SI4-T1564",
+    "title": "Help accordion open/close by mouse and keyboard",
+    "category": "regression",
+    "priority": "P2",
+    "severity": "Medium",
+    "tags": [
+      "@regression",
+      "@ui"
+    ],
+    "role": "Employee (vishal.desai)",
+    "preconditions": "Logged in on DEV frontend 6.5.0 (T1564 merged 23/10, PR #517). Read-only: dialogs opened and cancelled, nothing saved.",
+    "steps": [
+      "See title; run scripts/emp3.js"
+    ],
+    "expected": "One section open at a time; keyboard opens",
+    "requirementRef": "26d9f277 HelpPage.tsx",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "lastResult": "passed",
+    "actualResult": "{\"id\":\"help-toggle\",\"ok\":true,\"n\":14,\"names\":[\"Sign inSign in with your Microsoft accou|false\",\"Find your way aroundThe sidebar shows on|false\",\"Search, sort and filter any listLists re|false\",\"Change the time rangeHours and availabil|false\",\"Get support or report a problemSend a qu|false\",\"Log outEnd your session on this browser.|false\"],\"afterOpen\":\"true\",\"firstAfterSecond\":\"false\",\"second\":\"tru",
+    "notes": "",
+    "screenshot": "reports/screenshots/2026-10-28/hardik/sonar-fe/e05-help-vishal.desai.png"
+  },
+  {
+    "id": "TC-SONFE-067",
+    "module": "Sonar Clean-up – Frontend Regression",
+    "moduleCode": "SONFE",
+    "subModule": "What's New",
+    "taskId": "SI4-T1564",
+    "title": "What's New empty state",
+    "category": "regression",
+    "priority": "P2",
+    "severity": "Medium",
+    "tags": [
+      "@regression",
+      "@ui"
+    ],
+    "role": "Employee (vishal.desai)",
+    "preconditions": "Logged in on DEV frontend 6.5.0 (T1564 merged 23/10, PR #517). Read-only: dialogs opened and cancelled, nothing saved.",
+    "steps": [
+      "See title; run scripts/emp2.js"
+    ],
+    "expected": "\"No release notes found\"",
+    "requirementRef": "26d9f277 lib/help/badges.ts, releaseStore",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "lastResult": "passed",
+    "actualResult": "{\"id\":\"whats-new-wait\",\"ok\":true,\"t\":\"All pages\\nAll types\\n0 releases · select a version to see its changes\\nExpand all\\nCollapse all\\nNo release notes found\\n\\nTry a different search, page or type of change.\"}",
+    "notes": "",
+    "screenshot": "reports/screenshots/2026-10-28/hardik/sonar-fe/e06b-whats-new-vishal.desai.png"
+  },
+  {
+    "id": "TC-SONFE-068",
+    "module": "Sonar Clean-up – Frontend Regression",
+    "moduleCode": "SONFE",
+    "subModule": "Error pages",
+    "taskId": "SI4-T1564",
+    "title": "Unauthorized page button",
+    "category": "regression",
+    "priority": "P2",
+    "severity": "Medium",
+    "tags": [
+      "@regression",
+      "@ui"
+    ],
+    "role": "Employee (vishal.desai)",
+    "preconditions": "Logged in on DEV frontend 6.5.0 (T1564 merged 23/10, PR #517). Read-only: dialogs opened and cancelled, nothing saved.",
+    "steps": [
+      "See title; run scripts/emp.js"
+    ],
+    "expected": "\"Go to Profile\" → /profile",
+    "requirementRef": "26d9f277 UnauthorizedPage.tsx",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "lastResult": "passed",
+    "actualResult": "{\"id\":\"unauthorized-page\",\"ok\":true,\"u1\":\"https://simerp-dev.simform.solutions/unauthorized\",\"button\":\"Go to Profile\",\"after\":\"https://simerp-dev.simform.solutions/profile\"}",
+    "notes": "",
+    "screenshot": "reports/screenshots/2026-10-28/hardik/sonar-fe/e07-unauthorized.png"
+  },
+  {
+    "id": "TC-SONFE-069",
+    "module": "Sonar Clean-up – Frontend Regression",
+    "moduleCode": "SONFE",
+    "subModule": "Error pages",
+    "taskId": "SI4-T1564",
+    "title": "404 page button",
+    "category": "regression",
+    "priority": "P2",
+    "severity": "Medium",
+    "tags": [
+      "@regression",
+      "@ui"
+    ],
+    "role": "Employee (vishal.desai)",
+    "preconditions": "Logged in on DEV frontend 6.5.0 (T1564 merged 23/10, PR #517). Read-only: dialogs opened and cancelled, nothing saved.",
+    "steps": [
+      "See title; run scripts/emp2.js"
+    ],
+    "expected": "\"Go to Profile\" → /profile",
+    "requirementRef": "26d9f277 NotFoundPage.tsx",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "lastResult": "passed",
+    "actualResult": "{\"id\":\"not-found-page\",\"ok\":true,\"btns\":[\"Go to Profile\"],\"button\":\"Go to Profile\",\"after\":\"https://simerp-dev.simform.solutions/profile\"}",
+    "notes": "",
+    "screenshot": "reports/screenshots/2026-10-28/hardik/sonar-fe/e08-not-found.png"
+  },
+  {
+    "id": "TC-SONFE-070",
+    "module": "Sonar Clean-up – Frontend Regression",
+    "moduleCode": "SONFE",
+    "subModule": "Weekly Updates",
+    "taskId": "SI4-T1564",
+    "title": "Weekly update edit page opens",
+    "category": "regression",
+    "priority": "P2",
+    "severity": "Medium",
+    "tags": [
+      "@regression",
+      "@ui"
+    ],
+    "role": "TM (suresh.reddy)",
+    "preconditions": "Logged in on DEV frontend 6.5.0 (T1564 merged 23/10, PR #517). Read-only: dialogs opened and cancelled, nothing saved.",
+    "steps": [
+      "See title; run scripts/wuedit.js"
+    ],
+    "expected": "Project + goal tables render",
+    "requirementRef": "6f8b5ca4 WeeklyUpdateCurrentProjectsTable.tsx",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "lastResult": "passed",
+    "actualResult": "{\"id\":\"wu-tm-edit-open\",\"ok\":true,\"url\":\"https://simerp-dev.simform.solutions/weekly-updates/e1260ed9-1f89-4160-bd3a-40aaa87e8329/edit\",\"h\":[\"Edit\",\"Meeting Details\"],\"tables\":[\"Project Name / Weekly Notes\",\"Goal Name / Progress % / Status / Start Date / End Date / Progress History / Exam Attempts / Weekly Notes / Action\"],\"tabs\":[\"Current Projects\",\"Past Projects\"],\"inputs\":{\"total\":18,\"disabled\"",
+    "notes": "",
+    "screenshot": "reports/screenshots/2026-10-28/hardik/sonar-fe/w11-tm-weekly-edit.png"
+  },
+  {
+    "id": "TC-SONFE-071",
+    "module": "Sonar Clean-up – Frontend Regression",
+    "moduleCode": "SONFE",
+    "subModule": "Weekly Updates",
+    "taskId": "SI4-T1564",
+    "title": "Current projects table chips",
+    "category": "regression",
+    "priority": "P2",
+    "severity": "Medium",
+    "tags": [
+      "@regression",
+      "@ui"
+    ],
+    "role": "TM (suresh.reddy)",
+    "preconditions": "Logged in on DEV frontend 6.5.0 (T1564 merged 23/10, PR #517). Read-only: dialogs opened and cancelled, nothing saved.",
+    "steps": [
+      "See title; run scripts/wuedit.js"
+    ],
+    "expected": "5 rows; project chips",
+    "requirementRef": "6f8b5ca4",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "lastResult": "passed",
+    "actualResult": "{\"id\":\"wu-tm-current-projects\",\"ok\":true,\"tables\":[{\"head\":\"Project Name / Weekly Notes\",\"rows\":5,\"first\":\"XmlToJson\\n[39]\\n\\t\"},{\"head\":\"Goal Name / Progress % / Status / Start Date / End Date / Progress History / Exam Attempts / Weekly Notes / Action\",\"rows\":5,\"first\":\"8i0\\t\\t\\nDelayed\\nNot Started\\nIn Progress\\nCompleted\\nDelayed\\n\\t\\n19/08/2026\\n\\t\\n25/08/2026\\n\\tNo history yet\\t\\nNo attempts\\",
+    "notes": "",
+    "screenshot": "reports/screenshots/2026-10-28/hardik/sonar-fe/w12-tm-weekly-current-projects.png"
+  },
+  {
+    "id": "TC-SONFE-072",
+    "module": "Sonar Clean-up – Frontend Regression",
+    "moduleCode": "SONFE",
+    "subModule": "Weekly Updates",
+    "taskId": "SI4-T1564",
+    "title": "Goals section and exam cells",
+    "category": "regression",
+    "priority": "P2",
+    "severity": "Medium",
+    "tags": [
+      "@regression",
+      "@ui"
+    ],
+    "role": "TM (suresh.reddy)",
+    "preconditions": "Logged in on DEV frontend 6.5.0 (T1564 merged 23/10, PR #517). Read-only: dialogs opened and cancelled, nothing saved.",
+    "steps": [
+      "See title; run scripts/wuedit.js"
+    ],
+    "expected": "\"No attempts\" readable placeholder",
+    "requirementRef": "26d9f277 WeeklyUpdateGoalsSection.tsx, WeeklyUpdateExamAttemptsCell.tsx",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "lastResult": "passed",
+    "actualResult": "{\"id\":\"wu-tm-goals-section\",\"ok\":true,\"emptyState\":null,\"goalTables\":1,\"examCells\":[\"No attempts\",\"No attempts\",\"No attempts\"],\"blocked\":[]}",
+    "notes": "",
+    "screenshot": ""
+  },
+  {
+    "id": "TC-SONFE-073",
+    "module": "Sonar Clean-up – Frontend Regression",
+    "moduleCode": "SONFE",
+    "subModule": "Team",
+    "taskId": "SI4-T1564",
+    "title": "TM team page has no Copy action",
+    "category": "regression",
+    "priority": "P2",
+    "severity": "Medium",
+    "tags": [
+      "@regression",
+      "@ui"
+    ],
+    "role": "TM (zalak.das)",
+    "preconditions": "Logged in on DEV frontend 6.5.0 (T1564 merged 23/10, PR #517). Read-only: dialogs opened and cancelled, nothing saved.",
+    "steps": [
+      "See title; run scripts/tm.js"
+    ],
+    "expected": "copy controls = 0",
+    "requirementRef": "397282fe",
+    "automatable": true,
+    "provenance": "observed-live",
+    "confidence": "observed-live",
+    "lastResult": "passed",
+    "actualResult": "{\"id\":\"team-page\",\"ok\":true,\"copy\":0,\"btns\":[\"6 unread notifications\",\"zalak.das@simformsolutions.com\",\"Select Department\",\"Show All Details\",\"Edit team\"]}",
+    "notes": "",
+    "screenshot": "reports/screenshots/2026-10-28/hardik/sonar-fe/t02-team.png"
+  }
+]

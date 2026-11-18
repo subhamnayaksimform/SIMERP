@@ -1,0 +1,26 @@
+{
+  "actor": "priya.chopra",
+  "T0": "2026-10-19T11:20:22.522Z",
+  "T1": "2026-10-19T11:20:23.634Z",
+  "method": "POST",
+  "path": "/allocation-tickets/update-allocation",
+  "req": {
+    "projectAssignmentPublicId": "c3b65d73-e16b-4e34-9cfd-9e15b6033826",
+    "newAllocationPercentage": 20,
+    "newStartDate": "2026-10-19"
+  },
+  "res": {
+    "status": 201,
+    "body": {
+      "code": "ALLOCATION_TICKET_019",
+      "message": "Update allocation ticket created successfully",
+      "data": {
+        "outcome": "TICKET_CREATED",
+        "publicId": "f057a3cb-fd04-43b1-b372-8fa3fd2bedc4",
+        "ticketNumber": "UA-0133",
+        "ticketType": "UPDATE_ALLOCATION",
+        "status": "AWAITING_CONFIRMATION"
+      }
+    }
+  }
+}

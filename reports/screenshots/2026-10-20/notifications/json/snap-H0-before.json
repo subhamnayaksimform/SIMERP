@@ -1,0 +1,36 @@
+{
+  "label": "H0-before",
+  "takenAt": "2026-10-20T08:47:43.041Z",
+  "users": {
+    "gaurav.dutta": {
+      "status": 200,
+      "total": 9,
+      "latestAt": "2026-10-19T11:24:32.202Z",
+      "today": []
+    },
+    "kartik.hegde": {
+      "status": 200,
+      "total": 7,
+      "latestAt": "2026-10-19T11:24:32.220Z",
+      "today": []
+    },
+    "hardik.trivedi": {
+      "status": 200,
+      "total": 100,
+      "latestAt": "2026-10-19T11:31:25.167Z",
+      "today": []
+    },
+    "amit.patel": {
+      "status": 200,
+      "total": 26,
+      "latestAt": "2026-10-19T11:31:25.167Z",
+      "today": []
+    },
+    "cto": {
+      "status": 200,
+      "total": 59,
+      "latestAt": "2026-10-19T11:35:49.493Z",
+      "today": []
+    }
+  }
+}

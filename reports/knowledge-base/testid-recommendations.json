@@ -1,0 +1,12 @@
+{
+  "recommendations": [
+    {
+      "module": "EMPSKL",
+      "file": "/home/subham/SIMERP new project/tests/page-objects/employee/skills.page.ts",
+      "line": 222,
+      "currentLocator": "getByRole('button', { name: 'Add Skills' })",
+      "occurrences": 45,
+      "suggestion": "data-testid=\"empskl\""
+    }
+  ]
+}

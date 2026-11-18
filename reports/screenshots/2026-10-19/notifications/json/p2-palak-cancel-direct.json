@@ -1,0 +1,28 @@
+{
+  "actor": "Palak.Saxena",
+  "T0": "2026-10-19T11:35:48.595Z",
+  "T1": "2026-10-19T11:35:49.602Z",
+  "method": "POST",
+  "path": "/allocation-tickets/cancel-direct-allocation",
+  "req": {
+    "projectAssignmentPublicId": "a84ca3ed-1b69-46a1-8831-13607ef97ef1",
+    "deallocationReason": "OTHERS",
+    "deallocationReasonNote": "QA test cleanup (SI4-T1527 retest 2026-10-19)"
+  },
+  "res": {
+    "status": 201,
+    "body": {
+      "code": "ALLOCATION_TICKET_169",
+      "message": "Upcoming allocation cancelled successfully",
+      "data": {
+        "ticket": {
+          "publicId": "249dcec8-8205-482b-b1b2-a5b37843ad06",
+          "ticketNumber": "DA-0108",
+          "ticketType": "DEALLOCATE_ALLOCATION",
+          "status": "APPROVED"
+        },
+        "isAllocationCancelled": true
+      }
+    }
+  }
+}

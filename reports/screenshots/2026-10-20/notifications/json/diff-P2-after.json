@@ -1,0 +1,53 @@
+{
+  "before": "P1-after",
+  "after": "P2-after",
+  "beforeAt": "2026-10-20T11:27:35.292Z",
+  "afterAt": "2026-10-20T11:28:40.136Z",
+  "newByUser": {
+    "falgun.solanki": [
+      {
+        "eventType": "allocation_ticket.allocation_cancelled",
+        "title": "Allocation Cancelled: XCrypt | Blockchain Wallet",
+        "body": "The upcoming allocation for Falgun Solanki to XCrypt | Blockchain Wallet, due to start 2026-10-22, has been cancelled.",
+        "createdAt": "2026-10-20T11:28:39.693Z",
+        "ctx": {
+          "ticketPublicId": "dbee06a1-35ee-4adc-9d29-6f2e6cb32ed2"
+        }
+      }
+    ],
+    "bhumi.chauhan": [
+      {
+        "eventType": "allocation_ticket.allocation_cancelled",
+        "title": "Allocation Cancelled: XCrypt | Blockchain Wallet",
+        "body": "The upcoming allocation for Falgun Solanki to XCrypt | Blockchain Wallet, due to start 2026-10-22, has been cancelled.",
+        "createdAt": "2026-10-20T11:28:39.693Z",
+        "ctx": {
+          "ticketPublicId": "dbee06a1-35ee-4adc-9d29-6f2e6cb32ed2"
+        }
+      }
+    ],
+    "Palak.Saxena": [],
+    "neha.gupta": [
+      {
+        "eventType": "allocation_ticket.allocation_cancelled",
+        "title": "Allocation Cancelled: XCrypt | Blockchain Wallet",
+        "body": "The upcoming allocation for Falgun Solanki to XCrypt | Blockchain Wallet, due to start 2026-10-22, has been cancelled.",
+        "createdAt": "2026-10-20T11:28:39.693Z",
+        "ctx": {
+          "ticketPublicId": "dbee06a1-35ee-4adc-9d29-6f2e6cb32ed2"
+        }
+      }
+    ],
+    "cto": [
+      {
+        "eventType": "allocation_ticket.allocation_cancelled",
+        "title": "Allocation Cancelled: XCrypt | Blockchain Wallet",
+        "body": "The upcoming allocation for Falgun Solanki to XCrypt | Blockchain Wallet, due to start 2026-10-22, has been cancelled.",
+        "createdAt": "2026-10-20T11:28:39.693Z",
+        "ctx": {
+          "ticketPublicId": "dbee06a1-35ee-4adc-9d29-6f2e6cb32ed2"
+        }
+      }
+    ]
+  }
+}

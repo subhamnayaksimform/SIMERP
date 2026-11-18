@@ -1,0 +1,108 @@
+{
+  "ticket": {
+    "publicId": "3c985933-01f0-45c9-8efe-398b24d3e785",
+    "status": "APPROVED",
+    "project": "AbsoluteUI | Design System",
+    "requester": "Vihaan Chatterjee",
+    "approvals": {},
+    "statusSteps": [
+      {
+        "key": "SUBMITTED",
+        "title": "PMO / ADMIN creates ticket",
+        "description": "PMO/ADMIN creates a direct allocation",
+        "state": "COMPLETED",
+        "completedAt": "2026-10-15T12:33:40.894Z",
+        "performedBy": {
+          "publicId": "ed40fe03-4ede-45be-878a-4e02edf24851",
+          "name": "Vihaan Chatterjee",
+          "photoUrl": "https://i.pravatar.cc/150?u=vihaan.chatterjee@simformsolutions.com"
+        }
+      },
+      {
+        "key": "APPLIED",
+        "title": "Directly Allocated",
+        "description": "Allocated directly by PMO/ADMIN — no approval required",
+        "state": "COMPLETED",
+        "completedAt": "2026-10-15T12:33:40.899Z",
+        "performedBy": {
+          "publicId": "ed40fe03-4ede-45be-878a-4e02edf24851",
+          "name": "Vihaan Chatterjee",
+          "photoUrl": "https://i.pravatar.cc/150?u=vihaan.chatterjee@simformsolutions.com"
+        }
+      }
+    ],
+    "shortlisted": [
+      "Sagar Khanpara"
+    ]
+  },
+  "users": {
+    "sagar.khanpara": [
+      {
+        "id": "cd078655-3a2e-4da3-9323-03d795109df7",
+        "eventType": "notification.allocation.direct_employee_assigned",
+        "title": "You've Been allocated to AbsoluteUI | Design System",
+        "body": "You've been allocated to AbsoluteUI | Design System starting 2026-10-16.",
+        "createdAt": "2026-10-15T12:33:41.067Z",
+        "isRead": false,
+        "ctx": {
+          "assignmentPublicId": "5d897045-1b88-4e62-978d-e4a991915fea"
+        }
+      }
+    ],
+    "rajesh.kumar": [
+      {
+        "id": "8c825577-ac33-4479-8818-e60b50af3a0a",
+        "eventType": "notification.allocation.direct_employee_rm_assigned",
+        "title": "Team Member Assigned: Sagar Khanpara",
+        "body": "Sagar Khanpara has been assigned to AbsoluteUI | Design System starting 2026-10-16.",
+        "createdAt": "2026-10-15T12:33:41.163Z",
+        "isRead": false,
+        "ctx": {
+          "assignmentPublicId": "5d897045-1b88-4e62-978d-e4a991915fea"
+        }
+      }
+    ],
+    "david.lais": [
+      {
+        "id": "bdb0d16c-ebb6-4dbf-80d1-96957132338f",
+        "eventType": "notification.allocation.direct_employee_rm_assigned",
+        "title": "Team Member Assigned: Sagar Khanpara",
+        "body": "Sagar Khanpara has been assigned to AbsoluteUI | Design System starting 2026-10-16.",
+        "createdAt": "2026-10-15T12:33:41.163Z",
+        "isRead": false,
+        "ctx": {
+          "assignmentPublicId": "5d897045-1b88-4e62-978d-e4a991915fea"
+        }
+      }
+    ],
+    "cto": [
+      {
+        "id": "31414657-4e91-4f3d-840c-625d40187465",
+        "eventType": "notification.allocation.direct_employee_rm_assigned",
+        "title": "Direct Allocation: AbsoluteUI | Design System",
+        "body": "Vihaan Chatterjee directly allocated Sagar Khanpara to AbsoluteUI | Design System, bypassing the ticket workflow.",
+        "createdAt": "2026-10-15T12:33:41.163Z",
+        "isRead": false,
+        "ctx": {
+          "assignmentPublicId": "5d897045-1b88-4e62-978d-e4a991915fea"
+        }
+      }
+    ],
+    "abhishek.hingorani": [
+      {
+        "id": "772b2175-845a-4abf-b462-59dc15b93e64",
+        "eventType": "notification.allocation.direct_employee_rm_assigned",
+        "title": "Direct Allocation: AbsoluteUI | Design System",
+        "body": "Vihaan Chatterjee directly allocated Sagar Khanpara to AbsoluteUI | Design System, bypassing the ticket workflow.",
+        "createdAt": "2026-10-15T12:33:41.163Z",
+        "isRead": false,
+        "ctx": {
+          "assignmentPublicId": "5d897045-1b88-4e62-978d-e4a991915fea"
+        }
+      }
+    ],
+    "priya.sharma": [],
+    "ceo": [],
+    "vihaan.chatterjee": []
+  }
+}

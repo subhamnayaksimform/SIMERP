@@ -1,0 +1,32 @@
+{
+  "module": "EMPALC",
+  "subModule": "EMPALC",
+  "description": "Project Resource Allocation / Deallocation Ticketing (New Allocation, Request Replacement, Update Allocation, Deallocation, Direct Allocate)",
+  "edgeCases": [
+    "Multi-resource New Allocation submission (e.g., 5–10 resources in one form) must generate one separate ticket per resource, each independently trackable.",
+    "Shadow-developer count increases an employee's total available allocation % by 100% per shadow assignment (e.g., 1 shadow dev → up to 200% available, 2 → 300%), which can produce unusually high displayed availability values (e.g. 140%).",
+    "Selecting a candidate whose available % is below the requested allocation % must render the row/box with a red warning highlight and block further action.",
+    "Reducing allocation by ≥70% relative to current allocation triggers mandatory rating/feedback capture before the decrease ticket can be submitted; reductions <70% do not require this.",
+    "Resulting allocation <10% surfaces a system suggestion to fully deallocate instead of partially reducing.",
+    "Ticket list KPI tiles (All / Open / In Review / Awaiting / Approved) must sum consistently — an observed case in the walkthrough showed 'All Tickets' = 46 while a filtered tile alone displayed 61, an inconsistent state.",
+    "Applied filters on the project allocation/ticket list must persist when the user navigates away to another tab and returns, without being reset.",
+    "A user holding both TM and PM roles must see two independently-scoped ticket tabs (Project Tickets as PM, Department Tickets as TM) with no data bleed between them.",
+    "Duplicating an existing ticket (to add resource #2, #3, etc.) must copy all prior field values except tech-stack selections, which must remain independently editable per duplicated ticket.",
+    "PMO's direct allocate/deallocate action from the Employee Details page must generate a placeholder ticket in the ticket list purely for audit/reporting, without invoking the shortlisting/approval workflow.",
+    "Create or update an allocation ticket via the UI, then fetch the same ticket via its API endpoint and confirm the returned allocation %, status, and department match exactly (regression-derived, API/UI parity risk).",
+    "Double-click or rapidly re-submit the New Allocation (or Replacement/Update) ticket submit button and verify only one ticket is created, not duplicates (regression-derived, double-submit risk on a Create flow).",
+    "After a Deallocation ticket is applied, verify the employee no longer appears in the project's active team-member list or in shortlisting dropdowns for that project (regression-derived, stale-reference risk after a status transition).",
+    "Attempt to force a ticket directly from 'Open' to 'Approved & Applied' (skipping shortlisting/approval) via the UI and via a direct API call; both must be rejected (regression-derived, invalid state-machine transition risk).",
+    "After PMO performs a direct allocate/deallocate action from Employee Details, verify the placeholder ticket appears in the ticket list immediately without a manual page refresh (regression-derived, cache-refresh risk).",
+    "Apply a ticket-list filter combination that matches zero tickets and verify an explicit empty-state message is shown rather than a blank or stale list (regression-derived, filtering edge case)."
+  ],
+  "businessRules": [
+    "Each role's permitted and forbidden actions (PM/TM/PMO department-selection, approval rights, bypass rights) must be enforced at both UI level (control hidden/disabled) and API level (403 on unauthorized action)",
+    "Submitting the same allocation/replacement/update ticket form twice in quick succession (double-click or rapid resubmit) must not create duplicate tickets",
+    "Any allocation/ticket data written via the UI (new ticket, status change, approval) must be retrievable via the corresponding API with identical values",
+    "A deallocated employee must not appear as an active team member in the project's team list, active dropdowns, or shortlisting candidate pools",
+    "Allocation tickets must only progress through valid status transitions (Open → Department Assigned → Shortlisting → Awaiting Approval → Approved & Applied, or → Bypassed, or → Rejected back to Shortlisting); no status may be skipped or set arbitrarily",
+    "After PMO's direct allocate/deallocate action or any ticket status change, the ticket list and project team-member list must reflect the change immediately without requiring a manual page refresh"
+  ],
+  "lastRequirementAnalysisUpdate": "2026-08-05T05:24:08.415Z"
+}

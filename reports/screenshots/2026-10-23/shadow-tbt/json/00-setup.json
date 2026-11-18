@@ -1,0 +1,103 @@
+{
+  "mainTanmay": {
+    "status": 201,
+    "body": {
+      "code": "ALLOCATION_TICKET_070",
+      "message": "Direct allocation created successfully",
+      "data": {
+        "publicId": "de02d73e-3385-44f2-be8e-f7fa212aa116",
+        "allocationPercentage": 20,
+        "allocationType": "FIXED",
+        "typeOfWork": "DEVELOPMENT_WORK",
+        "allocationStartDate": "2026-10-23",
+        "allocationEndDate": null,
+        "status": "GREEN",
+        "note": "QA SHADOW TBT RETEST 2026-10-23: main for I586/I590/I591 retest",
+        "allocationOrigin": "PMO",
+        "employee": {
+          "publicId": "414bf1e0-fcc1-4551-873b-15e0ca83a95d",
+          "name": "Tanmay Parekh",
+          "email": "tanmay.parekh@simformsolutions.com",
+          "photoUrl": "https://i.pravatar.cc/150?u=tanmay.parekh@simformsolutions.com"
+        },
+        "shadowDeveloper": null,
+        "project": {
+          "publicId": "3d138a89-4d06-4839-8091-436fba0a2dd6",
+          "name": "HyperScale | Scalability Engine",
+          "alias": "",
+          "projectManager": {
+            "publicId": "5f1a4477-84fe-46aa-8360-ca4e0a16983c",
+            "name": "Hardik Trivedi",
+            "photoUrl": "https://i.pravatar.cc/150?u=hardik.trivedi@simformsolutions.com"
+          },
+          "customerSuccessManager": {
+            "publicId": "09d434e9-5346-4790-8ae7-f5105e5b4968",
+            "name": "Priya Chopra",
+            "photoUrl": "https://i.pravatar.cc/150?u=priya.chopra@simformsolutions.com"
+          }
+        },
+        "createdBy": {
+          "publicId": "e93f5377-1f74-42cb-9a40-255908e50310",
+          "name": "Bhumi Chauhan",
+          "email": "bhumi.chauhan@simformsolutions.com",
+          "photoUrl": "https://i.pravatar.cc/150?u=bhumi.chauhan@simformsolutions.com"
+        },
+        "ticketPublicId": "29343026-9231-4590-8b20-41862d367f52",
+        "ticketNumber": "NA-0420"
+      }
+    }
+  },
+  "shUrvashi": {
+    "status": 201,
+    "body": {
+      "code": "ALLOCATION_TICKET_070",
+      "message": "Direct allocation created successfully",
+      "data": {
+        "publicId": "928c674d-edd6-48e6-b90c-243136f4cbe3",
+        "allocationPercentage": 10,
+        "allocationType": "FIXED",
+        "typeOfWork": "DEVELOPMENT_WORK",
+        "allocationStartDate": "2026-10-23",
+        "allocationEndDate": "2026-12-31",
+        "status": "GREEN",
+        "note": "QA SHADOW TBT RETEST 2026-10-23: shadow of Tanmay",
+        "allocationOrigin": "PMO",
+        "employee": {
+          "publicId": "15979d5b-8dd1-442b-9f4e-5de69c717827",
+          "name": "Urvashi Kotak",
+          "email": "urvashi.kotak@simformsolutions.com",
+          "photoUrl": "https://i.pravatar.cc/150?u=urvashi.kotak@simformsolutions.com"
+        },
+        "shadowDeveloper": {
+          "publicId": "414bf1e0-fcc1-4551-873b-15e0ca83a95d",
+          "name": "Tanmay Parekh",
+          "email": "tanmay.parekh@simformsolutions.com",
+          "photoUrl": "https://i.pravatar.cc/150?u=tanmay.parekh@simformsolutions.com"
+        },
+        "project": {
+          "publicId": "3d138a89-4d06-4839-8091-436fba0a2dd6",
+          "name": "HyperScale | Scalability Engine",
+          "alias": "",
+          "projectManager": {
+            "publicId": "5f1a4477-84fe-46aa-8360-ca4e0a16983c",
+            "name": "Hardik Trivedi",
+            "photoUrl": "https://i.pravatar.cc/150?u=hardik.trivedi@simformsolutions.com"
+          },
+          "customerSuccessManager": {
+            "publicId": "09d434e9-5346-4790-8ae7-f5105e5b4968",
+            "name": "Priya Chopra",
+            "photoUrl": "https://i.pravatar.cc/150?u=priya.chopra@simformsolutions.com"
+          }
+        },
+        "createdBy": {
+          "publicId": "e93f5377-1f74-42cb-9a40-255908e50310",
+          "name": "Bhumi Chauhan",
+          "email": "bhumi.chauhan@simformsolutions.com",
+          "photoUrl": "https://i.pravatar.cc/150?u=bhumi.chauhan@simformsolutions.com"
+        },
+        "ticketPublicId": "55812f61-e3ce-42cb-9658-54b260059626",
+        "ticketNumber": "NA-0421"
+      }
+    }
+  }
+}

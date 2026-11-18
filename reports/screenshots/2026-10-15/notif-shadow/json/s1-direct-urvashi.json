@@ -1,0 +1,62 @@
+{
+  "T0": "2026-10-15T10:16:57.780Z",
+  "req": {
+    "employeePublicId": "f33a8f2b-9d83-43ef-8dce-362f2c627313",
+    "projectPublicId": "c20430eb-7e7e-44e6-b769-3c7756e6a9e2",
+    "allocationType": "FIXED",
+    "allocationPercentage": 10,
+    "allocationStartDate": "2026-10-15",
+    "allocationEndDate": "2026-10-31",
+    "typeOfWork": "DEVELOPMENT_WORK",
+    "status": "GREEN",
+    "note": "QA test SI4-T1527 notifications - will be removed same day"
+  },
+  "res": {
+    "status": 201,
+    "body": {
+      "code": "ALLOCATION_TICKET_070",
+      "message": "Direct allocation created successfully",
+      "data": {
+        "publicId": "c89a92ff-56c5-472d-9217-e9e1a8b135b1",
+        "allocationPercentage": 10,
+        "allocationType": "FIXED",
+        "typeOfWork": "DEVELOPMENT_WORK",
+        "allocationStartDate": "2026-10-15",
+        "allocationEndDate": "2026-10-31",
+        "status": "GREEN",
+        "note": "QA test SI4-T1527 notifications - will be removed same day",
+        "allocationOrigin": "PMO",
+        "employee": {
+          "publicId": "f33a8f2b-9d83-43ef-8dce-362f2c627313",
+          "name": "Urvashi Kamath",
+          "email": "urvashi.kamath@simformsolutions.com",
+          "photoUrl": "https://i.pravatar.cc/150?u=urvashi.kamath@simformsolutions.com"
+        },
+        "shadowDeveloper": null,
+        "project": {
+          "publicId": "c20430eb-7e7e-44e6-b769-3c7756e6a9e2",
+          "name": "XCrypt | Blockchain Wallet",
+          "alias": "",
+          "projectManager": {
+            "publicId": "49670820-7826-4e95-b651-152db9d1ec02",
+            "name": "Keyur Hegde",
+            "photoUrl": "https://i.pravatar.cc/150?u=keyur.hegde@simformsolutions.com"
+          },
+          "customerSuccessManager": {
+            "publicId": "4174b8c1-9d89-4b61-bfd7-075924620091",
+            "name": "Tarun Sharma",
+            "photoUrl": "https://i.pravatar.cc/150?u=tarun.sharma@simformsolutions.com"
+          }
+        },
+        "createdBy": {
+          "publicId": "e93f5377-1f74-42cb-9a40-255908e50310",
+          "name": "Bhumi Chauhan",
+          "email": "bhumi.chauhan@simformsolutions.com",
+          "photoUrl": "https://i.pravatar.cc/150?u=bhumi.chauhan@simformsolutions.com"
+        },
+        "ticketPublicId": "9953d0fc-50e1-4613-b0c5-b87e308c7fdd",
+        "ticketNumber": "NA-0359"
+      }
+    }
+  }
+}

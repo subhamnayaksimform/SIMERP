@@ -1,0 +1,23 @@
+{
+  "schedText": "SimERP\n6.5.0\nToggle Sidebar\nOverview\nEmployee\nTeam\nRequests Tracking\nProjects\nDepartment\nAdmin\nWhat's New & History\nHelp & Support\nJob Scheduler\nSync Jobs\nScheduled Jobs\nAll Jobs\nAll Statuses\nRefresh\nActions\n\t\nJob\n\t\nStatus\n\t\nSchedule\n\t\nTriggered By\n\t\nStarted At\n\t\nDuration\n\t\nProcessed\n\t\nFailures\nNo data available\n\nNo scheduled job runs recorded yet.",
+  "shotSched": "reports/screenshots/2026-10-28/hardik/t1548/admin-scheduler.png",
+  "rowCount": 0,
+  "rowText": "",
+  "runsBefore": "200 {\"code\":\"SUCCESS\",\"message\":\"Cron job runs fetched successfully\",\"data\":{\"items\":[],\"total\":0,\"page\":1,\"limit\":100,\"totalPages\":0}}",
+  "runBtn": 0,
+  "runsAfter": "200 {\"code\":\"SUCCESS\",\"message\":\"Cron job runs fetched successfully\",\"data\":{\"items\":[],\"total\":0,\"page\":1,\"limit\":100,\"totalPages\":0}}",
+  "summaryRelease": {
+    "jobName": "release-announcement",
+    "cronExpression": "*/15 * * * *",
+    "lastRun": null
+  },
+  "releasesAfter": "{\"code\":\"REL_001\",\"message\":\"Release notes fetched successfully.\",\"data\":[]}",
+  "notifAfter": null,
+  "rolesUrl": "https://simerp-dev.simform.solutions/admin/roles-and-permissions",
+  "rolesShot": "reports/screenshots/2026-10-28/hardik/t1548/admin-roles.png",
+  "rolesHasRelease": [
+    "What's New & History",
+    "Releases",
+    "Releases"
+  ]
+}

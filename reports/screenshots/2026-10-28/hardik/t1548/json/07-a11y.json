@@ -1,0 +1,42 @@
+{
+  "h1": [
+    "What's New"
+  ],
+  "pageFilter": 1,
+  "typeFilter": 1,
+  "search": 0,
+  "searchbox": 1,
+  "whatsNewBody": [
+    "99+",
+    "All pages",
+    "All types",
+    "0 releases · select a version to see its changes",
+    "Expand all",
+    "Collapse all",
+    "No release notes found",
+    "Try a different search, page or type of change."
+  ],
+  "bareTokens": [],
+  "afterSearch": [
+    "0 releases · select a version to see its changes",
+    "No release notes found",
+    "Try a different search, page or type of change."
+  ],
+  "shotSearch": "reports/screenshots/2026-10-28/hardik/t1548/em-whats-new-search-no-match.png",
+  "pageOptions": [
+    "All pages"
+  ],
+  "shotPageOpts": "reports/screenshots/2026-10-28/hardik/t1548/em-whats-new-page-filter-empty.png",
+  "helpStats": [
+    "49\nguides for you",
+    "16\npages covered"
+  ],
+  "helpBare": [],
+  "bellLabel": "298 unread notifications",
+  "tabs": [
+    "How to",
+    "Terms & numbers",
+    "Notifications\n99+",
+    "What's New"
+  ]
+}

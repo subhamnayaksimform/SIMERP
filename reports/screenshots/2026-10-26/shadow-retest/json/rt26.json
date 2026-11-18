@@ -1,0 +1,229 @@
+{
+  "A-create": {
+    "status": 201,
+    "body": {
+      "code": "ALLOCATION_TICKET_006",
+      "message": "New allocation ticket(s) created successfully",
+      "data": [
+        {
+          "publicId": "91eb6bc5-d5fd-4f12-afe9-3d9acbecfc53",
+          "ticketNumber": "NA-0446",
+          "status": "OPEN"
+        }
+      ]
+    }
+  },
+  "A": {
+    "id": "91eb6bc5-d5fd-4f12-afe9-3d9acbecfc53",
+    "n": "NA-0446"
+  },
+  "A-prep-send": {
+    "status": 200,
+    "body": {
+      "code": "SUCCESS",
+      "message": "Allocation ticket updated successfully",
+      "data": {
+        "publicId": "91eb6bc5-d5fd-4f12-afe9-3d9acbecfc53",
+        "ticketNumber": "NA-0446",
+        "status": "AWAITING_CONFIRMATION",
+        "warnings": [],
+        "employeeAvailability": [
+          {
+            "employeePublicId": "a47311de-ba03-4389-a356-e45b6651082d",
+            "availabilityPercentage": 100,
+            "isAvailable": true,
+            "allocationCapPercentage": 100,
+            "consumedPercentage": 0,
+            "remainingPercentage": 100,
+            "overlappingAllocations": [],
+            "reasons": []
+          }
+        ]
+      }
+    }
+  },
+  "A-tm-approve": {
+    "status": 200,
+    "body": {
+      "code": "SUCCESS",
+      "message": "Ticket approved",
+      "data": {
+        "publicId": "91eb6bc5-d5fd-4f12-afe9-3d9acbecfc53",
+        "ticketNumber": "NA-0446",
+        "status": "APPROVED"
+      }
+    }
+  },
+  "B-create": {
+    "status": 400,
+    "body": {
+      "code": "SYS_004",
+      "message": "The selected Shadow For developer is not currently assigned to this project"
+    }
+  },
+  "C-swap": {
+    "status": 201,
+    "body": {
+      "code": "ALLOCATION_TICKET_173",
+      "message": "Shadow swap tickets created successfully",
+      "data": {
+        "groupPublicId": "29eb9f71-ded6-4188-ad0a-4f05066487d6",
+        "groupNumber": 20,
+        "tickets": [
+          {
+            "publicId": "a0f5e9f6-c986-4994-8cdf-68bcf8153d5b",
+            "ticketNumber": "DA-0172",
+            "ticketType": "DEALLOCATE_ALLOCATION",
+            "step": 1
+          },
+          {
+            "publicId": "70a8cd3d-fadc-4e28-8844-ee5af150d1b7",
+            "ticketNumber": "DA-0173",
+            "ticketType": "DEALLOCATE_ALLOCATION",
+            "step": 1
+          },
+          {
+            "publicId": "10774e05-75e0-4cd4-8e12-18ccf1a3219d",
+            "ticketNumber": "NA-0447",
+            "ticketType": "NEW_ALLOCATION",
+            "step": 2
+          },
+          {
+            "publicId": "615580bd-fee7-49bb-8404-a304a4485ec1",
+            "ticketNumber": "NA-0448",
+            "ticketType": "NEW_ALLOCATION",
+            "step": 2
+          }
+        ]
+      }
+    }
+  },
+  "C": [
+    {
+      "id": "a0f5e9f6-c986-4994-8cdf-68bcf8153d5b",
+      "n": "DA-0172",
+      "type": "DEALLOCATE_ALLOCATION"
+    },
+    {
+      "id": "70a8cd3d-fadc-4e28-8844-ee5af150d1b7",
+      "n": "DA-0173",
+      "type": "DEALLOCATE_ALLOCATION"
+    },
+    {
+      "id": "10774e05-75e0-4cd4-8e12-18ccf1a3219d",
+      "n": "NA-0447",
+      "type": "NEW_ALLOCATION"
+    },
+    {
+      "id": "615580bd-fee7-49bb-8404-a304a4485ec1",
+      "n": "NA-0448",
+      "type": "NEW_ALLOCATION"
+    }
+  ],
+  "C-ns-prep": {
+    "status": 200,
+    "body": {
+      "code": "SUCCESS",
+      "message": "Allocation ticket updated successfully",
+      "data": {
+        "publicId": "615580bd-fee7-49bb-8404-a304a4485ec1",
+        "ticketNumber": "NA-0448",
+        "status": "IN_REVIEW",
+        "warnings": [],
+        "employeeAvailability": [
+          {
+            "employeePublicId": "dcfc5685-8cdd-440a-af8d-f1af386032e4",
+            "availabilityPercentage": 19.42,
+            "isAvailable": true,
+            "allocationCapPercentage": 100,
+            "consumedPercentage": 0,
+            "remainingPercentage": 100,
+            "overlappingAllocations": [
+              {
+                "projectAssignmentPublicId": "2ea32a56-bb5d-4c3b-b2e4-bf71bd7a6855",
+                "projectPublicId": "d793f948-cde0-4dc5-a6de-987ccce2bb25",
+                "allocationType": "DYNAMIC",
+                "allocationPercentage": 0,
+                "allocationStartDate": "2026-09-19T00:00:00.000Z",
+                "allocationEndDate": "2028-02-27T00:00:00.000Z",
+                "shadowDeveloperId": null,
+                "conflictingFrom": "2026-11-01T00:00:00.000Z",
+                "conflictingTo": "2028-02-27T00:00:00.000Z"
+              }
+            ],
+            "reasons": []
+          }
+        ]
+      }
+    }
+  },
+  "C-ns-bypass-early": {
+    "status": 409,
+    "body": {
+      "code": "ALLOCATION_TICKET_172",
+      "message": "Complete the step 1, 2 tickets (#DA-0172, #DA-0173, #NA-0447) before actioning this ticket.",
+      "data": {
+        "blockingTickets": [
+          {
+            "publicId": "a0f5e9f6-c986-4994-8cdf-68bcf8153d5b",
+            "ticketNumber": "DA-0172",
+            "ticketType": "DEALLOCATE_ALLOCATION",
+            "step": 1,
+            "status": "AWAITING_CONFIRMATION"
+          },
+          {
+            "publicId": "70a8cd3d-fadc-4e28-8844-ee5af150d1b7",
+            "ticketNumber": "DA-0173",
+            "ticketType": "DEALLOCATE_ALLOCATION",
+            "step": 1,
+            "status": "AWAITING_CONFIRMATION"
+          },
+          {
+            "publicId": "10774e05-75e0-4cd4-8e12-18ccf1a3219d",
+            "ticketNumber": "NA-0447",
+            "ticketType": "NEW_ALLOCATION",
+            "step": 2,
+            "status": "OPEN"
+          }
+        ]
+      }
+    }
+  },
+  "C-promo-bypass-early": {
+    "status": 409,
+    "body": {
+      "code": "ALLOCATION_TICKET_172",
+      "message": "Complete the step 1 tickets (#DA-0172, #DA-0173) before actioning this ticket.",
+      "data": {
+        "blockingTickets": [
+          {
+            "publicId": "a0f5e9f6-c986-4994-8cdf-68bcf8153d5b",
+            "ticketNumber": "DA-0172",
+            "ticketType": "DEALLOCATE_ALLOCATION",
+            "step": 1,
+            "status": "AWAITING_CONFIRMATION"
+          },
+          {
+            "publicId": "70a8cd3d-fadc-4e28-8844-ee5af150d1b7",
+            "ticketNumber": "DA-0173",
+            "ticketType": "DEALLOCATE_ALLOCATION",
+            "step": 1,
+            "status": "AWAITING_CONFIRMATION"
+          }
+        ]
+      }
+    }
+  },
+  "C-close-main": {
+    "status": 200,
+    "body": {
+      "code": "SUCCESS",
+      "message": "Ticket closed successfully",
+      "data": {
+        "publicId": "a0f5e9f6-c986-4994-8cdf-68bcf8153d5b",
+        "ticketNumber": "DA-0172",
+        "status": "CLOSED"
+      }
+    }
+  }
+}

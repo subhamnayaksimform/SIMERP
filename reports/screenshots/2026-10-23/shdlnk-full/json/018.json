@@ -1,0 +1,26 @@
+{
+  "ackS": {
+    "status": 200,
+    "body": {
+      "code": "SUCCESS",
+      "message": "De-allocation acknowledged; allocation change applied",
+      "data": {
+        "publicId": "5df0ec57-f923-4ddf-8d77-209a592766fe",
+        "ticketNumber": "DA-0155",
+        "status": "APPROVED"
+      }
+    }
+  },
+  "ackM": {
+    "status": 200,
+    "body": {
+      "code": "SUCCESS",
+      "message": "De-allocation acknowledged; allocation change applied",
+      "data": {
+        "publicId": "5033202f-e077-4dc3-b3a1-922454740be1",
+        "ticketNumber": "DA-0154",
+        "status": "APPROVED"
+      }
+    }
+  }
+}

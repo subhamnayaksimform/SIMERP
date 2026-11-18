@@ -1,0 +1,213 @@
+{
+  "swap": {
+    "status": 201,
+    "body": {
+      "code": "ALLOCATION_TICKET_173",
+      "message": "Shadow swap tickets created successfully",
+      "data": {
+        "groupPublicId": "7daa0ddb-bcdd-47a9-832c-f959900645af",
+        "groupNumber": 13,
+        "tickets": [
+          {
+            "publicId": "7adf2964-d273-4b2c-9079-c457ade6e112",
+            "ticketNumber": "DA-0145",
+            "ticketType": "DEALLOCATE_ALLOCATION",
+            "step": 1
+          },
+          {
+            "publicId": "b5990274-577c-4ed5-9f98-0e0e5b67f6e2",
+            "ticketNumber": "DA-0146",
+            "ticketType": "DEALLOCATE_ALLOCATION",
+            "step": 1
+          },
+          {
+            "publicId": "3b45ea91-c1b4-4fb4-a7de-a7281626474c",
+            "ticketNumber": "NA-0414",
+            "ticketType": "NEW_ALLOCATION",
+            "step": 2
+          },
+          {
+            "publicId": "2da9b42d-70a6-4f47-a1f4-fc17bec0520c",
+            "ticketNumber": "NA-0415",
+            "ticketType": "NEW_ALLOCATION",
+            "step": 2
+          }
+        ]
+      }
+    }
+  },
+  "ids": {
+    "DAM": "7adf2964-d273-4b2c-9079-c457ade6e112",
+    "DAS": "b5990274-577c-4ed5-9f98-0e0e5b67f6e2",
+    "NAP": "3b45ea91-c1b4-4fb4-a7de-a7281626474c",
+    "NAS": "2da9b42d-70a6-4f47-a1f4-fc17bec0520c",
+    "nums": [
+      "DA-0145",
+      "DA-0146",
+      "NA-0414",
+      "NA-0415"
+    ]
+  },
+  "046-nas": {
+    "status": 409,
+    "body": {
+      "code": "ALLOCATION_TICKET_172",
+      "message": "Complete the step 1 tickets (#DA-0145, #DA-0146) before actioning this ticket.",
+      "data": {
+        "blockingTickets": [
+          {
+            "publicId": "7adf2964-d273-4b2c-9079-c457ade6e112",
+            "ticketNumber": "DA-0145",
+            "ticketType": "DEALLOCATE_ALLOCATION",
+            "step": 1,
+            "status": "AWAITING_CONFIRMATION"
+          },
+          {
+            "publicId": "b5990274-577c-4ed5-9f98-0e0e5b67f6e2",
+            "ticketNumber": "DA-0146",
+            "ticketType": "DEALLOCATE_ALLOCATION",
+            "step": 1,
+            "status": "AWAITING_CONFIRMATION"
+          }
+        ]
+      }
+    }
+  },
+  "046-nap": {
+    "status": 409,
+    "body": {
+      "code": "ALLOCATION_TICKET_172",
+      "message": "Complete the step 1 tickets (#DA-0145, #DA-0146) before actioning this ticket.",
+      "data": {
+        "blockingTickets": [
+          {
+            "publicId": "7adf2964-d273-4b2c-9079-c457ade6e112",
+            "ticketNumber": "DA-0145",
+            "ticketType": "DEALLOCATE_ALLOCATION",
+            "step": 1,
+            "status": "AWAITING_CONFIRMATION"
+          },
+          {
+            "publicId": "b5990274-577c-4ed5-9f98-0e0e5b67f6e2",
+            "ticketNumber": "DA-0146",
+            "ticketType": "DEALLOCATE_ALLOCATION",
+            "step": 1,
+            "status": "AWAITING_CONFIRMATION"
+          }
+        ]
+      }
+    }
+  },
+  "ack-main": {
+    "status": 200,
+    "body": {
+      "code": "SUCCESS",
+      "message": "De-allocation acknowledged; allocation change applied",
+      "data": {
+        "publicId": "7adf2964-d273-4b2c-9079-c457ade6e112",
+        "ticketNumber": "DA-0145",
+        "status": "APPROVED"
+      }
+    }
+  },
+  "ack-shadow": {
+    "status": 200,
+    "body": {
+      "code": "SUCCESS",
+      "message": "De-allocation acknowledged; allocation change applied",
+      "data": {
+        "publicId": "b5990274-577c-4ed5-9f98-0e0e5b67f6e2",
+        "ticketNumber": "DA-0146",
+        "status": "APPROVED"
+      }
+    }
+  },
+  "047-prep": {
+    "status": 200,
+    "body": {
+      "code": "SUCCESS",
+      "message": "Allocation ticket updated successfully",
+      "data": {
+        "publicId": "2da9b42d-70a6-4f47-a1f4-fc17bec0520c",
+        "ticketNumber": "NA-0415",
+        "status": "AWAITING_CONFIRMATION",
+        "warnings": [],
+        "employeeAvailability": [
+          {
+            "employeePublicId": "13a61b0c-5cd7-4411-82cd-2705c7eda1bd",
+            "availabilityPercentage": 17.85,
+            "isAvailable": true,
+            "allocationCapPercentage": 100,
+            "consumedPercentage": 0,
+            "remainingPercentage": 100,
+            "overlappingAllocations": [],
+            "reasons": []
+          }
+        ]
+      }
+    }
+  },
+  "047-bypass": {
+    "status": 200,
+    "body": {
+      "code": "SUCCESS",
+      "message": "TM/EM approval bypassed; ticket approved and applied",
+      "data": {
+        "publicId": "2da9b42d-70a6-4f47-a1f4-fc17bec0520c",
+        "ticketNumber": "NA-0415",
+        "status": "APPROVED",
+        "warnings": []
+      }
+    }
+  },
+  "048-prep": {
+    "status": 200,
+    "body": {
+      "code": "SUCCESS",
+      "message": "Allocation ticket updated successfully",
+      "data": {
+        "publicId": "3b45ea91-c1b4-4fb4-a7de-a7281626474c",
+        "ticketNumber": "NA-0414",
+        "status": "AWAITING_CONFIRMATION",
+        "warnings": [],
+        "employeeAvailability": [
+          {
+            "employeePublicId": "6b6621f0-897c-4e74-b900-27ca295aaa27",
+            "availabilityPercentage": 41.8,
+            "isAvailable": true,
+            "allocationCapPercentage": 120,
+            "consumedPercentage": 35,
+            "remainingPercentage": 85,
+            "overlappingAllocations": [
+              {
+                "projectAssignmentPublicId": "64801115-9d29-47ce-a405-c387693cc4df",
+                "projectPublicId": "218f248f-f918-462c-a4a4-be78ba3193f5",
+                "allocationType": "FIXED",
+                "allocationPercentage": 35,
+                "allocationStartDate": "2026-02-14T00:00:00.000Z",
+                "allocationEndDate": "2027-07-21T00:00:00.000Z",
+                "shadowDeveloperId": null,
+                "conflictingFrom": "2026-11-01T00:00:00.000Z",
+                "conflictingTo": "2027-07-21T00:00:00.000Z"
+              }
+            ],
+            "reasons": []
+          }
+        ]
+      }
+    }
+  },
+  "048-bypass": {
+    "status": 200,
+    "body": {
+      "code": "SUCCESS",
+      "message": "TM/EM approval bypassed; ticket approved and applied",
+      "data": {
+        "publicId": "3b45ea91-c1b4-4fb4-a7de-a7281626474c",
+        "ticketNumber": "NA-0414",
+        "status": "APPROVED",
+        "warnings": []
+      }
+    }
+  }
+}

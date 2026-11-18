@@ -1,0 +1,35 @@
+{
+  "030-pre-plain-DA": {
+    "status": 201,
+    "body": {
+      "code": "ALLOCATION_TICKET_097",
+      "message": "Deallocation ticket created successfully",
+      "data": {
+        "outcome": "TICKET_CREATED",
+        "publicId": "903b5507-a895-43ca-a6f9-6e1aa2b223e0",
+        "ticketNumber": "DA-0164",
+        "ticketType": "DEALLOCATE_ALLOCATION",
+        "status": "AWAITING_CONFIRMATION"
+      }
+    }
+  },
+  "030-swap": {
+    "status": 409,
+    "body": {
+      "code": "SYS_004",
+      "message": "An active ticket already exists for this project assignment"
+    }
+  },
+  "030-cleanup-close": {
+    "status": 200,
+    "body": {
+      "code": "SUCCESS",
+      "message": "Ticket closed successfully",
+      "data": {
+        "publicId": "903b5507-a895-43ca-a6f9-6e1aa2b223e0",
+        "ticketNumber": "DA-0164",
+        "status": "CLOSED"
+      }
+    }
+  }
+}

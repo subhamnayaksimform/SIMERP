@@ -1,0 +1,155 @@
+{
+  "before": "E0-before",
+  "after": "E4a-after",
+  "beforeAt": "2026-10-20T12:43:42.113Z",
+  "afterAt": "2026-10-20T12:59:48.905Z",
+  "newByUser": {
+    "tanmay.arora": [
+      {
+        "eventType": "allocation.direct_employee_assigned",
+        "title": "You've Been allocated to KubeDash | Kubernetes Dashboard",
+        "body": "You've been allocated to KubeDash | Kubernetes Dashboard starting 2026-10-22.",
+        "createdAt": "2026-10-20T12:59:44.736Z",
+        "ctx": {
+          "assignmentPublicId": "40cc4d86-af0f-4080-bfd9-c29ef16cf230"
+        }
+      }
+    ],
+    "urvi.trivedi": [
+      {
+        "eventType": "allocation.direct_employee_rm_assigned",
+        "title": "Direct Allocation: KubeDash | Kubernetes Dashboard",
+        "body": "Bhumi Chauhan directly allocated Tanmay Arora to KubeDash | Kubernetes Dashboard, bypassing the ticket workflow.",
+        "createdAt": "2026-10-20T12:59:44.788Z",
+        "ctx": {
+          "assignmentPublicId": "40cc4d86-af0f-4080-bfd9-c29ef16cf230"
+        }
+      }
+    ],
+    "rajesh.kumar": [],
+    "cto": [
+      {
+        "eventType": "allocation.direct_employee_rm_assigned",
+        "title": "Direct Allocation: KubeDash | Kubernetes Dashboard",
+        "body": "Bhumi Chauhan directly allocated Tanmay Arora to KubeDash | Kubernetes Dashboard, bypassing the ticket workflow.",
+        "createdAt": "2026-10-20T12:59:44.788Z",
+        "ctx": {
+          "assignmentPublicId": "40cc4d86-af0f-4080-bfd9-c29ef16cf230"
+        }
+      },
+      {
+        "eventType": "allocation_ticket.developer_rm_deallocated",
+        "title": "Team Member Deallocated: Gaurav Dutta",
+        "body": "Gaurav Dutta has been deallocated from KubeDash | Kubernetes Dashboard, effective 2026-10-20.",
+        "createdAt": "2026-10-20T12:58:06.252Z",
+        "ctx": {
+          "ticketPublicId": "6b29258b-3470-4061-bd44-e867a62e4f4a"
+        }
+      },
+      {
+        "eventType": "allocation_ticket.developer_rm_updated",
+        "title": "Assignment Updated: Gaurav Dutta",
+        "body": "Gaurav Dutta's allocation for KubeDash | Kubernetes Dashboard has been updated.",
+        "createdAt": "2026-10-20T12:54:22.462Z",
+        "ctx": {
+          "ticketPublicId": "14bab8ce-94de-4116-a6ec-926ce8c2c618"
+        }
+      },
+      {
+        "eventType": "allocation_ticket.approved",
+        "title": "Ticket Approved: UA-0135",
+        "body": "UA-0135 (UPDATE ALLOCATION) for project KubeDash | Kubernetes Dashboard has been fully approved and applied for the requested developer.",
+        "createdAt": "2026-10-20T12:54:22.444Z",
+        "ctx": {
+          "ticketPublicId": "14bab8ce-94de-4116-a6ec-926ce8c2c618"
+        }
+      },
+      {
+        "eventType": "allocation_ticket.assigned_to_department",
+        "title": "New Ticket for Review: UA-0135",
+        "body": "UA-0135 (UPDATE ALLOCATION) for project KubeDash | Kubernetes Dashboard has been assigned to PROJECT MANAGEMENT department and is awaiting your review.",
+        "createdAt": "2026-10-20T12:49:58.955Z",
+        "ctx": {
+          "ticketPublicId": "14bab8ce-94de-4116-a6ec-926ce8c2c618"
+        }
+      },
+      {
+        "eventType": "allocation.direct_employee_rm_assigned",
+        "title": "Direct Allocation: KubeDash | Kubernetes Dashboard",
+        "body": "Bhumi Chauhan directly allocated Gaurav Dutta to KubeDash | Kubernetes Dashboard, bypassing the ticket workflow.",
+        "createdAt": "2026-10-20T12:46:18.584Z",
+        "ctx": {
+          "assignmentPublicId": "3870e221-a711-4c9d-ad3f-a65b02111cb2"
+        }
+      }
+    ],
+    "ceo": [],
+    "hardik.trivedi": [
+      {
+        "eventType": "allocation.direct_pm_notified",
+        "title": "Allocation Confirmed: KubeDash | Kubernetes Dashboard",
+        "body": "Tanmay Arora has been allocated to KubeDash | Kubernetes Dashboard, effective 2026-10-22.",
+        "createdAt": "2026-10-20T12:59:44.777Z",
+        "ctx": {
+          "assignmentPublicId": "40cc4d86-af0f-4080-bfd9-c29ef16cf230"
+        }
+      },
+      {
+        "eventType": "allocation_ticket.developer_rm_deallocated",
+        "title": "Team Member Deallocated: Gaurav Dutta",
+        "body": "Gaurav Dutta has been deallocated from KubeDash | Kubernetes Dashboard, effective 2026-10-20.",
+        "createdAt": "2026-10-20T12:58:06.252Z",
+        "ctx": {
+          "ticketPublicId": "6b29258b-3470-4061-bd44-e867a62e4f4a"
+        }
+      },
+      {
+        "eventType": "allocation_ticket.developer_rm_updated",
+        "title": "Assignment Updated: Gaurav Dutta",
+        "body": "Gaurav Dutta's allocation for KubeDash | Kubernetes Dashboard has been updated.",
+        "createdAt": "2026-10-20T12:54:22.462Z",
+        "ctx": {
+          "ticketPublicId": "14bab8ce-94de-4116-a6ec-926ce8c2c618"
+        }
+      },
+      {
+        "eventType": "allocation.direct_pm_notified",
+        "title": "Allocation Confirmed: KubeDash | Kubernetes Dashboard",
+        "body": "Gaurav Dutta has been allocated to KubeDash | Kubernetes Dashboard, effective 2026-10-20.",
+        "createdAt": "2026-10-20T12:46:18.569Z",
+        "ctx": {
+          "assignmentPublicId": "3870e221-a711-4c9d-ad3f-a65b02111cb2"
+        }
+      }
+    ],
+    "bhumi.chauhan": [
+      {
+        "eventType": "allocation_ticket.created",
+        "title": "New Ticket: DA-0117",
+        "body": "Ravi Vyas created a new DEALLOCATE ALLOCATION ticket DA-0117 for project KubeDash | Kubernetes Dashboard.",
+        "createdAt": "2026-10-20T12:56:22.677Z",
+        "ctx": {
+          "ticketPublicId": "6b29258b-3470-4061-bd44-e867a62e4f4a"
+        }
+      },
+      {
+        "eventType": "allocation_ticket.approved",
+        "title": "Ticket Approved: UA-0135",
+        "body": "UA-0135 (UPDATE ALLOCATION) for project KubeDash | Kubernetes Dashboard has been fully approved and applied for the requested developer.",
+        "createdAt": "2026-10-20T12:54:22.444Z",
+        "ctx": {
+          "ticketPublicId": "14bab8ce-94de-4116-a6ec-926ce8c2c618"
+        }
+      },
+      {
+        "eventType": "allocation_ticket.created",
+        "title": "New Ticket: UA-0135",
+        "body": "Ravi Vyas created a new UPDATE ALLOCATION ticket UA-0135 for project KubeDash | Kubernetes Dashboard.",
+        "createdAt": "2026-10-20T12:47:59.367Z",
+        "ctx": {
+          "ticketPublicId": "14bab8ce-94de-4116-a6ec-926ce8c2c618"
+        }
+      }
+    ]
+  }
+}

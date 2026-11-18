@@ -1,0 +1,34 @@
+{
+  "015": {
+    "status": 409,
+    "body": {
+      "code": "SYS_004",
+      "message": "This approval has already been recorded for the ticket"
+    }
+  },
+  "017": {
+    "status": 409,
+    "body": {
+      "code": "ALLOCATION_TICKET_172",
+      "message": "Complete the step 1 tickets (#DA-0132, #DA-0133) before actioning this ticket.",
+      "data": {
+        "blockingTickets": [
+          {
+            "publicId": "19d8b84a-48a7-42ae-95df-fd147a36259e",
+            "ticketNumber": "DA-0132",
+            "ticketType": "DEALLOCATE_ALLOCATION",
+            "step": 1,
+            "status": "AWAITING_CONFIRMATION"
+          },
+          {
+            "publicId": "43f22793-a3ec-458f-8cd1-4f8bb9461e25",
+            "ticketNumber": "DA-0133",
+            "ticketType": "DEALLOCATE_ALLOCATION",
+            "step": 1,
+            "status": "AWAITING_CONFIRMATION"
+          }
+        ]
+      }
+    }
+  }
+}

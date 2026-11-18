@@ -1,0 +1,598 @@
+[
+  {
+    "publicId": "db8b8bd3-681c-4fda-b274-f601828e4031",
+    "title": "NA-0368",
+    "ticketType": "NEW_ALLOCATION",
+    "intent": null,
+    "status": "APPROVED",
+    "priority": "HIGH",
+    "project": {
+      "publicId": "fd79a71e-c3c3-4c75-8a06-38509a14c7a3",
+      "name": "ViewForge | BI Dashboard",
+      "projectManagerEmployee": {
+        "publicId": "6acbb73d-52bd-4108-89d0-4382da11d60f",
+        "name": "Tirth Chopra",
+        "photoUrl": "https://i.pravatar.cc/150?u=tirth.chopra@simformsolutions.com"
+      },
+      "csmEmployee": {
+        "publicId": "4174b8c1-9d89-4b61-bfd7-075924620091",
+        "name": "Tarun Sharma",
+        "photoUrl": "https://i.pravatar.cc/150?u=tarun.sharma@simformsolutions.com"
+      },
+      "accountGrade": 9
+    },
+    "requester": {
+      "publicId": "e93f5377-1f74-42cb-9a40-255908e50310",
+      "name": "Bhumi Chauhan",
+      "photoUrl": "https://i.pravatar.cc/150?u=bhumi.chauhan@simformsolutions.com"
+    },
+    "pm": {
+      "publicId": "6acbb73d-52bd-4108-89d0-4382da11d60f",
+      "name": "Tirth Chopra",
+      "photoUrl": "https://i.pravatar.cc/150?u=tirth.chopra@simformsolutions.com"
+    },
+    "csm": {
+      "publicId": "4174b8c1-9d89-4b61-bfd7-075924620091",
+      "name": "Tarun Sharma",
+      "photoUrl": "https://i.pravatar.cc/150?u=tarun.sharma@simformsolutions.com"
+    },
+    "department": {
+      "publicId": "cc5a1d6b-9fbe-48a2-a711-84ec81b529ab",
+      "name": "POST-SALES BA",
+      "iconUrl": "https://d3e6uquevgpr8q.cloudfront.net/department-icons/post-sales-ba.svg"
+    },
+    "allocationStartDate": "2026-10-19T00:00:00.000Z",
+    "assignee": {
+      "publicId": "91da7795-4b70-4b60-aab6-837abe5de0b0",
+      "name": "Nimisha Bose",
+      "photoUrl": "https://i.pravatar.cc/150?u=nimisha.bose@simformsolutions.com"
+    },
+    "employee": {
+      "publicId": "91da7795-4b70-4b60-aab6-837abe5de0b0",
+      "name": "Nimisha Bose",
+      "photoUrl": "https://i.pravatar.cc/150?u=nimisha.bose@simformsolutions.com"
+    },
+    "replacementEmployee": null,
+    "createdAt": "2026-10-19T11:00:46.616Z",
+    "updatedAt": "2026-10-19T11:00:46.616Z",
+    "finalApprovalDate": "2026-10-19T11:00:46.619Z",
+    "group": null
+  },
+  {
+    "publicId": "47855181-ea54-41e7-a462-5d70a9527d9d",
+    "title": "DA-0105",
+    "ticketType": "DEALLOCATE_ALLOCATION",
+    "intent": null,
+    "status": "APPROVED",
+    "priority": "LOW",
+    "project": {
+      "publicId": "fd79a71e-c3c3-4c75-8a06-38509a14c7a3",
+      "name": "ViewForge | BI Dashboard",
+      "projectManagerEmployee": {
+        "publicId": "6acbb73d-52bd-4108-89d0-4382da11d60f",
+        "name": "Tirth Chopra",
+        "photoUrl": "https://i.pravatar.cc/150?u=tirth.chopra@simformsolutions.com"
+      },
+      "csmEmployee": {
+        "publicId": "4174b8c1-9d89-4b61-bfd7-075924620091",
+        "name": "Tarun Sharma",
+        "photoUrl": "https://i.pravatar.cc/150?u=tarun.sharma@simformsolutions.com"
+      },
+      "accountGrade": 9
+    },
+    "requester": {
+      "publicId": "e93f5377-1f74-42cb-9a40-255908e50310",
+      "name": "Bhumi Chauhan",
+      "photoUrl": "https://i.pravatar.cc/150?u=bhumi.chauhan@simformsolutions.com"
+    },
+    "pm": {
+      "publicId": "6acbb73d-52bd-4108-89d0-4382da11d60f",
+      "name": "Tirth Chopra",
+      "photoUrl": "https://i.pravatar.cc/150?u=tirth.chopra@simformsolutions.com"
+    },
+    "csm": {
+      "publicId": "4174b8c1-9d89-4b61-bfd7-075924620091",
+      "name": "Tarun Sharma",
+      "photoUrl": "https://i.pravatar.cc/150?u=tarun.sharma@simformsolutions.com"
+    },
+    "department": {
+      "publicId": "c868f1aa-6bc1-430c-b26a-11222919627f",
+      "name": "QA",
+      "iconUrl": "https://d3e6uquevgpr8q.cloudfront.net/department-icons/qa.svg"
+    },
+    "allocationStartDate": "2026-10-16T00:00:00.000Z",
+    "assignee": {
+      "publicId": "3b99da7c-21f0-4179-8273-972663422709",
+      "name": "Ankita Das",
+      "photoUrl": "https://i.pravatar.cc/150?u=ankita.das@simformsolutions.com"
+    },
+    "employee": {
+      "publicId": "3b99da7c-21f0-4179-8273-972663422709",
+      "name": "Ankita Das",
+      "photoUrl": "https://i.pravatar.cc/150?u=ankita.das@simformsolutions.com"
+    },
+    "replacementEmployee": null,
+    "createdAt": "2026-10-19T11:00:46.211Z",
+    "updatedAt": "2026-10-19T11:00:46.211Z",
+    "finalApprovalDate": "2026-10-19T11:00:46.214Z",
+    "group": null
+  },
+  {
+    "publicId": "a4fffb39-876d-4a87-a28a-6b0e43d9750d",
+    "title": "DA-0104",
+    "ticketType": "DEALLOCATE_ALLOCATION",
+    "intent": null,
+    "status": "APPROVED",
+    "priority": "LOW",
+    "project": {
+      "publicId": "3d138a89-4d06-4839-8091-436fba0a2dd6",
+      "name": "HyperScale | Scalability Engine",
+      "projectManagerEmployee": {
+        "publicId": "5f1a4477-84fe-46aa-8360-ca4e0a16983c",
+        "name": "Hardik Trivedi",
+        "photoUrl": "https://i.pravatar.cc/150?u=hardik.trivedi@simformsolutions.com"
+      },
+      "csmEmployee": {
+        "publicId": "09d434e9-5346-4790-8ae7-f5105e5b4968",
+        "name": "Priya Chopra",
+        "photoUrl": "https://i.pravatar.cc/150?u=priya.chopra@simformsolutions.com"
+      },
+      "accountGrade": 6.8
+    },
+    "requester": {
+      "publicId": "e93f5377-1f74-42cb-9a40-255908e50310",
+      "name": "Bhumi Chauhan",
+      "photoUrl": "https://i.pravatar.cc/150?u=bhumi.chauhan@simformsolutions.com"
+    },
+    "pm": {
+      "publicId": "5f1a4477-84fe-46aa-8360-ca4e0a16983c",
+      "name": "Hardik Trivedi",
+      "photoUrl": "https://i.pravatar.cc/150?u=hardik.trivedi@simformsolutions.com"
+    },
+    "csm": {
+      "publicId": "09d434e9-5346-4790-8ae7-f5105e5b4968",
+      "name": "Priya Chopra",
+      "photoUrl": "https://i.pravatar.cc/150?u=priya.chopra@simformsolutions.com"
+    },
+    "department": {
+      "publicId": "02258af1-79b0-4e88-bebb-aee86933bd9c",
+      "name": "DATA ENGINEERING",
+      "iconUrl": "https://d3e6uquevgpr8q.cloudfront.net/department-icons/data-engineering.svg"
+    },
+    "allocationStartDate": "2026-10-19T00:00:00.000Z",
+    "assignee": {
+      "publicId": "f94d6cb2-e5b5-4c14-99d2-3fbd28a1cde9",
+      "name": "Kunal Menon",
+      "photoUrl": "https://i.pravatar.cc/150?u=kunal.menon@simformsolutions.com"
+    },
+    "employee": {
+      "publicId": "f94d6cb2-e5b5-4c14-99d2-3fbd28a1cde9",
+      "name": "Kunal Menon",
+      "photoUrl": "https://i.pravatar.cc/150?u=kunal.menon@simformsolutions.com"
+    },
+    "replacementEmployee": null,
+    "createdAt": "2026-10-19T11:00:23.854Z",
+    "updatedAt": "2026-10-19T11:00:23.854Z",
+    "finalApprovalDate": "2026-10-19T11:00:23.859Z",
+    "group": null
+  },
+  {
+    "publicId": "7cddbbf6-3c34-4a82-aab9-aee024ad0ec1",
+    "title": "NA-0367",
+    "ticketType": "NEW_ALLOCATION",
+    "intent": null,
+    "status": "APPROVED",
+    "priority": "HIGH",
+    "project": {
+      "publicId": "3d138a89-4d06-4839-8091-436fba0a2dd6",
+      "name": "HyperScale | Scalability Engine",
+      "projectManagerEmployee": {
+        "publicId": "5f1a4477-84fe-46aa-8360-ca4e0a16983c",
+        "name": "Hardik Trivedi",
+        "photoUrl": "https://i.pravatar.cc/150?u=hardik.trivedi@simformsolutions.com"
+      },
+      "csmEmployee": {
+        "publicId": "09d434e9-5346-4790-8ae7-f5105e5b4968",
+        "name": "Priya Chopra",
+        "photoUrl": "https://i.pravatar.cc/150?u=priya.chopra@simformsolutions.com"
+      },
+      "accountGrade": 6.8
+    },
+    "requester": {
+      "publicId": "e93f5377-1f74-42cb-9a40-255908e50310",
+      "name": "Bhumi Chauhan",
+      "photoUrl": "https://i.pravatar.cc/150?u=bhumi.chauhan@simformsolutions.com"
+    },
+    "pm": {
+      "publicId": "5f1a4477-84fe-46aa-8360-ca4e0a16983c",
+      "name": "Hardik Trivedi",
+      "photoUrl": "https://i.pravatar.cc/150?u=hardik.trivedi@simformsolutions.com"
+    },
+    "csm": {
+      "publicId": "09d434e9-5346-4790-8ae7-f5105e5b4968",
+      "name": "Priya Chopra",
+      "photoUrl": "https://i.pravatar.cc/150?u=priya.chopra@simformsolutions.com"
+    },
+    "department": {
+      "publicId": "02258af1-79b0-4e88-bebb-aee86933bd9c",
+      "name": "DATA ENGINEERING",
+      "iconUrl": "https://d3e6uquevgpr8q.cloudfront.net/department-icons/data-engineering.svg"
+    },
+    "allocationStartDate": "2026-10-19T00:00:00.000Z",
+    "assignee": {
+      "publicId": "f94d6cb2-e5b5-4c14-99d2-3fbd28a1cde9",
+      "name": "Kunal Menon",
+      "photoUrl": "https://i.pravatar.cc/150?u=kunal.menon@simformsolutions.com"
+    },
+    "employee": {
+      "publicId": "f94d6cb2-e5b5-4c14-99d2-3fbd28a1cde9",
+      "name": "Kunal Menon",
+      "photoUrl": "https://i.pravatar.cc/150?u=kunal.menon@simformsolutions.com"
+    },
+    "replacementEmployee": null,
+    "createdAt": "2026-10-19T10:59:08.781Z",
+    "updatedAt": "2026-10-19T10:59:08.781Z",
+    "finalApprovalDate": "2026-10-19T10:59:08.784Z",
+    "group": null
+  },
+  {
+    "publicId": "4b1711be-f239-449c-9e87-19c669cd5e69",
+    "title": "DA-0103",
+    "ticketType": "DEALLOCATE_ALLOCATION",
+    "intent": null,
+    "status": "APPROVED",
+    "priority": "LOW",
+    "project": {
+      "publicId": "c20430eb-7e7e-44e6-b769-3c7756e6a9e2",
+      "name": "XCrypt | Blockchain Wallet",
+      "projectManagerEmployee": {
+        "publicId": "49670820-7826-4e95-b651-152db9d1ec02",
+        "name": "Keyur Hegde",
+        "photoUrl": "https://i.pravatar.cc/150?u=keyur.hegde@simformsolutions.com"
+      },
+      "csmEmployee": {
+        "publicId": "4174b8c1-9d89-4b61-bfd7-075924620091",
+        "name": "Tarun Sharma",
+        "photoUrl": "https://i.pravatar.cc/150?u=tarun.sharma@simformsolutions.com"
+      },
+      "accountGrade": 4.4
+    },
+    "requester": {
+      "publicId": "e93f5377-1f74-42cb-9a40-255908e50310",
+      "name": "Bhumi Chauhan",
+      "photoUrl": "https://i.pravatar.cc/150?u=bhumi.chauhan@simformsolutions.com"
+    },
+    "pm": {
+      "publicId": "49670820-7826-4e95-b651-152db9d1ec02",
+      "name": "Keyur Hegde",
+      "photoUrl": "https://i.pravatar.cc/150?u=keyur.hegde@simformsolutions.com"
+    },
+    "csm": {
+      "publicId": "4174b8c1-9d89-4b61-bfd7-075924620091",
+      "name": "Tarun Sharma",
+      "photoUrl": "https://i.pravatar.cc/150?u=tarun.sharma@simformsolutions.com"
+    },
+    "department": {
+      "publicId": "c868f1aa-6bc1-430c-b26a-11222919627f",
+      "name": "QA",
+      "iconUrl": "https://d3e6uquevgpr8q.cloudfront.net/department-icons/qa.svg"
+    },
+    "allocationStartDate": "2026-10-19T00:00:00.000Z",
+    "assignee": {
+      "publicId": "da3c4542-13bb-452b-b619-42095c913d94",
+      "name": "Prakash Pillai",
+      "photoUrl": "https://i.pravatar.cc/150?u=prakash.pillai@simformsolutions.com"
+    },
+    "employee": {
+      "publicId": "da3c4542-13bb-452b-b619-42095c913d94",
+      "name": "Prakash Pillai",
+      "photoUrl": "https://i.pravatar.cc/150?u=prakash.pillai@simformsolutions.com"
+    },
+    "replacementEmployee": null,
+    "createdAt": "2026-10-19T10:58:38.904Z",
+    "updatedAt": "2026-10-19T10:58:38.904Z",
+    "finalApprovalDate": "2026-10-19T10:58:38.908Z",
+    "group": null
+  },
+  {
+    "publicId": "2df1af60-e529-48de-9e1b-50d259696603",
+    "title": "NA-0366",
+    "ticketType": "NEW_ALLOCATION",
+    "intent": null,
+    "status": "CLOSED",
+    "priority": "MEDIUM",
+    "project": {
+      "publicId": "c20430eb-7e7e-44e6-b769-3c7756e6a9e2",
+      "name": "XCrypt | Blockchain Wallet",
+      "projectManagerEmployee": {
+        "publicId": "49670820-7826-4e95-b651-152db9d1ec02",
+        "name": "Keyur Hegde",
+        "photoUrl": "https://i.pravatar.cc/150?u=keyur.hegde@simformsolutions.com"
+      },
+      "csmEmployee": {
+        "publicId": "4174b8c1-9d89-4b61-bfd7-075924620091",
+        "name": "Tarun Sharma",
+        "photoUrl": "https://i.pravatar.cc/150?u=tarun.sharma@simformsolutions.com"
+      },
+      "accountGrade": 4.4
+    },
+    "requester": {
+      "publicId": "4174b8c1-9d89-4b61-bfd7-075924620091",
+      "name": "Tarun Sharma",
+      "photoUrl": "https://i.pravatar.cc/150?u=tarun.sharma@simformsolutions.com"
+    },
+    "pm": {
+      "publicId": "49670820-7826-4e95-b651-152db9d1ec02",
+      "name": "Keyur Hegde",
+      "photoUrl": "https://i.pravatar.cc/150?u=keyur.hegde@simformsolutions.com"
+    },
+    "csm": {
+      "publicId": "4174b8c1-9d89-4b61-bfd7-075924620091",
+      "name": "Tarun Sharma",
+      "photoUrl": "https://i.pravatar.cc/150?u=tarun.sharma@simformsolutions.com"
+    },
+    "deptStack": {
+      "publicId": "2f46cbf6-894b-4d87-8580-4e525da41760",
+      "stack": "Manual",
+      "iconUrl": "https://cdn.simpleicons.org/testinglibrary"
+    },
+    "allocationStartDate": "2026-11-01T00:00:00.000Z",
+    "employee": null,
+    "replacementEmployee": null,
+    "createdAt": "2026-10-19T10:51:50.167Z",
+    "updatedAt": "2026-10-19T10:51:50.167Z",
+    "group": {
+      "publicId": "e272a12c-6456-426d-9ee6-ad622da401b5",
+      "groupNumber": 2,
+      "step": 2,
+      "totalSteps": 2,
+      "isBlocked": false
+    }
+  },
+  {
+    "publicId": "9c022c4a-9928-4e31-b196-fb89a80c7123",
+    "title": "NA-0365",
+    "ticketType": "NEW_ALLOCATION",
+    "intent": null,
+    "status": "CLOSED",
+    "priority": "MEDIUM",
+    "project": {
+      "publicId": "c20430eb-7e7e-44e6-b769-3c7756e6a9e2",
+      "name": "XCrypt | Blockchain Wallet",
+      "projectManagerEmployee": {
+        "publicId": "49670820-7826-4e95-b651-152db9d1ec02",
+        "name": "Keyur Hegde",
+        "photoUrl": "https://i.pravatar.cc/150?u=keyur.hegde@simformsolutions.com"
+      },
+      "csmEmployee": {
+        "publicId": "4174b8c1-9d89-4b61-bfd7-075924620091",
+        "name": "Tarun Sharma",
+        "photoUrl": "https://i.pravatar.cc/150?u=tarun.sharma@simformsolutions.com"
+      },
+      "accountGrade": 4.4
+    },
+    "requester": {
+      "publicId": "4174b8c1-9d89-4b61-bfd7-075924620091",
+      "name": "Tarun Sharma",
+      "photoUrl": "https://i.pravatar.cc/150?u=tarun.sharma@simformsolutions.com"
+    },
+    "pm": {
+      "publicId": "49670820-7826-4e95-b651-152db9d1ec02",
+      "name": "Keyur Hegde",
+      "photoUrl": "https://i.pravatar.cc/150?u=keyur.hegde@simformsolutions.com"
+    },
+    "csm": {
+      "publicId": "4174b8c1-9d89-4b61-bfd7-075924620091",
+      "name": "Tarun Sharma",
+      "photoUrl": "https://i.pravatar.cc/150?u=tarun.sharma@simformsolutions.com"
+    },
+    "department": {
+      "publicId": "c868f1aa-6bc1-430c-b26a-11222919627f",
+      "name": "QA",
+      "iconUrl": "https://d3e6uquevgpr8q.cloudfront.net/department-icons/qa.svg"
+    },
+    "deptStack": {
+      "publicId": "2f46cbf6-894b-4d87-8580-4e525da41760",
+      "stack": "Manual",
+      "iconUrl": "https://cdn.simpleicons.org/testinglibrary"
+    },
+    "allocationStartDate": "2026-11-01T00:00:00.000Z",
+    "assignee": {
+      "publicId": "da3c4542-13bb-452b-b619-42095c913d94",
+      "name": "Prakash Pillai",
+      "photoUrl": "https://i.pravatar.cc/150?u=prakash.pillai@simformsolutions.com"
+    },
+    "employee": {
+      "publicId": "da3c4542-13bb-452b-b619-42095c913d94",
+      "name": "Prakash Pillai",
+      "photoUrl": "https://i.pravatar.cc/150?u=prakash.pillai@simformsolutions.com"
+    },
+    "replacementEmployee": null,
+    "createdAt": "2026-10-19T10:51:50.146Z",
+    "updatedAt": "2026-10-19T10:54:19.701Z",
+    "group": {
+      "publicId": "e272a12c-6456-426d-9ee6-ad622da401b5",
+      "groupNumber": 2,
+      "step": 2,
+      "totalSteps": 2,
+      "isBlocked": false
+    }
+  },
+  {
+    "publicId": "3c5e2ab9-a5cf-4401-afc1-1e19b5540b6e",
+    "title": "DA-0102",
+    "ticketType": "DEALLOCATE_ALLOCATION",
+    "intent": null,
+    "status": "CLOSED",
+    "priority": "LOW",
+    "project": {
+      "publicId": "c20430eb-7e7e-44e6-b769-3c7756e6a9e2",
+      "name": "XCrypt | Blockchain Wallet",
+      "projectManagerEmployee": {
+        "publicId": "49670820-7826-4e95-b651-152db9d1ec02",
+        "name": "Keyur Hegde",
+        "photoUrl": "https://i.pravatar.cc/150?u=keyur.hegde@simformsolutions.com"
+      },
+      "csmEmployee": {
+        "publicId": "4174b8c1-9d89-4b61-bfd7-075924620091",
+        "name": "Tarun Sharma",
+        "photoUrl": "https://i.pravatar.cc/150?u=tarun.sharma@simformsolutions.com"
+      },
+      "accountGrade": 4.4
+    },
+    "requester": {
+      "publicId": "4174b8c1-9d89-4b61-bfd7-075924620091",
+      "name": "Tarun Sharma",
+      "photoUrl": "https://i.pravatar.cc/150?u=tarun.sharma@simformsolutions.com"
+    },
+    "pm": {
+      "publicId": "49670820-7826-4e95-b651-152db9d1ec02",
+      "name": "Keyur Hegde",
+      "photoUrl": "https://i.pravatar.cc/150?u=keyur.hegde@simformsolutions.com"
+    },
+    "csm": {
+      "publicId": "4174b8c1-9d89-4b61-bfd7-075924620091",
+      "name": "Tarun Sharma",
+      "photoUrl": "https://i.pravatar.cc/150?u=tarun.sharma@simformsolutions.com"
+    },
+    "department": {
+      "publicId": "c868f1aa-6bc1-430c-b26a-11222919627f",
+      "name": "QA",
+      "iconUrl": "https://d3e6uquevgpr8q.cloudfront.net/department-icons/qa.svg"
+    },
+    "allocationStartDate": "2026-10-19T00:00:00.000Z",
+    "employee": {
+      "publicId": "da3c4542-13bb-452b-b619-42095c913d94",
+      "name": "Prakash Pillai",
+      "photoUrl": "https://i.pravatar.cc/150?u=prakash.pillai@simformsolutions.com"
+    },
+    "replacementEmployee": null,
+    "createdAt": "2026-10-19T10:51:50.116Z",
+    "updatedAt": "2026-10-19T10:51:50.116Z",
+    "group": {
+      "publicId": "e272a12c-6456-426d-9ee6-ad622da401b5",
+      "groupNumber": 2,
+      "step": 1,
+      "totalSteps": 2,
+      "isBlocked": false
+    }
+  },
+  {
+    "publicId": "3e78994b-357d-4bbd-8485-c0192ad940dd",
+    "title": "DA-0101",
+    "ticketType": "DEALLOCATE_ALLOCATION",
+    "intent": null,
+    "status": "CLOSED",
+    "priority": "LOW",
+    "project": {
+      "publicId": "c20430eb-7e7e-44e6-b769-3c7756e6a9e2",
+      "name": "XCrypt | Blockchain Wallet",
+      "projectManagerEmployee": {
+        "publicId": "49670820-7826-4e95-b651-152db9d1ec02",
+        "name": "Keyur Hegde",
+        "photoUrl": "https://i.pravatar.cc/150?u=keyur.hegde@simformsolutions.com"
+      },
+      "csmEmployee": {
+        "publicId": "4174b8c1-9d89-4b61-bfd7-075924620091",
+        "name": "Tarun Sharma",
+        "photoUrl": "https://i.pravatar.cc/150?u=tarun.sharma@simformsolutions.com"
+      },
+      "accountGrade": 4.4
+    },
+    "requester": {
+      "publicId": "4174b8c1-9d89-4b61-bfd7-075924620091",
+      "name": "Tarun Sharma",
+      "photoUrl": "https://i.pravatar.cc/150?u=tarun.sharma@simformsolutions.com"
+    },
+    "pm": {
+      "publicId": "49670820-7826-4e95-b651-152db9d1ec02",
+      "name": "Keyur Hegde",
+      "photoUrl": "https://i.pravatar.cc/150?u=keyur.hegde@simformsolutions.com"
+    },
+    "csm": {
+      "publicId": "4174b8c1-9d89-4b61-bfd7-075924620091",
+      "name": "Tarun Sharma",
+      "photoUrl": "https://i.pravatar.cc/150?u=tarun.sharma@simformsolutions.com"
+    },
+    "department": {
+      "publicId": "9f56b05b-5a72-43ac-8818-aa1faf4046ca",
+      "name": "MEAN STACK",
+      "iconUrl": "https://d3e6uquevgpr8q.cloudfront.net/department-icons/mean-stack.svg"
+    },
+    "allocationStartDate": "2026-05-09T00:00:00.000Z",
+    "employee": {
+      "publicId": "5492755c-16a4-407e-8571-0db979628d17",
+      "name": "Ananya Hegde",
+      "photoUrl": "https://i.pravatar.cc/150?u=ananya.hegde@simformsolutions.com"
+    },
+    "replacementEmployee": null,
+    "createdAt": "2026-10-19T10:51:50.051Z",
+    "updatedAt": "2026-10-19T10:51:50.051Z",
+    "group": {
+      "publicId": "e272a12c-6456-426d-9ee6-ad622da401b5",
+      "groupNumber": 2,
+      "step": 1,
+      "totalSteps": 2,
+      "isBlocked": false
+    }
+  },
+  {
+    "publicId": "c03c578f-7049-47fc-831a-559c839884f7",
+    "title": "NA-0364",
+    "ticketType": "NEW_ALLOCATION",
+    "intent": null,
+    "status": "APPROVED",
+    "priority": "HIGH",
+    "project": {
+      "publicId": "c20430eb-7e7e-44e6-b769-3c7756e6a9e2",
+      "name": "XCrypt | Blockchain Wallet",
+      "projectManagerEmployee": {
+        "publicId": "49670820-7826-4e95-b651-152db9d1ec02",
+        "name": "Keyur Hegde",
+        "photoUrl": "https://i.pravatar.cc/150?u=keyur.hegde@simformsolutions.com"
+      },
+      "csmEmployee": {
+        "publicId": "4174b8c1-9d89-4b61-bfd7-075924620091",
+        "name": "Tarun Sharma",
+        "photoUrl": "https://i.pravatar.cc/150?u=tarun.sharma@simformsolutions.com"
+      },
+      "accountGrade": 4.4
+    },
+    "requester": {
+      "publicId": "e93f5377-1f74-42cb-9a40-255908e50310",
+      "name": "Bhumi Chauhan",
+      "photoUrl": "https://i.pravatar.cc/150?u=bhumi.chauhan@simformsolutions.com"
+    },
+    "pm": {
+      "publicId": "49670820-7826-4e95-b651-152db9d1ec02",
+      "name": "Keyur Hegde",
+      "photoUrl": "https://i.pravatar.cc/150?u=keyur.hegde@simformsolutions.com"
+    },
+    "csm": {
+      "publicId": "4174b8c1-9d89-4b61-bfd7-075924620091",
+      "name": "Tarun Sharma",
+      "photoUrl": "https://i.pravatar.cc/150?u=tarun.sharma@simformsolutions.com"
+    },
+    "department": {
+      "publicId": "c868f1aa-6bc1-430c-b26a-11222919627f",
+      "name": "QA",
+      "iconUrl": "https://d3e6uquevgpr8q.cloudfront.net/department-icons/qa.svg"
+    },
+    "allocationStartDate": "2026-10-19T00:00:00.000Z",
+    "assignee": {
+      "publicId": "da3c4542-13bb-452b-b619-42095c913d94",
+      "name": "Prakash Pillai",
+      "photoUrl": "https://i.pravatar.cc/150?u=prakash.pillai@simformsolutions.com"
+    },
+    "employee": {
+      "publicId": "da3c4542-13bb-452b-b619-42095c913d94",
+      "name": "Prakash Pillai",
+      "photoUrl": "https://i.pravatar.cc/150?u=prakash.pillai@simformsolutions.com"
+    },
+    "replacementEmployee": null,
+    "createdAt": "2026-10-19T10:48:27.528Z",
+    "updatedAt": "2026-10-19T10:48:27.528Z",
+    "finalApprovalDate": "2026-10-19T10:48:27.537Z",
+    "group": null
+  }
+]

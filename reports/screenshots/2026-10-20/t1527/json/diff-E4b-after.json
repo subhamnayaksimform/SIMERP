@@ -1,0 +1,45 @@
+{
+  "before": "E4a-after",
+  "after": "E4b-after",
+  "beforeAt": "2026-10-20T12:59:48.905Z",
+  "afterAt": "2026-10-20T13:01:12.938Z",
+  "newByUser": {
+    "tanmay.arora": [
+      {
+        "eventType": "allocation_ticket.allocation_cancelled",
+        "title": "Allocation Cancelled: KubeDash | Kubernetes Dashboard",
+        "body": "The upcoming allocation for Tanmay Arora to KubeDash | Kubernetes Dashboard, due to start 2026-10-22, has been cancelled.",
+        "createdAt": "2026-10-20T13:01:08.795Z",
+        "ctx": {
+          "ticketPublicId": "8f8af245-9f41-4c67-b381-00339a055e98"
+        }
+      }
+    ],
+    "urvi.trivedi": [
+      {
+        "eventType": "allocation_ticket.allocation_cancelled",
+        "title": "Allocation Cancelled: KubeDash | Kubernetes Dashboard",
+        "body": "The upcoming allocation for Tanmay Arora to KubeDash | Kubernetes Dashboard, due to start 2026-10-22, has been cancelled.",
+        "createdAt": "2026-10-20T13:01:08.795Z",
+        "ctx": {
+          "ticketPublicId": "8f8af245-9f41-4c67-b381-00339a055e98"
+        }
+      }
+    ],
+    "rajesh.kumar": [],
+    "cto": [
+      {
+        "eventType": "allocation_ticket.allocation_cancelled",
+        "title": "Allocation Cancelled: KubeDash | Kubernetes Dashboard",
+        "body": "The upcoming allocation for Tanmay Arora to KubeDash | Kubernetes Dashboard, due to start 2026-10-22, has been cancelled.",
+        "createdAt": "2026-10-20T13:01:08.795Z",
+        "ctx": {
+          "ticketPublicId": "8f8af245-9f41-4c67-b381-00339a055e98"
+        }
+      }
+    ],
+    "ceo": [],
+    "hardik.trivedi": [],
+    "bhumi.chauhan": []
+  }
+}

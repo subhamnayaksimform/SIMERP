@@ -1,0 +1,12 @@
+{
+  "label": "E0b-before",
+  "takenAt": "2026-10-20T12:46:01.312Z",
+  "users": {
+    "ravi.vyas": {
+      "status": 200,
+      "total": 1,
+      "latestAt": "2026-09-16T06:28:03.132Z",
+      "today": []
+    }
+  }
+}

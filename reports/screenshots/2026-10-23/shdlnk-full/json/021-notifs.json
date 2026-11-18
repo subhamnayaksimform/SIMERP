@@ -1,0 +1,84 @@
+{
+  "priya.chopra": [],
+  "bhumi.chauhan": [
+    {
+      "id": "e38c0c33-3248-478f-8d60-96b333f9aab4",
+      "eventType": "notification.allocation_ticket.closed",
+      "title": "Ticket Closed: DA-0161",
+      "body": "DA-0161 for project HyperScale | Scalability Engine has been closed.",
+      "createdAt": "2026-10-23T12:47:26.422Z",
+      "isRead": false,
+      "ctx": {
+        "ticketPublicId": "b8c0e5d6-da7f-4752-94dc-e0471fe21827"
+      }
+    },
+    {
+      "id": "5c192797-c356-41cd-bc08-b87adfd6173d",
+      "eventType": "notification.allocation_ticket.closed",
+      "title": "Ticket Closed: NA-0438",
+      "body": "NA-0438 for project HyperScale | Scalability Engine has been closed.",
+      "createdAt": "2026-10-23T12:47:26.350Z",
+      "isRead": false,
+      "ctx": {
+        "ticketPublicId": "43e81471-896d-4d24-a688-13829e8764b5"
+      }
+    },
+    {
+      "id": "ee2a11a3-7a0a-4f2a-bf36-f3c4358768af",
+      "eventType": "notification.allocation_ticket.closed",
+      "title": "Ticket Closed: DA-0160",
+      "body": "DA-0160 for project HyperScale | Scalability Engine has been closed.",
+      "createdAt": "2026-10-23T12:47:26.274Z",
+      "isRead": false,
+      "ctx": {
+        "ticketPublicId": "f3b72c9f-2259-4380-81c2-b081d57dda22"
+      }
+    },
+    {
+      "id": "d47aab3c-b1aa-4b75-8081-bc38e2f07395",
+      "eventType": "notification.allocation_ticket.created",
+      "title": "New Ticket: DA-0161",
+      "body": "Priya Chopra created a new DEALLOCATE ALLOCATION ticket DA-0161 for project HyperScale | Scalability Engine.",
+      "createdAt": "2026-10-23T12:46:19.530Z",
+      "isRead": false,
+      "ctx": {
+        "ticketPublicId": "b8c0e5d6-da7f-4752-94dc-e0471fe21827"
+      }
+    },
+    {
+      "id": "8cd9a7b6-4ba5-4cab-a0ce-28efe9087f6c",
+      "eventType": "notification.allocation_ticket.created",
+      "title": "New Ticket: NA-0438",
+      "body": "Priya Chopra created a new NEW ALLOCATION ticket NA-0438 for project HyperScale | Scalability Engine.",
+      "createdAt": "2026-10-23T12:46:19.445Z",
+      "isRead": false,
+      "ctx": {
+        "ticketPublicId": "43e81471-896d-4d24-a688-13829e8764b5"
+      }
+    },
+    {
+      "id": "fc548c81-4600-47aa-bcd0-56a7aae71da2",
+      "eventType": "notification.allocation_ticket.created",
+      "title": "New Ticket: DA-0160",
+      "body": "Priya Chopra created a new DEALLOCATE ALLOCATION ticket DA-0160 for project HyperScale | Scalability Engine.",
+      "createdAt": "2026-10-23T12:46:19.433Z",
+      "isRead": false,
+      "ctx": {
+        "ticketPublicId": "f3b72c9f-2259-4380-81c2-b081d57dda22"
+      }
+    }
+  ],
+  "saumil.chhaya": [
+    {
+      "id": "55ecc9df-140c-4078-baec-9f5affeee3f8",
+      "eventType": "notification.allocation_ticket.assigned_to_department",
+      "title": "New Ticket for Review: NA-0438",
+      "body": "NA-0438 (NEW ALLOCATION) for project HyperScale | Scalability Engine has been assigned to DATA ENGINEERING department and is awaiting your review.",
+      "createdAt": "2026-10-23T12:46:53.858Z",
+      "isRead": false,
+      "ctx": {
+        "ticketPublicId": "43e81471-896d-4d24-a688-13829e8764b5"
+      }
+    }
+  ]
+}

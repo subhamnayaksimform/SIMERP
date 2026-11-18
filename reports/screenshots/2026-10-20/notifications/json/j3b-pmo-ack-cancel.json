@@ -1,0 +1,22 @@
+{
+  "actor": "bhumi.chauhan",
+  "T0": "2026-10-20T08:56:04.625Z",
+  "T1": "2026-10-20T08:56:05.732Z",
+  "method": "PATCH",
+  "path": "/allocation-tickets/ff8c0646-015a-4572-981b-a47c88d7d56e/acknowledge",
+  "req": {
+    "remarks": "QA retest SI4-I580 cancel ack"
+  },
+  "res": {
+    "status": 200,
+    "body": {
+      "code": "SUCCESS",
+      "message": "De-allocation acknowledged; allocation change applied",
+      "data": {
+        "publicId": "ff8c0646-015a-4572-981b-a47c88d7d56e",
+        "ticketNumber": "DA-0110",
+        "status": "APPROVED"
+      }
+    }
+  }
+}

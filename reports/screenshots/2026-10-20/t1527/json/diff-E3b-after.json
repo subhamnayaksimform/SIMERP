@@ -1,0 +1,88 @@
+{
+  "before": "E3a-after",
+  "after": "E3b-after",
+  "beforeAt": "2026-10-20T12:56:26.774Z",
+  "afterAt": "2026-10-20T12:58:10.259Z",
+  "newByUser": {
+    "gaurav.dutta": [
+      {
+        "eventType": "allocation_ticket.developer_deallocated",
+        "title": "Allocation Ended: KubeDash | Kubernetes Dashboard",
+        "body": "Your allocation to KubeDash | Kubernetes Dashboard has ended, effective 2026-10-20.",
+        "createdAt": "2026-10-20T12:58:06.243Z",
+        "ctx": {
+          "ticketPublicId": "6b29258b-3470-4061-bd44-e867a62e4f4a"
+        }
+      }
+    ],
+    "kartik.hegde": [
+      {
+        "eventType": "allocation_ticket.developer_rm_deallocated",
+        "title": "Team Member Deallocated: Gaurav Dutta",
+        "body": "Gaurav Dutta has been deallocated from KubeDash | Kubernetes Dashboard, effective 2026-10-20.",
+        "createdAt": "2026-10-20T12:58:06.252Z",
+        "ctx": {
+          "ticketPublicId": "6b29258b-3470-4061-bd44-e867a62e4f4a"
+        }
+      }
+    ],
+    "hardik.trivedi": [
+      {
+        "eventType": "allocation_ticket.developer_rm_deallocated",
+        "title": "Team Member Deallocated: Gaurav Dutta",
+        "body": "Gaurav Dutta has been deallocated from KubeDash | Kubernetes Dashboard, effective 2026-10-20.",
+        "createdAt": "2026-10-20T12:58:06.252Z",
+        "ctx": {
+          "ticketPublicId": "6b29258b-3470-4061-bd44-e867a62e4f4a"
+        }
+      }
+    ],
+    "amit.patel": [
+      {
+        "eventType": "allocation_ticket.developer_rm_deallocated",
+        "title": "Team Member Deallocated: Gaurav Dutta",
+        "body": "Gaurav Dutta has been deallocated from KubeDash | Kubernetes Dashboard, effective 2026-10-20.",
+        "createdAt": "2026-10-20T12:58:06.252Z",
+        "ctx": {
+          "ticketPublicId": "6b29258b-3470-4061-bd44-e867a62e4f4a"
+        }
+      }
+    ],
+    "jinal.patel": [
+      {
+        "eventType": "allocation_ticket.developer_rm_deallocated",
+        "title": "Team Member Deallocated: Gaurav Dutta",
+        "body": "Gaurav Dutta has been deallocated from KubeDash | Kubernetes Dashboard, effective 2026-10-20.",
+        "createdAt": "2026-10-20T12:58:06.252Z",
+        "ctx": {
+          "ticketPublicId": "6b29258b-3470-4061-bd44-e867a62e4f4a"
+        }
+      }
+    ],
+    "cto": [
+      {
+        "eventType": "allocation_ticket.developer_rm_deallocated",
+        "title": "Team Member Deallocated: Gaurav Dutta",
+        "body": "Gaurav Dutta has been deallocated from KubeDash | Kubernetes Dashboard, effective 2026-10-20.",
+        "createdAt": "2026-10-20T12:58:06.252Z",
+        "ctx": {
+          "ticketPublicId": "6b29258b-3470-4061-bd44-e867a62e4f4a"
+        }
+      }
+    ],
+    "ceo": [],
+    "ravi.vyas": [
+      {
+        "eventType": "allocation_ticket.pm_deallocated",
+        "title": "Assignment Ended: KubeDash | Kubernetes Dashboard",
+        "body": "Gaurav Dutta has been successfully deallocated from KubeDash | Kubernetes Dashboard.",
+        "createdAt": "2026-10-20T12:58:06.212Z",
+        "ctx": {
+          "ticketPublicId": "6b29258b-3470-4061-bd44-e867a62e4f4a"
+        }
+      }
+    ],
+    "bhumi.chauhan": [],
+    "foram.malhotra": []
+  }
+}

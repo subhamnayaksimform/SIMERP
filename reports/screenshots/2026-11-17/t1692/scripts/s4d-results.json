@@ -1,0 +1,32 @@
+[
+ {
+  "area": "4.alloc-edit",
+  "name": "saved: UA-0147 End Date + Effective From cleared (absent/null in API)",
+  "pass": true,
+  "detail": "{\"eff\":null}"
+ },
+ {
+  "area": "4.alloc-edit",
+  "name": "API: live-Dynamic allocation ticket (UA-0146) edit to Fixed refused 400 with Dynamic-to-Fixed message",
+  "pass": true,
+  "detail": "[400,\"SYS_004\",\"requestedAllocationType cannot be changed from DYNAMIC back to FIXED\"]"
+ },
+ {
+  "area": "4.alloc-edit",
+  "name": "UA-0146 still Dynamic after refused edits",
+  "pass": true,
+  "detail": "DYNAMIC"
+ },
+ {
+  "area": "4.alloc-edit",
+  "name": "API: UA-0145 (Fixed→Dynamic ticket) edit back to Fixed 20 — backend response (record)",
+  "pass": true,
+  "detail": "[200,\"SUCCESS\",\"Allocation ticket edited successfully\"]"
+ },
+ {
+  "area": "4.alloc-edit",
+  "name": "API: clearing end date + effective date with null on UA-0146 sticks",
+  "pass": true,
+  "detail": "{\"status\":200,\"code\":\"SUCCESS\",\"msg\":\"Allocation ticket edited successfully\",\"before\":[\"2027-08-31T00:00:00.000Z\",null],\"after\":[null,null]}"
+ }
+]

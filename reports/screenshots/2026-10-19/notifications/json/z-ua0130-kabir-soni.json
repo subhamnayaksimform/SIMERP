@@ -1,0 +1,47 @@
+{
+  "label": "ua0130-kabir-soni",
+  "rx": "Kabir Soni|UA-0130|WavePoint",
+  "since": "2026-10-16T00:00:00Z",
+  "users": {
+    "kabir.soni": [
+      {
+        "id": "c4a936bc-d3d1-4beb-9fcb-793183f0915f",
+        "eventType": "notification.allocation_ticket.developer_updated",
+        "title": "Allocation Updated: WavePoint | Audio Processing",
+        "body": "Your allocation for WavePoint | Audio Processing has been updated.",
+        "createdAt": "2026-10-16T09:35:11.815Z",
+        "isRead": false,
+        "ctx": {
+          "ticketPublicId": "25c08b45-2c86-4bb1-9e5d-7dff8027bbeb"
+        }
+      }
+    ],
+    "mansi.shah": [
+      {
+        "id": "ab1969f0-ed24-42d4-b886-f14ef048fb77",
+        "eventType": "notification.allocation_ticket.developer_rm_updated",
+        "title": "Assignment Updated: Kabir Soni",
+        "body": "Kabir Soni's allocation for WavePoint | Audio Processing has been updated.",
+        "createdAt": "2026-10-16T09:35:12.970Z",
+        "isRead": false,
+        "ctx": {
+          "ticketPublicId": "25c08b45-2c86-4bb1-9e5d-7dff8027bbeb"
+        }
+      }
+    ],
+    "vikrant.dobariya": [
+      {
+        "id": "d77442cf-89ae-41cb-9a0b-8a3715097654",
+        "eventType": "notification.allocation_ticket.developer_rm_updated",
+        "title": "Assignment Updated: Kabir Soni",
+        "body": "Kabir Soni's allocation for WavePoint | Audio Processing has been updated.",
+        "createdAt": "2026-10-16T09:35:12.970Z",
+        "isRead": false,
+        "ctx": {
+          "ticketPublicId": "25c08b45-2c86-4bb1-9e5d-7dff8027bbeb"
+        }
+      }
+    ],
+    "priya.sharma": []
+  }
+}

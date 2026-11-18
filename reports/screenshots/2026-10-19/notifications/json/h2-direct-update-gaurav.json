@@ -1,0 +1,66 @@
+{
+  "actor": "bhumi.chauhan",
+  "T0": "2026-10-19T11:15:44.133Z",
+  "T1": "2026-10-19T11:15:45.229Z",
+  "method": "POST",
+  "path": "/allocation-tickets/update-direct-allocation",
+  "req": {
+    "projectAssignmentPublicId": "c3b65d73-e16b-4e34-9cfd-9e15b6033826",
+    "newAllocationPercentage": 20,
+    "effectiveStartDate": "2026-10-19"
+  },
+  "res": {
+    "status": 201,
+    "body": {
+      "code": "ALLOCATION_TICKET_128",
+      "message": "Allocation updated successfully",
+      "data": {
+        "publicId": "35608d6d-6d0d-43a4-b03e-67ae867c2343",
+        "ticketNumber": "UA-0131",
+        "ticketType": "UPDATE_ALLOCATION",
+        "status": "APPROVED",
+        "assignment": {
+          "publicId": "c3b65d73-e16b-4e34-9cfd-9e15b6033826",
+          "allocationType": "FIXED",
+          "allocationPercentage": 20,
+          "allocationStartDate": "2026-10-19",
+          "allocationEndDate": "2026-11-30",
+          "typeOfWork": "DEVELOPMENT_WORK",
+          "note": "QA test SI4-T1527 retest 2026-10-19 (D1 + lifecycle). Will be removed same day.",
+          "employee": {
+            "publicId": "2c0a4d1e-4fe9-4adf-8675-8be9cfc56b92",
+            "name": "Gaurav Dutta",
+            "email": "gaurav.dutta@simformsolutions.com",
+            "photoUrl": "https://i.pravatar.cc/150?u=gaurav.dutta@simformsolutions.com"
+          },
+          "shadowDeveloper": null,
+          "project": {
+            "publicId": "3d138a89-4d06-4839-8091-436fba0a2dd6",
+            "name": "HyperScale | Scalability Engine",
+            "alias": ""
+          },
+          "allocationTimeline": [
+            {
+              "ticketPublicId": "35608d6d-6d0d-43a4-b03e-67ae867c2343",
+              "ticketNumber": "UA-0131",
+              "scheduledChangePublicId": "4ad16898-407f-493b-be84-62c4ae006fd8",
+              "effectiveFrom": "2026-10-19",
+              "effectiveTo": "2026-11-30",
+              "allocationType": "FIXED",
+              "allocationPercentage": 20,
+              "isCurrent": true,
+              "isPending": false,
+              "segmentType": "SCHEDULED"
+            }
+          ]
+        },
+        "effectiveState": {
+          "isEffectiveImmediately": true,
+          "effectiveFrom": "2026-10-19",
+          "scheduledChange": null
+        },
+        "scheduledRevert": null
+      }
+    }
+  }
+}

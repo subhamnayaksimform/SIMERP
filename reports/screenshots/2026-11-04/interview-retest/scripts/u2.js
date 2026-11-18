@@ -1,0 +1,10 @@
+const {H}=require('./lib2');
+(async()=>{ const b=await H.chromium.launch(); const v=await H.login(b,'vihaan.chatterjee'); const page=v.page; const R=H.runner('u2'); H.attach(page,R.errs);
+ await R.step('empty-submit',async()=>{ await H.go(page,'/pre-sales/new'); await page.getByText('Interview Opportunity').first().click(); await page.getByText('Prospect',{exact:true}).first().click(); await page.waitForTimeout(800);
+  const create=page.getByRole('button',{name:/^(Create|Submit|Save|Raise)/i}).last(); const label=await create.innerText().catch(()=>null); await create.click().catch(()=>{}); await page.waitForTimeout(1000); await H.shot(page,'U-create-empty',true);
+  return {label, errors:(await page.locator('[role="alert"], .text-destructive, p.text-red-500, [data-slot="form-message"]').allInnerTexts()).slice(0,12), buttons:(await page.getByRole('button').allInnerTexts()).slice(-8)}; });
+ await R.step('fill-and-create',async()=>{ await H.go(page,'/pre-sales/new'); await page.getByText('Interview Opportunity').first().click(); await page.getByText('Prospect',{exact:true}).first().click(); await page.waitForTimeout(500);
+  const client=page.getByPlaceholder(/Acme/i).first(); await client.click(); await client.fill('QA-AUTO UI Client'); await page.waitForTimeout(600); await H.shot(page,'U-client-typed');
+  const opts=await page.getByRole('option').allInnerTexts(); await page.keyboard.press('Enter').catch(()=>{});
+  return {opts:opts.slice(0,5)}; });
+ R.done(); await b.close(); })();

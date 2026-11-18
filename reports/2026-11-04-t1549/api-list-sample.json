@@ -1,0 +1,184 @@
+{
+ "url": "https://simerp-dev-api.simform.solutions/api/v1/employees?page=1&limit=100&sortBy=availabilityPercentage&sortOrder=desc&timeFrame=15d&activityPeriod=30",
+ "json": {
+  "code": "SYS_003",
+  "message": "Operation completed successfully",
+  "data": {
+   "items": [
+    {
+     "publicId": "818aa719-2170-486e-bf21-87f4f1e137e6",
+     "email": "sagar.khanpara@simformsolutions.com",
+     "name": "Sagar Khanpara",
+     "kekaId": "dc5a0999-a7a1-4c4a-8e47-c0f3c5b4cb2a",
+     "shiftPreferences": [
+      "NS1",
+      "NS1_1"
+     ],
+     "careerStartDate": "2016-08-04T00:00:00.000Z",
+     "dateOfJoining": "2016-07-16T00:00:00.000Z",
+     "isContractor": false,
+     "isTrainee": false,
+     "cohort": null,
+     "employeeOrigin": null,
+     "visaStatus": "NOT_SET",
+     "photoUrl": "https://i.pravatar.cc/150?u=sagar.khanpara@simformsolutions.com",
+     "createdAt": "2026-03-24T05:43:50.033Z",
+     "updatedAt": "2026-10-28T06:18:34.499Z",
+     "team": {
+      "publicId": "0ba97edf-02dc-4e86-8834-0ecc6aa40d3e",
+      "name": "Rajesh Kumar - Leadership",
+      "color": "#FFDFD3",
+      "reportingManager": {
+       "publicId": "bebb33ef-0df8-4750-a727-e22865181aba",
+       "name": "Rajesh Kumar",
+       "photoUrl": "https://i.pravatar.cc/150?u=rajesh.kumar@simformsolutions.com"
+      }
+     },
+     "department": {
+      "publicId": "48117339-ef2b-4ea8-8545-f45a3af21171",
+      "name": "FRONT END"
+     },
+     "noticePeriod": null,
+     "resignation": {
+      "status": "NOTICE_PERIOD",
+      "resignationDate": "2026-09-03T00:00:00.000Z",
+      "lastWorkingDate": "2026-10-02T00:00:00.000Z",
+      "isLastWorkingDateTentative": false
+     },
+     "pip": null,
+     "notes": [],
+     "leaves": {
+      "pastLeaves": [],
+      "ongoingLeaves": [],
+      "futureLeaves": [],
+      "totalLeaveDaysInTimeframe": 0
+     },
+     "projects": [
+      {
+       "projectAssignmentPublicId": "f34b11ab-f514-48aa-829b-466d967162e0",
+       "allocationPercentage": 43,
+       "allocationType": "FIXED",
+       "typeOfWork": "NOT_WORKED_AT_ALL",
+       "status": "GREEN",
+       "isUpcoming": false,
+       "isLongRunning": false,
+       "allocationStartDate": "2026-08-13",
+       "note": "qr",
+       "projectPublicId": "d00f8e27-9d3a-44d1-adc9-b738c1ab103b",
+       "name": "AdaptiveX | Adaptive Platform",
+       "totalHours": 0,
+       "isBillable": true,
+       "active": false,
+       "allocationEndDate": "2026-08-22",
+       "allocationTimeline": [
+        {
+         "ticketPublicId": "be11f29a-01b2-4af3-a8c9-02607f4e976e",
+         "ticketNumber": "UA-0120",
+         "scheduledChangePublicId": "9638334b-4c6e-4827-b017-111988202a15",
+         "effectiveFrom": "2026-08-13",
+         "effectiveTo": "2026-08-22",
+         "allocationType": "FIXED",
+         "allocationPercentage": 43,
+         "isCurrent": false,
+         "isPending": false,
+         "segmentType": "SCHEDULED"
+        }
+       ]
+      },
+      {
+       "projectAssignmentPublicId": "5d897045-1b88-4e62-978d-e4a991915fea",
+       "allocationPercentage": 50,
+       "allocationType": "FIXED",
+       "typeOfWork": "DEVELOPMENT_WORK",
+       "status": "GREEN",
+       "isUpcoming": false,
+       "isLongRunning": false,
+       "allocationStartDate": "2026-10-16",
+       "note": "testing",
+       "projectPublicId": "5eda6081-ca13-4829-9ff6-1550df11c6f8",
+       "name": "AbsoluteUI | Design System",
+       "totalHours": 0,
+       "isBillable": true,
+       "active": false,
+       "allocationEndDate": "2026-10-20",
+       "allocationTimeline": [
+        {
+         "ticketPublicId": null,
+         "ticketNumber": null,
+         "scheduledChangePublicId": null,
+         "effectiveFrom": "2026-10-16",
+         "effectiveTo": "2026-10-20",
+         "allocationType": "FIXED",
+         "allocationPercentage": 50,
+         "isCurrent": false,
+         "isPending": false,
+         "segmentType": "STANDING"
+        }
+       ]
+      },
+      {
+       "projectAssignmentPublicId": "b8420e93-8662-4300-82b4-49a91ad32ca3",
+       "allocationPercentage": 10,
+       "allocationType": "FIXED",
+       "typeOfWork": "GUIDANCE_ONLY",
+       "status": "GREEN",
+       "isUpcoming": false,
+       "isLongRunning": false,
+       "allocationStartDate": "2026-09-01",
+       "note": "ghae",
+       "projectPublicId": "566f4c7a-1f0a-4fc3-81b8-ff8844409637",
+       "name": "HiveSync | Collaboration Tool",
+       "shadowDeveloper": {
+        "publicId": "b94ac1e5-cf20-4fdc-8554-cc28a43a2f7d",
+        "name": "Aarav Arora",
+        "email": "aarav.arora@simformsolutions.com"
+       },
+       "totalHours": 0,
+       "isBillable": true,
+       "active": false,
+       "allocationEndDate": "2026-09-26",
+       "allocationTimeline": [
+        {
+         "ticketPublicId": null,
+         "ticketNumber": null,
+         "scheduledChangePublicId": null,
+         "effectiveFrom": "2026-09-01",
+         "effectiveTo": "2026-09-26",
+         "allocationType": "FIXED",
+         "allocationPercentage": 10,
+         "isCurrent": false,
+         "isPending": false,
+         "segmentType": "STANDING"
+        }
+       ]
+      }
+     ],
+     "pastProjects": [],
+     "nonBillableData": {
+      "timeframe": "3m",
+      "percentage": 100
+     },
+     "availabilityPercentage": 100,
+     "allocationAvailabilityPercentage": 100,
+     "bookedAllocationPercentage": 0,
+     "remainingAllocationPercentage": 100,
+     "shadowDevelopers": [],
+     "interviewOpportunities": [],
+     "nonBillableHours": 0,
+     "totalLoggedHours": 0,
+     "departmentStack": {
+      "publicId": "5de97475-932a-4dbb-ab5e-9582b312bb43",
+      "stack": "Frontend",
+      "iconUrl": "https://cdn.simpleicons.org/html5"
+     },
+     "designation": {
+      "publicId": "e07dcf56-aacf-4f5a-b434-098e6f1e8eec",
+      "title": "Team Manager",
+      "alias": "TM"
+     },
+     "prReviewerProjects": [
+      {
+       "publicId": "5b5f7c2c-6514-411e-9d76-f73cda3ce926",
+       "name": "OptiRoute | Logistics Planner",
+       "alias": "OptiRoute",
+       "prReviewFrequency": 

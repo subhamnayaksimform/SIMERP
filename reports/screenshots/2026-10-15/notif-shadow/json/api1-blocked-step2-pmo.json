@@ -1,0 +1,47 @@
+{
+  "bypass": {
+    "status": 409,
+    "body": {
+      "code": "ALLOCATION_TICKET_172",
+      "message": "Complete the step 1 tickets (#DA-0099, #DA-0100) before actioning this ticket.",
+      "data": {
+        "blockingTickets": [
+          {
+            "publicId": "3d78e476-53dc-4cd4-92a5-07bf1788823a",
+            "ticketNumber": "DA-0099",
+            "ticketType": "DEALLOCATE_ALLOCATION",
+            "step": 1,
+            "status": "AWAITING_CONFIRMATION"
+          },
+          {
+            "publicId": "a02ef199-9cf4-4f0e-ac7a-ca018a2b0c7c",
+            "ticketNumber": "DA-0100",
+            "ticketType": "DEALLOCATE_ALLOCATION",
+            "step": 1,
+            "status": "AWAITING_CONFIRMATION"
+          }
+        ]
+      }
+    }
+  },
+  "approve": {
+    "status": 409,
+    "body": {
+      "message": "This action is not allowed in the ticket's current status",
+      "error": "Conflict",
+      "statusCode": 409
+    }
+  },
+  "ack": {
+    "status": 409,
+    "body": {
+      "message": "This ticket requires the full two-party approval flow — use the approve action instead of acknowledge",
+      "error": "Conflict",
+      "statusCode": 409
+    }
+  },
+  "after": {
+    "status": "OPEN",
+    "shortlist": []
+  }
+}

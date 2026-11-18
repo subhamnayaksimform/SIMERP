@@ -1,0 +1,44 @@
+{
+  "before": "E5a-after",
+  "after": "E5b-after",
+  "beforeAt": "2026-10-20T13:02:33.722Z",
+  "afterAt": "2026-10-20T13:03:42.662Z",
+  "newByUser": {
+    "vandana.das": [
+      {
+        "eventType": "allocation_ticket.allocation_cancelled",
+        "title": "Allocation Cancelled: KubeDash | Kubernetes Dashboard",
+        "body": "The upcoming allocation for Vandana Das to KubeDash | Kubernetes Dashboard, due to start 2026-10-22, has been cancelled.",
+        "createdAt": "2026-10-20T13:03:38.521Z",
+        "ctx": {
+          "ticketPublicId": "bcee6e25-2ba5-4f76-bca7-2fba765bfd44"
+        }
+      }
+    ],
+    "cto": [
+      {
+        "eventType": "allocation_ticket.allocation_cancelled",
+        "title": "Allocation Cancelled: KubeDash | Kubernetes Dashboard",
+        "body": "The upcoming allocation for Vandana Das to KubeDash | Kubernetes Dashboard, due to start 2026-10-22, has been cancelled.",
+        "createdAt": "2026-10-20T13:03:38.521Z",
+        "ctx": {
+          "ticketPublicId": "bcee6e25-2ba5-4f76-bca7-2fba765bfd44"
+        }
+      }
+    ],
+    "abhishek.hingorani": [
+      {
+        "eventType": "allocation_ticket.allocation_cancelled",
+        "title": "Allocation Cancelled: KubeDash | Kubernetes Dashboard",
+        "body": "The upcoming allocation for Vandana Das to KubeDash | Kubernetes Dashboard, due to start 2026-10-22, has been cancelled.",
+        "createdAt": "2026-10-20T13:03:38.521Z",
+        "ctx": {
+          "ticketPublicId": "bcee6e25-2ba5-4f76-bca7-2fba765bfd44"
+        }
+      }
+    ],
+    "ceo": [],
+    "hardik.trivedi": [],
+    "bhumi.chauhan": []
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "before": "P0-before",
+  "after": "P1-after",
+  "beforeAt": "2026-10-19T11:32:46.477Z",
+  "afterAt": "2026-10-19T11:34:18.453Z",
+  "newByUser": {
+    "falgun.solanki": [
+      {
+        "eventType": "allocation.direct_employee_assigned",
+        "title": "You've Been allocated to XCrypt | Blockchain Wallet",
+        "body": "You've been allocated to XCrypt | Blockchain Wallet starting 2026-10-21.",
+        "createdAt": "2026-10-19T11:34:14.329Z",
+        "ctx": {
+          "assignmentPublicId": "a84ca3ed-1b69-46a1-8831-13607ef97ef1"
+        }
+      }
+    ],
+    "bhumi.chauhan": [
+      {
+        "eventType": "allocation.direct_employee_rm_assigned",
+        "title": "Team Member Assigned: Falgun Solanki",
+        "body": "Falgun Solanki has been assigned to XCrypt | Blockchain Wallet starting 2026-10-21.",
+        "createdAt": "2026-10-19T11:34:14.363Z",
+        "ctx": {
+          "assignmentPublicId": "a84ca3ed-1b69-46a1-8831-13607ef97ef1"
+        }
+      }
+    ],
+    "Palak.Saxena": [
+      {
+        "eventType": "allocation.direct_employee_rm_assigned",
+        "title": "Team Member Assigned: Falgun Solanki",
+        "body": "Falgun Solanki has been assigned to XCrypt | Blockchain Wallet starting 2026-10-21.",
+        "createdAt": "2026-10-19T11:34:14.363Z",
+        "ctx": {
+          "assignmentPublicId": "a84ca3ed-1b69-46a1-8831-13607ef97ef1"
+        }
+      }
+    ],
+    "neha.gupta": [
+      {
+        "eventType": "allocation.direct_employee_rm_assigned",
+        "title": "Team Member Assigned: Falgun Solanki",
+        "body": "Falgun Solanki has been assigned to XCrypt | Blockchain Wallet starting 2026-10-21.",
+        "createdAt": "2026-10-19T11:34:14.363Z",
+        "ctx": {
+          "assignmentPublicId": "a84ca3ed-1b69-46a1-8831-13607ef97ef1"
+        }
+      }
+    ],
+    "jinal.patel": [
+      {
+        "eventType": "allocation.direct_employee_rm_assigned",
+        "title": "Team Member Assigned: Falgun Solanki",
+        "body": "Falgun Solanki has been assigned to XCrypt | Blockchain Wallet starting 2026-10-21.",
+        "createdAt": "2026-10-19T11:34:14.364Z",
+        "ctx": {
+          "assignmentPublicId": "a84ca3ed-1b69-46a1-8831-13607ef97ef1"
+        }
+      }
+    ],
+    "cto": [
+      {
+        "eventType": "allocation.direct_employee_rm_assigned",
+        "title": "Direct Allocation: XCrypt | Blockchain Wallet",
+        "body": "Palak Saxena directly allocated Falgun Solanki to XCrypt | Blockchain Wallet, bypassing the ticket workflow.",
+        "createdAt": "2026-10-19T11:34:14.364Z",
+        "ctx": {
+          "assignmentPublicId": "a84ca3ed-1b69-46a1-8831-13607ef97ef1"
+        }
+      }
+    ],
+    "ceo": [],
+    "keyur.hegde": [
+      {
+        "eventType": "allocation.direct_pm_notified",
+        "title": "Allocation Confirmed: XCrypt | Blockchain Wallet",
+        "body": "Falgun Solanki has been allocated to XCrypt | Blockchain Wallet, effective 2026-10-21.",
+        "createdAt": "2026-10-19T11:34:14.340Z",
+        "ctx": {
+          "assignmentPublicId": "a84ca3ed-1b69-46a1-8831-13607ef97ef1"
+        }
+      }
+    ],
+    "tarun.sharma": []
+  }
+}

@@ -1,0 +1,279 @@
+{
+  "results": [
+    {
+      "id": "emp-page2-then-search",
+      "ok": true,
+      "u1": "https://simerp-dev.simform.solutions/employee?sortBy=availabilityPercentage&sortOrder=desc&page=2",
+      "u2": "https://simerp-dev.simform.solutions/employee?sortBy=availabilityPercentage&sortOrder=desc&search=sagar",
+      "out2": [
+        "Showing 1 - 2 of 2 results",
+        "Showing 2 results"
+      ],
+      "names": [
+        "Sagar KhanparaTM10y 2m",
+        "Nihar SagarTM2y 1m"
+      ],
+      "u3": "https://simerp-dev.simform.solutions/employee?sortBy=availabilityPercentage&sortOrder=desc",
+      "shot": "reports/screenshots/2026-10-28/hardik/sonar-fe/p06-employee-search-sagar.png",
+      "errs": []
+    },
+    {
+      "id": "emp-column-filter",
+      "ok": true,
+      "adv": [
+        [
+          "adv_department",
+          "a3f54254-b77d-4e15-9be8-1de2d16f4636,69304b79-7ea7-4969-adb3-312bc4682d8e"
+        ]
+      ],
+      "out": [
+        "Showing 1 - 100 of 186 results",
+        "Showing 186 results"
+      ],
+      "depts": [
+        "ADMIN"
+      ],
+      "afterReload": [
+        "Showing 1 - 100 of 186 results",
+        "Showing 186 results"
+      ],
+      "advAfterClear": [
+        "sortBy",
+        "sortOrder",
+        "adv_department"
+      ],
+      "shot": "reports/screenshots/2026-10-28/hardik/sonar-fe/p07-employee-dept-filter.png",
+      "errs": [
+        {
+          "type": "requestfailed",
+          "url": "https://simerp-dev.simform.solutions/employee?sortBy=availabilityPercentage&sortOrder=desc&adv_department=a3f54254-b77d-4e15-9be8-1de2d16f4636%2C69304b79-7ea7-4969-adb3-312bc4682d8e",
+          "text": "net::ERR_BLOCKED_BY_ORB https://example.com/logo.png"
+        }
+      ]
+    },
+    {
+      "id": "emp-timeframe",
+      "ok": true,
+      "aria": "Select time range",
+      "items": [
+        "Last 5 days",
+        "Last 15 days",
+        "Last 30 days",
+        "Last 3 months",
+        "Last 6 months",
+        "All time"
+      ],
+      "cur": [
+        "Last 15 days"
+      ],
+      "timeFrame": null,
+      "label": "Last 15 days",
+      "hdr": [
+        "Log Hours",
+        "Availability %"
+      ],
+      "reset": "5d",
+      "shot": "reports/screenshots/2026-10-28/hardik/sonar-fe/p08-employee-timeframe.png",
+      "errs": []
+    },
+    {
+      "id": "emp-log-hours-indicators",
+      "ok": true,
+      "idx": 6,
+      "cells": [
+        "40h",
+        "40h",
+        "40h",
+        "40h",
+        "40h",
+        "40h",
+        "40h",
+        "44h",
+        "40h",
+        "0h 4",
+        "30h 1",
+        "40h",
+        "40h",
+        "40h",
+        "39h",
+        "40h",
+        "40h",
+        "28h 1",
+        "40h",
+        "0h 4",
+        null
+      ],
+      "errs": [
+        {
+          "type": "requestfailed",
+          "url": "https://simerp-dev.simform.solutions/employee?sortBy=availabilityPercentage&sortOrder=desc&timeFrame=5d&adv_department=a3f54254-b77d-4e15-9be8-1de2d16f4636%2C69304b79-7ea7-4969-adb3-312bc4682d8e",
+          "text": "net::ERR_BLOCKED_BY_ORB https://example.com/logo.png"
+        }
+      ]
+    },
+    {
+      "id": "emp-project-badge-hover",
+      "ok": true,
+      "tag": "BUTTON type=button cls=inline-flex h-[var(--size-badge-height)] items-center gap-1 rounded-md border px",
+      "card": [
+        "OntimeActiveAllocation%0% (0 hrs/day)Logged Hours %33%Allocation SinceNot specifiedTotal Logged Hours707 Hours"
+      ],
+      "afterEnter": {
+        "url": "https://simerp-dev.simform.solutions/employee?sortBy=availabilityPercentage&sortOrder=desc&timeFrame=5d&adv_department=a3f54254-b77d-4e15-9be8-1de2d16f4636%2C69304b79-7ea7-4969-adb3-312bc4682d8e",
+        "dialogs": 0
+      },
+      "shot": "reports/screenshots/2026-10-28/hardik/sonar-fe/p09-project-badge-hover.png",
+      "shot2": "reports/screenshots/2026-10-28/hardik/sonar-fe/p09b-project-badge-enter.png",
+      "errs": []
+    },
+    {
+      "id": "emp-projects-overflow-popover",
+      "ok": false,
+      "error": "locator.textContent: Timeout 30000ms exceeded.\nCall log:\n  - waiting for locator('[data-radix-popper-content-wrapper]').last()\n",
+      "errs": [
+        {
+          "type": "http404",
+          "url": "https://simerp-dev.simform.solutions/employee?sortBy=availabilityPercentage&sortOrder=desc&timeFrame=5d&adv_department=a3f54254-b77d-4e15-9be8-1de2d16f4636%2C69304b79-7ea7-4969-adb3-312bc4682d8e",
+          "text": "GET https://cdn.simpleicons.org/openai"
+        },
+        {
+          "type": "error",
+          "url": "https://simerp-dev.simform.solutions/employee?sortBy=availabilityPercentage&sortOrder=desc&timeFrame=5d&adv_department=a3f54254-b77d-4e15-9be8-1de2d16f4636%2C69304b79-7ea7-4969-adb3-312bc4682d8e",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        }
+      ]
+    },
+    {
+      "id": "emp-side-panel",
+      "ok": true,
+      "nmText": "",
+      "aside": [
+        {
+          "role": null,
+          "label": "Prachi Dave",
+          "hidden": "false"
+        },
+        {
+          "role": null,
+          "label": "Advanced filter",
+          "hidden": "true"
+        }
+      ],
+      "landmarks": 1,
+      "iconBtns": [
+        "ADMIN"
+      ],
+      "truncBtns": [],
+      "bad": [],
+      "txt": "Prachi Dave\nLE\n\nprachi.dave@simformsolutions.com\n\n5y 1m\nNo data available\nLogin as Prachi\nProjects (4)\nPROJECT NAME\tSINCE\n\nOntime\n[13]\n\tNo data available\n\nL&D\n[13]\n\tNo data available\n\nUnassigned\n[13]\n\tNo data available\n\nAgilePulse | Sprint Tracker\nLR\n\t2m ago\nPast Projects (1)\nPR Reviewer for Projects (2)\nGoals (4)",
+      "shot": "reports/screenshots/2026-10-28/hardik/sonar-fe/p11-employee-side-panel.png",
+      "errs": [
+        {
+          "type": "requestfailed",
+          "url": "https://simerp-dev.simform.solutions/employee?sortBy=availabilityPercentage&sortOrder=desc&timeFrame=5d&adv_department=a3f54254-b77d-4e15-9be8-1de2d16f4636%2C69304b79-7ea7-4969-adb3-312bc4682d8e",
+          "text": "net::ERR_BLOCKED_BY_ORB https://example.com/logo.png"
+        }
+      ]
+    },
+    {
+      "id": "emp-side-panel-icon-tooltip",
+      "ok": true,
+      "label": "ADMIN",
+      "tip": [
+        "ADMIN"
+      ],
+      "shot": "reports/screenshots/2026-10-28/hardik/sonar-fe/p12-side-panel-icon-tooltip.png",
+      "errs": []
+    },
+    {
+      "id": "emp-side-panel-close",
+      "ok": true,
+      "open": 0,
+      "errs": []
+    },
+    {
+      "id": "past-employee-tab",
+      "ok": true,
+      "ths": [
+        "Name",
+        "Projects",
+        "Project Name",
+        "Since"
+      ],
+      "rows": 104,
+      "actionBtns": 0,
+      "bad": [],
+      "url": "https://simerp-dev.simform.solutions/employee?tab=past&sortBy=name&sortOrder=asc",
+      "shot": "reports/screenshots/2026-10-28/hardik/sonar-fe/p13-past-employees.png",
+      "errs": [
+        {
+          "type": "http404",
+          "url": "https://simerp-dev.simform.solutions/employee?tab=past&sortBy=name&sortOrder=asc",
+          "text": "GET https://cdn.simpleicons.org/adobeaftereffects"
+        },
+        {
+          "type": "error",
+          "url": "https://simerp-dev.simform.solutions/employee?tab=past&sortBy=name&sortOrder=asc",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        },
+        {
+          "type": "http404",
+          "url": "https://simerp-dev.simform.solutions/employee?tab=past&sortBy=name&sortOrder=asc",
+          "text": "GET https://cdn.simpleicons.org/openai"
+        },
+        {
+          "type": "error",
+          "url": "https://simerp-dev.simform.solutions/employee?tab=past&sortBy=name&sortOrder=asc",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        }
+      ]
+    }
+  ],
+  "errs": [
+    {
+      "type": "requestfailed",
+      "url": "https://simerp-dev.simform.solutions/employee?sortBy=availabilityPercentage&sortOrder=desc&adv_department=a3f54254-b77d-4e15-9be8-1de2d16f4636%2C69304b79-7ea7-4969-adb3-312bc4682d8e",
+      "text": "net::ERR_BLOCKED_BY_ORB https://example.com/logo.png"
+    },
+    {
+      "type": "requestfailed",
+      "url": "https://simerp-dev.simform.solutions/employee?sortBy=availabilityPercentage&sortOrder=desc&timeFrame=5d&adv_department=a3f54254-b77d-4e15-9be8-1de2d16f4636%2C69304b79-7ea7-4969-adb3-312bc4682d8e",
+      "text": "net::ERR_BLOCKED_BY_ORB https://example.com/logo.png"
+    },
+    {
+      "type": "http404",
+      "url": "https://simerp-dev.simform.solutions/employee?sortBy=availabilityPercentage&sortOrder=desc&timeFrame=5d&adv_department=a3f54254-b77d-4e15-9be8-1de2d16f4636%2C69304b79-7ea7-4969-adb3-312bc4682d8e",
+      "text": "GET https://cdn.simpleicons.org/openai"
+    },
+    {
+      "type": "error",
+      "url": "https://simerp-dev.simform.solutions/employee?sortBy=availabilityPercentage&sortOrder=desc&timeFrame=5d&adv_department=a3f54254-b77d-4e15-9be8-1de2d16f4636%2C69304b79-7ea7-4969-adb3-312bc4682d8e",
+      "text": "Failed to load resource: the server responded with a status of 404 ()"
+    },
+    {
+      "type": "requestfailed",
+      "url": "https://simerp-dev.simform.solutions/employee?sortBy=availabilityPercentage&sortOrder=desc&timeFrame=5d&adv_department=a3f54254-b77d-4e15-9be8-1de2d16f4636%2C69304b79-7ea7-4969-adb3-312bc4682d8e",
+      "text": "net::ERR_BLOCKED_BY_ORB https://example.com/logo.png"
+    },
+    {
+      "type": "http404",
+      "url": "https://simerp-dev.simform.solutions/employee?tab=past&sortBy=name&sortOrder=asc",
+      "text": "GET https://cdn.simpleicons.org/adobeaftereffects"
+    },
+    {
+      "type": "error",
+      "url": "https://simerp-dev.simform.solutions/employee?tab=past&sortBy=name&sortOrder=asc",
+      "text": "Failed to load resource: the server responded with a status of 404 ()"
+    },
+    {
+      "type": "http404",
+      "url": "https://simerp-dev.simform.solutions/employee?tab=past&sortBy=name&sortOrder=asc",
+      "text": "GET https://cdn.simpleicons.org/openai"
+    },
+    {
+      "type": "error",
+      "url": "https://simerp-dev.simform.solutions/employee?tab=past&sortBy=name&sortOrder=asc",
+      "text": "Failed to load resource: the server responded with a status of 404 ()"
+    }
+  ]
+}

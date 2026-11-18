@@ -1,0 +1,208 @@
+{
+  "code": "SUCCESS",
+  "message": "Allocation ticket details retrieved successfully",
+  "data": {
+    "publicId": "3d78e476-53dc-4cd4-92a5-07bf1788823a",
+    "ticketNumber": "DA-0099",
+    "ticketType": "DEALLOCATE_ALLOCATION",
+    "intent": null,
+    "status": "AWAITING_CONFIRMATION",
+    "priority": "LOW",
+    "allocationRequestCreationType": null,
+    "allocationEndDate": "2026-10-15T00:00:00.000Z",
+    "effectiveStartDate": null,
+    "effectiveEndDate": null,
+    "project": {
+      "publicId": "fd79a71e-c3c3-4c75-8a06-38509a14c7a3",
+      "name": "ViewForge | BI Dashboard",
+      "csmId": "3831",
+      "accountGrade": 9
+    },
+    "department": {
+      "publicId": "cc5a1d6b-9fbe-48a2-a711-84ec81b529ab",
+      "name": "POST-SALES BA",
+      "iconUrl": "https://d3e6uquevgpr8q.cloudfront.net/department-icons/post-sales-ba.svg"
+    },
+    "departmentTechStack": [],
+    "additionalTechStacks": [],
+    "allocationStartDate": "2025-12-30T00:00:00.000Z",
+    "requestedAllocationType": "FIXED",
+    "requestedAllocationPercentage": null,
+    "allocationSnapshot": {
+      "reason": "UPDATED",
+      "allocationType": "FIXED",
+      "allocationPercentage": null,
+      "allocationStartDate": "2025-12-30T00:00:00.000Z",
+      "allocationEndDate": "2026-10-15T00:00:00.000Z",
+      "typeOfWork": "DEVELOPMENT_WORK",
+      "previousAllocationPercentage": 20,
+      "previousAllocationStartDate": "2025-12-30T00:00:00.000Z",
+      "previousAllocationEndDate": "2026-12-22T00:00:00.000Z",
+      "createdAt": "2026-10-15T10:29:13.910Z"
+    },
+    "allocationSnapshots": [
+      {
+        "reason": "UPDATED",
+        "allocationType": "FIXED",
+        "allocationPercentage": null,
+        "allocationStartDate": "2025-12-30T00:00:00.000Z",
+        "allocationEndDate": "2026-10-15T00:00:00.000Z",
+        "typeOfWork": "DEVELOPMENT_WORK",
+        "previousAllocationPercentage": 20,
+        "previousAllocationStartDate": "2025-12-30T00:00:00.000Z",
+        "previousAllocationEndDate": "2026-12-22T00:00:00.000Z",
+        "createdAt": "2026-10-15T10:29:13.910Z"
+      }
+    ],
+    "targetScheduledChangePublicId": null,
+    "supersededTicketPublicId": null,
+    "supersededTicketNumber": null,
+    "replacedAssignment": {
+      "publicId": "cc880936-e23e-4b34-b3fb-f5544cdc1759",
+      "employee": {
+        "publicId": "91da7795-4b70-4b60-aab6-837abe5de0b0",
+        "name": "Nimisha Bose",
+        "photoUrl": "https://i.pravatar.cc/150?u=nimisha.bose@simformsolutions.com"
+      },
+      "project": {
+        "publicId": "fd79a71e-c3c3-4c75-8a06-38509a14c7a3",
+        "name": "ViewForge | BI Dashboard"
+      },
+      "allocationPercentage": 20,
+      "allocationType": "FIXED",
+      "allocationStartDate": "2025-12-30T00:00:00.000Z",
+      "allocationEndDate": "2026-12-22T00:00:00.000Z",
+      "status": "GREEN",
+      "typeOfWork": "DEVELOPMENT_WORK",
+      "allocationOrigin": "FLOW"
+    },
+    "preferredEmployees": [],
+    "shortlistedEmployees": [],
+    "requester": {
+      "publicId": "4174b8c1-9d89-4b61-bfd7-075924620091",
+      "name": "Tarun Sharma",
+      "photoUrl": "https://i.pravatar.cc/150?u=tarun.sharma@simformsolutions.com"
+    },
+    "createdAt": "2026-10-15T10:29:13.896Z",
+    "updatedAt": "2026-10-15T10:29:13.896Z",
+    "statusSteps": [
+      {
+        "key": "SUBMITTED",
+        "title": "CSM submits request",
+        "description": "CSM submits a deallocation request",
+        "state": "COMPLETED",
+        "completedAt": "2026-10-15T10:29:13.896Z",
+        "performedBy": {
+          "publicId": "4174b8c1-9d89-4b61-bfd7-075924620091",
+          "name": "Tarun Sharma",
+          "photoUrl": "https://i.pravatar.cc/150?u=tarun.sharma@simformsolutions.com"
+        }
+      },
+      {
+        "key": "PMO_REVIEWED",
+        "title": "PMO Review",
+        "description": "Pending PMO action",
+        "state": "COMPLETED",
+        "completedAt": "2026-10-15T10:29:13.896Z",
+        "performedBy": {
+          "publicId": "4174b8c1-9d89-4b61-bfd7-075924620091",
+          "name": "Tarun Sharma",
+          "photoUrl": "https://i.pravatar.cc/150?u=tarun.sharma@simformsolutions.com"
+        }
+      },
+      {
+        "key": "ACKNOWLEDGED",
+        "title": "PMO Acknowledges",
+        "description": "PMO approved",
+        "state": "CURRENT"
+      },
+      {
+        "key": "NOTIFIED",
+        "title": "RM/TM/EM Notified",
+        "description": "Awaiting confirmation",
+        "state": "PENDING"
+      },
+      {
+        "key": "FINALIZED",
+        "title": "Employee Deallocated",
+        "description": "Employee received notification",
+        "state": "PENDING"
+      }
+    ],
+    "approvals": {},
+    "feedbacks": [
+      {
+        "developer": {
+          "publicId": "91da7795-4b70-4b60-aab6-837abe5de0b0",
+          "name": "Nimisha Bose",
+          "photoUrl": "https://i.pravatar.cc/150?u=nimisha.bose@simformsolutions.com"
+        },
+        "coreSkillRating": 7,
+        "communicationRating": 7,
+        "behavioralRating": 7,
+        "overallRating": 7,
+        "developerFeedback": "QA test SI4-T1464 - shadow swap verification on dev.",
+        "isOpenToWorkWithAgain": true,
+        "deallocationReason": "ROLE_MISALIGNMENT"
+      }
+    ],
+    "targetAssignmentTimeline": [
+      {
+        "ticketPublicId": null,
+        "ticketNumber": null,
+        "scheduledChangePublicId": null,
+        "effectiveFrom": "2025-12-30",
+        "effectiveTo": "2026-12-22",
+        "allocationType": "FIXED",
+        "allocationPercentage": 20,
+        "isCurrent": true,
+        "isPending": false,
+        "segmentType": "STANDING"
+      }
+    ],
+    "group": {
+      "publicId": "1887d3de-bb10-4871-9277-2de8fea8b75c",
+      "groupNumber": 1,
+      "flowType": "SHADOW_TO_MAIN",
+      "step": 1,
+      "totalSteps": 2,
+      "isBlocked": false,
+      "blockedBy": [],
+      "hasHiddenTickets": false,
+      "tickets": [
+        {
+          "publicId": "3d78e476-53dc-4cd4-92a5-07bf1788823a",
+          "ticketNumber": "DA-0099",
+          "ticketType": "DEALLOCATE_ALLOCATION",
+          "step": 1,
+          "status": "AWAITING_CONFIRMATION",
+          "employee": {
+            "publicId": "91da7795-4b70-4b60-aab6-837abe5de0b0",
+            "name": "Nimisha Bose",
+            "photoUrl": "https://i.pravatar.cc/150?u=nimisha.bose@simformsolutions.com"
+          }
+        },
+        {
+          "publicId": "a02ef199-9cf4-4f0e-ac7a-ca018a2b0c7c",
+          "ticketNumber": "DA-0100",
+          "ticketType": "DEALLOCATE_ALLOCATION",
+          "step": 1,
+          "status": "AWAITING_CONFIRMATION",
+          "employee": {
+            "publicId": "3b99da7c-21f0-4179-8273-972663422709",
+            "name": "Ankita Das",
+            "photoUrl": "https://i.pravatar.cc/150?u=ankita.das@simformsolutions.com"
+          }
+        },
+        {
+          "publicId": "4962972f-67af-4c71-a373-6c9ad234ac74",
+          "ticketNumber": "NA-0362",
+          "ticketType": "NEW_ALLOCATION",
+          "step": 2,
+          "status": "OPEN",
+          "employee": null
+        }
+      ]
+    }
+  }
+}

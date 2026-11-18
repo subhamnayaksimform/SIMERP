@@ -1,0 +1,36 @@
+{
+  "results": [
+    {
+      "id": "help-toggle",
+      "ok": true,
+      "n": 14,
+      "names": [
+        "Sign inSign in with your Microsoft accou|false",
+        "Find your way aroundThe sidebar shows on|false",
+        "Search, sort and filter any listLists re|false",
+        "Change the time rangeHours and availabil|false",
+        "Get support or report a problemSend a qu|false",
+        "Log outEnd your session on this browser.|false"
+      ],
+      "afterOpen": "true",
+      "firstAfterSecond": "false",
+      "second": "true",
+      "secondToggledShut": "false",
+      "keyboardOpen": "true",
+      "shot": "reports/screenshots/2026-10-28/hardik/sonar-fe/e05-help-vishal.desai.png",
+      "errs": []
+    },
+    {
+      "id": "visa-add-open-cancel",
+      "ok": true,
+      "dialogs": [
+        "FORM::I do not currently hold any visa\nVisa of Country\n*\nSelect country\nVisa Type\nSelect a country first.\nIssue Date\nPick a da",
+        "FORM::Skill\t\nIs Primary\n\n\nAgile\n\t\n\n\nAngular\n\t\n\n\nCSS3\n\t\n\n\nHTML5\n\t\n\n\nJavaScript\n\t\n\n\nReact\n\t\n\n\nRedux\n\t\n\n\nSASS\n\t\n\n\nTypeScript\n\t\n\n\n"
+      ],
+      "blocked": [],
+      "shot0": "reports/screenshots/2026-10-28/hardik/sonar-fe/e03a-visa-after-click.png",
+      "errs": []
+    }
+  ],
+  "errs": []
+}

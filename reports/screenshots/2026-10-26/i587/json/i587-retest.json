@@ -1,0 +1,148 @@
+{
+  "s1-direct": {
+    "status": 201,
+    "body": {
+      "code": "ALLOCATION_TICKET_070",
+      "message": "Direct allocation created successfully",
+      "data": {
+        "publicId": "1190ea08-4149-42f4-a718-401e0d1edbcf",
+        "allocationPercentage": 10,
+        "allocationType": "FIXED",
+        "typeOfWork": "DEVELOPMENT_WORK",
+        "allocationStartDate": "2026-11-02",
+        "allocationEndDate": "2026-12-31",
+        "status": "GREEN",
+        "note": "QA re-test SI4-I587 2026-10-26 (future-start row)",
+        "allocationOrigin": "PMO",
+        "employee": {
+          "publicId": "dcfc5685-8cdd-440a-af8d-f1af386032e4",
+          "name": "Vihaan Patil",
+          "email": "vihaan.patil@simformsolutions.com",
+          "photoUrl": "https://i.pravatar.cc/150?u=vihaan.patil@simformsolutions.com"
+        },
+        "shadowDeveloper": null,
+        "project": {
+          "publicId": "3d138a89-4d06-4839-8091-436fba0a2dd6",
+          "name": "HyperScale | Scalability Engine",
+          "alias": "",
+          "projectManager": {
+            "publicId": "5f1a4477-84fe-46aa-8360-ca4e0a16983c",
+            "name": "Hardik Trivedi",
+            "photoUrl": "https://i.pravatar.cc/150?u=hardik.trivedi@simformsolutions.com"
+          },
+          "customerSuccessManager": {
+            "publicId": "09d434e9-5346-4790-8ae7-f5105e5b4968",
+            "name": "Priya Chopra",
+            "photoUrl": "https://i.pravatar.cc/150?u=priya.chopra@simformsolutions.com"
+          }
+        },
+        "createdBy": {
+          "publicId": "e93f5377-1f74-42cb-9a40-255908e50310",
+          "name": "Bhumi Chauhan",
+          "email": "bhumi.chauhan@simformsolutions.com",
+          "photoUrl": "https://i.pravatar.cc/150?u=bhumi.chauhan@simformsolutions.com"
+        },
+        "ticketPublicId": "c9fce530-09f0-4ceb-a567-e507b33f9984",
+        "ticketNumber": "NA-0449"
+      }
+    }
+  },
+  "row1": "Vihaan Patil 2026-11-02->2026-12-31",
+  "s2-da": {
+    "status": 201,
+    "body": {
+      "code": "ALLOCATION_TICKET_097",
+      "message": "Deallocation ticket created successfully",
+      "data": {
+        "outcome": "TICKET_CREATED",
+        "publicId": "950c6e1a-ea53-4f4f-8ded-6f29fa4b77e4",
+        "ticketNumber": "DA-0175",
+        "ticketType": "DEALLOCATE_ALLOCATION",
+        "status": "AWAITING_CONFIRMATION"
+      }
+    }
+  },
+  "s3-ack": {
+    "status": 200,
+    "body": {
+      "code": "SUCCESS",
+      "message": "De-allocation acknowledged; allocation change applied",
+      "data": {
+        "publicId": "950c6e1a-ea53-4f4f-8ded-6f29fa4b77e4",
+        "ticketNumber": "DA-0175",
+        "status": "APPROVED"
+      }
+    }
+  },
+  "daNumber": "DA-0175",
+  "daStatus": "APPROVED",
+  "scheduled": [
+    {
+      "publicId": "8c46a3a9-7725-42a8-a82f-399011f24716",
+      "changeType": "ASSIGNMENT_DEALLOCATE",
+      "status": "PENDING",
+      "effectiveDate": "2026-11-16",
+      "overrideEndDate": null,
+      "allocationType": null,
+      "allocationPercentage": null,
+      "effectiveStartDate": null,
+      "effectiveEndDate": "2026-11-15",
+      "previousAllocationPercentage": 10
+    }
+  ],
+  "row2": "Vihaan Patil 2026-11-02->2026-11-15",
+  "s4-withdraw": {
+    "status": 200,
+    "body": {
+      "code": "ALLOCATION_TICKET_141",
+      "message": "Scheduled allocation change cancelled successfully",
+      "data": {
+        "scheduledChange": {
+          "publicId": "8c46a3a9-7725-42a8-a82f-399011f24716",
+          "changeType": "ASSIGNMENT_DEALLOCATE",
+          "status": "SUPERSEDED",
+          "effectiveDate": "2026-11-16",
+          "overrideEndDate": null,
+          "allocationType": null,
+          "allocationPercentage": null,
+          "effectiveStartDate": null,
+          "effectiveEndDate": "2026-11-15",
+          "previousAllocationPercentage": 10
+        },
+        "ticket": null,
+        "allocationTimeline": [
+          {
+            "ticketPublicId": "c9fce530-09f0-4ceb-a567-e507b33f9984",
+            "ticketNumber": "NA-0449",
+            "scheduledChangePublicId": null,
+            "effectiveFrom": "2026-11-02",
+            "effectiveTo": "2026-12-31",
+            "allocationType": "FIXED",
+            "allocationPercentage": 10,
+            "isCurrent": false,
+            "isPending": true,
+            "segmentType": "STANDING"
+          }
+        ]
+      }
+    }
+  },
+  "row3": "Vihaan Patil 2026-11-02->2026-12-31",
+  "s5-cancel": {
+    "status": 201,
+    "body": {
+      "code": "ALLOCATION_TICKET_169",
+      "message": "Upcoming allocation cancelled successfully",
+      "data": {
+        "ticket": {
+          "publicId": "10c3f997-4fca-42d3-bd32-7cb24009834e",
+          "ticketNumber": "DA-0176",
+          "ticketType": "DEALLOCATE_ALLOCATION",
+          "status": "APPROVED"
+        },
+        "isAllocationCancelled": true
+      }
+    }
+  },
+  "row4": "row not found"
+}

@@ -1,0 +1,14 @@
+[
+ {
+  "area": "2.ui",
+  "name": "fresh pending candidate (Neel Rathod) API detail -> 403",
+  "pass": true,
+  "detail": "[403,\"OPP_193\"]"
+ },
+ {
+  "area": "2.ui",
+  "name": "pending candidate opens opportunity URL -> redirected to Unauthorized page",
+  "pass": true,
+  "detail": "{\"url\":\"https://simerp-dev.simform.solutions/unauthorized\",\"t\":\"this page.\\n\\nGo to Profile\\nYou do not have access to this opportunity\"}"
+ }
+]

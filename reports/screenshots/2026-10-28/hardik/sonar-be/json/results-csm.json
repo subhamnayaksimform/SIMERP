@@ -1,0 +1,78 @@
+[
+  {
+    "key": "access:matrix",
+    "pass": "info",
+    "actual": "{\"GET /allocation-tickets\":\"200 (n=40)\",\"GET /allocation-tickets/filters\":\"200 (n=-)\",\"GET /allocation-tickets/interview-requests\":\"200 (n=81)\",\"GET /projects\":\"403\",\"GET /projects/filters\":\"403\",\"GET /employees\":\"403\",\"GET /employee-roles\":\"403\",\"GET /employee-ratings\":\"403\",\"GET /utilization-priority\":\"403\",\"GET /opportunities/openings\":\"200 (n=156)\",\"GET /opportunities/candidates\":\"200 (n=3649)\",\"GET /dashboard/overview\":\"200 (n=-)\",\"GET /dashboard/activity\":\"200 (n=9)\",\"GET /dashboard/filter-options\":\"200 (n=-)\",\"GET /working-location/overview\":\"403\",\"GET /working-location/list\":\"200 (n=94)\",\"GET /working-location/employees\":\"403\",\"GET /weekly-update\":\"403\",\"GET /notifications\":\"200 (n=159)\",\"GET /teams (own dept)\":\"403\"}",
+    "data": {
+      "GET /allocation-tickets": "200 (n=40)",
+      "GET /allocation-tickets/filters": "200 (n=-)",
+      "GET /allocation-tickets/interview-requests": "200 (n=81)",
+      "GET /projects": "403",
+      "GET /projects/filters": "403",
+      "GET /employees": "403",
+      "GET /employee-roles": "403",
+      "GET /employee-ratings": "403",
+      "GET /utilization-priority": "403",
+      "GET /opportunities/openings": "200 (n=156)",
+      "GET /opportunities/candidates": "200 (n=3649)",
+      "GET /dashboard/overview": "200 (n=-)",
+      "GET /dashboard/activity": "200 (n=9)",
+      "GET /dashboard/filter-options": "200 (n=-)",
+      "GET /working-location/overview": "403",
+      "GET /working-location/list": "200 (n=94)",
+      "GET /working-location/employees": "403",
+      "GET /weekly-update": "403",
+      "GET /notifications": "200 (n=159)",
+      "GET /teams (own dept)": "403"
+    },
+    "ms": 0
+  },
+  {
+    "key": "notif:isRead",
+    "pass": true,
+    "actual": "all=159 read=0 unread=159 wrongRows=0; newest: 2026-10-28T05:57 Manish Bose selected for Java Developer | 2026-10-28T05:43 Gunjan Rawat rejected for Java Developer | 2026-10-28T05:40 You've been assigned to OPP-0322",
+    "ms": 997
+  },
+  {
+    "key": "emp:ratingsShape",
+    "pass": "info",
+    "actual": "status 403",
+    "ms": 332
+  },
+  {
+    "key": "dash:filterOptions",
+    "pass": "calc",
+    "actual": "departments=0 [] projects=4",
+    "data": {
+      "departments": [],
+      "projects": 4
+    },
+    "ms": 326
+  },
+  {
+    "key": "weekly:reads",
+    "pass": "calc",
+    "actual": "{\"/weekly-update\":\"403 {\\\"code\\\":\\\"AUTH_004\\\",\\\"message\\\":\\\"Access forbidden\\\"}\",\"/weekly-update/filters\":\"403 {\\\"code\\\":\\\"AUTH_004\\\",\\\"message\\\":\\\"Access forbidden\\\"}\",\"/weekly-update/sessions\":\"403 {\\\"code\\\":\\\"AUTH_004\\\",\\\"message\\\":\\\"Access forbidden\\\"}\",\"/weekly-update/status\":\"403 {\\\"code\\\":\\\"AUTH_004\\\",\\\"message\\\":\\\"Access forbidden\\\"}\",\"/weekly-update/last-notes\":\"403 {\\\"code\\\":\\\"AUTH_004\\\",\\\"message\\\":\\\"Access forbidden\\\"}\",\"sortDesc\":403,\"first\":[]}",
+    "data": {
+      "/weekly-update": "403 {\"code\":\"AUTH_004\",\"message\":\"Access forbidden\"}",
+      "/weekly-update/filters": "403 {\"code\":\"AUTH_004\",\"message\":\"Access forbidden\"}",
+      "/weekly-update/sessions": "403 {\"code\":\"AUTH_004\",\"message\":\"Access forbidden\"}",
+      "/weekly-update/status": "403 {\"code\":\"AUTH_004\",\"message\":\"Access forbidden\"}",
+      "/weekly-update/last-notes": "403 {\"code\":\"AUTH_004\",\"message\":\"Access forbidden\"}",
+      "sortDesc": 403,
+      "first": []
+    },
+    "ms": 1946
+  },
+  {
+    "key": "wl:selfAndOthers",
+    "pass": "calc",
+    "actual": "own=200 ownOverall={\"wfoPercentage\":50.2,\"wfhPercentage\":49.8,\"daysLogged\":402,\"daysInWindow\":null} ceoRecord=404",
+    "data": {
+      "own": 200,
+      "ownOverall": "{\"wfoPercentage\":50.2,\"wfhPercentage\":49.8,\"daysLogged\":402,\"daysInWindow\":null}",
+      "other": 404
+    },
+    "ms": 2461
+  }
+]

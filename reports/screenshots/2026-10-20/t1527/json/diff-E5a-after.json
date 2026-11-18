@@ -1,0 +1,54 @@
+{
+  "before": "E4b-after",
+  "after": "E5a-after",
+  "beforeAt": "2026-10-20T13:01:12.938Z",
+  "afterAt": "2026-10-20T13:02:33.722Z",
+  "newByUser": {
+    "vandana.das": [
+      {
+        "eventType": "allocation.direct_employee_assigned",
+        "title": "You've Been allocated to KubeDash | Kubernetes Dashboard",
+        "body": "You've been allocated to KubeDash | Kubernetes Dashboard starting 2026-10-22.",
+        "createdAt": "2026-10-20T13:02:29.560Z",
+        "ctx": {
+          "assignmentPublicId": "670152c8-1696-4397-8398-7b1d44fced5c"
+        }
+      }
+    ],
+    "cto": [
+      {
+        "eventType": "allocation.direct_employee_rm_assigned",
+        "title": "Direct Allocation: KubeDash | Kubernetes Dashboard",
+        "body": "Bhumi Chauhan directly allocated Vandana Das to KubeDash | Kubernetes Dashboard, bypassing the ticket workflow.",
+        "createdAt": "2026-10-20T13:02:29.590Z",
+        "ctx": {
+          "assignmentPublicId": "670152c8-1696-4397-8398-7b1d44fced5c"
+        }
+      }
+    ],
+    "abhishek.hingorani": [
+      {
+        "eventType": "allocation.direct_employee_rm_assigned",
+        "title": "Direct Allocation: KubeDash | Kubernetes Dashboard",
+        "body": "Bhumi Chauhan directly allocated Vandana Das to KubeDash | Kubernetes Dashboard, bypassing the ticket workflow.",
+        "createdAt": "2026-10-20T13:02:29.590Z",
+        "ctx": {
+          "assignmentPublicId": "670152c8-1696-4397-8398-7b1d44fced5c"
+        }
+      }
+    ],
+    "ceo": [],
+    "hardik.trivedi": [
+      {
+        "eventType": "allocation.direct_pm_notified",
+        "title": "Allocation Confirmed: KubeDash | Kubernetes Dashboard",
+        "body": "Vandana Das has been allocated to KubeDash | Kubernetes Dashboard, effective 2026-10-22.",
+        "createdAt": "2026-10-20T13:02:29.574Z",
+        "ctx": {
+          "assignmentPublicId": "670152c8-1696-4397-8398-7b1d44fced5c"
+        }
+      }
+    ],
+    "bhumi.chauhan": []
+  }
+}

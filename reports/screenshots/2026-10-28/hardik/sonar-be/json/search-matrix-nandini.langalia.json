@@ -1,0 +1,180 @@
+{
+  "terms": [
+    null,
+    "%",
+    "_",
+    "\\",
+    "'",
+    "\"",
+    "%%",
+    "a%b",
+    "java"
+  ],
+  "res": {
+    "/opportunities/openings?page=1&limit=100": [
+      491,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      70
+    ],
+    "/allocation-tickets/interview-requests?page=1&limit=100": [
+      316,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      6
+    ],
+    "/opportunities/candidates?page=1&limit=100": [
+      3649,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "/opportunities/assignees?role=PM": [
+      91,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "/opportunities/lookup?": [
+      50,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      6
+    ],
+    "/employees?page=1&limit=100": [
+      3648,
+      3648,
+      3648,
+      0,
+      0,
+      0,
+      3648,
+      1210,
+      0
+    ],
+    "/projects?page=1&limit=100": [
+      402,
+      402,
+      402,
+      0,
+      0,
+      0,
+      402,
+      122,
+      0
+    ],
+    "/allocation-tickets?page=1&limit=100": [
+      770,
+      770,
+      770,
+      0,
+      0,
+      0,
+      770,
+      393,
+      0
+    ],
+    "/notifications?page=1&limit=100": [
+      1198,
+      1198,
+      1198,
+      0,
+      93,
+      0,
+      1198,
+      946,
+      31
+    ],
+    "/utilization-priority?page=1&limit=100": [
+      3649,
+      3649,
+      3649,
+      0,
+      0,
+      0,
+      3649,
+      682,
+      93
+    ],
+    "/employee-roles?page=1&limit=100": [
+      3632,
+      3632,
+      3632,
+      0,
+      0,
+      0,
+      3632,
+      348,
+      0
+    ],
+    "/employee-ratings?page=1&limit=100": [
+      57,
+      57,
+      57,
+      0,
+      0,
+      0,
+      57,
+      7,
+      0
+    ],
+    "/dashboard/activity?page=1&limit=100": [
+      257,
+      257,
+      257,
+      0,
+      0,
+      0,
+      257,
+      82,
+      0
+    ],
+    "/weekly-update?page=1&limit=100": [
+      "E403",
+      "E403",
+      "E403",
+      "E403",
+      "E403",
+      "E403",
+      "E403",
+      "E403",
+      "E403"
+    ],
+    "/competencies?page=1&limit=100": [
+      "E403",
+      "E403",
+      "E403",
+      "E403",
+      "E403",
+      "E403",
+      "E403",
+      "E403",
+      "E403"
+    ]
+  }
+}

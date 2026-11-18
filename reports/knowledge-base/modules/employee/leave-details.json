@@ -1,0 +1,15 @@
+{
+  "module": "GEN",
+  "subModule": "Leave & Compliance Details",
+  "description": "Employee Module — Leave & Compliance Details / PIP / Notice Period status views. Suggested dedicated code EMPLEV (not yet assigned — see req-2026-07-13-GEN-doc.json unclear[]). Filed under moduleCode GEN pending that decision.",
+  "businessRules": [
+    "A leave record's Status must consistently drive both its display format (fixed day count vs. countdown) and its inclusion in every scoped view (full list, PIP/Ongoing, Notice Period) — a record must not appear with a mismatched Days format or in a scoped view its Status does not belong to."
+  ],
+  "edgeCases": [
+    "Notice-period countdown boundary — verify the display transitions correctly on the last day (e.g. '1 Day Left') and the day after expiry (0/Expired); the brief only captured mid-range values ('60 Days Left', '33 Days Left').",
+    "PIP countdown reaching 0 — verify what status/label the row transitions to; not shown in source.",
+    "Leave record with a blank/'-' Reason (as shown for NP rows) — verify the column renders '-' rather than blank/null causing a crash.",
+    "Two same-shaped but differently-titled screens ('Leave & Compliance Details' vs 'Employee Past Leaves') — verify they are not two independently-maintained data sources that could silently diverge.",
+    "A leave row spanning a very long duration (Upcoming/Maternity shown at 91 Days) — verify the Days column and any sort-by-Days handles this correctly relative to short 2-Day entries."
+  ]
+}

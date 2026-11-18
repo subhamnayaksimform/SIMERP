@@ -1,0 +1,202 @@
+[
+  {
+    "id": "TC-EMPGOL-105", "module": "Goals",
+    "title": "Filtering the Goals Listing by Department narrows the list to that department's relevant goals",
+    "category": "functional", "priority": "high", "severity": "major",
+    "tags": ["@functional"], "automatable": true,
+    "preconditions": "Logged in as ceo@simformsolutions.com (primaryPage fixture)",
+    "testData": {},
+    "steps": [
+      "Navigate to Employee → Goals",
+      "Apply the department filter, selecting one department",
+      "Observe the Goals Listing"
+    ],
+    "expected": "Goals Listing narrows to goals relevant to/assigned within the selected department",
+    "automationHint": "",
+    "requirementRef": "Manual requirement (2026-08-19): we can filter goals based on different departments",
+    "provenance": "requirement-grounded", "confidence": "requirement-grounded"
+  },
+  {
+    "id": "TC-EMPGOL-106", "module": "Goals",
+    "title": "Clearing the department filter restores the full Goals Listing",
+    "category": "functional", "priority": "medium", "severity": "major",
+    "tags": ["@functional", "@regression"], "automatable": true,
+    "preconditions": "Logged in as ceo@simformsolutions.com (primaryPage fixture)",
+    "testData": {},
+    "steps": [
+      "Apply a department filter on the Goals Listing",
+      "Clear it"
+    ],
+    "expected": "Full, unfiltered Goals Listing is restored",
+    "automationHint": "",
+    "requirementRef": "Manual requirement (2026-08-19): we can filter goals based on different departments",
+    "provenance": "requirement-grounded", "confidence": "requirement-grounded"
+  },
+  {
+    "id": "TC-EMPGOL-107", "module": "Goals",
+    "title": "Add Goal button creates a new goal that appears correctly under the currently selected department filter",
+    "category": "smoke", "priority": "critical", "severity": "critical",
+    "tags": ["@smoke", "@functional"], "automatable": true,
+    "preconditions": "Logged in as ceo@simformsolutions.com (primaryPage fixture)",
+    "testData": { "goalNamePrefix": "MANUAL-2026-08-19" },
+    "steps": [
+      "Select a specific department filter",
+      "Click Add Goal and fill in the mandatory fields",
+      "Save"
+    ],
+    "expected": "New goal appears in the Goals Listing for the currently selected department, with correct initial (zero) assignment counts",
+    "automationHint": "Reuse GoalsPage.createUniqueGoalName()/openAddGoalPanel() pattern from goals.page.ts.",
+    "requirementRef": "Manual requirement (2026-08-19): we can add or create goals using add goal button",
+    "provenance": "requirement-grounded", "confidence": "requirement-grounded"
+  },
+  {
+    "id": "TC-EMPGOL-108", "module": "Goals",
+    "title": "Editing an existing goal only allows changing Certificate Code or Description — other fields are locked",
+    "category": "functional", "priority": "high", "severity": "major",
+    "tags": ["@functional", "@boundary"], "automatable": true,
+    "preconditions": "Logged in as ceo@simformsolutions.com (primaryPage fixture)",
+    "testData": {},
+    "steps": [
+      "Open the Edit panel for an existing goal",
+      "Enumerate every field shown and record its enabled/disabled state"
+    ],
+    "expected": "Only Certificate Code and Description are editable; Goal Name, Goal Type, and any other originally-set fields are disabled/read-only",
+    "automationHint": "This is a newly reported constraint (2026-08-19) not previously captured in employee-details/goals.json — worth persisting to the Goals KB file once confirmed live.",
+    "requirementRef": "Manual requirement (2026-08-19): once goal is made we can only edit certificate code or description from edit button",
+    "provenance": "requirement-grounded", "confidence": "requirement-grounded"
+  },
+  {
+    "id": "TC-EMPGOL-109", "module": "Goals",
+    "title": "Attempting to modify a locked field (e.g. Goal Name/Type) on an existing goal is rejected",
+    "category": "negative", "priority": "medium", "severity": "major",
+    "tags": ["@negative", "@regression"], "automatable": true,
+    "preconditions": "Logged in as ceo@simformsolutions.com (primaryPage fixture)",
+    "testData": {},
+    "steps": [
+      "Open the Edit panel for an existing goal",
+      "Attempt to interact with a locked field (e.g. Goal Name)"
+    ],
+    "expected": "Field is disabled and cannot be changed through the UI; no write attempt reaches the API for this field",
+    "automationHint": "",
+    "requirementRef": "Manual requirement (2026-08-19): once goal is made we can only edit certificate code or description from edit button",
+    "provenance": "requirement-grounded", "confidence": "requirement-grounded"
+  },
+  {
+    "id": "TC-EMPGOL-110", "module": "Goals",
+    "title": "Editing Certificate Code on an existing goal persists and reflects immediately in the listing",
+    "category": "functional", "priority": "high", "severity": "major",
+    "tags": ["@functional"], "automatable": true,
+    "preconditions": "Logged in as ceo@simformsolutions.com (primaryPage fixture)",
+    "testData": { "newCertificateCode": "CERT-2026-TEST" },
+    "steps": [
+      "Open the Edit panel for a Certificate-type goal",
+      "Change the Certificate Code",
+      "Save"
+    ],
+    "expected": "New Certificate Code is saved and shown in the listing/detail view without a page reload",
+    "automationHint": "",
+    "requirementRef": "Manual requirement (2026-08-19): once goal is made we can only edit certificate code or description from edit button",
+    "provenance": "requirement-grounded", "confidence": "requirement-grounded"
+  },
+  {
+    "id": "TC-EMPGOL-111", "module": "Goals",
+    "title": "Editing Description on an existing goal persists and reflects immediately",
+    "category": "functional", "priority": "high", "severity": "major",
+    "tags": ["@functional"], "automatable": true,
+    "preconditions": "Logged in as ceo@simformsolutions.com (primaryPage fixture)",
+    "testData": { "newDescription": "Updated via manual-requirement test 2026-08-19" },
+    "steps": [
+      "Open the Edit panel for an existing goal",
+      "Change the Description",
+      "Save"
+    ],
+    "expected": "New Description is saved and shown without a page reload",
+    "automationHint": "",
+    "requirementRef": "Manual requirement (2026-08-19): once goal is made we can only edit certificate code or description from edit button",
+    "provenance": "requirement-grounded", "confidence": "requirement-grounded"
+  },
+  {
+    "id": "TC-EMPGOL-112", "module": "Goals",
+    "title": "Editing Certificate Code to an empty value on a Certificate-type goal is rejected",
+    "category": "negative", "priority": "medium", "severity": "major",
+    "tags": ["@negative", "@boundary"], "automatable": true,
+    "preconditions": "Logged in as ceo@simformsolutions.com (primaryPage fixture)",
+    "testData": { "certificateCode": "" },
+    "steps": [
+      "Open the Edit panel for a Certificate-type goal",
+      "Clear the Certificate Code field",
+      "Attempt to save"
+    ],
+    "expected": "Validation error is shown; empty Certificate Code is not persisted for a Certificate-type goal",
+    "automationHint": "",
+    "requirementRef": "Regression: validation (required field on Certificate-type goal)",
+    "provenance": "regression-derived", "confidence": "speculative"
+  },
+  {
+    "id": "TC-EMPGOL-113", "module": "Goals",
+    "title": "Assigned-employees list for a goal is scoped to the currently selected department filter",
+    "category": "functional", "priority": "high", "severity": "major",
+    "tags": ["@functional"], "automatable": true,
+    "preconditions": "Logged in as ceo@simformsolutions.com (primaryPage fixture)",
+    "testData": {},
+    "steps": [
+      "Select a department filter",
+      "Open a goal's assigned-employees list"
+    ],
+    "expected": "Only employees belonging to the currently selected department are listed for this goal",
+    "automationHint": "",
+    "requirementRef": "Manual requirement (2026-08-19): we can see assigned employees to this goal in the department we have selected",
+    "provenance": "requirement-grounded", "confidence": "requirement-grounded"
+  },
+  {
+    "id": "TC-EMPGOL-114", "module": "Goals",
+    "title": "Switching the department filter while viewing a goal's assignees updates the list to the newly selected department",
+    "category": "functional", "priority": "medium", "severity": "major",
+    "tags": ["@functional", "@regression"], "automatable": true,
+    "preconditions": "Logged in as ceo@simformsolutions.com (primaryPage fixture)",
+    "testData": {},
+    "steps": [
+      "Open a goal's assigned-employees list while Department A is selected",
+      "Switch the filter to Department B",
+      "Re-check the assigned-employees list"
+    ],
+    "expected": "List updates to show only Department B's assignees for that goal, without a page reload",
+    "automationHint": "",
+    "requirementRef": "Manual requirement (2026-08-19): we can see assigned employees to this goal in the department we have selected",
+    "provenance": "requirement-grounded", "confidence": "requirement-grounded"
+  },
+  {
+    "id": "TC-EMPGOL-115", "module": "Goals",
+    "title": "Organization-level assigned-employee count column shows the total across all departments, independent of the current filter",
+    "category": "functional", "priority": "high", "severity": "major",
+    "tags": ["@functional"], "automatable": true,
+    "preconditions": "Logged in as ceo@simformsolutions.com (primaryPage fixture)",
+    "testData": {},
+    "steps": [
+      "Note the organization-level count column for a goal with no department filter applied",
+      "Apply a department filter that narrows the department-scoped count",
+      "Re-check the organization-level count column"
+    ],
+    "expected": "Organization-level count remains the same total regardless of the department filter; only the department-scoped count changes",
+    "automationHint": "",
+    "requirementRef": "Manual requirement (2026-08-19): another column shows number of employees in the goal in the organizational level",
+    "provenance": "requirement-grounded", "confidence": "requirement-grounded"
+  },
+  {
+    "id": "TC-EMPGOL-116", "module": "Goals",
+    "title": "Department-assigned and organization-assigned counts reconcile with the underlying API totals",
+    "category": "integration", "priority": "medium", "severity": "minor",
+    "tags": ["@regression", "@needs-verification"], "automatable": true,
+    "preconditions": "Logged in as ceo@simformsolutions.com (primaryPage fixture)",
+    "testData": {},
+    "steps": [
+      "Read the department-assigned and organization-assigned counts for a goal from the UI",
+      "Fetch the corresponding goal API endpoint",
+      "Compare all three values"
+    ],
+    "expected": "UI department count, UI organization count, and API totals all match exactly",
+    "automationHint": "NOTE: underlying rule is speculative — verify with a human before treating a failure as a confirmed regression.",
+    "requirementRef": "KB-direct: goals.json businessRules — employee-count reconciliation across surfaces",
+    "provenance": "requirement-grounded", "confidence": "requirement-grounded"
+  }
+]

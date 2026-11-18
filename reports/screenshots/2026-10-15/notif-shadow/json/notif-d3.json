@@ -1,0 +1,101 @@
+{
+  "T0": "2026-10-15T10:25:13.703Z",
+  "res": {
+    "hardik.trivedi": {
+      "email": "hardik.trivedi@simformsolutions.com",
+      "count": 2,
+      "items": [
+        {
+          "id": "41546bac-4e59-46b4-bcf6-8b473d0501a7",
+          "eventType": "notification.allocation_ticket.developer_rm_deallocated",
+          "title": "Team Member Deallocated: Kashyap Vyas",
+          "body": "Kashyap Vyas has been deallocated from HyperScale | Scalability Engine, effective 2026-10-15.",
+          "createdAt": "2026-10-15T10:25:15.050Z",
+          "isRead": false,
+          "ctx": {
+            "ticketPublicId": "e47659c2-591e-44dc-a984-a20a57932fb2"
+          }
+        },
+        {
+          "id": "c9037cc1-0916-4deb-96ee-5da5403bd36e",
+          "eventType": "notification.allocation_ticket.pm_deallocated",
+          "title": "Assignment Ended: HyperScale | Scalability Engine",
+          "body": "Kashyap Vyas has been successfully deallocated from HyperScale | Scalability Engine.",
+          "createdAt": "2026-10-15T10:25:15.029Z",
+          "isRead": false,
+          "ctx": {
+            "ticketPublicId": "e47659c2-591e-44dc-a984-a20a57932fb2"
+          }
+        }
+      ]
+    },
+    "yatharth.patil": {
+      "email": "yatharth.patil@simformsolutions.com",
+      "count": 1,
+      "items": [
+        {
+          "id": "1f7ba778-ec84-4234-99da-d32ac5ca8482",
+          "eventType": "notification.allocation_ticket.developer_rm_deallocated",
+          "title": "Team Member Deallocated: Kashyap Vyas",
+          "body": "Kashyap Vyas has been deallocated from HyperScale | Scalability Engine, effective 2026-10-15.",
+          "createdAt": "2026-10-15T10:25:15.050Z",
+          "isRead": false,
+          "ctx": {
+            "ticketPublicId": "e47659c2-591e-44dc-a984-a20a57932fb2"
+          }
+        }
+      ]
+    },
+    "amit.patel": {
+      "email": "amit.patel@simformsolutions.com",
+      "count": 1,
+      "items": [
+        {
+          "id": "1fa52f4d-eae9-4aed-8dc1-9f89fcdaae0e",
+          "eventType": "notification.allocation_ticket.developer_rm_deallocated",
+          "title": "Team Member Deallocated: Kashyap Vyas",
+          "body": "Kashyap Vyas has been deallocated from HyperScale | Scalability Engine, effective 2026-10-15.",
+          "createdAt": "2026-10-15T10:25:15.050Z",
+          "isRead": false,
+          "ctx": {
+            "ticketPublicId": "e47659c2-591e-44dc-a984-a20a57932fb2"
+          }
+        }
+      ]
+    },
+    "jinal.patel": {
+      "email": "jinal.patel@simformsolutions.com",
+      "count": 1,
+      "items": [
+        {
+          "id": "38c773d7-e485-4525-9175-f10e9f1b6894",
+          "eventType": "notification.allocation_ticket.developer_rm_deallocated",
+          "title": "Team Member Deallocated: Kashyap Vyas",
+          "body": "Kashyap Vyas has been deallocated from HyperScale | Scalability Engine, effective 2026-10-15.",
+          "createdAt": "2026-10-15T10:25:15.050Z",
+          "isRead": false,
+          "ctx": {
+            "ticketPublicId": "e47659c2-591e-44dc-a984-a20a57932fb2"
+          }
+        }
+      ]
+    },
+    "kashyap.vyas": {
+      "email": "kashyap.vyas@simformsolutions.com",
+      "count": 1,
+      "items": [
+        {
+          "id": "00b736a1-e321-43c5-9b16-9f7655c09bd2",
+          "eventType": "notification.allocation_ticket.developer_deallocated",
+          "title": "Allocation Ended: HyperScale | Scalability Engine",
+          "body": "Your allocation to HyperScale | Scalability Engine has ended, effective 2026-10-15.",
+          "createdAt": "2026-10-15T10:25:15.027Z",
+          "isRead": false,
+          "ctx": {
+            "ticketPublicId": "e47659c2-591e-44dc-a984-a20a57932fb2"
+          }
+        }
+      ]
+    }
+  }
+}

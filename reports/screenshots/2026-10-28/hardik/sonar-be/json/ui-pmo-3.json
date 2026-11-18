@@ -1,0 +1,5 @@
+{
+  "ui-01-employees-search-percent": "no search request seen",
+  "ui-01-employees-search-percent:shot": "reports/screenshots/2026-10-28/hardik/sonar-be/ui-01-employees-search-percent.png",
+  "ui-01-employees-search-percent:url": "https://simerp-dev.simform.solutions/employee?sortBy=availabilityPercentage&sortOrder=desc"
+}

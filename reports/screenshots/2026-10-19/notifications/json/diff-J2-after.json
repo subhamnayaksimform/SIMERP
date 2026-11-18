@@ -1,0 +1,85 @@
+{
+  "before": "J2-before",
+  "after": "J2-after",
+  "beforeAt": "2026-10-19T11:27:07.089Z",
+  "afterAt": "2026-10-19T11:28:22.872Z",
+  "newByUser": {
+    "iti.chatterjee": [
+      {
+        "eventType": "allocation_ticket.developer_assigned",
+        "title": "You've Been allocated to ConfigHub | Configuration Management",
+        "body": "You've been allocated to ConfigHub | Configuration Management starting 2026-10-21.",
+        "createdAt": "2026-10-19T11:28:18.991Z",
+        "ctx": {
+          "ticketPublicId": "0bf76174-342a-4cd6-9942-bf36975b518e"
+        }
+      }
+    ],
+    "jignesh.raval": [
+      {
+        "eventType": "allocation_ticket.developer_rm_assigned",
+        "title": "Team Member Assigned: Iti Chatterjee",
+        "body": "Iti Chatterjee has been assigned to ConfigHub | Configuration Management starting 2026-10-21.",
+        "createdAt": "2026-10-19T11:28:19.006Z",
+        "ctx": {
+          "ticketPublicId": "0bf76174-342a-4cd6-9942-bf36975b518e"
+        }
+      },
+      {
+        "eventType": "allocation_ticket.pm_allocated",
+        "title": "Allocation Confirmed: ConfigHub | Configuration Management",
+        "body": "Your request to allocate Iti Chatterjee to ConfigHub | Configuration Management has been successfully processed.",
+        "createdAt": "2026-10-19T11:28:18.903Z",
+        "ctx": {
+          "ticketPublicId": "0bf76174-342a-4cd6-9942-bf36975b518e"
+        }
+      }
+    ],
+    "hardik.trivedi": [
+      {
+        "eventType": "allocation_ticket.developer_rm_assigned",
+        "title": "Team Member Assigned: Iti Chatterjee",
+        "body": "Iti Chatterjee has been assigned to ConfigHub | Configuration Management starting 2026-10-21.",
+        "createdAt": "2026-10-19T11:28:19.006Z",
+        "ctx": {
+          "ticketPublicId": "0bf76174-342a-4cd6-9942-bf36975b518e"
+        }
+      }
+    ],
+    "amit.patel": [
+      {
+        "eventType": "allocation_ticket.developer_rm_assigned",
+        "title": "Team Member Assigned: Iti Chatterjee",
+        "body": "Iti Chatterjee has been assigned to ConfigHub | Configuration Management starting 2026-10-21.",
+        "createdAt": "2026-10-19T11:28:19.006Z",
+        "ctx": {
+          "ticketPublicId": "0bf76174-342a-4cd6-9942-bf36975b518e"
+        }
+      }
+    ],
+    "jinal.patel": [
+      {
+        "eventType": "allocation_ticket.developer_rm_assigned",
+        "title": "Team Member Assigned: Iti Chatterjee",
+        "body": "Iti Chatterjee has been assigned to ConfigHub | Configuration Management starting 2026-10-21.",
+        "createdAt": "2026-10-19T11:28:19.006Z",
+        "ctx": {
+          "ticketPublicId": "0bf76174-342a-4cd6-9942-bf36975b518e"
+        }
+      }
+    ],
+    "cto": [
+      {
+        "eventType": "allocation_ticket.developer_rm_assigned",
+        "title": "Approval Bypassed: NA-0370",
+        "body": "PMO bypassed your department's approval for NA-0370.",
+        "createdAt": "2026-10-19T11:28:19.006Z",
+        "ctx": {
+          "ticketPublicId": "0bf76174-342a-4cd6-9942-bf36975b518e"
+        }
+      }
+    ],
+    "ceo": [],
+    "priya.chopra": []
+  }
+}

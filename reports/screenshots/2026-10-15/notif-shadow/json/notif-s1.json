@@ -1,0 +1,139 @@
+{
+  "T0": "2026-10-15T10:16:57.000Z",
+  "res": {
+    "urvashi.kamath": {
+      "email": "urvashi.kamath@simformsolutions.com",
+      "count": 1,
+      "items": [
+        {
+          "id": "e676bfa6-0c64-48f8-b844-3dc36c56ae99",
+          "eventType": "notification.allocation.direct_employee_assigned",
+          "title": "You've Been allocated to XCrypt | Blockchain Wallet",
+          "body": "You've been allocated to XCrypt | Blockchain Wallet starting 2026-10-15.",
+          "createdAt": "2026-10-15T10:16:58.833Z",
+          "isRead": false,
+          "ctx": {
+            "assignmentPublicId": "c89a92ff-56c5-472d-9217-e9e1a8b135b1"
+          }
+        }
+      ]
+    },
+    "sagar.khanpara": {
+      "email": "sagar.khanpara@simformsolutions.com",
+      "count": 1,
+      "items": [
+        {
+          "id": "c3f04455-a083-43c3-a417-1a799b7d96e0",
+          "eventType": "notification.allocation.direct_employee_rm_assigned",
+          "title": "Team Member Assigned: Urvashi Kamath",
+          "body": "Urvashi Kamath has been assigned to XCrypt | Blockchain Wallet starting 2026-10-15.",
+          "createdAt": "2026-10-15T10:16:58.881Z",
+          "isRead": false,
+          "ctx": {
+            "assignmentPublicId": "c89a92ff-56c5-472d-9217-e9e1a8b135b1"
+          }
+        }
+      ]
+    },
+    "rajesh.kumar": {
+      "email": "rajesh.kumar@simformsolutions.com",
+      "count": 1,
+      "items": [
+        {
+          "id": "20e9494a-36a4-4ccf-bce4-d511e4ae2041",
+          "eventType": "notification.allocation.direct_employee_rm_assigned",
+          "title": "Team Member Assigned: Urvashi Kamath",
+          "body": "Urvashi Kamath has been assigned to XCrypt | Blockchain Wallet starting 2026-10-15.",
+          "createdAt": "2026-10-15T10:16:58.881Z",
+          "isRead": false,
+          "ctx": {
+            "assignmentPublicId": "c89a92ff-56c5-472d-9217-e9e1a8b135b1"
+          }
+        }
+      ]
+    },
+    "david.lais": {
+      "email": "david.lais@simformsolutions.com",
+      "count": 1,
+      "items": [
+        {
+          "id": "54390cec-90d1-4f8d-955f-2f8043fa2833",
+          "eventType": "notification.allocation.direct_employee_rm_assigned",
+          "title": "Team Member Assigned: Urvashi Kamath",
+          "body": "Urvashi Kamath has been assigned to XCrypt | Blockchain Wallet starting 2026-10-15.",
+          "createdAt": "2026-10-15T10:16:58.881Z",
+          "isRead": false,
+          "ctx": {
+            "assignmentPublicId": "c89a92ff-56c5-472d-9217-e9e1a8b135b1"
+          }
+        }
+      ]
+    },
+    "cto": {
+      "email": "cto@simformsolutions.com",
+      "count": 1,
+      "items": [
+        {
+          "id": "71f8688b-5536-499d-94b7-583a7068f5b5",
+          "eventType": "notification.allocation.direct_employee_rm_assigned",
+          "title": "Direct Allocation: XCrypt | Blockchain Wallet",
+          "body": "Bhumi Chauhan directly allocated Urvashi Kamath to XCrypt | Blockchain Wallet, bypassing the ticket workflow.",
+          "createdAt": "2026-10-15T10:16:58.881Z",
+          "isRead": false,
+          "ctx": {
+            "assignmentPublicId": "c89a92ff-56c5-472d-9217-e9e1a8b135b1"
+          }
+        }
+      ]
+    },
+    "abhishek.hingorani": {
+      "email": "abhishek.hingorani@simformsolutions.com",
+      "count": 1,
+      "items": [
+        {
+          "id": "7d1fb291-03f8-482f-a20c-2303322f8fd2",
+          "eventType": "notification.allocation.direct_employee_rm_assigned",
+          "title": "Direct Allocation: XCrypt | Blockchain Wallet",
+          "body": "Bhumi Chauhan directly allocated Urvashi Kamath to XCrypt | Blockchain Wallet, bypassing the ticket workflow.",
+          "createdAt": "2026-10-15T10:16:58.881Z",
+          "isRead": false,
+          "ctx": {
+            "assignmentPublicId": "c89a92ff-56c5-472d-9217-e9e1a8b135b1"
+          }
+        }
+      ]
+    },
+    "keyur.hegde": {
+      "email": "keyur.hegde@simformsolutions.com",
+      "count": 1,
+      "items": [
+        {
+          "id": "09501ef2-fe3b-4c1d-9334-5b7ea3579f10",
+          "eventType": "notification.allocation.direct_pm_notified",
+          "title": "Allocation Confirmed: XCrypt | Blockchain Wallet",
+          "body": "Urvashi Kamath has been allocated to XCrypt | Blockchain Wallet, effective 2026-10-15.",
+          "createdAt": "2026-10-15T10:16:58.861Z",
+          "isRead": false,
+          "ctx": {
+            "assignmentPublicId": "c89a92ff-56c5-472d-9217-e9e1a8b135b1"
+          }
+        }
+      ]
+    },
+    "tarun.sharma": {
+      "email": "tarun.sharma@simformsolutions.com",
+      "count": 0,
+      "items": []
+    },
+    "bhumi.chauhan": {
+      "email": "bhumi.chauhan@simformsolutions.com",
+      "count": 0,
+      "items": []
+    },
+    "priya.sharma": {
+      "email": "priya.sharma@simformsolutions.com",
+      "count": 0,
+      "items": []
+    }
+  }
+}

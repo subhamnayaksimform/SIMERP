@@ -1,0 +1,107 @@
+{
+  "ackDAM": {
+    "status": 200,
+    "body": {
+      "code": "SUCCESS",
+      "message": "De-allocation acknowledged; allocation change applied",
+      "data": {
+        "publicId": "ee1bd97b-4f1e-46fe-9b79-3ce1151bda62",
+        "ticketNumber": "DA-0152",
+        "status": "APPROVED"
+      }
+    }
+  },
+  "ackDAS": {
+    "status": 200,
+    "body": {
+      "code": "SUCCESS",
+      "message": "De-allocation acknowledged; allocation change applied",
+      "data": {
+        "publicId": "d4fefb70-b33d-479c-bad7-727c54db4149",
+        "ticketNumber": "DA-0153",
+        "status": "APPROVED"
+      }
+    }
+  },
+  "ns-dept": {
+    "status": 200,
+    "body": {
+      "code": "SUCCESS",
+      "message": "Allocation ticket updated successfully",
+      "data": {
+        "publicId": "44b28e2e-38eb-4efc-8270-67b47700d79a",
+        "ticketNumber": "NA-0423",
+        "status": "IN_REVIEW",
+        "warnings": []
+      }
+    }
+  },
+  "ns-shortlist": {
+    "status": 200,
+    "body": {
+      "code": "SUCCESS",
+      "message": "Allocation ticket updated successfully",
+      "data": {
+        "publicId": "44b28e2e-38eb-4efc-8270-67b47700d79a",
+        "ticketNumber": "NA-0423",
+        "status": "IN_REVIEW",
+        "warnings": [],
+        "employeeAvailability": [
+          {
+            "employeePublicId": "207e4b1a-c2d5-4f01-804f-51a8844ab6f8",
+            "availabilityPercentage": 18.91,
+            "isAvailable": true,
+            "allocationCapPercentage": 100,
+            "consumedPercentage": 0,
+            "remainingPercentage": 100,
+            "overlappingAllocations": [],
+            "reasons": []
+          }
+        ]
+      }
+    }
+  },
+  "ns-send": {
+    "status": 409,
+    "body": {
+      "code": "ALLOCATION_TICKET_172",
+      "message": "Complete the step 2 tickets (#NA-0422) before actioning this ticket.",
+      "data": {
+        "blockingTickets": [
+          {
+            "publicId": "77f55860-3c96-41a2-b78d-bb7f3409a527",
+            "ticketNumber": "NA-0422",
+            "ticketType": "NEW_ALLOCATION",
+            "step": 2,
+            "status": "IN_REVIEW"
+          }
+        ]
+      }
+    }
+  },
+  "ns-bypass": {
+    "status": 409,
+    "body": {
+      "code": "ALLOCATION_TICKET_172",
+      "message": "Complete the step 2 tickets (#NA-0422) before actioning this ticket.",
+      "data": {
+        "blockingTickets": [
+          {
+            "publicId": "77f55860-3c96-41a2-b78d-bb7f3409a527",
+            "ticketNumber": "NA-0422",
+            "ticketType": "NEW_ALLOCATION",
+            "step": 2,
+            "status": "IN_REVIEW"
+          }
+        ]
+      }
+    }
+  },
+  "ns-approve": {
+    "status": 409,
+    "body": {
+      "code": "SYS_004",
+      "message": "This action is not allowed in the ticket's current status"
+    }
+  }
+}

@@ -1,0 +1,296 @@
+[
+ {
+  "area": "won",
+  "name": "approved",
+  "pass": true,
+  "detail": "[200,\"SUCCESS\"]"
+ },
+ {
+  "area": "won",
+  "name": "select with confirm (round skip)",
+  "pass": true,
+  "detail": "[200,\"SUCCESS\",\"Candidate selected successfully\"]"
+ },
+ {
+  "area": "won",
+  "name": "seat WON, stats 1 filled / 2 required",
+  "pass": true,
+  "detail": "[\"WON\",{\"shortlistedCount\":2,\"rejectedCount\":0,\"filledCount\":1,\"requiredCount\":2}]"
+ },
+ {
+  "area": "close",
+  "name": "close position with Won + live candidate",
+  "pass": true,
+  "detail": "[200,\"SUCCESS\",\"Position marked as no longer required\"]"
+ },
+ {
+  "area": "close",
+  "name": "Won seat kept as WON",
+  "pass": true,
+  "detail": "WON"
+ },
+ {
+  "area": "close",
+  "name": "live candidate released",
+  "pass": true,
+  "detail": "SHORTLISTED"
+ },
+ {
+  "area": "close",
+  "name": "stats filled<=required",
+  "pass": true,
+  "detail": "{\"shortlistedCount\":1,\"rejectedCount\":0,\"filledCount\":1,\"requiredCount\":1}"
+ },
+ {
+  "area": "close",
+  "name": "Kanban: Won seat counted in Won column (WON=1,NLR=1)",
+  "pass": true,
+  "detail": "{\"PENDING_TO_SHORTLIST\":0,\"SHORTLISTED\":0,\"WAITING_FOR_APPROVAL\":0,\"BEING_PREPARED\":0,\"INTERVIEW_SCHEDULED\":0,\"DID_INTERVIEW_HAPPEN\":0,\"WAITING_FOR_FEEDBACK\":0,\"WON\":1,\"PROJECT_ALLOCATED\":0,\"REJECTED\":0,\"LOST\":0,\"ON_HOLD\":0,\"NO_LONGER_REQUIRED\":1}"
+ },
+ {
+  "area": "close",
+  "name": "reopen",
+  "pass": true,
+  "detail": "[200,\"SUCCESS\"]"
+ },
+ {
+  "area": "close",
+  "name": "Won seat still WON after reopen",
+  "pass": true,
+  "detail": "WON"
+ },
+ {
+  "area": "position",
+  "name": "reduce required to filled count (1)",
+  "pass": true,
+  "detail": "[200,\"SUCCESS\",\"Position updated successfully\"]"
+ },
+ {
+  "area": "position",
+  "name": "required 0 refused",
+  "pass": true,
+  "detail": "[400,\"VAL_001\"]"
+ },
+ {
+  "area": "position",
+  "name": "edit title/priority/required up",
+  "pass": true,
+  "detail": "[200,\"SUCCESS\",\"Position updated successfully\"]"
+ },
+ {
+  "area": "position",
+  "name": "empty title refused",
+  "pass": true,
+  "detail": "[400,\"VAL_001\"]"
+ },
+ {
+  "area": "ticket",
+  "name": "edit ticket title",
+  "pass": true,
+  "detail": "[200,\"SUCCESS\",\"Opportunity updated successfully\"]"
+ },
+ {
+  "area": "ticket",
+  "name": "empty ticket title refused",
+  "pass": true,
+  "detail": "[400,\"VAL_001\"]"
+ },
+ {
+  "area": "ticket",
+  "name": "html client name stored as text",
+  "pass": true,
+  "detail": "[200,\"SUCCESS\"]"
+ },
+ {
+  "area": "position",
+  "name": "add position to ticket",
+  "pass": true,
+  "detail": "[201,\"OPP_021\",\"Position created successfully\"]"
+ },
+ {
+  "area": "position",
+  "name": "delete position that has a Won seat refused",
+  "pass": true,
+  "detail": "[400,\"OPP_025\",\"A Position with a Candidate In Process or Selected cannot be deleted\"]"
+ },
+ {
+  "area": "position",
+  "name": "delete empty position",
+  "pass": true,
+  "detail": "[200,\"SUCCESS\"]"
+ },
+ {
+  "area": "prep",
+  "name": "add material",
+  "pass": true,
+  "detail": "[201,\"OPP_081\"]"
+ },
+ {
+  "area": "prep",
+  "name": "javascript: url refused",
+  "pass": true,
+  "detail": "[400,\"VAL_001\"]"
+ },
+ {
+  "area": "prep",
+  "name": "empty title refused",
+  "pass": true,
+  "detail": "[400,\"VAL_001\"]"
+ },
+ {
+  "area": "prep",
+  "name": "201-char title refused",
+  "pass": true,
+  "detail": "[400,\"VAL_001\"]"
+ },
+ {
+  "area": "prep",
+  "name": "edit material",
+  "pass": true,
+  "detail": "[200,\"SUCCESS\"]"
+ },
+ {
+  "area": "prep",
+  "name": "delete material",
+  "pass": true,
+  "detail": "[200,\"SUCCESS\"]"
+ },
+ {
+  "area": "board",
+  "name": "search by ticket",
+  "pass": true,
+  "detail": "3"
+ },
+ {
+  "area": "board",
+  "name": "stage filter WON",
+  "pass": true,
+  "detail": "[200,1]"
+ },
+ {
+  "area": "board",
+  "name": "priority filter",
+  "pass": true,
+  "detail": "3"
+ },
+ {
+  "area": "board",
+  "name": "department filter",
+  "pass": true,
+  "detail": "3"
+ },
+ {
+  "area": "board",
+  "name": "status filter OPEN",
+  "pass": true,
+  "detail": "3"
+ },
+ {
+  "area": "board",
+  "name": "sort accepted",
+  "pass": true,
+  "detail": "[200,\"SUCCESS\"]"
+ },
+ {
+  "area": "board",
+  "name": "SQL-ish search returns 0 safely",
+  "pass": true,
+  "detail": "[200,0]"
+ },
+ {
+  "area": "board",
+  "name": "html search safe",
+  "pass": true,
+  "detail": "200"
+ },
+ {
+  "area": "board",
+  "name": "limit 0 refused",
+  "pass": true,
+  "detail": "[400,\"VAL_001\"]"
+ },
+ {
+  "area": "board",
+  "name": "limit 101 refused",
+  "pass": true,
+  "detail": "[400,\"VAL_001\"]"
+ },
+ {
+  "area": "board",
+  "name": "page 0 refused",
+  "pass": true,
+  "detail": "[400,\"VAL_001\"]"
+ },
+ {
+  "area": "board",
+  "name": "pagination page 2",
+  "pass": true,
+  "detail": "[200,2,529]"
+ },
+ {
+  "area": "endpoints",
+  "name": "summary 200",
+  "pass": true,
+  "detail": "[200,\"SUCCESS\"]"
+ },
+ {
+  "area": "endpoints",
+  "name": "lookup 200",
+  "pass": true,
+  "detail": "[200,\"SUCCESS\"]"
+ },
+ {
+  "area": "endpoints",
+  "name": "clients 200",
+  "pass": true,
+  "detail": "[200,\"SUCCESS\"]"
+ },
+ {
+  "area": "endpoints",
+  "name": "assignees 200",
+  "pass": true,
+  "detail": "[200,\"SUCCESS\"]"
+ },
+ {
+  "area": "endpoints",
+  "name": "candidate filters 200",
+  "pass": true,
+  "detail": "[200,\"SUCCESS\"]"
+ },
+ {
+  "area": "endpoints",
+  "name": "direct stage counts 200",
+  "pass": true,
+  "detail": "[200,\"SUCCESS\"]"
+ },
+ {
+  "area": "endpoints",
+  "name": "rejected list 200",
+  "pass": true,
+  "detail": "[200,\"SUCCESS\"]"
+ },
+ {
+  "area": "picker",
+  "name": "minAvailability 101 refused",
+  "pass": true,
+  "detail": "[400,\"VAL_001\",null]"
+ },
+ {
+  "area": "picker",
+  "name": "no match -> empty",
+  "pass": true,
+  "detail": "[200,0]"
+ },
+ {
+  "area": "picker",
+  "name": "sort name",
+  "pass": true,
+  "detail": "[200,\"SUCCESS\"]"
+ },
+ {
+  "area": "picker",
+  "name": "UP tier filter",
+  "pass": true,
+  "detail": "[400,\"VAL_001\"]"
+ }
+]

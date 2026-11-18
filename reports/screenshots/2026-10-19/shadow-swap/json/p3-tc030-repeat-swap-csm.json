@@ -1,0 +1,59 @@
+{
+  "req": {
+    "projectId": "c20430eb-7e7e-44e6-b769-3c7756e6a9e2",
+    "flowType": "SHADOW_TO_MAIN_NEW_SHADOW",
+    "mainDeallocation": {
+      "projectAssignmentPublicId": "b10689fa-2edb-4f79-99d1-3c7c7371b540",
+      "allocationEndDate": "2026-10-31",
+      "deallocationReason": "ROLE_MISALIGNMENT",
+      "coreSkillRating": 7,
+      "communicationRating": 7,
+      "behavioralRating": 7,
+      "overallRating": 7,
+      "developerFeedback": "QA test SI4-T1464 retest 2026-10-19 - shadow swap + new shadow.",
+      "isOpenToWorkWithAgain": true
+    },
+    "shadowDeallocation": {
+      "projectAssignmentPublicId": "4186a764-485d-4b1c-89c0-4d3e4604ef06",
+      "allocationEndDate": "2026-10-31",
+      "deallocationReason": "ROLE_MISALIGNMENT"
+    },
+    "promotion": {
+      "deptStackPublicId": "2f46cbf6-894b-4d87-8580-4e525da41760",
+      "requestedAllocationStartDate": "2026-11-01",
+      "requestedAllocationEndDate": "2026-12-31",
+      "requestType": "FRESH_ALLOCATION",
+      "shadowForPublicId": null,
+      "allocationRequestCreationType": "UPDATE_SHADOW_TO_MAIN",
+      "requestedAllocationType": "FIXED",
+      "requestedAllocationPercentage": 10,
+      "developerPreferencePublicIds": [
+        "da3c4542-13bb-452b-b619-42095c913d94"
+      ],
+      "isInterviewRequired": false,
+      "isClientFacing": false
+    },
+    "newShadow": {
+      "deptStackPublicId": "2f46cbf6-894b-4d87-8580-4e525da41760",
+      "requestedAllocationStartDate": "2026-11-01",
+      "requestedAllocationEndDate": "2026-12-31",
+      "requestType": "SHADOW_DEVELOPER",
+      "shadowForPublicId": "da3c4542-13bb-452b-b619-42095c913d94",
+      "allocationRequestCreationType": null,
+      "requestedAllocationType": "FIXED",
+      "requestedAllocationPercentage": 10,
+      "isInterviewRequired": false,
+      "isClientFacing": false
+    }
+  },
+  "res": {
+    "status": 409,
+    "body": {
+      "message": "An active ticket already exists for this project assignment",
+      "error": "Conflict",
+      "statusCode": 409
+    }
+  },
+  "before": "400:{\"message\":[{\"field\":\"limit\",\"message\":\"limit must be one of the following values: 100, 200, 300\"}]}",
+  "after": "400:{\"message\":[{\"field\":\"limit\",\"message\":\"limit must be one of the following values: 100, 200, 300\"}]}"
+}

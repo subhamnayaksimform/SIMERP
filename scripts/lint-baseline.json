@@ -1,8 +1,60 @@
 {
-  "tests/e2e/employee/employee-details/accessibility.spec.ts": {
+  "tests/e2e/employee/employee-details/negative.spec.ts": {
+    "no-wait-for-timeout": 3,
+    "no-silent-defect-marker": 1
+  },
+  "tests/e2e/employee/employee-details/security.spec.ts": {
+    "no-wait-for-timeout": 1
+  },
+  "tests/e2e/employee/goals/accessibility.spec.ts": {
+    "no-wait-for-timeout": 1
+  },
+  "tests/e2e/employee/goals/boundary.spec.ts": {
+    "no-wait-for-timeout": 1
+  },
+  "tests/e2e/employee/goals/integration.spec.ts": {
+    "no-wait-for-timeout": 1
+  },
+  "tests/e2e/employee/goals/negative.spec.ts": {
     "no-wait-for-timeout": 2
   },
-  "tests/e2e/employee/employee-details/negative.spec.ts": {
-    "no-wait-for-timeout": 3
+  "tests/e2e/employee/goals/security.spec.ts": {
+    "no-wait-for-timeout": 1
+  },
+  "tests/e2e/employee/skills/boundary.spec.ts": {
+    "no-wait-for-timeout": 1
+  },
+  "tests/e2e/employee/skills/functional.spec.ts": {
+    "no-wait-for-timeout": 2
+  },
+  "tests/e2e/pm-pmo/allocation-requests/lifecycle.spec.ts": {
+    "no-wait-for-timeout": 1
+  },
+  "tests/page-objects/department/competencies.page.ts": {
+    "no-wait-for-timeout": 1
+  },
+  "tests/page-objects/employee/employee-details.page.ts": {
+    "no-wait-for-timeout": 1
+  },
+  "tests/page-objects/employee/goals.page.ts": {
+    "no-wait-for-timeout": 6
+  },
+  "tests/page-objects/employee/skills.page.ts": {
+    "no-wait-for-timeout": 4
+  },
+  "tests/page-objects/pm-pmo/allocation-requests.page.ts": {
+    "no-wait-for-timeout": 1
+  },
+  "tests/page-objects/pm-pmo/new-allocation-form.page.ts": {
+    "no-wait-for-timeout": 7
+  },
+  "tests/page-objects/pm-pmo/pm-projects.page.ts": {
+    "no-wait-for-timeout": 2
+  },
+  "tests/page-objects/pm-pmo/ticket-detail.page.ts": {
+    "no-wait-for-timeout": 10
+  },
+  "tests/page-objects/utilization-priority/utilization-priority.page.ts": {
+    "no-wait-for-timeout": 1
   }
 }

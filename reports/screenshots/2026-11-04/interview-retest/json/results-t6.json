@@ -1,0 +1,70 @@
+{
+  "results": [
+    {
+      "id": "detail",
+      "ok": true,
+      "s": 200,
+      "positions": [
+        {
+          "id": "3bca05c3-d240-4960-bf65-2473726a7cbe",
+          "t": "Dev A",
+          "req": 4,
+          "closed": null
+        },
+        {
+          "id": "b9940ea9-a77e-46b2-8d6b-92093248dcb5",
+          "t": "Dev B",
+          "req": 5,
+          "closed": "2026-11-02T13:26:40.568Z"
+        }
+      ],
+      "st": "OPEN",
+      "errs": []
+    },
+    {
+      "id": "I631-ceo-close",
+      "ok": true,
+      "s": 200,
+      "m": "{\"code\":\"SUCCESS\",\"message\":\"Position marked as no longer required\",\"data\":{\"publicId\":\"2b9e5dd6-a202-464d-b4da-0ad75e733a75\",\"ticketNumber\":\"OPP-0344\",\"title\":\"QA-AUTO edge cases 02-11\",\"clientType\":\"PROSPECT\",\"requestType\":\"INTERVIEW\",\"clientName\":\"QA-AUTO Rejection Client\",\"websiteUrl\":null,\"link",
+      "errs": []
+    },
+    {
+      "id": "I627-won-all-nlr",
+      "ok": true,
+      "s": 200,
+      "m": "{\"code\":\"SUCCESS\",\"message\":\"Opportunity status changed successfully\",\"data\":{\"publicId\":\"2b9e5dd6-a202-464d-b4da-0ad75e733a75\",\"ticketNumber\":\"OPP-0344\",\"title\":\"QA-AUTO edge cases 02-11\",\"clientType\":\"PROSPECT\",\"requestType\":\"INTERVIEW\",\"clientName\":\"QA-AUTO Rejection Client\",\"websiteUrl\":null,\"li",
+      "errs": []
+    },
+    {
+      "id": "state",
+      "ok": true,
+      "st": "WON",
+      "errs": []
+    },
+    {
+      "id": "restore-open",
+      "ok": true,
+      "s": 200,
+      "m": "{\"code\":\"SUCCESS\",\"message\":\"Opportunity status changed successfully\",\"data\":{\"publicId\":\"2b9e5dd6-a202-464d-b4da-0ad75e733a75\",\"ticketNumber\":\"OPP-0344\",\"title\":\"QA-AUTO edge cases 02-11\",\"clientType",
+      "errs": []
+    },
+    {
+      "id": "I631-ceo-reopen",
+      "ok": true,
+      "s": 200,
+      "m": "{\"code\":\"SUCCESS\",\"message\":\"Position reopened successfully\",\"data\":{\"publicId\":\"2b9e5dd6-a202-464d-b4da-0ad75e733a75\",\"ticketNumber\":\"OPP-0344\",\"title\":\"QA-AUTO edge cases 02-11\",\"clientType\":\"PROSPE",
+      "errs": []
+    },
+    {
+      "id": "final",
+      "ok": true,
+      "st": "OPEN",
+      "pos": [
+        null,
+        "2026-11-02T13:26:40.568Z"
+      ],
+      "errs": []
+    }
+  ],
+  "errs": []
+}

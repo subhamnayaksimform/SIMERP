@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Security Audit Report — SimERP-backend-node</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --brand:#E3232D;--brand-dark:#B01A23;--brand-light:#FEF2F3;--brand-muted:#fbd5da;
+  --pass:#16a34a;--pass-bg:#dcfce7;
+  --fail:#dc2626;--fail-bg:#fee2e2;
+  --warn:#d97706;--warn-bg:#fef3c7;
+  --critical:#DC2626;--critical-bg:#FEE2E2;
+  --na:#6b7280;--na-bg:#f3f4f6;
+  --azure-c:#1D4ED8;--azure-bg:#EFF6FF;
+  --manual-c:#6D28D9;--manual-bg:#F5F3FF;
+  --text:#111827;--text-muted:#6b7280;
+  --border:#e5e7eb;--surface:#ffffff;--bg:#f9fafb;
+  --radius:8px;
+  --shadow:0 1px 3px rgba(0,0,0,.1),0 1px 2px rgba(0,0,0,.06);
+  --mono:'JetBrains Mono','Fira Code',Consolas,monospace;
+  --sans:'DM Sans',system-ui,sans-serif;
+}
+body{font-family:var(--sans);background:var(--bg);color:var(--text);font-size:14px;line-height:1.6}
+.report-header{background:var(--brand);color:#fff;padding:28px 48px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.header-logo img{height:32px;filter:brightness(0) invert(1)}
+.header-title h1{font-size:22px;font-weight:700;letter-spacing:-.3px}
+.header-title p{font-size:13px;opacity:.85;margin-top:4px}
+.header-meta{display:flex;gap:10px;flex-wrap:wrap}
+.meta-chip{background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.3);border-radius:20px;padding:4px 14px;font-size:12px;white-space:nowrap}
+.score-bar{background:var(--surface);border-bottom:1px solid var(--border);padding:20px 48px;display:flex;gap:16px;flex-wrap:wrap;align-items:center}
+.score-card{flex:1;min-width:110px;background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);padding:14px 18px;text-align:center;box-shadow:var(--shadow)}
+.score-card .sc-value{font-size:28px;font-weight:800;line-height:1.1}
+.score-card .sc-label{font-size:10px;text-transform:uppercase;letter-spacing:.8px;color:var(--text-muted);margin-top:4px}
+.score-card.risk-critical .sc-value{color:var(--critical)}
+.score-card.risk-high .sc-value{color:var(--fail)}
+.score-card.risk-medium .sc-value{color:var(--warn)}
+.score-card.risk-low .sc-value{color:var(--pass)}
+.score-card.c-pass .sc-value{color:var(--pass)}
+.score-card.c-fail .sc-value{color:var(--fail)}
+.score-card.c-warn .sc-value{color:var(--warn)}
+.score-card.c-na .sc-value{color:var(--na)}
+.score-card.c-crit .sc-value{color:var(--critical)}
+.toc{background:var(--surface);border-bottom:1px solid var(--border);padding:0 48px;display:flex;flex-wrap:wrap;gap:2px}
+.toc a{padding:12px 14px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--text-muted);text-decoration:none;border-bottom:3px solid transparent;transition:all .15s}
+.toc a:hover{color:var(--brand);border-bottom-color:var(--brand)}
+.report-body{max-width:1300px;margin:0 auto;padding:36px 48px 72px}
+.section{margin-bottom:48px}
+.section-heading{display:flex;align-items:center;gap:10px;margin-bottom:20px;padding-bottom:10px;border-bottom:2px solid var(--brand)}
+.section-number{background:var(--brand);color:#fff;font-size:11px;font-weight:700;padding:3px 9px;border-radius:4px;letter-spacing:.5px}
+.section-title{font-size:17px;font-weight:700;color:var(--text)}
+.risk-banner{border-radius:var(--radius);padding:16px 22px;font-size:15px;font-weight:700;margin-bottom:24px;border:2px solid}
+.risk-banner.risk-critical{background:var(--critical-bg);color:var(--critical);border-color:#fecaca}
+.risk-banner.risk-high{background:var(--fail-bg);color:var(--fail);border-color:#fecaca}
+.risk-banner.risk-medium{background:var(--warn-bg);color:var(--warn);border-color:#fde68a}
+.risk-banner.risk-low{background:var(--pass-bg);color:var(--pass);border-color:#bbf7d0}
+.meta-grid-2col{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
+.meta-col-hdr{padding:10px 16px;background:#1A1A2E}
+.meta-col-hdr span{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.6)}
+.meta-tbl{width:100%;border-collapse:collapse}
+.meta-tbl td{padding:10px 16px;border-bottom:1px solid var(--border);font-size:13px;vertical-align:top}
+.meta-tbl tr:last-child td{border-bottom:none}
+.meta-tbl td:first-child{font-weight:600;color:var(--text-muted);width:180px;background:var(--bg)}
+.meta-tbl td:last-child{background:var(--surface)}
+.meta-col-left{border-right:1px solid var(--border)}
+.subsec-hdr{display:flex;align-items:center;gap:10px;margin:0 0 12px}
+.subsec-num{width:26px;height:26px;background:#2D3748;color:#fff;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0}
+.subsec-title{font-size:15px;font-weight:700;color:var(--text)}
+.subsec-sub{font-size:11px;color:var(--text-muted);margin-top:1px}
+.table-wrap{overflow-x:auto;border-radius:var(--radius);border:1px solid var(--border);box-shadow:var(--shadow);margin-bottom:24px}
+table{width:100%;border-collapse:collapse;background:var(--surface)}
+thead th{background:#1A1A2E;color:rgba(255,255,255,.85);padding:10px 14px;text-align:left;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;white-space:nowrap}
+tbody tr{border-bottom:1px solid var(--border);transition:background .15s}
+tbody tr:last-child{border-bottom:none}
+tbody tr:hover{background:var(--brand-light)}
+tbody td{padding:10px 14px;font-size:13px;vertical-align:top}
+tbody td:first-child{font-weight:600;color:var(--text-muted);width:36px}
+code{background:var(--bg);border:1px solid var(--border);border-radius:4px;padding:1px 6px;font-family:var(--mono);font-size:12px;color:var(--brand-dark)}
+.code-block{font-family:var(--mono);font-size:12px;background:#1E1E2E;color:#CDD6F4;padding:14px 18px;border-radius:8px;overflow-x:auto;line-height:1.65;margin:8px 0;white-space:pre-wrap;word-break:break-all}
+.hl{color:#F38BA8;font-weight:700}
+.rule-id{display:inline-block;background:var(--brand-light);color:var(--brand-dark);border:1px solid var(--brand-muted);border-radius:4px;padding:1px 7px;font-size:11px;font-weight:700;margin-right:6px;white-space:nowrap;font-family:var(--mono)}
+.badge-critical,.badge-high,.badge-medium,.badge-low,.badge-pass,.badge-na,.badge-azure,.badge-manual{display:inline-block;border-radius:12px;padding:2px 10px;font-size:10px;font-weight:700;white-space:nowrap}
+.badge-critical{background:var(--critical-bg);color:var(--critical);border:1px solid #fecaca}
+.badge-high{background:var(--fail-bg);color:var(--fail);border:1px solid #fecaca}
+.badge-medium{background:var(--warn-bg);color:var(--warn);border:1px solid #fde68a}
+.badge-low{background:var(--na-bg);color:var(--na);border:1px solid #d1d5db}
+.badge-pass{background:var(--pass-bg);color:var(--pass);border:1px solid #bbf7d0}
+.badge-na{background:var(--manual-bg);color:var(--manual-c);border:1px solid #ddd6fe}
+.badge-azure{background:var(--azure-bg);color:var(--azure-c);border:1px solid #bfdbfe}
+.badge-manual{background:var(--manual-bg);color:var(--manual-c);border:1px solid #ddd6fe}
+.analysis-block{background:var(--surface);border:1px solid var(--border);border-left:4px solid var(--brand);border-radius:var(--radius);margin-bottom:16px;box-shadow:var(--shadow);overflow:hidden}
+.analysis-header{background:var(--brand-light);border-bottom:1px solid var(--brand-muted);padding:12px 18px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.analysis-title{font-size:13px;font-weight:700;color:var(--text);flex:1}
+.analysis-body{padding:18px;display:flex;flex-direction:column;gap:10px;font-size:13px}
+.analysis-body p{line-height:1.6}
+.analysis-body ol,.analysis-body ul{padding-left:20px;display:flex;flex-direction:column;gap:6px;margin-top:6px}
+.ditem{display:flex;gap:14px;padding:14px 18px;border-bottom:1px solid var(--border);align-items:flex-start}
+.ditem:last-child{border-bottom:none}
+.dref{font-size:10px;font-weight:700;background:var(--bg);color:var(--text-muted);border:1px solid var(--border);padding:2px 8px;border-radius:4px;white-space:nowrap;align-self:flex-start;margin-top:2px;font-family:var(--mono)}
+.card{background:var(--surface);border-radius:var(--radius);border:1px solid var(--border);overflow:hidden;box-shadow:var(--shadow)}
+.empty{text-align:center;padding:40px;color:var(--text-muted);font-size:14px}
+.report-footer{background:var(--brand);color:rgba(255,255,255,.85);text-align:center;padding:20px 48px;font-size:12px;margin-top:40px}
+.report-footer img{height:24px;filter:brightness(0) invert(1);margin-bottom:8px}
+.report-footer p{margin-top:4px}
+</style>
+</head>
+<body>
+
+<header class="report-header">
+  <div class="header-logo">
+    <img src="https://www.simform.com/wp-content/uploads/2024/12/simform-logo.svg" alt="Simform"
+         onerror="this.outerHTML='&lt;span style=&quot;font-size:20px;font-weight:800;color:#fff&quot;&gt;simform&lt;/span&gt;'"/>
+  </div>
+  <div class="header-title">
+    <h1>Security Audit Report</h1>
+    <p>SimERP-backend-node</p>
+  </div>
+  <div class="header-meta">
+    <span class="meta-chip">&#128197; 12 October 2026, 07:47 IST</span>
+    <span class="meta-chip">&#128256; N/A</span>
+    <span class="meta-chip">Backend API (NestJS 11 + TypeScript + Prisma + PostgreSQL)</span>
+    <span class="meta-chip">Agent v2.2</span>
+  </div>
+</header>
+
+<div class="score-bar">
+  <div class="score-card risk-critical">
+    <div class="sc-value">CRITICAL</div>
+    <div class="sc-label">Overall Risk</div>
+  </div>
+  <div class="score-card c-pass">
+    <div class="sc-value">4</div>
+    <div class="sc-label">Passed</div>
+  </div>
+  <div class="score-card c-fail">
+    <div class="sc-value">2</div>
+    <div class="sc-label">Failed</div>
+  </div>
+  <div class="score-card c-na">
+    <div class="sc-value">11</div>
+    <div class="sc-label">N/A</div>
+  </div>
+  <div class="score-card c-crit">
+    <div class="sc-value">1</div>
+    <div class="sc-label">Critical</div>
+  </div>
+  <div class="score-card c-fail">
+    <div class="sc-value">1</div>
+    <div class="sc-label">High</div>
+  </div>
+  <div class="score-card c-warn">
+    <div class="sc-value">0</div>
+    <div class="sc-label">Medium</div>
+  </div>
+  <div class="score-card c-na">
+    <div class="sc-value">0</div>
+    <div class="sc-label">Low</div>
+  </div>
+</div>
+
+<nav class="toc">
+  <a href="#s1">&#167;1 Audit Metadata</a>
+  <a href="#s2">&#167;2 Violated Rules</a>
+  <a href="#s3">&#167;3 Passed &amp; N/A</a>
+  <a href="#s4">&#167;4 Rule-wise Analysis</a>
+  <a href="#s5">&#167;5 Delegated Items</a>
+</nav>
+
+<div class="report-body">
+
+<!-- SECTION 1 — AUDIT METADATA -->
+<section class="section" id="s1">
+  <div class="section-heading">
+    <span class="section-number">SECTION 1</span>
+    <span class="section-title">Audit Metadata</span>
+  </div>
+  <div class="risk-banner risk-critical">
+    &#128274; Overall Risk Rating: CRITICAL
+  </div>
+  <div class="meta-grid-2col">
+    <div class="meta-col-left">
+      <div class="meta-col-hdr"><span>Scan Information</span></div>
+      <table class="meta-tbl">
+        <tbody>
+          <tr><td>Project Name</td><td>SimERP-backend-node</td></tr>
+          <tr><td>Git Commit</td><td><code>N/A</code></td></tr>
+          <tr><td>Project Type</td><td>Backend API (NestJS 11 + TypeScript + Prisma + PostgreSQL)</td></tr>
+          <tr><td>Scan Date &amp; Time</td><td>12 October 2026, 07:47 IST</td></tr>
+          <tr><td>Files Scanned</td><td>1058</td></tr>
+          <tr><td>Agent</td><td>Simform Security Review Agent v2.2</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div>
+      <div class="meta-col-hdr"><span>Compliance Score</span></div>
+      <table class="meta-tbl">
+        <tbody>
+          <tr><td>Scoreable Rules</td><td>6</td></tr>
+          <tr><td>Rules Passed</td><td><span style="color:var(--pass);font-weight:700">4</span></td></tr>
+          <tr><td>Rules Failed</td><td><span style="color:var(--critical);font-weight:700">2</span></td></tr>
+          <tr><td>N/A Rules</td><td><span style="color:var(--na);font-weight:700">11</span></td></tr>
+          <tr><td>Adjusted Score</td><td><strong style="font-size:20px;color:#ea580c">59 / 100</strong></td></tr>
+          <tr><td>Grade</td><td><strong style="font-size:24px;color:#ea580c">D</strong></td></tr>
+          <tr><td>Scoring Note</td><td style="font-size:12px;color:var(--text-muted)">Base=(passed/scoreable)&times;100 minus severity penalty. Critical=&minus;5pt, High=&minus;3, Medium=&minus;2, Low=&minus;1. Azure and Manual rules excluded. NA rules (no applicable code) excluded from denominator.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 2 — VIOLATED RULES -->
+<section class="section" id="s2">
+  <div class="section-heading">
+    <span class="section-number">SECTION 2</span>
+    <span class="section-title">Violated Rules Summary</span>
+  </div>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Rule</th>
+          <th>File &middot; Line</th>
+          <th>Impact</th>
+          <th>Fix</th>
+          <th>Severity</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+  <td>1</td>
+  <td><span class="rule-id">SEC-BE-05</span> Hardcoded secrets in source/config files</td>
+  <td><code>src/config/app.config.ts:28</code><br/></td>
+  <td>A known default password can grant unauthorized access to API documentation when an environment-specific credential is omitted.</td>
+  <td>Remove the fallback credential and require a validated secret whenever Swagger is enabled.</td>
+  <td><span class="badge-critical">Critical</span></td>
+</tr>
+<tr>
+  <td>2</td>
+  <td><span class="rule-id">SEC-BE-06</span> Sensitive data in logs or error responses</td>
+  <td><code>src/modules/zoho-analytics/employees-metadata.service.ts:910</code><br/><code>src/modules/zoho-analytics/employees-metadata.service.ts:970</code><br/><code>src/modules/zoho-analytics/employees-metadata.service.ts:1015</code><br/><code>src/modules/zoho-analytics/employees-metadata.service.ts:1018</code><br/></td>
+  <td>Employee names and email addresses are written directly into log messages, exposing personal data to log readers and retention systems.</td>
+  <td>Replace message interpolation with constant messages and non-sensitive public identifiers in sanitized metadata.</td>
+  <td><span class="badge-high">High</span></td>
+</tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- SECTION 3 — PASSED & N/A -->
+<section class="section" id="s3">
+  <div class="section-heading">
+    <span class="section-number">SECTION 3</span>
+    <span class="section-title">Passed &amp; N/A Rules</span>
+  </div>
+
+  <!-- 3.1 Passed -->
+  <div style="margin-bottom:28px">
+    <div class="subsec-hdr">
+      <div class="subsec-num">3.1</div>
+      <div>
+        <div class="subsec-title">Passed Rules</div>
+        <div class="subsec-sub">Rules with zero violations found in the scanned codebase</div>
+      </div>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>#</th><th>Rule (verbatim)</th><th>Category</th><th>Severity</th><th>Evidence / Why Passed</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+  <td>1</td>
+  <td><span class="rule-id">SEC-BE-01</span> Missing server-side input validation</td>
+  <td>Backend</td>
+  <td><span class="badge-high">High</span></td>
+  <td><code>src/main.ts:116-124</code> configures a global class-validator pipe with whitelist, forbidNonWhitelisted, and transform; controller input searches covered 216 parameter/body/query bindings and validation decorators were found across 269 DTO files.</td>
+</tr>
+<tr>
+  <td>2</td>
+  <td><span class="rule-id">SEC-BE-02</span> Insecure HTTP / protocol usage</td>
+  <td>Backend</td>
+  <td><span class="badge-critical">Critical</span></td>
+  <td>Protocol searches across TypeScript and configuration found production integrations using HTTPS; HTTP occurrences were localhost examples or the Adaptive Cards schema identifier, while <code>src/modules/auth/utils/auth-cookies.util.ts:8-14</code> enforces secure cookies and <code>src/main.ts:110-111</code> enables Helmet.</td>
+</tr>
+<tr>
+  <td>3</td>
+  <td><span class="rule-id">SEC-BE-03</span> Public APIs without authentication</td>
+  <td>Backend</td>
+  <td><span class="badge-high">High</span></td>
+  <td><code>src/app/app.module.ts:130-132</code> registers AuthGuard globally; all seven executable <code>@Public()</code> controller routes were inspected and are limited to health, OAuth, token lifecycle, and production-blocked development login flows.</td>
+</tr>
+<tr>
+  <td>4</td>
+  <td><span class="rule-id">SEC-BE-04</span> Missing rate limiting</td>
+  <td>Backend</td>
+  <td><span class="badge-medium">Medium</span></td>
+  <td><code>src/app/app.module.ts:67-74</code> configures a 100-request-per-second throttler and <code>src/app/app.module.ts:133-136</code> registers CustomThrottlerGuard globally; no throttle-skip decorators were found.</td>
+</tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- 3.2 N/A -->
+  <div>
+    <div class="subsec-hdr">
+      <div class="subsec-num">3.2</div>
+      <div>
+        <div class="subsec-title">Not Applicable Rules</div>
+        <div class="subsec-sub">Rules not evaluated &mdash; Azure Agent, Manual Review, or no applicable code found</div>
+      </div>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>#</th><th>Rule (verbatim)</th><th>Category</th><th>Severity</th><th>Assigned To</th><th>Reason</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+  <td>1</td>
+  <td><span class="rule-id">SEC-BE-07</span> Borderline concerns (manual review)</td>
+  <td>Backend</td>
+  <td><span class="badge-low">Low</span></td>
+  <td><span class="badge-manual">Manual Review</span></td>
+  <td>Requires human assessment of business context, abuse cases, and borderline security behavior.</td>
+</tr>
+<tr>
+  <td>2</td>
+  <td><span class="rule-id">SEC-BE-08</span> Payment APIs called from frontend</td>
+  <td>Backend</td>
+  <td><span class="badge-critical">Critical</span></td>
+  <td><span class="badge-na">N/A — No Payment SDK</span></td>
+  <td>No payment gateway SDK, dependency, or payment integration was found in the backend repository.</td>
+</tr>
+<tr>
+  <td>3</td>
+  <td><span class="rule-id">SEC-BE-09</span> Backend IPs not whitelisted on payment platforms</td>
+  <td>Backend</td>
+  <td><span class="badge-high">High</span></td>
+  <td><span class="badge-na">N/A — No Payment SDK</span></td>
+  <td>No payment platform integration exists for which backend IP allowlisting could apply.</td>
+</tr>
+<tr>
+  <td>4</td>
+  <td><span class="rule-id">SEC-FE-01</span> User input into API calls without validation</td>
+  <td>Frontend</td>
+  <td><span class="badge-high">High</span></td>
+  <td><span class="badge-na">N/A — No Frontend</span></td>
+  <td>Audit scope and repository contain a NestJS backend only, with no SPA or web-client source.</td>
+</tr>
+<tr>
+  <td>5</td>
+  <td><span class="rule-id">SEC-FE-02</span> Secrets/tokens exposed in frontend (visible via DevTools)</td>
+  <td>Frontend</td>
+  <td><span class="badge-critical">Critical</span></td>
+  <td><span class="badge-na">N/A — No Frontend</span></td>
+  <td>Audit scope and repository contain no frontend runtime code.</td>
+</tr>
+<tr>
+  <td>6</td>
+  <td><span class="rule-id">SEC-FE-03</span> Secrets in localStorage / sessionStorage</td>
+  <td>Frontend</td>
+  <td><span class="badge-high">High</span></td>
+  <td><span class="badge-na">N/A — No Frontend</span></td>
+  <td>Audit scope and repository contain no frontend runtime code or browser storage usage.</td>
+</tr>
+<tr>
+  <td>7</td>
+  <td><span class="rule-id">SEC-FE-04</span> Unauthenticated frontend access</td>
+  <td>Frontend</td>
+  <td><span class="badge-high">High</span></td>
+  <td><span class="badge-na">N/A — No Frontend</span></td>
+  <td>Audit scope and repository contain no frontend routes or pages.</td>
+</tr>
+<tr>
+  <td>8</td>
+  <td><span class="rule-id">SEC-FE-05</span> Pages hidden but not RBAC-controlled</td>
+  <td>Frontend</td>
+  <td><span class="badge-medium">Medium</span></td>
+  <td><span class="badge-na">N/A — No Frontend</span></td>
+  <td>Audit scope and repository contain no frontend pages or navigation controls.</td>
+</tr>
+<tr>
+  <td>9</td>
+  <td><span class="rule-id">SEC-FE-06</span> Sensitive data in URL parameters</td>
+  <td>Frontend</td>
+  <td><span class="badge-medium">Medium</span></td>
+  <td><span class="badge-na">N/A — No Frontend</span></td>
+  <td>Audit scope and repository contain no frontend URL construction code.</td>
+</tr>
+<tr>
+  <td>10</td>
+  <td><span class="rule-id">SEC-FE-07</span> Session tokens not revoked on logout</td>
+  <td>Frontend</td>
+  <td><span class="badge-high">High</span></td>
+  <td><span class="badge-na">N/A — No Frontend</span></td>
+  <td>Audit scope and repository contain no frontend session implementation.</td>
+</tr>
+<tr>
+  <td>11</td>
+  <td><span class="rule-id">SEC-FE-08</span> Borderline frontend concerns (manual review)</td>
+  <td>Frontend</td>
+  <td><span class="badge-low">Low</span></td>
+  <td><span class="badge-manual">Manual Review</span></td>
+  <td>No frontend code is present, but the locked rule delegates borderline concerns to human review.</td>
+</tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 4 — RULE-WISE ANALYSIS (violated rules only) -->
+<section class="section" id="s4">
+  <div class="section-heading">
+    <span class="section-number">SECTION 4</span>
+    <span class="section-title">Rule-wise Analysis (Violated Rules Only)</span>
+  </div>
+  <div class="analysis-block">
+  <div class="analysis-header">
+    <span class="rule-id">SEC-BE-05</span>
+    <span class="analysis-title">Hardcoded secrets in source/config files</span>
+    <span class="badge-critical">Critical</span>
+  </div>
+  <div class="analysis-body">
+    <p><strong>What was found:</strong> Swagger Basic Auth falls back to the literal password <code>admin123</code> when <code>SWAGGER_PASSWORD</code> is absent; Swagger is enabled in local and development environments.</p>
+    <p><strong>Files affected:</strong> <code>src/config/app.config.ts:28</code> — hardcoded default Swagger password.</p>
+    <div class="code-block">swaggerUsername: process.env.SWAGGER_USERNAME || 'admin',
+<span class="hl">swaggerPassword: process.env.SWAGGER_PASSWORD || 'admin123',</span></div>
+    <p><strong>Why this violates the rule:</strong> A committed default credential is predictable and can become an active authentication secret through configuration omission.</p>
+    <p><strong>Remediation steps:</strong></p>
+    <ol>
+      <li>Remove the literal username and password fallbacks from application configuration.</li>
+      <li>Require and validate <code>SWAGGER_USERNAME</code> and <code>SWAGGER_PASSWORD</code> whenever Swagger is enabled.</li>
+      <li>Fail startup rather than enabling documentation with missing or placeholder credentials.</li>
+    </ol>
+  </div>
+</div>
+<div class="analysis-block">
+  <div class="analysis-header">
+    <span class="rule-id">SEC-BE-06</span>
+    <span class="analysis-title">Sensitive data in logs or error responses</span>
+    <span class="badge-high">High</span>
+  </div>
+  <div class="analysis-body">
+    <p><strong>What was found:</strong> Employee sync paths interpolate employee names, email addresses, internal numeric IDs, and failure text directly into the logger message string; the logger redacts metadata keys but does not sanitize message text.</p>
+    <p><strong>Files affected:</strong> <code>src/modules/zoho-analytics/employees-metadata.service.ts:910</code> — name and email in warning; <code>src/modules/zoho-analytics/employees-metadata.service.ts:970</code> — name and email in warning; <code>src/modules/zoho-analytics/employees-metadata.service.ts:1015</code> — name, email, and internal ID in success log; <code>src/modules/zoho-analytics/employees-metadata.service.ts:1018</code> — name, email, and raw failure text in error log.</p>
+    <div class="code-block"><span class="hl">this.logger.warn(
+    `[EmployeesMetadataService] New employee pre-check — ${row.name} (${row.email}) excluded before create: department '${row.department}' not found`,
+);</span>
+
+for (const [i, result] of results.entries()) {
+    const row = newRows[i];
+    if (result.status === 'fulfilled') {
+        <span class="hl">this.logger.log(`  ✓ ${row.name} (${row.email}) — id: ${result.value.id.toString()}`);</span>
+    } else {
+        <span class="hl">this.logger.error(
+            `  ✗ ${row.name} (${row.email}) — FAILED: ${result.reason instanceof Error ? result.reason.message : String(result.reason)}`,
+        );</span>
+    }
+}</div>
+    <p><strong>Why this violates the rule:</strong> Names and email addresses are personal data, internal IDs reveal implementation details, and raw exception messages may carry sensitive upstream content; interpolation into <code>message</code> bypasses the key-based <code>SENSITIVE_KEYS</code> redaction applied only to metadata.</p>
+    <p><strong>Remediation steps:</strong></p>
+    <ol>
+      <li>Use constant log messages and move permitted context into structured metadata.</li>
+      <li>Identify employees only by public UUID and never log names, email addresses, or internal BigInt IDs.</li>
+      <li>Map failures to stable error codes instead of logging raw exception messages.</li>
+      <li>Add tests proving sensitive values cannot appear in either log messages or metadata.</li>
+    </ol>
+  </div>
+</div>
+</section>
+
+<!-- SECTION 5 — DELEGATED ITEMS -->
+<section class="section" id="s5">
+  <div class="section-heading">
+    <span class="section-number">SECTION 5</span>
+    <span class="section-title">Rules Moved to Other Agents / Manual Review</span>
+  </div>
+  <div class="card"><div style="padding:0">
+    <div class="ditem">
+  <span class="dref">SEC-DO-01</span>
+  <span class="badge-azure" style="flex-shrink:0">Azure Review Agent</span>
+  <span style="font-size:13px">Review Azure identity configuration, managed identities, and least-privilege role assignments.</span>
+</div>
+<div class="ditem">
+  <span class="dref">SEC-DO-02</span>
+  <span class="badge-azure" style="flex-shrink:0">Azure Review Agent</span>
+  <span style="font-size:13px">Review network isolation, private endpoints, NSGs, and public ingress exposure.</span>
+</div>
+<div class="ditem">
+  <span class="dref">SEC-DO-03</span>
+  <span class="badge-azure" style="flex-shrink:0">Azure Review Agent</span>
+  <span style="font-size:13px">Review Key Vault usage, secret rotation, access policies, and purge protection.</span>
+</div>
+<div class="ditem">
+  <span class="dref">SEC-DO-04</span>
+  <span class="badge-azure" style="flex-shrink:0">Azure Review Agent</span>
+  <span style="font-size:13px">Review storage-account public access, encryption, secure transfer, and SAS policy.</span>
+</div>
+<div class="ditem">
+  <span class="dref">SEC-DO-05</span>
+  <span class="badge-azure" style="flex-shrink:0">Azure Review Agent</span>
+  <span style="font-size:13px">Review database firewall rules, private connectivity, TLS enforcement, and identities.</span>
+</div>
+<div class="ditem">
+  <span class="dref">SEC-DO-06</span>
+  <span class="badge-azure" style="flex-shrink:0">Azure Review Agent</span>
+  <span style="font-size:13px">Review application-service TLS settings, deployment credentials, and runtime configuration.</span>
+</div>
+<div class="ditem">
+  <span class="dref">SEC-DO-07</span>
+  <span class="badge-azure" style="flex-shrink:0">Azure Review Agent</span>
+  <span style="font-size:13px">Review Azure monitoring, diagnostic settings, alerting, and security-log retention.</span>
+</div>
+<div class="ditem">
+  <span class="dref">SEC-DO-08</span>
+  <span class="badge-azure" style="flex-shrink:0">Azure Review Agent</span>
+  <span style="font-size:13px">Review backup, recovery, geo-redundancy, and restore-test configuration.</span>
+</div>
+<div class="ditem">
+  <span class="dref">SEC-DO-09</span>
+  <span class="badge-azure" style="flex-shrink:0">Azure Review Agent</span>
+  <span style="font-size:13px">Review container registry and image scanning, signing, provenance, and pull permissions.</span>
+</div>
+<div class="ditem">
+  <span class="dref">SEC-DO-10</span>
+  <span class="badge-azure" style="flex-shrink:0">Azure Review Agent</span>
+  <span style="font-size:13px">Review CI/CD service connections, protected environments, approvals, and secret exposure.</span>
+</div>
+<div class="ditem">
+  <span class="dref">SEC-DO-11</span>
+  <span class="badge-azure" style="flex-shrink:0">Azure Review Agent</span>
+  <span style="font-size:13px">Review Defender for Cloud posture, vulnerability findings, and remediation status.</span>
+</div>
+<div class="ditem">
+  <span class="dref">SEC-BE-07</span>
+  <span class="badge-manual" style="flex-shrink:0">Manual Review</span>
+  <span style="font-size:13px">Borderline concerns (manual review) — assess business abuse cases, authorization semantics, data sensitivity, and operational controls that static source evidence cannot settle.</span>
+</div>
+<div class="ditem">
+  <span class="dref">SEC-DO-12</span>
+  <span class="badge-manual" style="flex-shrink:0">Manual Review</span>
+  <span style="font-size:13px">Conduct the final live DevOps and cloud review across tenant policy, incident response, ownership, and evidence not represented in repository files.</span>
+</div>
+<div class="ditem">
+  <span class="dref">SEC-FE-08</span>
+  <span class="badge-manual" style="flex-shrink:0">Manual Review</span>
+  <span style="font-size:13px">Borderline frontend concerns (manual review) — confirm with product owners that no separately hosted frontend or browser-only security behavior exists outside this backend repository.</span>
+</div>
+  </div></div>
+</section>
+
+</div>
+
+<footer class="report-footer">
+  <img src="https://www.simform.com/wp-content/uploads/2024/12/simform-logo.svg" alt="Simform"
+       onerror="this.style.display='none'"/>
+  <p>Security Audit Report &middot; Generated by Simform Security Review Agent v2.2 &middot; 12 October 2026, 07:47 IST</p>
+  <p style="margin-top:4px;opacity:.7">Powered by Simform Engineering Excellence Program &middot; All Critical and High findings must be independently verified before remediation.</p>
+</footer>
+
+</body>
+</html>

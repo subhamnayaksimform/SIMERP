@@ -1,0 +1,28 @@
+{
+  "actor": "bhumi.chauhan",
+  "T0": "2026-10-20T13:03:37.628Z",
+  "T1": "2026-10-20T13:03:38.638Z",
+  "method": "POST",
+  "path": "/allocation-tickets/cancel-direct-allocation",
+  "req": {
+    "projectAssignmentPublicId": "670152c8-1696-4397-8398-7b1d44fced5c",
+    "deallocationReason": "OTHERS",
+    "deallocationReasonNote": "QA retest cleanup (SI4-T1527 TC-018/020 2026-10-20)"
+  },
+  "res": {
+    "status": 201,
+    "body": {
+      "code": "ALLOCATION_TICKET_169",
+      "message": "Upcoming allocation cancelled successfully",
+      "data": {
+        "ticket": {
+          "publicId": "bcee6e25-2ba5-4f76-bca7-2fba765bfd44",
+          "ticketNumber": "DA-0119",
+          "ticketType": "DEALLOCATE_ALLOCATION",
+          "status": "APPROVED"
+        },
+        "isAllocationCancelled": true
+      }
+    }
+  }
+}

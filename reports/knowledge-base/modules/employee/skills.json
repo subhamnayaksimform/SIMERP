@@ -1,0 +1,29 @@
+{
+  "module": "EMPSKL",
+  "subModule": "Skills",
+  "description": "Employee Skills module — department-scoped skills listing, Skill Detail Panel, Add New Skill drawer, Primary/Secondary classification, delete/unlink",
+  "businessRules": [
+    "Employee counts shown across surfaces must always reconcile: the combined count on the Skills Listing must equal the sum of the Primary and Secondary counts shown on the Skill Detail Panel, and both must match the underlying API response.",
+    "Any skill/department/employee-classification data written via the Add New Skill drawer or via profile self-assignment must be retrievable via the corresponding API with identical values (skill name, department, logo, tags, per-employee classification).",
+    "Clicking Save on the Add New Skill drawer twice in quick succession must not create duplicate skill-department links or duplicate employee-skill assignments.",
+    "Each role's permitted and forbidden skill actions (add, classify, override, delete/unlink) must be enforced at both UI level (control hidden/disabled) and API level (403 on unauthorized write), not merely hidden in the UI."
+  ],
+  "edgeCases": [
+    "TM/EM/Admin selects 5 employees in one Save action; sets Primary for 2, leaves 3 untouched — all 5 are saved; the 2 explicitly set are Primary, the remaining 3 default to Secondary.",
+    "RM attempts to assign a skill to a direct report — skill is saved as Secondary; no toggle is shown; RM has no way to set Primary.",
+    "Employee self-assigns a skill as Primary; TM later assigns the same skill to the same employee via the Skills Management interface, attempting to also set it — treated as an override of an existing classification, not a new assignment; confirmation prompt is shown.",
+    "TM attempts to override a classification but the employee already has the skill in the opposite category from a separate, unrelated assignment in the same batch — each employee's override/conflict is evaluated independently.",
+    "Admin deletes a skill that has 0 Primary holders but 12 Secondary holders in the selected department — treated as 'assigned' (combined count = 12); delete/unlink is blocked with breakdown (Primary: 0, Secondary: 12).",
+    "A skill has 0 employees (Primary or Secondary) in the selected department but is used in 3 other departments — Delete/Unlink Skill confirmation pop-up is shown; classification does not change this outcome.",
+    "Employee attempts to add a skill as Primary that they already hold as Secondary — system blocks the action with inline message 'This skill is already added as Secondary.'; employee must reclassify the existing entry rather than add a duplicate.",
+    "TM/EM views the Skill Detail Panel for a skill with employees only in one category (e.g. all Secondary, zero Primary) — Primary Holders section displays 'No employees in this category'; Secondary Holders section lists all holders normally.",
+    "New skill is created and assigned to employees in the same flow, with mixed Primary/Secondary toggles set — behaves identically to assigning an existing skill.",
+    "Logged-in TM/EM manages multiple departments and attempts any skill-related action (add skill, classify, delete) without first selecting a specific department.",
+    "Selected department has zero skills — verify the Skills Listing empty-state rendering (exact copy not specified in source).",
+    "Fuzzy search yields zero matches — 'No match found' and '+ Create new Skill' option are shown.",
+    "Fuzzy search matches multiple skills — verify the department-link count shown per matched skill is accurate.",
+    "Skills Listing supports selecting multiple skills simultaneously to view the union of employees holding any of the selected skills, with no duplicate rows for employees holding more than one selected skill (manual requirement, 2026-08-19).",
+    "Skill tags can be used as a search input on the Skills Listing, in addition to skill name (manual requirement, 2026-08-19) — not yet confirmed against live DOM.",
+    "Skill Detail Panel's employee list is sorted by Availability % in descending order (manual requirement, 2026-08-19)."
+  ]
+}

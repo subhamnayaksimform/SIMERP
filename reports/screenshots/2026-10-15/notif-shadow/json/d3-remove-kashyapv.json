@@ -1,0 +1,54 @@
+{
+  "T0": "2026-10-15T10:25:13.703Z",
+  "req": {
+    "projectAssignmentPublicId": "8a72c6d0-720a-4e9c-ace7-37e8ad0aaf8c",
+    "allocationEndDate": "2026-10-15",
+    "deallocationReason": "OTHERS",
+    "deallocationReasonNote": "QA test cleanup (SI4-T1527 dedup check)"
+  },
+  "res": {
+    "status": 201,
+    "body": {
+      "code": "ALLOCATION_TICKET_072",
+      "message": "Allocation removed successfully",
+      "data": {
+        "publicId": "e47659c2-591e-44dc-a984-a20a57932fb2",
+        "ticketNumber": "DA-0098",
+        "ticketType": "DEALLOCATE_ALLOCATION",
+        "status": "APPROVED",
+        "assignment": {
+          "publicId": "8a72c6d0-720a-4e9c-ace7-37e8ad0aaf8c",
+          "allocationEndDate": "2026-10-15",
+          "employee": {
+            "publicId": "9e022354-91e9-4046-b120-57626ad9c5a6",
+            "name": "Kashyap Vyas",
+            "email": "kashyap.vyas@simformsolutions.com",
+            "photoUrl": "https://i.pravatar.cc/150?u=kashyap.vyas@simformsolutions.com"
+          },
+          "project": {
+            "publicId": "3d138a89-4d06-4839-8091-436fba0a2dd6",
+            "name": "HyperScale | Scalability Engine",
+            "alias": ""
+          }
+        },
+        "effectiveState": {
+          "isEffectiveImmediately": false,
+          "effectiveFrom": "2026-10-16",
+          "scheduledChange": {
+            "publicId": "04312466-b26d-4426-88de-456eee563748",
+            "changeType": "ASSIGNMENT_DEALLOCATE",
+            "status": "PENDING",
+            "effectiveDate": "2026-10-16",
+            "overrideEndDate": null,
+            "allocationType": null,
+            "allocationPercentage": null,
+            "effectiveStartDate": null,
+            "effectiveEndDate": "2026-10-15",
+            "previousAllocationPercentage": 10
+          }
+        },
+        "feedbackPublicId": "496f15c3-474d-4d34-9037-653d9e215510"
+      }
+    }
+  }
+}

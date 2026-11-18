@@ -1,0 +1,16 @@
+{
+  "results": [
+    {
+      "id": "open-shortlist",
+      "ok": true,
+      "urls": [
+        "/opportunities/candidates?limit=100&departmentPublicIds=50d6a999-05dd-455f-8264-8e2d9308bb7d&positionPublicId=3bca05c3-d240-4960-bf65-2473726a7cbe&sortBy=upSystem&sortOrder=asc&page=1",
+        "/opportunities/candidates?limit=100&search=Kamal+Malhotra&departmentPublicIds=50d6a999-05dd-455f-8264-8e2d9308bb7d&positionPublicId=3bca05c3-d240-4960-bf65-2473726a7cbe&sortBy=upSystem&sortOrder=asc&page=1"
+      ],
+      "hits": [],
+      "warn": null,
+      "errs": []
+    }
+  ],
+  "errs": []
+}

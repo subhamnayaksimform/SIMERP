@@ -1,0 +1,161 @@
+{
+  "results": [
+    {
+      "id": "a25be879-471d-4e70-b822-4c64c69fc724",
+      "ok": true,
+      "s": 201,
+      "t": "OPP-0345",
+      "pos": [
+        [
+          "808691b3-0507-417d-9c84-4931fe12e464",
+          3
+        ],
+        [
+          "94988854-bd58-4e83-b3d7-b14833a2fe26",
+          1
+        ]
+      ],
+      "m": "",
+      "errs": []
+    },
+    {
+      "0": [
+        "empty title",
+        400,
+        "VAL_001"
+      ],
+      "1": [
+        "spaces title",
+        400,
+        "VAL_001"
+      ],
+      "2": [
+        "no positions",
+        400,
+        "VAL_001"
+      ],
+      "3": [
+        "count 0",
+        400,
+        "VAL_001"
+      ],
+      "4": [
+        "count 9999",
+        400,
+        "VAL_001"
+      ],
+      "5": [
+        "bad website",
+        400,
+        "VAL_001"
+      ],
+      "6": [
+        "end<start",
+        400,
+        "OPP_093"
+      ],
+      "7": [
+        "pct 0",
+        400,
+        "VAL_001"
+      ],
+      "8": [
+        "pct 150",
+        400,
+        "VAL_001"
+      ],
+      "9": [
+        "no dept",
+        400,
+        "VAL_001"
+      ],
+      "id": "negatives",
+      "ok": true,
+      "errs": []
+    },
+    {
+      "id": "candidates",
+      "ok": true,
+      "n": 93,
+      "first": [
+        {
+          "id": "3dac2760-2032-43f8-96f4-f17e6484f473",
+          "name": "Mehul Pandya",
+          "keys": [
+            "publicId",
+            "name",
+            "email",
+            "profileImageUrl",
+            "department",
+            "designation",
+            "skills",
+            "remainingAllocationPercentage",
+            "availabilityPercentage",
+            "allocationAvailabilityPercentage",
+            "bookedAllocationPercentage",
+            "projects",
+            "shadowDevelopers",
+            "interviewOpportunities",
+            "pendingAllocationRequests",
+            "upSystem",
+            "canNominate",
+            "nominationBlockedReason",
+            "clientRejection"
+          ]
+        },
+        {
+          "id": "5607b3d4-6cd6-436f-8e99-63b8a0a0b80f",
+          "name": "Siddharth Iyer",
+          "keys": [
+            "publicId",
+            "name",
+            "email",
+            "profileImageUrl",
+            "department",
+            "designation",
+            "skills",
+            "remainingAllocationPercentage",
+            "availabilityPercentage",
+            "allocationAvailabilityPercentage",
+            "bookedAllocationPercentage",
+            "projects",
+            "shadowDevelopers",
+            "interviewOpportunities",
+            "pendingAllocationRequests",
+            "upSystem",
+            "canNominate",
+            "nominationBlockedReason",
+            "clientRejection"
+          ]
+        },
+        {
+          "id": "43926be0-5199-44ad-a6e3-18eb8fe6fafc",
+          "name": "Neha Mukherjee",
+          "keys": [
+            "publicId",
+            "name",
+            "email",
+            "profileImageUrl",
+            "department",
+            "designation",
+            "skills",
+            "remainingAllocationPercentage",
+            "availabilityPercentage",
+            "allocationAvailabilityPercentage",
+            "bookedAllocationPercentage",
+            "projects",
+            "shadowDevelopers",
+            "interviewOpportunities",
+            "pendingAllocationRequests",
+            "upSystem",
+            "canNominate",
+            "nominationBlockedReason",
+            "clientRejection"
+          ]
+        }
+      ],
+      "errs": []
+    }
+  ],
+  "errs": []
+}

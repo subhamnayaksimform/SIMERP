@@ -1,0 +1,72 @@
+SimERP
+6.9.0
+Toggle Sidebar
+Overview
+Employee
+Team
+Requests Tracking
+Project Allocation
+New
+Opportunity Allocation
+Projects
+Admin
+What's New & History
+Help & Support
+OPP-0378
+Opportunity Allocation
+OPP-0378
+99+
+OPP-0378
+QA-AUTO T1692 preferred 17-11
+Open
+Medium
+
+Interview Allocation · QA-AUTO T1692 Client
+
+Prospect
+Edit Ticket
+Cancel Request
+Created by:
+Vihaan Chatterjee
+Created On:
+17/11/26, 11:17 am
+Updated On:
+17/11/26, 11:17 am
+Position Details
+Ticket Info
+Preparation Material
+Link Project
+T1692 Pref
+Q
+QA
+A
+ANDROID
+Fixed - 10%
+Manual Testing
+Shortlisted ratio: 0
+0 / 1 filled
+Re-initiate
+No Longer Required
+Add/ Shortlist
+Edit
+Delete
+
+Candidates shortlisted: 0 of 1 — 1 more needed.
+
+Add/ Shortlist
+ID	Candidate	Allocation %	Designation	Department	Availability %
+	Remaining Allocation	Status	Round	Approval	Action
+No candidates shortlisted yet. Click 
+Add/ Shortlist to add for this position.
+T1692 Other
+Q
+QA
+Fixed - 10%
+Manual Testing
+Shortlisted ratio: 0
+0 / 1 filled
+Re-initiate
+No Longer Required
+Add/ Shortlist
+Edit
+Delete

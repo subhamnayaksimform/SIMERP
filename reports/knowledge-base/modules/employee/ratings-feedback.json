@@ -1,0 +1,45 @@
+{
+  "module": "EMPRTF",
+  "subModule": "EMPRTF",
+  "description": "Employee Ratings & Feedback (live at /employee-ratings, sidebar Overview > Employee Ratings) — surfaces the de-allocation-time ratings and feedback stored in EmployeeAllocationFeedback. List = one row per employee; detail = one row per de-allocation.",
+  "edgeCases": [
+    "The nav entry lives under **Overview**, not under Employee, and only renders once the Overview group is expanded — a collapsed-sidebar DOM capture misses it entirely and makes the feature look unbuilt.",
+    "Avg Rating is the mean of the FOUR rating dimensions (Core Skill, Comm., Behaviour, Overall) across all de-allocations — NOT the mean of the Overall column. Verified live: Kavya Mehta (8+8+9+9)/4 = 8.50, Rachna Gupta (1.15+1+1+1)/4 = 1.04.",
+    "The list's Action column is FIRST, not last — positional cell indexing that assumes a trailing action column reads the wrong values.",
+    "The SPA changes the detail URL before the table re-renders, so waiting on the URL alone leaves the previous screen's rows in the DOM and every positional cell lookup resolves against the wrong table.",
+    "Applying a column filter re-renders the table body; reading rows immediately after Save sees an empty body.",
+    "The breadcrumb link and the sidebar nav link are both named \"Employee Ratings\" — an unscoped getByRole('link') hits a strict-mode violation.",
+    "The feature ships NO data-testid at all (0 of 348 interactive elements on the list), but every control has a descriptive accessible name: \"View ratings and feedback for <employee>\", \"Edit feedback for <project>\", \"Filter by <column>\".",
+    "Filter checkboxes take their accessible name from an associated label, not aria-label — getAttribute('aria-label') returns null.",
+    "The Edit Feedback dialog blocks a below-minimum rating by disabling Save, but leaves Save ENABLED for an above-maximum or cleared rating; clicking it then silently does nothing with no validation message.",
+    "While the Edit Feedback dialog is open the table behind it is aria-hidden, so row cells are unreadable to role-based locators until the dialog closes.",
+    "Full feedback text is already present inline as the \"Read the full feedback\" button's own content — the cell is only visually clamped, nothing is lazy-loaded.",
+    "The detail view carries three attribution columns the FRD prototype never showed: Submitted By, Project Manager and CSM.",
+    "Rating columns are nullable Decimal(4,2); a skipped rating is stored NULL and must never present as 0, which on a 1-10 scale reads as a genuine low score.",
+    "Ratings render to two decimal places throughout, not one.",
+    "Test data contains future-dated de-allocations (e.g. 23 Jan 2027), so any assertion assuming dates are in the past will fail.",
+    "The FRD v1.1 scope banner, skipped-feedback banner and profile-embed section (FR-17) were NOT found in the built screen — confirm with the BA whether they were descoped.",
+    "De-allocation is a THREE-step flow, not one: (1) CSM opens the project, 'Open actions for <employee>' > Deallocate Employee, fills Reason/Date/4 ratings/Feedback/Open-to-work-again and clicks Submit Deallocation; (2) a SECOND dialog 'Employee Deallocation Confirmation' appears with a 'Yes, Deallocate' button - the first dialog closes on Submit so automation mistakes it for success while nothing has been written; (3) PMO opens the resulting DA-<n> ticket under Requests Tracking and clicks 'Acknowledge & Deallocate'.",
+    "Feedback does NOT reach /employee-ratings until the PMO acknowledges the DA ticket. Between the CSM submit and the PMO acknowledge the ratings list is completely unchanged - this looks like a defect but is correct behaviour.",
+    "After acknowledgement the employee remains listed on the project row, but with End Date set to the de-allocation date. Still being visible on the project is NOT a failed de-allocation.",
+    "Only CSM has the 'My Projects' entry that exposes the de-allocate action; Admin/ceo and PM both get Access Denied on /my-projects.",
+    "De-allocation reasons offered in the form: Project Closure, Performance Issues, Role Misalignment, Downsizing, Others.",
+    "/dashboard returned 'Access Denied' for ALL eight role accounts (admin/ceo, punit, pm, pmo, tm, emp, em, csm) on 2026-09-24, having rendered normally about an hour earlier the same day. Verify dashboard access before treating any 'not shown on the dashboard' result as a defect - the Unauthorized page reads as an absence."
+  ],
+  "businessRules": [
+    "Avg Rating = mean of the four rating dimensions across every visible de-allocation; the Breakdown block shows each dimension's own mean.",
+    "De-allocations count = number of detail rows; Latest Feedback = the newest De-allocated On date; Reallocate = the Yes/No tally across those rows.",
+    "Admin can edit any feedback record through the Edit Feedback dialog (Core Skill, Comm., Behaviour, Overall, Feedback, Open to work with again).",
+    "Ratings are captured on a 1-10 scale at de-allocation time and stored as Decimal(4,2), so fractional values must survive display without rounding.",
+    "developerFeedback is VarChar(4096); @@unique([ticketId, employeeId]) means one feedback row per employee per de-allocation ticket.",
+    "FRD v1.1 role scoping (DM by submitter, TM/EM by current department, RM by reportees, PM by current project, EC-5 reassignment, self-exclusion) is NOT yet verified against the built screen."
+  ],
+  "lastRequirementAnalysisUpdate": "2026-09-24 — added the verified de-allocation-to-ratings end-to-end path and the three-step approval flow; flagged the /dashboard lockout that blocks dashboard verification.",
+  "knownDefects": [
+    "DEF-EMPRTF-001 (major): Both search boxes are inert. The list's \"Search name...\" and the detail view's \"Search project, feedback or people...\" accept input but never filter — searching a string that matches nothing still returns every row (list 40 of 40, detail 2 of 2). Reproduced 2026-09-23 with typing and with Enter. Covered by TC-EMPRTF-020, 048 and 090.",
+    "DEF-EMPRTF-002 (minor): The Edit Feedback dialog gives no validation feedback for an above-maximum (11) or cleared rating. Save stays enabled, clicking it leaves the dialog open, shows no message and saves nothing. A below-minimum (0) rating IS correctly guarded by disabling Save, so the guard is asymmetric. No data corruption observed. Covered by TC-EMPRTF-094 and 096."
+  ],
+  "verifiedBehaviour": [
+    "2026-09-24 end-to-end: de-allocated Aarav Iyer from 'ElitePay | Payroll System' (CSM Tarun Sharma, reason Project Closure, date 24/09/2026, Core 8 / Comm 7 / Behaviour 9 / Overall 8, open-to-work-again Yes), ticket DA-0095, acknowledged by PMO. The Employee Ratings list went from 40 to 41 rows, Aarav Iyer appeared with De-allocations 1, Avg Rating 8.00 (= (8+7+9+8)/4), Latest Feedback 24 Sep 2026 and Reallocate '1 Yes . 0 No'. His detail row carried the project, reason, date, all four ratings, the reallocate flag, Submitted By Tarun Sharma, Project Manager Ojas Khandelwal, CSM Tarun Sharma and the full feedback text. The capture-to-surface path works correctly."
+  ]
+}

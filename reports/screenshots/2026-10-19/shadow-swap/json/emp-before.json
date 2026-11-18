@@ -1,0 +1,1308 @@
+{
+  "prakash": {
+    "publicId": "da3c4542-13bb-452b-b619-42095c913d94",
+    "email": "prakash.pillai@simformsolutions.com",
+    "microsoftOid": "825f5672-e2e1-4b44-9964-9b15116e823c",
+    "kekaId": "87f12519-666f-42f6-91b4-41d321d578e9",
+    "name": "Prakash Pillai",
+    "shiftPreferences": [
+      "NS1",
+      "NS3",
+      "WS"
+    ],
+    "careerStartDate": "2016-06-10T00:00:00.000Z",
+    "dateOfJoining": "2019-08-07T00:00:00.000Z",
+    "isContractor": false,
+    "isTrainee": false,
+    "cohort": null,
+    "employeeOrigin": null,
+    "visaStatus": "NOT_SET",
+    "locationPreference": null,
+    "otherLocation": null,
+    "workMode": null,
+    "address": null,
+    "photoUrl": "https://i.pravatar.cc/150?u=prakash.pillai@simformsolutions.com",
+    "linkedinUrl": null,
+    "createdAt": "2026-03-24T05:45:10.718Z",
+    "updatedAt": "2026-03-24T05:50:50.718Z",
+    "designation": {
+      "title": "QA Engineer",
+      "alias": "QAE"
+    },
+    "noticePeriod": null,
+    "resignation": null,
+    "pip": null,
+    "notes": [],
+    "visas": [],
+    "department": {
+      "publicId": "c868f1aa-6bc1-430c-b26a-11222919627f",
+      "name": "QA",
+      "iconUrl": "https://d3e6uquevgpr8q.cloudfront.net/department-icons/qa.svg"
+    },
+    "departmentStack": {
+      "publicId": "2f46cbf6-894b-4d87-8580-4e525da41760",
+      "stack": "Manual",
+      "iconUrl": "https://cdn.simpleicons.org/testinglibrary",
+      "departmentPublicId": "c868f1aa-6bc1-430c-b26a-11222919627f"
+    },
+    "projects": [
+      {
+        "projectPublicId": "dcfc7d74-07bc-4de9-a5fe-82841b52da44",
+        "name": "Ontime",
+        "hours": 29.59,
+        "loggedHoursPercentage": 33.48,
+        "totalHours": 710.27,
+        "isBillable": false,
+        "active": true,
+        "allocationTimeline": []
+      },
+      {
+        "projectPublicId": "699d7ccb-b84c-41d8-b150-5a9034925826",
+        "name": "L&D",
+        "alias": "L&D",
+        "hours": 29.45,
+        "loggedHoursPercentage": 33.33,
+        "totalHours": 706.82,
+        "isBillable": false,
+        "active": true,
+        "allocationTimeline": []
+      },
+      {
+        "projectPublicId": "54abbc30-3886-425b-a029-f0fe9af587a8",
+        "name": "Unassigned",
+        "hours": 29.33,
+        "loggedHoursPercentage": 33.19,
+        "totalHours": 703.81,
+        "isBillable": false,
+        "active": true,
+        "allocationTimeline": []
+      }
+    ],
+    "pastProjects": [],
+    "nonBillableData": {
+      "timeframe": "3m",
+      "percentage": 100
+    },
+    "prReviewerProjects": [],
+    "goals": [],
+    "availabilityPercentage": 100,
+    "allocationAvailabilityPercentage": 100,
+    "bookedAllocationPercentage": 0,
+    "remainingAllocationPercentage": 100,
+    "shadowDevelopers": []
+  },
+  "kunalM": {
+    "publicId": "f94d6cb2-e5b5-4c14-99d2-3fbd28a1cde9",
+    "email": "kunal.menon@simformsolutions.com",
+    "microsoftOid": "6b3ce975-1d24-4ccc-b74d-fdd06d38ab44",
+    "kekaId": "0fe63566-47b8-4aaa-bf12-986d9470f08f",
+    "name": "Kunal Menon",
+    "shiftPreferences": [
+      "NONE"
+    ],
+    "careerStartDate": "2023-07-05T00:00:00.000Z",
+    "dateOfJoining": "2023-04-23T00:00:00.000Z",
+    "isContractor": false,
+    "isTrainee": false,
+    "cohort": null,
+    "employeeOrigin": null,
+    "visaStatus": "NOT_SET",
+    "locationPreference": null,
+    "otherLocation": null,
+    "workMode": null,
+    "address": null,
+    "photoUrl": "https://i.pravatar.cc/150?u=kunal.menon@simformsolutions.com",
+    "linkedinUrl": null,
+    "createdAt": "2026-03-24T05:45:53.915Z",
+    "updatedAt": "2026-03-24T05:51:33.915Z",
+    "designation": {
+      "title": "Sr. Data Engineer",
+      "alias": "Sr. DE"
+    },
+    "noticePeriod": null,
+    "resignation": null,
+    "pip": null,
+    "notes": [],
+    "visas": [],
+    "department": {
+      "publicId": "02258af1-79b0-4e88-bebb-aee86933bd9c",
+      "name": "DATA ENGINEERING",
+      "iconUrl": "https://d3e6uquevgpr8q.cloudfront.net/department-icons/data-engineering.svg"
+    },
+    "departmentStack": {
+      "publicId": "8c45d16e-90a3-4947-a13c-437baf2bf77d",
+      "stack": "Tableau",
+      "iconUrl": "https://cdn.simpleicons.org/tableau",
+      "departmentPublicId": "02258af1-79b0-4e88-bebb-aee86933bd9c"
+    },
+    "projects": [
+      {
+        "projectAssignmentPublicId": "26935674-438a-432c-8769-23c52d4f4e84",
+        "allocationPercentage": 0,
+        "allocationType": "DYNAMIC",
+        "typeOfWork": "GUIDANCE_ONLY",
+        "status": "RED",
+        "isUpcoming": false,
+        "isLongRunning": true,
+        "allocationStartDate": "2026-06-09",
+        "projectPublicId": "cbe21270-0d57-405b-9424-aabb386793f5",
+        "name": "XmlToJson | Data Transformer",
+        "alias": "XmlToJson",
+        "totalHours": 0,
+        "isBillable": true,
+        "active": false,
+        "techStacks": [],
+        "allocationEndDate": "2027-09-15",
+        "allocationTimeline": [
+          {
+            "ticketPublicId": null,
+            "ticketNumber": null,
+            "scheduledChangePublicId": null,
+            "effectiveFrom": "2026-06-09",
+            "effectiveTo": "2027-09-15",
+            "allocationType": "DYNAMIC",
+            "allocationPercentage": null,
+            "isCurrent": true,
+            "isPending": false,
+            "segmentType": "STANDING"
+          }
+        ]
+      },
+      {
+        "projectAssignmentPublicId": "9db49241-1613-4861-ba9d-e046b67a8910",
+        "allocationPercentage": 35,
+        "allocationType": "FIXED",
+        "typeOfWork": "DEVELOPMENT_WORK",
+        "status": "AMBER",
+        "isUpcoming": false,
+        "isLongRunning": false,
+        "allocationStartDate": "2024-10-26",
+        "projectPublicId": "d90f9cda-a417-4672-afa3-b53f8033dabf",
+        "name": "YieldOps | Crop Management",
+        "hours": 38.99,
+        "loggedHoursPercentage": 44.04,
+        "totalHours": 935.69,
+        "isBillable": true,
+        "active": true,
+        "techStacks": [],
+        "allocationEndDate": "2026-09-04",
+        "allocationTimeline": [
+          {
+            "ticketPublicId": null,
+            "ticketNumber": null,
+            "scheduledChangePublicId": null,
+            "effectiveFrom": "2024-10-26",
+            "effectiveTo": "2026-09-04",
+            "allocationType": "FIXED",
+            "allocationPercentage": 35,
+            "isCurrent": false,
+            "isPending": false,
+            "segmentType": "STANDING"
+          }
+        ]
+      },
+      {
+        "projectPublicId": "699d7ccb-b84c-41d8-b150-5a9034925826",
+        "name": "L&D",
+        "alias": "L&D",
+        "hours": 3.09,
+        "loggedHoursPercentage": 3.49,
+        "totalHours": 74.24,
+        "isBillable": false,
+        "active": true,
+        "allocationTimeline": []
+      },
+      {
+        "projectPublicId": "54abbc30-3886-425b-a029-f0fe9af587a8",
+        "name": "Unassigned",
+        "hours": 3.08,
+        "loggedHoursPercentage": 3.48,
+        "totalHours": 73.83,
+        "isBillable": false,
+        "active": true,
+        "allocationTimeline": []
+      },
+      {
+        "projectPublicId": "dcfc7d74-07bc-4de9-a5fe-82841b52da44",
+        "name": "Ontime",
+        "hours": 3.06,
+        "loggedHoursPercentage": 3.46,
+        "totalHours": 73.32,
+        "isBillable": false,
+        "active": true,
+        "allocationTimeline": []
+      }
+    ],
+    "pastProjects": [
+      {
+        "projectAssignmentPublicId": "39b6589c-a1c5-4583-ae9a-2dd2b30c279c",
+        "allocationPercentage": 30,
+        "allocationType": "FIXED",
+        "typeOfWork": "PR_REVIEWER",
+        "status": "ARCHIVED",
+        "isUpcoming": false,
+        "isLongRunning": false,
+        "allocationStartDate": "2025-08-18",
+        "note": "Extended due to delivery deadline",
+        "projectPublicId": "3d138a89-4d06-4839-8091-436fba0a2dd6",
+        "name": "HyperScale | Scalability Engine",
+        "hours": 40.32,
+        "loggedHoursPercentage": 45.54,
+        "totalHours": 967.74,
+        "isBillable": true,
+        "active": true,
+        "techStacks": [],
+        "allocationEndDate": "2026-08-31",
+        "allocationTimeline": [
+          {
+            "ticketPublicId": null,
+            "ticketNumber": null,
+            "scheduledChangePublicId": null,
+            "effectiveFrom": "2025-08-18",
+            "effectiveTo": "2026-08-31",
+            "allocationType": "FIXED",
+            "allocationPercentage": 30,
+            "isCurrent": false,
+            "isPending": false,
+            "segmentType": "STANDING"
+          }
+        ]
+      }
+    ],
+    "nonBillableData": null,
+    "prReviewerProjects": [],
+    "goals": [
+      {
+        "goalId": "4983bf71-72ba-4f81-8904-cc66468df2b8",
+        "goalName": "Terraform Associate",
+        "goalDescription": "HashiCorp Terraform associate certification",
+        "goalType": "CERTIFICATE",
+        "certificateCode": "TF-ASSOC",
+        "status": "NOT_STARTED",
+        "completionPercentage": 0,
+        "startedAt": null,
+        "completedAt": null
+      },
+      {
+        "goalId": "bb50560b-eae7-4b64-ad6f-c0417dac83a3",
+        "goalName": "Test-Driven Development",
+        "goalDescription": "Master TDD principles and implement comprehensive test coverage",
+        "goalType": "TECHNICAL",
+        "certificateCode": null,
+        "status": "NOT_STARTED",
+        "completionPercentage": 0,
+        "startedAt": null,
+        "completedAt": null
+      }
+    ],
+    "availabilityPercentage": 10.42,
+    "allocationAvailabilityPercentage": 100,
+    "bookedAllocationPercentage": 0,
+    "remainingAllocationPercentage": 100,
+    "shadowDevelopers": []
+  },
+  "ananya": {
+    "publicId": "5492755c-16a4-407e-8571-0db979628d17",
+    "email": "ananya.hegde@simformsolutions.com",
+    "microsoftOid": "9ead4f4f-84cc-49b0-bb2d-d4f1824e9bff",
+    "kekaId": "825edf10-a391-4a01-a5b0-9284b6531c75",
+    "name": "Ananya Hegde",
+    "shiftPreferences": [
+      "NS1",
+      "NS3",
+      "WS"
+    ],
+    "careerStartDate": "2020-12-10T00:00:00.000Z",
+    "dateOfJoining": "2023-08-14T00:00:00.000Z",
+    "isContractor": false,
+    "isTrainee": false,
+    "cohort": null,
+    "employeeOrigin": null,
+    "visaStatus": "NOT_SET",
+    "locationPreference": null,
+    "otherLocation": null,
+    "workMode": null,
+    "address": null,
+    "photoUrl": "https://i.pravatar.cc/150?u=ananya.hegde@simformsolutions.com",
+    "linkedinUrl": null,
+    "createdAt": "2026-03-24T05:44:43.955Z",
+    "updatedAt": "2026-03-24T05:50:23.955Z",
+    "designation": {
+      "title": "Sr. Software Engineer",
+      "alias": "Sr. SE"
+    },
+    "noticePeriod": null,
+    "resignation": null,
+    "pip": null,
+    "notes": [],
+    "visas": [],
+    "department": {
+      "publicId": "9f56b05b-5a72-43ac-8818-aa1faf4046ca",
+      "name": "MEAN STACK",
+      "iconUrl": "https://d3e6uquevgpr8q.cloudfront.net/department-icons/mean-stack.svg"
+    },
+    "departmentStack": null,
+    "projects": [
+      {
+        "projectAssignmentPublicId": "b10689fa-2edb-4f79-99d1-3c7c7371b540",
+        "allocationPercentage": 55,
+        "allocationType": "FIXED",
+        "typeOfWork": "DEVELOPMENT_WORK",
+        "status": "AMBER",
+        "isUpcoming": false,
+        "isLongRunning": true,
+        "allocationStartDate": "2026-05-09",
+        "projectPublicId": "c20430eb-7e7e-44e6-b769-3c7756e6a9e2",
+        "name": "XCrypt | Blockchain Wallet",
+        "totalHours": 0,
+        "isBillable": true,
+        "active": false,
+        "techStacks": [],
+        "allocationEndDate": "2027-05-31",
+        "allocationTimeline": [
+          {
+            "ticketPublicId": null,
+            "ticketNumber": null,
+            "scheduledChangePublicId": null,
+            "effectiveFrom": "2026-05-09",
+            "effectiveTo": "2027-05-31",
+            "allocationType": "FIXED",
+            "allocationPercentage": 55,
+            "isCurrent": true,
+            "isPending": false,
+            "segmentType": "STANDING"
+          }
+        ]
+      },
+      {
+        "projectAssignmentPublicId": "f9cf1ca6-b86a-4782-bf3d-4f611e270f7a",
+        "allocationPercentage": 0,
+        "allocationType": "DYNAMIC",
+        "typeOfWork": "DEVELOPMENT_WORK",
+        "status": "RED",
+        "isUpcoming": false,
+        "isLongRunning": false,
+        "allocationStartDate": "2026-08-23",
+        "projectPublicId": "dfabca99-f087-45bc-94a2-fb9a8de21c51",
+        "name": "NeuroDB | Neural Database",
+        "totalHours": 0,
+        "isBillable": true,
+        "active": false,
+        "techStacks": [],
+        "allocationEndDate": "2027-06-10",
+        "allocationTimeline": [
+          {
+            "ticketPublicId": null,
+            "ticketNumber": null,
+            "scheduledChangePublicId": null,
+            "effectiveFrom": "2026-08-23",
+            "effectiveTo": "2027-06-10",
+            "allocationType": "DYNAMIC",
+            "allocationPercentage": null,
+            "isCurrent": true,
+            "isPending": false,
+            "segmentType": "STANDING"
+          }
+        ]
+      },
+      {
+        "projectPublicId": "dcfc7d74-07bc-4de9-a5fe-82841b52da44",
+        "name": "Ontime",
+        "hours": 29.61,
+        "loggedHoursPercentage": 33.52,
+        "totalHours": 710.72,
+        "isBillable": false,
+        "active": true,
+        "allocationTimeline": []
+      },
+      {
+        "projectPublicId": "54abbc30-3886-425b-a029-f0fe9af587a8",
+        "name": "Unassigned",
+        "hours": 29.57,
+        "loggedHoursPercentage": 33.47,
+        "totalHours": 709.67,
+        "isBillable": false,
+        "active": true,
+        "allocationTimeline": []
+      },
+      {
+        "projectPublicId": "699d7ccb-b84c-41d8-b150-5a9034925826",
+        "name": "L&D",
+        "alias": "L&D",
+        "hours": 29.16,
+        "loggedHoursPercentage": 33.01,
+        "totalHours": 699.83,
+        "isBillable": false,
+        "active": true,
+        "allocationTimeline": []
+      }
+    ],
+    "pastProjects": [],
+    "nonBillableData": {
+      "timeframe": "3m",
+      "percentage": 100
+    },
+    "prReviewerProjects": [],
+    "goals": [
+      {
+        "goalId": "2f8ab5c9-cbb3-4142-b45c-36a37c335a67",
+        "goalName": "DevOps Automation",
+        "goalDescription": "Automate infrastructure provisioning and deployment processes",
+        "goalType": "TECHNICAL",
+        "certificateCode": null,
+        "status": "IN_PROGRESS",
+        "completionPercentage": 70,
+        "startedAt": "2026-01-03T00:00:00.000Z",
+        "completedAt": null
+      },
+      {
+        "goalId": "8943e0bd-30db-4430-806a-1d49fe533157",
+        "goalName": "API Security Best Practices",
+        "goalDescription": "Implement OAuth2, JWT, and other security standards",
+        "goalType": "TECHNICAL",
+        "certificateCode": null,
+        "status": "IN_PROGRESS",
+        "completionPercentage": 30,
+        "startedAt": "2026-03-29T00:00:00.000Z",
+        "completedAt": null
+      },
+      {
+        "goalId": "343c0136-8593-42c4-8aaa-36a2160b8f61",
+        "goalName": "GraphQL API Design",
+        "goalDescription": "<p>changed</p><p></p>",
+        "goalType": "TECHNICAL",
+        "certificateCode": null,
+        "status": "NOT_STARTED",
+        "completionPercentage": 0,
+        "startedAt": null,
+        "completedAt": null
+      },
+      {
+        "goalId": "0531a8fa-584f-4a48-97e8-6415de912c3c",
+        "goalName": "MongoDB Certified Developer",
+        "goalDescription": "MongoDB developer certification",
+        "goalType": "CERTIFICATE",
+        "certificateCode": "MDB-DEV",
+        "status": "IN_PROGRESS",
+        "completionPercentage": 70,
+        "startedAt": "2025-12-12T00:00:00.000Z",
+        "completedAt": null
+      }
+    ],
+    "availabilityPercentage": 100,
+    "allocationAvailabilityPercentage": 100,
+    "bookedAllocationPercentage": 55,
+    "remainingAllocationPercentage": 45,
+    "shadowDevelopers": []
+  },
+  "bhavesh": {
+    "publicId": "12e25516-2373-4925-9ecc-1732ca6f61b6",
+    "email": "bhavesh.bansal@simformsolutions.com",
+    "microsoftOid": "66375e20-8168-430e-82d2-909600a07497",
+    "kekaId": "09716b7d-d689-4934-a25d-ed5c669d6434",
+    "name": "Bhavesh Bansal",
+    "shiftPreferences": [
+      "NS1_1"
+    ],
+    "careerStartDate": "2018-08-16T00:00:00.000Z",
+    "dateOfJoining": "2020-06-19T00:00:00.000Z",
+    "isContractor": false,
+    "isTrainee": false,
+    "cohort": null,
+    "employeeOrigin": null,
+    "visaStatus": "NOT_SET",
+    "locationPreference": null,
+    "otherLocation": null,
+    "workMode": null,
+    "address": null,
+    "photoUrl": "https://i.pravatar.cc/150?u=bhavesh.bansal@simformsolutions.com",
+    "linkedinUrl": null,
+    "createdAt": "2026-03-24T05:45:09.266Z",
+    "updatedAt": "2026-08-31T08:43:36.488Z",
+    "designation": {
+      "title": "Lead Engineer",
+      "alias": "LE"
+    },
+    "noticePeriod": null,
+    "resignation": null,
+    "pip": null,
+    "notes": [],
+    "visas": [],
+    "department": {
+      "publicId": "c868f1aa-6bc1-430c-b26a-11222919627f",
+      "name": "QA",
+      "iconUrl": "https://d3e6uquevgpr8q.cloudfront.net/department-icons/qa.svg"
+    },
+    "departmentStack": {
+      "publicId": "ec62810e-4295-4482-b783-cf437b55cbfc",
+      "stack": "Mix",
+      "iconUrl": "https://cdn.simpleicons.org/testinglibrary",
+      "departmentPublicId": "c868f1aa-6bc1-430c-b26a-11222919627f"
+    },
+    "projects": [
+      {
+        "projectAssignmentPublicId": "32c30658-ed74-4565-b5b0-632e8d54a850",
+        "allocationPercentage": 20,
+        "allocationType": "FIXED",
+        "typeOfWork": "DEVELOPMENT_WORK",
+        "status": "GREEN",
+        "isUpcoming": false,
+        "isLongRunning": false,
+        "allocationStartDate": "2026-08-25",
+        "projectPublicId": "3d138a89-4d06-4839-8091-436fba0a2dd6",
+        "name": "HyperScale | Scalability Engine",
+        "totalHours": 0,
+        "isBillable": true,
+        "active": false,
+        "techStacks": [],
+        "allocationEndDate": null,
+        "allocationTimeline": [
+          {
+            "ticketPublicId": null,
+            "ticketNumber": null,
+            "scheduledChangePublicId": null,
+            "effectiveFrom": "2026-08-25",
+            "effectiveTo": null,
+            "allocationType": "FIXED",
+            "allocationPercentage": 20,
+            "isCurrent": true,
+            "isPending": false,
+            "segmentType": "STANDING"
+          }
+        ]
+      },
+      {
+        "projectAssignmentPublicId": "5ad542c9-bd1a-4737-b5fd-a6705e0a9c87",
+        "allocationPercentage": 50,
+        "allocationType": "FIXED",
+        "typeOfWork": "DEVELOPMENT_WORK",
+        "status": "GREEN",
+        "isUpcoming": false,
+        "isLongRunning": false,
+        "allocationStartDate": "2026-07-15",
+        "note": "urgent work",
+        "projectPublicId": "5eda6081-ca13-4829-9ff6-1550df11c6f8",
+        "name": "AbsoluteUI | Design System",
+        "totalHours": 0,
+        "isBillable": true,
+        "active": false,
+        "techStacks": [],
+        "allocationEndDate": "2026-07-31",
+        "allocationTimeline": [
+          {
+            "ticketPublicId": null,
+            "ticketNumber": null,
+            "scheduledChangePublicId": null,
+            "effectiveFrom": "2026-07-15",
+            "effectiveTo": "2026-07-31",
+            "allocationType": "FIXED",
+            "allocationPercentage": 50,
+            "isCurrent": false,
+            "isPending": false,
+            "segmentType": "STANDING"
+          }
+        ]
+      },
+      {
+        "projectAssignmentPublicId": "fbbbb073-be4b-400f-b102-d69f3c6df0be",
+        "allocationPercentage": 0,
+        "allocationType": "DYNAMIC",
+        "typeOfWork": "GUIDANCE_ONLY",
+        "status": "AMBER",
+        "isUpcoming": false,
+        "isLongRunning": true,
+        "allocationStartDate": "2026-06-09",
+        "projectPublicId": "4446efd1-adc7-4bf5-80c2-d8655ea4d113",
+        "name": "TrustVault | Identity Management",
+        "totalHours": 0,
+        "isBillable": true,
+        "active": false,
+        "techStacks": [],
+        "allocationEndDate": "2026-10-25",
+        "allocationTimeline": [
+          {
+            "ticketPublicId": null,
+            "ticketNumber": null,
+            "scheduledChangePublicId": null,
+            "effectiveFrom": "2026-06-09",
+            "effectiveTo": "2026-10-25",
+            "allocationType": "DYNAMIC",
+            "allocationPercentage": null,
+            "isCurrent": true,
+            "isPending": false,
+            "segmentType": "STANDING"
+          }
+        ]
+      },
+      {
+        "projectAssignmentPublicId": "6accce6a-35bc-4f26-8409-1e64611257e4",
+        "allocationPercentage": 20,
+        "allocationType": "FIXED",
+        "typeOfWork": "DEVELOPMENT_WORK",
+        "status": "GREEN",
+        "isUpcoming": false,
+        "isLongRunning": false,
+        "allocationStartDate": "2024-11-17",
+        "projectPublicId": "d8898bd1-4bab-4da3-b7b4-ce9e2b0efd25",
+        "name": "InferAI | Inference Engine",
+        "hours": 26.1,
+        "loggedHoursPercentage": 29.57,
+        "totalHours": 626.41,
+        "isBillable": true,
+        "active": true,
+        "techStacks": [],
+        "allocationEndDate": "2026-06-12",
+        "allocationTimeline": [
+          {
+            "ticketPublicId": null,
+            "ticketNumber": null,
+            "scheduledChangePublicId": null,
+            "effectiveFrom": "2024-11-17",
+            "effectiveTo": "2026-06-12",
+            "allocationType": "FIXED",
+            "allocationPercentage": 20,
+            "isCurrent": false,
+            "isPending": false,
+            "segmentType": "STANDING"
+          }
+        ]
+      },
+      {
+        "projectAssignmentPublicId": "a2f9e132-163f-4431-92d4-4a929a679b68",
+        "allocationPercentage": 20,
+        "allocationType": "FIXED",
+        "typeOfWork": "PR_REVIEWER",
+        "status": "RED",
+        "isUpcoming": false,
+        "isLongRunning": false,
+        "allocationStartDate": "2025-04-03",
+        "projectPublicId": "856c74e7-5bde-4563-88f7-28b9ee9a82db",
+        "name": "RealSync | Live Data Platform",
+        "hours": 26.4,
+        "loggedHoursPercentage": 29.91,
+        "totalHours": 633.67,
+        "isBillable": true,
+        "active": true,
+        "techStacks": [],
+        "allocationEndDate": "2026-07-29",
+        "allocationTimeline": [
+          {
+            "ticketPublicId": null,
+            "ticketNumber": null,
+            "scheduledChangePublicId": null,
+            "effectiveFrom": "2025-04-03",
+            "effectiveTo": "2026-07-29",
+            "allocationType": "FIXED",
+            "allocationPercentage": 20,
+            "isCurrent": false,
+            "isPending": false,
+            "segmentType": "STANDING"
+          }
+        ]
+      },
+      {
+        "projectAssignmentPublicId": "8aa13c8f-f2a3-4f66-8fcf-76e040dc208f",
+        "allocationPercentage": 20,
+        "allocationType": "FIXED",
+        "typeOfWork": "GUIDANCE_ONLY",
+        "status": "GREEN",
+        "isUpcoming": false,
+        "isLongRunning": false,
+        "allocationStartDate": "2025-07-15",
+        "projectPublicId": "648a8ad7-7667-49f9-84e0-05cf09a53c8e",
+        "name": "MaxX | Maximization Engine",
+        "alias": "MaxX",
+        "hours": 26.36,
+        "loggedHoursPercentage": 29.87,
+        "totalHours": 632.6,
+        "isBillable": true,
+        "active": true,
+        "techStacks": [],
+        "allocationEndDate": "2026-04-15",
+        "allocationTimeline": [
+          {
+            "ticketPublicId": null,
+            "ticketNumber": null,
+            "scheduledChangePublicId": null,
+            "effectiveFrom": "2025-07-15",
+            "effectiveTo": "2026-04-15",
+            "allocationType": "FIXED",
+            "allocationPercentage": 20,
+            "isCurrent": false,
+            "isPending": false,
+            "segmentType": "STANDING"
+          }
+        ]
+      },
+      {
+        "projectPublicId": "dcfc7d74-07bc-4de9-a5fe-82841b52da44",
+        "name": "Ontime",
+        "hours": 3.14,
+        "loggedHoursPercentage": 3.56,
+        "totalHours": 75.36,
+        "isBillable": false,
+        "active": true,
+        "allocationTimeline": []
+      },
+      {
+        "projectPublicId": "54abbc30-3886-425b-a029-f0fe9af587a8",
+        "name": "Unassigned",
+        "hours": 3.14,
+        "loggedHoursPercentage": 3.56,
+        "totalHours": 75.32,
+        "isBillable": false,
+        "active": true,
+        "allocationTimeline": []
+      },
+      {
+        "projectPublicId": "699d7ccb-b84c-41d8-b150-5a9034925826",
+        "name": "L&D",
+        "alias": "L&D",
+        "hours": 3.12,
+        "loggedHoursPercentage": 3.54,
+        "totalHours": 74.79,
+        "isBillable": false,
+        "active": true,
+        "allocationTimeline": []
+      }
+    ],
+    "pastProjects": [
+      {
+        "projectAssignmentPublicId": "d94365ce-ea00-4430-b000-7a100268a5e0",
+        "allocationPercentage": 20,
+        "allocationType": "FIXED",
+        "typeOfWork": "GUIDANCE_ONLY",
+        "status": "ARCHIVED",
+        "isUpcoming": false,
+        "isLongRunning": false,
+        "allocationStartDate": "2025-10-20",
+        "projectPublicId": "121327e7-f758-48ae-b588-b7bffe5a73ee",
+        "name": "CipherLock | Encryption Service",
+        "totalHours": 0,
+        "isBillable": true,
+        "active": false,
+        "techStacks": [],
+        "allocationEndDate": "2026-03-26",
+        "allocationTimeline": [
+          {
+            "ticketPublicId": null,
+            "ticketNumber": null,
+            "scheduledChangePublicId": null,
+            "effectiveFrom": "2025-10-20",
+            "effectiveTo": "2026-03-26",
+            "allocationType": "FIXED",
+            "allocationPercentage": 20,
+            "isCurrent": false,
+            "isPending": false,
+            "segmentType": "STANDING"
+          }
+        ]
+      }
+    ],
+    "nonBillableData": null,
+    "prReviewerProjects": [],
+    "goals": [],
+    "availabilityPercentage": 10.65,
+    "allocationAvailabilityPercentage": 100,
+    "bookedAllocationPercentage": 20,
+    "remainingAllocationPercentage": 80,
+    "shadowDevelopers": []
+  },
+  "manish": {
+    "publicId": "0fb86650-9b25-4e21-9126-f3f7f7f318d8",
+    "email": "manish.desai@simformsolutions.com",
+    "microsoftOid": "d015fbf2-f788-4dc8-992b-ab1587a65ba1",
+    "kekaId": "40f467ed-203a-4b3d-9077-f3c2a63e9abb",
+    "name": "Manish Desai",
+    "shiftPreferences": [
+      "NS1"
+    ],
+    "careerStartDate": "2021-12-17T00:00:00.000Z",
+    "dateOfJoining": "2021-01-21T00:00:00.000Z",
+    "isContractor": false,
+    "isTrainee": false,
+    "cohort": null,
+    "employeeOrigin": null,
+    "visaStatus": "NOT_SET",
+    "locationPreference": null,
+    "otherLocation": null,
+    "workMode": null,
+    "address": null,
+    "photoUrl": "https://i.pravatar.cc/150?u=manish.desai@simformsolutions.com",
+    "linkedinUrl": null,
+    "createdAt": "2026-03-24T05:45:09.332Z",
+    "updatedAt": "2026-07-22T05:28:37.709Z",
+    "designation": {
+      "title": "Lead Engineer",
+      "alias": "LE"
+    },
+    "noticePeriod": null,
+    "resignation": null,
+    "pip": null,
+    "notes": [],
+    "visas": [],
+    "department": {
+      "publicId": "c868f1aa-6bc1-430c-b26a-11222919627f",
+      "name": "QA",
+      "iconUrl": "https://d3e6uquevgpr8q.cloudfront.net/department-icons/qa.svg"
+    },
+    "departmentStack": {
+      "publicId": "263f7e26-2bc6-415f-97ec-01c914c13276",
+      "stack": "Security",
+      "iconUrl": "https://cdn.simpleicons.org/owasp",
+      "departmentPublicId": "c868f1aa-6bc1-430c-b26a-11222919627f"
+    },
+    "projects": [
+      {
+        "projectAssignmentPublicId": "da8e9138-aafb-490b-86df-b5f34810410a",
+        "allocationPercentage": 20,
+        "allocationType": "FIXED",
+        "typeOfWork": "DEVELOPMENT_WORK",
+        "status": "GREEN",
+        "isUpcoming": false,
+        "isLongRunning": false,
+        "allocationStartDate": "2026-08-20",
+        "projectPublicId": "3d138a89-4d06-4839-8091-436fba0a2dd6",
+        "name": "HyperScale | Scalability Engine",
+        "totalHours": 0,
+        "isBillable": true,
+        "active": false,
+        "techStacks": [],
+        "allocationEndDate": null,
+        "allocationTimeline": [
+          {
+            "ticketPublicId": null,
+            "ticketNumber": null,
+            "scheduledChangePublicId": null,
+            "effectiveFrom": "2026-08-20",
+            "effectiveTo": null,
+            "allocationType": "FIXED",
+            "allocationPercentage": 20,
+            "isCurrent": true,
+            "isPending": false,
+            "segmentType": "STANDING"
+          }
+        ]
+      },
+      {
+        "projectAssignmentPublicId": "6e8aa2a5-fdf2-41bb-805c-a005bab1e6a3",
+        "allocationPercentage": 41,
+        "allocationType": "FIXED",
+        "typeOfWork": "DEVELOPMENT_WORK",
+        "status": "GREEN",
+        "isUpcoming": false,
+        "isLongRunning": false,
+        "allocationStartDate": "2026-09-07",
+        "note": "jj",
+        "projectPublicId": "1151a973-f0d5-4a2b-b9ca-ed8219cc3f0e",
+        "name": "UtilityX | Utility Platform",
+        "alias": "UtilityX",
+        "totalHours": 0,
+        "isBillable": true,
+        "active": false,
+        "techStacks": [],
+        "allocationEndDate": null,
+        "allocationTimeline": [
+          {
+            "ticketPublicId": null,
+            "ticketNumber": null,
+            "scheduledChangePublicId": null,
+            "effectiveFrom": "2026-09-07",
+            "effectiveTo": null,
+            "allocationType": "FIXED",
+            "allocationPercentage": 41,
+            "isCurrent": true,
+            "isPending": false,
+            "segmentType": "STANDING"
+          }
+        ]
+      },
+      {
+        "projectAssignmentPublicId": "99399411-f24a-4de3-86c1-c0145662efca",
+        "allocationPercentage": 0,
+        "allocationType": "DYNAMIC",
+        "typeOfWork": "DEVELOPMENT_WORK",
+        "status": "GREEN",
+        "isUpcoming": false,
+        "isLongRunning": true,
+        "allocationStartDate": "2026-05-08",
+        "projectPublicId": "b522ca7a-3958-496b-81a1-6cf9369bf191",
+        "name": "OrchestrAI | AI Workflows",
+        "shadowDeveloper": {
+          "publicId": "cab0cc83-49e4-4666-a022-3835c1027866",
+          "name": "Zeel Bhatt",
+          "email": "zeel.bhatt@simformsolutions.com"
+        },
+        "totalHours": 0,
+        "isBillable": true,
+        "active": false,
+        "techStacks": [],
+        "allocationEndDate": "2027-04-16",
+        "allocationTimeline": [
+          {
+            "ticketPublicId": null,
+            "ticketNumber": null,
+            "scheduledChangePublicId": null,
+            "effectiveFrom": "2026-05-08",
+            "effectiveTo": "2027-04-16",
+            "allocationType": "DYNAMIC",
+            "allocationPercentage": null,
+            "isCurrent": true,
+            "isPending": false,
+            "segmentType": "STANDING"
+          }
+        ]
+      },
+      {
+        "projectAssignmentPublicId": "47d38c7e-69d7-4721-8904-3a87a53b89d6",
+        "allocationPercentage": 0,
+        "allocationType": "DYNAMIC",
+        "typeOfWork": "GUIDANCE_ONLY",
+        "status": "AMBER",
+        "isUpcoming": false,
+        "isLongRunning": false,
+        "allocationStartDate": "2026-09-27",
+        "projectPublicId": "4933ce18-a5a9-49a0-ab07-90161f4cce7a",
+        "name": "JetQueue | Priority Queue Engine",
+        "totalHours": 0,
+        "isBillable": true,
+        "active": false,
+        "techStacks": [],
+        "allocationEndDate": "2027-12-01",
+        "allocationTimeline": [
+          {
+            "ticketPublicId": null,
+            "ticketNumber": null,
+            "scheduledChangePublicId": null,
+            "effectiveFrom": "2026-09-27",
+            "effectiveTo": "2027-12-01",
+            "allocationType": "DYNAMIC",
+            "allocationPercentage": null,
+            "isCurrent": true,
+            "isPending": false,
+            "segmentType": "STANDING"
+          }
+        ]
+      },
+      {
+        "projectAssignmentPublicId": "70986bce-7ce0-4e74-ae28-0e7bcec5bd4c",
+        "allocationPercentage": 20,
+        "allocationType": "FIXED",
+        "typeOfWork": "DEVELOPMENT_WORK",
+        "status": "AMBER",
+        "isUpcoming": false,
+        "isLongRunning": false,
+        "allocationStartDate": "2025-07-04",
+        "projectPublicId": "a8869918-6732-4886-9153-8dfa5b06c79a",
+        "name": "AnalytixHub | Advanced Analytics",
+        "alias": "AnalytixHub",
+        "hours": 39.08,
+        "loggedHoursPercentage": 44.24,
+        "totalHours": 937.82,
+        "isBillable": true,
+        "active": true,
+        "techStacks": [],
+        "allocationEndDate": "2026-06-17",
+        "allocationTimeline": [
+          {
+            "ticketPublicId": null,
+            "ticketNumber": null,
+            "scheduledChangePublicId": null,
+            "effectiveFrom": "2025-07-04",
+            "effectiveTo": "2026-06-17",
+            "allocationType": "FIXED",
+            "allocationPercentage": 20,
+            "isCurrent": false,
+            "isPending": false,
+            "segmentType": "STANDING"
+          }
+        ]
+      },
+      {
+        "projectAssignmentPublicId": "f394de55-d89a-4593-ad9c-813b3248d025",
+        "allocationPercentage": 20,
+        "allocationType": "FIXED",
+        "typeOfWork": "DEVELOPMENT_WORK",
+        "status": "GREEN",
+        "isUpcoming": false,
+        "isLongRunning": false,
+        "allocationStartDate": "2025-01-14",
+        "projectPublicId": "250f2e1f-953e-44b3-95ab-46317657cdb6",
+        "name": "XtendX | Extension Framework",
+        "alias": "XtendX",
+        "hours": 39.43,
+        "loggedHoursPercentage": 44.63,
+        "totalHours": 946.44,
+        "isBillable": true,
+        "active": true,
+        "techStacks": [],
+        "allocationEndDate": "2026-06-04",
+        "allocationTimeline": [
+          {
+            "ticketPublicId": null,
+            "ticketNumber": null,
+            "scheduledChangePublicId": null,
+            "effectiveFrom": "2025-01-14",
+            "effectiveTo": "2026-06-04",
+            "allocationType": "FIXED",
+            "allocationPercentage": 20,
+            "isCurrent": false,
+            "isPending": false,
+            "segmentType": "STANDING"
+          }
+        ]
+      },
+      {
+        "projectPublicId": "dcfc7d74-07bc-4de9-a5fe-82841b52da44",
+        "name": "Ontime",
+        "hours": 3.29,
+        "loggedHoursPercentage": 3.72,
+        "totalHours": 78.9,
+        "isBillable": false,
+        "active": true,
+        "allocationTimeline": []
+      },
+      {
+        "projectPublicId": "54abbc30-3886-425b-a029-f0fe9af587a8",
+        "name": "Unassigned",
+        "hours": 3.29,
+        "loggedHoursPercentage": 3.72,
+        "totalHours": 79.07,
+        "isBillable": false,
+        "active": true,
+        "allocationTimeline": []
+      },
+      {
+        "projectPublicId": "699d7ccb-b84c-41d8-b150-5a9034925826",
+        "name": "L&D",
+        "alias": "L&D",
+        "hours": 3.25,
+        "loggedHoursPercentage": 3.68,
+        "totalHours": 77.96,
+        "isBillable": false,
+        "active": true,
+        "allocationTimeline": []
+      }
+    ],
+    "pastProjects": [
+      {
+        "projectAssignmentPublicId": "165d2834-057c-4d85-a09c-edd0939a1c5d",
+        "allocationPercentage": 20,
+        "allocationType": "FIXED",
+        "typeOfWork": "GUIDANCE_ONLY",
+        "status": "ARCHIVED",
+        "isUpcoming": false,
+        "isLongRunning": false,
+        "allocationStartDate": "2025-04-14",
+        "note": "Part-time allocation",
+        "projectPublicId": "745067de-94c2-4aa8-8da0-52b0f9a18102",
+        "name": "QueryOptix | DB Performance",
+        "totalHours": 0,
+        "isBillable": true,
+        "active": false,
+        "techStacks": [],
+        "allocationEndDate": "2026-03-10",
+        "allocationTimeline": [
+          {
+            "ticketPublicId": null,
+            "ticketNumber": null,
+            "scheduledChangePublicId": null,
+            "effectiveFrom": "2025-04-14",
+            "effectiveTo": "2026-03-10",
+            "allocationType": "FIXED",
+            "allocationPercentage": 20,
+            "isCurrent": false,
+            "isPending": false,
+            "segmentType": "STANDING"
+          }
+        ]
+      }
+    ],
+    "nonBillableData": null,
+    "prReviewerProjects": [],
+    "goals": [
+      {
+        "goalId": "f60b100b-8229-49ce-b5da-2381237920d3",
+        "goalName": "Mobile App Performance",
+        "goalDescription": "<p><strong><em><u>Optimize mobile applications </u></em></strong>for speed and efficiency</p><ul><li><p>ljbh</p></li><li><p>kjhb</p></li><li><p>\\b</p></li><li><p>kn</p></li><li><p></p></li></ul><p></p>",
+        "goalType": "TECHNICAL",
+        "certificateCode": null,
+        "status": "IN_PROGRESS",
+        "completionPercentage": 80,
+        "startedAt": "2025-12-15T00:00:00.000Z",
+        "completedAt": null
+      },
+      {
+        "goalId": "58a7c685-ca3b-4993-adb9-6524c41020e1",
+        "goalName": "SAP Consultant Certification",
+        "goalDescription": "SAP certified application associate",
+        "goalType": "CERTIFICATE",
+        "certificateCode": "SAP-ASSOC",
+        "status": "IN_PROGRESS",
+        "completionPercentage": 30,
+        "startedAt": "2026-02-19T00:00:00.000Z",
+        "completedAt": null
+      },
+      {
+        "goalId": "6c2c25fe-2430-469b-8322-6d99a38cc00c",
+        "goalName": "Scrum Master Certification",
+        "goalDescription": "Certified Scrum Master professional",
+        "goalType": "CERTIFICATE",
+        "certificateCode": "CSM",
+        "status": "IN_PROGRESS",
+        "completionPercentage": 40,
+        "startedAt": "2026-01-20T00:00:00.000Z",
+        "completedAt": null
+      },
+      {
+        "goalId": "4c0da439-b99f-4b1a-a505-c4e53f7ccdcc",
+        "goalName": "Salesforce Developer",
+        "goalDescription": "Salesforce platform developer certification",
+        "goalType": "CERTIFICATE",
+        "certificateCode": "SF-DEV",
+        "status": "COMPLETED",
+        "completionPercentage": 100,
+        "startedAt": "2025-12-13T00:00:00.000Z",
+        "completedAt": "2026-05-07T00:00:00.000Z"
+      },
+      {
+        "goalId": "ef2c2c5b-d4de-4a6f-b9ce-6675c22d8001",
+        "goalName": "Monitoring & Observability",
+        "goalDescription": "Implement comprehensive monitoring and logging solutions",
+        "goalType": "TECHNICAL",
+        "certificateCode": null,
+        "status": "COMPLETED",
+        "completionPercentage": 100,
+        "startedAt": "2026-01-14T00:00:00.000Z",
+        "completedAt": "2026-05-17T00:00:00.000Z"
+      }
+    ],
+    "availabilityPercentage": 11.13,
+    "allocationAvailabilityPercentage": 100,
+    "bookedAllocationPercentage": 61,
+    "remainingAllocationPercentage": 39,
+    "shadowDevelopers": []
+  },
+  "kriti": {
+    "publicId": "58891c8e-f56a-4fc3-bad4-a0bc5c12fceb",
+    "email": "kriti.desai@simformsolutions.com",
+    "microsoftOid": "e21752a9-1834-432c-8f0c-9d5bd91b56d0",
+    "kekaId": "4b15775f-9f5c-4692-bd16-4ba3f3f45997",
+    "name": "Kriti Desai",
+    "shiftPreferences": [
+      "NONE"
+    ],
+    "careerStartDate": "2024-11-02T00:00:00.000Z",
+    "dateOfJoining": "2025-05-13T00:00:00.000Z",
+    "isContractor": false,
+    "isTrainee": false,
+    "cohort": null,
+    "employeeOrigin": null,
+    "visaStatus": "NOT_SET",
+    "locationPreference": null,
+    "otherLocation": null,
+    "workMode": null,
+    "address": null,
+    "photoUrl": "https://i.pravatar.cc/150?u=kriti.desai@simformsolutions.com",
+    "linkedinUrl": null,
+    "createdAt": "2026-03-24T05:45:11.378Z",
+    "updatedAt": "2026-03-24T05:50:51.378Z",
+    "designation": {
+      "title": "Sr. QA Engineer",
+      "alias": "Sr. QAE"
+    },
+    "noticePeriod": null,
+    "resignation": null,
+    "pip": null,
+    "notes": [],
+    "visas": [],
+    "department": {
+      "publicId": "c868f1aa-6bc1-430c-b26a-11222919627f",
+      "name": "QA",
+      "iconUrl": "https://d3e6uquevgpr8q.cloudfront.net/department-icons/qa.svg"
+    },
+    "departmentStack": {
+      "publicId": "263f7e26-2bc6-415f-97ec-01c914c13276",
+      "stack": "Security",
+      "iconUrl": "https://cdn.simpleicons.org/owasp",
+      "departmentPublicId": "c868f1aa-6bc1-430c-b26a-11222919627f"
+    },
+    "projects": [
+      {
+        "projectAssignmentPublicId": "185b3904-9df2-4d17-b4f8-90811db2fb3e",
+        "allocationPercentage": 56,
+        "allocationType": "FIXED",
+        "typeOfWork": "NOT_WORKED_AT_ALL",
+        "status": "GREEN",
+        "isUpcoming": false,
+        "isLongRunning": false,
+        "allocationStartDate": "2026-08-05",
+        "note": "tuy",
+        "projectPublicId": "5eda6081-ca13-4829-9ff6-1550df11c6f8",
+        "name": "AbsoluteUI | Design System",
+        "totalHours": 0,
+        "isBillable": true,
+        "active": false,
+        "techStacks": [],
+        "allocationEndDate": "2026-08-27",
+        "allocationTimeline": [
+          {
+            "ticketPublicId": null,
+            "ticketNumber": null,
+            "scheduledChangePublicId": null,
+            "effectiveFrom": "2026-08-05",
+            "effectiveTo": "2026-08-27",
+            "allocationType": "FIXED",
+            "allocationPercentage": 56,
+            "isCurrent": false,
+            "isPending": false,
+            "segmentType": "STANDING"
+          }
+        ]
+      },
+      {
+        "projectPublicId": "dcfc7d74-07bc-4de9-a5fe-82841b52da44",
+        "name": "Ontime",
+        "hours": 29.76,
+        "loggedHoursPercentage": 33.62,
+        "totalHours": 714.26,
+        "isBillable": false,
+        "active": true,
+        "allocationTimeline": []
+      },
+      {
+        "projectPublicId": "699d7ccb-b84c-41d8-b150-5a9034925826",
+        "name": "L&D",
+        "alias": "L&D",
+        "hours": 29.41,
+        "loggedHoursPercentage": 33.22,
+        "totalHours": 705.89,
+        "isBillable": false,
+        "active": true,
+        "allocationTimeline": []
+      },
+      {
+        "projectPublicId": "54abbc30-3886-425b-a029-f0fe9af587a8",
+        "name": "Unassigned",
+        "hours": 29.36,
+        "loggedHoursPercentage": 33.16,
+        "totalHours": 704.55,
+        "isBillable": false,
+        "active": true,
+        "allocationTimeline": []
+      }
+    ],
+    "pastProjects": [],
+    "nonBillableData": {
+      "timeframe": "3m",
+      "percentage": 100
+    },
+    "prReviewerProjects": [],
+    "goals": [],
+    "availabilityPercentage": 100,
+    "allocationAvailabilityPercentage": 100,
+    "bookedAllocationPercentage": 0,
+    "remainingAllocationPercentage": 100,
+    "shadowDevelopers": []
+  }
+}

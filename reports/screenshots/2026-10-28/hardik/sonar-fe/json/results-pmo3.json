@@ -1,0 +1,486 @@
+{
+  "results": [
+    {
+      "id": "projects-list",
+      "ok": true,
+      "url": "https://simerp-dev.simform.solutions/projects",
+      "h": [
+        "Project Details"
+      ],
+      "tabs": [
+        "Billable",
+        "Non-Billable"
+      ],
+      "rows": 100,
+      "outputs": [
+        "Showing 1 - 100 of 399 results"
+      ],
+      "bad": [
+        {
+          "t": "NA",
+          "ctx": "SBSneha Bhatia[150]SRShaurya Rao[150]BBBhavin Barot[22]ABAnil Bansal[22]LRHBHemal Bose[22]PAPrakash Arora[22]SMSwati Mis"
+        }
+      ],
+      "shot": "reports/screenshots/2026-10-28/hardik/sonar-fe/q01-projects.png",
+      "errs": []
+    },
+    {
+      "id": "projects-sort-search",
+      "ok": true,
+      "u1": "https://simerp-dev.simform.solutions/projects?sortBy=name&sortOrder=asc",
+      "ph": "Search by name",
+      "u2": "https://simerp-dev.simform.solutions/projects?sortBy=name&sortOrder=asc&search=pulse",
+      "out": [
+        "Showing 1 - 5 of 5 results"
+      ],
+      "shot": "reports/screenshots/2026-10-28/hardik/sonar-fe/q02-projects-search.png",
+      "errs": []
+    },
+    {
+      "id": "projects-panel",
+      "ok": true,
+      "clicked": "AbsoluteUI | Design System",
+      "txt": "AbsoluteUI | Design System\n\nAG\nNot specified\n\nProject Manager\n\nRutu Ghosh\n\nCSM\n\nPranav Patel\n\nDescription\nEmployees (28)\nSort by\nLog. Hrs\nNAME\tLOG. HRS\tSINCE\n\nReyansh Vyas\nSr. SE\n8y\n\t74h\t1m ago\n\nNeel Menon\nLE\n7y 11m\nLR\n\t72h\t9m ago\n\nYatharth Thakor\nCSM\n8y 5m\nCRM Tools\n\t39h\t1y ago\n\nPrachi Das\nSr. SE\n5y 9m\nLR\n\t38h\t1y ago\n\nLaxmi Bhatt\nSr. SE\n6y 5m\n\t38h\t1y ago\n\nRavi Kumar\nSr. UIXD\n5y 9m\n\t37h\t1y ago\n\nShruti Parekh\nSr. UIXD\n8y 7m\n\t35h\t1y ago\n\nHetvi Gajjar\nDE\n12y 7m\n\t26h\t1y ago\n\nHemal Garg\nSr. SE\n10y 7m\n\t23h\t1y ago\n\nSimran Vyas\nSr. SE\n9y 5m\n\t19h\t1y ago\n\nSuresh Dave\nSE\n6y 10m\n\t18h\t1y ago\n\nOjas Bhatia\nMLE\n3y 8m\nAI/ML\nLR\n\t18h\t10m ago\n\nFeni Kamath\nCSM\n10y 6m\nCRM Tools\n\t15h\t1y ago\n\nUjjwal Garg\nNot specified\n7y\n\t14h\tNo data available\n\nSuresh Verma\nSE\n14y 2m\n\t11h\tNo data available\n\nKriti Mehta\nSE\n7y 3m\n\t0h\t2y ago\n\nSai Naik\nSr. SE\n11y\n\t0h\t4m ago\n\nLaxmi Shetty\nLE\n8y 11m\nAgile Delivery\nLR\n\t0h\t4m ago\n\nBhav",
+      "nameBtns": [],
+      "deptIcons": [
+        {
+          "label": null,
+          "alt": "L1 SUPPORT"
+        },
+        {
+          "label": null,
+          "alt": "JAVA"
+        },
+        {
+          "label": "Java",
+          "alt": "Java"
+        },
+        {
+          "label": null,
+          "alt": "CSM"
+        },
+        {
+          "label": null,
+          "alt": "ROR"
+        },
+        {
+          "label": "ROR",
+          "alt": "ROR"
+        }
+      ],
+      "sortBtns": [
+        "Sort by",
+        "Toggle sort order"
+      ],
+      "bad": [
+        {
+          "t": "NA",
+          "ctx": "SBSneha Bhatia[150]SRShaurya Rao[150]BBBhavin Barot[22]ABAnil Bansal[22]LRHBHemal Bose[22]PAPrakash Arora[22]SMSwati Mis"
+        }
+      ],
+      "shot": "reports/screenshots/2026-10-28/hardik/sonar-fe/q03-project-side-panel.png",
+      "errs": [
+        {
+          "type": "http404",
+          "url": "https://simerp-dev.simform.solutions/projects?sortBy=name&sortOrder=asc",
+          "text": "GET https://cdn.simpleicons.org/openai"
+        },
+        {
+          "type": "error",
+          "url": "https://simerp-dev.simform.solutions/projects?sortBy=name&sortOrder=asc",
+          "text": "Failed to load resource: the server responded with a status of 404 ()"
+        }
+      ]
+    },
+    {
+      "id": "projects-panel-dept-icon-tooltip",
+      "ok": true,
+      "tip": [
+        "L1 SUPPORT"
+      ],
+      "shot": "reports/screenshots/2026-10-28/hardik/sonar-fe/q04-project-panel-dept-tooltip.png",
+      "errs": []
+    },
+    {
+      "id": "projects-panel-employee-click",
+      "ok": true,
+      "note": "no employee name button",
+      "errs": []
+    },
+    {
+      "id": "team",
+      "ok": true,
+      "url": "https://simerp-dev.simform.solutions/team?departmentId=ea92f58c-c1d7-4abe-aca4-8d07d31712c6",
+      "h": [
+        "Team Details"
+      ],
+      "tabs": [],
+      "rows": 0,
+      "outputs": [],
+      "bad": [],
+      "btns": [
+        "1145 unread notifications",
+        "vihaan.chatterjee@simformsolutions.com - User menu",
+        "PROJECT MANAGEMENT OFFICE",
+        "Add Team",
+        "Show All Details",
+        "Edit team"
+      ],
+      "copy": 0,
+      "copyLabel": 0,
+      "shot": "reports/screenshots/2026-10-28/hardik/sonar-fe/q06-team.png",
+      "errs": []
+    },
+    {
+      "id": "team-dept-switch-member",
+      "ok": true,
+      "opts": [
+        "ADMIN",
+        "ANDROID",
+        "BI",
+        "BLOCKCHAIN",
+        "CMS",
+        "CSM",
+        "DATA ENGINEERING",
+        "DELIVERY"
+      ],
+      "cards": [],
+      "mt": "Add Team",
+      "panel": [],
+      "bad": [],
+      "shot": "reports/screenshots/2026-10-28/hardik/sonar-fe/q07-team-member-panel.png",
+      "errs": []
+    },
+    {
+      "id": "dashboard",
+      "ok": true,
+      "url": "https://simerp-dev.simform.solutions/dashboard",
+      "h": [
+        "Dashboard",
+        "All Activity"
+      ],
+      "tabs": [],
+      "rows": 100,
+      "outputs": [
+        "Showing 1 - 100 of 6034 results"
+      ],
+      "bad": [],
+      "fills": [
+        "var(--dashboard-fixed)",
+        "var(--dashboard-dynamic)"
+      ],
+      "shot": "reports/screenshots/2026-10-28/hardik/sonar-fe/q08-dashboard.png",
+      "errs": []
+    },
+    {
+      "id": "dashboard-donut-hover",
+      "ok": true,
+      "changed": [
+        false,
+        false
+      ],
+      "tip": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "center": [
+        "3,515htotal hours"
+      ],
+      "shot": "reports/screenshots/2026-10-28/hardik/sonar-fe/q09-dashboard-donut-hover.png",
+      "errs": []
+    },
+    {
+      "id": "goals",
+      "ok": true,
+      "url": "https://simerp-dev.simform.solutions/employee/goals",
+      "h": [
+        "Goals"
+      ],
+      "tabs": [
+        "Dashboard",
+        "Goals"
+      ],
+      "rows": 0,
+      "outputs": [
+        "Showing 1–5 of 49 goals",
+        "Showing 1–5 of 49 goals"
+      ],
+      "bad": [],
+      "fills": [
+        "var(--badge-green-text)",
+        "var(--sidebar-gradient-to)",
+        "var(--badge-rose-text)",
+        "var(--color-violet-200)",
+        "var(--badge-green-text)",
+        "var(--badge-blue-text)"
+      ],
+      "center": [],
+      "fieldsets": [
+        "Goal filters"
+      ],
+      "shot": "reports/screenshots/2026-10-28/hardik/sonar-fe/q10-goals.png",
+      "errs": []
+    },
+    {
+      "id": "goals-ld-chart-tooltip",
+      "ok": true,
+      "tip": [
+        "",
+        "",
+        "Aarav ChopraCompleted1In Progress2L&D Hours by Team Member12h"
+      ],
+      "shot": "reports/screenshots/2026-10-28/hardik/sonar-fe/q11-goals-ld-tooltip.png",
+      "errs": []
+    },
+    {
+      "id": "goals-ranked-pagination",
+      "ok": true,
+      "outs": [
+        "Showing 1–5 of 49 goals",
+        "Showing 1–5 of 49 goals"
+      ],
+      "nCombos": 3,
+      "errs": []
+    },
+    {
+      "id": "goals-tabs",
+      "ok": true,
+      "Dashboard": {
+        "rows": 0,
+        "ths": [],
+        "bad": []
+      },
+      "Goals": {
+        "rows": 200,
+        "ths": [
+          "Show goals",
+          "Employee",
+          "Reporting Manager",
+          "Goals",
+          "Overdue Goals",
+          "Certificates",
+          "L&D Hours"
+        ],
+        "bad": []
+      },
+      "errs": []
+    },
+    {
+      "id": "goals-by-goal-sort",
+      "ok": true,
+      "note": "no sort on dept assigned",
+      "ths": [
+        "Show goals",
+        "Employee",
+        "Reporting Manager",
+        "Goals",
+        "Overdue Goals",
+        "Certificates",
+        "L&D Hours"
+      ],
+      "errs": []
+    },
+    {
+      "id": "tech-stack",
+      "ok": true,
+      "url": "https://simerp-dev.simform.solutions/tech-stack?sortBy=name&sortOrder=asc",
+      "h": [
+        "Tech Stack",
+        "Tech Stack"
+      ],
+      "tabs": [],
+      "rows": 100,
+      "outputs": [
+        "Showing 1 - 100 of 399 results"
+      ],
+      "bad": [],
+      "shot": "reports/screenshots/2026-10-28/hardik/sonar-fe/q13-tech-stack.png",
+      "errs": [
+        {
+          "type": "requestfailed",
+          "url": "https://simerp-dev.simform.solutions/tech-stack?sortBy=name&sortOrder=asc",
+          "text": "net::ERR_BLOCKED_BY_ORB https://upload.wikimedia.org/wikipedia/commons/4/4d/OpenAI_Logo.svg"
+        }
+      ]
+    },
+    {
+      "id": "working-location",
+      "ok": true,
+      "url": "https://simerp-dev.simform.solutions/working-location",
+      "h": [
+        "Working Location",
+        "Departments",
+        "Employees"
+      ],
+      "tabs": [],
+      "rows": 20,
+      "outputs": [
+        "Showing 1 - 10 of 41 results",
+        "Showing 1 - 10 of 3649 results"
+      ],
+      "bad": [],
+      "shot": "reports/screenshots/2026-10-28/hardik/sonar-fe/q14-working-location.png",
+      "errs": [
+        {
+          "type": "requestfailed",
+          "url": "https://simerp-dev.simform.solutions/working-location",
+          "text": "net::ERR_NETWORK_IO_SUSPENDED https://simerp-dev-api.simform.solutions/api/v1/notifications?page=9&limit=100&isRead=false"
+        },
+        {
+          "type": "error",
+          "url": "https://simerp-dev.simform.solutions/working-location",
+          "text": "Failed to load resource: net::ERR_NETWORK_IO_SUSPENDED"
+        },
+        {
+          "type": "requestfailed",
+          "url": "https://simerp-dev.simform.solutions/working-location",
+          "text": "net::ERR_NAME_NOT_RESOLVED https://simerp-dev-api.simform.solutions/socket.io/?EIO=4&transport=polling&t=r16deli9"
+        },
+        {
+          "type": "error",
+          "url": "https://simerp-dev.simform.solutions/working-location",
+          "text": "Failed to load resource: net::ERR_NAME_NOT_RESOLVED"
+        },
+        {
+          "type": "requestfailed",
+          "url": "https://simerp-dev.simform.solutions/working-location",
+          "text": "net::ERR_NAME_NOT_RESOLVED https://sentry-insights.simformsolutions.com/api/159/envelope/?sentry_version=7&sentry_key=5bce7865a7befd683ce077c0d3426309&sentry_client=sentry.javascript.react%2F10.75.0"
+        },
+        {
+          "type": "error",
+          "url": "https://simerp-dev.simform.solutions/working-location",
+          "text": "Failed to load resource: net::ERR_NAME_NOT_RESOLVED"
+        },
+        {
+          "type": "requestfailed",
+          "url": "https://simerp-dev.simform.solutions/working-location",
+          "text": "net::ERR_NAME_NOT_RESOLVED https://simerp-dev-api.simform.solutions/socket.io/?EIO=4&transport=polling&t=r17sfpz5"
+        },
+        {
+          "type": "error",
+          "url": "https://simerp-dev.simform.solutions/working-location",
+          "text": "Failed to load resource: net::ERR_NAME_NOT_RESOLVED"
+        }
+      ]
+    },
+    {
+      "id": "wl-trend-tooltip",
+      "ok": true,
+      "tip": [
+        "Fri 9 OctWFO56.3%WFH43.7%"
+      ],
+      "shot": "reports/screenshots/2026-10-28/hardik/sonar-fe/q15-wl-trend-tooltip.png",
+      "errs": []
+    },
+    {
+      "id": "skills",
+      "ok": false,
+      "error": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://simerp-dev.simform.solutions/employee/skills\nCall log:\n  - navigating to \"https://simerp-dev.simform.solutions/employee/skills\", waiting until \"domcontentloaded\"\n",
+      "errs": [
+        {
+          "type": "requestfailed",
+          "url": "https://simerp-dev.simform.solutions/working-location",
+          "text": "net::ERR_NAME_NOT_RESOLVED https://simerp-dev.simform.solutions/employee/skills"
+        }
+      ]
+    },
+    {
+      "id": "certifications",
+      "ok": false,
+      "error": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://simerp-dev.simform.solutions/employee/certifications\nCall log:\n  - navigating to \"https://simerp-dev.simform.solutions/employee/certifications\", waiting until \"domcontentloaded\"\n",
+      "errs": [
+        {
+          "type": "requestfailed",
+          "url": "https://simerp-dev.simform.solutions/working-location",
+          "text": "net::ERR_NAME_NOT_RESOLVED https://simerp-dev.simform.solutions/employee/certifications"
+        }
+      ]
+    },
+    {
+      "id": "notifications",
+      "ok": false,
+      "error": "page.goto: net::ERR_NAME_NOT_RESOLVED at https://simerp-dev.simform.solutions/notifications\nCall log:\n  - navigating to \"https://simerp-dev.simform.solutions/notifications\", waiting until \"domcontentloaded\"\n",
+      "errs": [
+        {
+          "type": "requestfailed",
+          "url": "chrome-error://chromewebdata/",
+          "text": "net::ERR_NAME_NOT_RESOLVED https://simerp-dev.simform.solutions/notifications"
+        }
+      ]
+    }
+  ],
+  "errs": [
+    {
+      "type": "http404",
+      "url": "https://simerp-dev.simform.solutions/projects?sortBy=name&sortOrder=asc",
+      "text": "GET https://cdn.simpleicons.org/openai"
+    },
+    {
+      "type": "error",
+      "url": "https://simerp-dev.simform.solutions/projects?sortBy=name&sortOrder=asc",
+      "text": "Failed to load resource: the server responded with a status of 404 ()"
+    },
+    {
+      "type": "requestfailed",
+      "url": "https://simerp-dev.simform.solutions/tech-stack?sortBy=name&sortOrder=asc",
+      "text": "net::ERR_BLOCKED_BY_ORB https://upload.wikimedia.org/wikipedia/commons/4/4d/OpenAI_Logo.svg"
+    },
+    {
+      "type": "requestfailed",
+      "url": "https://simerp-dev.simform.solutions/working-location",
+      "text": "net::ERR_NETWORK_IO_SUSPENDED https://simerp-dev-api.simform.solutions/api/v1/notifications?page=9&limit=100&isRead=false"
+    },
+    {
+      "type": "error",
+      "url": "https://simerp-dev.simform.solutions/working-location",
+      "text": "Failed to load resource: net::ERR_NETWORK_IO_SUSPENDED"
+    },
+    {
+      "type": "requestfailed",
+      "url": "https://simerp-dev.simform.solutions/working-location",
+      "text": "net::ERR_NAME_NOT_RESOLVED https://simerp-dev-api.simform.solutions/socket.io/?EIO=4&transport=polling&t=r16deli9"
+    },
+    {
+      "type": "error",
+      "url": "https://simerp-dev.simform.solutions/working-location",
+      "text": "Failed to load resource: net::ERR_NAME_NOT_RESOLVED"
+    },
+    {
+      "type": "requestfailed",
+      "url": "https://simerp-dev.simform.solutions/working-location",
+      "text": "net::ERR_NAME_NOT_RESOLVED https://sentry-insights.simformsolutions.com/api/159/envelope/?sentry_version=7&sentry_key=5bce7865a7befd683ce077c0d3426309&sentry_client=sentry.javascript.react%2F10.75.0"
+    },
+    {
+      "type": "error",
+      "url": "https://simerp-dev.simform.solutions/working-location",
+      "text": "Failed to load resource: net::ERR_NAME_NOT_RESOLVED"
+    },
+    {
+      "type": "requestfailed",
+      "url": "https://simerp-dev.simform.solutions/working-location",
+      "text": "net::ERR_NAME_NOT_RESOLVED https://simerp-dev-api.simform.solutions/socket.io/?EIO=4&transport=polling&t=r17sfpz5"
+    },
+    {
+      "type": "error",
+      "url": "https://simerp-dev.simform.solutions/working-location",
+      "text": "Failed to load resource: net::ERR_NAME_NOT_RESOLVED"
+    },
+    {
+      "type": "requestfailed",
+      "url": "https://simerp-dev.simform.solutions/working-location",
+      "text": "net::ERR_NAME_NOT_RESOLVED https://simerp-dev.simform.solutions/employee/skills"
+    },
+    {
+      "type": "requestfailed",
+      "url": "https://simerp-dev.simform.solutions/working-location",
+      "text": "net::ERR_NAME_NOT_RESOLVED https://simerp-dev.simform.solutions/employee/certifications"
+    },
+    {
+      "type": "requestfailed",
+      "url": "chrome-error://chromewebdata/",
+      "text": "net::ERR_NAME_NOT_RESOLVED https://simerp-dev.simform.solutions/notifications"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "results": [
+    {
+      "id": "dialog",
+      "ok": true,
+      "dialog": "What do you want to do with the ticket? | Capture independent client outcome and mark opportunity closed. | Client Won | Finalised candidates move to Won, the rest are released. | Client Lost | Opportunity lost, every active candidate moves to Lost. | On Hold | Client paused, candidates are On Hold & can be resumed later. | Cancel | Confirm Close Ticket | Close",
+      "errs": []
+    }
+  ],
+  "errs": []
+}

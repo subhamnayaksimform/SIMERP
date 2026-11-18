@@ -1,0 +1,63 @@
+{
+  "before": "H1-after",
+  "after": "H2-after",
+  "beforeAt": "2026-10-20T08:48:47.979Z",
+  "afterAt": "2026-10-20T08:50:07.661Z",
+  "newByUser": {
+    "gaurav.dutta": [
+      {
+        "eventType": "allocation_ticket.developer_updated",
+        "title": "Allocation Updated: HyperScale | Scalability Engine",
+        "body": "Your allocation for HyperScale | Scalability Engine has been updated.",
+        "createdAt": "2026-10-20T08:49:44.650Z",
+        "ctx": {
+          "ticketPublicId": "4c9c0a7d-640b-473f-9313-03508cdfe745"
+        }
+      }
+    ],
+    "kartik.hegde": [
+      {
+        "eventType": "allocation_ticket.developer_rm_updated",
+        "title": "Assignment Updated: Gaurav Dutta",
+        "body": "Gaurav Dutta's allocation for HyperScale | Scalability Engine has been updated.",
+        "createdAt": "2026-10-20T08:49:44.828Z",
+        "ctx": {
+          "ticketPublicId": "4c9c0a7d-640b-473f-9313-03508cdfe745"
+        }
+      }
+    ],
+    "hardik.trivedi": [
+      {
+        "eventType": "allocation_ticket.pm_updated",
+        "title": "Assignment Updated: HyperScale | Scalability Engine",
+        "body": "The project assignment for Gaurav Dutta has been successfully updated.",
+        "createdAt": "2026-10-20T08:49:44.892Z",
+        "ctx": {
+          "ticketPublicId": "4c9c0a7d-640b-473f-9313-03508cdfe745"
+        }
+      }
+    ],
+    "amit.patel": [
+      {
+        "eventType": "allocation_ticket.developer_rm_updated",
+        "title": "Assignment Updated: Gaurav Dutta",
+        "body": "Gaurav Dutta's allocation for HyperScale | Scalability Engine has been updated.",
+        "createdAt": "2026-10-20T08:49:44.829Z",
+        "ctx": {
+          "ticketPublicId": "4c9c0a7d-640b-473f-9313-03508cdfe745"
+        }
+      }
+    ],
+    "cto": [
+      {
+        "eventType": "allocation_ticket.developer_rm_updated",
+        "title": "Assignment Updated: Gaurav Dutta",
+        "body": "Gaurav Dutta's allocation for HyperScale | Scalability Engine has been updated.",
+        "createdAt": "2026-10-20T08:49:44.829Z",
+        "ctx": {
+          "ticketPublicId": "4c9c0a7d-640b-473f-9313-03508cdfe745"
+        }
+      }
+    ]
+  }
+}

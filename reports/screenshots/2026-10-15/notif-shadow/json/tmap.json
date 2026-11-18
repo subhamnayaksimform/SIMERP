@@ -1,0 +1,18 @@
+{
+  "T0": "2026-10-15T10:36:12.495Z",
+  "status": "APPROVED",
+  "approvals": {
+    "pmoApprovedBy": {
+      "publicId": "e93f5377-1f74-42cb-9a40-255908e50310",
+      "name": "Bhumi Chauhan",
+      "photoUrl": "https://i.pravatar.cc/150?u=bhumi.chauhan@simformsolutions.com"
+    },
+    "pmoApprovedAt": "2026-10-15T10:31:45.072Z",
+    "tmApprovedBy": {
+      "publicId": "8951ac85-7a7e-4b99-aa13-ebfe00509930",
+      "name": "Sudhansu Patel",
+      "photoUrl": "https://i.pravatar.cc/150?u=sudhansu.patel@simformsolutions.com"
+    },
+    "tmApprovedAt": "2026-10-15T10:36:21.772Z"
+  }
+}

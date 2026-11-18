@@ -1,0 +1,51 @@
+{
+  "results": [
+    {
+      "id": "releases-api",
+      "ok": true,
+      "status": 200,
+      "n": 0,
+      "errs": []
+    },
+    {
+      "id": "whats-new-wait",
+      "ok": true,
+      "t": "All pages\nAll types\n0 releases · select a version to see its changes\nExpand all\nCollapse all\nNo release notes found\n\nTry a different search, page or type of change.",
+      "shot": "reports/screenshots/2026-10-28/hardik/sonar-fe/e06b-whats-new-vishal.desai.png",
+      "errs": []
+    },
+    {
+      "id": "help-toggle",
+      "ok": false,
+      "error": "locator.click: Timeout 30000ms exceeded.\nCall log:\n  - waiting for locator('main').last().locator('button[aria-expanded]:not([aria-haspopup])').nth(1)\n    - locator resolved to <button type=\"button\" data-state=\"closed\" aria-expanded=\"false\" aria-controls=\"radix-_r_o_\" data-slot=\"collapsible-trigger\" aria-label=\"Show steps for Sign in\" class=\"flex w-full items-center gap-3 px-4 py-3 text-left hover",
+      "errs": []
+    },
+    {
+      "id": "not-found-page",
+      "ok": true,
+      "btns": [
+        "Go to Profile"
+      ],
+      "button": "Go to Profile",
+      "after": "https://simerp-dev.simform.solutions/profile",
+      "shot": "reports/screenshots/2026-10-28/hardik/sonar-fe/e08-not-found.png",
+      "errs": []
+    },
+    {
+      "id": "visa-section",
+      "ok": true,
+      "txt": "Visa Information\nAdd Visa\n\nAdd visas you currently hold.\n\nNo visa records added.",
+      "btns": [
+        "Add Visa"
+      ],
+      "errs": []
+    },
+    {
+      "id": "visa-add-open-cancel",
+      "ok": false,
+      "error": "locator.innerText: Timeout 30000ms exceeded.\nCall log:\n  - waiting for locator('[role=\"dialog\"], aside[aria-hidden=\"false\"]').last()\n",
+      "errs": []
+    }
+  ],
+  "errs": []
+}

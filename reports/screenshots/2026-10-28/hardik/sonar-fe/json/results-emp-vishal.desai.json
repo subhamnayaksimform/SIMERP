@@ -1,0 +1,128 @@
+{
+  "results": [
+    {
+      "id": "profile",
+      "ok": true,
+      "url": "https://simerp-dev.simform.solutions/profile",
+      "sb": [
+        "SimERP6.5.0",
+        "Employee",
+        "What's New & History",
+        "Help & Support"
+      ],
+      "ths": [
+        "Action",
+        "Project Name - Allocation",
+        "Start Date",
+        "End Date",
+        "Total Logged Hours",
+        "Status",
+        "Project Manager",
+        "Tech Stack",
+        "Skill",
+        "Is Primary"
+      ],
+      "cards": [
+        "Skills",
+        "Primary",
+        "Secondary",
+        "Working Location",
+        "Last 7 Days (Attendance)",
+        "Visa Information",
+        "Project Allocation Details"
+      ],
+      "bad": [
+        {
+          "t": "-",
+          "ctx": "Sat10-Oct 10: No record"
+        },
+        {
+          "t": "-",
+          "ctx": "Tue13-Oct 13: No record"
+        }
+      ],
+      "shot": "reports/screenshots/2026-10-28/hardik/sonar-fe/e01-profile.png",
+      "errs": []
+    },
+    {
+      "id": "profile-allocation-badges",
+      "ok": true,
+      "badges": [
+        "",
+        "ZoneGuard",
+        "A/B TestingACAcceptance Criter",
+        "",
+        "",
+        ""
+      ],
+      "card": [],
+      "shot": "reports/screenshots/2026-10-28/hardik/sonar-fe/e02-profile-badge-focus.png",
+      "errs": []
+    },
+    {
+      "id": "ratings-card",
+      "ok": true,
+      "t": null,
+      "errs": []
+    },
+    {
+      "id": "visa-dialog-open-cancel",
+      "ok": false,
+      "error": "locator.waitFor: Timeout 5000ms exceeded.\nCall log:\n  - waiting for getByRole('dialog').first() to be visible\n",
+      "errs": []
+    },
+    {
+      "id": "my-goals",
+      "ok": true,
+      "url": "https://simerp-dev.simform.solutions/unauthorized",
+      "h": [
+        "Unauthorized",
+        "Access Denied"
+      ],
+      "bad": [],
+      "shot": "reports/screenshots/2026-10-28/hardik/sonar-fe/e04-my-goals.png",
+      "errs": []
+    },
+    {
+      "id": "help-toggle",
+      "ok": false,
+      "error": "locator.click: Timeout 30000ms exceeded.\nCall log:\n  - waiting for locator('main button[aria-expanded]').nth(1)\n    - locator resolved to <button type=\"button\" id=\"radix-_r_f_\" data-state=\"open\" aria-haspopup=\"menu\" aria-expanded=\"true\" aria-controls=\"radix-_r_g_\" data-slot=\"dropdown-menu-trigger\" aria-label=\"vishal.desai@simformsolutions.com - User menu\" class=\"group flex items-center gap-2 round",
+      "errs": []
+    },
+    {
+      "id": "whats-new",
+      "ok": true,
+      "url": "https://simerp-dev.simform.solutions/whats-new",
+      "h": [
+        "What's New",
+        "No release notes found"
+      ],
+      "badges": [],
+      "bad": [],
+      "shot": "reports/screenshots/2026-10-28/hardik/sonar-fe/e06-whats-new.png",
+      "errs": []
+    },
+    {
+      "id": "unauthorized-page",
+      "ok": true,
+      "u1": "https://simerp-dev.simform.solutions/unauthorized",
+      "button": "Go to Profile",
+      "after": "https://simerp-dev.simform.solutions/profile",
+      "shot": "reports/screenshots/2026-10-28/hardik/sonar-fe/e07-unauthorized.png",
+      "errs": []
+    },
+    {
+      "id": "not-found-page",
+      "ok": false,
+      "error": "locator.textContent: Timeout 30000ms exceeded.\nCall log:\n  - waiting for locator('main').last().getByRole('button').first()\n",
+      "errs": []
+    },
+    {
+      "id": "employee-list-forbidden",
+      "ok": true,
+      "url": "https://simerp-dev.simform.solutions/unauthorized",
+      "errs": []
+    }
+  ],
+  "errs": []
+}

@@ -1,0 +1,844 @@
+{
+  "DA1": {
+    "publicId": "2cd93f4e-199e-4b22-9ee2-a55e78630e09",
+    "ticketNumber": "DA-0120",
+    "ticketType": "DEALLOCATE_ALLOCATION",
+    "intent": null,
+    "status": "AWAITING_CONFIRMATION",
+    "priority": "LOW",
+    "allocationRequestCreationType": null,
+    "allocationEndDate": "2026-10-31T00:00:00.000Z",
+    "effectiveStartDate": null,
+    "effectiveEndDate": null,
+    "project": {
+      "publicId": "3d138a89-4d06-4839-8091-436fba0a2dd6",
+      "name": "HyperScale | Scalability Engine",
+      "csmId": "3850",
+      "accountGrade": 6.8
+    },
+    "department": {
+      "publicId": "c868f1aa-6bc1-430c-b26a-11222919627f",
+      "name": "QA",
+      "iconUrl": "https://d3e6uquevgpr8q.cloudfront.net/department-icons/qa.svg"
+    },
+    "departmentTechStack": [
+      {
+        "name": "Manual",
+        "logoUrl": "https://cdn.simpleicons.org/testinglibrary"
+      },
+      {
+        "name": "Automation",
+        "logoUrl": "https://cdn.simpleicons.org/selenium"
+      },
+      {
+        "name": "Mix",
+        "logoUrl": "https://cdn.simpleicons.org/testinglibrary"
+      },
+      {
+        "name": "Performance",
+        "logoUrl": "https://cdn.simpleicons.org/apachejmeter"
+      },
+      {
+        "name": "Security",
+        "logoUrl": "https://cdn.simpleicons.org/owasp"
+      }
+    ],
+    "additionalTechStacks": [],
+    "allocationStartDate": "2026-08-25T00:00:00.000Z",
+    "requestedAllocationType": "FIXED",
+    "requestedAllocationPercentage": null,
+    "allocationSnapshot": {
+      "reason": "UPDATED",
+      "allocationType": "FIXED",
+      "allocationPercentage": null,
+      "allocationStartDate": "2026-08-25T00:00:00.000Z",
+      "allocationEndDate": "2026-10-31T00:00:00.000Z",
+      "typeOfWork": "DEVELOPMENT_WORK",
+      "previousAllocationPercentage": 20,
+      "previousAllocationStartDate": "2026-08-25T00:00:00.000Z",
+      "createdAt": "2026-10-21T06:25:36.153Z"
+    },
+    "allocationSnapshots": [
+      {
+        "reason": "UPDATED",
+        "allocationType": "FIXED",
+        "allocationPercentage": null,
+        "allocationStartDate": "2026-08-25T00:00:00.000Z",
+        "allocationEndDate": "2026-10-31T00:00:00.000Z",
+        "typeOfWork": "DEVELOPMENT_WORK",
+        "previousAllocationPercentage": 20,
+        "previousAllocationStartDate": "2026-08-25T00:00:00.000Z",
+        "createdAt": "2026-10-21T06:25:36.153Z"
+      }
+    ],
+    "targetScheduledChangePublicId": null,
+    "supersededTicketPublicId": null,
+    "supersededTicketNumber": null,
+    "replacedAssignment": {
+      "publicId": "32c30658-ed74-4565-b5b0-632e8d54a850",
+      "employee": {
+        "publicId": "12e25516-2373-4925-9ecc-1732ca6f61b6",
+        "name": "Bhavesh Bansal",
+        "photoUrl": "https://i.pravatar.cc/150?u=bhavesh.bansal@simformsolutions.com"
+      },
+      "project": {
+        "publicId": "3d138a89-4d06-4839-8091-436fba0a2dd6",
+        "name": "HyperScale | Scalability Engine"
+      },
+      "allocationPercentage": 20,
+      "allocationType": "FIXED",
+      "allocationStartDate": "2026-08-25T00:00:00.000Z",
+      "status": "GREEN",
+      "typeOfWork": "DEVELOPMENT_WORK",
+      "allocationOrigin": "FLOW"
+    },
+    "preferredEmployees": [],
+    "shortlistedEmployees": [],
+    "requester": {
+      "publicId": "09d434e9-5346-4790-8ae7-f5105e5b4968",
+      "name": "Priya Chopra",
+      "photoUrl": "https://i.pravatar.cc/150?u=priya.chopra@simformsolutions.com"
+    },
+    "createdAt": "2026-10-21T06:25:36.140Z",
+    "updatedAt": "2026-10-21T06:25:36.140Z",
+    "statusSteps": [
+      {
+        "key": "SUBMITTED",
+        "title": "CSM submits request",
+        "description": "CSM submits a deallocation request",
+        "state": "COMPLETED",
+        "completedAt": "2026-10-21T06:25:36.140Z",
+        "performedBy": {
+          "publicId": "09d434e9-5346-4790-8ae7-f5105e5b4968",
+          "name": "Priya Chopra",
+          "photoUrl": "https://i.pravatar.cc/150?u=priya.chopra@simformsolutions.com"
+        }
+      },
+      {
+        "key": "PMO_REVIEWED",
+        "title": "PMO Review",
+        "description": "Pending PMO action",
+        "state": "COMPLETED",
+        "completedAt": "2026-10-21T06:25:36.140Z",
+        "performedBy": {
+          "publicId": "09d434e9-5346-4790-8ae7-f5105e5b4968",
+          "name": "Priya Chopra",
+          "photoUrl": "https://i.pravatar.cc/150?u=priya.chopra@simformsolutions.com"
+        }
+      },
+      {
+        "key": "ACKNOWLEDGED",
+        "title": "PMO Acknowledges",
+        "description": "PMO approved",
+        "state": "CURRENT"
+      },
+      {
+        "key": "NOTIFIED",
+        "title": "RM/TM/EM Notified",
+        "description": "Awaiting confirmation",
+        "state": "PENDING"
+      },
+      {
+        "key": "FINALIZED",
+        "title": "Employee Deallocated",
+        "description": "Employee received notification",
+        "state": "PENDING"
+      }
+    ],
+    "approvals": {},
+    "feedbacks": [
+      {
+        "developer": {
+          "publicId": "12e25516-2373-4925-9ecc-1732ca6f61b6",
+          "name": "Bhavesh Bansal",
+          "photoUrl": "https://i.pravatar.cc/150?u=bhavesh.bansal@simformsolutions.com"
+        },
+        "coreSkillRating": 7,
+        "communicationRating": 7,
+        "behavioralRating": 7,
+        "overallRating": 7,
+        "developerFeedback": "QA retest SI4-I576..I579 2026-10-21 - shadow swap (new).",
+        "isOpenToWorkWithAgain": true,
+        "deallocationReason": "ROLE_MISALIGNMENT"
+      }
+    ],
+    "targetAssignmentTimeline": [
+      {
+        "ticketPublicId": null,
+        "ticketNumber": null,
+        "scheduledChangePublicId": null,
+        "effectiveFrom": "2026-08-25",
+        "effectiveTo": null,
+        "allocationType": "FIXED",
+        "allocationPercentage": 20,
+        "isCurrent": true,
+        "isPending": false,
+        "segmentType": "STANDING"
+      }
+    ],
+    "group": {
+      "publicId": "1bef2430-d087-4196-9712-671611dd98be",
+      "groupNumber": 5,
+      "flowType": "SHADOW_TO_MAIN_NEW_SHADOW",
+      "step": 1,
+      "totalSteps": 2,
+      "isBlocked": false,
+      "blockedBy": [],
+      "hasHiddenTickets": false,
+      "tickets": [
+        {
+          "publicId": "2cd93f4e-199e-4b22-9ee2-a55e78630e09",
+          "ticketNumber": "DA-0120",
+          "ticketType": "DEALLOCATE_ALLOCATION",
+          "step": 1,
+          "status": "AWAITING_CONFIRMATION",
+          "employee": {
+            "publicId": "12e25516-2373-4925-9ecc-1732ca6f61b6",
+            "name": "Bhavesh Bansal",
+            "photoUrl": "https://i.pravatar.cc/150?u=bhavesh.bansal@simformsolutions.com"
+          }
+        },
+        {
+          "publicId": "1a1197f5-8b77-4c2f-9c0f-110d96b3894f",
+          "ticketNumber": "DA-0121",
+          "ticketType": "DEALLOCATE_ALLOCATION",
+          "step": 1,
+          "status": "AWAITING_CONFIRMATION",
+          "employee": {
+            "publicId": "f94d6cb2-e5b5-4c14-99d2-3fbd28a1cde9",
+            "name": "Kunal Menon",
+            "photoUrl": "https://i.pravatar.cc/150?u=kunal.menon@simformsolutions.com"
+          }
+        },
+        {
+          "publicId": "8a814d3f-8957-44c2-af59-a22caad616e4",
+          "ticketNumber": "NA-0386",
+          "ticketType": "NEW_ALLOCATION",
+          "step": 2,
+          "status": "OPEN",
+          "employee": null
+        },
+        {
+          "publicId": "31168f16-b3c6-4c4f-a707-05c5a8a0a00d",
+          "ticketNumber": "NA-0387",
+          "ticketType": "NEW_ALLOCATION",
+          "step": 2,
+          "status": "OPEN",
+          "employee": null
+        }
+      ]
+    }
+  },
+  "DA2": {
+    "publicId": "1a1197f5-8b77-4c2f-9c0f-110d96b3894f",
+    "ticketNumber": "DA-0121",
+    "ticketType": "DEALLOCATE_ALLOCATION",
+    "intent": null,
+    "status": "AWAITING_CONFIRMATION",
+    "priority": "LOW",
+    "allocationRequestCreationType": null,
+    "allocationEndDate": "2026-10-31T00:00:00.000Z",
+    "effectiveStartDate": null,
+    "effectiveEndDate": null,
+    "project": {
+      "publicId": "3d138a89-4d06-4839-8091-436fba0a2dd6",
+      "name": "HyperScale | Scalability Engine",
+      "csmId": "3850",
+      "accountGrade": 6.8
+    },
+    "department": {
+      "publicId": "02258af1-79b0-4e88-bebb-aee86933bd9c",
+      "name": "DATA ENGINEERING",
+      "iconUrl": "https://d3e6uquevgpr8q.cloudfront.net/department-icons/data-engineering.svg"
+    },
+    "departmentTechStack": [
+      {
+        "name": "Databricks",
+        "logoUrl": "https://cdn.simpleicons.org/databricks"
+      },
+      {
+        "name": "Azure Fabric",
+        "logoUrl": "https://cdn.simpleicons.org/microsoftazure"
+      },
+      {
+        "name": "Snowflake",
+        "logoUrl": "https://cdn.simpleicons.org/snowflake"
+      },
+      {
+        "name": "GCP",
+        "logoUrl": "https://cdn.simpleicons.org/googlecloud"
+      },
+      {
+        "name": "Power BI",
+        "logoUrl": "https://cdn.simpleicons.org/powerbi"
+      },
+      {
+        "name": "Tableau",
+        "logoUrl": "https://cdn.simpleicons.org/tableau"
+      },
+      {
+        "name": "Looker",
+        "logoUrl": "https://cdn.simpleicons.org/looker"
+      },
+      {
+        "name": "AWS",
+        "logoUrl": "https://cdn.simpleicons.org/amazonaws"
+      }
+    ],
+    "additionalTechStacks": [],
+    "allocationStartDate": "2026-10-21T00:00:00.000Z",
+    "requestedAllocationType": "FIXED",
+    "requestedAllocationPercentage": null,
+    "allocationSnapshot": {
+      "reason": "UPDATED",
+      "allocationType": "FIXED",
+      "allocationPercentage": null,
+      "allocationStartDate": "2026-10-21T00:00:00.000Z",
+      "allocationEndDate": "2026-10-31T00:00:00.000Z",
+      "typeOfWork": "DEVELOPMENT_WORK",
+      "previousAllocationPercentage": 10,
+      "previousAllocationStartDate": "2026-10-21T00:00:00.000Z",
+      "previousAllocationEndDate": "2026-12-31T00:00:00.000Z",
+      "createdAt": "2026-10-21T06:25:36.172Z"
+    },
+    "allocationSnapshots": [
+      {
+        "reason": "UPDATED",
+        "allocationType": "FIXED",
+        "allocationPercentage": null,
+        "allocationStartDate": "2026-10-21T00:00:00.000Z",
+        "allocationEndDate": "2026-10-31T00:00:00.000Z",
+        "typeOfWork": "DEVELOPMENT_WORK",
+        "previousAllocationPercentage": 10,
+        "previousAllocationStartDate": "2026-10-21T00:00:00.000Z",
+        "previousAllocationEndDate": "2026-12-31T00:00:00.000Z",
+        "createdAt": "2026-10-21T06:25:36.172Z"
+      }
+    ],
+    "targetScheduledChangePublicId": null,
+    "supersededTicketPublicId": null,
+    "supersededTicketNumber": null,
+    "replacedAssignment": {
+      "publicId": "e42fa570-8330-4b36-83cf-e36225135a6d",
+      "employee": {
+        "publicId": "f94d6cb2-e5b5-4c14-99d2-3fbd28a1cde9",
+        "name": "Kunal Menon",
+        "photoUrl": "https://i.pravatar.cc/150?u=kunal.menon@simformsolutions.com"
+      },
+      "project": {
+        "publicId": "3d138a89-4d06-4839-8091-436fba0a2dd6",
+        "name": "HyperScale | Scalability Engine"
+      },
+      "allocationPercentage": 10,
+      "allocationType": "FIXED",
+      "allocationStartDate": "2026-10-21T00:00:00.000Z",
+      "allocationEndDate": "2026-12-31T00:00:00.000Z",
+      "status": "GREEN",
+      "typeOfWork": "DEVELOPMENT_WORK",
+      "allocationOrigin": "PMO",
+      "shadowDeveloper": {
+        "publicId": "12e25516-2373-4925-9ecc-1732ca6f61b6",
+        "name": "Bhavesh Bansal",
+        "photoUrl": "https://i.pravatar.cc/150?u=bhavesh.bansal@simformsolutions.com"
+      }
+    },
+    "preferredEmployees": [],
+    "shortlistedEmployees": [],
+    "requester": {
+      "publicId": "09d434e9-5346-4790-8ae7-f5105e5b4968",
+      "name": "Priya Chopra",
+      "photoUrl": "https://i.pravatar.cc/150?u=priya.chopra@simformsolutions.com"
+    },
+    "createdAt": "2026-10-21T06:25:36.162Z",
+    "updatedAt": "2026-10-21T06:25:36.162Z",
+    "statusSteps": [
+      {
+        "key": "SUBMITTED",
+        "title": "CSM submits request",
+        "description": "CSM submits a deallocation request",
+        "state": "COMPLETED",
+        "completedAt": "2026-10-21T06:25:36.162Z",
+        "performedBy": {
+          "publicId": "09d434e9-5346-4790-8ae7-f5105e5b4968",
+          "name": "Priya Chopra",
+          "photoUrl": "https://i.pravatar.cc/150?u=priya.chopra@simformsolutions.com"
+        }
+      },
+      {
+        "key": "PMO_REVIEWED",
+        "title": "PMO Review",
+        "description": "Pending PMO action",
+        "state": "COMPLETED",
+        "completedAt": "2026-10-21T06:25:36.162Z",
+        "performedBy": {
+          "publicId": "09d434e9-5346-4790-8ae7-f5105e5b4968",
+          "name": "Priya Chopra",
+          "photoUrl": "https://i.pravatar.cc/150?u=priya.chopra@simformsolutions.com"
+        }
+      },
+      {
+        "key": "ACKNOWLEDGED",
+        "title": "PMO Acknowledges",
+        "description": "PMO approved",
+        "state": "CURRENT"
+      },
+      {
+        "key": "NOTIFIED",
+        "title": "RM/TM/EM Notified",
+        "description": "Awaiting confirmation",
+        "state": "PENDING"
+      },
+      {
+        "key": "FINALIZED",
+        "title": "Employee Deallocated",
+        "description": "Employee received notification",
+        "state": "PENDING"
+      }
+    ],
+    "approvals": {},
+    "feedbacks": [
+      {
+        "developer": {
+          "publicId": "f94d6cb2-e5b5-4c14-99d2-3fbd28a1cde9",
+          "name": "Kunal Menon",
+          "photoUrl": "https://i.pravatar.cc/150?u=kunal.menon@simformsolutions.com"
+        },
+        "deallocationReason": "ROLE_MISALIGNMENT"
+      }
+    ],
+    "targetAssignmentTimeline": [
+      {
+        "ticketPublicId": null,
+        "ticketNumber": null,
+        "scheduledChangePublicId": null,
+        "effectiveFrom": "2026-10-21",
+        "effectiveTo": "2026-12-31",
+        "allocationType": "FIXED",
+        "allocationPercentage": 10,
+        "isCurrent": true,
+        "isPending": false,
+        "segmentType": "STANDING"
+      }
+    ],
+    "group": {
+      "publicId": "1bef2430-d087-4196-9712-671611dd98be",
+      "groupNumber": 5,
+      "flowType": "SHADOW_TO_MAIN_NEW_SHADOW",
+      "step": 1,
+      "totalSteps": 2,
+      "isBlocked": false,
+      "blockedBy": [],
+      "hasHiddenTickets": false,
+      "tickets": [
+        {
+          "publicId": "2cd93f4e-199e-4b22-9ee2-a55e78630e09",
+          "ticketNumber": "DA-0120",
+          "ticketType": "DEALLOCATE_ALLOCATION",
+          "step": 1,
+          "status": "AWAITING_CONFIRMATION",
+          "employee": {
+            "publicId": "12e25516-2373-4925-9ecc-1732ca6f61b6",
+            "name": "Bhavesh Bansal",
+            "photoUrl": "https://i.pravatar.cc/150?u=bhavesh.bansal@simformsolutions.com"
+          }
+        },
+        {
+          "publicId": "1a1197f5-8b77-4c2f-9c0f-110d96b3894f",
+          "ticketNumber": "DA-0121",
+          "ticketType": "DEALLOCATE_ALLOCATION",
+          "step": 1,
+          "status": "AWAITING_CONFIRMATION",
+          "employee": {
+            "publicId": "f94d6cb2-e5b5-4c14-99d2-3fbd28a1cde9",
+            "name": "Kunal Menon",
+            "photoUrl": "https://i.pravatar.cc/150?u=kunal.menon@simformsolutions.com"
+          }
+        },
+        {
+          "publicId": "8a814d3f-8957-44c2-af59-a22caad616e4",
+          "ticketNumber": "NA-0386",
+          "ticketType": "NEW_ALLOCATION",
+          "step": 2,
+          "status": "OPEN",
+          "employee": null
+        },
+        {
+          "publicId": "31168f16-b3c6-4c4f-a707-05c5a8a0a00d",
+          "ticketNumber": "NA-0387",
+          "ticketType": "NEW_ALLOCATION",
+          "step": 2,
+          "status": "OPEN",
+          "employee": null
+        }
+      ]
+    }
+  },
+  "NAP": {
+    "publicId": "8a814d3f-8957-44c2-af59-a22caad616e4",
+    "ticketNumber": "NA-0386",
+    "ticketType": "NEW_ALLOCATION",
+    "intent": null,
+    "status": "OPEN",
+    "priority": "MEDIUM",
+    "requestType": "FRESH_ALLOCATION",
+    "allocationRequestCreationType": "UPDATE_SHADOW_TO_MAIN",
+    "deptStack": {
+      "publicId": "8c45d16e-90a3-4947-a13c-437baf2bf77d",
+      "stack": "Tableau",
+      "iconUrl": "https://cdn.simpleicons.org/tableau",
+      "department": {
+        "publicId": "02258af1-79b0-4e88-bebb-aee86933bd9c",
+        "name": "DATA ENGINEERING"
+      }
+    },
+    "isInterviewRequired": false,
+    "isClientFacing": false,
+    "effectiveStartDate": null,
+    "effectiveEndDate": null,
+    "project": {
+      "publicId": "3d138a89-4d06-4839-8091-436fba0a2dd6",
+      "name": "HyperScale | Scalability Engine",
+      "csmId": "3850",
+      "accountGrade": 6.8
+    },
+    "additionalTechStacks": [],
+    "allocationStartDate": "2026-11-01T00:00:00.000Z",
+    "requestedAllocationType": "FIXED",
+    "requestedAllocationPercentage": 20,
+    "allocationSnapshot": {
+      "reason": "CREATED",
+      "allocationType": "FIXED",
+      "allocationPercentage": 20,
+      "allocationStartDate": "2026-11-01T00:00:00.000Z",
+      "requestType": "FRESH_ALLOCATION",
+      "typeOfWork": "DEVELOPMENT_WORK",
+      "previousAllocationPercentage": null,
+      "createdAt": "2026-10-21T06:25:36.189Z"
+    },
+    "allocationSnapshots": [
+      {
+        "reason": "CREATED",
+        "allocationType": "FIXED",
+        "allocationPercentage": 20,
+        "allocationStartDate": "2026-11-01T00:00:00.000Z",
+        "requestType": "FRESH_ALLOCATION",
+        "typeOfWork": "DEVELOPMENT_WORK",
+        "previousAllocationPercentage": null,
+        "createdAt": "2026-10-21T06:25:36.189Z"
+      }
+    ],
+    "targetScheduledChangePublicId": null,
+    "supersededTicketPublicId": null,
+    "supersededTicketNumber": null,
+    "preferredEmployees": [
+      {
+        "employee": {
+          "publicId": "f94d6cb2-e5b5-4c14-99d2-3fbd28a1cde9",
+          "name": "Kunal Menon",
+          "photoUrl": "https://i.pravatar.cc/150?u=kunal.menon@simformsolutions.com"
+        },
+        "designation": {
+          "publicId": "db86d900-30a4-4af1-a95d-b4f2ef3c6a5e",
+          "title": "Sr. Data Engineer",
+          "alias": "Sr. DE"
+        },
+        "deptStack": {
+          "name": "Tableau",
+          "logoUrl": "https://cdn.simpleicons.org/tableau"
+        },
+        "availabilityPercentage": 45.96,
+        "allocationAvailabilityPercentage": 100,
+        "bookedAllocationPercentage": 10,
+        "remainingAllocationPercentage": 90,
+        "addedBy": {
+          "publicId": "09d434e9-5346-4790-8ae7-f5105e5b4968",
+          "name": "Priya Chopra",
+          "photoUrl": "https://i.pravatar.cc/150?u=priya.chopra@simformsolutions.com"
+        },
+        "sequence": 0
+      }
+    ],
+    "shortlistedEmployees": [],
+    "requester": {
+      "publicId": "09d434e9-5346-4790-8ae7-f5105e5b4968",
+      "name": "Priya Chopra",
+      "photoUrl": "https://i.pravatar.cc/150?u=priya.chopra@simformsolutions.com"
+    },
+    "createdAt": "2026-10-21T06:25:36.182Z",
+    "updatedAt": "2026-10-21T06:25:36.182Z",
+    "statusSteps": [
+      {
+        "key": "SUBMITTED",
+        "title": "CSM submits request",
+        "description": "CSM submits a new allocation request",
+        "state": "COMPLETED",
+        "completedAt": "2026-10-21T06:25:36.182Z",
+        "performedBy": {
+          "publicId": "09d434e9-5346-4790-8ae7-f5105e5b4968",
+          "name": "Priya Chopra",
+          "photoUrl": "https://i.pravatar.cc/150?u=priya.chopra@simformsolutions.com"
+        }
+      },
+      {
+        "key": "DEPARTMENT_ASSIGNED",
+        "title": "PMO assigns department",
+        "description": "Pending PMO action",
+        "state": "CURRENT"
+      },
+      {
+        "key": "EMPLOYEE_SELECTED",
+        "title": "Employee Shortlisting",
+        "description": "Not yet started",
+        "state": "PENDING"
+      },
+      {
+        "key": "APPROVAL",
+        "title": "TM / EM approval",
+        "description": "Final approval step",
+        "state": "PENDING"
+      },
+      {
+        "key": "APPLIED",
+        "title": "Approved & applied",
+        "description": "PM notified",
+        "state": "PENDING"
+      }
+    ],
+    "approvals": {},
+    "feedbacks": [],
+    "group": {
+      "publicId": "1bef2430-d087-4196-9712-671611dd98be",
+      "groupNumber": 5,
+      "flowType": "SHADOW_TO_MAIN_NEW_SHADOW",
+      "step": 2,
+      "totalSteps": 2,
+      "isBlocked": true,
+      "blockedBy": [
+        {
+          "publicId": "2cd93f4e-199e-4b22-9ee2-a55e78630e09",
+          "ticketNumber": "DA-0120"
+        },
+        {
+          "publicId": "1a1197f5-8b77-4c2f-9c0f-110d96b3894f",
+          "ticketNumber": "DA-0121"
+        }
+      ],
+      "hasHiddenTickets": false,
+      "tickets": [
+        {
+          "publicId": "2cd93f4e-199e-4b22-9ee2-a55e78630e09",
+          "ticketNumber": "DA-0120",
+          "ticketType": "DEALLOCATE_ALLOCATION",
+          "step": 1,
+          "status": "AWAITING_CONFIRMATION",
+          "employee": {
+            "publicId": "12e25516-2373-4925-9ecc-1732ca6f61b6",
+            "name": "Bhavesh Bansal",
+            "photoUrl": "https://i.pravatar.cc/150?u=bhavesh.bansal@simformsolutions.com"
+          }
+        },
+        {
+          "publicId": "1a1197f5-8b77-4c2f-9c0f-110d96b3894f",
+          "ticketNumber": "DA-0121",
+          "ticketType": "DEALLOCATE_ALLOCATION",
+          "step": 1,
+          "status": "AWAITING_CONFIRMATION",
+          "employee": {
+            "publicId": "f94d6cb2-e5b5-4c14-99d2-3fbd28a1cde9",
+            "name": "Kunal Menon",
+            "photoUrl": "https://i.pravatar.cc/150?u=kunal.menon@simformsolutions.com"
+          }
+        },
+        {
+          "publicId": "8a814d3f-8957-44c2-af59-a22caad616e4",
+          "ticketNumber": "NA-0386",
+          "ticketType": "NEW_ALLOCATION",
+          "step": 2,
+          "status": "OPEN",
+          "employee": null
+        },
+        {
+          "publicId": "31168f16-b3c6-4c4f-a707-05c5a8a0a00d",
+          "ticketNumber": "NA-0387",
+          "ticketType": "NEW_ALLOCATION",
+          "step": 2,
+          "status": "OPEN",
+          "employee": null
+        }
+      ]
+    }
+  },
+  "NAS": {
+    "publicId": "31168f16-b3c6-4c4f-a707-05c5a8a0a00d",
+    "ticketNumber": "NA-0387",
+    "ticketType": "NEW_ALLOCATION",
+    "intent": null,
+    "status": "OPEN",
+    "priority": "MEDIUM",
+    "requestType": "SHADOW_DEVELOPER",
+    "allocationRequestCreationType": null,
+    "shadowFor": {
+      "publicId": "f94d6cb2-e5b5-4c14-99d2-3fbd28a1cde9",
+      "name": "Kunal Menon",
+      "photoUrl": "https://i.pravatar.cc/150?u=kunal.menon@simformsolutions.com"
+    },
+    "deptStack": {
+      "publicId": "8c45d16e-90a3-4947-a13c-437baf2bf77d",
+      "stack": "Tableau",
+      "iconUrl": "https://cdn.simpleicons.org/tableau",
+      "department": {
+        "publicId": "02258af1-79b0-4e88-bebb-aee86933bd9c",
+        "name": "DATA ENGINEERING"
+      }
+    },
+    "isInterviewRequired": false,
+    "isClientFacing": false,
+    "effectiveStartDate": null,
+    "effectiveEndDate": null,
+    "project": {
+      "publicId": "3d138a89-4d06-4839-8091-436fba0a2dd6",
+      "name": "HyperScale | Scalability Engine",
+      "csmId": "3850",
+      "accountGrade": 6.8
+    },
+    "additionalTechStacks": [],
+    "allocationStartDate": "2026-11-01T00:00:00.000Z",
+    "requestedAllocationType": "FIXED",
+    "requestedAllocationPercentage": 20,
+    "allocationSnapshot": {
+      "reason": "CREATED",
+      "allocationType": "FIXED",
+      "allocationPercentage": 20,
+      "allocationStartDate": "2026-11-01T00:00:00.000Z",
+      "requestType": "SHADOW_DEVELOPER",
+      "typeOfWork": "DEVELOPMENT_WORK",
+      "previousAllocationPercentage": null,
+      "createdAt": "2026-10-21T06:25:36.200Z"
+    },
+    "allocationSnapshots": [
+      {
+        "reason": "CREATED",
+        "allocationType": "FIXED",
+        "allocationPercentage": 20,
+        "allocationStartDate": "2026-11-01T00:00:00.000Z",
+        "requestType": "SHADOW_DEVELOPER",
+        "typeOfWork": "DEVELOPMENT_WORK",
+        "previousAllocationPercentage": null,
+        "createdAt": "2026-10-21T06:25:36.200Z"
+      }
+    ],
+    "targetScheduledChangePublicId": null,
+    "supersededTicketPublicId": null,
+    "supersededTicketNumber": null,
+    "preferredEmployees": [],
+    "shortlistedEmployees": [],
+    "requester": {
+      "publicId": "09d434e9-5346-4790-8ae7-f5105e5b4968",
+      "name": "Priya Chopra",
+      "photoUrl": "https://i.pravatar.cc/150?u=priya.chopra@simformsolutions.com"
+    },
+    "createdAt": "2026-10-21T06:25:36.196Z",
+    "updatedAt": "2026-10-21T06:25:36.196Z",
+    "statusSteps": [
+      {
+        "key": "SUBMITTED",
+        "title": "CSM submits request",
+        "description": "CSM submits a new allocation request",
+        "state": "COMPLETED",
+        "completedAt": "2026-10-21T06:25:36.196Z",
+        "performedBy": {
+          "publicId": "09d434e9-5346-4790-8ae7-f5105e5b4968",
+          "name": "Priya Chopra",
+          "photoUrl": "https://i.pravatar.cc/150?u=priya.chopra@simformsolutions.com"
+        }
+      },
+      {
+        "key": "DEPARTMENT_ASSIGNED",
+        "title": "PMO assigns department",
+        "description": "Pending PMO action",
+        "state": "CURRENT"
+      },
+      {
+        "key": "EMPLOYEE_SELECTED",
+        "title": "Employee Shortlisting",
+        "description": "Not yet started",
+        "state": "PENDING"
+      },
+      {
+        "key": "APPROVAL",
+        "title": "TM / EM approval",
+        "description": "Final approval step",
+        "state": "PENDING"
+      },
+      {
+        "key": "APPLIED",
+        "title": "Approved & applied",
+        "description": "PM notified",
+        "state": "PENDING"
+      }
+    ],
+    "approvals": {},
+    "feedbacks": [],
+    "group": {
+      "publicId": "1bef2430-d087-4196-9712-671611dd98be",
+      "groupNumber": 5,
+      "flowType": "SHADOW_TO_MAIN_NEW_SHADOW",
+      "step": 2,
+      "totalSteps": 2,
+      "isBlocked": true,
+      "blockedBy": [
+        {
+          "publicId": "2cd93f4e-199e-4b22-9ee2-a55e78630e09",
+          "ticketNumber": "DA-0120"
+        },
+        {
+          "publicId": "1a1197f5-8b77-4c2f-9c0f-110d96b3894f",
+          "ticketNumber": "DA-0121"
+        }
+      ],
+      "hasHiddenTickets": false,
+      "tickets": [
+        {
+          "publicId": "2cd93f4e-199e-4b22-9ee2-a55e78630e09",
+          "ticketNumber": "DA-0120",
+          "ticketType": "DEALLOCATE_ALLOCATION",
+          "step": 1,
+          "status": "AWAITING_CONFIRMATION",
+          "employee": {
+            "publicId": "12e25516-2373-4925-9ecc-1732ca6f61b6",
+            "name": "Bhavesh Bansal",
+            "photoUrl": "https://i.pravatar.cc/150?u=bhavesh.bansal@simformsolutions.com"
+          }
+        },
+        {
+          "publicId": "1a1197f5-8b77-4c2f-9c0f-110d96b3894f",
+          "ticketNumber": "DA-0121",
+          "ticketType": "DEALLOCATE_ALLOCATION",
+          "step": 1,
+          "status": "AWAITING_CONFIRMATION",
+          "employee": {
+            "publicId": "f94d6cb2-e5b5-4c14-99d2-3fbd28a1cde9",
+            "name": "Kunal Menon",
+            "photoUrl": "https://i.pravatar.cc/150?u=kunal.menon@simformsolutions.com"
+          }
+        },
+        {
+          "publicId": "8a814d3f-8957-44c2-af59-a22caad616e4",
+          "ticketNumber": "NA-0386",
+          "ticketType": "NEW_ALLOCATION",
+          "step": 2,
+          "status": "OPEN",
+          "employee": null
+        },
+        {
+          "publicId": "31168f16-b3c6-4c4f-a707-05c5a8a0a00d",
+          "ticketNumber": "NA-0387",
+          "ticketType": "NEW_ALLOCATION",
+          "step": 2,
+          "status": "OPEN",
+          "employee": null
+        }
+      ]
+    }
+  }
+}

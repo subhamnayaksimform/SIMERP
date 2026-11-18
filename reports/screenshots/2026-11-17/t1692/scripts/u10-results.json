@@ -1,0 +1,8 @@
+[
+ {
+  "area": "4.alloc-edit",
+  "name": "UI: UA-0145 Fixed→Dynamic ticket edited back to Fixed (20%) and saved",
+  "pass": false,
+  "detail": "{\"type\":\"DYNAMIC\",\"pct\":null,\"st\":{\"msgs\":[\"Conflict\",\"This window overlaps the change marked on the timeline. Move the dates clear of it, or revise that change instead.\"],\"save\":false}}"
+ }
+]

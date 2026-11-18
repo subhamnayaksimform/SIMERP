@@ -1,0 +1,54 @@
+{
+  "T0": "2026-10-15T10:18:55.605Z",
+  "req": {
+    "projectAssignmentPublicId": "c89a92ff-56c5-472d-9217-e9e1a8b135b1",
+    "allocationEndDate": "2026-10-15",
+    "deallocationReason": "OTHERS",
+    "deallocationReasonNote": "QA test cleanup (SI4-T1527 notification check)"
+  },
+  "res": {
+    "status": 201,
+    "body": {
+      "code": "ALLOCATION_TICKET_072",
+      "message": "Allocation removed successfully",
+      "data": {
+        "publicId": "1a8695f1-cc9d-421e-8332-fca76079532d",
+        "ticketNumber": "DA-0097",
+        "ticketType": "DEALLOCATE_ALLOCATION",
+        "status": "APPROVED",
+        "assignment": {
+          "publicId": "c89a92ff-56c5-472d-9217-e9e1a8b135b1",
+          "allocationEndDate": "2026-10-15",
+          "employee": {
+            "publicId": "f33a8f2b-9d83-43ef-8dce-362f2c627313",
+            "name": "Urvashi Kamath",
+            "email": "urvashi.kamath@simformsolutions.com",
+            "photoUrl": "https://i.pravatar.cc/150?u=urvashi.kamath@simformsolutions.com"
+          },
+          "project": {
+            "publicId": "c20430eb-7e7e-44e6-b769-3c7756e6a9e2",
+            "name": "XCrypt | Blockchain Wallet",
+            "alias": ""
+          }
+        },
+        "effectiveState": {
+          "isEffectiveImmediately": false,
+          "effectiveFrom": "2026-10-16",
+          "scheduledChange": {
+            "publicId": "41e1b313-7e62-49d0-997f-b061f404ba19",
+            "changeType": "ASSIGNMENT_DEALLOCATE",
+            "status": "PENDING",
+            "effectiveDate": "2026-10-16",
+            "overrideEndDate": null,
+            "allocationType": null,
+            "allocationPercentage": null,
+            "effectiveStartDate": null,
+            "effectiveEndDate": "2026-10-15",
+            "previousAllocationPercentage": 10
+          }
+        },
+        "feedbackPublicId": "7398e439-e282-4884-8d37-2614175fad2d"
+      }
+    }
+  }
+}

@@ -1,0 +1,89 @@
+{
+ "t0": "2026-11-17T05:42:27.429Z",
+ "opp": "06f09618-9d2a-409a-adb6-6597e1f9b67d",
+ "T": "OPP-0374",
+ "PA": "bab185b7-ed98-47c0-b448-9fa2b4941cb4",
+ "PB": "0ba38166-2c4e-4fb8-96d8-fb6896dc18e5",
+ "n1": {
+  "publicId": "a8d508e1-c8af-435c-8195-96d98d21c393",
+  "status": "CONSIDERED",
+  "isBlocked": false,
+  "blockedAt": null,
+  "reason": null,
+  "approvedAt": null,
+  "nominatedBy": {
+   "publicId": "8951ac85-7a7e-4b99-aa13-ebfe00509930",
+   "name": "Sudhansu Patel",
+   "photoUrl": "https://i.pravatar.cc/150?u=sudhansu.patel@simformsolutions.com"
+  },
+  "rejectedAt": null,
+  "rejectedBy": null,
+  "rejectedByRole": null,
+  "completedChecklistItems": [],
+  "skippedChecklistItems": [],
+  "createdAt": "2026-11-17T05:42:33.396Z",
+  "interviewRounds": [],
+  "employee": {
+   "publicId": "5f78306e-a004-44dd-a972-9589a6a2518b",
+   "name": "Riddhi Verma",
+   "photoUrl": "https://i.pravatar.cc/150?u=riddhi.verma@simformsolutions.com",
+   "department": {
+    "publicId": "c868f1aa-6bc1-430c-b26a-11222919627f",
+    "name": "QA"
+   },
+   "designation": {
+    "publicId": "f103adb0-1abc-4fae-b590-bc908157abbd",
+    "title": "Sr. QA Engineer"
+   }
+  },
+  "approval": {
+   "status": "NOT_REQUESTED",
+   "approverDepartment": {
+    "publicId": "c868f1aa-6bc1-430c-b26a-11222919627f",
+    "name": "QA"
+   },
+   "requestedBy": null,
+   "requestedAt": null,
+   "requestedByRole": null,
+   "approverRole": null,
+   "approvedBy": null,
+   "approvedAt": null,
+   "bypassReason": null
+  },
+  "allowedActions": [
+   "REQUEST_APPROVAL",
+   "BYPASS_APPROVAL",
+   "REJECT",
+   "REMOVE",
+   "RELEASE"
+  ],
+  "allocationTicketPublicId": null,
+  "remainingAllocationPercentage": 100,
+  "availabilityPercentage": 100,
+  "allocationAvailabilityPercentage": 100,
+  "bookedAllocationPercentage": 0
+ },
+ "D": {
+  "d1": {
+   "opp": "ff491f69-cfbf-40f5-aab5-c7dfda0fc494",
+   "T": "OPP-0375",
+   "u": "deepak.contractor",
+   "t": "2026-11-17T05:44:28.674Z",
+   "op": "860067e5-0a9e-40b2-b741-7cff0bfb0e6a"
+  },
+  "d2": {
+   "opp": "28acd1a7-0586-4a91-9f40-3ef53bdfc854",
+   "T": "OPP-0376",
+   "u": "iti.trivedi",
+   "t": "2026-11-17T05:44:35.104Z",
+   "op": "7125f238-5026-4e1b-a1d6-04b7be9c5549"
+  },
+  "d3": {
+   "opp": "deb71ad0-6614-4913-9ec9-bf6f37a14311",
+   "T": "OPP-0377",
+   "u": "swati.malhotra",
+   "op": "9ff46fe5-2836-4cec-be60-dbaa479e4589",
+   "t": "2026-11-17T05:46:15.659Z"
+  }
+ }
+}

@@ -1,0 +1,120 @@
+{
+  "employees": [
+    {
+      "publicId": "f94d6cb2-e5b5-4c14-99d2-3fbd28a1cde9",
+      "name": "Kunal Menon",
+      "designation": {
+        "publicId": "db86d900-30a4-4af1-a95d-b4f2ef3c6a5e",
+        "title": "Sr. Data Engineer",
+        "alias": "Sr. DE"
+      },
+      "photoUrl": "https://i.pravatar.cc/150?u=kunal.menon@simformsolutions.com",
+      "deletedAt": null,
+      "hoursLogged": 40.32,
+      "totalHoursLogged": 967.74,
+      "departmentName": "DATA ENGINEERING",
+      "departmentIconUrl": "https://d3e6uquevgpr8q.cloudfront.net/department-icons/data-engineering.svg",
+      "departmentStackId": "8c45d16e-90a3-4947-a13c-437baf2bf77d",
+      "departmentStack": "Tableau",
+      "departmentStackIcon": "https://cdn.simpleicons.org/tableau",
+      "careerStartDate": "2023-07-05",
+      "assignmentPublicId": "f7bce8f9-1034-43e7-8201-0eb0371130cc",
+      "allocationPercentage": 20,
+      "allocationType": "FIXED",
+      "allocationStartDate": "2026-11-01",
+      "allocationEndDate": null,
+      "status": "GREEN",
+      "typeOfWork": "DEVELOPMENT_WORK",
+      "note": null,
+      "allocationOrigin": "FLOW",
+      "shadowDeveloper": null,
+      "isUpcoming": true,
+      "isLongRunning": false
+    },
+    {
+      "publicId": "12e25516-2373-4925-9ecc-1732ca6f61b6",
+      "name": "Bhavesh Bansal",
+      "designation": {
+        "publicId": "6daaa33b-179c-4e1f-8995-7373d09f3f1f",
+        "title": "Lead Engineer",
+        "alias": "LE"
+      },
+      "photoUrl": "https://i.pravatar.cc/150?u=bhavesh.bansal@simformsolutions.com",
+      "deletedAt": null,
+      "hoursLogged": 0,
+      "totalHoursLogged": 0,
+      "assignmentPublicId": "32c30658-ed74-4565-b5b0-632e8d54a850",
+      "allocationPercentage": 20,
+      "allocationType": "FIXED",
+      "allocationStartDate": "2026-08-25",
+      "allocationEndDate": "2026-10-31",
+      "status": "GREEN",
+      "typeOfWork": "DEVELOPMENT_WORK",
+      "note": null,
+      "allocationOrigin": "FLOW",
+      "shadowDeveloper": null,
+      "isUpcoming": false,
+      "isLongRunning": false,
+      "departmentName": "QA",
+      "departmentIconUrl": "https://d3e6uquevgpr8q.cloudfront.net/department-icons/qa.svg",
+      "departmentStackId": "ec62810e-4295-4482-b783-cf437b55cbfc",
+      "departmentStack": "Mix",
+      "departmentStackIcon": "https://cdn.simpleicons.org/testinglibrary",
+      "careerStartDate": "2018-08-16"
+    },
+    {
+      "publicId": "da3c4542-13bb-452b-b619-42095c913d94",
+      "name": "Prakash Pillai",
+      "designation": {
+        "publicId": "bab942bb-83d4-4e03-a984-8d32f3ffde57",
+        "title": "QA Engineer",
+        "alias": "QAE"
+      },
+      "photoUrl": "https://i.pravatar.cc/150?u=prakash.pillai@simformsolutions.com",
+      "deletedAt": null,
+      "hoursLogged": 0,
+      "totalHoursLogged": 0,
+      "assignmentPublicId": "e8bc5fb8-3d76-44df-9978-a212aff5217e",
+      "allocationPercentage": 20,
+      "allocationType": "FIXED",
+      "allocationStartDate": "2026-11-01",
+      "allocationEndDate": null,
+      "status": "GREEN",
+      "typeOfWork": "DEVELOPMENT_WORK",
+      "note": null,
+      "allocationOrigin": "FLOW",
+      "shadowDeveloper": {
+        "publicId": "f94d6cb2-e5b5-4c14-99d2-3fbd28a1cde9",
+        "name": "Kunal Menon",
+        "email": "kunal.menon@simformsolutions.com",
+        "assignmentPublicId": "f7bce8f9-1034-43e7-8201-0eb0371130cc"
+      },
+      "isUpcoming": true,
+      "isLongRunning": false,
+      "departmentName": "QA",
+      "departmentIconUrl": "https://d3e6uquevgpr8q.cloudfront.net/department-icons/qa.svg",
+      "departmentStackId": "2f46cbf6-894b-4d87-8580-4e525da41760",
+      "departmentStack": "Manual",
+      "departmentStackIcon": "https://cdn.simpleicons.org/testinglibrary",
+      "careerStartDate": "2016-06-10"
+    }
+  ],
+  "scheduled": {
+    "DA-0128": [
+      {
+        "id": "bb8a3739-960d-4e38-9090-3fbfb24a4998",
+        "type": "ASSIGNMENT_DEALLOCATE",
+        "st": "PENDING",
+        "eff": "2026-11-01"
+      }
+    ],
+    "DA-0129": [
+      {
+        "id": "5292e3b5-f4f8-4cf2-a6dd-5ecf69000864",
+        "type": "ASSIGNMENT_DEALLOCATE",
+        "st": "PENDING",
+        "eff": "2026-11-01"
+      }
+    ]
+  }
+}

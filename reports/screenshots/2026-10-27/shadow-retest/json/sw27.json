@@ -1,0 +1,268 @@
+{
+  "start": "Zalak Chopra 6f08b458 FIXED 10% 2026-10-23->2026-12-31 shadowOf Vandana Mishra ; Vandana Mishra d055b459 FIXED 20% 2026-10-23->null",
+  "1-swap": {
+    "status": 201,
+    "body": {
+      "code": "ALLOCATION_TICKET_173",
+      "message": "Shadow swap tickets created successfully",
+      "data": {
+        "groupPublicId": "d0617214-a120-436c-a80d-e0352f2507e4",
+        "groupNumber": 21,
+        "tickets": [
+          {
+            "publicId": "ed438c2c-fcff-4ada-948c-d3b14a4d8b87",
+            "ticketNumber": "DA-0178",
+            "ticketType": "DEALLOCATE_ALLOCATION",
+            "step": 1
+          },
+          {
+            "publicId": "ee144dd6-3049-4027-93bf-63111cafb07d",
+            "ticketNumber": "DA-0179",
+            "ticketType": "DEALLOCATE_ALLOCATION",
+            "step": 1
+          },
+          {
+            "publicId": "2d96572e-767f-4423-81bf-2af2a8c5fcf8",
+            "ticketNumber": "NA-0464",
+            "ticketType": "NEW_ALLOCATION",
+            "step": 2
+          },
+          {
+            "publicId": "12fe0e46-0ca4-4c8a-adf6-3f8a135a63da",
+            "ticketNumber": "NA-0465",
+            "ticketType": "NEW_ALLOCATION",
+            "step": 2
+          }
+        ]
+      }
+    }
+  },
+  "ids": {
+    "DAM": "ed438c2c-fcff-4ada-948c-d3b14a4d8b87",
+    "DAS": "ee144dd6-3049-4027-93bf-63111cafb07d",
+    "NAP": "2d96572e-767f-4423-81bf-2af2a8c5fcf8",
+    "NAS": "12fe0e46-0ca4-4c8a-adf6-3f8a135a63da",
+    "nums": [
+      "DA-0178",
+      "DA-0179",
+      "NA-0464",
+      "NA-0465"
+    ]
+  },
+  "2-nas-early": {
+    "status": 409,
+    "body": {
+      "code": "ALLOCATION_TICKET_172",
+      "message": "Complete the step 1, 2 tickets (#DA-0178, #DA-0179, #NA-0464) before actioning this ticket.",
+      "data": {
+        "blockingTickets": [
+          {
+            "publicId": "ed438c2c-fcff-4ada-948c-d3b14a4d8b87",
+            "ticketNumber": "DA-0178",
+            "ticketType": "DEALLOCATE_ALLOCATION",
+            "step": 1,
+            "status": "AWAITING_CONFIRMATION"
+          },
+          {
+            "publicId": "ee144dd6-3049-4027-93bf-63111cafb07d",
+            "ticketNumber": "DA-0179",
+            "ticketType": "DEALLOCATE_ALLOCATION",
+            "step": 1,
+            "status": "AWAITING_CONFIRMATION"
+          },
+          {
+            "publicId": "2d96572e-767f-4423-81bf-2af2a8c5fcf8",
+            "ticketNumber": "NA-0464",
+            "ticketType": "NEW_ALLOCATION",
+            "step": 2,
+            "status": "OPEN"
+          }
+        ]
+      }
+    }
+  },
+  "2-nap-early": {
+    "status": 409,
+    "body": {
+      "code": "ALLOCATION_TICKET_172",
+      "message": "Complete the step 1 tickets (#DA-0178, #DA-0179) before actioning this ticket.",
+      "data": {
+        "blockingTickets": [
+          {
+            "publicId": "ed438c2c-fcff-4ada-948c-d3b14a4d8b87",
+            "ticketNumber": "DA-0178",
+            "ticketType": "DEALLOCATE_ALLOCATION",
+            "step": 1,
+            "status": "AWAITING_CONFIRMATION"
+          },
+          {
+            "publicId": "ee144dd6-3049-4027-93bf-63111cafb07d",
+            "ticketNumber": "DA-0179",
+            "ticketType": "DEALLOCATE_ALLOCATION",
+            "step": 1,
+            "status": "AWAITING_CONFIRMATION"
+          }
+        ]
+      }
+    }
+  },
+  "3-ack-main": {
+    "status": 200,
+    "body": {
+      "code": "SUCCESS",
+      "message": "De-allocation acknowledged; allocation change applied",
+      "data": {
+        "publicId": "ed438c2c-fcff-4ada-948c-d3b14a4d8b87",
+        "ticketNumber": "DA-0178",
+        "status": "APPROVED"
+      }
+    }
+  },
+  "3-ack-shadow": {
+    "status": 200,
+    "body": {
+      "code": "SUCCESS",
+      "message": "De-allocation acknowledged; allocation change applied",
+      "data": {
+        "publicId": "ee144dd6-3049-4027-93bf-63111cafb07d",
+        "ticketNumber": "DA-0179",
+        "status": "APPROVED"
+      }
+    }
+  },
+  "4-nas-before-promo": {
+    "status": 409,
+    "body": {
+      "code": "ALLOCATION_TICKET_172",
+      "message": "Complete the step 2 tickets (#NA-0464) before actioning this ticket.",
+      "data": {
+        "blockingTickets": [
+          {
+            "publicId": "2d96572e-767f-4423-81bf-2af2a8c5fcf8",
+            "ticketNumber": "NA-0464",
+            "ticketType": "NEW_ALLOCATION",
+            "step": 2,
+            "status": "OPEN"
+          }
+        ]
+      }
+    }
+  },
+  "4-nas-bypass-before-promo": {
+    "status": 409,
+    "body": {
+      "code": "ALLOCATION_TICKET_172",
+      "message": "Complete the step 2 tickets (#NA-0464) before actioning this ticket.",
+      "data": {
+        "blockingTickets": [
+          {
+            "publicId": "2d96572e-767f-4423-81bf-2af2a8c5fcf8",
+            "ticketNumber": "NA-0464",
+            "ticketType": "NEW_ALLOCATION",
+            "step": 2,
+            "status": "OPEN"
+          }
+        ]
+      }
+    }
+  },
+  "5-nap-send": {
+    "status": 200,
+    "body": {
+      "code": "SUCCESS",
+      "message": "Allocation ticket updated successfully",
+      "data": {
+        "publicId": "2d96572e-767f-4423-81bf-2af2a8c5fcf8",
+        "ticketNumber": "NA-0464",
+        "status": "AWAITING_CONFIRMATION",
+        "warnings": [],
+        "employeeAvailability": [
+          {
+            "employeePublicId": "312ce495-7c5b-431e-8d2a-75f73953b7e4",
+            "availabilityPercentage": 58.26,
+            "isAvailable": true,
+            "allocationCapPercentage": 100,
+            "consumedPercentage": 0,
+            "remainingPercentage": 100,
+            "overlappingAllocations": [],
+            "reasons": []
+          }
+        ]
+      }
+    }
+  },
+  "5-nap-tm-approve": {
+    "status": 200,
+    "body": {
+      "code": "SUCCESS",
+      "message": "Ticket approved",
+      "data": {
+        "publicId": "2d96572e-767f-4423-81bf-2af2a8c5fcf8",
+        "ticketNumber": "NA-0464",
+        "status": "APPROVED"
+      }
+    }
+  },
+  "6-nas-send": {
+    "status": 200,
+    "body": {
+      "code": "SUCCESS",
+      "message": "Allocation ticket updated successfully",
+      "data": {
+        "publicId": "12fe0e46-0ca4-4c8a-adf6-3f8a135a63da",
+        "ticketNumber": "NA-0465",
+        "status": "AWAITING_CONFIRMATION",
+        "warnings": [],
+        "employeeAvailability": [
+          {
+            "employeePublicId": "dcfc5685-8cdd-440a-af8d-f1af386032e4",
+            "availabilityPercentage": 0,
+            "isAvailable": true,
+            "allocationCapPercentage": 100,
+            "consumedPercentage": 50,
+            "remainingPercentage": 50,
+            "overlappingAllocations": [
+              {
+                "projectAssignmentPublicId": "bdc0252d-1d6e-4e8d-b0a6-194aaa84acba",
+                "projectPublicId": "a8869918-6732-4886-9153-8dfa5b06c79a",
+                "allocationType": "FIXED",
+                "allocationPercentage": 50,
+                "allocationStartDate": "2026-11-03T00:00:00.000Z",
+                "allocationEndDate": null,
+                "shadowDeveloperId": null,
+                "conflictingFrom": "2026-11-03T00:00:00.000Z",
+                "conflictingTo": null
+              },
+              {
+                "projectAssignmentPublicId": "2ea32a56-bb5d-4c3b-b2e4-bf71bd7a6855",
+                "projectPublicId": "d793f948-cde0-4dc5-a6de-987ccce2bb25",
+                "allocationType": "DYNAMIC",
+                "allocationPercentage": 0,
+                "allocationStartDate": "2026-09-19T00:00:00.000Z",
+                "allocationEndDate": "2028-02-27T00:00:00.000Z",
+                "shadowDeveloperId": null,
+                "conflictingFrom": "2026-11-01T00:00:00.000Z",
+                "conflictingTo": "2028-02-27T00:00:00.000Z"
+              }
+            ],
+            "reasons": []
+          }
+        ]
+      }
+    }
+  },
+  "6-nas-tm-approve": {
+    "status": 200,
+    "body": {
+      "code": "SUCCESS",
+      "message": "Ticket approved",
+      "data": {
+        "publicId": "12fe0e46-0ca4-4c8a-adf6-3f8a135a63da",
+        "ticketNumber": "NA-0465",
+        "status": "APPROVED"
+      }
+    }
+  },
+  "end": "Zalak Chopra 595518a9 FIXED 20% 2026-11-01->null ; Vandana Mishra d055b459 FIXED 20% 2026-10-23->2026-10-31 ; Vihaan Patil 3a86ce3b FIXED 20% 2026-11-01->null shadowOf Zalak Chopra",
+  "shot": "reports/screenshots/2026-10-27/shadow-retest/swap-full-flow-new-shadow.png"
+}

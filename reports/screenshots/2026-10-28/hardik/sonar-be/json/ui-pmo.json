@@ -1,0 +1,16 @@
+{
+  "ui-01-employees-search-percent": "search box not found",
+  "ui-01-employees-search-percent:shot": "reports/screenshots/2026-10-28/hardik/sonar-be/ui-01-employees-search-percent.png",
+  "ui-01-employees-search-percent:url": "https://simerp-dev.simform.solutions/employees",
+  "ui-02-presales-search-percent": {
+    "url": "/opportunities/openings?view=TEAM&requestType=INTERVIEW&page=1&limit=100&search=%25&opportunityStatuses=OPEN&opportunityStatuses=ON_HOLD&opportunityStatuses=WON&opportunityStatuses=LOST&opportunityStatuses=NO_LONGER_REQUIRED",
+    "status": 200,
+    "total": 0
+  },
+  "ui-02-presales-search-percent:shot": "reports/screenshots/2026-10-28/hardik/sonar-be/ui-02-presales-search-percent.png",
+  "ui-02-presales-search-percent:url": "https://simerp-dev.simform.solutions/pre-sales?search=%25",
+  "ui-03-working-location-dashboard:shot": "reports/screenshots/2026-10-28/hardik/sonar-be/ui-03-working-location-dashboard.png",
+  "ui-03-working-location-dashboard:url": "https://simerp-dev.simform.solutions/working-location",
+  "ui-04-dashboard-pmo:shot": "reports/screenshots/2026-10-28/hardik/sonar-be/ui-04-dashboard-pmo.png",
+  "ui-04-dashboard-pmo:url": "https://simerp-dev.simform.solutions/dashboard"
+}

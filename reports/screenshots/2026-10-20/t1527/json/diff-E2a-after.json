@@ -1,0 +1,27 @@
+{
+  "before": "E1-after",
+  "after": "E2a-after",
+  "beforeAt": "2026-10-20T12:46:22.731Z",
+  "afterAt": "2026-10-20T12:48:09.837Z",
+  "newByUser": {
+    "gaurav.dutta": [],
+    "kartik.hegde": [],
+    "hardik.trivedi": [],
+    "amit.patel": [],
+    "jinal.patel": [],
+    "cto": [],
+    "ceo": [],
+    "ravi.vyas": [],
+    "bhumi.chauhan": [
+      {
+        "eventType": "allocation_ticket.created",
+        "title": "New Ticket: UA-0135",
+        "body": "Ravi Vyas created a new UPDATE ALLOCATION ticket UA-0135 for project KubeDash | Kubernetes Dashboard.",
+        "createdAt": "2026-10-20T12:47:59.367Z",
+        "ctx": {
+          "ticketPublicId": "14bab8ce-94de-4116-a6ec-926ce8c2c618"
+        }
+      }
+    ]
+  }
+}

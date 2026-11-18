@@ -1,0 +1,169 @@
+{
+ "publicId": "f8d23b73-cb56-449b-9de6-888ecbfdd18a",
+ "ticketNumber": "UA-0145",
+ "ticketType": "UPDATE_ALLOCATION",
+ "intent": null,
+ "status": "AWAITING_CONFIRMATION",
+ "priority": "MEDIUM",
+ "allocationRequestCreationType": null,
+ "allocationEndDate": "2027-03-31T00:00:00.000Z",
+ "effectiveStartDate": "2026-12-01T00:00:00.000Z",
+ "effectiveEndDate": null,
+ "project": {
+  "publicId": "a8869918-6732-4886-9153-8dfa5b06c79a",
+  "name": "AnalytixHub | Advanced Analytics",
+  "csmId": "3831",
+  "accountGrade": 7.5
+ },
+ "department": {
+  "publicId": "5970a5bb-d057-4cdf-bb53-213aa2010bb6",
+  "name": "DEVOPS",
+  "iconUrl": "https://d3e6uquevgpr8q.cloudfront.net/department-icons/devops.svg"
+ },
+ "departmentTechStack": [
+  {
+   "name": "DevOps",
+   "logoUrl": "https://cdn.simpleicons.org/docker"
+  },
+  {
+   "name": "Pipeline",
+   "logoUrl": "https:koi.com"
+  }
+ ],
+ "additionalTechStacks": [],
+ "allocationStartDate": "2026-12-01T00:00:00.000Z",
+ "requestedAllocationType": "DYNAMIC",
+ "requestedAllocationPercentage": null,
+ "allocationSnapshot": {
+  "reason": "UPDATED",
+  "allocationType": "DYNAMIC",
+  "allocationPercentage": null,
+  "allocationStartDate": "2026-12-01T00:00:00.000Z",
+  "allocationEndDate": "2027-03-31T00:00:00.000Z",
+  "typeOfWork": "DEVELOPMENT_WORK",
+  "previousAllocationPercentage": 10,
+  "previousAllocationStartDate": "2026-08-05T00:00:00.000Z",
+  "previousAllocationEndDate": "2027-09-26T00:00:00.000Z",
+  "createdAt": "2026-11-17T06:00:46.732Z"
+ },
+ "allocationSnapshots": [
+  {
+   "reason": "UPDATED",
+   "allocationType": "DYNAMIC",
+   "allocationPercentage": null,
+   "allocationStartDate": "2026-12-01T00:00:00.000Z",
+   "allocationEndDate": "2027-03-31T00:00:00.000Z",
+   "typeOfWork": "DEVELOPMENT_WORK",
+   "previousAllocationPercentage": 10,
+   "previousAllocationStartDate": "2026-08-05T00:00:00.000Z",
+   "previousAllocationEndDate": "2027-09-26T00:00:00.000Z",
+   "createdAt": "2026-11-17T06:00:46.732Z"
+  }
+ ],
+ "targetScheduledChangePublicId": null,
+ "supersededTicketPublicId": null,
+ "supersededTicketNumber": null,
+ "replacedAssignment": {
+  "publicId": "ab58ca0b-3f84-4b5a-9715-ea7b33d800d2",
+  "employee": {
+   "publicId": "159664dc-7e11-4d9b-b1a1-494aee0dc899",
+   "name": "Sai Garg",
+   "photoUrl": "https://i.pravatar.cc/150?u=sai.garg@simformsolutions.com"
+  },
+  "project": {
+   "publicId": "a8869918-6732-4886-9153-8dfa5b06c79a",
+   "name": "AnalytixHub | Advanced Analytics"
+  },
+  "allocationPercentage": 10,
+  "allocationType": "FIXED",
+  "allocationStartDate": "2026-08-05T00:00:00.000Z",
+  "allocationEndDate": "2027-09-26T00:00:00.000Z",
+  "status": "GREEN",
+  "typeOfWork": "DEVELOPMENT_WORK",
+  "allocationOrigin": "FLOW"
+ },
+ "preferredEmployees": [],
+ "shortlistedEmployees": [],
+ "requester": {
+  "publicId": "4174b8c1-9d89-4b61-bfd7-075924620091",
+  "name": "Tarun Sharma",
+  "photoUrl": "https://i.pravatar.cc/150?u=tarun.sharma@simformsolutions.com"
+ },
+ "allocationOwner": null,
+ "createdAt": "2026-11-17T06:00:46.721Z",
+ "updatedAt": "2026-11-17T06:00:46.721Z",
+ "statusSteps": [
+  {
+   "key": "SUBMITTED",
+   "title": "CSM submits request",
+   "description": "CSM submits an allocation update request",
+   "state": "COMPLETED",
+   "completedAt": "2026-11-17T06:00:46.721Z",
+   "performedBy": {
+    "publicId": "4174b8c1-9d89-4b61-bfd7-075924620091",
+    "name": "Tarun Sharma",
+    "photoUrl": "https://i.pravatar.cc/150?u=tarun.sharma@simformsolutions.com"
+   }
+  },
+  {
+   "key": "PMO_REVIEWED",
+   "title": "PMO Review",
+   "description": "Pending PMO action",
+   "state": "COMPLETED",
+   "completedAt": "2026-11-17T06:00:46.721Z",
+   "performedBy": {
+    "publicId": "4174b8c1-9d89-4b61-bfd7-075924620091",
+    "name": "Tarun Sharma",
+    "photoUrl": "https://i.pravatar.cc/150?u=tarun.sharma@simformsolutions.com"
+   }
+  },
+  {
+   "key": "ACKNOWLEDGED",
+   "title": "PMO Acknowledges",
+   "description": "PMO approved",
+   "state": "CURRENT"
+  },
+  {
+   "key": "NOTIFIED",
+   "title": "RM/TM/EM Notified",
+   "description": "Pending",
+   "state": "PENDING"
+  },
+  {
+   "key": "FINALIZED",
+   "title": "Allocation updated",
+   "description": "Pending",
+   "state": "PENDING"
+  }
+ ],
+ "approvals": {},
+ "feedbacks": [],
+ "targetAssignmentTimeline": [
+  {
+   "ticketPublicId": null,
+   "ticketNumber": null,
+   "scheduledChangePublicId": null,
+   "effectiveFrom": "2026-08-05",
+   "effectiveTo": "2026-08-24",
+   "allocationType": "DYNAMIC",
+   "allocationPercentage": null,
+   "isCurrent": false,
+   "isPending": false,
+   "segmentType": "STANDING"
+  },
+  {
+   "ticketPublicId": "0090d98c-9d37-4050-9c8a-52343a832f62",
+   "ticketNumber": "UA-0088",
+   "scheduledChangePublicId": "7cd09e85-a018-4077-a314-c49d3bc4598e",
+   "effectiveFrom": "2026-08-25",
+   "effectiveTo": "2027-09-26",
+   "allocationType": "FIXED",
+   "allocationPercentage": 10,
+   "isCurrent": true,
+   "isPending": false,
+   "segmentType": "SCHEDULED"
+  }
+ ],
+ "targetTotalHoursLogged": 0,
+ "group": null
+}

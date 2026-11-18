@@ -1,0 +1,68 @@
+{
+  "T0": "2026-10-19T10:48:26.420Z",
+  "req": {
+    "employeePublicId": "da3c4542-13bb-452b-b619-42095c913d94",
+    "projectPublicId": "c20430eb-7e7e-44e6-b769-3c7756e6a9e2",
+    "allocationType": "FIXED",
+    "allocationPercentage": 10,
+    "allocationStartDate": "2026-10-19",
+    "allocationEndDate": "2026-12-31",
+    "status": "GREEN",
+    "typeOfWork": "DEVELOPMENT_WORK",
+    "shadowDeveloperPublicId": "5492755c-16a4-407e-8571-0db979628d17",
+    "note": "QA test SI4-T1464 retest 2026-10-19 (shadow of Ananya Hegde)"
+  },
+  "res": {
+    "status": 201,
+    "body": {
+      "code": "ALLOCATION_TICKET_070",
+      "message": "Direct allocation created successfully",
+      "data": {
+        "publicId": "4186a764-485d-4b1c-89c0-4d3e4604ef06",
+        "allocationPercentage": 10,
+        "allocationType": "FIXED",
+        "typeOfWork": "DEVELOPMENT_WORK",
+        "allocationStartDate": "2026-10-19",
+        "allocationEndDate": "2026-12-31",
+        "status": "GREEN",
+        "note": "QA test SI4-T1464 retest 2026-10-19 (shadow of Ananya Hegde)",
+        "allocationOrigin": "PMO",
+        "employee": {
+          "publicId": "da3c4542-13bb-452b-b619-42095c913d94",
+          "name": "Prakash Pillai",
+          "email": "prakash.pillai@simformsolutions.com",
+          "photoUrl": "https://i.pravatar.cc/150?u=prakash.pillai@simformsolutions.com"
+        },
+        "shadowDeveloper": {
+          "publicId": "5492755c-16a4-407e-8571-0db979628d17",
+          "name": "Ananya Hegde",
+          "email": "ananya.hegde@simformsolutions.com",
+          "photoUrl": "https://i.pravatar.cc/150?u=ananya.hegde@simformsolutions.com"
+        },
+        "project": {
+          "publicId": "c20430eb-7e7e-44e6-b769-3c7756e6a9e2",
+          "name": "XCrypt | Blockchain Wallet",
+          "alias": "",
+          "projectManager": {
+            "publicId": "49670820-7826-4e95-b651-152db9d1ec02",
+            "name": "Keyur Hegde",
+            "photoUrl": "https://i.pravatar.cc/150?u=keyur.hegde@simformsolutions.com"
+          },
+          "customerSuccessManager": {
+            "publicId": "4174b8c1-9d89-4b61-bfd7-075924620091",
+            "name": "Tarun Sharma",
+            "photoUrl": "https://i.pravatar.cc/150?u=tarun.sharma@simformsolutions.com"
+          }
+        },
+        "createdBy": {
+          "publicId": "e93f5377-1f74-42cb-9a40-255908e50310",
+          "name": "Bhumi Chauhan",
+          "email": "bhumi.chauhan@simformsolutions.com",
+          "photoUrl": "https://i.pravatar.cc/150?u=bhumi.chauhan@simformsolutions.com"
+        },
+        "ticketPublicId": "c03c578f-7049-47fc-831a-559c839884f7",
+        "ticketNumber": "NA-0364"
+      }
+    }
+  }
+}
